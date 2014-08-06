@@ -8,8 +8,29 @@ body
 	nav
 	.wrapper
 		.content
-			h1 Diggin' In The Carts
-			h3 A neew thing
+			.hero
+				img(src="img/cart.png")
+			.title
+				h1 Diggin' In The Carts
+			.videos
+				hr
+				h2 Videos
+				.video-nav
+					ul
+						a(class="episode", data-order="1")
+							li Episode 1
+						a(class="episode", data-order="2")
+							li Episode 2
+						a(class="episode", data-order="3")
+							li Episode 3
+						a(class="episode", data-order="4")
+							li Episode 4
+						a(class="episode", data-order="5")
+							li Episode 5
+						a(class="episode", data-order="6")
+							li Episode 6
+				div(id="player")
+				p(class="body")
 
 
 	script(type="text/javascript", src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js")
