@@ -1,0 +1,1 @@
+(function(){$(function(){var n,t;return n=function(){return t()},t=function(){return $("nav").bind("mouseenter",function(){return $(this).transition({left:0},200)}),$("nav").bind("mouseleave",function(){return $(this).transition({left:"-100px"},200)})},n()})}).call(this);

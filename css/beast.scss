@@ -1,0 +1,83 @@
+// @import 'fonts';
+
+@font-face {
+    font-family: 'karla';
+    src: url(../fonts/karla-regular-webfont.woff) format('woff');
+    // src: url(asset-path('karla-regular-webfont.eot'));
+    font-weight: normal;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'karla';
+    src: url(../fonts/karla-bold-webfont.woff) format('woff');
+    // src: url(asset-path('karla-bold-webfont.eot'));
+    font-weight: bold;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: clan;
+    src: url('../fonts/clanpro-narrultra-webfont.eot');
+    src: url('../fonts/clanpro-narrultra-webfont.eot?#iefix') format('embedded-opentype'),
+         url('../fonts/clanpro-narrultra-webfont.woff') format('woff'),
+         url('../fonts/clanpro-narrultra-webfont.ttf') format('truetype'),
+         url('../fonts/clanpro-narrultra-webfont.svg#clan_pronarrow_ultra') format('svg');
+    font-weight: 900;
+    font-style: normal;
+
+}
+
+$teal: #00ffef;
+$red: #ff0000;
+
+
+body{
+	margin: 0;
+	font-family: clan, karla;
+	color: $teal;
+}
+
+nav{
+	position: fixed;
+	z-index: 999;
+	top: 0;
+	left: -100px;
+	width: 150px;
+	height: 100%;
+	background: $teal;
+	overflow: hidden;
+	cursor: url(../img/cursor.png), auto;
+	border-right: 5px solid black;
+}
+h1,h2,h3,h4{
+	text-transform: uppercase;
+	text-align: center;
+}
+h1{
+	font-size: 10em;
+	letter-spacing: -2px;
+	line-height: 1;
+}
+
+
+.wrapper{
+	position: fixed;
+	top: 0;
+	left: 0;
+	width: 100%;
+	height: 100%;
+	overflow: hidden;
+	background: blue;
+	background: url(../img/tile1.gif) repeat top left;
+	cursor: url(../img/cursor.png), auto;
+	.content{
+		position: relative;
+		top: 0;
+		left: 0;
+		width: 100%;
+		height: 100%;
+		overflow: auto;
+		z-index: 9;
+	}
+}
