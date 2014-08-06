@@ -14,6 +14,27 @@ $ ->
 		volume: 0.7
 	}
 
+	# $('.hero').waypoint ->
+	# 	$('.content').stop().animate
+	# 		backgroundColor: 'black'
+	# 	,500
+
+	# $('#videos').waypoint ->
+	# 	$('.content').stop().animate
+	# 		backgroundColor: 'black'
+	# 	,500
+
+	# # $('#composers').waypoint ->
+	# # 	$('.content').stop().animate
+	# # 		backgroundColor: 'blue'
+	# # 	,500
+
+	# $('#radio').waypoint ->
+	# 	$('.content').stop().animate
+	# 		backgroundColor: 'black'
+	# 	, 500
+	# 	$('.content').css
+	# 		background: 'url(img/falling-sky.gif) repeat top left'
 
 	getData = ->
 		$.ajax 'data/data.json',
@@ -46,9 +67,11 @@ $ ->
 				"onReady": onPlayerReady
 			}
 			playerVars: {
-				modestbranding: true
-				controls: 0
+				modestbranding: 1
+				controls: 1
 				showinfo: 0
+				hd: 1
+
 			}
 
 	onPlayerReady = (event) ->
@@ -100,8 +123,8 @@ $ ->
 			link = $(@)
 			smoothScroll(event, link)
 
-		$(document).bind 'scroll', (event) ->
-			console.log $('#rapper').offset().top
+		# $(document).bind 'scroll', (event) ->
+		# 	console.log $('#rapper').offset().top
 			
 			
 	sendScore = ->

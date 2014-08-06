@@ -54,6 +54,17 @@
 		"outputPathIsSetByUser": 0,
 		"processed": 0
 		},
+	"\/img\/background.png": {
+		"fileType": 32768,
+		"ignore": 0,
+		"ignoreWasSetByUser": 0,
+		"initialSize": 29654,
+		"inputAbbreviatedPath": "\/img\/background.png",
+		"outputAbbreviatedPath": "\/img\/background.png",
+		"outputPathIsOutsideProject": 0,
+		"outputPathIsSetByUser": 0,
+		"processed": 0
+		},
 	"\/img\/cart.png": {
 		"fileType": 32768,
 		"ignore": 0,

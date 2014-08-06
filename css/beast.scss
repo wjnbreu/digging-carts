@@ -109,7 +109,7 @@ nav{
 		list-style-type: none;
 		margin-left: 0;
 		li{
-			color: blue;
+			color: black;
 			font-size: 2em;
 			margin-bottom: 50%;
 			margin-left: 0;
@@ -140,9 +140,15 @@ h1{
 	line-height: 1;
 }
 
+iframe{
+	cursor: url(../img/cursor.png), auto !important;
+}
+
 h2{
 	font-size: 4em;
 	margin: 0;
+	text-decoration: underline;
+	font-family: brokeren;
 }
 
 hr{
@@ -177,7 +183,7 @@ hr{
 // 	width: 100%;
 // 	height: 100%;
 // 	overflow: hidden;
-// 	background: blue;
+// 	background: black;
 // 	background: url(../img/tile1.gif) repeat top left;
 // 	cursor: url(../img/cursor.png), auto;
 
@@ -188,9 +194,9 @@ hr{
 		overflow: auto;
 		top: 0;
 		left: 0;
-
-		background: url(../img/tile.png) repeat top left;
-		background-color: blue;
+		cursor: url(../img/cursor.png), auto;
+		background: url(../img/background.png) no-repeat top left;
+		background-color: black;
 		z-index: 9;
 		#rapper{
 			position: fixed;
@@ -218,7 +224,7 @@ hr{
 			font-family: brokeren;
 		}
 		.videos{
-			margin-top: 20%;
+			margin-top: 40%;
 			.video-nav{
 				ul{
 					text-align: center;
@@ -229,7 +235,7 @@ hr{
 							padding: 5px;
 							&:hover{
 								background-color: $teal;
-								color: blue;
+								color: black;
 							}
 						}
 					}
@@ -254,6 +260,9 @@ hr{
 		.composers{
 			margin-top: 100px;
 			margin-bottom: 200px;
+			h2{
+				text-decoration: underline;
+			}
 			.composer-nav{
 				text-align: center;
 				ul{
@@ -266,17 +275,18 @@ hr{
 							padding: 0;
 							@include vendorize(transition, all .2s ease-in-out);
 							&:hover{
-								color: blue;
+								color: black;
 								background-color: $teal;
 							}
 							&.active{
-								color: blue;
+								color: black;
 								background-color: $teal;
 							}
 							.composer-data{
 								display: none;
+								background: url(../img/tile.png) repeat top left;
 								background-color: $teal;
-								color: blue;
+								color: black;
 								p{
 									width: 80%;
 									margin-left: 10%;
@@ -294,6 +304,26 @@ hr{
 						}
 					}
 				}
+			}
+		}
+
+		.radio{
+			margin-bottom: 800px;
+
+			p{
+				width: 70%;
+				margin-top: 40px;
+				margin-left: 15%;
+				font-size: 1.5em;
+				line-height: 1.5;
+			}
+			iframe{
+				width: 70%;
+				margin-left: 15%;
+				height: 100px !important;
+				border: none;
+				-webkit-filter: grayscale(1);
+				box-shadow: 1px 0px 0px #4d4d4d, 0px 1px 0px #333333, 2px 1px 0px #4d4d4d, 1px 2px 0px #333333, 3px 2px 0px #4d4d4d, 2px 3px 0px #333333, 4px 3px 0px #4d4d4d, 3px 4px 0px #333333, 5px 4px 0px #4d4d4d, 4px 5px 0px #333333, 6px 5px 0px #4d4d4d, 5px 6px 0px #333333, 7px 6px 0px #4d4d4d, 6px 7px 0px #333333, 8px 7px 0px #4d4d4d, 7px 8px 0px #333333, 9px 8px 0px #4d4d4d, 8px 9px 0px #333333, 10px 9px 0px #4d4d4d, 9px 10px 0px #333333, 11px 10px 0px #4d4d4d, 10px 11px 0px #333333, 12px 11px 0px #4d4d4d, 11px 12px 0px #333333, 13px 12px 0px #4d4d4d, 12px 13px 0px #333333, 14px 13px 0px #4d4d4d, 13px 14px 0px #333333, 15px 14px 0px #4d4d4d, 14px 15px 0px #333333, 16px 15px 0px #4d4d4d;
 			}
 		}
 	}

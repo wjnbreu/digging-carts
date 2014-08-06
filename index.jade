@@ -5,8 +5,12 @@ head
 	link(rel="stylesheet", type="text/css", href="css/beast.css")
 
 body
+	a(id="home")
 	nav
 		ul
+			li
+				a(href="#home", class="scroll")
+					img(src="img/up.svg")
 			li
 				a(href="#videos", class="scroll")
 					img(src="img/video.svg")
@@ -14,11 +18,11 @@ body
 				a(href="#composers", class="scroll")
 					img(src="img/man.svg")
 			li
-				a(href="#", class="scroll")
-					img(src="img/glasses.svg")
+				a(href="#radio", class="scroll")
+					img(src="img/radio.svg")
 			li
 				a(href="#", class="scroll")
-					img(src="img/radio.svg")
+					img(src="img/glasses.svg")
 	.content
 		div(id="rapper")
 		.hero
@@ -29,8 +33,7 @@ body
 				
 		.videos
 			a(id="videos")
-			hr
-			h2 Videos
+			h2 The Series
 			.video-nav
 				ul
 					a(class="episode", data-order="1")
@@ -47,7 +50,6 @@ body
 						li Episode 6
 			div(id="player")
 			p(class="body")
-			hr
 
 		.composers
 			a(id="composers")
@@ -75,9 +77,16 @@ body
 						a(class="composer", data-order="8")
 							li
 
+		a(id="radio")
+		.radio
 
+			h2 The Soundtrack
+			iframe(src='http://www.rbmaradio.com/embed/4416 frameborder=0', scrolling="no")
+			p.
+				Numero Group is a reissue label operating out of Chicago. Over the past decade, the common brainchild of Ken Shipley, Rob Sevier and their gang of kindred spirits has grown into one of the most trusted names in the world of unearthing obscure wax platters and the overlooked heroes and heroines of music history. Numero Group was originally conceived in 2003 by “three guys in various stages of unemployment”, as Ken points out, aiming to create a US-specific reissue label, similar to what imprints like Soul Jazz and Honest Jon’s had already established in the UK. Building on a water-proof sense for obscure, genre-defying outsider recordings and the stories behind them, Numero Group went from a modestly ambitious 7" label to an organically grown network of sub-labels, compilation series’ and side hustles. And while the early years of the label were mostly devoted to the re-discovery of long-lost vintage music from the 60s and 70s, the NG back catalogue now lists everything from little known female folk sirens and hard-hitting gospel funk to enigmatic soul legends like Syl Johnson, weird electronica and new age shamans like Iasos and 90s indie rock staples such as Dinosaur Jr and Hüsker Dü.
 
 	script(type="text/javascript", src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js")
+	script(type="text/javascript", src="//ajax.googleapis.com/ajax/libs/jqueryui/1.11.0/jquery-ui.min.js")
 	script(type="text/javascript", src="js/min/waypoints.min-min.js")
 	script(type="text/javascript", src="js/howler.min.js")
 	script(type="text/javascript", src="js/transit.min.js")

@@ -54,7 +54,7 @@ nav {
     list-style-type: none;
     margin-left: 0; }
     nav ul li {
-      color: blue;
+      color: black;
       font-size: 2em;
       margin-bottom: 50%;
       margin-left: 0; }
@@ -86,9 +86,14 @@ h1 {
   letter-spacing: -2px;
   line-height: 1; }
 
+iframe {
+  cursor: url(../img/cursor.png), auto !important; }
+
 h2 {
   font-size: 4em;
-  margin: 0; }
+  margin: 0;
+  text-decoration: underline;
+  font-family: brokeren; }
 
 hr {
   width: 25%;
@@ -118,8 +123,9 @@ hr {
   overflow: auto;
   top: 0;
   left: 0;
-  background: url(../img/tile.png) repeat top left;
-  background-color: blue;
+  cursor: url(../img/cursor.png), auto;
+  background: url(../img/background.png) no-repeat top left;
+  background-color: black;
   z-index: 9; }
   .content #rapper {
     position: fixed;
@@ -145,7 +151,7 @@ hr {
     margin: 0;
     font-family: brokeren; }
   .content .videos {
-    margin-top: 20%; }
+    margin-top: 40%; }
     .content .videos .video-nav ul {
       text-align: center; }
       .content .videos .video-nav ul a li {
@@ -154,7 +160,7 @@ hr {
         padding: 5px; }
         .content .videos .video-nav ul a li:hover {
           background-color: #00ffef;
-          color: blue; }
+          color: black; }
     .content .videos iframe {
       margin-left: 20%;
       margin-bottom: 20px;
@@ -170,6 +176,8 @@ hr {
   .content .composers {
     margin-top: 100px;
     margin-bottom: 200px; }
+    .content .composers h2 {
+      text-decoration: underline; }
     .content .composers .composer-nav {
       text-align: center; }
       .content .composers .composer-nav ul a li {
@@ -184,15 +192,16 @@ hr {
         -o-transition: all 0.2s ease-in-out;
         transition: all 0.2s ease-in-out; }
         .content .composers .composer-nav ul a li:hover {
-          color: blue;
+          color: black;
           background-color: #00ffef; }
         .content .composers .composer-nav ul a li.active {
-          color: blue;
+          color: black;
           background-color: #00ffef; }
         .content .composers .composer-nav ul a li .composer-data {
           display: none;
+          background: url(../img/tile.png) repeat top left;
           background-color: #00ffef;
-          color: blue; }
+          color: black; }
           .content .composers .composer-nav ul a li .composer-data p {
             width: 80%;
             margin-left: 10%;
@@ -204,3 +213,18 @@ hr {
             width: 50%;
             height: auto;
             box-shadow: 1px 0px 0px #4d4d4d, 0px 1px 0px #333333, 2px 1px 0px #4d4d4d, 1px 2px 0px #333333, 3px 2px 0px #4d4d4d, 2px 3px 0px #333333, 4px 3px 0px #4d4d4d, 3px 4px 0px #333333, 5px 4px 0px #4d4d4d, 4px 5px 0px #333333, 6px 5px 0px #4d4d4d, 5px 6px 0px #333333, 7px 6px 0px #4d4d4d, 6px 7px 0px #333333, 8px 7px 0px #4d4d4d, 7px 8px 0px #333333, 9px 8px 0px #4d4d4d, 8px 9px 0px #333333, 10px 9px 0px #4d4d4d, 9px 10px 0px #333333, 11px 10px 0px #4d4d4d, 10px 11px 0px #333333, 12px 11px 0px #4d4d4d, 11px 12px 0px #333333, 13px 12px 0px #4d4d4d, 12px 13px 0px #333333, 14px 13px 0px #4d4d4d, 13px 14px 0px #333333, 15px 14px 0px #4d4d4d, 14px 15px 0px #333333, 16px 15px 0px #4d4d4d; }
+  .content .radio {
+    margin-bottom: 800px; }
+    .content .radio p {
+      width: 70%;
+      margin-top: 40px;
+      margin-left: 15%;
+      font-size: 1.5em;
+      line-height: 1.5; }
+    .content .radio iframe {
+      width: 70%;
+      margin-left: 15%;
+      height: 100px !important;
+      border: none;
+      -webkit-filter: grayscale(1);
+      box-shadow: 1px 0px 0px #4d4d4d, 0px 1px 0px #333333, 2px 1px 0px #4d4d4d, 1px 2px 0px #333333, 3px 2px 0px #4d4d4d, 2px 3px 0px #333333, 4px 3px 0px #4d4d4d, 3px 4px 0px #333333, 5px 4px 0px #4d4d4d, 4px 5px 0px #333333, 6px 5px 0px #4d4d4d, 5px 6px 0px #333333, 7px 6px 0px #4d4d4d, 6px 7px 0px #333333, 8px 7px 0px #4d4d4d, 7px 8px 0px #333333, 9px 8px 0px #4d4d4d, 8px 9px 0px #333333, 10px 9px 0px #4d4d4d, 9px 10px 0px #333333, 11px 10px 0px #4d4d4d, 10px 11px 0px #333333, 12px 11px 0px #4d4d4d, 11px 12px 0px #333333, 13px 12px 0px #4d4d4d, 12px 13px 0px #333333, 14px 13px 0px #4d4d4d, 13px 14px 0px #333333, 15px 14px 0px #4d4d4d, 14px 15px 0px #333333, 16px 15px 0px #4d4d4d; }

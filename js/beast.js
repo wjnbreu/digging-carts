@@ -45,9 +45,10 @@
                     onReady: c
                 },
                 playerVars: {
-                    modestbranding: true,
-                    controls: 0,
-                    showinfo: 0
+                    modestbranding: 1,
+                    controls: 1,
+                    showinfo: 0,
+                    hd: 1
                 }
             });
         };
@@ -98,13 +99,10 @@
                     }, 500);
                 }
             });
-            $("a.scroll").bind("click", function(e) {
+            return $("a.scroll").bind("click", function(e) {
                 var t;
                 t = $(this);
                 return m(e, t);
-            });
-            return $(document).bind("scroll", function(e) {
-                return console.log($("#rapper").offset().top);
             });
         };
         d = function() {
