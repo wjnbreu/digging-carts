@@ -1,0 +1,90 @@
+{
+	
+	"videos": {
+		"1":{
+			"id": "FuLTIi7CyOk",
+			"order": 1,
+			"title": "Ep. 1: Good dogs vs Bad Dawgs",
+			"body": "Coming to Asia for the first time in its 16-year history, the Academy sets out to explore the rich musical and artistic legacy of Tokyo, and shine a light on it for the world to see. The program reflects a deep reverence for the trailblazers of Japanese culture past, present, and future – including a public, large-scale sculptural light installation by renowned sound artist Ryoji Ikeda, an improv-themed show led by EYヨ of seminal noise rock group Boredoms and pioneering avant-gardist Otomo Yoshihide, a video series celebrating the unsung heroes of video game music, a multi-booth live stream from famed karaoke hotspot Karaokekan Shinjuku, public lectures with Otomo and multimedia artist Daito Manabe, collaborations with local festivals and club nights, and much more."
+		},
+		"2":{
+			"id": "yKHznwVTxYg",
+			"order": 2,
+			"title": "Ep. 2: What in your chow?",
+			"body": "Fuelling the exchange between local and international creatives, Red Bull Music Academy is set to invite a hand-picked selection of musical luminaries and Academy friends to perform across the Tokyo metropolis. Alongside Academy participants like Mumdance, Xosar, Zebra Katz and WIFE, the five-week event program will also feature Hessle Audio co-founder Ben UFO, South East London sound system boss Jah Shaka, BBC Radio 1 host Benji B, digital experimentalist Holly Herndon, New Zealand’s prime soulful dub export Fat Freddy’s Drop, Hemlock Recordings honcho Untold, among many others."
+		},
+		"3":{
+			"id": "ANpMApPnWCM",
+			"order": 3,
+			"title": "Ep. 3: Start then paws",
+			"body": "What follows is a comprehensive guide to the events we have planned in Tokyo in October and November of 2014. Tickets will go on sale August 23rd. Sign up to our newsletter at the bottom of the page and we'll alert you when new tickets become available."
+		},
+		"4":{
+			"id": "W9BTe6oZtzQ",
+			"order": 4,
+			"title": "Ep. 4: Through The Woof",
+			"body": "Red Bull Music Academy cuts the red ribbon and celebrates its arrival in Tokyo with a night travelling deep into the outer spheres of soulful house music. Originator Kerri Chandler has been ahead of the pack for more than two decades, and with Daikanyama institution Air supplying the proverbial basement and a red light or two, you know the one thing that won’t be missing is vibes."
+		},
+		"5":{
+			"id": "-RuRkIy5yD8",
+			"order": 5,
+			"title": "Ep. 5: Instinct",
+			"body": "Get low, low, low beneath the city streets at HARLEM, Shibuya’s long-time hip hop hub, with super-producer Just Blaze on the ones and twos. Just Blaze started out as a DJ in Paterson, New Jersey, before going on to become a producer with one of the most envied discographies in the business. Also performing will be Brooklyn’s Zebra Katz, the multimedia performance artist turned rapper and producer."
+		},
+		"6":{
+			"id": "e7zDZKYywWo",
+			"order": 6,
+			"title": "Ep. 6: Sniffin' The Paint",
+			"body": "Dorian Concept has made a name for himself at forward-thinking beat bonanzas around the globe, bringing his exemplary production skills and exuberant improvisational flair. The overwhelming electronic chord changes of this Red Bull Music Academy alumnus doff a cap to hip hop and jazz, experimental electronica and classic virtuosity alike. Come see him colour outside of the lines with the Japanese debut of his live show at WWW, the cinema-turned-club with a Funktion One system."
+		}
+	},
+	
+
+	"composers":{
+		"1": {
+			"name": "Akio Dobashi",
+			"bio": "Night Slugs has grown into one of the most exciting dance labels operating today. Founded by Bok Bok and L-Vis 1990 in 2010, it’s become a locus for pushy, inventive music, equally concerned with sonic experiments and brutally effective floor-fillers. Canny selectors and producers both, Bok Bok and key player Girl Unit have burned up the underground over the past half-decade, leaving a trail of heavy tunes and sweaty dance floors in their wake. We caught up with them before a late June gig in Toronto to discuss future directions, formal experiments, and timeless pop.",
+			"image": "akio-dobashi.jpg"
+		},
+		"2": {
+			"name": "Hidenori Maezawa",
+			"bio": "Night Slugs has grown into one of the most exciting dance labels operating today. Founded by Bok Bok and L-Vis 1990 in 2010, it’s become a locus for pushy, inventive music, equally concerned with sonic experiments and brutally effective floor-fillers. Canny selectors and producers both, Bok Bok and key player Girl Unit have burned up the underground over the past half-decade, leaving a trail of heavy tunes and sweaty dance floors in their wake. We caught up with them before a late June gig in Toronto to discuss future directions, formal experiments, and timeless pop.",
+			"image": "hidenori-maezawa.jpg"
+		},
+		"3": {
+			"name": "Hirokazu Tanaka",
+			"bio": "Night Slugs has grown into one of the most exciting dance labels operating today. Founded by Bok Bok and L-Vis 1990 in 2010, it’s become a locus for pushy, inventive music, equally concerned with sonic experiments and brutally effective floor-fillers. Canny selectors and producers both, Bok Bok and key player Girl Unit have burned up the underground over the past half-decade, leaving a trail of heavy tunes and sweaty dance floors in their wake. We caught up with them before a late June gig in Toronto to discuss future directions, formal experiments, and timeless pop.",
+			"image": "hirokazu-tanaka.jpg"
+		},
+		"4": {
+			"name": "Hiroshi Kawaguchi & Takenobu Mitsuyoshi",
+			"bio": "Night Slugs has grown into one of the most exciting dance labels operating today. Founded by Bok Bok and L-Vis 1990 in 2010, it’s become a locus for pushy, inventive music, equally concerned with sonic experiments and brutally effective floor-fillers. Canny selectors and producers both, Bok Bok and key player Girl Unit have burned up the underground over the past half-decade, leaving a trail of heavy tunes and sweaty dance floors in their wake. We caught up with them before a late June gig in Toronto to discuss future directions, formal experiments, and timeless pop.",
+			"image": "hiroshi-kawaguchi-takenobu-mitsuyoshi.jpg"
+		},
+		"5":{
+			"name": "Yoko Shimomura",
+			"bio": "Night Slugs has grown into one of the most exciting dance labels operating today. Founded by Bok Bok and L-Vis 1990 in 2010, it’s become a locus for pushy, inventive music, equally concerned with sonic experiments and brutally effective floor-fillers. Canny selectors and producers both, Bok Bok and key player Girl Unit have burned up the underground over the past half-decade, leaving a trail of heavy tunes and sweaty dance floors in their wake. We caught up with them before a late June gig in Toronto to discuss future directions, formal experiments, and timeless pop.",
+			"image": "yoko-shimomura.jpg"
+		},
+		"6":{
+			"name": "Hitoshi Sakimoto",
+			"bio": "Night Slugs has grown into one of the most exciting dance labels operating today. Founded by Bok Bok and L-Vis 1990 in 2010, it’s become a locus for pushy, inventive music, equally concerned with sonic experiments and brutally effective floor-fillers. Canny selectors and producers both, Bok Bok and key player Girl Unit have burned up the underground over the past half-decade, leaving a trail of heavy tunes and sweaty dance floors in their wake. We caught up with them before a late June gig in Toronto to discuss future directions, formal experiments, and timeless pop.",
+			"image": "hitoshi-sakimoto.jpg"
+		},
+		"7":{
+			"name": "Masashi Kageyama",
+			"bio": "Night Slugs has grown into one of the most exciting dance labels operating today. Founded by Bok Bok and L-Vis 1990 in 2010, it’s become a locus for pushy, inventive music, equally concerned with sonic experiments and brutally effective floor-fillers. Canny selectors and producers both, Bok Bok and key player Girl Unit have burned up the underground over the past half-decade, leaving a trail of heavy tunes and sweaty dance floors in their wake. We caught up with them before a late June gig in Toronto to discuss future directions, formal experiments, and timeless pop.",
+			"image": "masashi-kageyama.jpg"
+		},
+		"8":{
+			"name": "Michiru Yamane",
+			"bio": "Night Slugs has grown into one of the most exciting dance labels operating today. Founded by Bok Bok and L-Vis 1990 in 2010, it’s become a locus for pushy, inventive music, equally concerned with sonic experiments and brutally effective floor-fillers. Canny selectors and producers both, Bok Bok and key player Girl Unit have burned up the underground over the past half-decade, leaving a trail of heavy tunes and sweaty dance floors in their wake. We caught up with them before a late June gig in Toronto to discuss future directions, formal experiments, and timeless pop.",
+			"image": "michiru-yamane.jpg"
+		},
+		"9":{
+			"name": "Nobuo Uematsu",
+			"bio": "Night Slugs has grown into one of the most exciting dance labels operating today. Founded by Bok Bok and L-Vis 1990 in 2010, it’s become a locus for pushy, inventive music, equally concerned with sonic experiments and brutally effective floor-fillers. Canny selectors and producers both, Bok Bok and key player Girl Unit have burned up the underground over the past half-decade, leaving a trail of heavy tunes and sweaty dance floors in their wake. We caught up with them before a late June gig in Toronto to discuss future directions, formal experiments, and timeless pop.",
+			"image": "nobuo-uematsu.jpg"
+		}
+	}
+}
