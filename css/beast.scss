@@ -153,31 +153,58 @@ hr{
 	background-color: $teal;
 }
 
+	.score{
+		right: 20px;
+		z-index: 99;
+		position: fixed;
+		right: 0;
+		width: 100%;
+		height: 50px;
+		h2{
+			font-family: brokeren;
+			color: yellow;
+			text-align: right;
+			margin-right: 50px;
+			font-size: 1.5em;
+		}
+	}
 
-.wrapper{
-	position: fixed;
-	top: 0;
-	left: 0;
-	width: 100%;
-	height: 100%;
-	overflow: hidden;
-	background: blue;
-	background: url(../img/tile1.gif) repeat top left;
-	cursor: url(../img/cursor.png), auto;
+
+// .wrapper{
+// 	position: fixed;
+// 	top: 0;
+// 	left: 0;
+// 	width: 100%;
+// 	height: 100%;
+// 	overflow: hidden;
+// 	background: blue;
+// 	background: url(../img/tile1.gif) repeat top left;
+// 	cursor: url(../img/cursor.png), auto;
+
 	.content{
 		position: relative;
-		top: 0;
-		left: 0;
 		width: 100%;
 		height: 100%;
 		overflow: auto;
+		top: 0;
+		left: 0;
+
+		background: url(../img/tile.png) repeat top left;
+		background-color: blue;
 		z-index: 9;
+		#rapper{
+			position: fixed;
+			top: 0;
+			left: 0;
+			width: 100%;
+			height: 1px;
+		}
 		.hero{
 			text-align: center;
 			margin: 0;
 			margin-top: 40px;
 			img{
-				width: 15%;
+				width: 25%;
 				margin: 0;
 				@include vendorize(transition, all .2s ease-in-out);
 				// -webkit-animation: 'spin' 1s infinite alternate;
@@ -270,4 +297,4 @@ hr{
 			}
 		}
 	}
-}
+// }

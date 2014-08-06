@@ -1,34 +1,35 @@
 (function() {
     $(function() {
-        var e, t, n, r, o, i, a, s, u, c, l, d, f;
-        r = {};
+        var e, t, n, r, o, i, a, s, c, u, l, d, p, f, m;
+        o = {};
         u = {};
-        i = new Howl({
+        t = {};
+        a = new Howl({
             urls: [ "sound/CLICK.mp3", "sound/CLICK.ogg" ],
             volume: .5
         });
-        n = new Howl({
+        r = new Howl({
             urls: [ "sound/EXIT.mp3", "sound/EXIT.ogg" ],
             volume: .7
         });
-        o = function() {
+        i = function() {
             return $.ajax("data/data.json", {
                 type: "GET",
                 error: function(e, t, n) {
                     return console.log("AJAX Error: " + t);
                 },
                 success: function(e, t, n) {
-                    r = e;
-                    return a();
+                    o = e;
+                    return s();
                 }
             });
         };
-        a = function() {
-            d();
-            l();
+        s = function() {
+            f();
+            p();
             return e();
         };
-        d = function() {
+        f = function() {
             var e, t;
             t = document.createElement("script");
             t.src = "https://www.youtube.com/iframe_api";
@@ -41,7 +42,7 @@
                 width: "640",
                 videoId: "FuLTIi7CyOk",
                 events: {
-                    onReady: s
+                    onReady: c
                 },
                 playerVars: {
                     modestbranding: true,
@@ -50,21 +51,20 @@
                 }
             });
         };
-        s = function(e) {
-            return c();
+        c = function(e) {
+            return l();
         };
-        l = function() {
-            console.log(r);
+        p = function() {
             $("nav").bind("mouseenter", function() {
                 return $(this).transition({
                     left: 0
                 }, 200);
             });
             $("a").bind("click", function() {
-                return n.play();
+                return r.play();
             });
             $("a").bind("mouseenter", function() {
-                return i.play();
+                return a.play();
             });
             $("nav").bind("mouseleave", function() {
                 return $(this).transition({
@@ -74,24 +74,50 @@
             $("a.episode").bind("click", function() {
                 var e;
                 e = $(this).data("order");
-                return t(e);
+                return n(e);
             });
             $(".composer-title").bind("click", function() {
                 return $(this).parent().find(".composer-nav").slideToggle();
             });
-            $("a.composer").bind("click", function() {
-                $(this).find(".composer-data").slideToggle();
-                return $(this).find("li").toggleClass("active");
+            $("a.composer").bind("click", function(e) {
+                var t;
+                e.preventDefault();
+                if ($(this).find("li").hasClass("active")) {
+                    $(".composer-data").slideUp();
+                    return $(this).find("li").removeClass("active");
+                } else {
+                    $(".composer-data").each(function() {
+                        $(this).slideUp();
+                        return $("a.composer").find("li").removeClass("active");
+                    });
+                    $(this).find(".composer-data").slideToggle();
+                    $(this).find("li").toggleClass("active");
+                    t = $("#composers").offset().top + 100;
+                    return $("body,html").animate({
+                        scrollTop: t
+                    }, 500);
+                }
             });
-            return $("a.scroll").bind("click", function(e) {
+            $("a.scroll").bind("click", function(e) {
                 var t;
                 t = $(this);
-                return f(e, t);
+                return m(e, t);
+            });
+            return $(document).bind("scroll", function(e) {
+                return console.log($("#rapper").offset().top);
             });
         };
-        t = function(e) {
+        d = function() {
+            var e, t;
+            t = Math.floor(Math.random() * -1e3);
+            e = $(".hero").position().top * t;
+            if (e >= $(".score").find("h2 span").text()) {
+                return $(".score").find("h2 span").empty().text(e);
+            }
+        };
+        n = function(e) {
             var t;
-            t = r.videos;
+            t = o.videos;
             t = t[e];
             u.cueVideoById(t.id);
             $(".videos h2").empty().text(t.title);
@@ -102,17 +128,17 @@
             var n;
             n = $(".composer-nav ul li");
             return n.each(function(e) {
-                var t, n, o, i, a;
+                var t, n, r, i, a;
                 a = $(this);
-                i = r.composers[e + 1];
-                o = i.name;
-                a.text(o);
+                i = o.composers[e + 1];
+                r = i.name;
+                a.text(r);
                 n = "img/" + i.image;
                 t = "<div class='composer-data'><img src='" + n + "'/><p>" + i.bio + "</p></div>";
                 return a.append(t);
             });
         };
-        c = function() {
+        l = function() {
             var e, t, n, r, o, i, a;
             a = $(window).width();
             i = a / 1.5;
@@ -127,22 +153,21 @@
                 marginLeft: t
             });
         };
-        f = function(e, t) {
+        m = function(e, t) {
             var n, r;
             e.preventDefault();
             r = t.attr("href");
-            n = $("" + r).offset().top;
-            console.log(n);
+            n = $("" + r).position().top;
             if (t.hasClass("active")) {} else {
                 $("nav ul a").each(function() {
                     return $(this).removeClass("active");
                 });
                 t.addClass("active");
-                return $(".content").animate({
+                return $("body,html").animate({
                     scrollTop: n
                 }, 300);
             }
         };
-        return o();
+        return i();
     });
 }).call(this);

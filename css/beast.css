@@ -97,98 +97,110 @@ hr {
   border: 0;
   background-color: #00ffef; }
 
-.wrapper {
+.score {
+  right: 20px;
+  z-index: 99;
   position: fixed;
-  top: 0;
-  left: 0;
+  right: 0;
+  width: 100%;
+  height: 50px; }
+  .score h2 {
+    font-family: brokeren;
+    color: yellow;
+    text-align: right;
+    margin-right: 50px;
+    font-size: 1.5em; }
+
+.content {
+  position: relative;
   width: 100%;
   height: 100%;
-  overflow: hidden;
-  background: blue;
-  background: url(../img/tile1.gif) repeat top left;
-  cursor: url(../img/cursor.png), auto; }
-  .wrapper .content {
-    position: relative;
+  overflow: auto;
+  top: 0;
+  left: 0;
+  background: url(../img/tile.png) repeat top left;
+  background-color: blue;
+  z-index: 9; }
+  .content #rapper {
+    position: fixed;
     top: 0;
     left: 0;
     width: 100%;
-    height: 100%;
-    overflow: auto;
-    z-index: 9; }
-    .wrapper .content .hero {
-      text-align: center;
+    height: 1px; }
+  .content .hero {
+    text-align: center;
+    margin: 0;
+    margin-top: 40px; }
+    .content .hero img {
+      width: 25%;
       margin: 0;
-      margin-top: 40px; }
-      .wrapper .content .hero img {
-        width: 15%;
+      -webkit-transition: all 0.2s ease-in-out;
+      -moz-transition: all 0.2s ease-in-out;
+      -ms-transition: all 0.2s ease-in-out;
+      -o-transition: all 0.2s ease-in-out;
+      transition: all 0.2s ease-in-out; }
+      .content .hero img:hover {
+        -webkit-animation: 'spin' 1s infinite alternate; }
+  .content h1 {
+    margin: 0;
+    font-family: brokeren; }
+  .content .videos {
+    margin-top: 20%; }
+    .content .videos .video-nav ul {
+      text-align: center; }
+      .content .videos .video-nav ul a li {
+        display: inline-block;
+        font-size: 2em;
+        padding: 5px; }
+        .content .videos .video-nav ul a li:hover {
+          background-color: #00ffef;
+          color: blue; }
+    .content .videos iframe {
+      margin-left: 20%;
+      margin-bottom: 20px;
+      box-shadow: 1px 0px 0px #4d4d4d, 0px 1px 0px #333333, 2px 1px 0px #4d4d4d, 1px 2px 0px #333333, 3px 2px 0px #4d4d4d, 2px 3px 0px #333333, 4px 3px 0px #4d4d4d, 3px 4px 0px #333333, 5px 4px 0px #4d4d4d, 4px 5px 0px #333333, 6px 5px 0px #4d4d4d, 5px 6px 0px #333333, 7px 6px 0px #4d4d4d, 6px 7px 0px #333333, 8px 7px 0px #4d4d4d, 7px 8px 0px #333333, 9px 8px 0px #4d4d4d, 8px 9px 0px #333333, 10px 9px 0px #4d4d4d, 9px 10px 0px #333333, 11px 10px 0px #4d4d4d, 10px 11px 0px #333333, 12px 11px 0px #4d4d4d, 11px 12px 0px #333333, 13px 12px 0px #4d4d4d, 12px 13px 0px #333333, 14px 13px 0px #4d4d4d, 13px 14px 0px #333333, 15px 14px 0px #4d4d4d, 14px 15px 0px #333333, 16px 15px 0px #4d4d4d; }
+    .content .videos p.body {
+      display: none;
+      width: 70%;
+      margin-left: 15%;
+      margin-right: 15%;
+      font-family: karla, 'Helvetica Neue', helvetica, sans-serif;
+      font-size: 1.5em;
+      line-height: 1.5; }
+  .content .composers {
+    margin-top: 100px;
+    margin-bottom: 200px; }
+    .content .composers .composer-nav {
+      text-align: center; }
+      .content .composers .composer-nav ul a li {
+        display: block;
+        text-transform: uppercase;
+        font-size: 3em;
         margin: 0;
+        padding: 0;
         -webkit-transition: all 0.2s ease-in-out;
         -moz-transition: all 0.2s ease-in-out;
         -ms-transition: all 0.2s ease-in-out;
         -o-transition: all 0.2s ease-in-out;
         transition: all 0.2s ease-in-out; }
-        .wrapper .content .hero img:hover {
-          -webkit-animation: 'spin' 1s infinite alternate; }
-    .wrapper .content h1 {
-      margin: 0;
-      font-family: brokeren; }
-    .wrapper .content .videos {
-      margin-top: 20%; }
-      .wrapper .content .videos .video-nav ul {
-        text-align: center; }
-        .wrapper .content .videos .video-nav ul a li {
-          display: inline-block;
-          font-size: 2em;
-          padding: 5px; }
-          .wrapper .content .videos .video-nav ul a li:hover {
-            background-color: #00ffef;
-            color: blue; }
-      .wrapper .content .videos iframe {
-        margin-left: 20%;
-        margin-bottom: 20px;
-        box-shadow: 1px 0px 0px #4d4d4d, 0px 1px 0px #333333, 2px 1px 0px #4d4d4d, 1px 2px 0px #333333, 3px 2px 0px #4d4d4d, 2px 3px 0px #333333, 4px 3px 0px #4d4d4d, 3px 4px 0px #333333, 5px 4px 0px #4d4d4d, 4px 5px 0px #333333, 6px 5px 0px #4d4d4d, 5px 6px 0px #333333, 7px 6px 0px #4d4d4d, 6px 7px 0px #333333, 8px 7px 0px #4d4d4d, 7px 8px 0px #333333, 9px 8px 0px #4d4d4d, 8px 9px 0px #333333, 10px 9px 0px #4d4d4d, 9px 10px 0px #333333, 11px 10px 0px #4d4d4d, 10px 11px 0px #333333, 12px 11px 0px #4d4d4d, 11px 12px 0px #333333, 13px 12px 0px #4d4d4d, 12px 13px 0px #333333, 14px 13px 0px #4d4d4d, 13px 14px 0px #333333, 15px 14px 0px #4d4d4d, 14px 15px 0px #333333, 16px 15px 0px #4d4d4d; }
-      .wrapper .content .videos p.body {
-        display: none;
-        width: 70%;
-        margin-left: 15%;
-        margin-right: 15%;
-        font-family: karla, 'Helvetica Neue', helvetica, sans-serif;
-        font-size: 1.5em;
-        line-height: 1.5; }
-    .wrapper .content .composers {
-      margin-top: 100px;
-      margin-bottom: 200px; }
-      .wrapper .content .composers .composer-nav {
-        text-align: center; }
-        .wrapper .content .composers .composer-nav ul a li {
-          display: block;
-          text-transform: uppercase;
-          font-size: 3em;
-          margin: 0;
-          padding: 0;
-          -webkit-transition: all 0.2s ease-in-out;
-          -moz-transition: all 0.2s ease-in-out;
-          -ms-transition: all 0.2s ease-in-out;
-          -o-transition: all 0.2s ease-in-out;
-          transition: all 0.2s ease-in-out; }
-          .wrapper .content .composers .composer-nav ul a li:hover {
-            color: blue;
-            background-color: #00ffef; }
-          .wrapper .content .composers .composer-nav ul a li.active {
-            color: blue;
-            background-color: #00ffef; }
-          .wrapper .content .composers .composer-nav ul a li .composer-data {
-            display: none;
-            background-color: #00ffef;
-            color: blue; }
-            .wrapper .content .composers .composer-nav ul a li .composer-data p {
-              width: 80%;
-              margin-left: 10%;
-              font-size: 0.5em;
-              line-height: 1.5;
-              padding-bottom: 40px;
-              font-family: karla, 'Helvetica Neue', helvetica, sans-serif; }
-            .wrapper .content .composers .composer-nav ul a li .composer-data img {
-              width: 50%;
-              height: auto;
-              box-shadow: 1px 0px 0px #4d4d4d, 0px 1px 0px #333333, 2px 1px 0px #4d4d4d, 1px 2px 0px #333333, 3px 2px 0px #4d4d4d, 2px 3px 0px #333333, 4px 3px 0px #4d4d4d, 3px 4px 0px #333333, 5px 4px 0px #4d4d4d, 4px 5px 0px #333333, 6px 5px 0px #4d4d4d, 5px 6px 0px #333333, 7px 6px 0px #4d4d4d, 6px 7px 0px #333333, 8px 7px 0px #4d4d4d, 7px 8px 0px #333333, 9px 8px 0px #4d4d4d, 8px 9px 0px #333333, 10px 9px 0px #4d4d4d, 9px 10px 0px #333333, 11px 10px 0px #4d4d4d, 10px 11px 0px #333333, 12px 11px 0px #4d4d4d, 11px 12px 0px #333333, 13px 12px 0px #4d4d4d, 12px 13px 0px #333333, 14px 13px 0px #4d4d4d, 13px 14px 0px #333333, 15px 14px 0px #4d4d4d, 14px 15px 0px #333333, 16px 15px 0px #4d4d4d; }
+        .content .composers .composer-nav ul a li:hover {
+          color: blue;
+          background-color: #00ffef; }
+        .content .composers .composer-nav ul a li.active {
+          color: blue;
+          background-color: #00ffef; }
+        .content .composers .composer-nav ul a li .composer-data {
+          display: none;
+          background-color: #00ffef;
+          color: blue; }
+          .content .composers .composer-nav ul a li .composer-data p {
+            width: 80%;
+            margin-left: 10%;
+            font-size: 0.5em;
+            line-height: 1.5;
+            padding-bottom: 40px;
+            font-family: karla, 'Helvetica Neue', helvetica, sans-serif; }
+          .content .composers .composer-nav ul a li .composer-data img {
+            width: 50%;
+            height: auto;
+            box-shadow: 1px 0px 0px #4d4d4d, 0px 1px 0px #333333, 2px 1px 0px #4d4d4d, 1px 2px 0px #333333, 3px 2px 0px #4d4d4d, 2px 3px 0px #333333, 4px 3px 0px #4d4d4d, 3px 4px 0px #333333, 5px 4px 0px #4d4d4d, 4px 5px 0px #333333, 6px 5px 0px #4d4d4d, 5px 6px 0px #333333, 7px 6px 0px #4d4d4d, 6px 7px 0px #333333, 8px 7px 0px #4d4d4d, 7px 8px 0px #333333, 9px 8px 0px #4d4d4d, 8px 9px 0px #333333, 10px 9px 0px #4d4d4d, 9px 10px 0px #333333, 11px 10px 0px #4d4d4d, 10px 11px 0px #333333, 12px 11px 0px #4d4d4d, 11px 12px 0px #333333, 13px 12px 0px #4d4d4d, 12px 13px 0px #333333, 14px 13px 0px #4d4d4d, 13px 14px 0px #333333, 15px 14px 0px #4d4d4d, 14px 15px 0px #333333, 16px 15px 0px #4d4d4d; }

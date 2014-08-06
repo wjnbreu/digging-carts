@@ -2,6 +2,7 @@ $ ->
 
 	dataObject = {}
 	player = {}
+	anchorElements = {}
 
 	hoverSound = new Howl {
 		urls: ['sound/CLICK.mp3', 'sound/CLICK.ogg']
@@ -12,6 +13,7 @@ $ ->
 		urls: ['sound/EXIT.mp3', 'sound/EXIT.ogg']
 		volume: 0.7
 	}
+
 
 	getData = ->
 		$.ajax 'data/data.json',
@@ -54,7 +56,6 @@ $ ->
 		
 
 	setupBinds = ->
-		console.log dataObject
 		$('nav').bind 'mouseenter', ->
 			$(@).transition
 				left: 0
@@ -78,16 +79,38 @@ $ ->
 		$('.composer-title').bind 'click', ->
 			$(@).parent().find('.composer-nav').slideToggle()
 		
-		$('a.composer').bind 'click', ->
-			$(@).find('.composer-data').slideToggle()
-			$(@).find('li').toggleClass 'active'
+		$('a.composer').bind 'click',(event) ->
+			event.preventDefault()
+			if $(@).find('li').hasClass "active"
+				$('.composer-data').slideUp()
+				$(@).find('li').removeClass "active"
+			else
+				$('.composer-data').each ->
+					$(@).slideUp()
+					$('a.composer').find('li').removeClass "active"
+				$(@).find('.composer-data').slideToggle()
+				$(@).find('li').toggleClass 'active'
+
+				location = $("#composers").offset().top + 100
+				$('body,html').animate
+					scrollTop: location
+				, 500
 
 		$('a.scroll').bind 'click', (event) ->
 			link = $(@)
 			smoothScroll(event, link)
+
+		$(document).bind 'scroll', (event) ->
+			console.log $('#rapper').offset().top
 			
 			
-		
+	sendScore = ->
+		scoreFactor = Math.floor(Math.random() * -1000)
+		points = ($('.hero').position().top * scoreFactor)
+		if points >= $('.score').find('h2 span').text()
+
+			$('.score').find('h2 span').empty().text(points)
+
 
 	changeVideo = (order) ->
 		video = dataObject.videos
@@ -131,9 +154,7 @@ $ ->
 		event.preventDefault()
 		scrollTo = link.attr 'href'
 
-		location = $("#{scrollTo}").offset().top
-
-		console.log location
+		location = $("#{scrollTo}").position().top
 
 		if link.hasClass "active"
 			return
@@ -142,9 +163,8 @@ $ ->
 				$(@).removeClass "active"
 
 			link.addClass "active"
-			
 
-			$('.content').animate
+			$('body,html').animate
 				scrollTop: location
 			, 300
 
