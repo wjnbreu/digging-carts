@@ -5,14 +5,21 @@
   <link rel="stylesheet" type="text/css" href="css/beast.css">
 </head>
 <body>
-  <nav></nav>
+  <nav>
+    <ul>
+      <li><a href="#videos" class="scroll"><img src="img/video.svg"></a></li>
+      <li><a href="#composers" class="scroll"><img src="img/man.svg"></a></li>
+      <li><a href="#" class="scroll"><img src="img/glasses.svg"></a></li>
+      <li><a href="#" class="scroll"><img src="img/radio.svg"></a></li>
+    </ul>
+  </nav>
   <div class="wrapper">
     <div class="content">
       <div class="hero"><img src="img/cart.png"></div>
       <div class="title">
         <h1>Diggin' In The Carts</h1>
       </div>
-      <div class="videos">
+      <div class="videos"><a id="videos"></a>
         <hr>
         <h2>Videos</h2>
         <div class="video-nav">
@@ -26,10 +33,29 @@
         </div>
         <div id="player"></div>
         <p class="body"></p>
+        <hr>
+      </div>
+      <div class="composers"><a id="composers"></a>
+        <div class="composer-wrapper"><a class="composer-title">
+            <h2>Featured Composers</h2></a>
+          <div class="composer-nav">
+            <ul><a data-order="1" class="composer">
+                <li></li></a><a data-order="2" class="composer">
+                <li></li></a><a data-order="3" class="composer">
+                <li></li></a><a data-order="4" class="composer">
+                <li></li></a><a data-order="5" class="composer">
+                <li></li></a><a data-order="6" class="composer">
+                <li></li></a><a data-order="7" class="composer">
+                <li></li></a><a data-order="8" class="composer">
+                <li></li></a><a data-order="8" class="composer">
+                <li></li></a></ul>
+          </div>
+        </div>
       </div>
     </div>
   </div>
   <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
+  <script type="text/javascript" src="js/howler.min.js"></script>
   <script type="text/javascript" src="js/transit.min.js"></script>
   <script src="js/beast.js" type="text/javascript"></script>
 </body>

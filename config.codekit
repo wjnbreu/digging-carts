@@ -43,6 +43,17 @@
 		"shouldRunBless": 0,
 		"useLibsass": 0
 		},
+	"\/img\/akio-dobashi.jpg": {
+		"fileType": 16384,
+		"ignore": 0,
+		"ignoreWasSetByUser": 0,
+		"initialSize": 154963,
+		"inputAbbreviatedPath": "\/img\/akio-dobashi.jpg",
+		"outputAbbreviatedPath": "\/img\/akio-dobashi.jpg",
+		"outputPathIsOutsideProject": 0,
+		"outputPathIsSetByUser": 0,
+		"processed": 0
+		},
 	"\/img\/cart.png": {
 		"fileType": 32768,
 		"ignore": 0,
@@ -61,6 +72,105 @@
 		"initialSize": 1539,
 		"inputAbbreviatedPath": "\/img\/cursor.png",
 		"outputAbbreviatedPath": "\/img\/cursor.png",
+		"outputPathIsOutsideProject": 0,
+		"outputPathIsSetByUser": 0,
+		"processed": 0
+		},
+	"\/img\/hidenori-maezawa.jpg": {
+		"fileType": 16384,
+		"ignore": 0,
+		"ignoreWasSetByUser": 0,
+		"initialSize": 125544,
+		"inputAbbreviatedPath": "\/img\/hidenori-maezawa.jpg",
+		"outputAbbreviatedPath": "\/img\/hidenori-maezawa.jpg",
+		"outputPathIsOutsideProject": 0,
+		"outputPathIsSetByUser": 0,
+		"processed": 0
+		},
+	"\/img\/hirokazu-tanaka.jpg": {
+		"fileType": 16384,
+		"ignore": 0,
+		"ignoreWasSetByUser": 0,
+		"initialSize": 191004,
+		"inputAbbreviatedPath": "\/img\/hirokazu-tanaka.jpg",
+		"outputAbbreviatedPath": "\/img\/hirokazu-tanaka.jpg",
+		"outputPathIsOutsideProject": 0,
+		"outputPathIsSetByUser": 0,
+		"processed": 0
+		},
+	"\/img\/hiroshi-kawaguchi-takenobu-mitsuyoshi.jpg": {
+		"fileType": 16384,
+		"ignore": 0,
+		"ignoreWasSetByUser": 0,
+		"initialSize": 164597,
+		"inputAbbreviatedPath": "\/img\/hiroshi-kawaguchi-takenobu-mitsuyoshi.jpg",
+		"outputAbbreviatedPath": "\/img\/hiroshi-kawaguchi-takenobu-mitsuyoshi.jpg",
+		"outputPathIsOutsideProject": 0,
+		"outputPathIsSetByUser": 0,
+		"processed": 0
+		},
+	"\/img\/hitoshi-sakimoto.jpg": {
+		"fileType": 16384,
+		"ignore": 0,
+		"ignoreWasSetByUser": 0,
+		"initialSize": 171125,
+		"inputAbbreviatedPath": "\/img\/hitoshi-sakimoto.jpg",
+		"outputAbbreviatedPath": "\/img\/hitoshi-sakimoto.jpg",
+		"outputPathIsOutsideProject": 0,
+		"outputPathIsSetByUser": 0,
+		"processed": 0
+		},
+	"\/img\/masashi-kageyama.jpg": {
+		"fileType": 16384,
+		"ignore": 0,
+		"ignoreWasSetByUser": 0,
+		"initialSize": 210359,
+		"inputAbbreviatedPath": "\/img\/masashi-kageyama.jpg",
+		"outputAbbreviatedPath": "\/img\/masashi-kageyama.jpg",
+		"outputPathIsOutsideProject": 0,
+		"outputPathIsSetByUser": 0,
+		"processed": 0
+		},
+	"\/img\/michiru-yamane.jpg": {
+		"fileType": 16384,
+		"ignore": 0,
+		"ignoreWasSetByUser": 0,
+		"initialSize": 283308,
+		"inputAbbreviatedPath": "\/img\/michiru-yamane.jpg",
+		"outputAbbreviatedPath": "\/img\/michiru-yamane.jpg",
+		"outputPathIsOutsideProject": 0,
+		"outputPathIsSetByUser": 0,
+		"processed": 0
+		},
+	"\/img\/nobuo-uematsu.jpg": {
+		"fileType": 16384,
+		"ignore": 0,
+		"ignoreWasSetByUser": 0,
+		"initialSize": 281211,
+		"inputAbbreviatedPath": "\/img\/nobuo-uematsu.jpg",
+		"outputAbbreviatedPath": "\/img\/nobuo-uematsu.jpg",
+		"outputPathIsOutsideProject": 0,
+		"outputPathIsSetByUser": 0,
+		"processed": 0
+		},
+	"\/img\/video.png": {
+		"fileType": 32768,
+		"ignore": 0,
+		"ignoreWasSetByUser": 0,
+		"initialSize": 4805,
+		"inputAbbreviatedPath": "\/img\/video.png",
+		"outputAbbreviatedPath": "\/img\/video.png",
+		"outputPathIsOutsideProject": 0,
+		"outputPathIsSetByUser": 0,
+		"processed": 0
+		},
+	"\/img\/yoko-shimomura.jpg": {
+		"fileType": 16384,
+		"ignore": 0,
+		"ignoreWasSetByUser": 0,
+		"initialSize": 177310,
+		"inputAbbreviatedPath": "\/img\/yoko-shimomura.jpg",
+		"outputAbbreviatedPath": "\/img\/yoko-shimomura.jpg",
 		"outputPathIsOutsideProject": 0,
 		"outputPathIsSetByUser": 0,
 		"processed": 0
@@ -95,6 +205,28 @@
 		"ignoreWasSetByUser": 0,
 		"inputAbbreviatedPath": "\/js\/beast.js",
 		"outputAbbreviatedPath": "\/js\/min\/beast-min.js",
+		"outputPathIsOutsideProject": 0,
+		"outputPathIsSetByUser": 0,
+		"outputStyle": 1,
+		"syntaxCheckerStyle": 1
+		},
+	"\/js\/howler.min.js": {
+		"fileType": 64,
+		"ignore": 0,
+		"ignoreWasSetByUser": 0,
+		"inputAbbreviatedPath": "\/js\/howler.min.js",
+		"outputAbbreviatedPath": "\/js\/min\/howler.min-min.js",
+		"outputPathIsOutsideProject": 0,
+		"outputPathIsSetByUser": 0,
+		"outputStyle": 1,
+		"syntaxCheckerStyle": 1
+		},
+	"\/js\/min\/howler.min-min.js": {
+		"fileType": 64,
+		"ignore": 1,
+		"ignoreWasSetByUser": 0,
+		"inputAbbreviatedPath": "\/js\/min\/howler.min-min.js",
+		"outputAbbreviatedPath": "\/js\/min\/min\/howler.min-min-min.js",
 		"outputPathIsOutsideProject": 0,
 		"outputPathIsSetByUser": 0,
 		"outputStyle": 1,

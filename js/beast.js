@@ -1,38 +1,47 @@
 (function() {
     $(function() {
-        var t, e, n, r, i, o, a, u, c;
-        e = {};
-        o = {};
-        n = function() {
+        var e, t, n, r, o, i, a, s, u, c, l, d, f;
+        r = {};
+        u = {};
+        i = new Howl({
+            urls: [ "sound/CLICK.mp3", "sound/CLICK.ogg" ],
+            volume: .5
+        });
+        n = new Howl({
+            urls: [ "sound/EXIT.mp3", "sound/EXIT.ogg" ],
+            volume: .7
+        });
+        o = function() {
             return $.ajax("data/data.json", {
                 type: "GET",
-                error: function(t, e, n) {
-                    return console.log("AJAX Error: " + e);
+                error: function(e, t, n) {
+                    return console.log("AJAX Error: " + t);
                 },
-                success: function(t, n, i) {
-                    e = t;
-                    return r();
+                success: function(e, t, n) {
+                    r = e;
+                    return a();
                 }
             });
         };
-        r = function() {
-            c();
-            return u();
+        a = function() {
+            d();
+            l();
+            return e();
         };
-        c = function() {
-            var t, e;
-            e = document.createElement("script");
-            e.src = "https://www.youtube.com/iframe_api";
-            t = document.getElementsByTagName("script")[0];
-            return t.parentNode.insertBefore(e, t);
+        d = function() {
+            var e, t;
+            t = document.createElement("script");
+            t.src = "https://www.youtube.com/iframe_api";
+            e = document.getElementsByTagName("script")[0];
+            return e.parentNode.insertBefore(t, e);
         };
         window.onYouTubeIframeAPIReady = function() {
-            return o = new YT.Player("player", {
+            return u = new YT.Player("player", {
                 height: "390",
                 width: "640",
                 videoId: "FuLTIi7CyOk",
                 events: {
-                    onReady: i
+                    onReady: s
                 },
                 playerVars: {
                     modestbranding: true,
@@ -41,50 +50,99 @@
                 }
             });
         };
-        i = function(t) {
-            return a();
+        s = function(e) {
+            return c();
         };
-        u = function() {
-            console.log(e);
+        l = function() {
+            console.log(r);
             $("nav").bind("mouseenter", function() {
                 return $(this).transition({
                     left: 0
                 }, 200);
+            });
+            $("a").bind("click", function() {
+                return n.play();
+            });
+            $("a").bind("mouseenter", function() {
+                return i.play();
             });
             $("nav").bind("mouseleave", function() {
                 return $(this).transition({
                     left: "-100px"
                 }, 200);
             });
-            return $("a.episode").bind("click", function() {
+            $("a.episode").bind("click", function() {
                 var e;
                 e = $(this).data("order");
                 return t(e);
             });
-        };
-        t = function(t) {
-            var n;
-            n = e.videos;
-            n = n[t];
-            o.cueVideoById(n.id);
-            $(".videos h2").empty().text(n.title);
-            return $(".videos p.body").empty().text(n.body);
-        };
-        a = function() {
-            var t, e, n, r, i, o, a;
-            a = $(window).width();
-            o = a / 1.5;
-            r = $("#player").attr("width");
-            n = $("#player").attr("height");
-            i = r / n;
-            $("#player").attr("width", o);
-            $("#player").attr("height", o / i);
-            t = a - o;
-            e = t / 2;
-            return $("#player").css({
-                marginLeft: e
+            $(".composer-title").bind("click", function() {
+                return $(this).parent().find(".composer-nav").slideToggle();
+            });
+            $("a.composer").bind("click", function() {
+                $(this).find(".composer-data").slideToggle();
+                return $(this).find("li").toggleClass("active");
+            });
+            return $("a.scroll").bind("click", function(e) {
+                var t;
+                t = $(this);
+                return f(e, t);
             });
         };
-        return n();
+        t = function(e) {
+            var t;
+            t = r.videos;
+            t = t[e];
+            u.cueVideoById(t.id);
+            $(".videos h2").empty().text(t.title);
+            $(".videos p.body").empty().text(t.body);
+            return $(".videos p.body").slideDown();
+        };
+        e = function(e, t) {
+            var n;
+            n = $(".composer-nav ul li");
+            return n.each(function(e) {
+                var t, n, o, i, a;
+                a = $(this);
+                i = r.composers[e + 1];
+                o = i.name;
+                a.text(o);
+                n = "img/" + i.image;
+                t = "<div class='composer-data'><img src='" + n + "'/><p>" + i.bio + "</p></div>";
+                return a.append(t);
+            });
+        };
+        c = function() {
+            var e, t, n, r, o, i, a;
+            a = $(window).width();
+            i = a / 1.5;
+            r = $("#player").attr("width");
+            n = $("#player").attr("height");
+            o = r / n;
+            $("#player").attr("width", i);
+            $("#player").attr("height", i / o);
+            e = a - i;
+            t = e / 2;
+            return $("#player").css({
+                marginLeft: t
+            });
+        };
+        f = function(e, t) {
+            var n, r;
+            e.preventDefault();
+            r = t.attr("href");
+            n = $("" + r).offset().top;
+            console.log(n);
+            if (t.hasClass("active")) {} else {
+                $("nav ul a").each(function() {
+                    return $(this).removeClass("active");
+                });
+                t.addClass("active");
+                return $(".content").animate({
+                    scrollTop: n
+                }, 300);
+            }
+        };
+        return o();
     });
 }).call(this);

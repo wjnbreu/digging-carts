@@ -3,6 +3,16 @@ $ ->
 	dataObject = {}
 	player = {}
 
+	hoverSound = new Howl {
+		urls: ['sound/CLICK.mp3', 'sound/CLICK.ogg']
+		volume: 0.5
+	}
+
+	clickSound = new Howl {
+		urls: ['sound/EXIT.mp3', 'sound/EXIT.ogg']
+		volume: 0.7
+	}
+
 	getData = ->
 		$.ajax 'data/data.json',
 			type: 'GET'
@@ -15,19 +25,8 @@ $ ->
 	init = ->
 		setupYouTube()
 		setupBinds()
+		addComposers()
 		
-
-	# addData = (item, data) ->
-	# 	#get video based on order
-	# 	video = data.videos[item]
-	# 	currentVideo = {
-	# 		body: video.body
-	# 		id: video.id
-	# 		order: video.order
-	# 		title: video.title
-	# 	}
-	# 	return currentVideo
-
 		
 	setupYouTube = ->
 		tag = document.createElement('script')
@@ -60,13 +59,35 @@ $ ->
 			$(@).transition
 				left: 0
 			, 200
+
+		$('a').bind 'click', ->
+			clickSound.play()
+		
+		$('a').bind 'mouseenter', ->
+			hoverSound.play()
+
 		$('nav').bind 'mouseleave', ->
 			$(@).transition
 				left: '-100px'
 			, 200
+		
 		$('a.episode').bind 'click', ->
 			order = $(@).data 'order'
 			changeVideo(order)
+
+		$('.composer-title').bind 'click', ->
+			$(@).parent().find('.composer-nav').slideToggle()
+		
+		$('a.composer').bind 'click', ->
+			$(@).find('.composer-data').slideToggle()
+			$(@).find('li').toggleClass 'active'
+
+		$('a.scroll').bind 'click', (event) ->
+			link = $(@)
+			smoothScroll(event, link)
+			
+			
+		
 
 	changeVideo = (order) ->
 		video = dataObject.videos
@@ -75,6 +96,21 @@ $ ->
 
 		$('.videos h2').empty().text video.title
 		$('.videos p.body').empty().text video.body
+		$('.videos p.body').slideDown()
+
+	addComposers = (order,item) ->
+		composers = $('.composer-nav ul li')
+		composers.each (index) ->
+			t = $(@)
+			#account for zero indexing
+			person = dataObject.composers[index + 1]
+			name = person.name
+			t.text(name)
+			img = "img/#{person.image}"
+			composerData = "<div class='composer-data'><img src='#{img}'/><p>#{person.bio}</p></div>"
+			t.append composerData
+
+
 
 	resizeVid = ->
 		winWidth = $(window).width()
@@ -90,6 +126,27 @@ $ ->
 		margin = diff / 2
 		$('#player').css
 			marginLeft: margin
+
+	smoothScroll = (event, link) ->
+		event.preventDefault()
+		scrollTo = link.attr 'href'
+
+		location = $("#{scrollTo}").offset().top
+
+		console.log location
+
+		if link.hasClass "active"
+			return
+		else
+			$('nav ul a').each ->
+				$(@).removeClass "active"
+
+			link.addClass "active"
+			
+
+			$('.content').animate
+				scrollTop: location
+			, 300
 
 
 	getData()

@@ -36,7 +36,7 @@
   font-style: normal; }
 body {
   margin: 0;
-  font-family: brokeren, clan, karla;
+  font-family: karla, 'Helvetica Neue', helvetica, sans-serif;
   color: #00ffef; }
 
 nav {
@@ -50,6 +50,32 @@ nav {
   overflow: hidden;
   cursor: url(../img/cursor.png), auto;
   border-right: 5px solid black; }
+  nav ul {
+    list-style-type: none;
+    margin-left: 0; }
+    nav ul li {
+      color: blue;
+      font-size: 2em;
+      margin-bottom: 50%;
+      margin-left: 0; }
+      nav ul li:first-child {
+        margin-top: 60%; }
+      nav ul li a {
+        cursor: url(../img/cursor.png), auto; }
+        nav ul li a img {
+          width: 50px;
+          height: auto;
+          -webkit-transition: all 0.2s ease-in-out;
+          -moz-transition: all 0.2s ease-in-out;
+          -ms-transition: all 0.2s ease-in-out;
+          -o-transition: all 0.2s ease-in-out;
+          transition: all 0.2s ease-in-out; }
+          nav ul li a img:active {
+            -webkit-transform: scale(1.5);
+            -moz-transform: scale(1.5);
+            -ms-transform: scale(1.5);
+            -o-transform: scale(1.5);
+            transform: scale(1.5); }
 
 h1, h2, h3, h4 {
   text-transform: uppercase;
@@ -61,7 +87,7 @@ h1 {
   line-height: 1; }
 
 h2 {
-  font-size: 5em;
+  font-size: 4em;
   margin: 0; }
 
 hr {
@@ -104,7 +130,8 @@ hr {
         .wrapper .content .hero img:hover {
           -webkit-animation: 'spin' 1s infinite alternate; }
     .wrapper .content h1 {
-      margin: 0; }
+      margin: 0;
+      font-family: brokeren; }
     .wrapper .content .videos {
       margin-top: 20%; }
       .wrapper .content .videos .video-nav ul {
@@ -118,11 +145,50 @@ hr {
             color: blue; }
       .wrapper .content .videos iframe {
         margin-left: 20%;
-        margin-bottom: 20px; }
+        margin-bottom: 20px;
+        box-shadow: 1px 0px 0px #4d4d4d, 0px 1px 0px #333333, 2px 1px 0px #4d4d4d, 1px 2px 0px #333333, 3px 2px 0px #4d4d4d, 2px 3px 0px #333333, 4px 3px 0px #4d4d4d, 3px 4px 0px #333333, 5px 4px 0px #4d4d4d, 4px 5px 0px #333333, 6px 5px 0px #4d4d4d, 5px 6px 0px #333333, 7px 6px 0px #4d4d4d, 6px 7px 0px #333333, 8px 7px 0px #4d4d4d, 7px 8px 0px #333333, 9px 8px 0px #4d4d4d, 8px 9px 0px #333333, 10px 9px 0px #4d4d4d, 9px 10px 0px #333333, 11px 10px 0px #4d4d4d, 10px 11px 0px #333333, 12px 11px 0px #4d4d4d, 11px 12px 0px #333333, 13px 12px 0px #4d4d4d, 12px 13px 0px #333333, 14px 13px 0px #4d4d4d, 13px 14px 0px #333333, 15px 14px 0px #4d4d4d, 14px 15px 0px #333333, 16px 15px 0px #4d4d4d; }
       .wrapper .content .videos p.body {
+        display: none;
         width: 70%;
         margin-left: 15%;
         margin-right: 15%;
         font-family: karla, 'Helvetica Neue', helvetica, sans-serif;
         font-size: 1.5em;
         line-height: 1.5; }
+    .wrapper .content .composers {
+      margin-top: 100px;
+      margin-bottom: 200px; }
+      .wrapper .content .composers .composer-nav {
+        text-align: center; }
+        .wrapper .content .composers .composer-nav ul a li {
+          display: block;
+          text-transform: uppercase;
+          font-size: 3em;
+          margin: 0;
+          padding: 0;
+          -webkit-transition: all 0.2s ease-in-out;
+          -moz-transition: all 0.2s ease-in-out;
+          -ms-transition: all 0.2s ease-in-out;
+          -o-transition: all 0.2s ease-in-out;
+          transition: all 0.2s ease-in-out; }
+          .wrapper .content .composers .composer-nav ul a li:hover {
+            color: blue;
+            background-color: #00ffef; }
+          .wrapper .content .composers .composer-nav ul a li.active {
+            color: blue;
+            background-color: #00ffef; }
+          .wrapper .content .composers .composer-nav ul a li .composer-data {
+            display: none;
+            background-color: #00ffef;
+            color: blue; }
+            .wrapper .content .composers .composer-nav ul a li .composer-data p {
+              width: 80%;
+              margin-left: 10%;
+              font-size: 0.5em;
+              line-height: 1.5;
+              padding-bottom: 40px;
+              font-family: karla, 'Helvetica Neue', helvetica, sans-serif; }
+            .wrapper .content .composers .composer-nav ul a li .composer-data img {
+              width: 50%;
+              height: auto;
+              box-shadow: 1px 0px 0px #4d4d4d, 0px 1px 0px #333333, 2px 1px 0px #4d4d4d, 1px 2px 0px #333333, 3px 2px 0px #4d4d4d, 2px 3px 0px #333333, 4px 3px 0px #4d4d4d, 3px 4px 0px #333333, 5px 4px 0px #4d4d4d, 4px 5px 0px #333333, 6px 5px 0px #4d4d4d, 5px 6px 0px #333333, 7px 6px 0px #4d4d4d, 6px 7px 0px #333333, 8px 7px 0px #4d4d4d, 7px 8px 0px #333333, 9px 8px 0px #4d4d4d, 8px 9px 0px #333333, 10px 9px 0px #4d4d4d, 9px 10px 0px #333333, 11px 10px 0px #4d4d4d, 10px 11px 0px #333333, 12px 11px 0px #4d4d4d, 11px 12px 0px #333333, 13px 12px 0px #4d4d4d, 12px 13px 0px #333333, 14px 13px 0px #4d4d4d, 13px 14px 0px #333333, 15px 14px 0px #4d4d4d, 14px 15px 0px #333333, 16px 15px 0px #4d4d4d; }

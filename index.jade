@@ -6,13 +6,30 @@ head
 
 body
 	nav
+		ul
+			li
+				a(href="#videos", class="scroll")
+					img(src="img/video.svg")
+			li
+				a(href="#composers", class="scroll")
+					img(src="img/man.svg")
+			li
+				a(href="#", class="scroll")
+					img(src="img/glasses.svg")
+			li
+				a(href="#", class="scroll")
+					img(src="img/radio.svg")
 	.wrapper
 		.content
+			
 			.hero
 				img(src="img/cart.png")
+			
 			.title
 				h1 Diggin' In The Carts
+			
 			.videos
+				a(id="videos")
 				hr
 				h2 Videos
 				.video-nav
@@ -31,8 +48,37 @@ body
 							li Episode 6
 				div(id="player")
 				p(class="body")
+				hr
+
+			.composers
+				a(id="composers")
+				.composer-wrapper
+					a(class="composer-title")
+						h2 Featured Composers
+					.composer-nav
+						ul
+							a(class="composer", data-order="1")
+								li
+							a(class="composer", data-order="2")
+								li
+							a(class="composer", data-order="3")
+								li
+							a(class="composer", data-order="4")
+								li
+							a(class="composer", data-order="5")
+								li
+							a(class="composer", data-order="6")
+								li
+							a(class="composer", data-order="7")
+								li
+							a(class="composer", data-order="8")
+								li
+							a(class="composer", data-order="8")
+								li
+
 
 
 	script(type="text/javascript", src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js")
+	script(type="text/javascript", src="js/howler.min.js")
 	script(type="text/javascript", src="js/transit.min.js")
 	script(src="js/beast.js", type="text/javascript")
