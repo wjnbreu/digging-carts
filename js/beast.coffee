@@ -48,7 +48,7 @@ $ ->
 				"onReady": onPlayerReady
 			}
 			playerVars: {
-				modestbranding: 1
+				modestbranding: true
 				controls: 1
 				showinfo: 0
 				hd: 1
@@ -86,13 +86,12 @@ $ ->
 
 		$('a.exit').bind 'click', (event) ->
 			event.preventDefault()
-			$('.composer-data').transition
-				left: '100%'
-			,200, ->
+			$('.composer-data').fadeOut(100, ->
 				location = $("#composers").position().top
 				$('body,html').animate
 					scrollTop: location
 				,50
+			)
 
 		$('a.scroll').bind 'click', (event) ->
 			link = $(@)
@@ -119,12 +118,11 @@ $ ->
 
 		scrollToPos = $(".artist #{scrollTo}").position().top
 
-		$('.composer-data').transition
-			left: 0
-		,300, ->
+		$('.composer-data').fadeIn(50, ->
 			$('.data-container').delay(100).animate
-				scrollTop: scrollWrap
+				scrollTop: scrollToPos
 			, 200
+		)
 
 
 

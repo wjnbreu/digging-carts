@@ -1,10 +1,10 @@
 (function() {
     $(function() {
-        var t, e, n, r, o, a, i, c, s, u, d, l, f, p, m, h, v, y, b;
+        var e, t, n, r, o, a, i, c, s, u, d, l, f, p, m, h, v, y, b;
         i = {};
         b = {};
         f = {};
-        e = {};
+        t = {};
         a = [ "#d6f7fe", "#312cc0", "#f9a205", "#d89e46", "#4c9d5b", "#fbdd1b", "#ff6dd1" ];
         u = new Howl({
             urls: [ "sound/CLICK.mp3", "sound/CLICK.ogg" ],
@@ -22,11 +22,11 @@
             return p();
         };
         v = function() {
-            var t, e;
-            e = document.createElement("script");
-            e.src = "https://www.youtube.com/iframe_api";
-            t = document.getElementsByTagName("script")[0];
-            return t.parentNode.insertBefore(e, t);
+            var e, t;
+            t = document.createElement("script");
+            t.src = "https://www.youtube.com/iframe_api";
+            e = document.getElementsByTagName("script")[0];
+            return e.parentNode.insertBefore(t, e);
         };
         window.onYouTubeIframeAPIReady = function() {
             return f = new YT.Player("player", {
@@ -37,14 +37,14 @@
                     onReady: l
                 },
                 playerVars: {
-                    modestbranding: 1,
+                    modestbranding: true,
                     controls: 1,
                     showinfo: 0,
                     hd: 1
                 }
             });
         };
-        l = function(t) {
+        l = function(e) {
             return m();
         };
         h = function() {
@@ -64,80 +64,76 @@
                     left: "-100px"
                 }, 200);
             });
-            $("a.composer").bind("click", function(t) {
-                t.preventDefault();
+            $("a.composer").bind("click", function(e) {
+                e.preventDefault();
                 return s($(this));
             });
-            $("a.exit").bind("click", function(t) {
-                t.preventDefault();
-                return $(".composer-data").transition({
-                    left: "100%"
-                }, 200, function() {
-                    var t;
-                    t = $("#composers").position().top;
+            $("a.exit").bind("click", function(e) {
+                e.preventDefault();
+                return $(".composer-data").fadeOut(100, function() {
+                    var e;
+                    e = $("#composers").position().top;
                     return $("body,html").animate({
-                        scrollTop: t
+                        scrollTop: e
                     }, 50);
                 });
             });
-            return $("a.scroll").bind("click", function(t) {
-                var e;
-                e = $(this);
-                return y(t, e);
+            return $("a.scroll").bind("click", function(e) {
+                var t;
+                t = $(this);
+                return y(e, t);
             });
         };
         o = function() {
-            var t;
-            t = Math.floor(Math.random() * a.length);
+            var e;
+            e = Math.floor(Math.random() * a.length);
             return $("h1.colors").css({
-                color: a[t]
+                color: a[e]
             });
         };
-        s = function(t) {
-            var e, n, r, o;
-            e = Math.floor(Math.random() * a.length);
+        s = function(e) {
+            var t, n, r, o;
+            t = Math.floor(Math.random() * a.length);
             $(".composer-data").css({
-                backgroundColor: a[e]
+                backgroundColor: a[t]
             });
-            n = t.attr("href");
+            n = e.attr("href");
             o = $(".composer-data").offset().top;
             r = $(".artist " + n).position().top;
-            return $(".composer-data").transition({
-                left: 0
-            }, 300, function() {
+            return $(".composer-data").fadeIn(50, function() {
                 return $(".data-container").delay(100).animate({
-                    scrollTop: o
+                    scrollTop: r
                 }, 200);
             });
         };
-        n = function(t, e) {
+        n = function(e, t) {
             var n;
-            console.log(e);
-            n = e[t - 1].fields;
+            console.log(t);
+            n = t[e - 1].fields;
             f.cueVideoById(n.ytVideoId);
             $(".videos h1").empty().text(n.episodeTitle);
             $(".videos p.body").empty().text(n.videoDescription);
             return $(".videos p.body").slideDown();
         };
-        t = function(t) {
-            var e;
+        e = function(e) {
+            var t;
             console.log(i);
-            e = $(".composer-nav ul li");
-            return e.each(function(t) {
-                var e, n, r, o, a, c;
+            t = $(".composer-nav ul li");
+            return t.each(function(e) {
+                var t, n, r, o, a, c;
                 c = $(this);
-                a = i[t].fields;
+                a = i[e].fields;
                 o = a.composerName;
                 c.text(o);
                 c.parent().attr("href", "#" + a.firstNameInLowercase);
                 r = a.image.sys.id;
                 n = a.image.fields.file.url;
-                e = "<a id='" + a.firstNameInLowercase + "'><img src='" + n + "'/><h1>" + a.composerName + "</h1><p>" + a.bio + "</p>";
-                return $(".composer-data .artist:nth-child(" + (t + 1) + ")").append(e);
+                t = "<a id='" + a.firstNameInLowercase + "'><img src='" + n + "'/><h1>" + a.composerName + "</h1><p>" + a.bio + "</p>";
+                return $(".composer-data .artist:nth-child(" + (e + 1) + ")").append(t);
             });
         };
         m = function() {
-            var t, e, n, r, o, a, i;
+            var e, t, n, r, o, a, i;
             i = $(window).width();
             a = i / 1.5;
             r = $("#player").attr("width");
@@ -145,22 +141,22 @@
             o = r / n;
             $("#player").attr("width", a);
             $("#player").attr("height", a / o);
-            t = i - a;
-            e = t / 2;
+            e = i - a;
+            t = e / 2;
             return $("#player").css({
-                marginLeft: e
+                marginLeft: t
             });
         };
-        y = function(t, e, n) {
+        y = function(e, t, n) {
             var r, o;
-            t.preventDefault();
-            o = e.attr("href");
+            e.preventDefault();
+            o = t.attr("href");
             r = $("" + o).position().top;
-            if (e.hasClass("active")) {} else {
+            if (t.hasClass("active")) {} else {
                 $("nav ul a").each(function() {
                     return $(this).removeClass("active");
                 });
-                e.addClass("active");
+                t.addClass("active");
                 return $("body,html").animate({
                     scrollTop: r
                 }, 300);
@@ -170,27 +166,27 @@
             return $(".spinner").fadeOut();
         };
         c = function() {
-            var e;
-            e = contentful.createClient({
+            var t;
+            t = contentful.createClient({
                 accessToken: "38b8dbaf503a350d5722578c6547caca484511f7c78717736ac8f576832be4b0",
                 space: "s9bc5ah7p1d5"
             });
-            e.entries({
+            t.entries({
                 content_type: "42CpXYSUms44OskS6wUU6I",
                 include: 1
-            }).done(function(e) {
-                i = e;
-                return t(i);
+            }).done(function(t) {
+                i = t;
+                return e(i);
             });
-            e.entries({
+            t.entries({
                 content_type: "36SuQSSPR6QmWOk8CseMC6",
                 include: 1
-            }).done(function(t) {
-                b = t;
+            }).done(function(e) {
+                b = e;
                 return $("a.episode").bind("click", function() {
-                    var t;
-                    t = $(this).data("order");
-                    return n(t, b);
+                    var e;
+                    e = $(this).data("order");
+                    return n(e, b);
                 });
             });
             return d();

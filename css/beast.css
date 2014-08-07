@@ -74,45 +74,6 @@ body {
       .spinner .load-text span.bounce2 {
         -webkit-animation: 'spinb' 1s infinite alternate; }
 
-nav {
-  display: none;
-  position: fixed;
-  z-index: 999;
-  top: 0;
-  left: -100px;
-  width: 150px;
-  height: 100%;
-  background: #00ffef;
-  overflow: hidden;
-  cursor: url(../img/cursor.png), auto;
-  border-right: 5px solid #030102; }
-  nav ul {
-    list-style-type: none;
-    margin-left: 0; }
-    nav ul li {
-      color: #030102;
-      font-size: 2em;
-      margin-bottom: 50%;
-      margin-left: 0; }
-      nav ul li:first-child {
-        margin-top: 60%; }
-      nav ul li a {
-        cursor: url(../img/cursor.png), auto; }
-        nav ul li a img {
-          width: 50px;
-          height: auto;
-          -webkit-transition: all 0.2s ease-in-out;
-          -moz-transition: all 0.2s ease-in-out;
-          -ms-transition: all 0.2s ease-in-out;
-          -o-transition: all 0.2s ease-in-out;
-          transition: all 0.2s ease-in-out; }
-          nav ul li a img:active {
-            -webkit-transform: scale(1.5);
-            -moz-transform: scale(1.5);
-            -ms-transform: scale(1.5);
-            -o-transform: scale(1.5);
-            transform: scale(1.5); }
-
 h1, h2, h3, h4 {
   text-transform: uppercase;
   text-align: center; }
@@ -127,9 +88,6 @@ h1 {
   text-stroke: 2px #fbdd1b;
   color: #d89e46;
   font-size: 4em; }
-
-iframe {
-  cursor: url(../img/cursor.png), auto !important; }
 
 h2 {
   font-size: 4em;
@@ -158,6 +116,7 @@ hr {
   .content .title {
     margin-top: 0;
     background: url(../img/background.png) no-repeat center center;
+    background-size: cover;
     top: 0; }
     .content .title h1 {
       margin-top: 40px; }
@@ -220,7 +179,8 @@ hr {
   .content .composer-data {
     position: fixed;
     top: 0;
-    left: 100%;
+    left: 0;
+    display: none;
     height: 100%;
     width: 100%;
     background-color: #312cc0;
@@ -270,7 +230,7 @@ hr {
         box-shadow: 1px 0px 0px #4d4d4d, 0px 1px 0px #333333, 2px 1px 0px #4d4d4d, 1px 2px 0px #333333, 3px 2px 0px #4d4d4d, 2px 3px 0px #333333, 4px 3px 0px #4d4d4d, 3px 4px 0px #333333, 5px 4px 0px #4d4d4d, 4px 5px 0px #333333, 6px 5px 0px #4d4d4d, 5px 6px 0px #333333, 7px 6px 0px #4d4d4d, 6px 7px 0px #333333, 8px 7px 0px #4d4d4d, 7px 8px 0px #333333, 9px 8px 0px #4d4d4d, 8px 9px 0px #333333, 10px 9px 0px #4d4d4d, 9px 10px 0px #333333, 11px 10px 0px #4d4d4d, 10px 11px 0px #333333, 12px 11px 0px #4d4d4d, 11px 12px 0px #333333, 13px 12px 0px #4d4d4d, 12px 13px 0px #333333, 14px 13px 0px #4d4d4d; }
   .content .radio {
     margin-top: 20%;
-    margin-bottom: 800px; }
+    margin-bottom: 20%; }
     .content .radio p {
       width: 70%;
       font-family: karla;
@@ -282,7 +242,7 @@ hr {
       width: 70%;
       margin-left: 15%;
       margin-bottom: 40px;
+      margin-top: 40px;
       height: 100px !important;
       border: none;
-      -webkit-filter: grayscale(1);
       box-shadow: 1px 0px 0px #4d4d4d, 0px 1px 0px #333333, 2px 1px 0px #4d4d4d, 1px 2px 0px #333333, 3px 2px 0px #4d4d4d, 2px 3px 0px #333333, 4px 3px 0px #4d4d4d, 3px 4px 0px #333333, 5px 4px 0px #4d4d4d, 4px 5px 0px #333333, 6px 5px 0px #4d4d4d, 5px 6px 0px #333333, 7px 6px 0px #4d4d4d, 6px 7px 0px #333333, 8px 7px 0px #4d4d4d, 7px 8px 0px #333333, 9px 8px 0px #4d4d4d, 8px 9px 0px #333333, 10px 9px 0px #4d4d4d, 9px 10px 0px #333333, 11px 10px 0px #4d4d4d, 10px 11px 0px #333333, 12px 11px 0px #4d4d4d, 11px 12px 0px #333333, 13px 12px 0px #4d4d4d, 12px 13px 0px #333333, 14px 13px 0px #4d4d4d, 13px 14px 0px #333333, 15px 14px 0px #4d4d4d, 14px 15px 0px #333333, 16px 15px 0px #4d4d4d, 15px 16px 0px #333333, 16px 16px 0px #4d4d4d; }
