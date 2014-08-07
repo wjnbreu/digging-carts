@@ -1,10 +1,10 @@
 (function() {
     $(function() {
-        var e, t, n, r, o, i, a, s, c, u, l, d, p, f, m;
-        o = {};
-        u = {};
-        t = {};
-        a = new Howl({
+        var t, e, n, r, o, i, a, s, c, u, d, l, f, p, h, m;
+        i = {};
+        d = {};
+        e = {};
+        s = new Howl({
             urls: [ "sound/CLICK.mp3", "sound/CLICK.ogg" ],
             volume: .5
         });
@@ -12,37 +12,47 @@
             urls: [ "sound/EXIT.mp3", "sound/EXIT.ogg" ],
             volume: .7
         });
-        i = function() {
+        a = function() {
             return $.ajax("data/data.json", {
                 type: "GET",
-                error: function(e, t, n) {
-                    return console.log("AJAX Error: " + t);
+                error: function(t, e, n) {
+                    return console.log("AJAX Error: " + e);
                 },
-                success: function(e, t, n) {
-                    o = e;
-                    return s();
+                success: function(t, e, n) {
+                    i = t;
+                    return c();
                 }
             });
         };
-        s = function() {
-            f();
+        c = function() {
+            h();
             p();
-            return e();
+            t();
+            $("h1.colors").fitText(.7);
+            return setInterval(o, 250);
         };
-        f = function() {
-            var e, t;
-            t = document.createElement("script");
-            t.src = "https://www.youtube.com/iframe_api";
-            e = document.getElementsByTagName("script")[0];
-            return e.parentNode.insertBefore(t, e);
+        o = function() {
+            var t, e;
+            t = [ "#d6f7fe", "#312cc0", "#f9a205", "#d89e46", "#4c9d5b", "#fbdd1b", "#ff6dd1" ];
+            e = Math.floor(Math.random() * t.length);
+            return $("h1.colors").css({
+                color: t[e]
+            });
+        };
+        h = function() {
+            var t, e;
+            e = document.createElement("script");
+            e.src = "https://www.youtube.com/iframe_api";
+            t = document.getElementsByTagName("script")[0];
+            return t.parentNode.insertBefore(e, t);
         };
         window.onYouTubeIframeAPIReady = function() {
-            return u = new YT.Player("player", {
+            return d = new YT.Player("player", {
                 height: "390",
                 width: "640",
                 videoId: "FuLTIi7CyOk",
                 events: {
-                    onReady: c
+                    onReady: u
                 },
                 playerVars: {
                     modestbranding: 1,
@@ -52,7 +62,7 @@
                 }
             });
         };
-        c = function(e) {
+        u = function(t) {
             return l();
         };
         p = function() {
@@ -65,7 +75,7 @@
                 return r.play();
             });
             $("a").bind("mouseenter", function() {
-                return a.play();
+                return s.play();
             });
             $("nav").bind("mouseleave", function() {
                 return $(this).transition({
@@ -73,71 +83,58 @@
                 }, 200);
             });
             $("a.episode").bind("click", function() {
-                var e;
-                e = $(this).data("order");
-                return n(e);
+                var t;
+                t = $(this).data("order");
+                return n(t);
             });
             $(".composer-title").bind("click", function() {
                 return $(this).parent().find(".composer-nav").slideToggle();
             });
-            $("a.composer").bind("click", function(e) {
-                var t;
-                e.preventDefault();
-                if ($(this).find("li").hasClass("active")) {
-                    $(".composer-data").slideUp();
-                    return $(this).find("li").removeClass("active");
-                } else {
-                    $(".composer-data").each(function() {
-                        $(this).slideUp();
-                        return $("a.composer").find("li").removeClass("active");
-                    });
-                    $(this).find(".composer-data").slideToggle();
-                    $(this).find("li").toggleClass("active");
-                    t = $("#composers").offset().top + 100;
-                    return $("body,html").animate({
-                        scrollTop: t
-                    }, 500);
-                }
+            $("a.composer").bind("click", function(t) {
+                t.preventDefault();
+                return $(".composer-data").transition({
+                    left: 0
+                }, 200);
             });
-            return $("a.scroll").bind("click", function(e) {
-                var t;
-                t = $(this);
-                return m(e, t);
+            return $("a.scroll").bind("click", function(t) {
+                var e;
+                e = $(this);
+                return m(t, e);
             });
         };
-        d = function() {
-            var e, t;
-            t = Math.floor(Math.random() * -1e3);
-            e = $(".hero").position().top * t;
-            if (e >= $(".score").find("h2 span").text()) {
-                return $(".score").find("h2 span").empty().text(e);
+        f = function() {
+            var t, e;
+            e = Math.floor(Math.random() * -1e3);
+            t = $(".hero").position().top * e;
+            if (t >= $(".score").find("h2 span").text()) {
+                return $(".score").find("h2 span").empty().text(t);
             }
         };
-        n = function(e) {
-            var t;
-            t = o.videos;
-            t = t[e];
-            u.cueVideoById(t.id);
-            $(".videos h2").empty().text(t.title);
-            $(".videos p.body").empty().text(t.body);
+        n = function(t) {
+            var e;
+            e = i.videos;
+            e = e[t];
+            d.cueVideoById(e.id);
+            $(".videos h1").empty().text(e.title);
+            $(".videos p.body").empty().text(e.body);
             return $(".videos p.body").slideDown();
         };
-        e = function(e, t) {
+        t = function(t, e) {
             var n;
             n = $(".composer-nav ul li");
-            return n.each(function(e) {
-                var t, n, r, i, a;
+            return n.each(function(t) {
+                var e, n, r, o, a;
                 a = $(this);
-                i = o.composers[e + 1];
-                r = i.name;
+                o = i.composers[t + 1];
+                r = o.name;
                 a.text(r);
-                n = "img/" + i.image;
-                t = "<div class='composer-data'><img src='" + n + "'/><p>" + i.bio + "</p></div>";
-                return a.append(t);
+                n = "img/" + o.image;
+                e = "<div class='composer-data'><img src='" + n + "'/><p>" + o.bio + "</p></div>";
+                return a.append(e);
             });
         };
         l = function() {
-            var e, t, n, r, o, i, a;
+            var t, e, n, r, o, i, a;
             a = $(window).width();
             i = a / 1.5;
             r = $("#player").attr("width");
@@ -145,27 +142,27 @@
             o = r / n;
             $("#player").attr("width", i);
             $("#player").attr("height", i / o);
-            e = a - i;
-            t = e / 2;
+            t = a - i;
+            e = t / 2;
             return $("#player").css({
-                marginLeft: t
+                marginLeft: e
             });
         };
-        m = function(e, t) {
+        m = function(t, e) {
             var n, r;
-            e.preventDefault();
-            r = t.attr("href");
+            t.preventDefault();
+            r = e.attr("href");
             n = $("" + r).position().top;
-            if (t.hasClass("active")) {} else {
+            if (e.hasClass("active")) {} else {
                 $("nav ul a").each(function() {
                     return $(this).removeClass("active");
                 });
-                t.addClass("active");
+                e.addClass("active");
                 return $("body,html").animate({
                     scrollTop: n
                 }, 300);
             }
         };
-        return i();
+        return a();
     });
 }).call(this);

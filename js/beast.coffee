@@ -49,6 +49,17 @@ $ ->
 		setupYouTube()
 		setupBinds()
 		addComposers()
+		$('h1.colors').fitText(0.7)
+		setInterval(colorCycle, 250)
+
+	colorCycle = ->
+		colors = ['#d6f7fe', '#312cc0', '#f9a205', '#d89e46', '#4c9d5b', '#fbdd1b', '#ff6dd1']
+		ranColor = Math.floor(Math.random() * colors.length)
+		$('h1.colors').css
+			color: colors[ranColor]
+
+
+
 		
 		
 	setupYouTube = ->
@@ -104,24 +115,28 @@ $ ->
 		
 		$('a.composer').bind 'click',(event) ->
 			event.preventDefault()
-			if $(@).find('li').hasClass "active"
-				$('.composer-data').slideUp()
-				$(@).find('li').removeClass "active"
-			else
-				$('.composer-data').each ->
-					$(@).slideUp()
-					$('a.composer').find('li').removeClass "active"
-				$(@).find('.composer-data').slideToggle()
-				$(@).find('li').toggleClass 'active'
+			$('.composer-data').transition
+				left: 0
+			,200
+			# if $(@).find('li').hasClass "active"
+			# 	$('.composer-data').slideUp()
+			# 	$(@).find('li').removeClass "active"
+			# else
+			# 	$('.composer-data').each ->
+			# 		$(@).slideUp()
+			# 		$('a.composer').find('li').removeClass "active"
+			# 	$(@).find('.composer-data').slideToggle()
+			# 	$(@).find('li').toggleClass 'active'
 
-				location = $("#composers").offset().top + 100
-				$('body,html').animate
-					scrollTop: location
-				, 500
+			# 	location = $("#composers").offset().top + 100
+			# 	$('body,html').animate
+			# 		scrollTop: location
+			# 	, 500
 
 		$('a.scroll').bind 'click', (event) ->
 			link = $(@)
 			smoothScroll(event, link)
+
 
 		# $(document).bind 'scroll', (event) ->
 		# 	console.log $('#rapper').offset().top
@@ -140,7 +155,7 @@ $ ->
 		video = video[order]
 		player.cueVideoById(video.id)
 
-		$('.videos h2').empty().text video.title
+		$('.videos h1').empty().text video.title
 		$('.videos p.body').empty().text video.body
 		$('.videos p.body').slideDown()
 
