@@ -44,47 +44,56 @@
 		"1": {
 			"name": "Akio Dobashi",
 			"bio": "Night Slugs has grown into one of the most exciting dance labels operating today. Founded by Bok Bok and L-Vis 1990 in 2010, it’s become a locus for pushy, inventive music, equally concerned with sonic experiments and brutally effective floor-fillers. Canny selectors and producers both, Bok Bok and key player Girl Unit have burned up the underground over the past half-decade, leaving a trail of heavy tunes and sweaty dance floors in their wake. We caught up with them before a late June gig in Toronto to discuss future directions, formal experiments, and timeless pop.",
-			"image": "akio-dobashi.jpg"
+			"image": "akio-dobashi.jpg",
+			"firstName": "akio"
 		},
 		"2": {
 			"name": "Hidenori Maezawa",
 			"bio": "Night Slugs has grown into one of the most exciting dance labels operating today. Founded by Bok Bok and L-Vis 1990 in 2010, it’s become a locus for pushy, inventive music, equally concerned with sonic experiments and brutally effective floor-fillers. Canny selectors and producers both, Bok Bok and key player Girl Unit have burned up the underground over the past half-decade, leaving a trail of heavy tunes and sweaty dance floors in their wake. We caught up with them before a late June gig in Toronto to discuss future directions, formal experiments, and timeless pop.",
-			"image": "hidenori-maezawa.jpg"
+			"image": "hidenori-maezawa.jpg",
+			"firstName": "hidenori"
 		},
 		"3": {
 			"name": "Hirokazu Tanaka",
 			"bio": "Night Slugs has grown into one of the most exciting dance labels operating today. Founded by Bok Bok and L-Vis 1990 in 2010, it’s become a locus for pushy, inventive music, equally concerned with sonic experiments and brutally effective floor-fillers. Canny selectors and producers both, Bok Bok and key player Girl Unit have burned up the underground over the past half-decade, leaving a trail of heavy tunes and sweaty dance floors in their wake. We caught up with them before a late June gig in Toronto to discuss future directions, formal experiments, and timeless pop.",
-			"image": "hirokazu-tanaka.jpg"
+			"image": "hirokazu-tanaka.jpg",
+			"firstName": "hirokazu"
 		},
 		"4": {
 			"name": "Hiroshi Kawaguchi & Takenobu Mitsuyoshi",
 			"bio": "Night Slugs has grown into one of the most exciting dance labels operating today. Founded by Bok Bok and L-Vis 1990 in 2010, it’s become a locus for pushy, inventive music, equally concerned with sonic experiments and brutally effective floor-fillers. Canny selectors and producers both, Bok Bok and key player Girl Unit have burned up the underground over the past half-decade, leaving a trail of heavy tunes and sweaty dance floors in their wake. We caught up with them before a late June gig in Toronto to discuss future directions, formal experiments, and timeless pop.",
-			"image": "hiroshi-kawaguchi-takenobu-mitsuyoshi.jpg"
+			"image": "hiroshi-kawaguchi-takenobu-mitsuyoshi.jpg",
+			"firstName": "hiroshi"
 		},
 		"5":{
 			"name": "Yoko Shimomura",
 			"bio": "Night Slugs has grown into one of the most exciting dance labels operating today. Founded by Bok Bok and L-Vis 1990 in 2010, it’s become a locus for pushy, inventive music, equally concerned with sonic experiments and brutally effective floor-fillers. Canny selectors and producers both, Bok Bok and key player Girl Unit have burned up the underground over the past half-decade, leaving a trail of heavy tunes and sweaty dance floors in their wake. We caught up with them before a late June gig in Toronto to discuss future directions, formal experiments, and timeless pop.",
-			"image": "yoko-shimomura.jpg"
+			"image": "yoko-shimomura.jpg",
+			"firstName": "yoko"
 		},
 		"6":{
 			"name": "Hitoshi Sakimoto",
 			"bio": "Night Slugs has grown into one of the most exciting dance labels operating today. Founded by Bok Bok and L-Vis 1990 in 2010, it’s become a locus for pushy, inventive music, equally concerned with sonic experiments and brutally effective floor-fillers. Canny selectors and producers both, Bok Bok and key player Girl Unit have burned up the underground over the past half-decade, leaving a trail of heavy tunes and sweaty dance floors in their wake. We caught up with them before a late June gig in Toronto to discuss future directions, formal experiments, and timeless pop.",
-			"image": "hitoshi-sakimoto.jpg"
+			"image": "hitoshi-sakimoto.jpg",
+			"firstName": "hitoshi"
 		},
 		"7":{
 			"name": "Masashi Kageyama",
 			"bio": "Night Slugs has grown into one of the most exciting dance labels operating today. Founded by Bok Bok and L-Vis 1990 in 2010, it’s become a locus for pushy, inventive music, equally concerned with sonic experiments and brutally effective floor-fillers. Canny selectors and producers both, Bok Bok and key player Girl Unit have burned up the underground over the past half-decade, leaving a trail of heavy tunes and sweaty dance floors in their wake. We caught up with them before a late June gig in Toronto to discuss future directions, formal experiments, and timeless pop.",
-			"image": "masashi-kageyama.jpg"
+			"image": "masashi-kageyama.jpg",
+			"firstName": "masashi"
 		},
 		"8":{
 			"name": "Michiru Yamane",
 			"bio": "Night Slugs has grown into one of the most exciting dance labels operating today. Founded by Bok Bok and L-Vis 1990 in 2010, it’s become a locus for pushy, inventive music, equally concerned with sonic experiments and brutally effective floor-fillers. Canny selectors and producers both, Bok Bok and key player Girl Unit have burned up the underground over the past half-decade, leaving a trail of heavy tunes and sweaty dance floors in their wake. We caught up with them before a late June gig in Toronto to discuss future directions, formal experiments, and timeless pop.",
-			"image": "michiru-yamane.jpg"
+			"image": "michiru-yamane.jpg",
+			"firstName": "michiru"
 		},
 		"9":{
 			"name": "Nobuo Uematsu",
 			"bio": "Night Slugs has grown into one of the most exciting dance labels operating today. Founded by Bok Bok and L-Vis 1990 in 2010, it’s become a locus for pushy, inventive music, equally concerned with sonic experiments and brutally effective floor-fillers. Canny selectors and producers both, Bok Bok and key player Girl Unit have burned up the underground over the past half-decade, leaving a trail of heavy tunes and sweaty dance floors in their wake. We caught up with them before a late June gig in Toronto to discuss future directions, formal experiments, and timeless pop.",
-			"image": "nobuo-uematsu.jpg"
+			"image": "nobuo-uematsu.jpg",
+			"firstName": "nobuo"
 		}
 	}
 }

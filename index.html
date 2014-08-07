@@ -4,7 +4,10 @@
   <meta charset="UTF-8">
   <link rel="stylesheet" type="text/css" href="css/beast.css">
 </head>
-<body><a id="home"></a>
+<body>
+  <div class="spinner">
+    <div class="load-text"><span class="bounce">L </span><span class="bounce2">O </span><span class="bounce">A </span><span class="bounce2">D </span><span class="bounce">I </span><span class="bounce2">N </span><span class="bounce">G </span></div>
+  </div><a id="home"></a>
   <nav>
     <ul>
       <li><a href="#home" class="scroll"><img src="img/up.svg"></a></li>
@@ -39,21 +42,31 @@
       <div class="composer-wrapper"><a class="composer-title">
           <h1>Featured Composers</h1></a>
         <div class="composer-nav">
-          <ul><a data-order="1" class="composer">
-              <li></li></a><a data-order="2" class="composer">
-              <li></li></a><a data-order="3" class="composer">
-              <li></li></a><a data-order="4" class="composer">
-              <li></li></a><a data-order="5" class="composer">
-              <li></li></a><a data-order="6" class="composer">
-              <li></li></a><a data-order="7" class="composer">
-              <li></li></a><a data-order="8" class="composer">
-              <li></li></a><a data-order="8" class="composer">
+          <ul><a data-order="1" class="composer scroll">
+              <li></li></a><a data-order="2" class="composer scroll">
+              <li></li></a><a data-order="3" class="composer scroll">
+              <li></li></a><a data-order="4" class="composer scroll">
+              <li></li></a><a data-order="5" class="composer scroll">
+              <li></li></a><a data-order="6" class="composer scroll">
+              <li></li></a><a data-order="7" class="composer scroll">
+              <li></li></a><a data-order="8" class="composer scroll">
+              <li></li></a><a data-order="8" class="composer scroll">
               <li></li></a></ul>
         </div>
       </div>
     </div>
-    <div class="composer-data"><a class="exit"></a><img src="img/akio-dobashi.jpg">
-      <h1>Akio Dobashi	</h1>
+    <div class="composer-data"><a class="exit"></a>
+      <div class="data-container">
+        <div data-order="1" class="artist"></div>
+        <div data-order="2" class="artist"></div>
+        <div data-order="3" class="artist"></div>
+        <div data-order="4" class="artist"></div>
+        <div data-order="5" class="artist"></div>
+        <div data-order="6" class="artist"></div>
+        <div data-order="7" class="artist"></div>
+        <div data-order="8" class="artist"></div>
+        <div data-order="9" class="artist"></div>
+      </div>
     </div><a id="radio"></a>
     <div class="radio">
       <h1>The Soundtrack</h1>
@@ -66,9 +79,9 @@
   </div>
   <footer></footer>
   <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
+  <script type="text/javascript" src="js/contentful.min.js"></script>
   <script type="text/javascript" src="//ajax.googleapis.com/ajax/libs/jqueryui/1.11.0/jquery-ui.min.js"></script>
   <script type="text/javascript" src="js/fittext.js"></script>
-  <script type="text/javascript" src="js/min/waypoints.min-min.js"></script>
   <script type="text/javascript" src="js/howler.min.js"></script>
   <script type="text/javascript" src="js/transit.min.js"></script>
   <script src="js/beast.js" type="text/javascript"></script>

@@ -1,6 +1,8 @@
 $ ->
 
-	dataObject = {}
+	composerObject = {}
+	videoObject = {}
+	
 	player = {}
 	anchorElements = {}
 
@@ -14,43 +16,41 @@ $ ->
 		volume: 0.7
 	}
 
-	# $('.hero').waypoint ->
-	# 	$('.content').stop().animate
-	# 		backgroundColor: 'black'
-	# 	,500
 
-	# $('#videos').waypoint ->
-	# 	$('.content').stop().animate
-	# 		backgroundColor: 'black'
-	# 	,500
-
-	# # $('#composers').waypoint ->
-	# # 	$('.content').stop().animate
-	# # 		backgroundColor: 'blue'
-	# # 	,500
-
-	# $('#radio').waypoint ->
-	# 	$('.content').stop().animate
-	# 		backgroundColor: 'black'
-	# 	, 500
-	# 	$('.content').css
-	# 		background: 'url(img/falling-sky.gif) repeat top left'
 
 	getData = ->
-		$.ajax 'data/data.json',
-			type: 'GET'
-			error: (jqXHR, textStatus, errorThrown) ->
-				console.log "AJAX Error: #{textStatus}"
-			success: (data, textStatus, jqXHR) ->
-				dataObject = data
-				init()
-	
+		client = contentful.createClient
+			accessToken: '38b8dbaf503a350d5722578c6547caca484511f7c78717736ac8f576832be4b0'
+			space: 's9bc5ah7p1d5'
+
+
+		client.entries({'content_type': '42CpXYSUms44OskS6wUU6I', 'include': 1}).done (data) ->
+			composerObject = data
+			addComposers(composerObject)
+		
+		client.entries({'content_type':'36SuQSSPR6QmWOk8CseMC6', 'include': 1}).done (data) ->
+			videoObject = data
+			
+			$('a.episode').bind 'click', ->
+				order = $(@).data 'order'
+				changeVideo(order, videoObject)
+		
+		init()
+
+
+	saveComposer = (composer) ->
+		composerObject = composer
+
 	init = ->
 		setupYouTube()
 		setupBinds()
-		addComposers()
 		$('h1.colors').fitText(0.7)
 		setInterval(colorCycle, 250)
+		removeSpinner()
+		
+
+	
+
 
 	colorCycle = ->
 		colors = ['#d6f7fe', '#312cc0', '#f9a205', '#d89e46', '#4c9d5b', '#fbdd1b', '#ff6dd1']
@@ -59,7 +59,8 @@ $ ->
 			color: colors[ranColor]
 
 
-
+	removeSpinner = ->
+		$('.spinner').fadeOut()
 		
 		
 	setupYouTube = ->
@@ -73,7 +74,7 @@ $ ->
 		player = new YT.Player 'player',
 			height: '390'
 			width: '640'
-			videoId: 'FuLTIi7CyOk'
+			videoId: 'yqXayqIrAYE'
 			events: {
 				"onReady": onPlayerReady
 			}
@@ -106,41 +107,35 @@ $ ->
 				left: '-100px'
 			, 200
 		
-		$('a.episode').bind 'click', ->
-			order = $(@).data 'order'
-			changeVideo(order)
+		
 
-		$('.composer-title').bind 'click', ->
-			$(@).parent().find('.composer-nav').slideToggle()
 		
 		$('a.composer').bind 'click',(event) ->
 			event.preventDefault()
+			scrollTo = $(@).attr('href')
+
+			scrollWrap = $('.composer-data').offset().top
+
+			scrollToPos = $(".artist #{scrollTo}").position().top
+
 			$('.composer-data').transition
 				left: 0
-			,200
-			# if $(@).find('li').hasClass "active"
-			# 	$('.composer-data').slideUp()
-			# 	$(@).find('li').removeClass "active"
-			# else
-			# 	$('.composer-data').each ->
-			# 		$(@).slideUp()
-			# 		$('a.composer').find('li').removeClass "active"
-			# 	$(@).find('.composer-data').slideToggle()
-			# 	$(@).find('li').toggleClass 'active'
+			,300, ->
+				$('.data-container').animate
+					scrollTop: scrollToPos
+				, 200
 
-			# 	location = $("#composers").offset().top + 100
-			# 	$('body,html').animate
-			# 		scrollTop: location
-			# 	, 500
+		$('a.exit').bind 'click', (event) ->
+			event.preventDefault()
+			$('.composer-data').transition
+				left: '100%'
+			,200
+
 
 		$('a.scroll').bind 'click', (event) ->
 			link = $(@)
 			smoothScroll(event, link)
 
-
-		# $(document).bind 'scroll', (event) ->
-		# 	console.log $('#rapper').offset().top
-			
 			
 	sendScore = ->
 		scoreFactor = Math.floor(Math.random() * -1000)
@@ -150,26 +145,28 @@ $ ->
 			$('.score').find('h2 span').empty().text(points)
 
 
-	changeVideo = (order) ->
-		video = dataObject.videos
-		video = video[order]
-		player.cueVideoById(video.id)
-
-		$('.videos h1').empty().text video.title
-		$('.videos p.body').empty().text video.body
+	changeVideo = (order, videoObject) ->
+		console.log videoObject
+		video = videoObject[order - 1].fields
+		player.cueVideoById(video.ytVideoId)
+		$('.videos h1').empty().text video.ytVideoId
+		$('.videos p.body').empty().text video.videoDescription
 		$('.videos p.body').slideDown()
 
-	addComposers = (order,item) ->
+	addComposers = (object) ->
+		console.log composerObject
 		composers = $('.composer-nav ul li')
 		composers.each (index) ->
 			t = $(@)
 			#account for zero indexing
-			person = dataObject.composers[index + 1]
-			name = person.name
+			person = composerObject[index].fields
+			name = person.composerName
 			t.text(name)
-			img = "img/#{person.image}"
-			composerData = "<div class='composer-data'><img src='#{img}'/><p>#{person.bio}</p></div>"
-			t.append composerData
+			t.parent().attr("href", "##{person.firstNameInLowercase}")
+			imgId = person.image.sys.id
+			img = "//images.contentful.com/s9bc5ah7p1d5/54GVDo7wj6ciwaeCMGoGKI/e8137bb3537549c4114200d062dc921e/akio-dobashi.jpg"
+			composerData = "<a id='#{person.firstNameInLowercase}'><img src='#{img}'/><h1>#{person.composerName}</h1><p>#{person.bio}</p>"
+			$(".composer-data .artist:nth-child(#{index+1})").append composerData
 
 
 

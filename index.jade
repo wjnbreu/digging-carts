@@ -5,6 +5,16 @@ head
 	link(rel="stylesheet", type="text/css", href="css/beast.css")
 
 body
+	.spinner
+		.load-text
+			span(class="bounce") L 
+			span(class="bounce2") O 
+			span(class="bounce") A 
+			span(class="bounce2") D 
+			span(class="bounce") I 
+			span(class="bounce2") N 
+			span(class="bounce") G 
+	
 	a(id="home")
 	nav
 		ul
@@ -57,29 +67,37 @@ body
 					h1 Featured Composers
 				.composer-nav
 					ul
-						a(class="composer", data-order="1")
+						a(class="composer scroll", data-order="1")
 							li
-						a(class="composer", data-order="2")
+						a(class="composer scroll", data-order="2")
 							li
-						a(class="composer", data-order="3")
+						a(class="composer scroll", data-order="3")
 							li
-						a(class="composer", data-order="4")
+						a(class="composer scroll", data-order="4")
 							li
-						a(class="composer", data-order="5")
+						a(class="composer scroll", data-order="5")
 							li
-						a(class="composer", data-order="6")
+						a(class="composer scroll", data-order="6")
 							li
-						a(class="composer", data-order="7")
+						a(class="composer scroll", data-order="7")
 							li
-						a(class="composer", data-order="8")
+						a(class="composer scroll", data-order="8")
 							li
-						a(class="composer", data-order="8")
+						a(class="composer scroll", data-order="8")
 							li
 
 		.composer-data
 			a.exit
-			img(src="img/akio-dobashi.jpg")
-			h1 Akio Dobashi	
+			.data-container
+				.artist(data-order="1")
+				.artist(data-order="2")
+				.artist(data-order="3")
+				.artist(data-order="4")
+				.artist(data-order="5")
+				.artist(data-order="6")
+				.artist(data-order="7")
+				.artist(data-order="8")
+				.artist(data-order="9")
 
 		a(id="radio")
 		.radio
@@ -92,9 +110,9 @@ body
 	footer
 
 	script(type="text/javascript", src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js")
+	script(type="text/javascript", src="js/contentful.min.js")
 	script(type="text/javascript", src="//ajax.googleapis.com/ajax/libs/jqueryui/1.11.0/jquery-ui.min.js")
 	script(type="text/javascript", src="js/fittext.js")
-	script(type="text/javascript", src="js/min/waypoints.min-min.js")
 	script(type="text/javascript", src="js/howler.min.js")
 	script(type="text/javascript", src="js/transit.min.js")
 	script(src="js/beast.js", type="text/javascript")
