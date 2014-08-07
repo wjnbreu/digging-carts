@@ -1,198 +1,201 @@
-(function() {
-    $(function() {
-        var t, e, n, r, o, i, a, c, s, u, d, f, l, p, h, m, v, y, b;
-        i = {};
-        b = {};
-        d = {};
-        e = {};
-        c = new Howl({
-            urls: [ "sound/CLICK.mp3", "sound/CLICK.ogg" ],
-            volume: .5
-        });
-        r = new Howl({
-            urls: [ "sound/EXIT.mp3", "sound/EXIT.ogg" ],
-            volume: .7
-        });
-        a = function() {
-            var e;
-            e = contentful.createClient({
-                accessToken: "38b8dbaf503a350d5722578c6547caca484511f7c78717736ac8f576832be4b0",
-                space: "s9bc5ah7p1d5"
-            });
-            e.entries({
-                content_type: "42CpXYSUms44OskS6wUU6I",
-                include: 1
-            }).done(function(e) {
-                i = e;
-                return t(i);
-            });
-            e.entries({
-                content_type: "36SuQSSPR6QmWOk8CseMC6",
-                include: 1
-            }).done(function(t) {
-                b = t;
-                return $("a.episode").bind("click", function() {
-                    var t;
-                    t = $(this).data("order");
-                    return n(t, b);
-                });
-            });
-            return s();
-        };
-        p = function(t) {
-            return i = t;
-        };
-        s = function() {
-            v();
-            m();
-            $("h1.colors").fitText(.7);
-            setInterval(o, 250);
-            return f();
-        };
-        o = function() {
-            var t, e;
-            t = [ "#d6f7fe", "#312cc0", "#f9a205", "#d89e46", "#4c9d5b", "#fbdd1b", "#ff6dd1" ];
-            e = Math.floor(Math.random() * t.length);
-            return $("h1.colors").css({
-                color: t[e]
-            });
-        };
-        f = function() {
-            return $(".spinner").fadeOut();
-        };
-        v = function() {
-            var t, e;
-            e = document.createElement("script");
-            e.src = "https://www.youtube.com/iframe_api";
-            t = document.getElementsByTagName("script")[0];
-            return t.parentNode.insertBefore(e, t);
-        };
-        window.onYouTubeIframeAPIReady = function() {
-            return d = new YT.Player("player", {
-                height: "390",
-                width: "640",
-                videoId: "yqXayqIrAYE",
-                events: {
-                    onReady: u
-                },
-                playerVars: {
-                    modestbranding: 1,
-                    controls: 1,
-                    showinfo: 0,
-                    hd: 1
-                }
-            });
-        };
-        u = function(t) {
-            return l();
-        };
-        m = function() {
-            $("nav").bind("mouseenter", function() {
-                return $(this).transition({
-                    left: 0
-                }, 200);
-            });
-            $("a").bind("click", function() {
-                return r.play();
-            });
-            $("a").bind("mouseenter", function() {
-                return c.play();
-            });
-            $("nav").bind("mouseleave", function() {
-                return $(this).transition({
-                    left: "-100px"
-                }, 200);
-            });
-            $("a.composer").bind("click", function(t) {
-                var e, n, r;
-                t.preventDefault();
-                e = $(this).attr("href");
-                r = $(".composer-data").offset().top;
-                n = $(".artist " + e).position().top;
-                return $(".composer-data").transition({
-                    left: 0
-                }, 300, function() {
-                    return $(".data-container").animate({
-                        scrollTop: n
-                    }, 200);
-                });
-            });
-            $("a.exit").bind("click", function(t) {
-                t.preventDefault();
-                return $(".composer-data").transition({
-                    left: "100%"
-                }, 200);
-            });
-            return $("a.scroll").bind("click", function(t) {
-                var e;
-                e = $(this);
-                return y(t, e);
-            });
-        };
-        h = function() {
-            var t, e;
-            e = Math.floor(Math.random() * -1e3);
-            t = $(".hero").position().top * e;
-            if (t >= $(".score").find("h2 span").text()) {
-                return $(".score").find("h2 span").empty().text(t);
-            }
-        };
-        n = function(t, e) {
-            var n;
-            console.log(e);
-            n = e[t - 1].fields;
-            d.cueVideoById(n.ytVideoId);
-            $(".videos h1").empty().text(n.ytVideoId);
-            $(".videos p.body").empty().text(n.videoDescription);
-            return $(".videos p.body").slideDown();
-        };
-        t = function(t) {
-            var e;
-            console.log(i);
-            e = $(".composer-nav ul li");
-            return e.each(function(t) {
-                var e, n, r, o, a, c;
-                c = $(this);
-                a = i[t].fields;
-                o = a.composerName;
-                c.text(o);
-                c.parent().attr("href", "#" + a.firstNameInLowercase);
-                r = a.image.sys.id;
-                n = "//images.contentful.com/s9bc5ah7p1d5/54GVDo7wj6ciwaeCMGoGKI/e8137bb3537549c4114200d062dc921e/akio-dobashi.jpg";
-                e = "<a id='" + a.firstNameInLowercase + "'><img src='" + n + "'/><h1>" + a.composerName + "</h1><p>" + a.bio + "</p>";
-                return $(".composer-data .artist:nth-child(" + (t + 1) + ")").append(e);
-            });
-        };
-        l = function() {
-            var t, e, n, r, o, i, a;
-            a = $(window).width();
-            i = a / 1.5;
-            r = $("#player").attr("width");
-            n = $("#player").attr("height");
-            o = r / n;
-            $("#player").attr("width", i);
-            $("#player").attr("height", i / o);
-            t = a - i;
-            e = t / 2;
-            return $("#player").css({
-                marginLeft: e
-            });
-        };
-        y = function(t, e) {
-            var n, r;
-            t.preventDefault();
-            r = e.attr("href");
-            n = $("" + r).position().top;
-            if (e.hasClass("active")) {} else {
-                $("nav ul a").each(function() {
-                    return $(this).removeClass("active");
-                });
-                e.addClass("active");
-                return $("body,html").animate({
-                    scrollTop: n
-                }, 300);
-            }
-        };
-        return a();
+// Generated by CoffeeScript 1.7.1
+$(function() {
+  var addComposers, anchorElements, changeVideo, clickSound, colorCycle, colors, composerObject, getData, goToComposer, hoverSound, init, onPlayerReady, player, removeSpinner, resizeVid, setupBinds, setupYouTube, smoothScroll, videoObject;
+  composerObject = {};
+  videoObject = {};
+  player = {};
+  anchorElements = {};
+  colors = ['#d6f7fe', '#312cc0', '#f9a205', '#d89e46', '#4c9d5b', '#fbdd1b', '#ff6dd1'];
+  hoverSound = new Howl({
+    urls: ['sound/CLICK.mp3', 'sound/CLICK.ogg'],
+    volume: 0.5
+  });
+  clickSound = new Howl({
+    urls: ['sound/EXIT.mp3', 'sound/EXIT.ogg'],
+    volume: 0.7
+  });
+  init = function() {
+    setupYouTube();
+    setupBinds();
+    $('h1.colors').fitText(0.7);
+    setInterval(colorCycle, 250);
+    return removeSpinner();
+  };
+  setupYouTube = function() {
+    var firstScriptTag, tag;
+    tag = document.createElement('script');
+    tag.src = "https://www.youtube.com/iframe_api";
+    firstScriptTag = document.getElementsByTagName('script')[0];
+    return firstScriptTag.parentNode.insertBefore(tag, firstScriptTag);
+  };
+  window.onYouTubeIframeAPIReady = function() {
+    return player = new YT.Player('player', {
+      height: '390',
+      width: '640',
+      videoId: 'yqXayqIrAYE',
+      events: {
+        "onReady": onPlayerReady
+      },
+      playerVars: {
+        modestbranding: 1,
+        controls: 1,
+        showinfo: 0,
+        hd: 1
+      }
     });
-}).call(this);
+  };
+  onPlayerReady = function(event) {
+    return resizeVid();
+  };
+  setupBinds = function() {
+    $('nav').bind('mouseenter', function() {
+      return $(this).transition({
+        left: 0
+      }, 200);
+    });
+    $('a').bind('click', function() {
+      return clickSound.play();
+    });
+    $('a').bind('mouseenter', function() {
+      return hoverSound.play();
+    });
+    $('nav').bind('mouseleave', function() {
+      return $(this).transition({
+        left: '-100px'
+      }, 200);
+    });
+    $('a.composer').bind('click', function(event) {
+      event.preventDefault();
+      return goToComposer($(this));
+    });
+    $('a.exit').bind('click', function(event) {
+      event.preventDefault();
+      return $('.composer-data').transition({
+        left: '100%'
+      }, 200, function() {
+        var location;
+        location = $("#composers").position().top;
+        return $('body,html').animate({
+          scrollTop: location
+        }, 50);
+      });
+    });
+    return $('a.scroll').bind('click', function(event) {
+      var link;
+      link = $(this);
+      return smoothScroll(event, link);
+    });
+  };
+  colorCycle = function() {
+    var ranColor;
+    ranColor = Math.floor(Math.random() * colors.length);
+    return $('h1.colors').css({
+      color: colors[ranColor]
+    });
+  };
+  goToComposer = function(item) {
+    var ranColor, scrollTo, scrollToPos, scrollWrap;
+    ranColor = Math.floor(Math.random() * colors.length);
+    $('.composer-data').css({
+      backgroundColor: colors[ranColor]
+    });
+    scrollTo = item.attr('href');
+    scrollWrap = $('.composer-data').offset().top;
+    scrollToPos = $(".artist " + scrollTo).position().top;
+    return $('.composer-data').transition({
+      left: 0
+    }, 300, function() {
+      return $('.data-container').delay(100).animate({
+        scrollTop: scrollWrap
+      }, 200);
+    });
+  };
+  changeVideo = function(order, videoObject) {
+    var video;
+    console.log(videoObject);
+    video = videoObject[order - 1].fields;
+    player.cueVideoById(video.ytVideoId);
+    $('.videos h1').empty().text(video.episodeTitle);
+    $('.videos p.body').empty().text(video.videoDescription);
+    return $('.videos p.body').slideDown();
+  };
+  addComposers = function(object) {
+    var composers;
+    console.log(composerObject);
+    composers = $('.composer-nav ul li');
+    return composers.each(function(index) {
+      var composerData, img, imgId, name, person, t;
+      t = $(this);
+      person = composerObject[index].fields;
+      name = person.composerName;
+      t.text(name);
+      t.parent().attr("href", "#" + person.firstNameInLowercase);
+      imgId = person.image.sys.id;
+      img = person.image.fields.file.url;
+      composerData = "<a id='" + person.firstNameInLowercase + "'><img src='" + img + "'/><h1>" + person.composerName + "</h1><p>" + person.bio + "</p>";
+      return $(".composer-data .artist:nth-child(" + (index + 1) + ")").append(composerData);
+    });
+  };
+  resizeVid = function() {
+    var diff, margin, ogHeight, ogWidth, ratio, vidWidth, winWidth;
+    winWidth = $(window).width();
+    vidWidth = winWidth / 1.5;
+    ogWidth = $('#player').attr('width');
+    ogHeight = $('#player').attr('height');
+    ratio = ogWidth / ogHeight;
+    $('#player').attr('width', vidWidth);
+    $('#player').attr('height', vidWidth / ratio);
+    diff = winWidth - vidWidth;
+    margin = diff / 2;
+    return $('#player').css({
+      marginLeft: margin
+    });
+  };
+  smoothScroll = function(event, link, attr) {
+    var location, scrollTo;
+    event.preventDefault();
+    scrollTo = link.attr('href');
+    location = $("" + scrollTo).position().top;
+    if (link.hasClass("active")) {
+
+    } else {
+      $('nav ul a').each(function() {
+        return $(this).removeClass("active");
+      });
+      link.addClass("active");
+      return $('body,html').animate({
+        scrollTop: location
+      }, 300);
+    }
+  };
+  removeSpinner = function() {
+    return $('.spinner').fadeOut();
+  };
+  getData = function() {
+    var client;
+    client = contentful.createClient({
+      accessToken: '38b8dbaf503a350d5722578c6547caca484511f7c78717736ac8f576832be4b0',
+      space: 's9bc5ah7p1d5'
+    });
+    client.entries({
+      'content_type': '42CpXYSUms44OskS6wUU6I',
+      'include': 1
+    }).done(function(data) {
+      composerObject = data;
+      return addComposers(composerObject);
+    });
+    client.entries({
+      'content_type': '36SuQSSPR6QmWOk8CseMC6',
+      'include': 1
+    }).done(function(data) {
+      videoObject = data;
+      return $('a.episode').bind('click', function() {
+        var order;
+        order = $(this).data('order');
+        return changeVideo(order, videoObject);
+      });
+    });
+    return init();
+  };
+  return getData();
+});

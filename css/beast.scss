@@ -183,7 +183,7 @@ h1,h2,h3,h4{
 h1{
 	letter-spacing: -2px;
 	line-height: 1;
-	-webkit-text-stroke: 2px $yellow;
+	@include vendorize(text-stroke, 2px $yellow);
 	color: $darkorange;
 	font-size: 4em;
 }
@@ -221,6 +221,7 @@ hr{
 	z-index: 9;
 	.title{
 		margin-top: 0;
+		background: url(../img/background.png) no-repeat center center;
 		top: 0;
 		h1{
 			margin-top: 40px;
@@ -251,21 +252,21 @@ hr{
 			box-shadow: 5px 5px 5px #030102;
 			border: 0;
 			border: none;
-			box-shadow: 1px 0px 0px $yellow, 0px 1px 0px $darkorange, 2px 1px 0px $yellow, 1px 2px 0px $darkorange, 3px 2px 0px $yellow, 2px 3px 0px $darkorange, 4px 3px 0px $yellow, 3px 4px 0px $darkorange, 5px 4px 0px $yellow, 4px 5px 0px $darkorange, 6px 5px 0px $yellow, 5px 6px 0px $darkorange, 7px 6px 0px $yellow, 6px 7px 0px $darkorange, 8px 7px 0px $yellow, 7px 8px 0px $darkorange, 9px 8px 0px $yellow, 8px 9px 0px $darkorange, 10px 9px 0px $yellow, 9px 10px 0px $darkorange, 11px 10px 0px $yellow, 10px 11px 0px $darkorange, 12px 11px 0px $yellow, 11px 12px 0px $darkorange, 13px 12px 0px $yellow, 12px 13px 0px $darkorange, 14px 13px 0px $yellow, 13px 14px 0px $darkorange, 15px 14px 0px $yellow, 14px 15px 0px $darkorange, 16px 15px 0px $yellow;
+			box-shadow: 1px 0px 0px #4d4d4d, 0px 1px 0px #333333, 2px 1px 0px #4d4d4d, 1px 2px 0px #333333, 3px 2px 0px #4d4d4d, 2px 3px 0px #333333, 4px 3px 0px #4d4d4d, 3px 4px 0px #333333, 5px 4px 0px #4d4d4d, 4px 5px 0px #333333, 6px 5px 0px #4d4d4d, 5px 6px 0px #333333, 7px 6px 0px #4d4d4d, 6px 7px 0px #333333, 8px 7px 0px #4d4d4d, 7px 8px 0px #333333, 9px 8px 0px #4d4d4d, 8px 9px 0px #333333, 10px 9px 0px #4d4d4d, 9px 10px 0px #333333, 11px 10px 0px #4d4d4d, 10px 11px 0px #333333, 12px 11px 0px #4d4d4d, 11px 12px 0px #333333, 13px 12px 0px #4d4d4d, 12px 13px 0px #333333, 14px 13px 0px #4d4d4d, 13px 14px 0px #333333, 15px 14px 0px #4d4d4d, 14px 15px 0px #333333, 16px 15px 0px #4d4d4d, 15px 16px 0px #333333, 16px 16px 0px #4d4d4d;
 		}
 		p.body{
-			display: none;
+			text-align: center;
 			width: 70%;
 			margin-left: 15%;
 			margin-right: 15%;
 			font-family: karla, 'Helvetica Neue', helvetica, sans-serif;
 			font-size: 1.5em;
-			line-height: 1.5;
+			line-height: 2;
 		}
 	}
 
 	.composers{
-		margin-top: 100px;
+		margin-top: 20%;
 		margin-bottom: 200px;
 		.composer-nav{
 			text-align: center;
@@ -304,7 +305,7 @@ hr{
 		left: 100%;
 		height: 100%;
 		width: 100%;
-		background-color: $red;
+		background-color: $blue;
 		z-index: 9999;
 		.data-container{
 			position: relative;
@@ -323,12 +324,13 @@ hr{
 					font-family: karla, helvetica, sans-serif;
 					font-weight: lighter;
 					font-size: 1.5em;
-					line-height: 1.5;
+					line-height: 2;
 				}
 				img{
 					margin-left: 25%;
 					width: 50%;
 					height: auto;
+					box-shadow: 1px 0px 0px #4d4d4d, 0px 1px 0px #333333, 2px 1px 0px #4d4d4d, 1px 2px 0px #333333, 3px 2px 0px #4d4d4d, 2px 3px 0px #333333, 4px 3px 0px #4d4d4d, 3px 4px 0px #333333, 5px 4px 0px #4d4d4d, 4px 5px 0px #333333, 6px 5px 0px #4d4d4d, 5px 6px 0px #333333, 7px 6px 0px #4d4d4d, 6px 7px 0px #333333, 8px 7px 0px #4d4d4d, 7px 8px 0px #333333, 9px 8px 0px #4d4d4d, 8px 9px 0px #333333, 10px 9px 0px #4d4d4d, 9px 10px 0px #333333, 11px 10px 0px #4d4d4d, 10px 11px 0px #333333, 12px 11px 0px #4d4d4d, 11px 12px 0px #333333, 13px 12px 0px #4d4d4d, 12px 13px 0px #333333, 14px 13px 0px #4d4d4d, 13px 14px 0px #333333, 15px 14px 0px #4d4d4d, 14px 15px 0px #333333, 16px 15px 0px #4d4d4d, 15px 16px 0px #333333, 16px 16px 0px #4d4d4d;
 				}
 				&:last-child{
 					border-bottom: none;
@@ -346,15 +348,16 @@ hr{
 			background: url(../img/exit.svg) no-repeat center center;
 			background-color: white;
 			background-size: contain;
-			box-shadow: 1px 0px 0px $yellow, 0px 1px 0px $darkorange, 2px 1px 0px $yellow, 1px 2px 0px $darkorange, 3px 2px 0px $yellow, 2px 3px 0px $darkorange, 4px 3px 0px $yellow, 3px 4px 0px $darkorange, 5px 4px 0px $yellow, 4px 5px 0px $darkorange, 6px 5px 0px $yellow, 5px 6px 0px $darkorange, 7px 6px 0px $yellow, 6px 7px 0px $darkorange, 8px 7px 0px $yellow, 7px 8px 0px $darkorange, 9px 8px 0px $yellow, 8px 9px 0px $darkorange, 10px 9px 0px $yellow, 9px 10px 0px $darkorange, 11px 10px 0px $yellow, 10px 11px 0px $darkorange, 12px 11px 0px $yellow, 11px 12px 0px $darkorange, 13px 12px 0px $yellow, 12px 13px 0px $darkorange, 14px 13px 0px $yellow, 13px 14px 0px $darkorange, 15px 14px 0px $yellow, 14px 15px 0px $darkorange, 16px 15px 0px $yellow; 
+			box-shadow: 1px 0px 0px #4d4d4d, 0px 1px 0px #333333, 2px 1px 0px #4d4d4d, 1px 2px 0px #333333, 3px 2px 0px #4d4d4d, 2px 3px 0px #333333, 4px 3px 0px #4d4d4d, 3px 4px 0px #333333, 5px 4px 0px #4d4d4d, 4px 5px 0px #333333, 6px 5px 0px #4d4d4d, 5px 6px 0px #333333, 7px 6px 0px #4d4d4d, 6px 7px 0px #333333, 8px 7px 0px #4d4d4d, 7px 8px 0px #333333, 9px 8px 0px #4d4d4d, 8px 9px 0px #333333, 10px 9px 0px #4d4d4d, 9px 10px 0px #333333, 11px 10px 0px #4d4d4d, 10px 11px 0px #333333, 12px 11px 0px #4d4d4d, 11px 12px 0px #333333, 13px 12px 0px #4d4d4d, 12px 13px 0px #333333, 14px 13px 0px #4d4d4d, 13px 14px 0px #333333, 15px 14px 0px #4d4d4d, 14px 15px 0px #333333, 16px 15px 0px #4d4d4d, 15px 16px 0px #333333, 16px 16px 0px #4d4d4d;
 			&:hover{
 				@include vendorize(transform, translate(3px, 3px));
-				box-shadow: 1px 0px 0px $yellow, 0px 1px 0px $darkorange, 2px 1px 0px $yellow, 1px 2px 0px $darkorange, 3px 2px 0px $yellow, 2px 3px 0px $darkorange, 4px 3px 0px $yellow, 3px 4px 0px $darkorange, 5px 4px 0px $yellow, 4px 5px 0px $darkorange, 6px 5px 0px $yellow, 5px 6px 0px $darkorange, 7px 6px 0px $yellow, 6px 7px 0px $darkorange, 8px 7px 0px $yellow, 7px 8px 0px $darkorange, 9px 8px 0px $yellow, 8px 9px 0px $darkorange, 10px 9px 0px $yellow, 9px 10px 0px $darkorange, 11px 10px 0px $yellow, 10px 11px 0px $darkorange, 12px 11px 0px $yellow, 11px 12px 0px $darkorange, 13px 12px 0px $yellow; 
+				box-shadow: 1px 0px 0px #4d4d4d, 0px 1px 0px #333333, 2px 1px 0px #4d4d4d, 1px 2px 0px #333333, 3px 2px 0px #4d4d4d, 2px 3px 0px #333333, 4px 3px 0px #4d4d4d, 3px 4px 0px #333333, 5px 4px 0px #4d4d4d, 4px 5px 0px #333333, 6px 5px 0px #4d4d4d, 5px 6px 0px #333333, 7px 6px 0px #4d4d4d, 6px 7px 0px #333333, 8px 7px 0px #4d4d4d, 7px 8px 0px #333333, 9px 8px 0px #4d4d4d, 8px 9px 0px #333333, 10px 9px 0px #4d4d4d, 9px 10px 0px #333333, 11px 10px 0px #4d4d4d, 10px 11px 0px #333333, 12px 11px 0px #4d4d4d, 11px 12px 0px #333333, 13px 12px 0px #4d4d4d, 12px 13px 0px #333333, 14px 13px 0px #4d4d4d;
 			}
 		}
 	}
 
 	.radio{
+		margin-top: 20%;
 		margin-bottom: 800px;
 		p{
 			width: 70%;
@@ -362,7 +365,7 @@ hr{
 			margin-top: 40px;
 			margin-left: 15%;
 			font-size: 1.5em;
-			line-height: 1.5;
+			line-height: 2;
 		}
 		iframe{
 			width: 70%;
@@ -371,7 +374,7 @@ hr{
 			height: 100px !important;
 			border: none;
 			-webkit-filter: grayscale(1);
-			box-shadow: 1px 0px 0px $yellow, 0px 1px 0px $darkorange, 2px 1px 0px $yellow, 1px 2px 0px $darkorange, 3px 2px 0px $yellow, 2px 3px 0px $darkorange, 4px 3px 0px $yellow, 3px 4px 0px $darkorange, 5px 4px 0px $yellow, 4px 5px 0px $darkorange, 6px 5px 0px $yellow, 5px 6px 0px $darkorange, 7px 6px 0px $yellow, 6px 7px 0px $darkorange, 8px 7px 0px $yellow, 7px 8px 0px $darkorange, 9px 8px 0px $yellow, 8px 9px 0px $darkorange, 10px 9px 0px $yellow, 9px 10px 0px $darkorange, 11px 10px 0px $yellow, 10px 11px 0px $darkorange, 12px 11px 0px $yellow, 11px 12px 0px $darkorange, 13px 12px 0px $yellow, 12px 13px 0px $darkorange, 14px 13px 0px $yellow, 13px 14px 0px $darkorange, 15px 14px 0px $yellow, 14px 15px 0px $darkorange, 16px 15px 0px $yellow;
+			box-shadow: 1px 0px 0px #4d4d4d, 0px 1px 0px #333333, 2px 1px 0px #4d4d4d, 1px 2px 0px #333333, 3px 2px 0px #4d4d4d, 2px 3px 0px #333333, 4px 3px 0px #4d4d4d, 3px 4px 0px #333333, 5px 4px 0px #4d4d4d, 4px 5px 0px #333333, 6px 5px 0px #4d4d4d, 5px 6px 0px #333333, 7px 6px 0px #4d4d4d, 6px 7px 0px #333333, 8px 7px 0px #4d4d4d, 7px 8px 0px #333333, 9px 8px 0px #4d4d4d, 8px 9px 0px #333333, 10px 9px 0px #4d4d4d, 9px 10px 0px #333333, 11px 10px 0px #4d4d4d, 10px 11px 0px #333333, 12px 11px 0px #4d4d4d, 11px 12px 0px #333333, 13px 12px 0px #4d4d4d, 12px 13px 0px #333333, 14px 13px 0px #4d4d4d, 13px 14px 0px #333333, 15px 14px 0px #4d4d4d, 14px 15px 0px #333333, 16px 15px 0px #4d4d4d, 15px 16px 0px #333333, 16px 16px 0px #4d4d4d;
 		}
 	}
 }
