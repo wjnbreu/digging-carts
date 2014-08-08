@@ -26,6 +26,20 @@
     -ms-transform: translate(0px, 0px);
     -o-transform: translate(0px, 0px);
     transform: translate(0px, 0px); } }
+@-webkit-keyframes 'slide' {
+  from {
+    -webkit-transform: translate(0px, 10px);
+    -moz-transform: translate(0px, 10px);
+    -ms-transform: translate(0px, 10px);
+    -o-transform: translate(0px, 10px);
+    transform: translate(0px, 10px); }
+
+  to {
+    -webkit-transform: translate(0px, 0px);
+    -moz-transform: translate(0px, 0px);
+    -ms-transform: translate(0px, 0px);
+    -o-transform: translate(0px, 0px);
+    transform: translate(0px, 0px); } }
 @font-face {
   font-family: 'karla';
   src: url(../fonts/karla-regular-webfont.woff) format("woff");
@@ -44,14 +58,13 @@
   font-style: normal; }
 @font-face {
   font-family: bit;
-  src: url("../fonts/8-bit_wonder-webfont.eot");
-  src: url("../fonts/8-bit_wonder-webfont.eot?#iefix") format("embedded-opentype"), url("../fonts/8-bit_wonder-webfont.woff") format("woff"), url("../fonts/8-bit_wonder-webfont.ttf") format("truetype"), url("../fonts/8-bit_wonder-webfont.svg#8bit_wondernominal") format("svg");
+  src: url("../fonts/brokeren-webfont.eot");
+  src: url("../fonts/brokeren-webfont.eot?#iefix") format("embedded-opentype"), url("../fonts/brokeren-webfont.woff") format("woff"), url("../fonts/brokeren-webfont.ttf") format("truetype"), url("../fonts/brokeren-webfont.svg#8bit_wondernominal") format("svg");
   font-weight: normal;
   font-style: normal; }
 body {
   margin: 0;
-  font-family: bit, karla, 'Helvetica Neue', helvetica, sans-serif;
-  color: #030102; }
+  font-family: bit, karla, 'Helvetica Neue', helvetica, sans-serif; }
 
 .spinner {
   width: 100%;
@@ -81,12 +94,7 @@ h1, h2, h3, h4 {
 h1 {
   letter-spacing: -2px;
   line-height: 1;
-  -webkit-text-stroke: 2px #fbdd1b;
-  -moz-text-stroke: 2px #fbdd1b;
-  -ms-text-stroke: 2px #fbdd1b;
-  -o-text-stroke: 2px #fbdd1b;
-  text-stroke: 2px #fbdd1b;
-  color: #d89e46;
+  color: black;
   font-size: 4em; }
 
 h2 {
@@ -111,26 +119,51 @@ hr {
   left: 0;
   cursor: url(../img/cursor.png), auto;
   color: white;
-  background-color: #030102;
   z-index: 9; }
-  .content .title {
-    margin-top: 0;
-    background: url(../img/background.png) no-repeat center center;
-    background-size: cover;
-    top: 0; }
-    .content .title h1 {
-      margin-top: 40px; }
+  .content .startscreen {
+    position: relative;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%; }
+    .content .startscreen video {
+      z-index: 0;
+      position: absolute;
+      width: 100%;
+      margin: 0;
+      border: 0;
+      border: none; }
+    .content .startscreen .title {
+      margin-top: 0;
+      width: 100%;
+      height: 100%;
+      top: 0;
+      position: absolute;
+      text-align: center;
+      z-index: 9; }
+      .content .startscreen .title h1 {
+        margin-top: 10%;
+        -webkit-text-stroke: 1px #00ffef;
+        -moz-text-stroke: 1px #00ffef;
+        -ms-text-stroke: 1px #00ffef;
+        -o-text-stroke: 1px #00ffef;
+        text-stroke: 1px #00ffef; }
   .content .videos {
-    margin-top: 20%; }
+    position: relative;
+    margin-top: 65%; }
     .content .videos .video-nav ul {
       text-align: center; }
       .content .videos .video-nav ul a li {
         display: inline-block;
         font-size: 1em;
-        padding: 5px; }
+        padding: 5px;
+        font-size: 1.5em;
+        color: black;
+        font-family: karla; }
         .content .videos .video-nav ul a li:hover {
-          background-color: #4c9d5b;
-          color: #fbdd1b; }
+          background-color: #00ffef; }
+        .content .videos .video-nav ul a li.active {
+          background-color: #00ffef; }
     .content .videos iframe {
       margin-left: 20%;
       margin-bottom: 20px;
@@ -143,106 +176,113 @@ hr {
       width: 70%;
       margin-left: 15%;
       margin-right: 15%;
+      color: black;
       font-family: karla, 'Helvetica Neue', helvetica, sans-serif;
       font-size: 1.5em;
       line-height: 2; }
   .content .composers {
+    position: relative;
+    margin-top: 200%;
     margin-top: 20%;
-    margin-bottom: 200px; }
-    .content .composers .composer-nav {
-      text-align: center; }
-      .content .composers .composer-nav ul {
-        width: 70%;
-        margin-left: 15%;
-        font-family: karla; }
-        .content .composers .composer-nav ul a {
-          color: #d6f7fe;
-          text-decoration: none; }
-          .content .composers .composer-nav ul a li {
-            display: block;
-            text-transform: uppercase;
-            font-size: 2.5em;
-            margin: 20px;
-            padding: 0;
-            line-height: 1;
-            -webkit-transition: all 0.2s ease-in-out;
-            -moz-transition: all 0.2s ease-in-out;
-            -ms-transition: all 0.2s ease-in-out;
-            -o-transition: all 0.2s ease-in-out;
-            transition: all 0.2s ease-in-out; }
-            .content .composers .composer-nav ul a li:hover {
-              color: #fbdd1b;
-              background-color: #ff6dd1; }
-            .content .composers .composer-nav ul a li.active {
-              color: white;
-              background-color: #00ffef; }
-  .content .composer-data {
-    position: fixed;
-    top: 0;
-    left: 0;
-    display: none;
-    height: 100%;
-    width: 100%;
-    background-color: #312cc0;
-    z-index: 9999; }
-    .content .composer-data .data-container {
+    margin-bottom: 200px;
+    width: 90%;
+    margin-left: 5%;
+    overflow: hidden;
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    -ms-box-sizing: border-box;
+    -o-box-sizing: border-box;
+    box-sizing: border-box;
+    box-shadow: 1px 0px 0px #4d4d4d, 0px 1px 0px #333333, 2px 1px 0px #4d4d4d, 1px 2px 0px #333333, 3px 2px 0px #4d4d4d, 2px 3px 0px #333333, 4px 3px 0px #4d4d4d, 3px 4px 0px #333333, 5px 4px 0px #4d4d4d, 4px 5px 0px #333333, 6px 5px 0px #4d4d4d, 5px 6px 0px #333333, 7px 6px 0px #4d4d4d, 6px 7px 0px #333333, 8px 7px 0px #4d4d4d, 7px 8px 0px #333333, 9px 8px 0px #4d4d4d, 8px 9px 0px #333333, 10px 9px 0px #4d4d4d, 9px 10px 0px #333333, 11px 10px 0px #4d4d4d, 10px 11px 0px #333333, 12px 11px 0px #4d4d4d, 11px 12px 0px #333333, 13px 12px 0px #4d4d4d, 12px 13px 0px #333333, 14px 13px 0px #4d4d4d, 13px 14px 0px #333333, 15px 14px 0px #4d4d4d, 14px 15px 0px #333333, 16px 15px 0px #4d4d4d, 15px 16px 0px #333333, 16px 16px 0px #4d4d4d; }
+    .content .composers a .composer-wrapper {
+      padding: 10px;
+      text-align: center;
       position: relative;
-      width: 102%;
-      height: 100%;
-      overflow: auto;
       top: 0;
-      padding-top: 40px;
-      left: 0; }
-      .content .composer-data .data-container .artist {
-        margin-bottom: 100px;
-        border-bottom: 5px solid #fbdd1b; }
-        .content .composer-data .data-container .artist p {
-          width: 80%;
-          margin-left: 10%;
-          font-family: karla, helvetica, sans-serif;
-          font-weight: lighter;
-          font-size: 1.5em;
-          line-height: 2; }
-        .content .composer-data .data-container .artist img {
-          margin-left: 25%;
-          width: 50%;
-          height: auto;
-          box-shadow: 1px 0px 0px #4d4d4d, 0px 1px 0px #333333, 2px 1px 0px #4d4d4d, 1px 2px 0px #333333, 3px 2px 0px #4d4d4d, 2px 3px 0px #333333, 4px 3px 0px #4d4d4d, 3px 4px 0px #333333, 5px 4px 0px #4d4d4d, 4px 5px 0px #333333, 6px 5px 0px #4d4d4d, 5px 6px 0px #333333, 7px 6px 0px #4d4d4d, 6px 7px 0px #333333, 8px 7px 0px #4d4d4d, 7px 8px 0px #333333, 9px 8px 0px #4d4d4d, 8px 9px 0px #333333, 10px 9px 0px #4d4d4d, 9px 10px 0px #333333, 11px 10px 0px #4d4d4d, 10px 11px 0px #333333, 12px 11px 0px #4d4d4d, 11px 12px 0px #333333, 13px 12px 0px #4d4d4d, 12px 13px 0px #333333, 14px 13px 0px #4d4d4d, 13px 14px 0px #333333, 15px 14px 0px #4d4d4d, 14px 15px 0px #333333, 16px 15px 0px #4d4d4d, 15px 16px 0px #333333, 16px 16px 0px #4d4d4d; }
-        .content .composer-data .data-container .artist:last-child {
-          border-bottom: none; }
-    .content .composer-data .exit {
-      position: absolute;
-      z-index: 9999999999999;
-      top: 20px;
-      right: 40px;
-      width: 50px;
-      height: 50px;
-      background: url(../img/exit.svg) no-repeat center center;
-      background-color: white;
-      background-size: contain;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background-color: black; }
+      .content .composers a .composer-wrapper h1 {
+        color: white;
+        margin: 0; }
+      .content .composers a .composer-wrapper p {
+        margin: 0; }
+      .content .composers a .composer-wrapper:hover {
+        background-color: #00ffef; }
+    .content .composers .game-icons {
+      display: inline-block;
+      width: 100%;
+      text-align: center;
+      left: 0;
+      -webkit-animation: jet 25s inifinite alternate; }
+
+.composer-data {
+  position: fixed;
+  top: 0;
+  left: 0;
+  display: none;
+  height: 100%;
+  width: 100%;
+  background-color: white;
+  z-index: 9999; }
+  .composer-data .data-container {
+    position: relative;
+    width: 102%;
+    height: 100%;
+    overflow: auto;
+    top: 0;
+    padding-top: 40px;
+    left: 0; }
+    .composer-data .data-container .artist {
+      width: 80%;
+      margin-left: 10%;
+      margin-bottom: 100px; }
+      .composer-data .data-container .artist p {
+        width: 100%;
+        font-family: karla, helvetica, sans-serif;
+        font-weight: lighter;
+        font-size: 1.5em;
+        line-height: 2; }
+      .composer-data .data-container .artist img {
+        margin-left: 25%;
+        width: 50%;
+        height: auto;
+        box-shadow: 1px 0px 0px #4d4d4d, 0px 1px 0px #333333, 2px 1px 0px #4d4d4d, 1px 2px 0px #333333, 3px 2px 0px #4d4d4d, 2px 3px 0px #333333, 4px 3px 0px #4d4d4d, 3px 4px 0px #333333, 5px 4px 0px #4d4d4d, 4px 5px 0px #333333, 6px 5px 0px #4d4d4d, 5px 6px 0px #333333, 7px 6px 0px #4d4d4d, 6px 7px 0px #333333, 8px 7px 0px #4d4d4d, 7px 8px 0px #333333, 9px 8px 0px #4d4d4d, 8px 9px 0px #333333, 10px 9px 0px #4d4d4d, 9px 10px 0px #333333, 11px 10px 0px #4d4d4d, 10px 11px 0px #333333, 12px 11px 0px #4d4d4d, 11px 12px 0px #333333, 13px 12px 0px #4d4d4d, 12px 13px 0px #333333, 14px 13px 0px #4d4d4d, 13px 14px 0px #333333, 15px 14px 0px #4d4d4d, 14px 15px 0px #333333, 16px 15px 0px #4d4d4d, 15px 16px 0px #333333, 16px 16px 0px #4d4d4d; }
+      .composer-data .data-container .artist:last-child {
+        border-bottom: none; }
+  .composer-data .exit {
+    position: absolute;
+    z-index: 9999999999999;
+    top: 20px;
+    right: 40px;
+    width: 50px;
+    height: 50px;
+    background: url(../img/exit.svg) no-repeat center center;
+    background-color: white;
+    background-size: contain;
+    box-shadow: 1px 0px 0px #4d4d4d, 0px 1px 0px #333333, 2px 1px 0px #4d4d4d, 1px 2px 0px #333333, 3px 2px 0px #4d4d4d, 2px 3px 0px #333333, 4px 3px 0px #4d4d4d, 3px 4px 0px #333333, 5px 4px 0px #4d4d4d, 4px 5px 0px #333333, 6px 5px 0px #4d4d4d, 5px 6px 0px #333333, 7px 6px 0px #4d4d4d, 6px 7px 0px #333333, 8px 7px 0px #4d4d4d, 7px 8px 0px #333333, 9px 8px 0px #4d4d4d, 8px 9px 0px #333333, 10px 9px 0px #4d4d4d, 9px 10px 0px #333333, 11px 10px 0px #4d4d4d, 10px 11px 0px #333333, 12px 11px 0px #4d4d4d, 11px 12px 0px #333333, 13px 12px 0px #4d4d4d, 12px 13px 0px #333333, 14px 13px 0px #4d4d4d, 13px 14px 0px #333333, 15px 14px 0px #4d4d4d, 14px 15px 0px #333333, 16px 15px 0px #4d4d4d, 15px 16px 0px #333333, 16px 16px 0px #4d4d4d; }
+    .composer-data .exit:hover {
+      -webkit-transform: translate(3px, 3px);
+      -moz-transform: translate(3px, 3px);
+      -ms-transform: translate(3px, 3px);
+      -o-transform: translate(3px, 3px);
+      transform: translate(3px, 3px);
+      box-shadow: 1px 0px 0px #4d4d4d, 0px 1px 0px #333333, 2px 1px 0px #4d4d4d, 1px 2px 0px #333333, 3px 2px 0px #4d4d4d, 2px 3px 0px #333333, 4px 3px 0px #4d4d4d, 3px 4px 0px #333333, 5px 4px 0px #4d4d4d, 4px 5px 0px #333333, 6px 5px 0px #4d4d4d, 5px 6px 0px #333333, 7px 6px 0px #4d4d4d, 6px 7px 0px #333333, 8px 7px 0px #4d4d4d, 7px 8px 0px #333333, 9px 8px 0px #4d4d4d, 8px 9px 0px #333333, 10px 9px 0px #4d4d4d, 9px 10px 0px #333333, 11px 10px 0px #4d4d4d, 10px 11px 0px #333333, 12px 11px 0px #4d4d4d, 11px 12px 0px #333333, 13px 12px 0px #4d4d4d, 12px 13px 0px #333333, 14px 13px 0px #4d4d4d; }
+
+.radio {
+  margin: 0;
+  z-index: 1; }
+  .radio .show {
+    width: 70%;
+    margin-bottom: 10%;
+    margin-left: 15%; }
+    .radio .show img {
+      width: 100%;
       box-shadow: 1px 0px 0px #4d4d4d, 0px 1px 0px #333333, 2px 1px 0px #4d4d4d, 1px 2px 0px #333333, 3px 2px 0px #4d4d4d, 2px 3px 0px #333333, 4px 3px 0px #4d4d4d, 3px 4px 0px #333333, 5px 4px 0px #4d4d4d, 4px 5px 0px #333333, 6px 5px 0px #4d4d4d, 5px 6px 0px #333333, 7px 6px 0px #4d4d4d, 6px 7px 0px #333333, 8px 7px 0px #4d4d4d, 7px 8px 0px #333333, 9px 8px 0px #4d4d4d, 8px 9px 0px #333333, 10px 9px 0px #4d4d4d, 9px 10px 0px #333333, 11px 10px 0px #4d4d4d, 10px 11px 0px #333333, 12px 11px 0px #4d4d4d, 11px 12px 0px #333333, 13px 12px 0px #4d4d4d, 12px 13px 0px #333333, 14px 13px 0px #4d4d4d, 13px 14px 0px #333333, 15px 14px 0px #4d4d4d, 14px 15px 0px #333333, 16px 15px 0px #4d4d4d, 15px 16px 0px #333333, 16px 16px 0px #4d4d4d; }
-      .content .composer-data .exit:hover {
-        -webkit-transform: translate(3px, 3px);
-        -moz-transform: translate(3px, 3px);
-        -ms-transform: translate(3px, 3px);
-        -o-transform: translate(3px, 3px);
-        transform: translate(3px, 3px);
-        box-shadow: 1px 0px 0px #4d4d4d, 0px 1px 0px #333333, 2px 1px 0px #4d4d4d, 1px 2px 0px #333333, 3px 2px 0px #4d4d4d, 2px 3px 0px #333333, 4px 3px 0px #4d4d4d, 3px 4px 0px #333333, 5px 4px 0px #4d4d4d, 4px 5px 0px #333333, 6px 5px 0px #4d4d4d, 5px 6px 0px #333333, 7px 6px 0px #4d4d4d, 6px 7px 0px #333333, 8px 7px 0px #4d4d4d, 7px 8px 0px #333333, 9px 8px 0px #4d4d4d, 8px 9px 0px #333333, 10px 9px 0px #4d4d4d, 9px 10px 0px #333333, 11px 10px 0px #4d4d4d, 10px 11px 0px #333333, 12px 11px 0px #4d4d4d, 11px 12px 0px #333333, 13px 12px 0px #4d4d4d, 12px 13px 0px #333333, 14px 13px 0px #4d4d4d; }
-  .content .radio {
-    margin-top: 20%;
-    margin-bottom: 20%; }
-    .content .radio p {
-      width: 70%;
+    .radio .show iframe {
+      box-shadow: 1px 0px 0px #4d4d4d, 0px 1px 0px #333333, 2px 1px 0px #4d4d4d, 1px 2px 0px #333333, 3px 2px 0px #4d4d4d, 2px 3px 0px #333333, 4px 3px 0px #4d4d4d, 3px 4px 0px #333333, 5px 4px 0px #4d4d4d, 4px 5px 0px #333333, 6px 5px 0px #4d4d4d, 5px 6px 0px #333333, 7px 6px 0px #4d4d4d, 6px 7px 0px #333333, 8px 7px 0px #4d4d4d, 7px 8px 0px #333333, 9px 8px 0px #4d4d4d, 8px 9px 0px #333333, 10px 9px 0px #4d4d4d, 9px 10px 0px #333333, 11px 10px 0px #4d4d4d, 10px 11px 0px #333333, 12px 11px 0px #4d4d4d, 11px 12px 0px #333333, 13px 12px 0px #4d4d4d, 12px 13px 0px #333333, 14px 13px 0px #4d4d4d, 13px 14px 0px #333333, 15px 14px 0px #4d4d4d, 14px 15px 0px #333333, 16px 15px 0px #4d4d4d, 15px 16px 0px #333333, 16px 16px 0px #4d4d4d; }
+    .radio .show p {
       font-family: karla;
-      margin-top: 40px;
-      margin-left: 15%;
       font-size: 1.5em;
       line-height: 2; }
-    .content .radio iframe {
-      width: 70%;
-      margin-left: 15%;
-      margin-bottom: 40px;
-      margin-top: 40px;
-      height: 100px !important;
-      border: none;
-      box-shadow: 1px 0px 0px #4d4d4d, 0px 1px 0px #333333, 2px 1px 0px #4d4d4d, 1px 2px 0px #333333, 3px 2px 0px #4d4d4d, 2px 3px 0px #333333, 4px 3px 0px #4d4d4d, 3px 4px 0px #333333, 5px 4px 0px #4d4d4d, 4px 5px 0px #333333, 6px 5px 0px #4d4d4d, 5px 6px 0px #333333, 7px 6px 0px #4d4d4d, 6px 7px 0px #333333, 8px 7px 0px #4d4d4d, 7px 8px 0px #333333, 9px 8px 0px #4d4d4d, 8px 9px 0px #333333, 10px 9px 0px #4d4d4d, 9px 10px 0px #333333, 11px 10px 0px #4d4d4d, 10px 11px 0px #333333, 12px 11px 0px #4d4d4d, 11px 12px 0px #333333, 13px 12px 0px #4d4d4d, 12px 13px 0px #333333, 14px 13px 0px #4d4d4d, 13px 14px 0px #333333, 15px 14px 0px #4d4d4d, 14px 15px 0px #333333, 16px 15px 0px #4d4d4d, 15px 16px 0px #333333, 16px 16px 0px #4d4d4d; }

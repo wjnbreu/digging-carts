@@ -18,6 +18,15 @@
 		"shouldRunBless": 0,
 		"useLibsass": 0
 		},
+	"\/css\/animate.css": {
+		"fileType": 16,
+		"ignore": 0,
+		"ignoreWasSetByUser": 0,
+		"inputAbbreviatedPath": "\/css\/animate.css",
+		"outputAbbreviatedPath": "No Output Path",
+		"outputPathIsOutsideProject": 0,
+		"outputPathIsSetByUser": 0
+		},
 	"\/css\/beast.css": {
 		"fileType": 16,
 		"ignore": 1,
@@ -43,13 +52,13 @@
 		"shouldRunBless": 0,
 		"useLibsass": 0
 		},
-	"\/img\/akio-dobashi.jpg": {
-		"fileType": 16384,
+	"\/img\/back.png": {
+		"fileType": 32768,
 		"ignore": 0,
 		"ignoreWasSetByUser": 0,
-		"initialSize": 154963,
-		"inputAbbreviatedPath": "\/img\/akio-dobashi.jpg",
-		"outputAbbreviatedPath": "\/img\/akio-dobashi.jpg",
+		"initialSize": 1712,
+		"inputAbbreviatedPath": "\/img\/back.png",
+		"outputAbbreviatedPath": "\/img\/back.png",
 		"outputPathIsOutsideProject": 0,
 		"outputPathIsSetByUser": 0,
 		"processed": 0
@@ -61,6 +70,17 @@
 		"initialSize": 29654,
 		"inputAbbreviatedPath": "\/img\/background.png",
 		"outputAbbreviatedPath": "\/img\/background.png",
+		"outputPathIsOutsideProject": 0,
+		"outputPathIsSetByUser": 0,
+		"processed": 0
+		},
+	"\/img\/bar.jpg": {
+		"fileType": 16384,
+		"ignore": 0,
+		"ignoreWasSetByUser": 0,
+		"initialSize": 12581,
+		"inputAbbreviatedPath": "\/img\/bar.jpg",
+		"outputAbbreviatedPath": "\/img\/bar.jpg",
 		"outputPathIsOutsideProject": 0,
 		"outputPathIsSetByUser": 0,
 		"processed": 0
@@ -109,79 +129,46 @@
 		"outputPathIsSetByUser": 0,
 		"processed": 0
 		},
-	"\/img\/hidenori-maezawa.jpg": {
-		"fileType": 16384,
+	"\/img\/GanondorfHead.png": {
+		"fileType": 32768,
 		"ignore": 0,
 		"ignoreWasSetByUser": 0,
-		"initialSize": 125544,
-		"inputAbbreviatedPath": "\/img\/hidenori-maezawa.jpg",
-		"outputAbbreviatedPath": "\/img\/hidenori-maezawa.jpg",
+		"initialSize": 528,
+		"inputAbbreviatedPath": "\/img\/GanondorfHead.png",
+		"outputAbbreviatedPath": "\/img\/GanondorfHead.png",
 		"outputPathIsOutsideProject": 0,
 		"outputPathIsSetByUser": 0,
 		"processed": 0
 		},
-	"\/img\/hirokazu-tanaka.jpg": {
-		"fileType": 16384,
+	"\/img\/KirbyHead.png": {
+		"fileType": 32768,
 		"ignore": 0,
 		"ignoreWasSetByUser": 0,
-		"initialSize": 191004,
-		"inputAbbreviatedPath": "\/img\/hirokazu-tanaka.jpg",
-		"outputAbbreviatedPath": "\/img\/hirokazu-tanaka.jpg",
+		"initialSize": 395,
+		"inputAbbreviatedPath": "\/img\/KirbyHead.png",
+		"outputAbbreviatedPath": "\/img\/KirbyHead.png",
 		"outputPathIsOutsideProject": 0,
 		"outputPathIsSetByUser": 0,
 		"processed": 0
 		},
-	"\/img\/hiroshi-kawaguchi-takenobu-mitsuyoshi.jpg": {
-		"fileType": 16384,
+	"\/img\/LinkHead.png": {
+		"fileType": 32768,
 		"ignore": 0,
 		"ignoreWasSetByUser": 0,
-		"initialSize": 164597,
-		"inputAbbreviatedPath": "\/img\/hiroshi-kawaguchi-takenobu-mitsuyoshi.jpg",
-		"outputAbbreviatedPath": "\/img\/hiroshi-kawaguchi-takenobu-mitsuyoshi.jpg",
+		"initialSize": 531,
+		"inputAbbreviatedPath": "\/img\/LinkHead.png",
+		"outputAbbreviatedPath": "\/img\/LinkHead.png",
 		"outputPathIsOutsideProject": 0,
 		"outputPathIsSetByUser": 0,
 		"processed": 0
 		},
-	"\/img\/hitoshi-sakimoto.jpg": {
-		"fileType": 16384,
+	"\/img\/mario.png": {
+		"fileType": 32768,
 		"ignore": 0,
 		"ignoreWasSetByUser": 0,
-		"initialSize": 171125,
-		"inputAbbreviatedPath": "\/img\/hitoshi-sakimoto.jpg",
-		"outputAbbreviatedPath": "\/img\/hitoshi-sakimoto.jpg",
-		"outputPathIsOutsideProject": 0,
-		"outputPathIsSetByUser": 0,
-		"processed": 0
-		},
-	"\/img\/masashi-kageyama.jpg": {
-		"fileType": 16384,
-		"ignore": 0,
-		"ignoreWasSetByUser": 0,
-		"initialSize": 210359,
-		"inputAbbreviatedPath": "\/img\/masashi-kageyama.jpg",
-		"outputAbbreviatedPath": "\/img\/masashi-kageyama.jpg",
-		"outputPathIsOutsideProject": 0,
-		"outputPathIsSetByUser": 0,
-		"processed": 0
-		},
-	"\/img\/michiru-yamane.jpg": {
-		"fileType": 16384,
-		"ignore": 0,
-		"ignoreWasSetByUser": 0,
-		"initialSize": 283308,
-		"inputAbbreviatedPath": "\/img\/michiru-yamane.jpg",
-		"outputAbbreviatedPath": "\/img\/michiru-yamane.jpg",
-		"outputPathIsOutsideProject": 0,
-		"outputPathIsSetByUser": 0,
-		"processed": 0
-		},
-	"\/img\/nobuo-uematsu.jpg": {
-		"fileType": 16384,
-		"ignore": 0,
-		"ignoreWasSetByUser": 0,
-		"initialSize": 281211,
-		"inputAbbreviatedPath": "\/img\/nobuo-uematsu.jpg",
-		"outputAbbreviatedPath": "\/img\/nobuo-uematsu.jpg",
+		"initialSize": 65362,
+		"inputAbbreviatedPath": "\/img\/mario.png",
+		"outputAbbreviatedPath": "\/img\/mario.png",
 		"outputPathIsOutsideProject": 0,
 		"outputPathIsSetByUser": 0,
 		"processed": 0
@@ -208,24 +195,46 @@
 		"outputPathIsSetByUser": 0,
 		"processed": 0
 		},
-	"\/img\/video.png": {
+	"\/img\/triforce.png": {
 		"fileType": 32768,
 		"ignore": 0,
 		"ignoreWasSetByUser": 0,
-		"initialSize": 4805,
-		"inputAbbreviatedPath": "\/img\/video.png",
-		"outputAbbreviatedPath": "\/img\/video.png",
+		"initialSize": 1249,
+		"inputAbbreviatedPath": "\/img\/triforce.png",
+		"outputAbbreviatedPath": "\/img\/triforce.png",
 		"outputPathIsOutsideProject": 0,
 		"outputPathIsSetByUser": 0,
 		"processed": 0
 		},
-	"\/img\/yoko-shimomura.jpg": {
-		"fileType": 16384,
+	"\/img\/WarioHead.png": {
+		"fileType": 32768,
 		"ignore": 0,
 		"ignoreWasSetByUser": 0,
-		"initialSize": 177310,
-		"inputAbbreviatedPath": "\/img\/yoko-shimomura.jpg",
-		"outputAbbreviatedPath": "\/img\/yoko-shimomura.jpg",
+		"initialSize": 498,
+		"inputAbbreviatedPath": "\/img\/WarioHead.png",
+		"outputAbbreviatedPath": "\/img\/WarioHead.png",
+		"outputPathIsOutsideProject": 0,
+		"outputPathIsSetByUser": 0,
+		"processed": 0
+		},
+	"\/img\/YoshiHead.png": {
+		"fileType": 32768,
+		"ignore": 0,
+		"ignoreWasSetByUser": 0,
+		"initialSize": 430,
+		"inputAbbreviatedPath": "\/img\/YoshiHead.png",
+		"outputAbbreviatedPath": "\/img\/YoshiHead.png",
+		"outputPathIsOutsideProject": 0,
+		"outputPathIsSetByUser": 0,
+		"processed": 0
+		},
+	"\/img\/ZeldaHead.png": {
+		"fileType": 32768,
+		"ignore": 0,
+		"ignoreWasSetByUser": 0,
+		"initialSize": 516,
+		"inputAbbreviatedPath": "\/img\/ZeldaHead.png",
+		"outputAbbreviatedPath": "\/img\/ZeldaHead.png",
 		"outputPathIsOutsideProject": 0,
 		"outputPathIsSetByUser": 0,
 		"processed": 0

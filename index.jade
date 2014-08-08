@@ -2,7 +2,9 @@ doctype html
 head
 	title Diggin' In The Carts
 	meta(charset="UTF-8")
+	link(rel="stylesheet", type="text/css", href="css/animate.css")
 	link(rel="stylesheet", type="text/css", href="css/beast.css")
+
 
 body
 	.spinner
@@ -18,10 +20,11 @@ body
 	a(id="home")
 	.content
 		.startscreen
-			div(id="rapper")
-					
+			video(autoplay muted loop)
+				source(src="img/cart2.mp4", type="video/mp4")		
 			.title
 				h1(class="colors") Diggin' In The Carts
+
 				
 		.videos
 			a(id="videos")
@@ -29,7 +32,7 @@ body
 			.video-nav
 				ul
 					a(class="episode", data-order="1")
-						li Episode 1
+						li(class="active") Episode 1
 					a(class="episode", data-order="2")
 						li Episode 2
 					a(class="episode", data-order="3")
@@ -45,51 +48,20 @@ body
 
 		.composers
 			a(id="composers")
-			.composer-wrapper
-				h1 Featured Composers
-				.composer-nav
-					ul
-						a(class="composer scroll", data-order="1")
-							li
-						a(class="composer scroll", data-order="2")
-							li
-						a(class="composer scroll", data-order="3")
-							li
-						a(class="composer scroll", data-order="4")
-							li
-						a(class="composer scroll", data-order="5")
-							li
-						a(class="composer scroll", data-order="6")
-							li
-						a(class="composer scroll", data-order="7")
-							li
-						a(class="composer scroll", data-order="8")
-							li
-						a(class="composer scroll", data-order="8")
-							li
+			a(class="composer-title")
+				.composer-wrapper
+					h1 Meet The Composers
+					p A very cool animation/effect will go here
 
-		.composer-data
-			a.exit
-			.data-container
-				.artist(data-order="1")
-				.artist(data-order="2")
-				.artist(data-order="3")
-				.artist(data-order="4")
-				.artist(data-order="5")
-				.artist(data-order="6")
-				.artist(data-order="7")
-				.artist(data-order="8")
-				.artist(data-order="9")
 
-		a(id="radio")
-		.radio
+	.radio
+		h1 Radio Stuff
 
-			h1 The Soundtrack
-			iframe(src='http://www.rbmaradio.com/embed/4416 frameborder=0', scrolling="no")
-			p.
-				Numero Group is a reissue label operating out of Chicago. Over the past decade, the common brainchild of Ken Shipley, Rob Sevier and their gang of kindred spirits has grown into one of the most trusted names in the world of unearthing obscure wax platters and the overlooked heroes and heroines of music history. Numero Group was originally conceived in 2003 by “three guys in various stages of unemployment”, as Ken points out, aiming to create a US-specific reissue label, similar to what imprints like Soul Jazz and Honest Jon’s had already established in the UK. Building on a water-proof sense for obscure, genre-defying outsider recordings and the stories behind them, Numero Group went from a modestly ambitious 7" label to an organically grown network of sub-labels, compilation series’ and side hustles. And while the early years of the label were mostly devoted to the re-discovery of long-lost vintage music from the 60s and 70s, the NG back catalogue now lists everything from little known female folk sirens and hard-hitting gospel funk to enigmatic soul legends like Syl Johnson, weird electronica and new age shamans like Iasos and 90s indie rock staples such as Dinosaur Jr and Hüsker Dü.
+	.composer-data
+		a.exit
+		.data-container
+			.artist
 
-	footer
 
 	script(type="text/javascript", src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js")
 	script(type="text/javascript", src="js/contentful.min.js")

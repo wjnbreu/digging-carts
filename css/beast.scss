@@ -54,6 +54,17 @@
 	}
 }
 
+
+@-webkit-keyframes 'slide'{
+	from{
+		@include vendorize(transform, translate(0px, 10px));
+	}
+	to{
+		@include vendorize(transform, translate(0px, 0px));
+	}
+}
+
+
 @font-face {
     font-family: 'karla';
     src: url(../fonts/karla-regular-webfont.woff) format('woff');
@@ -83,11 +94,11 @@
 
 @font-face {
     font-family: bit;
-    src: url('../fonts/8-bit_wonder-webfont.eot');
-    src: url('../fonts/8-bit_wonder-webfont.eot?#iefix') format('embedded-opentype'),
-         url('../fonts/8-bit_wonder-webfont.woff') format('woff'),
-         url('../fonts/8-bit_wonder-webfont.ttf') format('truetype'),
-         url('../fonts/8-bit_wonder-webfont.svg#8bit_wondernominal') format('svg');
+    src: url('../fonts/brokeren-webfont.eot');
+    src: url('../fonts/brokeren-webfont.eot?#iefix') format('embedded-opentype'),
+         url('../fonts/brokeren-webfont.woff') format('woff'),
+         url('../fonts/brokeren-webfont.ttf') format('truetype'),
+         url('../fonts/brokeren-webfont.svg#8bit_wondernominal') format('svg');
     font-weight: normal;
     font-style: normal;
 
@@ -110,7 +121,6 @@ $yellow: #fbdd1b;
 body{
 	margin: 0;
 	font-family: bit, karla, 'Helvetica Neue', helvetica, sans-serif;
-	color: #030102;
 }
 
 .spinner{
@@ -149,8 +159,7 @@ h1,h2,h3,h4{
 h1{
 	letter-spacing: -2px;
 	line-height: 1;
-	@include vendorize(text-stroke, 2px $yellow);
-	color: $darkorange;
+	color: black;
 	font-size: 4em;
 }
 
@@ -181,19 +190,41 @@ hr{
 	left: 0;
 	cursor: url(../img/cursor.png), auto;
 	color: white;
-	background-color: #030102;
 	z-index: 9;
-	.title{
-		margin-top: 0;
-		background: url(../img/background.png) no-repeat center center;
-		background-size: cover;
+	.startscreen{
+		position: relative;
 		top: 0;
-		h1{
-			margin-top: 40px;
+		left: 0;
+		width: 100%;
+		height: 100%;
+		//background: url(../img/background.png) no-repeat center center;
+		//background-size: cover;
+		video{
+			z-index: 0;
+			position: absolute;
+			width: 100%;
+			margin: 0;
+			border: 0;
+			border: none;
+			
+		}
+		.title{
+			margin-top: 0;
+			width: 100%;
+			height: 100%;
+			top: 0;
+			position: absolute;
+			text-align: center;
+			z-index: 9;
+			h1{
+				margin-top: 10%;
+				@include vendorize(text-stroke, 1px $teal);
+			}
 		}
 	}
 	.videos{
-		margin-top: 20%;
+		position: relative;
+		margin-top: 65%;
 		
 		.video-nav{
 			ul{
@@ -203,9 +234,14 @@ hr{
 						display: inline-block;
 						font-size: 1em;
 						padding: 5px;
+						font-size: 1.5em;
+						color: black;
+						font-family: karla;
 						&:hover{
-							background-color: $green;
-							color: $yellow;
+							background-color: $teal;
+						}
+						&.active{
+							background-color: $teal;
 						}
 					}
 				}
@@ -224,6 +260,7 @@ hr{
 			width: 70%;
 			margin-left: 15%;
 			margin-right: 15%;
+			color: black;
 			font-family: karla, 'Helvetica Neue', helvetica, sans-serif;
 			font-size: 1.5em;
 			line-height: 2;
@@ -231,47 +268,57 @@ hr{
 	}
 
 	.composers{
+		position: relative;
+		margin-top: 200%;
+		//background: url(../img/noise.gif) no-repeat center center;
 		margin-top: 20%;
 		margin-bottom: 200px;
-		.composer-nav{
-			text-align: center;
-			ul{
-				width: 70%;
-				margin-left: 15%;
-				font-family: karla;
-				a{
-					color: $orange;
-					text-decoration: none;
-					li{
-						display: block;
-						text-transform: uppercase;
-						font-size: 2.5em;
-						margin: 20px;
-						padding: 0;
-						line-height: 1;
-						@include vendorize(transition, all .2s ease-in-out);
-						&:hover{
-							color: $yellow;
-							background-color: $red;
-						}
-						&.active{
-							color: white;
-							background-color: $teal;
-						}
-					}
+		width: 90%;
+		margin-left: 5%;
+		overflow: hidden;
+		@include vendorize(box-sizing, border-box);
+		box-shadow: 1px 0px 0px #4d4d4d, 0px 1px 0px #333333, 2px 1px 0px #4d4d4d, 1px 2px 0px #333333, 3px 2px 0px #4d4d4d, 2px 3px 0px #333333, 4px 3px 0px #4d4d4d, 3px 4px 0px #333333, 5px 4px 0px #4d4d4d, 4px 5px 0px #333333, 6px 5px 0px #4d4d4d, 5px 6px 0px #333333, 7px 6px 0px #4d4d4d, 6px 7px 0px #333333, 8px 7px 0px #4d4d4d, 7px 8px 0px #333333, 9px 8px 0px #4d4d4d, 8px 9px 0px #333333, 10px 9px 0px #4d4d4d, 9px 10px 0px #333333, 11px 10px 0px #4d4d4d, 10px 11px 0px #333333, 12px 11px 0px #4d4d4d, 11px 12px 0px #333333, 13px 12px 0px #4d4d4d, 12px 13px 0px #333333, 14px 13px 0px #4d4d4d, 13px 14px 0px #333333, 15px 14px 0px #4d4d4d, 14px 15px 0px #333333, 16px 15px 0px #4d4d4d, 15px 16px 0px #333333, 16px 16px 0px #4d4d4d;
+		a{
+			.composer-wrapper{
+				padding: 10px;
+				text-align: center;
+				position: relative;
+				top: 0;
+				left: 0;
+				width: 100%;
+				height: 100%;
+				background-color: black;
+				h1{
+					color: white;
+					margin: 0;
+				}
+				p{
+					margin: 0;
+				}
+				&:hover{
+					background-color: $teal;
 				}
 			}
 		}
+		.game-icons{
+			display: inline-block;
+			width: 100%;
+			text-align: center;
+			left: 0;
+			-webkit-animation: jet 25s inifinite alternate;
+			
+		}
 	}
+}
 
-	.composer-data{
+.composer-data{
 		position: fixed;
 		top: 0;
 		left: 0;
 		display: none;
 		height: 100%;
 		width: 100%;
-		background-color: $blue;
+		background-color: white;
 		z-index: 9999;
 		.data-container{
 			position: relative;
@@ -282,11 +329,11 @@ hr{
 			padding-top: 40px;
 			left: 0;
 			.artist{
+				width: 80%;
+				margin-left: 10%;
 				margin-bottom: 100px;
-				border-bottom: 5px solid $yellow;
 				p{
-					width: 80%;
-					margin-left: 10%;
+					width: 100%;
 					font-family: karla, helvetica, sans-serif;
 					font-weight: lighter;
 					font-size: 1.5em;
@@ -322,28 +369,28 @@ hr{
 		}
 	}
 
-	.radio{
-		margin-top: 20%;
-		margin-bottom: 20%;
+.radio{
+	margin: 0;
+	z-index: 1;
+	.show{
+		width: 70%;
+		margin-bottom: 10%;
+		margin-left: 15%;
+		img{
+			width: 100%;
+			box-shadow: 1px 0px 0px #4d4d4d, 0px 1px 0px #333333, 2px 1px 0px #4d4d4d, 1px 2px 0px #333333, 3px 2px 0px #4d4d4d, 2px 3px 0px #333333, 4px 3px 0px #4d4d4d, 3px 4px 0px #333333, 5px 4px 0px #4d4d4d, 4px 5px 0px #333333, 6px 5px 0px #4d4d4d, 5px 6px 0px #333333, 7px 6px 0px #4d4d4d, 6px 7px 0px #333333, 8px 7px 0px #4d4d4d, 7px 8px 0px #333333, 9px 8px 0px #4d4d4d, 8px 9px 0px #333333, 10px 9px 0px #4d4d4d, 9px 10px 0px #333333, 11px 10px 0px #4d4d4d, 10px 11px 0px #333333, 12px 11px 0px #4d4d4d, 11px 12px 0px #333333, 13px 12px 0px #4d4d4d, 12px 13px 0px #333333, 14px 13px 0px #4d4d4d, 13px 14px 0px #333333, 15px 14px 0px #4d4d4d, 14px 15px 0px #333333, 16px 15px 0px #4d4d4d, 15px 16px 0px #333333, 16px 16px 0px #4d4d4d;
+		}
+		iframe{
+			box-shadow: 1px 0px 0px #4d4d4d, 0px 1px 0px #333333, 2px 1px 0px #4d4d4d, 1px 2px 0px #333333, 3px 2px 0px #4d4d4d, 2px 3px 0px #333333, 4px 3px 0px #4d4d4d, 3px 4px 0px #333333, 5px 4px 0px #4d4d4d, 4px 5px 0px #333333, 6px 5px 0px #4d4d4d, 5px 6px 0px #333333, 7px 6px 0px #4d4d4d, 6px 7px 0px #333333, 8px 7px 0px #4d4d4d, 7px 8px 0px #333333, 9px 8px 0px #4d4d4d, 8px 9px 0px #333333, 10px 9px 0px #4d4d4d, 9px 10px 0px #333333, 11px 10px 0px #4d4d4d, 10px 11px 0px #333333, 12px 11px 0px #4d4d4d, 11px 12px 0px #333333, 13px 12px 0px #4d4d4d, 12px 13px 0px #333333, 14px 13px 0px #4d4d4d, 13px 14px 0px #333333, 15px 14px 0px #4d4d4d, 14px 15px 0px #333333, 16px 15px 0px #4d4d4d, 15px 16px 0px #333333, 16px 16px 0px #4d4d4d;
+		}
 		p{
-			width: 70%;
 			font-family: karla;
-			margin-top: 40px;
-			margin-left: 15%;
 			font-size: 1.5em;
 			line-height: 2;
 		}
-		iframe{
-			width: 70%;
-			margin-left: 15%;
-			margin-bottom: 40px;
-			margin-top: 40px;
-			height: 100px !important;
-			border: none;
-			box-shadow: 1px 0px 0px #4d4d4d, 0px 1px 0px #333333, 2px 1px 0px #4d4d4d, 1px 2px 0px #333333, 3px 2px 0px #4d4d4d, 2px 3px 0px #333333, 4px 3px 0px #4d4d4d, 3px 4px 0px #333333, 5px 4px 0px #4d4d4d, 4px 5px 0px #333333, 6px 5px 0px #4d4d4d, 5px 6px 0px #333333, 7px 6px 0px #4d4d4d, 6px 7px 0px #333333, 8px 7px 0px #4d4d4d, 7px 8px 0px #333333, 9px 8px 0px #4d4d4d, 8px 9px 0px #333333, 10px 9px 0px #4d4d4d, 9px 10px 0px #333333, 11px 10px 0px #4d4d4d, 10px 11px 0px #333333, 12px 11px 0px #4d4d4d, 11px 12px 0px #333333, 13px 12px 0px #4d4d4d, 12px 13px 0px #333333, 14px 13px 0px #4d4d4d, 13px 14px 0px #333333, 15px 14px 0px #4d4d4d, 14px 15px 0px #333333, 16px 15px 0px #4d4d4d, 15px 16px 0px #333333, 16px 16px 0px #4d4d4d;
-		}
+
 	}
+	
 }
 
 
-// }

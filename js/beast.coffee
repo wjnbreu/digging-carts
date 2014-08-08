@@ -2,6 +2,7 @@ $ ->
 
 	composerObject = {}
 	videoObject = {}
+	mixObject = {}
 	player = {}
 	anchorElements = {}
 	colors = ['#d6f7fe', '#312cc0', '#f9a205', '#d89e46', '#4c9d5b', '#fbdd1b', '#ff6dd1']
@@ -26,6 +27,7 @@ $ ->
 		$('h1.colors').fitText(0.7)
 		setInterval(colorCycle, 250)
 		removeSpinner()
+		
 
 	
 
@@ -80,14 +82,14 @@ $ ->
 				left: '-100px'
 			, 200
 		
-		$('a.composer').bind 'click',(event) ->
+		$('a.composer-title').bind 'click',(event) ->
 			event.preventDefault()
-			goToComposer($(@))
+			goToComposers()
 
 		$('a.exit').bind 'click', (event) ->
 			event.preventDefault()
 			$('.composer-data').fadeOut(100, ->
-				location = $("#composers").position().top
+				location = $("#composers").offset().top
 				$('body,html').animate
 					scrollTop: location
 				,50
@@ -100,34 +102,25 @@ $ ->
 		
 	colorCycle = ->
 		ranColor = Math.floor(Math.random() * colors.length)
+		# $('.composers').css
+		# 	backgroundColor: colors[ranColor]
 		$('h1.colors').css
 			color: colors[ranColor]
 
 
 	#FIXXXXXX!!!!!!
-	goToComposer = (item) ->
+	goToComposers = (item) ->
 		#change bg
 		ranColor = Math.floor(Math.random() * colors.length)
-		$('.composer-data').css
-			backgroundColor: colors[ranColor]
+		# $('.composer-data').css
+		# 	backgroundColor: colors[ranColor]
 
-
-		scrollTo = item.attr 'href'
-
-		scrollWrap = $('.composer-data').offset().top
-
-		scrollToPos = $(".artist #{scrollTo}").position().top
-
-		$('.composer-data').fadeIn(50, ->
-			$('.data-container').delay(100).animate
-				scrollTop: scrollToPos
-			, 200
-		)
+		$('.composer-data').fadeIn()
 
 
 
 	changeVideo = (order, videoObject) ->
-		console.log videoObject
+		
 		#account for zero index
 		video = videoObject[order - 1].fields
 		player.cueVideoById(video.ytVideoId)
@@ -138,21 +131,24 @@ $ ->
 	
 
 	addComposers = (object) ->
-		console.log composerObject
-		composers = $('.composer-nav ul li')
-		composers.each (index) ->
-			t = $(@)
-			#account for zero indexing
-			person = composerObject[index].fields
+		for composer in object
+			person = composer.fields
 			name = person.composerName
-			t.text(name)
-			t.parent().attr("href", "##{person.firstNameInLowercase}")
-			imgId = person.image.sys.id
 			img = person.image.fields.file.url
-			composerData = "<a id='#{person.firstNameInLowercase}'><img src='#{img}'/><h1>#{person.composerName}</h1><p>#{person.bio}</p>"
-			$(".composer-data .artist:nth-child(#{index+1})").append composerData
+			composerData = "<div class='artist'><a id='#{person.firstNameInLowercase}'><img src='#{img}'/><h1>#{person.composerName}</h1><p>#{person.bio}</p></div>"
+			$(".composer-data .data-container").append composerData
+		
 
 
+	addMixes = (object) ->
+		for mix in object
+			mixInfo = mix.fields
+			name = mixInfo.artistName
+			embed = mixInfo.rbmaRadioEmbedCode
+			description = mixInfo.descriptions
+			img = mixInfo.artistImage.fields.file.url
+			mixData = "<div class='show'><img src='#{img}'/>#{embed}<p>#{description}</p></div>"
+			$('.radio').append(mixData)
 
 	resizeVid = ->
 		winWidth = $(window).width()
@@ -202,13 +198,19 @@ $ ->
 			space: 's9bc5ah7p1d5'
 
 		client.entries({'content_type': '42CpXYSUms44OskS6wUU6I', 'include': 1}).done (data) ->
-			composerObject = data
-			addComposers(composerObject)
+			addComposers(data)
 		
 		client.entries({'content_type':'36SuQSSPR6QmWOk8CseMC6', 'include': 1}).done (data) ->
 			videoObject = data
+
+		client.entries({'content_type':'2YpXtnGW80EEGgCUsSMmCc', 'include': 1}).done (data) ->
+			addMixes(data)
+
+		
 			
 			$('a.episode').bind 'click', ->
+				$(@).parent().find('li').removeClass "active"
+				$(@).find('li').addClass "active"
 				order = $(@).data 'order'
 				changeVideo(order, videoObject)
 		
