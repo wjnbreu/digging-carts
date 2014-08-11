@@ -188,7 +188,6 @@ hr{
 	overflow: auto;
 	top: 0;
 	left: 0;
-	cursor: url(../img/cursor.png), auto;
 	color: white;
 	z-index: 9;
 	.startscreen{
@@ -270,7 +269,6 @@ hr{
 	.composers{
 		position: relative;
 		margin-top: 200%;
-		//background: url(../img/noise.gif) no-repeat center center;
 		margin-top: 20%;
 		margin-bottom: 200px;
 		width: 90%;
@@ -279,15 +277,19 @@ hr{
 		@include vendorize(box-sizing, border-box);
 		box-shadow: 1px 0px 0px #4d4d4d, 0px 1px 0px #333333, 2px 1px 0px #4d4d4d, 1px 2px 0px #333333, 3px 2px 0px #4d4d4d, 2px 3px 0px #333333, 4px 3px 0px #4d4d4d, 3px 4px 0px #333333, 5px 4px 0px #4d4d4d, 4px 5px 0px #333333, 6px 5px 0px #4d4d4d, 5px 6px 0px #333333, 7px 6px 0px #4d4d4d, 6px 7px 0px #333333, 8px 7px 0px #4d4d4d, 7px 8px 0px #333333, 9px 8px 0px #4d4d4d, 8px 9px 0px #333333, 10px 9px 0px #4d4d4d, 9px 10px 0px #333333, 11px 10px 0px #4d4d4d, 10px 11px 0px #333333, 12px 11px 0px #4d4d4d, 11px 12px 0px #333333, 13px 12px 0px #4d4d4d, 12px 13px 0px #333333, 14px 13px 0px #4d4d4d, 13px 14px 0px #333333, 15px 14px 0px #4d4d4d, 14px 15px 0px #333333, 16px 15px 0px #4d4d4d, 15px 16px 0px #333333, 16px 16px 0px #4d4d4d;
 		a{
+			text-decoration: none;
+			color: white;
 			.composer-wrapper{
 				padding: 10px;
+				background: url(../img/upanddown.gif) no-repeat center center;
+				background-size: cover;
 				text-align: center;
 				position: relative;
 				top: 0;
 				left: 0;
 				width: 100%;
 				height: 100%;
-				background-color: black;
+				// background-color: black;
 				h1{
 					color: white;
 					margin: 0;
@@ -296,7 +298,7 @@ hr{
 					margin: 0;
 				}
 				&:hover{
-					background-color: $teal;
+					background: $teal;
 				}
 			}
 		}
@@ -317,17 +319,25 @@ hr{
 		left: 0;
 		display: none;
 		height: 100%;
-		width: 100%;
+		width: 101%;
 		background-color: white;
 		z-index: 9999;
+		canvas{
+			top: 0;
+			left: 0;
+			z-index: -2;
+			background-color: transparent;
+		}
 		.data-container{
-			position: relative;
+			position: absolute;
+			z-index: 99;
 			width: 102%;
 			height: 100%;
 			overflow: auto;
 			top: 0;
 			padding-top: 40px;
 			left: 0;
+			z-index: 99999;
 			.artist{
 				width: 80%;
 				margin-left: 10%;
@@ -370,7 +380,6 @@ hr{
 	}
 
 .radio{
-	cursor: url(../img/cursor.png), auto;
 	margin: 0;
 	z-index: 1;
 	.show{
@@ -378,10 +387,14 @@ hr{
 		margin-bottom: 10%;
 		margin-left: 15%;
 		img{
-			width: 100%;
+			width: 80%;
+			margin-left: 10%;
 			box-shadow: 1px 0px 0px #4d4d4d, 0px 1px 0px #333333, 2px 1px 0px #4d4d4d, 1px 2px 0px #333333, 3px 2px 0px #4d4d4d, 2px 3px 0px #333333, 4px 3px 0px #4d4d4d, 3px 4px 0px #333333, 5px 4px 0px #4d4d4d, 4px 5px 0px #333333, 6px 5px 0px #4d4d4d, 5px 6px 0px #333333, 7px 6px 0px #4d4d4d, 6px 7px 0px #333333, 8px 7px 0px #4d4d4d, 7px 8px 0px #333333, 9px 8px 0px #4d4d4d, 8px 9px 0px #333333, 10px 9px 0px #4d4d4d, 9px 10px 0px #333333, 11px 10px 0px #4d4d4d, 10px 11px 0px #333333, 12px 11px 0px #4d4d4d, 11px 12px 0px #333333, 13px 12px 0px #4d4d4d, 12px 13px 0px #333333, 14px 13px 0px #4d4d4d, 13px 14px 0px #333333, 15px 14px 0px #4d4d4d, 14px 15px 0px #333333, 16px 15px 0px #4d4d4d, 15px 16px 0px #333333, 16px 16px 0px #4d4d4d;
 		}
 		iframe{
+			width: 80%;
+			margin-left: 10%;
+			margin-bottom: 5%;
 			box-shadow: 1px 0px 0px #4d4d4d, 0px 1px 0px #333333, 2px 1px 0px #4d4d4d, 1px 2px 0px #333333, 3px 2px 0px #4d4d4d, 2px 3px 0px #333333, 4px 3px 0px #4d4d4d, 3px 4px 0px #333333, 5px 4px 0px #4d4d4d, 4px 5px 0px #333333, 6px 5px 0px #4d4d4d, 5px 6px 0px #333333, 7px 6px 0px #4d4d4d, 6px 7px 0px #333333, 8px 7px 0px #4d4d4d, 7px 8px 0px #333333, 9px 8px 0px #4d4d4d, 8px 9px 0px #333333, 10px 9px 0px #4d4d4d, 9px 10px 0px #333333, 11px 10px 0px #4d4d4d, 10px 11px 0px #333333, 12px 11px 0px #4d4d4d, 11px 12px 0px #333333, 13px 12px 0px #4d4d4d, 12px 13px 0px #333333, 14px 13px 0px #4d4d4d, 13px 14px 0px #333333, 15px 14px 0px #4d4d4d, 14px 15px 0px #333333, 16px 15px 0px #4d4d4d, 15px 16px 0px #333333, 16px 16px 0px #4d4d4d;
 		}
 		p{
@@ -389,9 +402,52 @@ hr{
 			font-size: 1.5em;
 			line-height: 2;
 		}
-
 	}
-	
+}
+
+.stories{
+	position: relative;
+	margin-top: 20%;
+	margin-bottom: 200px;
+	.story-nav{
+		ul{
+			text-align: center;
+			a{
+				li{
+					display: inline-block;
+					font-size: 1em;
+					padding: 5px;
+					font-size: 1.5em;
+					color: black;
+					font-family: karla;
+					&:hover{
+						background-color: $teal;
+					}
+					&.active{
+						background-color: $teal;
+					}
+				}
+			}
+		}
+	}
+	iframe{
+		margin-left: 20%;
+		margin-bottom: 20px;
+		box-shadow: 5px 5px 5px #030102;
+		border: 0;
+		border: none;
+		box-shadow: 1px 0px 0px #4d4d4d, 0px 1px 0px #333333, 2px 1px 0px #4d4d4d, 1px 2px 0px #333333, 3px 2px 0px #4d4d4d, 2px 3px 0px #333333, 4px 3px 0px #4d4d4d, 3px 4px 0px #333333, 5px 4px 0px #4d4d4d, 4px 5px 0px #333333, 6px 5px 0px #4d4d4d, 5px 6px 0px #333333, 7px 6px 0px #4d4d4d, 6px 7px 0px #333333, 8px 7px 0px #4d4d4d, 7px 8px 0px #333333, 9px 8px 0px #4d4d4d, 8px 9px 0px #333333, 10px 9px 0px #4d4d4d, 9px 10px 0px #333333, 11px 10px 0px #4d4d4d, 10px 11px 0px #333333, 12px 11px 0px #4d4d4d, 11px 12px 0px #333333, 13px 12px 0px #4d4d4d, 12px 13px 0px #333333, 14px 13px 0px #4d4d4d, 13px 14px 0px #333333, 15px 14px 0px #4d4d4d, 14px 15px 0px #333333, 16px 15px 0px #4d4d4d, 15px 16px 0px #333333, 16px 16px 0px #4d4d4d;
+	}
+	p.body{
+		text-align: center;
+		width: 70%;
+		margin-left: 15%;
+		margin-right: 15%;
+		color: black;
+		font-family: karla, 'Helvetica Neue', helvetica, sans-serif;
+		font-size: 1.5em;
+		line-height: 2;
+	}
 }
 
 

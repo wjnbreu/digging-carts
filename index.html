@@ -21,18 +21,12 @@
     <div class="videos"><a id="videos"></a>
       <h1>The Series</h1>
       <div class="video-nav">
-        <ul><a data-order="1" class="episode">
-            <li class="active">Episode 1</li></a><a data-order="2" class="episode">
-            <li>Episode 2</li></a><a data-order="3" class="episode">
-            <li>Episode 3</li></a><a data-order="4" class="episode">
-            <li>Episode 4</li></a><a data-order="5" class="episode">
-            <li>Episode 5</li></a><a data-order="6" class="episode">
-            <li>Episode 6</li></a></ul>
+        <ul></ul>
       </div>
       <div id="player"></div>
       <p class="body">Basic text about the video series should go here. Not very long.</p>
     </div>
-    <div class="composers"><a id="composers"></a><a class="composer-title">
+    <div class="composers"><a id="composers"></a><a href="#composer" class="composer-title">
         <div class="composer-wrapper">
           <h1>Meet The Composers</h1>
           <p>A very cool animation/effect will go here</p>
@@ -41,10 +35,19 @@
   <div class="radio">
     <h1>Radio Stuff</h1>
   </div>
-  <div class="composer-data"><a class="exit"></a>
+  <div class="composer-data">
+    <canvas id="canvas"></canvas><a class="exit"></a>
     <div class="data-container">
       <div class="artist"></div>
     </div>
+  </div>
+  <div class="stories"><a id="stories"></a>
+    <h1>Personal Stories</h1>
+    <div class="story-nav">
+      <ul></ul>
+    </div>
+    <div id="storyplayer"></div>
+    <p class="body">Basic text about the video series should go here. Not very long.</p>
   </div>
   <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
   <script type="text/javascript" src="js/contentful.min.js"></script>
@@ -52,5 +55,6 @@
   <script type="text/javascript" src="js/fittext.js"></script>
   <script type="text/javascript" src="js/howler.min.js"></script>
   <script type="text/javascript" src="js/transit.min.js"></script>
+  <script type="text/javascript" src="js/falling.js.js"></script>
   <script src="js/beast.js" type="text/javascript"></script>
 </body>

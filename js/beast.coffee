@@ -3,7 +3,9 @@ $ ->
 	composerObject = {}
 	videoObject = {}
 	mixObject = {}
-	player = {}
+	additionalVideoObject = {}
+	player1 = {}
+	player2 = {}
 	anchorElements = {}
 	colors = ['#d6f7fe', '#312cc0', '#f9a205', '#d89e46', '#4c9d5b', '#fbdd1b', '#ff6dd1']
 
@@ -18,7 +20,7 @@ $ ->
 		volume: 0.7
 	}
 
-	
+	initCount = 0
 
 
 	init = ->
@@ -29,8 +31,10 @@ $ ->
 		removeSpinner()
 		
 
-	
-
+	prepInit = (count) ->
+		initCount = initCount + count
+		if initCount == 4
+			init()
 
 	setupYouTube = ->
 		tag = document.createElement('script')
@@ -40,14 +44,13 @@ $ ->
 
 	
 
-
 	window.onYouTubeIframeAPIReady = ->
-		player = new YT.Player 'player',
+		player1 = new YT.Player 'player',
 			height: '390'
 			width: '640'
 			videoId: 'yqXayqIrAYE'
 			events: {
-				"onReady": onPlayerReady
+				"onReady": onPlayerReady1
 			}
 			playerVars: {
 				modestbranding: true
@@ -56,15 +59,39 @@ $ ->
 				hd: 1
 
 			}
+		
+		player2 = new YT.Player 'storyplayer',
+			height: '390'
+			width: '640'
+			videoId: 'yqXayqIrAYE'
+			events: {
+				"onReady": onPlayerReady2
+			}
+			playerVars: {
+				modestbranding: true
+				controls: 1
+				showinfo: 0
+				hd: 1
+			}
 
 	
 
-	onPlayerReady = (event) ->
-		resizeVid()
+	onPlayerReady1 = (event) ->
+		resizeVid('#player')
+
+	onPlayerReady2 = (event) ->
+		resizeVid('#storyplayer')
 		
 
-	
+	draw = ->
+		for icon in iconCount
+			ctx.drawImage(fallingIcons[i].image, fallingIcons[i].x, fallingIcons[i].y )
+			fallingIcons[i].y += fallingIcons[i].speed
+			if fallingIcons[i].y > 450
+				fallingIcons[i].y = -25
+				fallingIcons[i].x = Math.random() * 600
 
+	
 	setupBinds = ->
 		$('nav').bind 'mouseenter', ->
 			$(@).transition
@@ -118,15 +145,26 @@ $ ->
 		$('.composer-data').fadeIn()
 
 
-
 	changeVideo = (order, videoObject) ->
-		
 		#account for zero index
-		video = videoObject[order - 1].fields
-		player.cueVideoById(video.ytVideoId)
+		video = videoObject[order].fields
+		player1.cueVideoById(video.ytVideoId)
 		$('.videos h1').empty().text video.episodeTitle
 		$('.videos p.body').empty().text video.videoDescription
 		$('.videos p.body').slideDown()
+
+
+	addVideoTitles = (object, target, type) ->
+		
+		if type == 'main'
+			for video, i in object
+				episode = video.fields.episodeNumber
+				target.append("<a class='episode' href='#episode' data-order=#{i}><li>#{episode}</li>")
+		
+		else if type == 'additional'
+			for video, i in object
+				episode = video.fields.additionalVideoTitle
+				target.append("<a class='additional-episode' href='#additional-episode' data-order=#{i}><li>#{episode}</li>")
 
 	
 
@@ -150,19 +188,20 @@ $ ->
 			mixData = "<div class='show'><img src='#{img}'/>#{embed}<p>#{description}</p></div>"
 			$('.radio').append(mixData)
 
-	resizeVid = ->
+	resizeVid = (vidPlayer) ->
+		player = $(vidPlayer)
 		winWidth = $(window).width()
 		vidWidth = winWidth / 1.5
-		ogWidth = $('#player').attr('width')
-		ogHeight = $('#player').attr('height')
+		ogWidth = player.attr('width')
+		ogHeight = player.attr('height')
 		ratio = ogWidth / ogHeight
 
-		$('#player').attr('width', vidWidth)
-		$('#player').attr('height', vidWidth / ratio)
+		player.attr('width', vidWidth)
+		player.attr('height', vidWidth / ratio)
 
 		diff = winWidth - vidWidth
 		margin = diff / 2
-		$('#player').css
+		player.css
 			marginLeft: margin
 
 	
@@ -188,7 +227,7 @@ $ ->
 
 
 	removeSpinner = ->
-		$('.spinner').fadeOut()
+		$('.spinner').remove()
 		
 
 
@@ -199,23 +238,36 @@ $ ->
 
 		client.entries({'content_type': '42CpXYSUms44OskS6wUU6I', 'include': 1}).done (data) ->
 			addComposers(data)
+			prepInit(1)
 		
-		client.entries({'content_type':'36SuQSSPR6QmWOk8CseMC6', 'include': 1}).done (data) ->
+		client.entries({'content_type':'36SuQSSPR6QmWOk8CseMC6', 'include': 1, 'order': 'fields.order'}).done (data) ->
 			videoObject = data
+			prepInit(1)
+			addVideoTitles(videoObject, $('.video-nav ul'), 'main')
 
-		client.entries({'content_type':'2YpXtnGW80EEGgCUsSMmCc', 'include': 1}).done (data) ->
-			addMixes(data)
-
-		
-			
-			$('a.episode').bind 'click', ->
+			$('a.episode').bind 'click', (event) ->
+				event.preventDefault()
 				$(@).parent().find('li').removeClass "active"
 				$(@).find('li').addClass "active"
 				order = $(@).data 'order'
 				changeVideo(order, videoObject)
+
+		client.entries({'content_type':'2YpXtnGW80EEGgCUsSMmCc', 'include': 1}).done (data) ->
+			prepInit(1)
+			addMixes(data)
+
+
+		client.entries({'content_type':'6fwxAcXrxK4yqyaMUiWwWY', 'include': 1, 'order': 'fields.order'}).done (data) ->
+			prepInit(1)
+			additionalVideoObject = data
+			addVideoTitles(additionalVideoObject, $('.story-nav ul'), 'additional')
+
+		
+
+
 		
 		#launch when ready
-		init()
+		
 
 
 	getData()

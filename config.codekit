@@ -96,6 +96,17 @@
 		"outputPathIsSetByUser": 0,
 		"processed": 0
 		},
+	"\/img\/block.png": {
+		"fileType": 32768,
+		"ignore": 0,
+		"ignoreWasSetByUser": 0,
+		"initialSize": 932,
+		"inputAbbreviatedPath": "\/img\/block.png",
+		"outputAbbreviatedPath": "\/img\/block.png",
+		"outputPathIsOutsideProject": 0,
+		"outputPathIsSetByUser": 0,
+		"processed": 0
+		},
 	"\/img\/cart.png": {
 		"fileType": 32768,
 		"ignore": 0,
@@ -129,35 +140,101 @@
 		"outputPathIsSetByUser": 0,
 		"processed": 0
 		},
-	"\/img\/GanondorfHead.png": {
+	"\/img\/icons\/GanondorfHead.png": {
 		"fileType": 32768,
 		"ignore": 0,
 		"ignoreWasSetByUser": 0,
 		"initialSize": 528,
-		"inputAbbreviatedPath": "\/img\/GanondorfHead.png",
-		"outputAbbreviatedPath": "\/img\/GanondorfHead.png",
+		"inputAbbreviatedPath": "\/img\/icons\/GanondorfHead.png",
+		"outputAbbreviatedPath": "\/img\/icons\/GanondorfHead.png",
 		"outputPathIsOutsideProject": 0,
 		"outputPathIsSetByUser": 0,
 		"processed": 0
 		},
-	"\/img\/KirbyHead.png": {
+	"\/img\/icons\/KirbyHead.png": {
 		"fileType": 32768,
 		"ignore": 0,
 		"ignoreWasSetByUser": 0,
 		"initialSize": 395,
-		"inputAbbreviatedPath": "\/img\/KirbyHead.png",
-		"outputAbbreviatedPath": "\/img\/KirbyHead.png",
+		"inputAbbreviatedPath": "\/img\/icons\/KirbyHead.png",
+		"outputAbbreviatedPath": "\/img\/icons\/KirbyHead.png",
 		"outputPathIsOutsideProject": 0,
 		"outputPathIsSetByUser": 0,
 		"processed": 0
 		},
-	"\/img\/LinkHead.png": {
+	"\/img\/icons\/LinkHead.png": {
 		"fileType": 32768,
 		"ignore": 0,
 		"ignoreWasSetByUser": 0,
 		"initialSize": 531,
-		"inputAbbreviatedPath": "\/img\/LinkHead.png",
-		"outputAbbreviatedPath": "\/img\/LinkHead.png",
+		"inputAbbreviatedPath": "\/img\/icons\/LinkHead.png",
+		"outputAbbreviatedPath": "\/img\/icons\/LinkHead.png",
+		"outputPathIsOutsideProject": 0,
+		"outputPathIsSetByUser": 0,
+		"processed": 0
+		},
+	"\/img\/icons\/sega-genesis-icon.png": {
+		"fileType": 32768,
+		"ignore": 0,
+		"ignoreWasSetByUser": 0,
+		"initialSize": 1245,
+		"inputAbbreviatedPath": "\/img\/icons\/sega-genesis-icon.png",
+		"outputAbbreviatedPath": "\/img\/icons\/sega-genesis-icon.png",
+		"outputPathIsOutsideProject": 0,
+		"outputPathIsSetByUser": 0,
+		"processed": 0
+		},
+	"\/img\/icons\/Sega-Saturn-icon.png": {
+		"fileType": 32768,
+		"ignore": 0,
+		"ignoreWasSetByUser": 0,
+		"initialSize": 37494,
+		"inputAbbreviatedPath": "\/img\/icons\/Sega-Saturn-icon.png",
+		"outputAbbreviatedPath": "\/img\/icons\/Sega-Saturn-icon.png",
+		"outputPathIsOutsideProject": 0,
+		"outputPathIsSetByUser": 0,
+		"processed": 0
+		},
+	"\/img\/icons\/triforce.png": {
+		"fileType": 32768,
+		"ignore": 0,
+		"ignoreWasSetByUser": 0,
+		"initialSize": 1249,
+		"inputAbbreviatedPath": "\/img\/icons\/triforce.png",
+		"outputAbbreviatedPath": "\/img\/icons\/triforce.png",
+		"outputPathIsOutsideProject": 0,
+		"outputPathIsSetByUser": 0,
+		"processed": 0
+		},
+	"\/img\/icons\/WarioHead.png": {
+		"fileType": 32768,
+		"ignore": 0,
+		"ignoreWasSetByUser": 0,
+		"initialSize": 498,
+		"inputAbbreviatedPath": "\/img\/icons\/WarioHead.png",
+		"outputAbbreviatedPath": "\/img\/icons\/WarioHead.png",
+		"outputPathIsOutsideProject": 0,
+		"outputPathIsSetByUser": 0,
+		"processed": 0
+		},
+	"\/img\/icons\/YoshiHead.png": {
+		"fileType": 32768,
+		"ignore": 0,
+		"ignoreWasSetByUser": 0,
+		"initialSize": 430,
+		"inputAbbreviatedPath": "\/img\/icons\/YoshiHead.png",
+		"outputAbbreviatedPath": "\/img\/icons\/YoshiHead.png",
+		"outputPathIsOutsideProject": 0,
+		"outputPathIsSetByUser": 0,
+		"processed": 0
+		},
+	"\/img\/icons\/ZeldaHead.png": {
+		"fileType": 32768,
+		"ignore": 0,
+		"ignoreWasSetByUser": 0,
+		"initialSize": 516,
+		"inputAbbreviatedPath": "\/img\/icons\/ZeldaHead.png",
+		"outputAbbreviatedPath": "\/img\/icons\/ZeldaHead.png",
 		"outputPathIsOutsideProject": 0,
 		"outputPathIsSetByUser": 0,
 		"processed": 0
@@ -191,50 +268,6 @@
 		"initialSize": 952,
 		"inputAbbreviatedPath": "\/img\/tile.png",
 		"outputAbbreviatedPath": "\/img\/tile.png",
-		"outputPathIsOutsideProject": 0,
-		"outputPathIsSetByUser": 0,
-		"processed": 0
-		},
-	"\/img\/triforce.png": {
-		"fileType": 32768,
-		"ignore": 0,
-		"ignoreWasSetByUser": 0,
-		"initialSize": 1249,
-		"inputAbbreviatedPath": "\/img\/triforce.png",
-		"outputAbbreviatedPath": "\/img\/triforce.png",
-		"outputPathIsOutsideProject": 0,
-		"outputPathIsSetByUser": 0,
-		"processed": 0
-		},
-	"\/img\/WarioHead.png": {
-		"fileType": 32768,
-		"ignore": 0,
-		"ignoreWasSetByUser": 0,
-		"initialSize": 498,
-		"inputAbbreviatedPath": "\/img\/WarioHead.png",
-		"outputAbbreviatedPath": "\/img\/WarioHead.png",
-		"outputPathIsOutsideProject": 0,
-		"outputPathIsSetByUser": 0,
-		"processed": 0
-		},
-	"\/img\/YoshiHead.png": {
-		"fileType": 32768,
-		"ignore": 0,
-		"ignoreWasSetByUser": 0,
-		"initialSize": 430,
-		"inputAbbreviatedPath": "\/img\/YoshiHead.png",
-		"outputAbbreviatedPath": "\/img\/YoshiHead.png",
-		"outputPathIsOutsideProject": 0,
-		"outputPathIsSetByUser": 0,
-		"processed": 0
-		},
-	"\/img\/ZeldaHead.png": {
-		"fileType": 32768,
-		"ignore": 0,
-		"ignoreWasSetByUser": 0,
-		"initialSize": 516,
-		"inputAbbreviatedPath": "\/img\/ZeldaHead.png",
-		"outputAbbreviatedPath": "\/img\/ZeldaHead.png",
 		"outputPathIsOutsideProject": 0,
 		"outputPathIsSetByUser": 0,
 		"processed": 0
@@ -285,6 +318,17 @@
 		"outputStyle": 1,
 		"syntaxCheckerStyle": 1
 		},
+	"\/js\/falling.js.js": {
+		"fileType": 64,
+		"ignore": 1,
+		"ignoreWasSetByUser": 0,
+		"inputAbbreviatedPath": "\/js\/falling.js.js",
+		"outputAbbreviatedPath": "\/js\/min\/falling.js-min.js",
+		"outputPathIsOutsideProject": 0,
+		"outputPathIsSetByUser": 0,
+		"outputStyle": 1,
+		"syntaxCheckerStyle": 1
+		},
 	"\/js\/fittext.js": {
 		"fileType": 64,
 		"ignore": 0,
@@ -313,6 +357,17 @@
 		"ignoreWasSetByUser": 0,
 		"inputAbbreviatedPath": "\/js\/min\/contentful.min-min.js",
 		"outputAbbreviatedPath": "\/js\/min\/min\/contentful.min-min-min.js",
+		"outputPathIsOutsideProject": 0,
+		"outputPathIsSetByUser": 0,
+		"outputStyle": 1,
+		"syntaxCheckerStyle": 1
+		},
+	"\/js\/min\/falling-min.js": {
+		"fileType": 64,
+		"ignore": 1,
+		"ignoreWasSetByUser": 0,
+		"inputAbbreviatedPath": "\/js\/min\/falling-min.js",
+		"outputAbbreviatedPath": "\/js\/min\/min\/falling-min-min.js",
 		"outputPathIsOutsideProject": 0,
 		"outputPathIsSetByUser": 0,
 		"outputStyle": 1,

@@ -1,41 +1,64 @@
 (function() {
     $(function() {
-        var e, t, n, r, i, o, a, s, c, d, u, l, f, p, m, h, v, y, b, w, g;
-        s = {};
-        g = {};
-        f = {};
-        m = {};
-        n = {};
-        a = [ "#d6f7fe", "#312cc0", "#f9a205", "#d89e46", "#4c9d5b", "#fbdd1b", "#ff6dd1" ];
-        u = new Howl({
+        var e, n, t, r, o, a, s, d, c, l, u, f, p, h, m, v, y, g, b, w, I, C, T, x, E, k, M, Y;
+        l = {};
+        Y = {};
+        y = {};
+        r = {};
+        w = {};
+        I = {};
+        o = {};
+        c = [ "#d6f7fe", "#312cc0", "#f9a205", "#d89e46", "#4c9d5b", "#fbdd1b", "#ff6dd1" ];
+        h = new Howl({
             urls: [ "sound/CLICK.mp3", "sound/CLICK.ogg" ],
             volume: .5
         });
-        i = new Howl({
+        s = new Howl({
             urls: [ "sound/EXIT.mp3", "sound/EXIT.ogg" ],
             volume: .7
         });
-        l = function() {
-            b();
-            y();
+        v = 0;
+        m = function() {
+            k();
+            E();
             $("h1.colors").fitText(.7);
-            setInterval(o, 250);
-            return h();
+            setInterval(d, 250);
+            return T();
         };
-        b = function() {
-            var e, t;
-            t = document.createElement("script");
-            t.src = "https://www.youtube.com/iframe_api";
+        C = function(e) {
+            v = v + e;
+            if (v === 4) {
+                return m();
+            }
+        };
+        k = function() {
+            var e, n;
+            n = document.createElement("script");
+            n.src = "https://www.youtube.com/iframe_api";
             e = document.getElementsByTagName("script")[0];
-            return e.parentNode.insertBefore(t, e);
+            return e.parentNode.insertBefore(n, e);
         };
         window.onYouTubeIframeAPIReady = function() {
-            return m = new YT.Player("player", {
+            w = new YT.Player("player", {
                 height: "390",
                 width: "640",
                 videoId: "yqXayqIrAYE",
                 events: {
-                    onReady: p
+                    onReady: g
+                },
+                playerVars: {
+                    modestbranding: true,
+                    controls: 1,
+                    showinfo: 0,
+                    hd: 1
+                }
+            });
+            return I = new YT.Player("storyplayer", {
+                height: "390",
+                width: "640",
+                videoId: "yqXayqIrAYE",
+                events: {
+                    onReady: b
                 },
                 playerVars: {
                     modestbranding: true,
@@ -45,20 +68,39 @@
                 }
             });
         };
-        p = function(e) {
-            return v();
+        g = function(e) {
+            return x("#player");
         };
-        y = function() {
+        b = function(e) {
+            return x("#storyplayer");
+        };
+        u = function() {
+            var e, n, t, r;
+            r = [];
+            for (n = 0, t = iconCount.length; n < t; n++) {
+                e = iconCount[n];
+                ctx.drawImage(fallingIcons[i].image, fallingIcons[i].x, fallingIcons[i].y);
+                fallingIcons[i].y += fallingIcons[i].speed;
+                if (fallingIcons[i].y > 450) {
+                    fallingIcons[i].y = -25;
+                    r.push(fallingIcons[i].x = Math.random() * 600);
+                } else {
+                    r.push(void 0);
+                }
+            }
+            return r;
+        };
+        E = function() {
             $("nav").bind("mouseenter", function() {
                 return $(this).transition({
                     left: 0
                 }, 200);
             });
             $("a").bind("click", function() {
-                return i.play();
+                return s.play();
             });
             $("a").bind("mouseenter", function() {
-                return u.play();
+                return h.play();
             });
             $("nav").bind("mouseleave", function() {
                 return $(this).transition({
@@ -67,7 +109,7 @@
             });
             $("a.composer-title").bind("click", function(e) {
                 e.preventDefault();
-                return d();
+                return p();
             });
             $("a.exit").bind("click", function(e) {
                 e.preventDefault();
@@ -80,125 +122,160 @@
                 });
             });
             return $("a.scroll").bind("click", function(e) {
-                var t;
-                t = $(this);
-                return w(e, t);
+                var n;
+                n = $(this);
+                return M(e, n);
             });
         };
-        o = function() {
+        d = function() {
             var e;
-            e = Math.floor(Math.random() * a.length);
+            e = Math.floor(Math.random() * c.length);
             return $("h1.colors").css({
-                color: a[e]
+                color: c[e]
             });
         };
-        d = function(e) {
-            var t;
-            t = Math.floor(Math.random() * a.length);
+        p = function(e) {
+            var n;
+            n = Math.floor(Math.random() * c.length);
             return $(".composer-data").fadeIn();
         };
-        r = function(e, t) {
-            var n;
-            n = t[e - 1].fields;
-            m.cueVideoById(n.ytVideoId);
-            $(".videos h1").empty().text(n.episodeTitle);
-            $(".videos p.body").empty().text(n.videoDescription);
+        a = function(e, n) {
+            var t;
+            t = n[e].fields;
+            w.cueVideoById(t.ytVideoId);
+            $(".videos h1").empty().text(t.episodeTitle);
+            $(".videos p.body").empty().text(t.videoDescription);
             return $(".videos p.body").slideDown();
         };
+        t = function(e, n, t) {
+            var i, r, o, a, s, d, c, l, u;
+            if (t === "main") {
+                l = [];
+                for (r = a = 0, d = e.length; a < d; r = ++a) {
+                    o = e[r];
+                    i = o.fields.episodeNumber;
+                    l.push(n.append("<a class='episode' href='#episode' data-order=" + r + "><li>" + i + "</li>"));
+                }
+                return l;
+            } else if (t === "additional") {
+                u = [];
+                for (r = s = 0, c = e.length; s < c; r = ++s) {
+                    o = e[r];
+                    i = o.fields.additionalVideoTitle;
+                    u.push(n.append("<a class='additional-episode' href='#additional-episode' data-order=" + r + "><li>" + i + "</li>"));
+                }
+                return u;
+            }
+        };
         e = function(e) {
-            var t, n, r, i, o, a, s, c;
-            c = [];
+            var n, t, i, r, o, a, s, d;
+            d = [];
             for (a = 0, s = e.length; a < s; a++) {
-                t = e[a];
-                o = t.fields;
-                i = o.composerName;
-                r = o.image.fields.file.url;
-                n = "<div class='artist'><a id='" + o.firstNameInLowercase + "'><img src='" + r + "'/><h1>" + o.composerName + "</h1><p>" + o.bio + "</p></div>";
-                c.push($(".composer-data .data-container").append(n));
+                n = e[a];
+                o = n.fields;
+                r = o.composerName;
+                i = o.image.fields.file.url;
+                t = "<div class='artist'><a id='" + o.firstNameInLowercase + "'><img src='" + i + "'/><h1>" + o.composerName + "</h1><p>" + o.bio + "</p></div>";
+                d.push($(".composer-data .data-container").append(t));
             }
-            return c;
+            return d;
         };
-        t = function(e) {
-            var t, n, r, i, o, a, s, c, d, u;
-            u = [];
-            for (c = 0, d = e.length; c < d; c++) {
-                i = e[c];
-                a = i.fields;
+        n = function(e) {
+            var n, t, i, r, o, a, s, d, c, l;
+            l = [];
+            for (d = 0, c = e.length; d < c; d++) {
+                r = e[d];
+                a = r.fields;
                 s = a.artistName;
-                n = a.rbmaRadioEmbedCode;
-                t = a.descriptions;
-                r = a.artistImage.fields.file.url;
-                o = "<div class='show'><img src='" + r + "'/>" + n + "<p>" + t + "</p></div>";
-                u.push($(".radio").append(o));
+                t = a.rbmaRadioEmbedCode;
+                n = a.descriptions;
+                i = a.artistImage.fields.file.url;
+                o = "<div class='show'><img src='" + i + "'/>" + t + "<p>" + n + "</p></div>";
+                l.push($(".radio").append(o));
             }
-            return u;
+            return l;
         };
-        v = function() {
-            var e, t, n, r, i, o, a;
-            a = $(window).width();
-            o = a / 1.5;
-            r = $("#player").attr("width");
-            n = $("#player").attr("height");
-            i = r / n;
-            $("#player").attr("width", o);
-            $("#player").attr("height", o / i);
-            e = a - o;
-            t = e / 2;
-            return $("#player").css({
+        x = function(e) {
+            var n, t, i, r, o, a, s, d;
+            o = $(e);
+            d = $(window).width();
+            s = d / 1.5;
+            r = o.attr("width");
+            i = o.attr("height");
+            a = r / i;
+            o.attr("width", s);
+            o.attr("height", s / a);
+            n = d - s;
+            t = n / 2;
+            return o.css({
                 marginLeft: t
             });
         };
-        w = function(e, t, n) {
-            var r, i;
+        M = function(e, n, t) {
+            var i, r;
             e.preventDefault();
-            i = t.attr("href");
-            r = $("" + i).position().top;
-            if (t.hasClass("active")) {} else {
+            r = n.attr("href");
+            i = $("" + r).position().top;
+            if (n.hasClass("active")) {} else {
                 $("nav ul a").each(function() {
                     return $(this).removeClass("active");
                 });
-                t.addClass("active");
+                n.addClass("active");
                 return $("body,html").animate({
-                    scrollTop: r
+                    scrollTop: i
                 }, 300);
             }
         };
-        h = function() {
-            return $(".spinner").fadeOut();
+        T = function() {
+            return $(".spinner").remove();
         };
-        c = function() {
-            var n;
-            n = contentful.createClient({
+        f = function() {
+            var i;
+            i = contentful.createClient({
                 accessToken: "38b8dbaf503a350d5722578c6547caca484511f7c78717736ac8f576832be4b0",
                 space: "s9bc5ah7p1d5"
             });
-            n.entries({
+            i.entries({
                 content_type: "42CpXYSUms44OskS6wUU6I",
                 include: 1
-            }).done(function(t) {
-                return e(t);
+            }).done(function(n) {
+                e(n);
+                return C(1);
             });
-            n.entries({
+            i.entries({
                 content_type: "36SuQSSPR6QmWOk8CseMC6",
-                include: 1
+                include: 1,
+                order: "fields.order"
             }).done(function(e) {
-                return g = e;
+                Y = e;
+                C(1);
+                t(Y, $(".video-nav ul"), "main");
+                return $("a.episode").bind("click", function(e) {
+                    var n;
+                    e.preventDefault();
+                    $(this).parent().find("li").removeClass("active");
+                    $(this).find("li").addClass("active");
+                    n = $(this).data("order");
+                    return a(n, Y);
+                });
             });
-            n.entries({
+            i.entries({
                 content_type: "2YpXtnGW80EEGgCUsSMmCc",
                 include: 1
             }).done(function(e) {
-                t(e);
-                return $("a.episode").bind("click", function() {
-                    var e;
-                    $(this).parent().find("li").removeClass("active");
-                    $(this).find("li").addClass("active");
-                    e = $(this).data("order");
-                    return r(e, g);
-                });
+                C(1);
+                return n(e);
             });
-            return l();
+            return i.entries({
+                content_type: "6fwxAcXrxK4yqyaMUiWwWY",
+                include: 1,
+                order: "fields.order"
+            }).done(function(e) {
+                C(1);
+                r = e;
+                return t(r, $(".story-nav ul"), "additional");
+            });
         };
-        return c();
+        return f();
     });
 }).call(this);

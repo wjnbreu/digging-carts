@@ -31,24 +31,12 @@ body
 			h1 The Series
 			.video-nav
 				ul
-					a(class="episode", data-order="1")
-						li(class="active") Episode 1
-					a(class="episode", data-order="2")
-						li Episode 2
-					a(class="episode", data-order="3")
-						li Episode 3
-					a(class="episode", data-order="4")
-						li Episode 4
-					a(class="episode", data-order="5")
-						li Episode 5
-					a(class="episode", data-order="6")
-						li Episode 6
 			div(id="player")
 			p(class="body") Basic text about the video series should go here. Not very long.
 
 		.composers
 			a(id="composers")
-			a(class="composer-title")
+			a(class="composer-title", href="#composer")
 				.composer-wrapper
 					h1 Meet The Composers
 					p A very cool animation/effect will go here
@@ -58,9 +46,19 @@ body
 		h1 Radio Stuff
 
 	.composer-data
+		canvas(id="canvas")
 		a.exit
 		.data-container
 			.artist
+
+
+	.stories
+		a(id="stories")
+		h1 Personal Stories
+		.story-nav
+			ul
+		div(id="storyplayer")
+		p(class="body") Basic text about the video series should go here. Not very long.
 
 
 	script(type="text/javascript", src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js")
@@ -69,4 +67,5 @@ body
 	script(type="text/javascript", src="js/fittext.js")
 	script(type="text/javascript", src="js/howler.min.js")
 	script(type="text/javascript", src="js/transit.min.js")
+	script(type="text/javascript", src="js/falling.js.js")
 	script(src="js/beast.js", type="text/javascript")
