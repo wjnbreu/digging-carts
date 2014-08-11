@@ -30,7 +30,7 @@ $ ->
 		setInterval(colorCycle, 250)
 		$('.video-nav ul a.episode li').first().addClass "active"
 		$('.story-nav ul a.additional-episode li').first().addClass "active"
-		setTimeout(sendHeight(getHeight()), 500)
+		sendHeight(getHeight())
 		
 
 	prepInit = (count) ->
@@ -308,6 +308,7 @@ $ ->
 		
 	#launch when ready	
 	getData()
+	sendHeight(getHeight())
 
 
 	
