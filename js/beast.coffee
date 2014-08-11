@@ -308,7 +308,8 @@ $ ->
 
 		
 	#launch when ready	
-	getData()
+	window.addEventListener('load', sendHeight(getHeight()))
+	window.load
 
 
 	

@@ -1,9 +1,9 @@
 (function() {
     $(function() {
-        var e, n, t, r, o, a, d, s, l, c, u, f, p, h, v, m, y, g, b, w, I, C, T, x, k, M, D, E, S, V, Y;
+        var e, n, t, r, o, a, d, s, l, c, u, f, p, h, v, m, y, g, w, b, I, C, T, x, k, E, M, D, S, V, Y;
         u = {};
         Y = {};
-        b = {};
+        w = {};
         r = {};
         C = {};
         T = {};
@@ -20,12 +20,12 @@
         g = 0;
         y = function() {
             S();
-            E();
+            D();
             $("h1.colors").fitText(.7);
             setInterval(l, 250);
             $(".video-nav ul a.episode li").first().addClass("active");
             $(".story-nav ul a.additional-episode li").first().addClass("active");
-            setTimeout(D(h()), 500);
+            setTimeout(M(h()), 500);
             return k();
         };
         x = function(e) {
@@ -34,7 +34,7 @@
                 return y();
             }
         };
-        D = function(e) {
+        M = function(e) {
             var n, t;
             n = {
                 height: e
@@ -58,7 +58,7 @@
                 width: "640",
                 videoId: "WYSupJ5r2zo",
                 events: {
-                    onReady: w
+                    onReady: b
                 },
                 playerVars: {
                     modestbranding: true,
@@ -82,11 +82,11 @@
                 }
             });
         };
-        w = function(e) {
-            return M("#player");
+        b = function(e) {
+            return E("#player");
         };
         I = function(e) {
-            return M("#storyplayer");
+            return E("#storyplayer");
         };
         f = function() {
             var e, n, t, r;
@@ -104,7 +104,7 @@
             }
             return r;
         };
-        E = function() {
+        D = function() {
             $("nav").bind("mouseenter", function() {
                 return $(this).transition({
                     left: 0
@@ -141,11 +141,11 @@
                 return V(e, n);
             });
             $(window).bind("resize", function(e) {
-                M("#player");
-                return M("#storyplayer");
+                E("#player");
+                return E("#storyplayer");
             });
             return window.addEventListener("resize", function() {
-                return D(h());
+                return M(h());
             });
         };
         l = function() {
@@ -225,7 +225,7 @@
             }
             return c;
         };
-        M = function(e) {
+        E = function(e) {
             var n, t, i, r, o, a, d, s;
             o = $(e);
             s = $(window).width();
@@ -314,6 +314,7 @@
                 });
             });
         };
-        return p();
+        window.addEventListener("load", M(h()));
+        return window.load;
     });
 }).call(this);

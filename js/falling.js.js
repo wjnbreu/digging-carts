@@ -30,7 +30,6 @@ var fallingIcons = [
         drawBackground();
         var width = $(window).width();
         var height = $(window).height();
-        console.log('Width: ' + width + ', Height: ' + height);
 
         for (var i=0; i< noOfDrops; i++)
         {
@@ -42,6 +41,20 @@ var fallingIcons = [
             fallingDrops[i].x = Math.random() * width;    //Make it appear randomly along the width    
         }
         
+        }
+    }
+
+    function resizeCanvas() {
+        // only change the size of the canvas if the size it's being displayed
+        // has changed.
+        var width = $(window).width();
+        var height = $(window).height();
+        var canvas = document.getElementById('canvas');
+        if (canvas.width != width ||
+            canvas.height != height) {
+            // Change the size of the canvas to match the size it's being displayed
+            canvas.width = width;
+            canvas.height = height;
         }
     }
 
@@ -75,6 +88,8 @@ var fallingIcons = [
             }
         }
     }
+
+    window.addEventListener('resize', resizeCanvas);
 
 
 
