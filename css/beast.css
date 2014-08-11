@@ -229,8 +229,8 @@ hr {
     margin-top: 200%;
     margin-top: 20%;
     margin-bottom: 200px;
-    width: 90%;
-    margin-left: 5%;
+    width: 70%;
+    margin-left: 15%;
     overflow: hidden;
     -webkit-box-sizing: border-box;
     -moz-box-sizing: border-box;
@@ -352,8 +352,7 @@ hr {
 
 .stories {
   position: relative;
-  margin-top: 20%;
-  margin-bottom: 600px; }
+  margin-top: 20%; }
   .stories .story-nav ul {
     text-align: center; }
     .stories .story-nav ul a li {
@@ -385,3 +384,42 @@ hr {
     font-family: karla, 'Helvetica Neue', helvetica, sans-serif;
     font-size: 1.5em;
     line-height: 2; }
+
+.features {
+  position: relative;
+  margin-top: 20%;
+  width: 70%;
+  margin-left: 15%;
+  margin-bottom: 200px; }
+  .features .feature-wrapper {
+    width: 100%; }
+    .features .feature-wrapper h3 {
+      color: white; }
+    .features .feature-wrapper p {
+      color: white;
+      text-align: center;
+      font-family: 'Helvetica Neue', helvetica, sans-serif;
+      font-weight: lighter; }
+    .features .feature-wrapper a {
+      color: white;
+      text-decoration: none; }
+    .features .feature-wrapper .col1, .features .feature-wrapper .col2 {
+      width: 46%;
+      height: 400px; }
+    .features .feature-wrapper .col1 {
+      margin-left: 2%;
+      position: absolute;
+      clear: left; }
+      .features .feature-wrapper .col1 img {
+        max-width: 100%; }
+        .features .feature-wrapper .col1 img:hover {
+          opacity: 0.7; }
+    .features .feature-wrapper .col2 {
+      position: absolute;
+      margin-left: 52%; }
+      .features .feature-wrapper .col2 img {
+        max-width: 100%; }
+        .features .feature-wrapper .col2 img:hover {
+          opacity: 0.7; }
+    .features .feature-wrapper .magFeature {
+      margin-bottom: 40px; }

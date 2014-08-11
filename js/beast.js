@@ -1,40 +1,41 @@
 (function() {
     $(function() {
-        var e, t, n, i, r, o, a, d, s, l, u, c, f, p, h, v, m, y, b, w, g, C, T, I, k, x, E, D, S, V;
-        u = {};
-        V = {};
-        y = {};
-        i = {};
+        var e, t, n, i, r, o, a, d, s, l, u, c, f, p, h, m, v, y, b, g, w, C, T, I, k, E, x, D, Y, S, V, N;
+        c = {};
+        N = {};
         g = {};
-        C = {};
         r = {};
-        l = [ "#d6f7fe", "#312cc0", "#f9a205", "#d89e46", "#4c9d5b", "#fbdd1b", "#ff6dd1" ];
-        h = new Howl({
+        b = {};
+        T = {};
+        I = {};
+        o = {};
+        u = [ "#d6f7fe", "#312cc0", "#f9a205", "#d89e46", "#4c9d5b", "#fbdd1b", "#ff6dd1" ];
+        m = new Howl({
             urls: [ "sound/CLICK.mp3", "sound/CLICK.ogg" ],
             volume: .5
         });
-        d = new Howl({
+        s = new Howl({
             urls: [ "sound/EXIT.mp3", "sound/EXIT.ogg" ],
             volume: .7
         });
-        m = 0;
+        y = 0;
         v = function() {
-            D();
-            E();
+            S();
+            Y();
             $("h1.colors").fitText(.7);
-            setInterval(s, 250);
+            setInterval(l, 250);
             $(".video-nav ul a.episode li").first().addClass("active");
             $(".story-nav ul a.additional-episode li").first().addClass("active");
-            setTimeout(x(f()), 500);
-            return I();
+            setTimeout(D(p()), 500);
+            return E();
         };
-        T = function(e) {
-            m = m + e;
-            if (m === 4) {
+        k = function(e) {
+            y = y + e;
+            if (y === 5) {
                 return v();
             }
         };
-        x = function(e) {
+        D = function(e) {
             var t, n;
             t = {
                 height: e
@@ -42,10 +43,10 @@
             n = JSON.stringify(t);
             return window.parent.postMessage(n, "*");
         };
-        f = function() {
+        p = function() {
             return $(document.body).height() + 300;
         };
-        D = function() {
+        S = function() {
             var e, t;
             t = document.createElement("script");
             t.src = "https://www.youtube.com/iframe_api";
@@ -53,24 +54,10 @@
             return e.parentNode.insertBefore(t, e);
         };
         window.onYouTubeIframeAPIReady = function() {
-            g = new YT.Player("player", {
+            T = new YT.Player("player", {
                 height: "390",
                 width: "640",
                 videoId: "WYSupJ5r2zo",
-                events: {
-                    onReady: b
-                },
-                playerVars: {
-                    modestbranding: true,
-                    controls: 1,
-                    showinfo: 0,
-                    hd: 1
-                }
-            });
-            return C = new YT.Player("storyplayer", {
-                height: "390",
-                width: "640",
-                videoId: "VsbG4pXrhr8",
                 events: {
                     onReady: w
                 },
@@ -81,26 +68,40 @@
                     hd: 1
                 }
             });
-        };
-        b = function(e) {
-            k("#player");
-            return x(f());
+            return I = new YT.Player("storyplayer", {
+                height: "390",
+                width: "640",
+                videoId: "VsbG4pXrhr8",
+                events: {
+                    onReady: C
+                },
+                playerVars: {
+                    modestbranding: true,
+                    controls: 1,
+                    showinfo: 0,
+                    hd: 1
+                }
+            });
         };
         w = function(e) {
-            k("#storyplayer");
-            return x(f());
+            x("#player");
+            return D(p());
         };
-        E = function() {
+        C = function(e) {
+            x("#storyplayer");
+            return D(p());
+        };
+        Y = function() {
             $("nav").bind("mouseenter", function() {
                 return $(this).transition({
                     left: 0
                 }, 200);
             });
             $("a").bind("click", function() {
-                return d.play();
+                return s.play();
             });
             $("a").bind("mouseenter", function() {
-                return h.play();
+                return m.play();
             });
             $("nav").bind("mouseleave", function() {
                 return $(this).transition({
@@ -109,8 +110,8 @@
             });
             $("a.composer-title").bind("click", function(e) {
                 e.preventDefault();
-                p();
-                return x(f());
+                h();
+                return D(p());
             });
             $("a.exit").bind("click", function(e) {
                 e.preventDefault();
@@ -121,53 +122,52 @@
                         scrollTop: e
                     }, 50);
                 });
-                return x(f());
+                return D(p());
             });
             $("a.scroll").bind("click", function(e) {
                 var t;
                 t = $(this);
-                return S(e, t);
+                return V(e, t);
             });
             return window.addEventListener("resize", function() {
-                k("#player");
-                k("#storyplayer");
-                return x(f());
+                x("#player");
+                x("#storyplayer");
+                return D(p());
             });
         };
-        s = function() {
+        l = function() {
             var e;
-            e = Math.floor(Math.random() * l.length);
+            e = Math.floor(Math.random() * u.length);
             return $("h1.colors").css({
-                color: l[e]
+                color: u[e]
             });
         };
-        p = function(e) {
+        h = function(e) {
             $(".composer-data").fadeIn();
             $("body,html").animate({
                 scrollTop: 0
             }, 50);
-            return x(f());
+            return D(p());
+        };
+        d = function(e, t) {
+            var n;
+            n = t[e].fields;
+            T.cueVideoById(n.ytVideoId);
+            $(".videos h1").empty().text(n.episodeTitle);
+            $(".videos p.body").empty().text(n.videoDescription);
+            $(".videos p.body").slideDown();
+            return D(p());
         };
         a = function(e, t) {
             var n;
             n = t[e].fields;
-            g.cueVideoById(n.ytVideoId);
-            $(".videos h1").empty().text(n.episodeTitle);
-            $(".videos p.body").empty().text(n.videoDescription);
-            $(".videos p.body").slideDown();
-            return x(f());
-        };
-        o = function(e, t) {
-            var n;
-            console.log(t);
-            n = t[e].fields;
-            C.cueVideoById(n.additionalYouTube);
+            I.cueVideoById(n.additionalYouTube);
             $(".stories h1").empty().text(n.additionalVideoTitle);
             $(".stories p.body").empty().text(n.description);
             $(".stories p.body").slideDown();
-            return x(f());
+            return D(p());
         };
-        n = function(e, t, n) {
+        i = function(e, t, n) {
             var i, r, o, a, d, s, l, u, c;
             if (n === "main") {
                 u = [];
@@ -201,6 +201,28 @@
             return s;
         };
         t = function(e) {
+            var t, n, i, r, o, a, d, s, l, u, c;
+            c = [];
+            for (r = l = 0, u = e.length; l < u; r = ++l) {
+                i = e[r];
+                console.log(i.fields);
+                t = i.fields;
+                s = t.magazineFeatureTitle;
+                n = t.magazineDescription;
+                a = t.rbmaLink;
+                o = t.magazineImage.fields.file.url;
+                d = "<div class='magFeature'><a href='" + a + "' target='blank'><img src='" + o + "'/></a><h3>" + s + "</h3><p>" + n + "</p></div>";
+                if (r % 2 === 0) {
+                    c.push($(".feature-wrapper .col1").append(d));
+                } else if (r & 2 >= 0 || !r) {
+                    c.push($(".feature-wrapper .col2").append(d));
+                } else {
+                    c.push(void 0);
+                }
+            }
+            return c;
+        };
+        n = function(e) {
             var t, n, i, r, o, a, d, s, l, u;
             u = [];
             for (s = 0, l = e.length; s < l; s++) {
@@ -212,11 +234,11 @@
                 i = a.artistImage.fields.file.url;
                 o = "<div class='show'><img src='" + i + "'/>" + n + "<p>" + t + "</p></div>";
                 $(".radio").append(o);
-                u.push(x(f()));
+                u.push(D(p()));
             }
             return u;
         };
-        k = function(e) {
+        x = function(e) {
             var t, n, i, r, o, a, d, s;
             o = $(e);
             s = $(window).width();
@@ -231,9 +253,9 @@
             o.css({
                 marginLeft: n
             });
-            return x(f());
+            return D(p());
         };
-        S = function(e, t, n) {
+        V = function(e, t, n) {
             var i, r;
             e.preventDefault();
             r = t.attr("href");
@@ -248,66 +270,74 @@
                 }, 300);
             }
         };
-        I = function() {
+        E = function() {
             $(".spinner").remove();
-            return x(f());
+            return D(p());
         };
-        c = function() {
-            var r;
-            r = contentful.createClient({
+        f = function() {
+            var o;
+            o = contentful.createClient({
                 accessToken: "38b8dbaf503a350d5722578c6547caca484511f7c78717736ac8f576832be4b0",
                 space: "s9bc5ah7p1d5"
             });
-            r.entries({
+            o.entries({
                 content_type: "42CpXYSUms44OskS6wUU6I",
                 include: 1
             }).done(function(t) {
                 e(t);
-                return T(1);
+                return k(1);
             });
-            r.entries({
+            o.entries({
                 content_type: "36SuQSSPR6QmWOk8CseMC6",
                 include: 1,
                 order: "fields.order"
             }).done(function(e) {
-                V = e;
-                T(1);
-                n(V, $(".video-nav ul"), "main");
+                N = e;
+                k(1);
+                i(N, $(".video-nav ul"), "main");
                 return $("a.episode").bind("click", function(e) {
                     var t;
                     e.preventDefault();
                     $(this).parent().find("li").removeClass("active");
                     $(this).find("li").addClass("active");
                     t = $(this).data("order");
-                    return a(t, V);
+                    return d(t, N);
                 });
             });
-            r.entries({
+            o.entries({
                 content_type: "2YpXtnGW80EEGgCUsSMmCc",
                 include: 1
             }).done(function(e) {
-                T(1);
-                return t(e);
+                k(1);
+                return n(e);
             });
-            return r.entries({
+            o.entries({
                 content_type: "6fwxAcXrxK4yqyaMUiWwWY",
                 include: 1,
                 order: "fields.order"
             }).done(function(e) {
-                T(1);
-                i = e;
-                n(i, $(".story-nav ul"), "additional");
+                k(1);
+                r = e;
+                i(r, $(".story-nav ul"), "additional");
                 return $("a.additional-episode").bind("click", function(e) {
                     var t;
                     e.preventDefault();
                     $(this).parent().find("li").removeClass("active");
                     $(this).find("li").addClass("active");
                     t = $(this).data("order");
-                    return o(t, i);
+                    return a(t, r);
                 });
             });
+            return o.entries({
+                content_type: "H38r2ErKi2cGueYeumikO",
+                include: 1
+            }).done(function(e) {
+                k(1);
+                b = e;
+                return t(b);
+            });
         };
-        c();
-        return window.addEventListener("load", x(f()));
+        f();
+        return window.addEventListener("load", D(p()));
     });
 }).call(this);

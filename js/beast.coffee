@@ -1,9 +1,9 @@
 $ ->
-
 	composerObject = {}
 	videoObject = {}
 	mixObject = {}
 	additionalVideoObject = {}
+	magazineObject = {}
 	player1 = {}
 	player2 = {}
 	anchorElements = {}
@@ -36,7 +36,8 @@ $ ->
 
 	prepInit = (count) ->
 		initCount = initCount + count
-		if initCount == 4
+		#make sure all data is done before calling init
+		if initCount == 5
 			init()
 
 	sendHeight = (height) ->
@@ -54,7 +55,6 @@ $ ->
 		firstScriptTag.parentNode.insertBefore(tag, firstScriptTag)
 
 	
-
 	window.onYouTubeIframeAPIReady = ->
 		player1 = new YT.Player 'player',
 			height: '390'
@@ -166,7 +166,6 @@ $ ->
 
 	changeAdditionalVideo = (order, additionalVideoObject) ->
 		#account for zero index
-		console.log additionalVideoObject
 		video = additionalVideoObject[order].fields
 		player2.cueVideoById(video.additionalYouTube)
 		$('.stories h1').empty().text video.additionalVideoTitle
@@ -199,6 +198,22 @@ $ ->
 			composerData = "<div class='artist'><img src='#{img}'/><h1>#{person.composerName}</h1><p>#{person.bio}</p></div>"
 			$(".composer-data .data-container").append composerData
 		
+
+	addMagazineTitles = (object) ->
+		for feature, i in object
+			console.log feature.fields
+			article = feature.fields
+			title = article.magazineFeatureTitle
+			description = article.magazineDescription
+			link = article.rbmaLink
+			img = article.magazineImage.fields.file.url
+			magData = "<div class='magFeature'><a href='#{link}' target='blank'><img src='#{img}'/></a><h3>#{title}</h3><p>#{description}</p></div>"
+			if i % 2 == 0
+				$('.feature-wrapper .col1').append magData
+			else if i & 2 >= 0 || !i
+				$('.feature-wrapper .col2').append magData
+
+
 
 
 	addMixes = (object) ->
@@ -298,6 +313,12 @@ $ ->
 				$(@).find('li').addClass "active"
 				order = $(@).data 'order'
 				changeAdditionalVideo(order, additionalVideoObject)
+
+		#MAGAZINE
+		client.entries({'content_type': 'H38r2ErKi2cGueYeumikO', 'include': 1}).done (data) ->
+			prepInit(1)
+			magazineObject = data
+			addMagazineTitles(magazineObject)
 
 		
 
