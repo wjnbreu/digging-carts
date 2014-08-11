@@ -30,6 +30,7 @@ $ ->
 		setInterval(colorCycle, 250)
 		$('.video-nav ul a.episode li').first().addClass "active"
 		$('.story-nav ul a.additional-episode li').first().addClass "active"
+		sendHeight(getHeight())
 		removeSpinner()
 		
 
@@ -37,6 +38,14 @@ $ ->
 		initCount = initCount + count
 		if initCount == 4
 			init()
+
+	sendHeight = (height) ->
+		message = {height: height}
+		messageJSON = JSON.stringify(message)
+		return window.parent.postMessage(messageJSON, '*')
+
+	getHeight = ->
+		return $(document.body).height()
 
 	setupYouTube = ->
 		tag = document.createElement('script')
@@ -50,7 +59,7 @@ $ ->
 		player1 = new YT.Player 'player',
 			height: '390'
 			width: '640'
-			videoId: 'yqXayqIrAYE'
+			videoId: 'WYSupJ5r2zo'
 			events: {
 				"onReady": onPlayerReady1
 			}
@@ -131,6 +140,10 @@ $ ->
 		$(window).bind 'resize', (event) ->
 			resizeVid('#player')
 			resizeVid('#storyplayer')
+
+		#resize
+		window.addEventListener 'resize', ->
+			sendHeight(getHeight())
 
 		
 	colorCycle = ->
@@ -296,6 +309,9 @@ $ ->
 		
 	#launch when ready	
 	getData()
+
+
+	
 
 
 	
