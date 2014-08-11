@@ -308,7 +308,6 @@ $ ->
 		
 	#launch when ready	
 	getData()
-	sendHeight(getHeight())
 
 
 	

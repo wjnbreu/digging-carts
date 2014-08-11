@@ -313,7 +313,6 @@
                 });
             });
         };
-        p();
-        return D(h());
+        return p();
     });
 }).call(this);
