@@ -43,7 +43,7 @@
             return window.parent.postMessage(n, "*");
         };
         f = function() {
-            return $(document.body).height();
+            return $(document.body).height() + 300;
         };
         D = function() {
             var e, t;
