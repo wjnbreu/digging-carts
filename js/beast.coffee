@@ -204,7 +204,7 @@ $ ->
 			person = composer.fields
 			name = person.composerName
 			img = person.image.fields.file.url
-			composerData = "<div class='artist'><a id='#{person.firstNameInLowercase}'><img src='#{img}'/><h1>#{person.composerName}</h1><p>#{person.bio}</p></div>"
+			composerData = "<div class='artist'><img src='#{img}'/><h1>#{person.composerName}</h1><p>#{person.bio}</p></div>"
 			$(".composer-data .data-container").append composerData
 		
 
