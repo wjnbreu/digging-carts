@@ -21,15 +21,15 @@ var fallingIcons = [
 
     function drawBackground(){
         // ctx.drawImage(imgBg, 0, 0); //Background
-        var width = window.innerWidth;
-        var height = window.innerHeight;
+        var width = $(window).width();
+        var height = $(window).height();
         ctx.clearRect(0,0,width, height);
     }
 
     function draw() {
         drawBackground();
-        var width = window.innerWidth;
-        var height = window.innerHeight;
+        var width = $(window).width();
+        var height = $(window).height();
 
         for (var i=0; i< noOfDrops; i++)
         {
@@ -51,9 +51,12 @@ var fallingIcons = [
     }
 
     function setup() {
+        var width = $(window).width();
+        var height = $(window).height();
+
         var canvas = document.getElementById('canvas');
-        canvas.width = window.innerWidth;
-        canvas.height = window.innerHeight;
+        canvas.width = width;
+        canvas.height = height;
 
         if (canvas.getContext) {
             ctx = canvas.getContext('2d');
