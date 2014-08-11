@@ -79,7 +79,7 @@ var fallingIcons = [
                 var fallingDr = {};
                 fallingDr["image"] = new Image();
                 fallingDr["image"].height = 25;
-                fallingDr.image.src = 'img/icons/' + fallingIcons[ranIcon()];
+                fallingDr.image.src = '../img/icons/' + fallingIcons[ranIcon()];
                 
                 fallingDr["x"] = Math.random() * canvas.width;
                 fallingDr["y"] = Math.random() * 5;

@@ -227,8 +227,7 @@ hr {
   .content .composers {
     position: relative;
     margin-top: 200%;
-    margin-top: 20%;
-    margin-bottom: 200px;
+    margin-top: 10%;
     width: 70%;
     margin-left: 15%;
     overflow: hidden;
@@ -266,10 +265,9 @@ hr {
       -webkit-animation: jet 25s inifinite alternate; }
 
 .composer-data {
-  position: fixed;
+  position: relative;
   top: 0;
   left: 0;
-  display: none;
   height: 100%;
   width: 100%;
   background-color: #14110d;
@@ -330,6 +328,7 @@ hr {
 
 .radio {
   margin: 0;
+  margin-top: 10%;
   z-index: 1; }
   .radio .show {
     width: 70%;
@@ -352,7 +351,7 @@ hr {
 
 .stories {
   position: relative;
-  margin-top: 20%; }
+  margin-top: 10%; }
   .stories .story-nav ul {
     text-align: center; }
     .stories .story-nav ul a li {

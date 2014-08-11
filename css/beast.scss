@@ -302,8 +302,7 @@ hr{
 	.composers{
 		position: relative;
 		margin-top: 200%;
-		margin-top: 20%;
-		margin-bottom: 200px;
+		margin-top: 10%;
 		width: 70%;
 		margin-left: 15%;
 		overflow: hidden;
@@ -348,10 +347,9 @@ hr{
 }
 
 .composer-data{
-		position: fixed;
+		position: relative;
 		top: 0;
 		left: 0;
-		display: none;
 		height: 100%;
 		width: 100%;
 		background-color: $black;
@@ -419,6 +417,7 @@ hr{
 
 .radio{
 	margin: 0;
+	margin-top: 10%;
 	z-index: 1;
 	.show{
 		width: 70%;
@@ -446,7 +445,7 @@ hr{
 
 .stories{
 	position: relative;
-	margin-top: 20%;
+	margin-top: 10%;
 	.story-nav{
 		ul{
 			text-align: center;

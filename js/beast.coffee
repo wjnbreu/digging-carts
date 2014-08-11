@@ -113,20 +113,20 @@ $ ->
 				left: '-100px'
 			, 200
 		
-		$('a.composer-title').bind 'click',(event) ->
-			event.preventDefault()
-			goToComposers()
-			sendHeight(getHeight())
+		# $('a.composer-title').bind 'click',(event) ->
+		# 	event.preventDefault()
+		# 	goToComposers()
+		# 	sendHeight(getHeight())
 
-		$('a.exit').bind 'click', (event) ->
-			event.preventDefault()
-			$('.composer-data').fadeOut(100, ->
-				location = $("#composers").offset().top
-				$('body,html').animate
-					scrollTop: location
-				,50
-			)
-			sendHeight(getHeight())
+		# $('a.exit').bind 'click', (event) ->
+		# 	event.preventDefault()
+		# 	$('.composer-data').fadeOut(100, ->
+		# 		location = $("#composers").offset().top
+		# 		$('body,html').animate
+		# 			scrollTop: location
+		# 		,50
+		# 	)
+		# 	sendHeight(getHeight())
 
 		$('a.scroll').bind 'click', (event) ->
 			link = $(@)
@@ -201,7 +201,6 @@ $ ->
 
 	addMagazineTitles = (object) ->
 		for feature, i in object
-			console.log feature.fields
 			article = feature.fields
 			title = article.magazineFeatureTitle
 			description = article.magazineDescription
@@ -327,12 +326,4 @@ $ ->
 	#launch when ready	
 	getData()
 	window.addEventListener('load', sendHeight(getHeight()));
-	
-
-
-	
-
-
-	
-		
 	
