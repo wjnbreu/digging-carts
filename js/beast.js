@@ -137,15 +137,15 @@
         s = function() {
             var e;
             e = Math.floor(Math.random() * l.length);
-            $("h1.colors").css({
+            return $("h1.colors").css({
                 color: l[e]
             });
-            return $("body,html").animate({
-                scrollTop: 0
-            }, 50);
         };
         p = function(e) {
             $(".composer-data").fadeIn();
+            $("body,html").animate({
+                scrollTop: 0
+            }, 50);
             return x(f());
         };
         a = function(e, t) {

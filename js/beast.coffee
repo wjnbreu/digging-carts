@@ -141,18 +141,16 @@ $ ->
 		
 	colorCycle = ->
 		ranColor = Math.floor(Math.random() * colors.length)
-		# $('.composers').css
-		# 	backgroundColor: colors[ranColor]
 		$('h1.colors').css
 			color: colors[ranColor]
-		$('body,html').animate
-			scrollTop: 0
-		,50
 
 
 	#FIXXXXXX!!!!!!
 	goToComposers = (item) ->
 		$('.composer-data').fadeIn()
+		$('body,html').animate
+			scrollTop: 0
+		,50
 		sendHeight(getHeight())
 
 
