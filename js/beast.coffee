@@ -89,19 +89,12 @@ $ ->
 
 	onPlayerReady1 = (event) ->
 		resizeVid('#player')
+		sendHeight(getHeight())
 
 	onPlayerReady2 = (event) ->
 		resizeVid('#storyplayer')
+		sendHeight(getHeight())
 		
-
-	draw = ->
-		for icon in iconCount
-			ctx.drawImage(fallingIcons[i].image, fallingIcons[i].x, fallingIcons[i].y )
-			fallingIcons[i].y += fallingIcons[i].speed
-			if fallingIcons[i].y > 450
-				fallingIcons[i].y = -25
-				fallingIcons[i].x = Math.random() * 600
-
 	
 	setupBinds = ->
 		$('nav').bind 'mouseenter', ->
@@ -137,12 +130,10 @@ $ ->
 			link = $(@)
 			smoothScroll(event, link)
 
-		$(window).bind 'resize', (event) ->
-			resizeVid('#player')
-			resizeVid('#storyplayer')
-
 		#resize
 		window.addEventListener 'resize', ->
+			resizeVid('#player')
+			resizeVid('#storyplayer')
 			sendHeight(getHeight())
 
 		
@@ -162,6 +153,7 @@ $ ->
 		# 	backgroundColor: colors[ranColor]
 
 		$('.composer-data').fadeIn()
+		sendHeight(getHeight())
 
 
 	changeVideo = (order, videoObject) ->
@@ -171,6 +163,7 @@ $ ->
 		$('.videos h1').empty().text video.episodeTitle
 		$('.videos p.body').empty().text video.videoDescription
 		$('.videos p.body').slideDown()
+		sendHeight(getHeight())
 
 
 	changeAdditionalVideo = (order, additionalVideoObject) ->
@@ -181,6 +174,7 @@ $ ->
 		$('.stories h1').empty().text video.additionalVideoTitle
 		$('.stories p.body').empty().text video.description
 		$('.stories p.body').slideDown()
+		sendHeight(getHeight())
 
 
 
@@ -218,6 +212,7 @@ $ ->
 			img = mixInfo.artistImage.fields.file.url
 			mixData = "<div class='show'><img src='#{img}'/>#{embed}<p>#{description}</p></div>"
 			$('.radio').append(mixData)
+			sendHeight(getHeight())
 
 	resizeVid = (vidPlayer) ->
 		player = $(vidPlayer)
@@ -234,6 +229,8 @@ $ ->
 		margin = diff / 2
 		player.css
 			marginLeft: margin
+
+		sendHeight(getHeight())
 
 	
 
@@ -259,6 +256,7 @@ $ ->
 
 	removeSpinner = ->
 		$('.spinner').remove()
+		sendHeight(getHeight())
 		
 
 
