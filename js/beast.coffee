@@ -30,7 +30,8 @@ $ ->
 		setInterval(colorCycle, 250)
 		$('.video-nav ul a.episode li').first().addClass "active"
 		$('.story-nav ul a.additional-episode li').first().addClass "active"
-		sendHeight(getHeight())
+		setTimeout(sendHeight(getHeight()), 500)
+		removeSpinner()
 		
 
 	prepInit = (count) ->
