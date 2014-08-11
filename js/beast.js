@@ -1,9 +1,9 @@
 (function() {
     $(function() {
-        var e, n, t, r, o, a, d, s, l, c, u, f, p, h, v, m, y, g, w, b, I, C, T, x, k, E, M, D, S, V, Y;
+        var e, n, t, r, o, a, d, s, l, c, u, f, p, h, v, m, y, g, b, w, I, C, T, x, k, E, M, D, S, V, Y;
         u = {};
         Y = {};
-        w = {};
+        b = {};
         r = {};
         C = {};
         T = {};
@@ -58,7 +58,7 @@
                 width: "640",
                 videoId: "WYSupJ5r2zo",
                 events: {
-                    onReady: b
+                    onReady: w
                 },
                 playerVars: {
                     modestbranding: true,
@@ -82,7 +82,7 @@
                 }
             });
         };
-        b = function(e) {
+        w = function(e) {
             return E("#player");
         };
         I = function(e) {
@@ -314,7 +314,7 @@
                 });
             });
         };
-        window.addEventListener("load", M(h()));
-        return window.load;
+        p();
+        return window.addEventListener("load", M(h()));
     });
 }).call(this);
