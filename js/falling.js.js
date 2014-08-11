@@ -30,6 +30,7 @@ var fallingIcons = [
         drawBackground();
         var width = $(window).width();
         var height = $(window).height();
+        console.log('Width: ' + width + ', Height: ' + height);
 
         for (var i=0; i< noOfDrops; i++)
         {

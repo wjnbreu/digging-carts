@@ -271,7 +271,7 @@ hr {
   left: 0;
   display: none;
   height: 100%;
-  width: 101%;
+  width: 100%;
   background-color: #14110d;
   z-index: 9999; }
   .composer-data canvas {
