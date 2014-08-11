@@ -28,6 +28,8 @@ $ ->
 		setupBinds()
 		$('h1.colors').fitText(0.7)
 		setInterval(colorCycle, 250)
+		$('.video-nav ul a.episode li').first().addClass "active"
+		$('.story-nav ul a.additional-episode li').first().addClass "active"
 		removeSpinner()
 		
 
@@ -63,7 +65,7 @@ $ ->
 		player2 = new YT.Player 'storyplayer',
 			height: '390'
 			width: '640'
-			videoId: 'yqXayqIrAYE'
+			videoId: 'VsbG4pXrhr8'
 			events: {
 				"onReady": onPlayerReady2
 			}
@@ -126,6 +128,10 @@ $ ->
 			link = $(@)
 			smoothScroll(event, link)
 
+		$(window).bind 'resize', (event) ->
+			resizeVid('#player')
+			resizeVid('#storyplayer')
+
 		
 	colorCycle = ->
 		ranColor = Math.floor(Math.random() * colors.length)
@@ -152,6 +158,18 @@ $ ->
 		$('.videos h1').empty().text video.episodeTitle
 		$('.videos p.body').empty().text video.videoDescription
 		$('.videos p.body').slideDown()
+
+
+	changeAdditionalVideo = (order, additionalVideoObject) ->
+		#account for zero index
+		console.log additionalVideoObject
+		video = additionalVideoObject[order].fields
+		player2.cueVideoById(video.additionalYouTube)
+		$('.stories h1').empty().text video.additionalVideoTitle
+		$('.stories p.body').empty().text video.description
+		$('.stories p.body').slideDown()
+
+
 
 
 	addVideoTitles = (object, target, type) ->
@@ -236,10 +254,12 @@ $ ->
 			accessToken: '38b8dbaf503a350d5722578c6547caca484511f7c78717736ac8f576832be4b0'
 			space: 's9bc5ah7p1d5'
 
+		#COMPOSERS
 		client.entries({'content_type': '42CpXYSUms44OskS6wUU6I', 'include': 1}).done (data) ->
 			addComposers(data)
 			prepInit(1)
 		
+		#MAIN YT VIDS
 		client.entries({'content_type':'36SuQSSPR6QmWOk8CseMC6', 'include': 1, 'order': 'fields.order'}).done (data) ->
 			videoObject = data
 			prepInit(1)
@@ -252,24 +272,29 @@ $ ->
 				order = $(@).data 'order'
 				changeVideo(order, videoObject)
 
+		#RADIO
 		client.entries({'content_type':'2YpXtnGW80EEGgCUsSMmCc', 'include': 1}).done (data) ->
 			prepInit(1)
 			addMixes(data)
 
-
+		#ADDITIONAL YOUTUBE VIDS
 		client.entries({'content_type':'6fwxAcXrxK4yqyaMUiWwWY', 'include': 1, 'order': 'fields.order'}).done (data) ->
 			prepInit(1)
 			additionalVideoObject = data
 			addVideoTitles(additionalVideoObject, $('.story-nav ul'), 'additional')
 
+			$('a.additional-episode').bind 'click', (event) ->
+				event.preventDefault()
+				$(@).parent().find('li').removeClass "active"
+				$(@).find('li').addClass "active"
+				order = $(@).data 'order'
+				changeAdditionalVideo(order, additionalVideoObject)
+
 		
 
 
 		
-		#launch when ready
-		
-
-
+	#launch when ready	
 	getData()
 
 

@@ -1,15 +1,15 @@
 (function() {
     $(function() {
-        var e, n, t, r, o, a, s, d, c, l, u, f, p, h, m, v, y, g, b, w, I, C, T, x, E, k, M, Y;
-        l = {};
-        Y = {};
-        y = {};
+        var e, n, t, r, o, a, d, s, l, c, u, f, p, h, v, m, y, g, b, w, I, C, T, x, k, D, E, M, V;
+        u = {};
+        V = {};
+        g = {};
         r = {};
-        w = {};
         I = {};
+        C = {};
         o = {};
         c = [ "#d6f7fe", "#312cc0", "#f9a205", "#d89e46", "#4c9d5b", "#fbdd1b", "#ff6dd1" ];
-        h = new Howl({
+        v = new Howl({
             urls: [ "sound/CLICK.mp3", "sound/CLICK.ogg" ],
             volume: .5
         });
@@ -17,21 +17,23 @@
             urls: [ "sound/EXIT.mp3", "sound/EXIT.ogg" ],
             volume: .7
         });
-        v = 0;
+        y = 0;
         m = function() {
-            k();
             E();
+            D();
             $("h1.colors").fitText(.7);
-            setInterval(d, 250);
-            return T();
+            setInterval(l, 250);
+            $(".video-nav ul a.episode li").first().addClass("active");
+            $(".story-nav ul a.additional-episode li").first().addClass("active");
+            return x();
         };
-        C = function(e) {
-            v = v + e;
-            if (v === 4) {
+        T = function(e) {
+            y = y + e;
+            if (y === 4) {
                 return m();
             }
         };
-        k = function() {
+        E = function() {
             var e, n;
             n = document.createElement("script");
             n.src = "https://www.youtube.com/iframe_api";
@@ -39,21 +41,7 @@
             return e.parentNode.insertBefore(n, e);
         };
         window.onYouTubeIframeAPIReady = function() {
-            w = new YT.Player("player", {
-                height: "390",
-                width: "640",
-                videoId: "yqXayqIrAYE",
-                events: {
-                    onReady: g
-                },
-                playerVars: {
-                    modestbranding: true,
-                    controls: 1,
-                    showinfo: 0,
-                    hd: 1
-                }
-            });
-            return I = new YT.Player("storyplayer", {
+            I = new YT.Player("player", {
                 height: "390",
                 width: "640",
                 videoId: "yqXayqIrAYE",
@@ -67,14 +55,28 @@
                     hd: 1
                 }
             });
-        };
-        g = function(e) {
-            return x("#player");
+            return C = new YT.Player("storyplayer", {
+                height: "390",
+                width: "640",
+                videoId: "VsbG4pXrhr8",
+                events: {
+                    onReady: w
+                },
+                playerVars: {
+                    modestbranding: true,
+                    controls: 1,
+                    showinfo: 0,
+                    hd: 1
+                }
+            });
         };
         b = function(e) {
-            return x("#storyplayer");
+            return k("#player");
         };
-        u = function() {
+        w = function(e) {
+            return k("#storyplayer");
+        };
+        f = function() {
             var e, n, t, r;
             r = [];
             for (n = 0, t = iconCount.length; n < t; n++) {
@@ -90,7 +92,7 @@
             }
             return r;
         };
-        E = function() {
+        D = function() {
             $("nav").bind("mouseenter", function() {
                 return $(this).transition({
                     left: 0
@@ -100,7 +102,7 @@
                 return s.play();
             });
             $("a").bind("mouseenter", function() {
-                return h.play();
+                return v.play();
             });
             $("nav").bind("mouseleave", function() {
                 return $(this).transition({
@@ -109,7 +111,7 @@
             });
             $("a.composer-title").bind("click", function(e) {
                 e.preventDefault();
-                return p();
+                return h();
             });
             $("a.exit").bind("click", function(e) {
                 e.preventDefault();
@@ -121,45 +123,58 @@
                     }, 50);
                 });
             });
-            return $("a.scroll").bind("click", function(e) {
+            $("a.scroll").bind("click", function(e) {
                 var n;
                 n = $(this);
                 return M(e, n);
             });
+            return $(window).bind("resize", function(e) {
+                k("#player");
+                return k("#storyplayer");
+            });
         };
-        d = function() {
+        l = function() {
             var e;
             e = Math.floor(Math.random() * c.length);
             return $("h1.colors").css({
                 color: c[e]
             });
         };
-        p = function(e) {
+        h = function(e) {
             var n;
             n = Math.floor(Math.random() * c.length);
             return $(".composer-data").fadeIn();
         };
-        a = function(e, n) {
+        d = function(e, n) {
             var t;
             t = n[e].fields;
-            w.cueVideoById(t.ytVideoId);
+            I.cueVideoById(t.ytVideoId);
             $(".videos h1").empty().text(t.episodeTitle);
             $(".videos p.body").empty().text(t.videoDescription);
             return $(".videos p.body").slideDown();
         };
+        a = function(e, n) {
+            var t;
+            console.log(n);
+            t = n[e].fields;
+            C.cueVideoById(t.additionalYouTube);
+            $(".stories h1").empty().text(t.additionalVideoTitle);
+            $(".stories p.body").empty().text(t.description);
+            return $(".stories p.body").slideDown();
+        };
         t = function(e, n, t) {
-            var i, r, o, a, s, d, c, l, u;
+            var i, r, o, a, d, s, l, c, u;
             if (t === "main") {
-                l = [];
-                for (r = a = 0, d = e.length; a < d; r = ++a) {
+                c = [];
+                for (r = a = 0, s = e.length; a < s; r = ++a) {
                     o = e[r];
                     i = o.fields.episodeNumber;
-                    l.push(n.append("<a class='episode' href='#episode' data-order=" + r + "><li>" + i + "</li>"));
+                    c.push(n.append("<a class='episode' href='#episode' data-order=" + r + "><li>" + i + "</li>"));
                 }
-                return l;
+                return c;
             } else if (t === "additional") {
                 u = [];
-                for (r = s = 0, c = e.length; s < c; r = ++s) {
+                for (r = d = 0, l = e.length; d < l; r = ++d) {
                     o = e[r];
                     i = o.fields.additionalVideoTitle;
                     u.push(n.append("<a class='additional-episode' href='#additional-episode' data-order=" + r + "><li>" + i + "</li>"));
@@ -168,44 +183,44 @@
             }
         };
         e = function(e) {
-            var n, t, i, r, o, a, s, d;
-            d = [];
-            for (a = 0, s = e.length; a < s; a++) {
+            var n, t, i, r, o, a, d, s;
+            s = [];
+            for (a = 0, d = e.length; a < d; a++) {
                 n = e[a];
                 o = n.fields;
                 r = o.composerName;
                 i = o.image.fields.file.url;
                 t = "<div class='artist'><a id='" + o.firstNameInLowercase + "'><img src='" + i + "'/><h1>" + o.composerName + "</h1><p>" + o.bio + "</p></div>";
-                d.push($(".composer-data .data-container").append(t));
+                s.push($(".composer-data .data-container").append(t));
             }
-            return d;
+            return s;
         };
         n = function(e) {
-            var n, t, i, r, o, a, s, d, c, l;
-            l = [];
-            for (d = 0, c = e.length; d < c; d++) {
-                r = e[d];
+            var n, t, i, r, o, a, d, s, l, c;
+            c = [];
+            for (s = 0, l = e.length; s < l; s++) {
+                r = e[s];
                 a = r.fields;
-                s = a.artistName;
+                d = a.artistName;
                 t = a.rbmaRadioEmbedCode;
                 n = a.descriptions;
                 i = a.artistImage.fields.file.url;
                 o = "<div class='show'><img src='" + i + "'/>" + t + "<p>" + n + "</p></div>";
-                l.push($(".radio").append(o));
+                c.push($(".radio").append(o));
             }
-            return l;
+            return c;
         };
-        x = function(e) {
-            var n, t, i, r, o, a, s, d;
+        k = function(e) {
+            var n, t, i, r, o, a, d, s;
             o = $(e);
-            d = $(window).width();
-            s = d / 1.5;
+            s = $(window).width();
+            d = s / 1.5;
             r = o.attr("width");
             i = o.attr("height");
             a = r / i;
-            o.attr("width", s);
-            o.attr("height", s / a);
-            n = d - s;
+            o.attr("width", d);
+            o.attr("height", d / a);
+            n = s - d;
             t = n / 2;
             return o.css({
                 marginLeft: t
@@ -226,10 +241,10 @@
                 }, 300);
             }
         };
-        T = function() {
+        x = function() {
             return $(".spinner").remove();
         };
-        f = function() {
+        p = function() {
             var i;
             i = contentful.createClient({
                 accessToken: "38b8dbaf503a350d5722578c6547caca484511f7c78717736ac8f576832be4b0",
@@ -240,30 +255,30 @@
                 include: 1
             }).done(function(n) {
                 e(n);
-                return C(1);
+                return T(1);
             });
             i.entries({
                 content_type: "36SuQSSPR6QmWOk8CseMC6",
                 include: 1,
                 order: "fields.order"
             }).done(function(e) {
-                Y = e;
-                C(1);
-                t(Y, $(".video-nav ul"), "main");
+                V = e;
+                T(1);
+                t(V, $(".video-nav ul"), "main");
                 return $("a.episode").bind("click", function(e) {
                     var n;
                     e.preventDefault();
                     $(this).parent().find("li").removeClass("active");
                     $(this).find("li").addClass("active");
                     n = $(this).data("order");
-                    return a(n, Y);
+                    return d(n, V);
                 });
             });
             i.entries({
                 content_type: "2YpXtnGW80EEGgCUsSMmCc",
                 include: 1
             }).done(function(e) {
-                C(1);
+                T(1);
                 return n(e);
             });
             return i.entries({
@@ -271,11 +286,19 @@
                 include: 1,
                 order: "fields.order"
             }).done(function(e) {
-                C(1);
+                T(1);
                 r = e;
-                return t(r, $(".story-nav ul"), "additional");
+                t(r, $(".story-nav ul"), "additional");
+                return $("a.additional-episode").bind("click", function(e) {
+                    var n;
+                    e.preventDefault();
+                    $(this).parent().find("li").removeClass("active");
+                    $(this).find("li").addClass("active");
+                    n = $(this).data("order");
+                    return a(n, r);
+                });
             });
         };
-        return f();
+        return p();
     });
 }).call(this);
