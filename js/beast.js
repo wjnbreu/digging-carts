@@ -25,8 +25,8 @@
             setInterval(l, 250);
             $(".video-nav ul a.episode li").first().addClass("active");
             $(".story-nav ul a.additional-episode li").first().addClass("active");
-            D(h());
-            return k();
+            k();
+            return D(h());
         };
         x = function(e) {
             g = g + e;
