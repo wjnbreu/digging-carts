@@ -1,8 +1,8 @@
 (function() {
     $(function() {
-        var e, t, n, i, r, o, a, d, s, l, u, c, f, p, h, v, m, y, b, w, g, C, I, T, k, x, E, D, M, S;
+        var e, t, n, i, r, o, a, d, s, l, u, c, f, p, h, v, m, y, b, w, g, C, T, I, k, x, E, D, S, V;
         u = {};
-        S = {};
+        V = {};
         y = {};
         i = {};
         g = {};
@@ -26,9 +26,9 @@
             $(".video-nav ul a.episode li").first().addClass("active");
             $(".story-nav ul a.additional-episode li").first().addClass("active");
             setTimeout(x(f()), 500);
-            return T();
+            return I();
         };
-        I = function(e) {
+        T = function(e) {
             m = m + e;
             if (m === 4) {
                 return v();
@@ -109,22 +109,24 @@
             });
             $("a.composer-title").bind("click", function(e) {
                 e.preventDefault();
-                return p();
+                p();
+                return x(f());
             });
             $("a.exit").bind("click", function(e) {
                 e.preventDefault();
-                return $(".composer-data").fadeOut(100, function() {
+                $(".composer-data").fadeOut(100, function() {
                     var e;
                     e = $("#composers").offset().top;
                     return $("body,html").animate({
                         scrollTop: e
                     }, 50);
                 });
+                return x(f());
             });
             $("a.scroll").bind("click", function(e) {
                 var t;
                 t = $(this);
-                return M(e, t);
+                return S(e, t);
             });
             return window.addEventListener("resize", function() {
                 k("#player");
@@ -135,13 +137,14 @@
         s = function() {
             var e;
             e = Math.floor(Math.random() * l.length);
-            return $("h1.colors").css({
+            $("h1.colors").css({
                 color: l[e]
             });
+            return $("body,html").animate({
+                scrollTop: 0
+            }, 50);
         };
         p = function(e) {
-            var t;
-            t = Math.floor(Math.random() * l.length);
             $(".composer-data").fadeIn();
             return x(f());
         };
@@ -230,7 +233,7 @@
             });
             return x(f());
         };
-        M = function(e, t, n) {
+        S = function(e, t, n) {
             var i, r;
             e.preventDefault();
             r = t.attr("href");
@@ -245,7 +248,7 @@
                 }, 300);
             }
         };
-        T = function() {
+        I = function() {
             $(".spinner").remove();
             return x(f());
         };
@@ -260,30 +263,30 @@
                 include: 1
             }).done(function(t) {
                 e(t);
-                return I(1);
+                return T(1);
             });
             r.entries({
                 content_type: "36SuQSSPR6QmWOk8CseMC6",
                 include: 1,
                 order: "fields.order"
             }).done(function(e) {
-                S = e;
-                I(1);
-                n(S, $(".video-nav ul"), "main");
+                V = e;
+                T(1);
+                n(V, $(".video-nav ul"), "main");
                 return $("a.episode").bind("click", function(e) {
                     var t;
                     e.preventDefault();
                     $(this).parent().find("li").removeClass("active");
                     $(this).find("li").addClass("active");
                     t = $(this).data("order");
-                    return a(t, S);
+                    return a(t, V);
                 });
             });
             r.entries({
                 content_type: "2YpXtnGW80EEGgCUsSMmCc",
                 include: 1
             }).done(function(e) {
-                I(1);
+                T(1);
                 return t(e);
             });
             return r.entries({
@@ -291,7 +294,7 @@
                 include: 1,
                 order: "fields.order"
             }).done(function(e) {
-                I(1);
+                T(1);
                 i = e;
                 n(i, $(".story-nav ul"), "additional");
                 return $("a.additional-episode").bind("click", function(e) {

@@ -116,6 +116,7 @@ $ ->
 		$('a.composer-title').bind 'click',(event) ->
 			event.preventDefault()
 			goToComposers()
+			sendHeight(getHeight())
 
 		$('a.exit').bind 'click', (event) ->
 			event.preventDefault()
@@ -125,6 +126,7 @@ $ ->
 					scrollTop: location
 				,50
 			)
+			sendHeight(getHeight())
 
 		$('a.scroll').bind 'click', (event) ->
 			link = $(@)
@@ -143,15 +145,13 @@ $ ->
 		# 	backgroundColor: colors[ranColor]
 		$('h1.colors').css
 			color: colors[ranColor]
+		$('body,html').animate
+			scrollTop: 0
+		,50
 
 
 	#FIXXXXXX!!!!!!
 	goToComposers = (item) ->
-		#change bg
-		ranColor = Math.floor(Math.random() * colors.length)
-		# $('.composer-data').css
-		# 	backgroundColor: colors[ranColor]
-
 		$('.composer-data').fadeIn()
 		sendHeight(getHeight())
 
