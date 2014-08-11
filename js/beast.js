@@ -1,6 +1,6 @@
 (function() {
     $(function() {
-        var e, n, t, r, o, a, d, s, l, c, u, f, p, h, v, m, y, g, b, w, I, C, T, x, k, M, D, E, N, S, V;
+        var e, n, t, r, o, a, s, d, l, c, u, f, p, h, v, m, y, g, b, w, I, C, T, x, k, M, D, E, N, S, V;
         u = {};
         V = {};
         b = {};
@@ -13,7 +13,7 @@
             urls: [ "sound/CLICK.mp3", "sound/CLICK.ogg" ],
             volume: .5
         });
-        s = new Howl({
+        d = new Howl({
             urls: [ "sound/EXIT.mp3", "sound/EXIT.ogg" ],
             volume: .7
         });
@@ -25,8 +25,7 @@
             setInterval(l, 250);
             $(".video-nav ul a.episode li").first().addClass("active");
             $(".story-nav ul a.additional-episode li").first().addClass("active");
-            k();
-            return D(h());
+            return setTimeout(D(h()), 500);
         };
         x = function(e) {
             g = g + e;
@@ -111,7 +110,7 @@
                 }, 200);
             });
             $("a").bind("click", function() {
-                return s.play();
+                return d.play();
             });
             $("a").bind("mouseenter", function() {
                 return m.play();
@@ -160,7 +159,7 @@
             n = Math.floor(Math.random() * c.length);
             return $(".composer-data").fadeIn();
         };
-        d = function(e, n) {
+        s = function(e, n) {
             var t;
             t = n[e].fields;
             C.cueVideoById(t.ytVideoId);
@@ -178,10 +177,10 @@
             return $(".stories p.body").slideDown();
         };
         t = function(e, n, t) {
-            var i, r, o, a, d, s, l, c, u;
+            var i, r, o, a, s, d, l, c, u;
             if (t === "main") {
                 c = [];
-                for (r = a = 0, s = e.length; a < s; r = ++a) {
+                for (r = a = 0, d = e.length; a < d; r = ++a) {
                     o = e[r];
                     i = o.fields.episodeNumber;
                     c.push(n.append("<a class='episode' href='#episode' data-order=" + r + "><li>" + i + "</li>"));
@@ -189,7 +188,7 @@
                 return c;
             } else if (t === "additional") {
                 u = [];
-                for (r = d = 0, l = e.length; d < l; r = ++d) {
+                for (r = s = 0, l = e.length; s < l; r = ++s) {
                     o = e[r];
                     i = o.fields.additionalVideoTitle;
                     u.push(n.append("<a class='additional-episode' href='#additional-episode' data-order=" + r + "><li>" + i + "</li>"));
@@ -198,25 +197,25 @@
             }
         };
         e = function(e) {
-            var n, t, i, r, o, a, d, s;
-            s = [];
-            for (a = 0, d = e.length; a < d; a++) {
+            var n, t, i, r, o, a, s, d;
+            d = [];
+            for (a = 0, s = e.length; a < s; a++) {
                 n = e[a];
                 o = n.fields;
                 r = o.composerName;
                 i = o.image.fields.file.url;
                 t = "<div class='artist'><a id='" + o.firstNameInLowercase + "'><img src='" + i + "'/><h1>" + o.composerName + "</h1><p>" + o.bio + "</p></div>";
-                s.push($(".composer-data .data-container").append(t));
+                d.push($(".composer-data .data-container").append(t));
             }
-            return s;
+            return d;
         };
         n = function(e) {
-            var n, t, i, r, o, a, d, s, l, c;
+            var n, t, i, r, o, a, s, d, l, c;
             c = [];
-            for (s = 0, l = e.length; s < l; s++) {
-                r = e[s];
+            for (d = 0, l = e.length; d < l; d++) {
+                r = e[d];
                 a = r.fields;
-                d = a.artistName;
+                s = a.artistName;
                 t = a.rbmaRadioEmbedCode;
                 n = a.descriptions;
                 i = a.artistImage.fields.file.url;
@@ -226,16 +225,16 @@
             return c;
         };
         M = function(e) {
-            var n, t, i, r, o, a, d, s;
+            var n, t, i, r, o, a, s, d;
             o = $(e);
-            s = $(window).width();
-            d = s / 1.5;
+            d = $(window).width();
+            s = d / 1.5;
             r = o.attr("width");
             i = o.attr("height");
             a = r / i;
-            o.attr("width", d);
-            o.attr("height", d / a);
-            n = s - d;
+            o.attr("width", s);
+            o.attr("height", s / a);
+            n = d - s;
             t = n / 2;
             return o.css({
                 marginLeft: t
@@ -286,7 +285,7 @@
                     $(this).parent().find("li").removeClass("active");
                     $(this).find("li").addClass("active");
                     n = $(this).data("order");
-                    return d(n, V);
+                    return s(n, V);
                 });
             });
             i.entries({
