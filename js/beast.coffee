@@ -196,7 +196,7 @@ $ ->
 			name = person.composerName
 			img = person.image.fields.file.url
 			composerData = "<div class='artist'><img src='#{img}'/><h1>#{person.composerName}</h1><p>#{person.bio}</p></div>"
-			$(".composer-data .data-container").append composerData
+			$(".data-container").append composerData
 		
 
 	addMagazineTitles = (object) ->

@@ -180,7 +180,7 @@
                 r = a.composerName;
                 i = a.image.fields.file.url;
                 n = "<div class='artist'><img src='" + i + "'/><h1>" + a.composerName + "</h1><p>" + a.bio + "</p></div>";
-                s.push($(".composer-data .data-container").append(n));
+                s.push($(".data-container").append(n));
             }
             return s;
         };
