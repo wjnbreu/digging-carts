@@ -113,20 +113,6 @@ $ ->
 				left: '-100px'
 			, 200
 		
-		# $('a.composer-title').bind 'click',(event) ->
-		# 	event.preventDefault()
-		# 	goToComposers()
-		# 	sendHeight(getHeight())
-
-		# $('a.exit').bind 'click', (event) ->
-		# 	event.preventDefault()
-		# 	$('.composer-data').fadeOut(100, ->
-		# 		location = $("#composers").offset().top
-		# 		$('body,html').animate
-		# 			scrollTop: location
-		# 		,50
-		# 	)
-		# 	sendHeight(getHeight())
 
 		$('a.scroll').bind 'click', (event) ->
 			link = $(@)
@@ -230,7 +216,7 @@ $ ->
 		player = $(vidPlayer)
 		winWidth = $(window).width()
 		vidWidth = winWidth / 1.5
-		ogWidth = player.attr('width')
+		ogWidth = player.attr('width') #extra box shadow pix
 		ogHeight = player.attr('height')
 		ratio = ogWidth / ogHeight
 
