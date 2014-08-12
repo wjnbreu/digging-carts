@@ -199,18 +199,18 @@ $ ->
 			$(".data-container").append composerData
 		
 
-	addMagazineTitles = (object) ->
-		for feature, i in object
-			article = feature.fields
-			title = article.magazineFeatureTitle
-			description = article.magazineDescription
-			link = article.rbmaLink
-			img = article.magazineImage.fields.file.url
-			magData = "<div class='magFeature'><a href='#{link}' target='blank'><img src='#{img}'/></a><h3>#{title}</h3><p>#{description}</p></div>"
-			if i % 2 == 0
-				$('.feature-wrapper .col1').append magData
-			else if i & 2 >= 0 || !i
-				$('.feature-wrapper .col2').append magData
+	# addMagazineTitles = (object) ->
+	# 	for feature, i in object
+	# 		article = feature.fields
+	# 		title = article.magazineFeatureTitle
+	# 		description = article.magazineDescription
+	# 		link = article.rbmaLink
+	# 		img = article.magazineImage.fields.file.url
+	# 		magData = "<div class='magFeature'><a href='#{link}' target='blank'><img src='#{img}'/></a><h3>#{title}</h3><p>#{description}</p></div>"
+	# 		if i % 2 == 0
+	# 			$('.feature-wrapper .col1').append magData
+	# 		else if i & 2 >= 0 || !i
+	# 			$('.feature-wrapper .col2').append magData
 
 
 
@@ -313,11 +313,11 @@ $ ->
 				order = $(@).data 'order'
 				changeAdditionalVideo(order, additionalVideoObject)
 
-		#MAGAZINE
-		client.entries({'content_type': 'H38r2ErKi2cGueYeumikO', 'include': 1}).done (data) ->
-			prepInit(1)
-			magazineObject = data
-			addMagazineTitles(magazineObject)
+		# #MAGAZINE
+		# client.entries({'content_type': 'H38r2ErKi2cGueYeumikO', 'include': 1}).done (data) ->
+		# 	prepInit(1)
+		# 	magazineObject = data
+		# 	addMagazineTitles(magazineObject)
 
 		
 
