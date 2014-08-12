@@ -1,7 +1,7 @@
 (function() {
     $(function() {
-        var e, t, n, i, r, o, a, d, s, l, u, c, f, p, h, v, m, y, w, b, g, C, I, T, E, x, S, V, Y, k, N;
-        u = {};
+        var e, t, n, i, r, o, a, d, s, u, l, c, f, p, h, v, m, y, w, b, g, C, I, T, E, S, V, Y, k, x, N;
+        l = {};
         N = {};
         w = {};
         i = {};
@@ -9,7 +9,7 @@
         C = {};
         I = {};
         r = {};
-        l = [ "#ffffff", "#00ffef", "#ff6dd1", "#00ff5a" ];
+        u = [ "#fae14c", "#a3f2b3", "#b9ee99", "#b9ee99" ];
         h = new Howl({
             urls: [ "sound/CLICK.mp3", "sound/CLICK.ogg" ],
             volume: .5
@@ -20,12 +20,12 @@
         });
         m = 0;
         v = function() {
-            V();
+            Y();
             $("h1.colors").fitText(.7);
             setInterval(s, 250);
             $(".video-nav ul a.episode li").first().addClass("active");
             $(".story-nav ul a.additional-episode li").first().addClass("active");
-            setTimeout(S(f()), 500);
+            setTimeout(V(f()), 500);
             return E();
         };
         T = function(e) {
@@ -34,7 +34,7 @@
                 return v();
             }
         };
-        S = function(e) {
+        V = function(e) {
             var t, n;
             t = {
                 height: e
@@ -45,7 +45,7 @@
         f = function() {
             return $(document.body).height() + 300;
         };
-        Y = function() {
+        k = function() {
             var e, t;
             t = document.createElement("script");
             t.src = "https://www.youtube.com/iframe_api";
@@ -83,14 +83,14 @@
             });
         };
         b = function(e) {
-            x("#player");
-            return S(f());
+            S("#player");
+            return V(f());
         };
         g = function(e) {
-            x("#storyplayer");
-            return S(f());
+            S("#storyplayer");
+            return V(f());
         };
-        V = function() {
+        Y = function() {
             $("nav").bind("mouseenter", function() {
                 return $(this).transition({
                     left: 0
@@ -110,19 +110,19 @@
             $("a.scroll").bind("click", function(e) {
                 var t;
                 t = $(this);
-                return k(e, t);
+                return x(e, t);
             });
             return window.addEventListener("resize", function() {
-                x("#player");
-                x("#storyplayer");
-                return S(f());
+                S("#player");
+                S("#storyplayer");
+                return V(f());
             });
         };
         s = function() {
             var e;
-            e = Math.floor(Math.random() * l.length);
+            e = Math.floor(Math.random() * u.length);
             return $("h1.colors").css({
-                color: l[e]
+                color: u[e]
             });
         };
         p = function(e) {
@@ -130,39 +130,41 @@
             $("body,html").animate({
                 scrollTop: 0
             }, 50);
-            return S(f());
+            return V(f());
         };
         a = function(e, t) {
             var n;
             n = t[e].fields;
             C.cueVideoById(n.ytVideoId);
             $(".videos h1").empty().text(n.episodeTitle);
+            $(".video-wrapper").css({
+                width: "70%",
+                marginLeft: "15%"
+            });
             $(".videos p.body").empty().text(n.videoDescription);
             $(".videos p.body").slideDown();
-            return S(f());
+            return V(f());
         };
         o = function(e, t) {
             var n;
             n = t[e].fields;
             I.cueVideoById(n.additionalYouTube);
             $(".stories h1").empty().text(n.additionalVideoTitle);
-            $(".stories p.body").empty().text(n.description);
-            $(".stories p.body").slideDown();
-            return S(f());
+            return V(f());
         };
         n = function(e, t, n) {
-            var i, r, o, a, d, s, l, u, c;
+            var i, r, o, a, d, s, u, l, c;
             if (n === "main") {
-                u = [];
+                l = [];
                 for (r = a = 0, s = e.length; a < s; r = ++a) {
                     o = e[r];
                     i = o.fields.episodeNumber;
-                    u.push(t.append("<a class='episode' href='#episode' data-order=" + r + "><li>" + i + "</li>"));
+                    l.push(t.append("<a class='episode' href='#episode' data-order=" + r + "><li>" + i + "</li>"));
                 }
-                return u;
+                return l;
             } else if (n === "additional") {
                 c = [];
-                for (r = d = 0, l = e.length; d < l; r = ++d) {
+                for (r = d = 0, u = e.length; d < u; r = ++d) {
                     o = e[r];
                     i = o.fields.additionalVideoTitle;
                     c.push(t.append("<a class='additional-episode' href='#additional-episode' data-order=" + r + "><li>" + i + "</li>"));
@@ -184,9 +186,9 @@
             return s;
         };
         t = function(e) {
-            var t, n, i, r, o, a, d, s, l, u;
-            u = [];
-            for (s = 0, l = e.length; s < l; s++) {
+            var t, n, i, r, o, a, d, s, u, l;
+            l = [];
+            for (s = 0, u = e.length; s < u; s++) {
                 r = e[s];
                 a = r.fields;
                 d = a.artistName;
@@ -195,11 +197,11 @@
                 i = a.artistImage.fields.file.url;
                 o = "<div class='show'><img src='" + i + "'/>" + n + "<p>" + t + "</p></div>";
                 $(".radio").append(o);
-                u.push(S(f()));
+                l.push(V(f()));
             }
-            return u;
+            return l;
         };
-        x = function(e) {
+        S = function(e) {
             var t, n, i, r, o, a, d, s;
             o = $(e);
             s = $(window).width();
@@ -214,9 +216,9 @@
             o.css({
                 marginLeft: n
             });
-            return S(f());
+            return V(f());
         };
-        k = function(e, t, n) {
+        x = function(e, t, n) {
             var i, r;
             e.preventDefault();
             r = t.attr("href");
@@ -233,7 +235,7 @@
         };
         E = function() {
             $(".spinner").remove();
-            return S(f());
+            return V(f());
         };
         c = function() {
             var r;
@@ -290,8 +292,8 @@
                 });
             });
         };
-        Y();
+        k();
         c();
-        return window.addEventListener("load", S(f()));
+        return window.addEventListener("load", V(f()));
     });
 }).call(this);

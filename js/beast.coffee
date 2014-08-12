@@ -7,7 +7,7 @@ $ ->
 	player1 = {}
 	player2 = {}
 	anchorElements = {}
-	colors = ['#ffffff', '#00ffef', '#ff6dd1', '#00ff5a']
+	colors = ['#fae14c', '#a3f2b3', '#b9ee99', '#b9ee99']
 
 	#SOUNDZ
 	hoverSound = new Howl {
@@ -144,6 +144,9 @@ $ ->
 		video = videoObject[order].fields
 		player1.cueVideoById(video.ytVideoId)
 		$('.videos h1').empty().text video.episodeTitle
+		$('.video-wrapper').css
+			width: '70%'
+			marginLeft: '15%'
 		$('.videos p.body').empty().text video.videoDescription
 		$('.videos p.body').slideDown()
 		sendHeight(getHeight())
@@ -154,8 +157,8 @@ $ ->
 		video = additionalVideoObject[order].fields
 		player2.cueVideoById(video.additionalYouTube)
 		$('.stories h1').empty().text video.additionalVideoTitle
-		$('.stories p.body').empty().text video.description
-		$('.stories p.body').slideDown()
+		#$('.stories p.body').empty().text video.description
+		#$('.stories p.body').slideDown()
 		sendHeight(getHeight())
 
 

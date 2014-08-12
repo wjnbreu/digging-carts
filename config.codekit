@@ -239,6 +239,17 @@
 		"outputPathIsSetByUser": 0,
 		"processed": 0
 		},
+	"\/img\/cartridges.png": {
+		"fileType": 32768,
+		"ignore": 0,
+		"ignoreWasSetByUser": 0,
+		"initialSize": 0,
+		"inputAbbreviatedPath": "\/img\/cartridges.png",
+		"outputAbbreviatedPath": "\/img\/cartridges.png",
+		"outputPathIsOutsideProject": 0,
+		"outputPathIsSetByUser": 0,
+		"processed": 0
+		},
 	"\/img\/carts.jpg": {
 		"fileType": 16384,
 		"ignore": 0,
@@ -246,6 +257,28 @@
 		"initialSize": 225723,
 		"inputAbbreviatedPath": "\/img\/carts.jpg",
 		"outputAbbreviatedPath": "\/img\/carts.jpg",
+		"outputPathIsOutsideProject": 0,
+		"outputPathIsSetByUser": 0,
+		"processed": 0
+		},
+	"\/img\/clouds.jpg": {
+		"fileType": 16384,
+		"ignore": 0,
+		"ignoreWasSetByUser": 0,
+		"initialSize": 97979,
+		"inputAbbreviatedPath": "\/img\/clouds.jpg",
+		"outputAbbreviatedPath": "\/img\/clouds.jpg",
+		"outputPathIsOutsideProject": 0,
+		"outputPathIsSetByUser": 0,
+		"processed": 0
+		},
+	"\/img\/clouds2.jpg": {
+		"fileType": 16384,
+		"ignore": 0,
+		"ignoreWasSetByUser": 0,
+		"initialSize": 12383,
+		"inputAbbreviatedPath": "\/img\/clouds2.jpg",
+		"outputAbbreviatedPath": "\/img\/clouds2.jpg",
 		"outputPathIsOutsideProject": 0,
 		"outputPathIsSetByUser": 0,
 		"processed": 0

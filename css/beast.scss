@@ -13,12 +13,20 @@ html{
 body{
 	margin: 0;
 	font-family: bit, karla, 'Helvetica Neue', helvetica, sans-serif;
-	background-color: $black;
+	
 	-webkit-font-smoothing: antialiased;
 	vertical-align: baseline;
 	width: 100%;
 	height: 100%;
 	-webkit-tap-highlight-color: transparent;
+	background: url(../img/cartridges.png) no-repeat bottom center, url(../img/clouds.jpg) no-repeat top center;
+	background-size: 70%, cover;
+	background-attachment: scroll, fixed;
+	background-color: white;
+}
+
+p{
+	color: black;
 }
 
 .spinner{
@@ -58,8 +66,9 @@ h1,h2,h3,h4{
 h1{
 	letter-spacing: -1px;
 	line-height: 1;
-	color: white;
-	font-size: 4em;
+	color: black;
+	text-transform: uppercase;
+	font-size: 3.5em;
 	margin: 0;
 }
 
@@ -113,10 +122,25 @@ h2{
 		position: relative;
 		margin-top: 65%;
 		width: 100%;
-		h1{
-			width: 70%;
-			margin-left: 15%;
+		.video-wrapper{
+			position: relative;
+			box-shadow: 1px 0px 0px #4d4d4d, 0px 1px 0px #333333, 2px 1px 0px #4d4d4d, 1px 2px 0px #333333, 3px 2px 0px #4d4d4d, 2px 3px 0px #333333, 4px 3px 0px #4d4d4d, 3px 4px 0px #333333, 5px 4px 0px #4d4d4d, 4px 5px 0px #333333, 6px 5px 0px #4d4d4d, 5px 6px 0px #333333, 7px 6px 0px #4d4d4d, 6px 7px 0px #333333, 8px 7px 0px #4d4d4d, 7px 8px 0px #333333, 9px 8px 0px #4d4d4d, 8px 9px 0px #333333, 10px 9px 0px #4d4d4d, 9px 10px 0px #333333, 11px 10px 0px #4d4d4d, 10px 11px 0px #333333, 12px 11px 0px #4d4d4d, 11px 12px 0px #333333, 13px 12px 0px #4d4d4d, 12px 13px 0px #333333, 14px 13px 0px #4d4d4d, 13px 14px 0px #333333, 15px 14px 0px #4d4d4d, 14px 15px 0px #333333, 16px 15px 0px #4d4d4d, 15px 16px 0px #333333, 16px 16px 0px #4d4d4d;
+			background-color: black;
+			text-align: center;
+			width: 20%;
+			margin-left: 40%;
+			height: auto;
+			padding-top: 25px;
+			padding-bottom: 25px;
+			h1{
+				background: url(../img/upanddown.gif) no-repeat center center;
+				background-size: cover;
+				-webkit-background-clip: text;
+				-webkit-text-fill-color: transparent;
+				text-color: transparent;
+			}
 		}
+		
 		.video-nav{
 			ul{
 				width: 80%;
@@ -130,7 +154,7 @@ h2{
 						font-size: 1.5em;
 						margin: 5px;
 						padding: 5px;
-						color: white;
+						color: black;
 						font-family: karla;
 						&:first-child{
 							margin-left: 0;
@@ -159,7 +183,6 @@ h2{
 			width: 70%;
 			margin-left: 15%;
 			margin-right: 15%;
-			color: white;
 			font-family: karla, 'Helvetica Neue', helvetica, sans-serif;
 			font-size: 1.5em;
 			line-height: 2;
@@ -171,6 +194,7 @@ h2{
 		width: 70%;
 		margin-left: 15%;
 		padding-bottom: 16px;
+		
 		a{
 			text-decoration: none;
 			color: white;
@@ -178,93 +202,129 @@ h2{
 				position: relative;
 				box-shadow: 1px 0px 0px #4d4d4d, 0px 1px 0px #333333, 2px 1px 0px #4d4d4d, 1px 2px 0px #333333, 3px 2px 0px #4d4d4d, 2px 3px 0px #333333, 4px 3px 0px #4d4d4d, 3px 4px 0px #333333, 5px 4px 0px #4d4d4d, 4px 5px 0px #333333, 6px 5px 0px #4d4d4d, 5px 6px 0px #333333, 7px 6px 0px #4d4d4d, 6px 7px 0px #333333, 8px 7px 0px #4d4d4d, 7px 8px 0px #333333, 9px 8px 0px #4d4d4d, 8px 9px 0px #333333, 10px 9px 0px #4d4d4d, 9px 10px 0px #333333, 11px 10px 0px #4d4d4d, 10px 11px 0px #333333, 12px 11px 0px #4d4d4d, 11px 12px 0px #333333, 13px 12px 0px #4d4d4d, 12px 13px 0px #333333, 14px 13px 0px #4d4d4d, 13px 14px 0px #333333, 15px 14px 0px #4d4d4d, 14px 15px 0px #333333, 16px 15px 0px #4d4d4d, 15px 16px 0px #333333, 16px 16px 0px #4d4d4d;
 				padding: 25px;
-				background: url(../img/upanddown.gif) no-repeat center center;
-				background-size: cover;
+				background-color: $teal;
 				text-align: center;
 				h1{
-					color: white;
 					margin: 0;
+					background: url(../img/upanddown.gif) no-repeat center center;
+					background-size: cover;
+					-webkit-background-clip: text;
+					-webkit-text-fill-color: transparent;
+					text-color: transparent;
+					
 				}
 				p{
 					margin: 0;
 				}
 				&:hover{
-					background: $teal;
+					background: $black;
 				}
 			}
 		}
 	}
 }
 
-
-canvas{
-	top: 0;
-	position: fixed;
-	left: 0;
-	z-index: -2;
-	background-color: transparent;
-}
-
-.data-container{
+.composer-page{
 	position: relative;
-	z-index: 99;
-	width: 102%;
-	height: 100%;
-	overflow: auto;
 	top: 0;
-	padding-top: 40px;
 	left: 0;
-	z-index: 99999;
-	color: white;
-	.artist{
-		width: 80%;
-		margin-left: 10%;
-		margin-bottom: 100px;
-		h1{
-			color: white;
-		}
-		p{
-			width: 100%;
-			font-family: karla, helvetica, sans-serif;
-			font-weight: lighter;
-			font-size: 1.5em;
-			line-height: 2;
-		}
-		img{
-			margin-left: 25%;
-			width: 50%;
-			height: auto;
-			box-shadow: 1px 0px 0px #4d4d4d, 0px 1px 0px #333333, 2px 1px 0px #4d4d4d, 1px 2px 0px #333333, 3px 2px 0px #4d4d4d, 2px 3px 0px #333333, 4px 3px 0px #4d4d4d, 3px 4px 0px #333333, 5px 4px 0px #4d4d4d, 4px 5px 0px #333333, 6px 5px 0px #4d4d4d, 5px 6px 0px #333333, 7px 6px 0px #4d4d4d, 6px 7px 0px #333333, 8px 7px 0px #4d4d4d, 7px 8px 0px #333333, 9px 8px 0px #4d4d4d, 8px 9px 0px #333333, 10px 9px 0px #4d4d4d, 9px 10px 0px #333333, 11px 10px 0px #4d4d4d, 10px 11px 0px #333333, 12px 11px 0px #4d4d4d, 11px 12px 0px #333333, 13px 12px 0px #4d4d4d, 12px 13px 0px #333333, 14px 13px 0px #4d4d4d, 13px 14px 0px #333333, 15px 14px 0px #4d4d4d, 14px 15px 0px #333333, 16px 15px 0px #4d4d4d, 15px 16px 0px #333333, 16px 16px 0px #4d4d4d;
-		}
-		&:last-child{
-			border-bottom: none;
-		}
+	width: 100%;
+	height: 100%;
+	background-color: transparent;
+	canvas{
+		top: 0;
+		position: fixed;
+		left: 0;
+		z-index: -2;
+		background: white;
 	}
-}
-		
-.exit{
-	position: fixed;
-	z-index: 9999999999999;
-	top: 20px;
-	right: 40px;
-	width: 50px;
-	height: 50px;
-	background: url(../img/exit.svg) no-repeat center center;
-	background-color: white;
-	background-size: contain;
-	box-shadow: 1px 0px 0px #4d4d4d, 0px 1px 0px #333333, 2px 1px 0px #4d4d4d, 1px 2px 0px #333333, 3px 2px 0px #4d4d4d, 2px 3px 0px #333333, 4px 3px 0px #4d4d4d, 3px 4px 0px #333333, 5px 4px 0px #4d4d4d, 4px 5px 0px #333333, 6px 5px 0px #4d4d4d, 5px 6px 0px #333333, 7px 6px 0px #4d4d4d, 6px 7px 0px #333333, 8px 7px 0px #4d4d4d, 7px 8px 0px #333333, 9px 8px 0px #4d4d4d, 8px 9px 0px #333333, 10px 9px 0px #4d4d4d, 9px 10px 0px #333333, 11px 10px 0px #4d4d4d, 10px 11px 0px #333333, 12px 11px 0px #4d4d4d, 11px 12px 0px #333333, 13px 12px 0px #4d4d4d, 12px 13px 0px #333333, 14px 13px 0px #4d4d4d, 13px 14px 0px #333333, 15px 14px 0px #4d4d4d, 14px 15px 0px #333333, 16px 15px 0px #4d4d4d, 15px 16px 0px #333333, 16px 16px 0px #4d4d4d;
-	&:hover{
-		@include vendorize(transform, translate(3px, 3px));
-		box-shadow: 1px 0px 0px #4d4d4d, 0px 1px 0px #333333, 2px 1px 0px #4d4d4d, 1px 2px 0px #333333, 3px 2px 0px #4d4d4d, 2px 3px 0px #333333, 4px 3px 0px #4d4d4d, 3px 4px 0px #333333, 5px 4px 0px #4d4d4d, 4px 5px 0px #333333, 6px 5px 0px #4d4d4d, 5px 6px 0px #333333, 7px 6px 0px #4d4d4d, 6px 7px 0px #333333, 8px 7px 0px #4d4d4d, 7px 8px 0px #333333, 9px 8px 0px #4d4d4d, 8px 9px 0px #333333, 10px 9px 0px #4d4d4d, 9px 10px 0px #333333, 11px 10px 0px #4d4d4d, 10px 11px 0px #333333, 12px 11px 0px #4d4d4d, 11px 12px 0px #333333, 13px 12px 0px #4d4d4d, 12px 13px 0px #333333, 14px 13px 0px #4d4d4d;
-	}
-}
 
+	.data-container{
+		position: relative;
+		z-index: 99;
+		width: 100%;
+		height: 100%;
+		overflow: auto;
+		top: 0;
+		padding-top: 40px;
+		left: 0;
+		z-index: 99999;
+		color: white;
+		.artist{
+			width: 80%;
+			margin-left: 10%;
+			margin-bottom: 100px;
+			h1{
+				color: black;
+				margin-top: 20px;
+			}
+			p{
+				width: 100%;
+				font-family: karla, helvetica, sans-serif;
+				font-weight: lighter;
+				font-size: 1.5em;
+				line-height: 2;
+			}
+			img{
+				margin-left: 25%;
+				width: 50%;
+				height: auto;
+				box-shadow: 1px 0px 0px #4d4d4d, 0px 1px 0px #333333, 2px 1px 0px #4d4d4d, 1px 2px 0px #333333, 3px 2px 0px #4d4d4d, 2px 3px 0px #333333, 4px 3px 0px #4d4d4d, 3px 4px 0px #333333, 5px 4px 0px #4d4d4d, 4px 5px 0px #333333, 6px 5px 0px #4d4d4d, 5px 6px 0px #333333, 7px 6px 0px #4d4d4d, 6px 7px 0px #333333, 8px 7px 0px #4d4d4d, 7px 8px 0px #333333, 9px 8px 0px #4d4d4d, 8px 9px 0px #333333, 10px 9px 0px #4d4d4d, 9px 10px 0px #333333, 11px 10px 0px #4d4d4d, 10px 11px 0px #333333, 12px 11px 0px #4d4d4d, 11px 12px 0px #333333, 13px 12px 0px #4d4d4d, 12px 13px 0px #333333, 14px 13px 0px #4d4d4d, 13px 14px 0px #333333, 15px 14px 0px #4d4d4d, 14px 15px 0px #333333, 16px 15px 0px #4d4d4d, 15px 16px 0px #333333, 16px 16px 0px #4d4d4d;
+			}
+			&:last-child{
+				border-bottom: none;
+			}
+		}
+	}
+			
+	.exit{
+		position: fixed;
+		z-index: 9999999999999;
+		top: 20px;
+		right: 40px;
+		width: 50px;
+		height: 50px;
+		background: url(../img/exit.svg) no-repeat center center;
+		background-color: white;
+		background-size: contain;
+		box-shadow: 1px 0px 0px #4d4d4d, 0px 1px 0px #333333, 2px 1px 0px #4d4d4d, 1px 2px 0px #333333, 3px 2px 0px #4d4d4d, 2px 3px 0px #333333, 4px 3px 0px #4d4d4d, 3px 4px 0px #333333, 5px 4px 0px #4d4d4d, 4px 5px 0px #333333, 6px 5px 0px #4d4d4d, 5px 6px 0px #333333, 7px 6px 0px #4d4d4d, 6px 7px 0px #333333, 8px 7px 0px #4d4d4d, 7px 8px 0px #333333, 9px 8px 0px #4d4d4d, 8px 9px 0px #333333, 10px 9px 0px #4d4d4d, 9px 10px 0px #333333, 11px 10px 0px #4d4d4d, 10px 11px 0px #333333, 12px 11px 0px #4d4d4d, 11px 12px 0px #333333, 13px 12px 0px #4d4d4d, 12px 13px 0px #333333, 14px 13px 0px #4d4d4d, 13px 14px 0px #333333, 15px 14px 0px #4d4d4d, 14px 15px 0px #333333, 16px 15px 0px #4d4d4d, 15px 16px 0px #333333, 16px 16px 0px #4d4d4d;
+		&:hover{
+			@include vendorize(transform, translate(3px, 3px));
+			box-shadow: 1px 0px 0px #4d4d4d, 0px 1px 0px #333333, 2px 1px 0px #4d4d4d, 1px 2px 0px #333333, 3px 2px 0px #4d4d4d, 2px 3px 0px #333333, 4px 3px 0px #4d4d4d, 3px 4px 0px #333333, 5px 4px 0px #4d4d4d, 4px 5px 0px #333333, 6px 5px 0px #4d4d4d, 5px 6px 0px #333333, 7px 6px 0px #4d4d4d, 6px 7px 0px #333333, 8px 7px 0px #4d4d4d, 7px 8px 0px #333333, 9px 8px 0px #4d4d4d, 8px 9px 0px #333333, 10px 9px 0px #4d4d4d, 9px 10px 0px #333333, 11px 10px 0px #4d4d4d, 10px 11px 0px #333333, 12px 11px 0px #4d4d4d, 11px 12px 0px #333333, 13px 12px 0px #4d4d4d, 12px 13px 0px #333333, 14px 13px 0px #4d4d4d;
+		}
+	}
+
+
+
+}
 
 
 .radio{
 	margin: 0;
 	margin-top: 10%;
 	z-index: 1;
+	.radio-wrapper{
+		position: relative;
+		box-shadow: 1px 0px 0px #4d4d4d, 0px 1px 0px #333333, 2px 1px 0px #4d4d4d, 1px 2px 0px #333333, 3px 2px 0px #4d4d4d, 2px 3px 0px #333333, 4px 3px 0px #4d4d4d, 3px 4px 0px #333333, 5px 4px 0px #4d4d4d, 4px 5px 0px #333333, 6px 5px 0px #4d4d4d, 5px 6px 0px #333333, 7px 6px 0px #4d4d4d, 6px 7px 0px #333333, 8px 7px 0px #4d4d4d, 7px 8px 0px #333333, 9px 8px 0px #4d4d4d, 8px 9px 0px #333333, 10px 9px 0px #4d4d4d, 9px 10px 0px #333333, 11px 10px 0px #4d4d4d, 10px 11px 0px #333333, 12px 11px 0px #4d4d4d, 11px 12px 0px #333333, 13px 12px 0px #4d4d4d, 12px 13px 0px #333333, 14px 13px 0px #4d4d4d, 13px 14px 0px #333333, 15px 14px 0px #4d4d4d, 14px 15px 0px #333333, 16px 15px 0px #4d4d4d, 15px 16px 0px #333333, 16px 16px 0px #4d4d4d;
+		background-color: black;
+		text-align: center;
+		width: 20%;
+		margin-left: 40%;
+		height: auto;
+		padding-top: 25px;
+		padding-bottom: 25px;
+		h1{
+			margin: 0;
+			background: url(../img/upanddown.gif) no-repeat center center;
+			background-size: cover;
+			-webkit-background-clip: text;
+			-webkit-text-fill-color: transparent;
+			text-color: transparent;
+
+		}
+
+	}
+	
 	.show{
 		width: 70%;
 		margin-bottom: 10%;
@@ -285,7 +345,9 @@ canvas{
 			font-family: karla;
 			font-size: 1.5em;
 			line-height: 2;
+			background-color: black;
 			color: white;
+			padding: 20px;
 		}
 	}
 }
@@ -293,8 +355,25 @@ canvas{
 .stories{
 	position: relative;
 	margin-top: 10%;
-	h1{
-		margin: 0;
+	margin-bottom: 400px;
+	.story-wrapper{
+		position: relative;
+		box-shadow: 1px 0px 0px #4d4d4d, 0px 1px 0px #333333, 2px 1px 0px #4d4d4d, 1px 2px 0px #333333, 3px 2px 0px #4d4d4d, 2px 3px 0px #333333, 4px 3px 0px #4d4d4d, 3px 4px 0px #333333, 5px 4px 0px #4d4d4d, 4px 5px 0px #333333, 6px 5px 0px #4d4d4d, 5px 6px 0px #333333, 7px 6px 0px #4d4d4d, 6px 7px 0px #333333, 8px 7px 0px #4d4d4d, 7px 8px 0px #333333, 9px 8px 0px #4d4d4d, 8px 9px 0px #333333, 10px 9px 0px #4d4d4d, 9px 10px 0px #333333, 11px 10px 0px #4d4d4d, 10px 11px 0px #333333, 12px 11px 0px #4d4d4d, 11px 12px 0px #333333, 13px 12px 0px #4d4d4d, 12px 13px 0px #333333, 14px 13px 0px #4d4d4d, 13px 14px 0px #333333, 15px 14px 0px #4d4d4d, 14px 15px 0px #333333, 16px 15px 0px #4d4d4d, 15px 16px 0px #333333, 16px 16px 0px #4d4d4d;
+		background-color: black;
+		text-align: center;
+		width: 20%;
+		margin-left: 40%;
+		height: auto;
+		padding-top: 25px;
+		padding-bottom: 25px;
+		h1{
+			background: url(../img/upanddown.gif) no-repeat center center;
+			background-size: cover;
+			font-size: 3em;
+			-webkit-background-clip: text;
+			-webkit-text-fill-color: transparent;
+			text-color: transparent;
+		}
 	}
 	.story-nav{
 		ul{
@@ -334,10 +413,12 @@ canvas{
 		width: 70%;
 		margin-left: 15%;
 		margin-right: 15%;
-		color: white;
 		font-family: karla, 'Helvetica Neue', helvetica, sans-serif;
 		font-size: 1.5em;
 		line-height: 2;
+		background-color: black;
+		color: white;
+		padding: 20px;
 	}
 }
 
