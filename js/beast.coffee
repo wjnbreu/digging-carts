@@ -37,7 +37,7 @@ $ ->
 	prepInit = (count) ->
 		initCount = initCount + count
 		#make sure all data is done before calling init
-		if initCount == 5
+		if initCount == 4
 			init()
 
 	sendHeight = (height) ->
