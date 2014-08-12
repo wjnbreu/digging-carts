@@ -7,7 +7,7 @@ $ ->
 	player1 = {}
 	player2 = {}
 	anchorElements = {}
-	colors = ['#5f41d5', '#ca0ab8', '#0274e6', 'white']
+	colors = ['#5f41d5', '#ca0ab8', '#d5d041', '#d54141']
 
 	#SOUNDZ
 	hoverSound = new Howl {
@@ -26,7 +26,7 @@ $ ->
 	init = ->
 		setupBinds()
 		$('h1.colors').fitText(0.7)
-		setInterval(colorCycle, 250)
+		setInterval(colorCycle, 500)
 		$('.video-nav ul a.episode li').first().addClass "active"
 		$('.story-nav ul a.additional-episode li').first().addClass "active"
 		setTimeout(sendHeight(getHeight()), 500)
@@ -144,9 +144,6 @@ $ ->
 		video = videoObject[order].fields
 		player1.cueVideoById(video.ytVideoId)
 		$('.videos h1').empty().text video.episodeTitle
-		$('.video-wrapper').css
-			width: '70%'
-			marginLeft: '15%'
 		$('.videos p.body').empty().text video.videoDescription
 		$('.videos p.body').slideDown()
 		sendHeight(getHeight())
@@ -285,6 +282,12 @@ $ ->
 				$(@).find('li').addClass "active"
 				order = $(@).data 'order'
 				changeAdditionalVideo(order, additionalVideoObject)
+
+		$.ajax 'svg/svg.html',
+			type: 'GET'
+			dataType: 'html'
+			success: (data, textStatus, jqXHR) ->
+				$('.title svg path').attr("d", data)
 
 		# #MAGAZINE
 		# client.entries({'content_type': 'H38r2ErKi2cGueYeumikO', 'include': 1}).done (data) ->

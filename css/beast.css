@@ -127,7 +127,7 @@ body {
   background-color: black; }
 
 p {
-  color: black; }
+  color: #14110d; }
 
 .spinner {
   width: 100%;
@@ -161,6 +161,35 @@ h1 {
   font-size: 3.5em;
   margin: 0; }
 
+.path {
+  -webkit-transform: translate3d(0, 0, 0px);
+  stroke-dasharray: 10000;
+  stroke-dashoffset: 10000;
+  -webkit-animation: dash 40s linear;
+  -moz-animation: dash 40s linear;
+  -ms-animation: dash 40s linear;
+  -o-animation: dash 40s linear;
+  animation: dash 40s linear;
+  stroke-width: 2px;
+  stroke: white;
+  background-color: white;
+  margin: 0; }
+
+@-webkit-keyframes dash {
+  to {
+    stroke-dashoffset: 0; } }
+@-moz-keyframes dash {
+  to {
+    stroke-dashoffset: 0; } }
+@-o-keyframes dash {
+  to {
+    stroke-dashoffset: 0; } }
+@-ms-keyframes dash {
+  to {
+    stroke-dashoffset: 0; } }
+@keyframes dash {
+  to {
+    stroke-dashoffset: 0; } }
 .cloud1 {
   position: fixed;
   top: 40px;
@@ -223,8 +252,19 @@ h1 {
       position: absolute;
       text-align: center;
       z-index: 9; }
+      .content .startscreen .title img {
+        width: 20%; }
       .content .startscreen .title h1 {
-        margin-top: 10%; }
+        margin-top: 0;
+        width: 80%;
+        color: #ca0ab8;
+        margin-left: 10%;
+        padding-top: 25px;
+        padding-bottom: 25px;
+        background-color: #0274e6;
+        box-shadow: 1px 0px 0px #4d4d4d, 0px 1px 0px #333333, 2px 1px 0px #4d4d4d, 1px 2px 0px #333333, 3px 2px 0px #4d4d4d, 2px 3px 0px #333333, 4px 3px 0px #4d4d4d, 3px 4px 0px #333333, 5px 4px 0px #4d4d4d, 4px 5px 0px #333333, 6px 5px 0px #4d4d4d, 5px 6px 0px #333333, 7px 6px 0px #4d4d4d, 6px 7px 0px #333333, 8px 7px 0px #4d4d4d, 7px 8px 0px #333333, 9px 8px 0px #4d4d4d, 8px 9px 0px #333333, 10px 9px 0px #4d4d4d, 9px 10px 0px #333333, 11px 10px 0px #4d4d4d, 10px 11px 0px #333333, 12px 11px 0px #4d4d4d, 11px 12px 0px #333333, 13px 12px 0px #4d4d4d, 12px 13px 0px #333333, 14px 13px 0px #4d4d4d, 13px 14px 0px #333333, 15px 14px 0px #4d4d4d, 14px 15px 0px #333333, 16px 15px 0px #4d4d4d, 15px 16px 0px #333333, 16px 16px 0px #4d4d4d; }
+      .content .startscreen .title h2 {
+        margin: 0; }
   .content .videos {
     position: relative;
     margin-top: 65%;
@@ -232,10 +272,10 @@ h1 {
     .content .videos .video-wrapper {
       position: relative;
       box-shadow: 1px 0px 0px #4d4d4d, 0px 1px 0px #333333, 2px 1px 0px #4d4d4d, 1px 2px 0px #333333, 3px 2px 0px #4d4d4d, 2px 3px 0px #333333, 4px 3px 0px #4d4d4d, 3px 4px 0px #333333, 5px 4px 0px #4d4d4d, 4px 5px 0px #333333, 6px 5px 0px #4d4d4d, 5px 6px 0px #333333, 7px 6px 0px #4d4d4d, 6px 7px 0px #333333, 8px 7px 0px #4d4d4d, 7px 8px 0px #333333, 9px 8px 0px #4d4d4d, 8px 9px 0px #333333, 10px 9px 0px #4d4d4d, 9px 10px 0px #333333, 11px 10px 0px #4d4d4d, 10px 11px 0px #333333, 12px 11px 0px #4d4d4d, 11px 12px 0px #333333, 13px 12px 0px #4d4d4d, 12px 13px 0px #333333, 14px 13px 0px #4d4d4d, 13px 14px 0px #333333, 15px 14px 0px #4d4d4d, 14px 15px 0px #333333, 16px 15px 0px #4d4d4d, 15px 16px 0px #333333, 16px 16px 0px #4d4d4d;
-      background-color: black;
+      background-color: #14110d;
       text-align: center;
-      width: 20%;
-      margin-left: 40%;
+      width: 70%;
+      margin-left: 15%;
       height: auto;
       padding-top: 25px;
       padding-bottom: 25px; }
@@ -244,6 +284,7 @@ h1 {
     .content .videos .video-nav ul {
       width: 80%;
       margin-left: 10%;
+      margin-top: 20px;
       text-align: center;
       list-style-type: none;
       padding: 0; }
@@ -252,7 +293,8 @@ h1 {
         font-size: 1.5em;
         margin: 5px;
         padding: 5px;
-        color: #0274e6;
+        color: white;
+        background-color: #0274e6;
         text-transform: uppercase;
         font-family: karla;
         -webkit-border-radius: 5px;
@@ -294,7 +336,7 @@ h1 {
         position: relative;
         box-shadow: 1px 0px 0px #4d4d4d, 0px 1px 0px #333333, 2px 1px 0px #4d4d4d, 1px 2px 0px #333333, 3px 2px 0px #4d4d4d, 2px 3px 0px #333333, 4px 3px 0px #4d4d4d, 3px 4px 0px #333333, 5px 4px 0px #4d4d4d, 4px 5px 0px #333333, 6px 5px 0px #4d4d4d, 5px 6px 0px #333333, 7px 6px 0px #4d4d4d, 6px 7px 0px #333333, 8px 7px 0px #4d4d4d, 7px 8px 0px #333333, 9px 8px 0px #4d4d4d, 8px 9px 0px #333333, 10px 9px 0px #4d4d4d, 9px 10px 0px #333333, 11px 10px 0px #4d4d4d, 10px 11px 0px #333333, 12px 11px 0px #4d4d4d, 11px 12px 0px #333333, 13px 12px 0px #4d4d4d, 12px 13px 0px #333333, 14px 13px 0px #4d4d4d, 13px 14px 0px #333333, 15px 14px 0px #4d4d4d, 14px 15px 0px #333333, 16px 15px 0px #4d4d4d, 15px 16px 0px #333333, 16px 16px 0px #4d4d4d;
         padding: 25px;
-        background-color: #0274e6;
+        background-color: #14110d;
         color: #ca0ab8;
         text-align: center; }
         .content .composers a .composer-wrapper h1 {
@@ -302,7 +344,7 @@ h1 {
         .content .composers a .composer-wrapper p {
           margin: 0; }
         .content .composers a .composer-wrapper:hover {
-          background-color: #14110d; }
+          background-color: #0274e6; }
 
 .composer-page {
   position: relative;
@@ -333,7 +375,7 @@ h1 {
       margin-left: 10%;
       margin-bottom: 100px; }
       .composer-page .data-container .artist h1 {
-        color: black;
+        color: #14110d;
         margin-top: 20px; }
       .composer-page .data-container .artist p {
         width: 100%;
@@ -374,7 +416,7 @@ h1 {
   .radio .radio-wrapper {
     position: relative;
     box-shadow: 1px 0px 0px #4d4d4d, 0px 1px 0px #333333, 2px 1px 0px #4d4d4d, 1px 2px 0px #333333, 3px 2px 0px #4d4d4d, 2px 3px 0px #333333, 4px 3px 0px #4d4d4d, 3px 4px 0px #333333, 5px 4px 0px #4d4d4d, 4px 5px 0px #333333, 6px 5px 0px #4d4d4d, 5px 6px 0px #333333, 7px 6px 0px #4d4d4d, 6px 7px 0px #333333, 8px 7px 0px #4d4d4d, 7px 8px 0px #333333, 9px 8px 0px #4d4d4d, 8px 9px 0px #333333, 10px 9px 0px #4d4d4d, 9px 10px 0px #333333, 11px 10px 0px #4d4d4d, 10px 11px 0px #333333, 12px 11px 0px #4d4d4d, 11px 12px 0px #333333, 13px 12px 0px #4d4d4d, 12px 13px 0px #333333, 14px 13px 0px #4d4d4d, 13px 14px 0px #333333, 15px 14px 0px #4d4d4d, 14px 15px 0px #333333, 16px 15px 0px #4d4d4d, 15px 16px 0px #333333, 16px 16px 0px #4d4d4d;
-    background-color: black;
+    background-color: #14110d;
     text-align: center;
     width: 20%;
     margin-left: 40%;
@@ -414,7 +456,7 @@ h1 {
   .stories .story-wrapper {
     position: relative;
     box-shadow: 1px 0px 0px #4d4d4d, 0px 1px 0px #333333, 2px 1px 0px #4d4d4d, 1px 2px 0px #333333, 3px 2px 0px #4d4d4d, 2px 3px 0px #333333, 4px 3px 0px #4d4d4d, 3px 4px 0px #333333, 5px 4px 0px #4d4d4d, 4px 5px 0px #333333, 6px 5px 0px #4d4d4d, 5px 6px 0px #333333, 7px 6px 0px #4d4d4d, 6px 7px 0px #333333, 8px 7px 0px #4d4d4d, 7px 8px 0px #333333, 9px 8px 0px #4d4d4d, 8px 9px 0px #333333, 10px 9px 0px #4d4d4d, 9px 10px 0px #333333, 11px 10px 0px #4d4d4d, 10px 11px 0px #333333, 12px 11px 0px #4d4d4d, 11px 12px 0px #333333, 13px 12px 0px #4d4d4d, 12px 13px 0px #333333, 14px 13px 0px #4d4d4d, 13px 14px 0px #333333, 15px 14px 0px #4d4d4d, 14px 15px 0px #333333, 16px 15px 0px #4d4d4d, 15px 16px 0px #333333, 16px 16px 0px #4d4d4d;
-    background-color: black;
+    background-color: #14110d;
     text-align: center;
     width: 20%;
     margin-left: 40%;
@@ -433,7 +475,8 @@ h1 {
       padding: 5px;
       margin: 5px;
       font-size: 1.5em;
-      color: #0274e6;
+      color: white;
+      background-color: #0274e6;
       font-family: karla;
       -webkit-border-radius: 5px;
       -moz-border-radius: 5px;
@@ -461,7 +504,7 @@ h1 {
     font-family: karla, 'Helvetica Neue', helvetica, sans-serif;
     font-size: 1.5em;
     line-height: 2;
-    background-color: black;
+    background-color: #14110d;
     border: 1px solid #ca0ab8;
     color: #ca0ab8;
     padding: 20px; }

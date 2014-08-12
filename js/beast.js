@@ -1,15 +1,15 @@
 (function() {
     $(function() {
-        var e, t, n, i, r, o, a, d, s, u, l, c, f, p, h, v, m, y, w, b, g, C, I, T, E, S, V, Y, k, x, N;
+        var e, t, n, i, r, o, a, d, s, u, l, c, f, p, h, v, m, y, w, g, b, C, T, I, E, x, S, V, Y, k, N;
         l = {};
         N = {};
         w = {};
         i = {};
         y = {};
         C = {};
-        I = {};
+        T = {};
         r = {};
-        u = [ "#5f41d5", "#ca0ab8", "#0274e6", "white" ];
+        u = [ "#5f41d5", "#ca0ab8", "#d5d041", "#d54141" ];
         h = new Howl({
             urls: [ "sound/CLICK.mp3", "sound/CLICK.ogg" ],
             volume: .5
@@ -20,21 +20,21 @@
         });
         m = 0;
         v = function() {
-            Y();
+            V();
             $("h1.colors").fitText(.7);
-            setInterval(s, 250);
+            setInterval(s, 500);
             $(".video-nav ul a.episode li").first().addClass("active");
             $(".story-nav ul a.additional-episode li").first().addClass("active");
-            setTimeout(V(f()), 500);
+            setTimeout(S(f()), 500);
             return E();
         };
-        T = function(e) {
+        I = function(e) {
             m = m + e;
             if (m === 4) {
                 return v();
             }
         };
-        V = function(e) {
+        S = function(e) {
             var t, n;
             t = {
                 height: e
@@ -45,7 +45,7 @@
         f = function() {
             return $(document.body).height() + 300;
         };
-        k = function() {
+        Y = function() {
             var e, t;
             t = document.createElement("script");
             t.src = "https://www.youtube.com/iframe_api";
@@ -58,20 +58,6 @@
                 width: "640",
                 videoId: "WYSupJ5r2zo",
                 events: {
-                    onReady: b
-                },
-                playerVars: {
-                    modestbranding: true,
-                    controls: 1,
-                    showinfo: 0,
-                    hd: 1
-                }
-            });
-            return I = new YT.Player("storyplayer", {
-                height: "390",
-                width: "640",
-                videoId: "VsbG4pXrhr8",
-                events: {
                     onReady: g
                 },
                 playerVars: {
@@ -81,16 +67,30 @@
                     hd: 1
                 }
             });
-        };
-        b = function(e) {
-            S("#player");
-            return V(f());
+            return T = new YT.Player("storyplayer", {
+                height: "390",
+                width: "640",
+                videoId: "VsbG4pXrhr8",
+                events: {
+                    onReady: b
+                },
+                playerVars: {
+                    modestbranding: true,
+                    controls: 1,
+                    showinfo: 0,
+                    hd: 1
+                }
+            });
         };
         g = function(e) {
-            S("#storyplayer");
-            return V(f());
+            x("#player");
+            return S(f());
         };
-        Y = function() {
+        b = function(e) {
+            x("#storyplayer");
+            return S(f());
+        };
+        V = function() {
             $("nav").bind("mouseenter", function() {
                 return $(this).transition({
                     left: 0
@@ -110,12 +110,12 @@
             $("a.scroll").bind("click", function(e) {
                 var t;
                 t = $(this);
-                return x(e, t);
+                return k(e, t);
             });
             return window.addEventListener("resize", function() {
-                S("#player");
-                S("#storyplayer");
-                return V(f());
+                x("#player");
+                x("#storyplayer");
+                return S(f());
             });
         };
         s = function() {
@@ -130,27 +130,23 @@
             $("body,html").animate({
                 scrollTop: 0
             }, 50);
-            return V(f());
+            return S(f());
         };
         a = function(e, t) {
             var n;
             n = t[e].fields;
             C.cueVideoById(n.ytVideoId);
             $(".videos h1").empty().text(n.episodeTitle);
-            $(".video-wrapper").css({
-                width: "70%",
-                marginLeft: "15%"
-            });
             $(".videos p.body").empty().text(n.videoDescription);
             $(".videos p.body").slideDown();
-            return V(f());
+            return S(f());
         };
         o = function(e, t) {
             var n;
             n = t[e].fields;
-            I.cueVideoById(n.additionalYouTube);
+            T.cueVideoById(n.additionalYouTube);
             $(".stories h1").empty().text(n.additionalVideoTitle);
-            return V(f());
+            return S(f());
         };
         n = function(e, t, n) {
             var i, r, o, a, d, s, u, l, c;
@@ -197,11 +193,11 @@
                 i = a.artistImage.fields.file.url;
                 o = "<div class='show'><img src='" + i + "'/>" + n + "<p>" + t + "</p></div>";
                 $(".radio").append(o);
-                l.push(V(f()));
+                l.push(S(f()));
             }
             return l;
         };
-        S = function(e) {
+        x = function(e) {
             var t, n, i, r, o, a, d, s;
             o = $(e);
             s = $(window).width();
@@ -216,9 +212,9 @@
             o.css({
                 marginLeft: n
             });
-            return V(f());
+            return S(f());
         };
-        x = function(e, t, n) {
+        k = function(e, t, n) {
             var i, r;
             e.preventDefault();
             r = t.attr("href");
@@ -235,7 +231,7 @@
         };
         E = function() {
             $(".spinner").remove();
-            return V(f());
+            return S(f());
         };
         c = function() {
             var r;
@@ -248,7 +244,7 @@
                 include: 1
             }).done(function(t) {
                 e(t);
-                return T(1);
+                return I(1);
             });
             r.entries({
                 content_type: "36SuQSSPR6QmWOk8CseMC6",
@@ -256,7 +252,7 @@
                 order: "fields.order"
             }).done(function(e) {
                 N = e;
-                T(1);
+                I(1);
                 n(N, $(".video-nav ul"), "main");
                 return $("a.episode").bind("click", function(e) {
                     var t;
@@ -271,15 +267,15 @@
                 content_type: "2YpXtnGW80EEGgCUsSMmCc",
                 include: 1
             }).done(function(e) {
-                T(1);
+                I(1);
                 return t(e);
             });
-            return r.entries({
+            r.entries({
                 content_type: "6fwxAcXrxK4yqyaMUiWwWY",
                 include: 1,
                 order: "fields.order"
             }).done(function(e) {
-                T(1);
+                I(1);
                 i = e;
                 n(i, $(".story-nav ul"), "additional");
                 return $("a.additional-episode").bind("click", function(e) {
@@ -291,9 +287,16 @@
                     return o(t, i);
                 });
             });
+            return $.ajax("svg/svg.html", {
+                type: "GET",
+                dataType: "html",
+                success: function(e, t, n) {
+                    return $(".title svg path").attr("d", e);
+                }
+            });
         };
-        k();
+        Y();
         c();
-        return window.addEventListener("load", V(f()));
+        return window.addEventListener("load", S(f()));
     });
 }).call(this);
