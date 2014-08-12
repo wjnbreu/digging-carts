@@ -140,7 +140,8 @@ h1 {
   letter-spacing: -1px;
   line-height: 1;
   color: white;
-  font-size: 4em; }
+  font-size: 4em;
+  margin: 0; }
 
 h2 {
   font-size: 4em;
@@ -310,6 +311,7 @@ canvas {
   .radio .show {
     width: 70%;
     margin-bottom: 10%;
+    margin-top: 40px;
     margin-left: 15%; }
     .radio .show img {
       width: 80%;
@@ -329,6 +331,8 @@ canvas {
 .stories {
   position: relative;
   margin-top: 10%; }
+  .stories h1 {
+    margin: 0; }
   .stories .story-nav ul {
     text-align: center;
     list-style-type: none;

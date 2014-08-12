@@ -24,9 +24,7 @@ module.exports = function(grunt) {
 					"js/contentful.min.js",
 					"js/fittext.js",
 					"js/howler.min.js",
-
 					"js/transit.min.js",
-
 					"js/beast.js",
 					"js/falling.js.js"
 				],

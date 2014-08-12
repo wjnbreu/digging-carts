@@ -1,15 +1,15 @@
 (function() {
     $(function() {
-        var e, t, n, i, r, o, a, d, s, l, u, c, f, p, h, v, m, y, b, w, g, C, I, T, E, x, S, V, Y, k, N;
+        var e, t, n, i, r, o, a, d, s, l, u, c, f, p, h, v, m, y, w, b, g, C, I, T, E, x, S, V, Y, k, N;
         u = {};
         N = {};
-        b = {};
+        w = {};
         i = {};
         y = {};
         C = {};
         I = {};
         r = {};
-        l = [ "#d6f7fe", "#312cc0", "#f9a205", "#d89e46", "#4c9d5b", "#fbdd1b", "#ff6dd1" ];
+        l = [ "#ffffff", "#00ffef", "#ff6dd1", "#00ff5a" ];
         h = new Howl({
             urls: [ "sound/CLICK.mp3", "sound/CLICK.ogg" ],
             volume: .5
@@ -58,7 +58,7 @@
                 width: "640",
                 videoId: "WYSupJ5r2zo",
                 events: {
-                    onReady: w
+                    onReady: b
                 },
                 playerVars: {
                     modestbranding: true,
@@ -82,7 +82,7 @@
                 }
             });
         };
-        w = function(e) {
+        b = function(e) {
             x("#player");
             return S(f());
         };

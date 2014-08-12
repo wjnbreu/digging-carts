@@ -7,7 +7,7 @@ $ ->
 	player1 = {}
 	player2 = {}
 	anchorElements = {}
-	colors = ['#d6f7fe', '#312cc0', '#f9a205', '#d89e46', '#4c9d5b', '#fbdd1b', '#ff6dd1']
+	colors = ['#ffffff', '#00ffef', '#ff6dd1', '#00ff5a']
 
 	#SOUNDZ
 	hoverSound = new Howl {
@@ -183,21 +183,6 @@ $ ->
 			composerData = "<div class='artist'><img src='#{img}'/><h1>#{person.composerName}</h1><p>#{person.bio}</p></div>"
 			$(".data-container").append composerData
 		
-
-	# addMagazineTitles = (object) ->
-	# 	for feature, i in object
-	# 		article = feature.fields
-	# 		title = article.magazineFeatureTitle
-	# 		description = article.magazineDescription
-	# 		link = article.rbmaLink
-	# 		img = article.magazineImage.fields.file.url
-	# 		magData = "<div class='magFeature'><a href='#{link}' target='blank'><img src='#{img}'/></a><h3>#{title}</h3><p>#{description}</p></div>"
-	# 		if i % 2 == 0
-	# 			$('.feature-wrapper .col1').append magData
-	# 		else if i & 2 >= 0 || !i
-	# 			$('.feature-wrapper .col2').append magData
-
-
 
 
 	addMixes = (object) ->
