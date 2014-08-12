@@ -110,7 +110,7 @@
 }
 
 @font-face {
-    font-family: clan;
+    font-family: bit;
     src: url('../fonts/clanpro-narrultra-webfont.eot');
     src: url('../fonts/clanpro-narrultra-webfont.eot?#iefix') format('embedded-opentype'),
          url('../fonts/clanpro-narrultra-webfont.woff') format('woff'),
@@ -120,17 +120,17 @@
     font-style: normal;
 }
 
-@font-face {
-    font-family: bit;
-    src: url('../fonts/brokeren-webfont.eot');
-    src: url('../fonts/brokeren-webfont.eot?#iefix') format('embedded-opentype'),
-         url('../fonts/brokeren-webfont.woff') format('woff'),
-         url('../fonts/brokeren-webfont.ttf') format('truetype'),
-         url('../fonts/brokeren-webfont.svg#8bit_wondernominal') format('svg');
-    font-weight: normal;
-    font-style: normal;
+// @font-face {
+//     font-family: bit;
+//     src: url('../fonts/brokeren-webfont.eot');
+//     src: url('../fonts/brokeren-webfont.eot?#iefix') format('embedded-opentype'),
+//          url('../fonts/brokeren-webfont.woff') format('woff'),
+//          url('../fonts/brokeren-webfont.ttf') format('truetype'),
+//          url('../fonts/brokeren-webfont.svg#8bit_wondernominal') format('svg');
+//     font-weight: normal;
+//     font-style: normal;
 
-}
+// }
 
 
 
@@ -187,7 +187,7 @@ h1,h2,h3,h4{
 	text-align: center;
 }
 h1{
-	letter-spacing: -2px;
+	letter-spacing: -1px;
 	line-height: 1;
 	color: white;
 	font-size: 4em;
@@ -248,7 +248,6 @@ hr{
 			z-index: 9;
 			h1{
 				margin-top: 10%;
-				@include vendorize(text-stroke, 1px $teal);
 			}
 		}
 	}
