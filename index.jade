@@ -20,7 +20,7 @@ body
 	a(id="home")
 	.content
 		.startscreen
-			video(autoplay muted loop)
+			video(autoplay muted loop, id="titlevideo")
 				source(src="img/cart2.webm", type="video/webm")
 				source(src="img/cart2.ogv", type="video/ogg")
 			.title
@@ -54,12 +54,6 @@ body
 		div(id="storyplayer")
 		p(class="body") Basic text about the video series should go here. Not very long.
 
-	//- .features
-	//- 	a(id="features")
-	//- 	h1 Text Features
-	//- 	.feature-wrapper
-	//- 		.col1
-	//- 		.col2
 
 	script(type="text/javascript", src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js")
 	script(type="text/javascript", src="js/contentful.min.js")

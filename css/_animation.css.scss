@@ -1,0 +1,56 @@
+//ANIMATIONS
+@-webkit-keyframes 'spina'{
+	from{
+		@include vendorize(transform, translate(0px, 0px));
+	}
+	to{
+		@include vendorize(transform, translate(0px, 10px));
+	}
+}
+
+@-webkit-keyframes 'spinb'{
+	from{
+		@include vendorize(transform, translate(0px, 10px));
+	}
+	to{
+		@include vendorize(transform, translate(0px, 0px));
+	}
+}
+
+@keyframes 'spina'{
+	from{
+		@include vendorize(transform, translate(0px, 0px));
+	}
+	to{
+		@include vendorize(transform, translate(0px, 10px));
+	}
+}
+
+@keyframes 'spinb'{
+	from{
+		@include vendorize(transform, translate(0px, 10px));
+	}
+	to{
+		@include vendorize(transform, translate(0px, 0px));
+	}
+}
+
+
+
+@-webkit-keyframes 'slide'{
+	from{
+		@include vendorize(transform, translate(0px, 10px));
+	}
+	to{
+		@include vendorize(transform, translate(0px, 0px));
+	}
+}
+
+@keyframes 'slide'{
+	from{
+		@include vendorize(transform, translate(0px, 10px));
+	}
+	to{
+		@include vendorize(transform, translate(0px, 0px));
+	}
+}

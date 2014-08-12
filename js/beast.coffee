@@ -24,7 +24,6 @@ $ ->
 
 
 	init = ->
-		setupYouTube()
 		setupBinds()
 		$('h1.colors').fitText(0.7)
 		setInterval(colorCycle, 250)
@@ -310,6 +309,7 @@ $ ->
 
 		
 	#launch when ready	
+	setupYouTube()
 	getData()
 	window.addEventListener('load', sendHeight(getHeight()));
 	

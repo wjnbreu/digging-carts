@@ -20,7 +20,6 @@
         });
         m = 0;
         v = function() {
-            Y();
             V();
             $("h1.colors").fitText(.7);
             setInterval(s, 250);
@@ -291,6 +290,7 @@
                 });
             });
         };
+        Y();
         c();
         return window.addEventListener("load", S(f()));
     });
