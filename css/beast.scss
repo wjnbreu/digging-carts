@@ -394,7 +394,7 @@ canvas{
 }
 		
 .exit{
-	position: fixed;
+	position: fixed !important;
 	z-index: 9999999999999;
 	top: 20px;
 	right: 40px;
