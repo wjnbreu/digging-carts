@@ -9,7 +9,7 @@
         C = {};
         I = {};
         r = {};
-        u = [ "#fae14c", "#a3f2b3", "#b9ee99", "#b9ee99" ];
+        u = [ "#5f41d5", "#ca0ab8", "#0274e6", "white" ];
         h = new Howl({
             urls: [ "sound/CLICK.mp3", "sound/CLICK.ogg" ],
             volume: .5

@@ -261,6 +261,28 @@
 		"outputPathIsSetByUser": 0,
 		"processed": 0
 		},
+	"\/img\/cloud1.png": {
+		"fileType": 32768,
+		"ignore": 0,
+		"ignoreWasSetByUser": 0,
+		"initialSize": 15835,
+		"inputAbbreviatedPath": "\/img\/cloud1.png",
+		"outputAbbreviatedPath": "\/img\/cloud1.png",
+		"outputPathIsOutsideProject": 0,
+		"outputPathIsSetByUser": 0,
+		"processed": 0
+		},
+	"\/img\/cloud2.png": {
+		"fileType": 32768,
+		"ignore": 0,
+		"ignoreWasSetByUser": 0,
+		"initialSize": 21578,
+		"inputAbbreviatedPath": "\/img\/cloud2.png",
+		"outputAbbreviatedPath": "\/img\/cloud2.png",
+		"outputPathIsOutsideProject": 0,
+		"outputPathIsSetByUser": 0,
+		"processed": 0
+		},
 	"\/img\/clouds.jpg": {
 		"fileType": 16384,
 		"ignore": 0,
@@ -268,6 +290,17 @@
 		"initialSize": 97979,
 		"inputAbbreviatedPath": "\/img\/clouds.jpg",
 		"outputAbbreviatedPath": "\/img\/clouds.jpg",
+		"outputPathIsOutsideProject": 0,
+		"outputPathIsSetByUser": 0,
+		"processed": 0
+		},
+	"\/img\/clouds.png": {
+		"fileType": 32768,
+		"ignore": 0,
+		"ignoreWasSetByUser": 0,
+		"initialSize": 13779,
+		"inputAbbreviatedPath": "\/img\/clouds.png",
+		"outputAbbreviatedPath": "\/img\/clouds.png",
 		"outputPathIsOutsideProject": 0,
 		"outputPathIsSetByUser": 0,
 		"processed": 0
@@ -400,6 +433,28 @@
 		"initialSize": 65362,
 		"inputAbbreviatedPath": "\/img\/mario.png",
 		"outputAbbreviatedPath": "\/img\/mario.png",
+		"outputPathIsOutsideProject": 0,
+		"outputPathIsSetByUser": 0,
+		"processed": 0
+		},
+	"\/img\/mega.jpg": {
+		"fileType": 16384,
+		"ignore": 0,
+		"ignoreWasSetByUser": 0,
+		"initialSize": 167964,
+		"inputAbbreviatedPath": "\/img\/mega.jpg",
+		"outputAbbreviatedPath": "\/img\/mega.jpg",
+		"outputPathIsOutsideProject": 0,
+		"outputPathIsSetByUser": 0,
+		"processed": 0
+		},
+	"\/img\/megaman.jpg": {
+		"fileType": 16384,
+		"ignore": 0,
+		"ignoreWasSetByUser": 0,
+		"initialSize": 253111,
+		"inputAbbreviatedPath": "\/img\/megaman.jpg",
+		"outputAbbreviatedPath": "\/img\/megaman.jpg",
 		"outputPathIsOutsideProject": 0,
 		"outputPathIsSetByUser": 0,
 		"processed": 0

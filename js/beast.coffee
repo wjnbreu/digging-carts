@@ -7,7 +7,7 @@ $ ->
 	player1 = {}
 	player2 = {}
 	anchorElements = {}
-	colors = ['#fae14c', '#a3f2b3', '#b9ee99', '#b9ee99']
+	colors = ['#5f41d5', '#ca0ab8', '#0274e6', 'white']
 
 	#SOUNDZ
 	hoverSound = new Howl {

@@ -54,3 +54,21 @@
 		@include vendorize(transform, translate(0px, 0px));
 	}
 }
+
+@-webkit-keyframes 'cloud' {
+	from{
+		margin-left: -30%;
+	}
+	to{
+		margin-left: 102%;
+	}
+}
+
+@-webkit-keyframes 'cloudtwo' {
+	from{
+		margin-left: -30%;
+	}
+	to{
+		margin-left: 110%;
+	}
+}
