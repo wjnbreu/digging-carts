@@ -111,11 +111,10 @@
   to {
     margin-left: 110%; } }
 html {
-  font-family: sans-serif; }
+  font-family: bit, karla, 'Helvetica Neue', helvetica, sans-serif; }
 
 body {
   margin: 0;
-  font-family: bit, karla, 'Helvetica Neue', helvetica, sans-serif;
   -webkit-font-smoothing: antialiased;
   vertical-align: baseline;
   width: 100%;
@@ -190,43 +189,12 @@ h1 {
 @keyframes dash {
   to {
     stroke-dashoffset: 0; } }
-.cloud1 {
-  position: fixed;
-  top: 40px;
-  margin-left: -30%;
-  width: 250px;
-  height: 200px;
-  background: transparent url(../img/cloud1.png) no-repeat left top;
-  overflow: hidden;
-  -webkit-animation: 'cloud' 30s infinite linear;
-  -webkit-transform: translate3d(0px, 0px, 0);
-  -moz-transform: translate3d(0px, 0px, 0);
-  -ms-transform: translate3d(0px, 0px, 0);
-  -o-transform: translate3d(0px, 0px, 0);
-  transform: translate3d(0px, 0px, 0);
-  z-index: -1; }
-
-.cloud2 {
-  position: fixed;
-  top: 180px;
-  margin-left: -30%;
-  width: 250px;
-  height: 200px;
-  background: transparent url(../img/cloud2.png) no-repeat left top;
-  overflow: hidden;
-  -webkit-animation: 'cloudtwo' 35s infinite linear;
-  -webkit-transform: translate3d(0px, 0px, 0);
-  -moz-transform: translate3d(0px, 0px, 0);
-  -ms-transform: translate3d(0px, 0px, 0);
-  -o-transform: translate3d(0px, 0px, 0);
-  transform: translate3d(0px, 0px, 0);
-  z-index: -1; }
-
 .content {
   position: relative;
   width: 100%;
   height: 100%;
   overflow: auto;
+  overflow-x: hidden !important;
   top: 0;
   left: 0;
   color: white;
