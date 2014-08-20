@@ -36,11 +36,13 @@ body
 			div(id="player")
 			//- p(class="body") Basic text about the video series should go here. Not very long.
 
-		.composers
-			a(id="composers")
-			a(class="composer-title", href="composers")
-				.composer-wrapper
-					h1 Meet The Composers
+	.composers
+		h1 Meet The Composers
+		a(id="composers")
+		.composers-wrap
+			a(class="arrow-left", href="#")
+			a(class="arrow-right", href="#")
+
 
 
 	.radio
@@ -61,6 +63,5 @@ body
 	script(type="text/javascript", src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js")
 	script(type="text/javascript", src="js/contentful.min.js")
 	script(type="text/javascript", src="js/fittext.js")
-	script(type="text/javascript", src="js/howler.min.js")
 	script(src="js/beast.js", type="text/javascript")
 

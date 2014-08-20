@@ -141,16 +141,28 @@ body {
   width: 100%;
   height: 100%;
   -webkit-tap-highlight-color: transparent;
-  background-color: red;
-  background-image: -webkit-gradient(linear, left top, left bottom, color-stop(0, #e6e6e6), color-stop(1, #fcfcfc));
-  background-image: -o-linear-gradient(bottom, #e6e6e6 0%, #fcfcfc 100%);
-  background-image: -moz-linear-gradient(bottom, #e6e6e6 0%, #fcfcfc 100%);
-  background-image: -webkit-linear-gradient(bottom, #e6e6e6 0%, #fcfcfc 100%);
-  background-image: -ms-linear-gradient(bottom, #e6e6e6 0%, #fcfcfc 100%);
-  background-image: linear-gradient(to bottom, #e6e6e6 0%, #fcfcfc 100%); }
+  background-color: #d9d9d9; }
+
+h1 {
+  text-transform: uppercase;
+  box-shadow: 1px 0px 0px #4d4d4d, 0px 1px 0px #333333, 2px 1px 0px #4d4d4d, 1px 2px 0px #333333, 3px 2px 0px #4d4d4d, 2px 3px 0px #333333, 4px 3px 0px #4d4d4d, 3px 4px 0px #333333, 5px 4px 0px #4d4d4d, 4px 5px 0px #333333, 6px 5px 0px #4d4d4d, 5px 6px 0px #333333, 7px 6px 0px #4d4d4d, 6px 7px 0px #333333, 8px 7px 0px #4d4d4d, 7px 8px 0px #333333, 9px 8px 0px #4d4d4d, 8px 9px 0px #333333, 10px 9px 0px #4d4d4d, 9px 10px 0px #333333, 11px 10px 0px #4d4d4d, 10px 11px 0px #333333, 12px 11px 0px #4d4d4d, 11px 12px 0px #333333, 13px 12px 0px #4d4d4d, 12px 13px 0px #333333, 14px 13px 0px #4d4d4d, 13px 14px 0px #333333, 15px 14px 0px #4d4d4d, 14px 15px 0px #333333, 16px 15px 0px #4d4d4d, 15px 16px 0px #333333, 16px 16px 0px #4d4d4d;
+  background-color: black;
+  color: white;
+  width: 70%;
+  margin-left: 15%;
+  text-align: center;
+  line-height: 1;
+  padding: 10px;
+  font-size: 3.5em; }
+
+h2 {
+  font-size: 2.5em; }
 
 p {
-  color: #14110d; }
+  letter-spacing: -1px;
+  font-family: karla, 'Helvetica Neue', helvetica, sans-serif;
+  line-height: 1.5;
+  font-size: 2em; }
 
 .spinner {
   width: 100%;
@@ -176,14 +188,6 @@ p {
 h1, h2, h3, h4 {
   text-transform: uppercase;
   text-align: center; }
-
-h1 {
-  letter-spacing: -1px;
-  line-height: 1;
-  text-transform: uppercase;
-  font-size: 3.5em;
-  margin: 0;
-  text-shadow: 0px 0px 0 #dddddd, 1px 1px 0 white, 2px 2px 0 black, 3px 3px 0 black, 4px 4px 0 #a3a3a3, 5px 5px 0 #949494, 0px 0px 6px rgba(0, 0, 0, 0.2); }
 
 li {
   font-family: karla, 'Helvetica Neue', helvetica, sans-serif;
@@ -251,30 +255,12 @@ li {
       z-index: 9; }
       .content .startscreen .title img {
         width: 20%; }
-      .content .startscreen .title h1 {
-        margin-top: 0;
-        width: 80%;
-        margin-left: 10%;
-        padding-top: 25px;
-        padding-bottom: 25px; }
       .content .startscreen .title h2 {
         margin: 0; }
   .content .videos {
     position: relative;
     margin-top: 65%;
     width: 100%; }
-    .content .videos .video-wrapper {
-      position: relative;
-      box-shadow: 1px 0px 0px #4d4d4d, 0px 1px 0px #333333, 2px 1px 0px #4d4d4d, 1px 2px 0px #333333, 3px 2px 0px #4d4d4d, 2px 3px 0px #333333, 4px 3px 0px #4d4d4d, 3px 4px 0px #333333, 5px 4px 0px #4d4d4d, 4px 5px 0px #333333, 6px 5px 0px #4d4d4d, 5px 6px 0px #333333, 7px 6px 0px #4d4d4d, 6px 7px 0px #333333, 8px 7px 0px #4d4d4d, 7px 8px 0px #333333, 9px 8px 0px #4d4d4d, 8px 9px 0px #333333, 10px 9px 0px #4d4d4d, 9px 10px 0px #333333, 11px 10px 0px #4d4d4d, 10px 11px 0px #333333, 12px 11px 0px #4d4d4d, 11px 12px 0px #333333, 13px 12px 0px #4d4d4d, 12px 13px 0px #333333, 14px 13px 0px #4d4d4d, 13px 14px 0px #333333, 15px 14px 0px #4d4d4d, 14px 15px 0px #333333, 16px 15px 0px #4d4d4d, 15px 16px 0px #333333, 16px 16px 0px #4d4d4d;
-      background-color: #14110d;
-      text-align: center;
-      width: 70%;
-      margin-left: 15%;
-      height: auto;
-      padding-top: 25px;
-      padding-bottom: 25px; }
-      .content .videos .video-wrapper h1 {
-        color: #f0f0f0; }
     .content .videos .video-nav {
       margin-top: 40px; }
       .content .videos .video-nav ul {
@@ -301,108 +287,77 @@ li {
       font-family: karla, 'Helvetica Neue', helvetica, sans-serif;
       font-size: 1.5em;
       line-height: 2; }
-  .content .composers {
-    margin-top: 10%;
-    width: 70%;
-    margin-left: 15%;
-    padding-bottom: 16px; }
-    .content .composers a {
-      text-decoration: none;
-      color: white; }
-      .content .composers a .composer-wrapper {
-        position: relative;
-        box-shadow: 1px 0px 0px #4d4d4d, 0px 1px 0px #333333, 2px 1px 0px #4d4d4d, 1px 2px 0px #333333, 3px 2px 0px #4d4d4d, 2px 3px 0px #333333, 4px 3px 0px #4d4d4d, 3px 4px 0px #333333, 5px 4px 0px #4d4d4d, 4px 5px 0px #333333, 6px 5px 0px #4d4d4d, 5px 6px 0px #333333, 7px 6px 0px #4d4d4d, 6px 7px 0px #333333, 8px 7px 0px #4d4d4d, 7px 8px 0px #333333, 9px 8px 0px #4d4d4d, 8px 9px 0px #333333, 10px 9px 0px #4d4d4d, 9px 10px 0px #333333, 11px 10px 0px #4d4d4d, 10px 11px 0px #333333, 12px 11px 0px #4d4d4d, 11px 12px 0px #333333, 13px 12px 0px #4d4d4d, 12px 13px 0px #333333, 14px 13px 0px #4d4d4d, 13px 14px 0px #333333, 15px 14px 0px #4d4d4d, 14px 15px 0px #333333, 16px 15px 0px #4d4d4d, 15px 16px 0px #333333, 16px 16px 0px #4d4d4d;
-        padding: 25px;
-        background-color: #14110d;
-        color: #f0f0f0;
-        text-align: center; }
-        .content .composers a .composer-wrapper h1 {
-          margin: 0; }
-        .content .composers a .composer-wrapper p {
-          margin: 0; }
-        .content .composers a .composer-wrapper:hover {
-          background-color: #0274e6; }
 
-.composer-page {
-  position: relative;
-  top: 0;
-  left: 0;
+.composers {
+  margin-top: 10%;
   width: 100%;
+  position: relative;
+  overflow: hidden !important;
   height: 100%;
-  background-color: transparent; }
-  .composer-page canvas {
-    top: 0;
-    position: fixed;
-    left: 0;
-    z-index: -2;
-    background: white; }
-  .composer-page .data-container {
-    position: relative;
-    z-index: 99;
+  background-color: yellow; }
+  .composers .composers-wrap {
     width: 100%;
-    height: 100%;
-    overflow: auto;
-    top: 0;
-    padding-top: 40px;
-    left: 0;
-    z-index: 99999;
-    color: white; }
-    .composer-page .data-container .artist {
-      width: 80%;
-      margin-left: 10%;
-      margin-bottom: 100px; }
-      .composer-page .data-container .artist h1 {
-        color: #14110d;
-        margin-top: 20px; }
-      .composer-page .data-container .artist p {
-        width: 100%;
-        font-family: karla, helvetica, sans-serif;
-        font-weight: lighter;
-        font-size: 1.5em;
-        line-height: 2; }
-      .composer-page .data-container .artist img {
-        margin-left: 25%;
-        width: 50%;
-        height: auto;
+    height: 100%; }
+    .composers .composers-wrap .arrow-right {
+      z-index: 909;
+      position: absolute;
+      top: 45%;
+      right: 20px;
+      width: 100px;
+      height: 100px;
+      background: url(../img/arrow.svg) no-repeat center center;
+      background-size: cover;
+      -webkit-transition: all 0.2s ease-in-out;
+      -moz-transition: all 0.2s ease-in-out;
+      -ms-transition: all 0.2s ease-in-out;
+      -o-transition: all 0.2s ease-in-out;
+      transition: all 0.2s ease-in-out; }
+      .composers .composers-wrap .arrow-right:hover {
+        right: 15px; }
+    .composers .composers-wrap .arrow-left {
+      z-index: 909;
+      position: absolute;
+      top: 45%;
+      left: 20px;
+      width: 100px;
+      height: 100px;
+      background: url(../img/arrow.svg) no-repeat center center;
+      background-size: cover;
+      -webkit-transform: rotate(180deg);
+      -moz-transform: rotate(180deg);
+      -ms-transform: rotate(180deg);
+      -o-transform: rotate(180deg);
+      transform: rotate(180deg);
+      -webkit-transition: all 0.2s ease-in-out;
+      -moz-transition: all 0.2s ease-in-out;
+      -ms-transition: all 0.2s ease-in-out;
+      -o-transition: all 0.2s ease-in-out;
+      transition: all 0.2s ease-in-out; }
+      .composers .composers-wrap .arrow-left:hover {
+        left: 15px; }
+    .composers .composers-wrap .slide {
+      width: 100%;
+      display: block;
+      height: 100%;
+      position: relative;
+      text-align: center;
+      display: none; }
+      .composers .composers-wrap .slide.active {
+        display: block; }
+      .composers .composers-wrap .slide img {
+        max-width: 50%;
         box-shadow: 1px 0px 0px #4d4d4d, 0px 1px 0px #333333, 2px 1px 0px #4d4d4d, 1px 2px 0px #333333, 3px 2px 0px #4d4d4d, 2px 3px 0px #333333, 4px 3px 0px #4d4d4d, 3px 4px 0px #333333, 5px 4px 0px #4d4d4d, 4px 5px 0px #333333, 6px 5px 0px #4d4d4d, 5px 6px 0px #333333, 7px 6px 0px #4d4d4d, 6px 7px 0px #333333, 8px 7px 0px #4d4d4d, 7px 8px 0px #333333, 9px 8px 0px #4d4d4d, 8px 9px 0px #333333, 10px 9px 0px #4d4d4d, 9px 10px 0px #333333, 11px 10px 0px #4d4d4d, 10px 11px 0px #333333, 12px 11px 0px #4d4d4d, 11px 12px 0px #333333, 13px 12px 0px #4d4d4d, 12px 13px 0px #333333, 14px 13px 0px #4d4d4d, 13px 14px 0px #333333, 15px 14px 0px #4d4d4d, 14px 15px 0px #333333, 16px 15px 0px #4d4d4d, 15px 16px 0px #333333, 16px 16px 0px #4d4d4d; }
-      .composer-page .data-container .artist:last-child {
-        border-bottom: none; }
-  .composer-page .exit {
-    position: fixed;
-    z-index: 9999999999999;
-    top: 20px;
-    right: 40px;
-    width: 50px;
-    height: 50px;
-    background: url(../img/exit.svg) no-repeat center center;
-    background-color: white;
-    background-size: contain;
-    box-shadow: 1px 0px 0px #4d4d4d, 0px 1px 0px #333333, 2px 1px 0px #4d4d4d, 1px 2px 0px #333333, 3px 2px 0px #4d4d4d, 2px 3px 0px #333333, 4px 3px 0px #4d4d4d, 3px 4px 0px #333333, 5px 4px 0px #4d4d4d, 4px 5px 0px #333333, 6px 5px 0px #4d4d4d, 5px 6px 0px #333333, 7px 6px 0px #4d4d4d, 6px 7px 0px #333333, 8px 7px 0px #4d4d4d, 7px 8px 0px #333333, 9px 8px 0px #4d4d4d, 8px 9px 0px #333333, 10px 9px 0px #4d4d4d, 9px 10px 0px #333333, 11px 10px 0px #4d4d4d, 10px 11px 0px #333333, 12px 11px 0px #4d4d4d, 11px 12px 0px #333333, 13px 12px 0px #4d4d4d, 12px 13px 0px #333333, 14px 13px 0px #4d4d4d, 13px 14px 0px #333333, 15px 14px 0px #4d4d4d, 14px 15px 0px #333333, 16px 15px 0px #4d4d4d, 15px 16px 0px #333333, 16px 16px 0px #4d4d4d; }
-    .composer-page .exit:hover {
-      -webkit-transform: translate(3px, 3px);
-      -moz-transform: translate(3px, 3px);
-      -ms-transform: translate(3px, 3px);
-      -o-transform: translate(3px, 3px);
-      transform: translate(3px, 3px);
-      box-shadow: 1px 0px 0px #4d4d4d, 0px 1px 0px #333333, 2px 1px 0px #4d4d4d, 1px 2px 0px #333333, 3px 2px 0px #4d4d4d, 2px 3px 0px #333333, 4px 3px 0px #4d4d4d, 3px 4px 0px #333333, 5px 4px 0px #4d4d4d, 4px 5px 0px #333333, 6px 5px 0px #4d4d4d, 5px 6px 0px #333333, 7px 6px 0px #4d4d4d, 6px 7px 0px #333333, 8px 7px 0px #4d4d4d, 7px 8px 0px #333333, 9px 8px 0px #4d4d4d, 8px 9px 0px #333333, 10px 9px 0px #4d4d4d, 9px 10px 0px #333333, 11px 10px 0px #4d4d4d, 10px 11px 0px #333333, 12px 11px 0px #4d4d4d, 11px 12px 0px #333333, 13px 12px 0px #4d4d4d, 12px 13px 0px #333333, 14px 13px 0px #4d4d4d; }
+      .composers .composers-wrap .slide p {
+        font-family: karla, 'Helvetica Neue', sans-serif;
+        width: 70%;
+        margin-left: 15%;
+        line-height: 1.5;
+        font-size: 2em; }
 
 .radio {
   margin: 0;
   margin-top: 10%;
   z-index: 1; }
-  .radio .radio-wrapper {
-    position: relative;
-    box-shadow: 1px 0px 0px #4d4d4d, 0px 1px 0px #333333, 2px 1px 0px #4d4d4d, 1px 2px 0px #333333, 3px 2px 0px #4d4d4d, 2px 3px 0px #333333, 4px 3px 0px #4d4d4d, 3px 4px 0px #333333, 5px 4px 0px #4d4d4d, 4px 5px 0px #333333, 6px 5px 0px #4d4d4d, 5px 6px 0px #333333, 7px 6px 0px #4d4d4d, 6px 7px 0px #333333, 8px 7px 0px #4d4d4d, 7px 8px 0px #333333, 9px 8px 0px #4d4d4d, 8px 9px 0px #333333, 10px 9px 0px #4d4d4d, 9px 10px 0px #333333, 11px 10px 0px #4d4d4d, 10px 11px 0px #333333, 12px 11px 0px #4d4d4d, 11px 12px 0px #333333, 13px 12px 0px #4d4d4d, 12px 13px 0px #333333, 14px 13px 0px #4d4d4d, 13px 14px 0px #333333, 15px 14px 0px #4d4d4d, 14px 15px 0px #333333, 16px 15px 0px #4d4d4d, 15px 16px 0px #333333, 16px 16px 0px #4d4d4d;
-    background-color: #14110d;
-    text-align: center;
-    width: 70%;
-    margin-left: 15%;
-    height: auto;
-    padding-top: 25px;
-    padding-bottom: 25px; }
-    .radio .radio-wrapper h1 {
-      margin: 0;
-      color: #f0f0f0; }
   .radio .show {
     width: 70%;
     margin-bottom: 10%;
@@ -428,19 +383,6 @@ li {
   position: relative;
   margin-top: 10%;
   margin-bottom: 400px; }
-  .stories .story-wrapper {
-    position: relative;
-    box-shadow: 1px 0px 0px #4d4d4d, 0px 1px 0px #333333, 2px 1px 0px #4d4d4d, 1px 2px 0px #333333, 3px 2px 0px #4d4d4d, 2px 3px 0px #333333, 4px 3px 0px #4d4d4d, 3px 4px 0px #333333, 5px 4px 0px #4d4d4d, 4px 5px 0px #333333, 6px 5px 0px #4d4d4d, 5px 6px 0px #333333, 7px 6px 0px #4d4d4d, 6px 7px 0px #333333, 8px 7px 0px #4d4d4d, 7px 8px 0px #333333, 9px 8px 0px #4d4d4d, 8px 9px 0px #333333, 10px 9px 0px #4d4d4d, 9px 10px 0px #333333, 11px 10px 0px #4d4d4d, 10px 11px 0px #333333, 12px 11px 0px #4d4d4d, 11px 12px 0px #333333, 13px 12px 0px #4d4d4d, 12px 13px 0px #333333, 14px 13px 0px #4d4d4d, 13px 14px 0px #333333, 15px 14px 0px #4d4d4d, 14px 15px 0px #333333, 16px 15px 0px #4d4d4d, 15px 16px 0px #333333, 16px 16px 0px #4d4d4d;
-    background-color: #14110d;
-    text-align: center;
-    width: 70%;
-    margin-left: 15%;
-    height: auto;
-    padding-top: 25px;
-    padding-bottom: 25px; }
-    .stories .story-wrapper h1 {
-      color: #f0f0f0;
-      font-size: 3em; }
   .stories .story-nav {
     margin-top: 40px; }
     .stories .story-nav ul {

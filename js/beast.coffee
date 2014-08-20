@@ -9,16 +9,6 @@ $ ->
 	anchorElements = {}
 	# colors = ['#5f41d5', '#ca0ab8', '#d5d041', '#d54141']
 
-	#SOUNDZ
-	hoverSound = new Howl {
-		urls: ['sound/CLICK.mp3', 'sound/CLICK.ogg']
-		volume: 0.5
-	}
-
-	clickSound = new Howl {
-		urls: ['sound/EXIT.mp3', 'sound/EXIT.ogg']
-		volume: 0.7
-	}
 
 	initCount = 0
 
@@ -95,26 +85,6 @@ $ ->
 		
 	
 	setupBinds = ->
-		$('nav').bind 'mouseenter', ->
-			$(@).transition
-				left: 0
-			, 200
-
-		$('a').bind 'click', ->
-			clickSound.play()
-		
-		$('a').bind 'mouseenter', ->
-			hoverSound.play()
-
-		$('nav').bind 'mouseleave', ->
-			$(@).transition
-				left: '-100px'
-			, 200
-		
-
-		$('a.scroll').bind 'click', (event) ->
-			link = $(@)
-			smoothScroll(event, link)
 
 		#resize
 		window.addEventListener 'resize', ->
@@ -169,12 +139,13 @@ $ ->
 	
 
 	addComposers = (object) ->
-		for composer in object
+		for composer, i in object
 			person = composer.fields
 			name = person.composerName
 			img = person.image.fields.file.url
-			composerData = "<div class='artist'><img src='#{img}'/><h1>#{person.composerName}</h1><p>#{person.bio}</p></div>"
-			$(".data-container").append composerData
+			composerData = "<div class='slide' data-order='#{i}'><img src='#{img}'/><h2>#{person.composerName}</h2><p>#{person.bio}</p></div>"
+			$(".composers-wrap").append composerData
+			$('.slide').first().addClass "active"
 		
 
 
@@ -289,6 +260,25 @@ $ ->
 		# 	addMagazineTitles(magazineObject)
 
 		
+
+	$('a.arrow-right').click (event) ->
+		event.preventDefault()
+		composers = $('.composers-wrap')
+		totalComposers = composers.find('.slide').length
+		currentSlide = $('.composers-wrap').find('.active')
+		currentPos = currentSlide.data('order')
+		console.log "Current:#{currentPos}, Total:#{totalComposers}"
+		#zero index
+		if currentPos <= totalComposers - 2
+			nextSlide = $('.composers-wrap').find("[data-order=#{currentPos + 1}]")
+			currentSlide.removeClass 'active'
+			nextSlide.addClass 'active'
+		else
+			alert 'over'
+			nextSlide = $('.composers-wrap').find("[data-order=0]")
+			currentSlide.removeClass 'active'
+			nextSlide.addClass 'active'
+
 
 
 		

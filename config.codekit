@@ -2,6 +2,15 @@
 "CodeKitInfo": "This is a CodeKit 2.x project configuration file. It is designed to sync project settings across multiple machines. MODIFYING THE CONTENTS OF THIS FILE IS A POOR LIFE DECISION. If you do so, you will likely cause CodeKit to crash. This file is not useful unless accompanied by the project that created it in CodeKit 2. This file is not backwards-compatible with CodeKit 1.x. For more information, see: http:\/\/incident57.com\/codekit",
 "creatorBuild": "17682",
 "files": {
+	"\/composers\/index.html": {
+		"fileType": 8192,
+		"ignore": 1,
+		"ignoreWasSetByUser": 0,
+		"inputAbbreviatedPath": "\/composers\/index.html",
+		"outputAbbreviatedPath": "No Output Path",
+		"outputPathIsOutsideProject": 0,
+		"outputPathIsSetByUser": 0
+		},
 	"\/composers\/index.jade": {
 		"compileDebug": 1,
 		"fileType": 512,
@@ -102,6 +111,24 @@
 		"shouldRunBless": 0,
 		"useLibsass": 0
 		},
+	"\/css\/owl.carousel.css": {
+		"fileType": 16,
+		"ignore": 0,
+		"ignoreWasSetByUser": 0,
+		"inputAbbreviatedPath": "\/css\/owl.carousel.css",
+		"outputAbbreviatedPath": "No Output Path",
+		"outputPathIsOutsideProject": 0,
+		"outputPathIsSetByUser": 0
+		},
+	"\/css\/owl.theme.css": {
+		"fileType": 16,
+		"ignore": 0,
+		"ignoreWasSetByUser": 0,
+		"inputAbbreviatedPath": "\/css\/owl.theme.css",
+		"outputAbbreviatedPath": "No Output Path",
+		"outputPathIsOutsideProject": 0,
+		"outputPathIsSetByUser": 0
+		},
 	"\/dist\/assets\/javascripts\/app.min.js": {
 		"fileType": 64,
 		"ignore": 0,
@@ -175,17 +202,6 @@
 		"outputStyle": 1,
 		"syntaxCheckerStyle": 1
 		},
-	"\/img\/back.png": {
-		"fileType": 32768,
-		"ignore": 0,
-		"ignoreWasSetByUser": 0,
-		"initialSize": 1712,
-		"inputAbbreviatedPath": "\/img\/back.png",
-		"outputAbbreviatedPath": "\/img\/back.png",
-		"outputPathIsOutsideProject": 0,
-		"outputPathIsSetByUser": 0,
-		"processed": 0
-		},
 	"\/img\/background.png": {
 		"fileType": 32768,
 		"ignore": 0,
@@ -197,28 +213,6 @@
 		"outputPathIsSetByUser": 0,
 		"processed": 0
 		},
-	"\/img\/bar.jpg": {
-		"fileType": 16384,
-		"ignore": 0,
-		"ignoreWasSetByUser": 0,
-		"initialSize": 12581,
-		"inputAbbreviatedPath": "\/img\/bar.jpg",
-		"outputAbbreviatedPath": "\/img\/bar.jpg",
-		"outputPathIsOutsideProject": 0,
-		"outputPathIsSetByUser": 0,
-		"processed": 0
-		},
-	"\/img\/bar.png": {
-		"fileType": 32768,
-		"ignore": 0,
-		"ignoreWasSetByUser": 0,
-		"initialSize": 102082,
-		"inputAbbreviatedPath": "\/img\/bar.png",
-		"outputAbbreviatedPath": "\/img\/bar.png",
-		"outputPathIsOutsideProject": 0,
-		"outputPathIsSetByUser": 0,
-		"processed": 0
-		},
 	"\/img\/block.png": {
 		"fileType": 32768,
 		"ignore": 0,
@@ -226,292 +220,6 @@
 		"initialSize": 932,
 		"inputAbbreviatedPath": "\/img\/block.png",
 		"outputAbbreviatedPath": "\/img\/block.png",
-		"outputPathIsOutsideProject": 0,
-		"outputPathIsSetByUser": 0,
-		"processed": 0
-		},
-	"\/img\/cart.png": {
-		"fileType": 32768,
-		"ignore": 0,
-		"ignoreWasSetByUser": 0,
-		"initialSize": 128176,
-		"inputAbbreviatedPath": "\/img\/cart.png",
-		"outputAbbreviatedPath": "\/img\/cart.png",
-		"outputPathIsOutsideProject": 0,
-		"outputPathIsSetByUser": 0,
-		"processed": 0
-		},
-	"\/img\/cartridges.png": {
-		"fileType": 32768,
-		"ignore": 0,
-		"ignoreWasSetByUser": 0,
-		"initialSize": 0,
-		"inputAbbreviatedPath": "\/img\/cartridges.png",
-		"outputAbbreviatedPath": "\/img\/cartridges.png",
-		"outputPathIsOutsideProject": 0,
-		"outputPathIsSetByUser": 0,
-		"processed": 0
-		},
-	"\/img\/carts.jpg": {
-		"fileType": 16384,
-		"ignore": 0,
-		"ignoreWasSetByUser": 0,
-		"initialSize": 225723,
-		"inputAbbreviatedPath": "\/img\/carts.jpg",
-		"outputAbbreviatedPath": "\/img\/carts.jpg",
-		"outputPathIsOutsideProject": 0,
-		"outputPathIsSetByUser": 0,
-		"processed": 0
-		},
-	"\/img\/cloud1.png": {
-		"fileType": 32768,
-		"ignore": 0,
-		"ignoreWasSetByUser": 0,
-		"initialSize": 15835,
-		"inputAbbreviatedPath": "\/img\/cloud1.png",
-		"outputAbbreviatedPath": "\/img\/cloud1.png",
-		"outputPathIsOutsideProject": 0,
-		"outputPathIsSetByUser": 0,
-		"processed": 0
-		},
-	"\/img\/cloud2.png": {
-		"fileType": 32768,
-		"ignore": 0,
-		"ignoreWasSetByUser": 0,
-		"initialSize": 21578,
-		"inputAbbreviatedPath": "\/img\/cloud2.png",
-		"outputAbbreviatedPath": "\/img\/cloud2.png",
-		"outputPathIsOutsideProject": 0,
-		"outputPathIsSetByUser": 0,
-		"processed": 0
-		},
-	"\/img\/clouds.jpg": {
-		"fileType": 16384,
-		"ignore": 0,
-		"ignoreWasSetByUser": 0,
-		"initialSize": 97979,
-		"inputAbbreviatedPath": "\/img\/clouds.jpg",
-		"outputAbbreviatedPath": "\/img\/clouds.jpg",
-		"outputPathIsOutsideProject": 0,
-		"outputPathIsSetByUser": 0,
-		"processed": 0
-		},
-	"\/img\/clouds.png": {
-		"fileType": 32768,
-		"ignore": 0,
-		"ignoreWasSetByUser": 0,
-		"initialSize": 13779,
-		"inputAbbreviatedPath": "\/img\/clouds.png",
-		"outputAbbreviatedPath": "\/img\/clouds.png",
-		"outputPathIsOutsideProject": 0,
-		"outputPathIsSetByUser": 0,
-		"processed": 0
-		},
-	"\/img\/clouds2.jpg": {
-		"fileType": 16384,
-		"ignore": 0,
-		"ignoreWasSetByUser": 0,
-		"initialSize": 12383,
-		"inputAbbreviatedPath": "\/img\/clouds2.jpg",
-		"outputAbbreviatedPath": "\/img\/clouds2.jpg",
-		"outputPathIsOutsideProject": 0,
-		"outputPathIsSetByUser": 0,
-		"processed": 0
-		},
-	"\/img\/cursor.png": {
-		"fileType": 32768,
-		"ignore": 0,
-		"ignoreWasSetByUser": 0,
-		"initialSize": 1539,
-		"inputAbbreviatedPath": "\/img\/cursor.png",
-		"outputAbbreviatedPath": "\/img\/cursor.png",
-		"outputPathIsOutsideProject": 0,
-		"outputPathIsSetByUser": 0,
-		"processed": 0
-		},
-	"\/img\/icons\/GanondorfHead.png": {
-		"fileType": 32768,
-		"ignore": 0,
-		"ignoreWasSetByUser": 0,
-		"initialSize": 528,
-		"inputAbbreviatedPath": "\/img\/icons\/GanondorfHead.png",
-		"outputAbbreviatedPath": "\/img\/icons\/GanondorfHead.png",
-		"outputPathIsOutsideProject": 0,
-		"outputPathIsSetByUser": 0,
-		"processed": 0
-		},
-	"\/img\/icons\/KirbyHead.png": {
-		"fileType": 32768,
-		"ignore": 0,
-		"ignoreWasSetByUser": 0,
-		"initialSize": 395,
-		"inputAbbreviatedPath": "\/img\/icons\/KirbyHead.png",
-		"outputAbbreviatedPath": "\/img\/icons\/KirbyHead.png",
-		"outputPathIsOutsideProject": 0,
-		"outputPathIsSetByUser": 0,
-		"processed": 0
-		},
-	"\/img\/icons\/LinkHead.png": {
-		"fileType": 32768,
-		"ignore": 0,
-		"ignoreWasSetByUser": 0,
-		"initialSize": 531,
-		"inputAbbreviatedPath": "\/img\/icons\/LinkHead.png",
-		"outputAbbreviatedPath": "\/img\/icons\/LinkHead.png",
-		"outputPathIsOutsideProject": 0,
-		"outputPathIsSetByUser": 0,
-		"processed": 0
-		},
-	"\/img\/icons\/sega-genesis-icon.png": {
-		"fileType": 32768,
-		"ignore": 0,
-		"ignoreWasSetByUser": 0,
-		"initialSize": 1245,
-		"inputAbbreviatedPath": "\/img\/icons\/sega-genesis-icon.png",
-		"outputAbbreviatedPath": "\/img\/icons\/sega-genesis-icon.png",
-		"outputPathIsOutsideProject": 0,
-		"outputPathIsSetByUser": 0,
-		"processed": 0
-		},
-	"\/img\/icons\/Sega-Saturn-icon.png": {
-		"fileType": 32768,
-		"ignore": 0,
-		"ignoreWasSetByUser": 0,
-		"initialSize": 37494,
-		"inputAbbreviatedPath": "\/img\/icons\/Sega-Saturn-icon.png",
-		"outputAbbreviatedPath": "\/img\/icons\/Sega-Saturn-icon.png",
-		"outputPathIsOutsideProject": 0,
-		"outputPathIsSetByUser": 0,
-		"processed": 0
-		},
-	"\/img\/icons\/triforce.png": {
-		"fileType": 32768,
-		"ignore": 0,
-		"ignoreWasSetByUser": 0,
-		"initialSize": 1249,
-		"inputAbbreviatedPath": "\/img\/icons\/triforce.png",
-		"outputAbbreviatedPath": "\/img\/icons\/triforce.png",
-		"outputPathIsOutsideProject": 0,
-		"outputPathIsSetByUser": 0,
-		"processed": 0
-		},
-	"\/img\/icons\/WarioHead.png": {
-		"fileType": 32768,
-		"ignore": 0,
-		"ignoreWasSetByUser": 0,
-		"initialSize": 498,
-		"inputAbbreviatedPath": "\/img\/icons\/WarioHead.png",
-		"outputAbbreviatedPath": "\/img\/icons\/WarioHead.png",
-		"outputPathIsOutsideProject": 0,
-		"outputPathIsSetByUser": 0,
-		"processed": 0
-		},
-	"\/img\/icons\/YoshiHead.png": {
-		"fileType": 32768,
-		"ignore": 0,
-		"ignoreWasSetByUser": 0,
-		"initialSize": 430,
-		"inputAbbreviatedPath": "\/img\/icons\/YoshiHead.png",
-		"outputAbbreviatedPath": "\/img\/icons\/YoshiHead.png",
-		"outputPathIsOutsideProject": 0,
-		"outputPathIsSetByUser": 0,
-		"processed": 0
-		},
-	"\/img\/icons\/ZeldaHead.png": {
-		"fileType": 32768,
-		"ignore": 0,
-		"ignoreWasSetByUser": 0,
-		"initialSize": 516,
-		"inputAbbreviatedPath": "\/img\/icons\/ZeldaHead.png",
-		"outputAbbreviatedPath": "\/img\/icons\/ZeldaHead.png",
-		"outputPathIsOutsideProject": 0,
-		"outputPathIsSetByUser": 0,
-		"processed": 0
-		},
-	"\/img\/mario.png": {
-		"fileType": 32768,
-		"ignore": 0,
-		"ignoreWasSetByUser": 0,
-		"initialSize": 65362,
-		"inputAbbreviatedPath": "\/img\/mario.png",
-		"outputAbbreviatedPath": "\/img\/mario.png",
-		"outputPathIsOutsideProject": 0,
-		"outputPathIsSetByUser": 0,
-		"processed": 0
-		},
-	"\/img\/mega.jpg": {
-		"fileType": 16384,
-		"ignore": 0,
-		"ignoreWasSetByUser": 0,
-		"initialSize": 167964,
-		"inputAbbreviatedPath": "\/img\/mega.jpg",
-		"outputAbbreviatedPath": "\/img\/mega.jpg",
-		"outputPathIsOutsideProject": 0,
-		"outputPathIsSetByUser": 0,
-		"processed": 0
-		},
-	"\/img\/mega2.jpg": {
-		"fileType": 16384,
-		"ignore": 0,
-		"ignoreWasSetByUser": 0,
-		"initialSize": 238763,
-		"inputAbbreviatedPath": "\/img\/mega2.jpg",
-		"outputAbbreviatedPath": "\/img\/mega2.jpg",
-		"outputPathIsOutsideProject": 0,
-		"outputPathIsSetByUser": 0,
-		"processed": 0
-		},
-	"\/img\/megaman.jpg": {
-		"fileType": 16384,
-		"ignore": 0,
-		"ignoreWasSetByUser": 0,
-		"initialSize": 253111,
-		"inputAbbreviatedPath": "\/img\/megaman.jpg",
-		"outputAbbreviatedPath": "\/img\/megaman.jpg",
-		"outputPathIsOutsideProject": 0,
-		"outputPathIsSetByUser": 0,
-		"processed": 0
-		},
-	"\/img\/tile-blue.png": {
-		"fileType": 32768,
-		"ignore": 0,
-		"ignoreWasSetByUser": 0,
-		"initialSize": 956,
-		"inputAbbreviatedPath": "\/img\/tile-blue.png",
-		"outputAbbreviatedPath": "\/img\/tile-blue.png",
-		"outputPathIsOutsideProject": 0,
-		"outputPathIsSetByUser": 0,
-		"processed": 0
-		},
-	"\/img\/tile.png": {
-		"fileType": 32768,
-		"ignore": 0,
-		"ignoreWasSetByUser": 0,
-		"initialSize": 952,
-		"inputAbbreviatedPath": "\/img\/tile.png",
-		"outputAbbreviatedPath": "\/img\/tile.png",
-		"outputPathIsOutsideProject": 0,
-		"outputPathIsSetByUser": 0,
-		"processed": 0
-		},
-	"\/img\/tv.jpg": {
-		"fileType": 16384,
-		"ignore": 0,
-		"ignoreWasSetByUser": 0,
-		"initialSize": 132487,
-		"inputAbbreviatedPath": "\/img\/tv.jpg",
-		"outputAbbreviatedPath": "\/img\/tv.jpg",
-		"outputPathIsOutsideProject": 0,
-		"outputPathIsSetByUser": 0,
-		"processed": 0
-		},
-	"\/img\/tv.png": {
-		"fileType": 32768,
-		"ignore": 0,
-		"ignoreWasSetByUser": 0,
-		"initialSize": 263929,
-		"inputAbbreviatedPath": "\/img\/tv.png",
-		"outputAbbreviatedPath": "\/img\/tv.png",
 		"outputPathIsOutsideProject": 0,
 		"outputPathIsSetByUser": 0,
 		"processed": 0
@@ -654,6 +362,17 @@
 		"ignoreWasSetByUser": 0,
 		"inputAbbreviatedPath": "\/js\/min\/waypoints.min-min.js",
 		"outputAbbreviatedPath": "\/js\/min\/min\/waypoints.min-min-min.js",
+		"outputPathIsOutsideProject": 0,
+		"outputPathIsSetByUser": 0,
+		"outputStyle": 1,
+		"syntaxCheckerStyle": 1
+		},
+	"\/js\/owl.carousel.min.js": {
+		"fileType": 64,
+		"ignore": 0,
+		"ignoreWasSetByUser": 0,
+		"inputAbbreviatedPath": "\/js\/owl.carousel.min.js",
+		"outputAbbreviatedPath": "\/js\/min\/owl.carousel.min-min.js",
 		"outputPathIsOutsideProject": 0,
 		"outputPathIsSetByUser": 0,
 		"outputStyle": 1,
