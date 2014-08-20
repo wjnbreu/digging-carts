@@ -15,7 +15,7 @@ $ ->
 
 	init = ->
 		setupBinds()
-		$('h1.colors').fitText(0.7)
+		# $('h1.colors').fitText(1)
 		$('.video-nav ul a.episode li').first().addClass "active"
 		$('.story-nav ul a.additional-episode li').first().addClass "active"
 		setTimeout(sendHeight(getHeight()), 500)
@@ -92,14 +92,6 @@ $ ->
 			resizeVid('#storyplayer')
 			sendHeight(getHeight())
 
-		
-	#FIXXXXXX!!!!!!
-	goToComposers = (item) ->
-		$('.composer-data').fadeIn()
-		$('body,html').animate
-			scrollTop: 0
-		,50
-		sendHeight(getHeight())
 
 
 	changeVideo = (order, videoObject) ->
@@ -143,7 +135,7 @@ $ ->
 			person = composer.fields
 			name = person.composerName
 			img = person.image.fields.file.url
-			composerData = "<div class='slide' data-order='#{i}'><img src='#{img}'/><h2>#{person.composerName}</h2><p>#{person.bio}</p></div>"
+			composerData = "<div class='slide' data-order='#{i}'><div class='img-wrap'><img src='#{img}'/></div><h2>#{person.composerName}</h2><p>#{person.bio}</p></div>"
 			$(".composers-wrap").append composerData
 			$('.slide').first().addClass "active"
 		
@@ -159,6 +151,7 @@ $ ->
 			mixData = "<div class='show'><img src='#{img}'/>#{embed}<p>#{description}</p></div>"
 			$('.radio').append(mixData)
 			sendHeight(getHeight())
+
 
 	resizeVid = (vidPlayer) ->
 		player = $(vidPlayer)
@@ -177,27 +170,6 @@ $ ->
 			marginLeft: margin
 
 		sendHeight(getHeight())
-
-	
-
-	smoothScroll = (event, link, attr) ->
-		event.preventDefault()
-		scrollTo = link.attr 'href'
-
-		location = $("#{scrollTo}").position().top
-
-		if link.hasClass "active"
-			return
-		else
-			$('nav ul a').each ->
-				$(@).removeClass "active"
-
-			link.addClass "active"
-
-			$('body,html').animate
-				scrollTop: location
-			, 300
-
 
 
 	removeSpinner = ->
@@ -247,37 +219,45 @@ $ ->
 				order = $(@).data 'order'
 				changeAdditionalVideo(order, additionalVideoObject)
 
-		$.ajax 'svg/svg.html',
-			type: 'GET'
-			dataType: 'html'
-			success: (data, textStatus, jqXHR) ->
-				$('.title svg path').attr("d", data)
-
-		# #MAGAZINE
-		# client.entries({'content_type': 'H38r2ErKi2cGueYeumikO', 'include': 1}).done (data) ->
-		# 	prepInit(1)
-		# 	magazineObject = data
-		# 	addMagazineTitles(magazineObject)
-
 		
 
 	$('a.arrow-right').click (event) ->
 		event.preventDefault()
 		composers = $('.composers-wrap')
 		totalComposers = composers.find('.slide').length
-		currentSlide = $('.composers-wrap').find('.active')
+		currentSlide = composers.find('.active')
 		currentPos = currentSlide.data('order')
-		console.log "Current:#{currentPos}, Total:#{totalComposers}"
+
 		#zero index
 		if currentPos <= totalComposers - 2
-			nextSlide = $('.composers-wrap').find("[data-order=#{currentPos + 1}]")
+			nextSlide = composers.find("[data-order=#{currentPos + 1}]")
 			currentSlide.removeClass 'active'
 			nextSlide.addClass 'active'
+			sendHeight(getHeight())
 		else
-			alert 'over'
-			nextSlide = $('.composers-wrap').find("[data-order=0]")
+			nextSlide = composers.find("[data-order=0]")
 			currentSlide.removeClass 'active'
 			nextSlide.addClass 'active'
+			sendHeight(getHeight())
+
+	$('a.arrow-left').click (event) ->
+		event.preventDefault()
+		composers = $('.composers-wrap')
+		totalComposers = composers.find('.slide').length
+		currentSlide = composers.find('.active')
+		currentPos = currentSlide.data('order')
+
+		if currentPos >= 1
+			nextSlide = composers.find("[data-order=#{currentPos - 1}]")
+			currentSlide.removeClass 'active'
+			nextSlide.addClass 'active'
+			sendHeight(getHeight())
+
+		else
+			nextSlide = composers.find("[data-order=#{totalComposers - 1}]")
+			currentSlide.removeClass 'active'
+			nextSlide.addClass 'active'
+			sendHeight(getHeight())
 
 
 

@@ -5,7 +5,6 @@
 @import '_animation.css.scss';
 
 
-
 html{
 	font-family: bit, karla, 'Helvetica Neue', helvetica, sans-serif;
 }
@@ -17,6 +16,7 @@ body{
 	width: 100%;
 	height: 100%;
 	-webkit-tap-highlight-color: transparent;
+	// background-color: $gray;
 	background-color: $gray;
 }
 
@@ -24,17 +24,23 @@ h1 {
 	text-transform: uppercase;
 	@include boxy;
 	background-color: black;
-	color: white;
+	color: $gray;
 	width: 70%;
 	margin-left: 15%;
 	text-align: center;
 	line-height: 1;
 	padding: 10px;
 	font-size: 3.5em;
+	&.colors{
+		background-color: black;
+		color:$gray;
+	}
+
 }
 
 h2{
 	font-size: 2.5em;
+	color: black;
 }
 
 p{
@@ -42,6 +48,7 @@ p{
 	font-family: karla, 'Helvetica Neue', helvetica, sans-serif;
 	line-height: 1.5;
 	font-size: 2em;
+	color: black;
 }
 
 .spinner{
@@ -59,7 +66,7 @@ p{
 		text-align: center;
 		font-size: 2em;
 		span{
-			color: $red;
+			color: white;
 			&.bounce{
 				-webkit-animation: 'spina' 1s infinite alternate;
 			}
@@ -84,38 +91,22 @@ li{
 	font-family: karla, 'Helvetica Neue', helvetica, sans-serif;
 	border: 2px solid black;
 	color: $black;
-	background-color: white;
+	background-color: $gray;
 	font-size: 1.2em;
 	margin: 5px;
 	padding: 5px;
 	padding-left: 15px;
 	padding-right: 15px;
 	&:hover{
-		background-color: $black;
-		color: white;
+		background-color: black;
+		color:$gray;
 	}
 	&.active{
-		background-color: $black;
-		color: white;
+		background-color: black;
+		color: $gray;
 	}
 }
 
-
-
-.path{
-	-webkit-transform: translate3d(0, 0, 0px);
-	stroke-dasharray: 10000;
-	stroke-dashoffset: 10000;
-	-webkit-animation: dash 40s linear;
-	-moz-animation: dash 40s linear;
-	-ms-animation: dash 40s linear;
-	-o-animation: dash 40s linear;
-	animation: dash 40s linear;
-	stroke-width: 2px;
-	stroke: white;
-	background-color: white;
-	margin: 0;
-}
 
 
 
@@ -146,19 +137,13 @@ li{
 			@include boxy;
 		}
 		.title{
-			margin-top: 0;
+			margin-top: 15%;
 			width: 100%;
 			height: 100%;
 			top: 0;
 			position: absolute;
 			text-align: center;
 			z-index: 9;
-			img{
-				width: 20%;
-			}
-			h2{
-				margin: 0;
-			}
 		}
 	}
 	.videos{
@@ -167,7 +152,7 @@ li{
 		width: 100%;
 		
 		.video-nav{
-			margin-top: 40px;
+			margin-top: 5%;
 			ul{
 				width: 80%;
 				margin-left: 10%;
@@ -196,9 +181,6 @@ li{
 			width: 70%;
 			margin-left: 15%;
 			margin-right: 15%;
-			font-family: karla, 'Helvetica Neue', helvetica, sans-serif;
-			font-size: 1.5em;
-			line-height: 2;
 		}
 	}
 
@@ -210,8 +192,8 @@ li{
 		position: relative;
 		overflow: hidden !important;
 		height: 100%;
-		background-color: yellow;
 		.composers-wrap{
+			margin-top: 5%;
 			width: 100%;
 			height: 100%;
 			.arrow-right{
@@ -253,16 +235,20 @@ li{
 				&.active{
 					display: block;
 				}
+				.img-wrap{
+					width: 40%;
+					margin-left: 30%;
+					height: auto;
+					max-height: 350px;
+					overflow: hidden;
+				}
 				img{
-					max-width: 50%;
-					@include boxy;
+					max-width: 102%;
+					height: auto;
 				}
 				p{
-					font-family: karla, 'Helvetica Neue', sans-serif;
 					width: 70%;
 					margin-left: 15%;
-					line-height: 1.5;
-					font-size: 2em;
 				}
 			}
 		}
@@ -278,25 +264,18 @@ li{
 	.show{
 		width: 70%;
 		margin-bottom: 10%;
-		margin-top: 40px;
+		margin-top: 5%;
 		margin-left: 15%;
 		img{
-			width: 80%;
-			margin-left: 10%;
-			@include boxy;
+			width: 40%;
+			margin-left: 30%;
+			@include vendorize(border-radius, 50%);
 		}
 		iframe{
 			width: 80%;
-			margin-left: 10%;
-			margin-bottom: 5%;
+			margin: 5% 10% 5% 10%;
 			@include boxy;
-		}
-		p{
-			font-family: karla;
-			font-size: 1.5em;
-			line-height: 2;
-			color: $black;
-			padding: 20px;
+			-webkit-filter: grayscale(1);
 		}
 	}
 }
@@ -306,7 +285,7 @@ li{
 	margin-top: 10%;
 	margin-bottom: 400px;
 	.story-nav{
-		margin-top: 40px;
+		margin-top: 5%;
 		ul{
 			text-align: center;
 			list-style-type: none;
@@ -333,11 +312,6 @@ li{
 		width: 70%;
 		margin-left: 15%;
 		margin-right: 15%;
-		font-family: karla, 'Helvetica Neue', helvetica, sans-serif;
-		font-size: 1.5em;
-		line-height: 2;
-		color: $black;
-		padding: 20px;
 	}
 }
 
@@ -360,360 +334,4 @@ li{
 
 
 
-
-@media screen and (max-width: 700px), screen and (max-device-width: 700px){
-	h1{
-		font-size: 2.5em;
-	}
-	.content{
-	position: relative;
-	width: 100%;
-	height: 100%;
-	overflow: auto;
-	top: 0;
-	left: 0;
-	color: white;
-	z-index: 9;
-	.startscreen{
-		position: relative;
-		top: 0;
-		left: 0;
-		width: 100%;
-		height: 200%;
-		min-height: 568px;
-		video{
-			display: block;
-			z-index: 0;
-			position: absolute;
-			width: 250%;
-			overflow: hidden;
-			margin: 0;
-			border: 0;
-			border: none;
-		}
-		.title{
-			margin-top: 20%;
-			width: 100%;
-			height: 100%;
-			top: 0;
-			position: absolute;
-			text-align: center;
-			z-index: 9;
-			img{
-				width: 20%;
-			}
-			h1{
-				margin-top: 0;
-				width: 80%;
-				color: $pink;
-				margin-left: 10%;
-				padding-top: 25px;
-				padding-bottom: 25px;
-				background-color: $black;
-				box-shadow: 1px 0px 0px #4d4d4d, 0px 1px 0px #333333, 2px 1px 0px #4d4d4d, 1px 2px 0px #333333, 3px 2px 0px #4d4d4d, 2px 3px 0px #333333, 4px 3px 0px #4d4d4d, 3px 4px 0px #333333, 5px 4px 0px #4d4d4d, 4px 5px 0px #333333, 6px 5px 0px #4d4d4d, 5px 6px 0px #333333, 7px 6px 0px #4d4d4d, 6px 7px 0px #333333, 8px 7px 0px #4d4d4d, 7px 8px 0px #333333, 9px 8px 0px #4d4d4d, 8px 9px 0px #333333, 10px 9px 0px #4d4d4d, 9px 10px 0px #333333, 11px 10px 0px #4d4d4d, 10px 11px 0px #333333, 12px 11px 0px #4d4d4d, 11px 12px 0px #333333, 13px 12px 0px #4d4d4d, 12px 13px 0px #333333, 14px 13px 0px #4d4d4d, 13px 14px 0px #333333, 15px 14px 0px #4d4d4d, 14px 15px 0px #333333, 16px 15px 0px #4d4d4d, 15px 16px 0px #333333, 16px 16px 0px #4d4d4d;
-			}
-			h2{
-				margin: 0;
-			}
-		}
-	}
-	.videos{
-		position: relative;
-		margin-top: 45%;
-		width: 100%;
-		.video-wrapper{
-			position: relative;
-			box-shadow: 1px 0px 0px #4d4d4d, 0px 1px 0px #333333, 2px 1px 0px #4d4d4d, 1px 2px 0px #333333, 3px 2px 0px #4d4d4d, 2px 3px 0px #333333, 4px 3px 0px #4d4d4d, 3px 4px 0px #333333, 5px 4px 0px #4d4d4d, 4px 5px 0px #333333, 6px 5px 0px #4d4d4d, 5px 6px 0px #333333, 7px 6px 0px #4d4d4d, 6px 7px 0px #333333, 8px 7px 0px #4d4d4d, 7px 8px 0px #333333, 9px 8px 0px #4d4d4d, 8px 9px 0px #333333, 10px 9px 0px #4d4d4d, 9px 10px 0px #333333, 11px 10px 0px #4d4d4d, 10px 11px 0px #333333, 12px 11px 0px #4d4d4d, 11px 12px 0px #333333, 13px 12px 0px #4d4d4d, 12px 13px 0px #333333, 14px 13px 0px #4d4d4d, 13px 14px 0px #333333, 15px 14px 0px #4d4d4d, 14px 15px 0px #333333, 16px 15px 0px #4d4d4d, 15px 16px 0px #333333, 16px 16px 0px #4d4d4d;
-			background-color: $black;
-			text-align: center;
-			width: 90%;
-			margin-left: 5%;
-			height: auto;
-			padding-top: 25px;
-			padding-bottom: 25px;
-			h1{
-				color: $pink;
-			}
-		}
-		
-		.video-nav{
-			ul{
-				width: 80%;
-				margin-left: 10%;
-				margin-top: 20px;
-				text-align: center;
-				list-style-type: none;
-				padding: 0;
-				a{
-					li{
-						display: inline-block;
-						font-size: 1.5em;
-						margin: 5px;
-						padding: 5px;
-						color: white;
-						background-color: $blue;
-						text-transform: uppercase;
-						font-family: karla;
-						@include vendorize(border-radius, 5px);
-						&:first-child{
-							margin-left: 0;
-						}
-						&:hover{
-							background-color: $pink;
-							color: $black;
-						}
-						&.active{
-							background-color: $pink;
-							color: $black;
-						}
-					}
-				}
-			}
-		}
-		iframe{
-			margin-left: 20%;
-			margin-bottom: 20px;
-			border: 0;
-			border: none;
-			box-shadow: 1px 0px 0px #4d4d4d, 0px 1px 0px #333333, 2px 1px 0px #4d4d4d, 1px 2px 0px #333333, 3px 2px 0px #4d4d4d, 2px 3px 0px #333333, 4px 3px 0px #4d4d4d, 3px 4px 0px #333333, 5px 4px 0px #4d4d4d, 4px 5px 0px #333333, 6px 5px 0px #4d4d4d, 5px 6px 0px #333333, 7px 6px 0px #4d4d4d, 6px 7px 0px #333333, 8px 7px 0px #4d4d4d, 7px 8px 0px #333333, 9px 8px 0px #4d4d4d, 8px 9px 0px #333333, 10px 9px 0px #4d4d4d, 9px 10px 0px #333333, 11px 10px 0px #4d4d4d, 10px 11px 0px #333333, 12px 11px 0px #4d4d4d, 11px 12px 0px #333333, 13px 12px 0px #4d4d4d, 12px 13px 0px #333333, 14px 13px 0px #4d4d4d, 13px 14px 0px #333333, 15px 14px 0px #4d4d4d, 14px 15px 0px #333333, 16px 15px 0px #4d4d4d, 15px 16px 0px #333333, 16px 16px 0px #4d4d4d;
-		}
-		p.body{
-			text-align: center;
-			width: 70%;
-			margin-left: 15%;
-			margin-right: 15%;
-			font-family: karla, 'Helvetica Neue', helvetica, sans-serif;
-			font-size: 1.5em;
-			line-height: 2;
-		}
-	}
-
-	.composers{
-		margin-top: 10%;
-		width: 90%;
-		margin-left: 5%;
-		padding-bottom: 16px;
-		
-		a{
-			text-decoration: none;
-			color: white;
-			.composer-wrapper{
-				position: relative;
-				box-shadow: 1px 0px 0px #4d4d4d, 0px 1px 0px #333333, 2px 1px 0px #4d4d4d, 1px 2px 0px #333333, 3px 2px 0px #4d4d4d, 2px 3px 0px #333333, 4px 3px 0px #4d4d4d, 3px 4px 0px #333333, 5px 4px 0px #4d4d4d, 4px 5px 0px #333333, 6px 5px 0px #4d4d4d, 5px 6px 0px #333333, 7px 6px 0px #4d4d4d, 6px 7px 0px #333333, 8px 7px 0px #4d4d4d, 7px 8px 0px #333333, 9px 8px 0px #4d4d4d, 8px 9px 0px #333333, 10px 9px 0px #4d4d4d, 9px 10px 0px #333333, 11px 10px 0px #4d4d4d, 10px 11px 0px #333333, 12px 11px 0px #4d4d4d, 11px 12px 0px #333333, 13px 12px 0px #4d4d4d, 12px 13px 0px #333333, 14px 13px 0px #4d4d4d, 13px 14px 0px #333333, 15px 14px 0px #4d4d4d, 14px 15px 0px #333333, 16px 15px 0px #4d4d4d, 15px 16px 0px #333333, 16px 16px 0px #4d4d4d;
-				padding: 25px;
-				background-color: $black;
-				color: $pink;
-				text-align: center;
-				h1{
-					margin: 0;
-					
-				}
-				p{
-					margin: 0;
-				}
-				&:hover{
-					background-color: $blue;
-				}
-			}
-		}
-	}
-}
-
-.composer-page{
-	position: relative;
-	top: 0;
-	left: 0;
-	width: 100%;
-	height: 100%;
-	background-color: transparent;
-	canvas{
-		top: 0;
-		position: fixed;
-		left: 0;
-		z-index: -2;
-		background: white;
-	}
-
-	.data-container{
-		position: relative;
-		z-index: 99;
-		width: 100%;
-		height: 100%;
-		overflow: auto;
-		top: 0;
-		padding-top: 40px;
-		left: 0;
-		z-index: 99999;
-		color: white;
-		.artist{
-			width: 80%;
-			margin-left: 10%;
-			margin-bottom: 100px;
-			h1{
-				color: $black;
-				margin-top: 20px;
-			}
-			p{
-				width: 100%;
-				font-family: karla, helvetica, sans-serif;
-				font-weight: lighter;
-				font-size: 1.5em;
-				line-height: 2;
-			}
-			img{
-				margin-left: 25%;
-				width: 50%;
-				height: auto;
-				box-shadow: 1px 0px 0px #4d4d4d, 0px 1px 0px #333333, 2px 1px 0px #4d4d4d, 1px 2px 0px #333333, 3px 2px 0px #4d4d4d, 2px 3px 0px #333333, 4px 3px 0px #4d4d4d, 3px 4px 0px #333333, 5px 4px 0px #4d4d4d, 4px 5px 0px #333333, 6px 5px 0px #4d4d4d, 5px 6px 0px #333333, 7px 6px 0px #4d4d4d, 6px 7px 0px #333333, 8px 7px 0px #4d4d4d, 7px 8px 0px #333333, 9px 8px 0px #4d4d4d, 8px 9px 0px #333333, 10px 9px 0px #4d4d4d, 9px 10px 0px #333333, 11px 10px 0px #4d4d4d, 10px 11px 0px #333333, 12px 11px 0px #4d4d4d, 11px 12px 0px #333333, 13px 12px 0px #4d4d4d, 12px 13px 0px #333333, 14px 13px 0px #4d4d4d, 13px 14px 0px #333333, 15px 14px 0px #4d4d4d, 14px 15px 0px #333333, 16px 15px 0px #4d4d4d, 15px 16px 0px #333333, 16px 16px 0px #4d4d4d;
-			}
-			&:last-child{
-				border-bottom: none;
-			}
-		}
-	}
-			
-	.exit{
-		position: fixed;
-		z-index: 9999999999999;
-		top: 20px;
-		right: 40px;
-		width: 50px;
-		height: 50px;
-		background: url(../img/exit.svg) no-repeat center center;
-		background-color: white;
-		background-size: contain;
-		box-shadow: 1px 0px 0px #4d4d4d, 0px 1px 0px #333333, 2px 1px 0px #4d4d4d, 1px 2px 0px #333333, 3px 2px 0px #4d4d4d, 2px 3px 0px #333333, 4px 3px 0px #4d4d4d, 3px 4px 0px #333333, 5px 4px 0px #4d4d4d, 4px 5px 0px #333333, 6px 5px 0px #4d4d4d, 5px 6px 0px #333333, 7px 6px 0px #4d4d4d, 6px 7px 0px #333333, 8px 7px 0px #4d4d4d, 7px 8px 0px #333333, 9px 8px 0px #4d4d4d, 8px 9px 0px #333333, 10px 9px 0px #4d4d4d, 9px 10px 0px #333333, 11px 10px 0px #4d4d4d, 10px 11px 0px #333333, 12px 11px 0px #4d4d4d, 11px 12px 0px #333333, 13px 12px 0px #4d4d4d, 12px 13px 0px #333333, 14px 13px 0px #4d4d4d, 13px 14px 0px #333333, 15px 14px 0px #4d4d4d, 14px 15px 0px #333333, 16px 15px 0px #4d4d4d, 15px 16px 0px #333333, 16px 16px 0px #4d4d4d;
-		&:hover{
-			@include vendorize(transform, translate(3px, 3px));
-			box-shadow: 1px 0px 0px #4d4d4d, 0px 1px 0px #333333, 2px 1px 0px #4d4d4d, 1px 2px 0px #333333, 3px 2px 0px #4d4d4d, 2px 3px 0px #333333, 4px 3px 0px #4d4d4d, 3px 4px 0px #333333, 5px 4px 0px #4d4d4d, 4px 5px 0px #333333, 6px 5px 0px #4d4d4d, 5px 6px 0px #333333, 7px 6px 0px #4d4d4d, 6px 7px 0px #333333, 8px 7px 0px #4d4d4d, 7px 8px 0px #333333, 9px 8px 0px #4d4d4d, 8px 9px 0px #333333, 10px 9px 0px #4d4d4d, 9px 10px 0px #333333, 11px 10px 0px #4d4d4d, 10px 11px 0px #333333, 12px 11px 0px #4d4d4d, 11px 12px 0px #333333, 13px 12px 0px #4d4d4d, 12px 13px 0px #333333, 14px 13px 0px #4d4d4d;
-		}
-	}
-
-
-
-}
-
-
-.radio{
-	margin: 0;
-	margin-top: 10%;
-	z-index: 1;
-	.radio-wrapper{
-		position: relative;
-		box-shadow: 1px 0px 0px #4d4d4d, 0px 1px 0px #333333, 2px 1px 0px #4d4d4d, 1px 2px 0px #333333, 3px 2px 0px #4d4d4d, 2px 3px 0px #333333, 4px 3px 0px #4d4d4d, 3px 4px 0px #333333, 5px 4px 0px #4d4d4d, 4px 5px 0px #333333, 6px 5px 0px #4d4d4d, 5px 6px 0px #333333, 7px 6px 0px #4d4d4d, 6px 7px 0px #333333, 8px 7px 0px #4d4d4d, 7px 8px 0px #333333, 9px 8px 0px #4d4d4d, 8px 9px 0px #333333, 10px 9px 0px #4d4d4d, 9px 10px 0px #333333, 11px 10px 0px #4d4d4d, 10px 11px 0px #333333, 12px 11px 0px #4d4d4d, 11px 12px 0px #333333, 13px 12px 0px #4d4d4d, 12px 13px 0px #333333, 14px 13px 0px #4d4d4d, 13px 14px 0px #333333, 15px 14px 0px #4d4d4d, 14px 15px 0px #333333, 16px 15px 0px #4d4d4d, 15px 16px 0px #333333, 16px 16px 0px #4d4d4d;
-		background-color: $black;
-		text-align: center;
-		width: 90%;
-		margin-left: 5%;
-		height: auto;
-		padding-top: 25px;
-		padding-bottom: 25px;
-		h1{
-			margin: 0;
-			color: $pink;
-
-		}
-
-	}
-	
-	.show{
-		width: 90%;
-		margin-bottom: 10%;
-		margin-top: 40px;
-		margin-left: 5%;
-		img{
-			width: 90%;
-			margin-left: 5%;
-			box-shadow: 1px 0px 0px #4d4d4d, 0px 1px 0px #333333, 2px 1px 0px #4d4d4d, 1px 2px 0px #333333, 3px 2px 0px #4d4d4d, 2px 3px 0px #333333, 4px 3px 0px #4d4d4d, 3px 4px 0px #333333, 5px 4px 0px #4d4d4d, 4px 5px 0px #333333, 6px 5px 0px #4d4d4d, 5px 6px 0px #333333, 7px 6px 0px #4d4d4d, 6px 7px 0px #333333, 8px 7px 0px #4d4d4d, 7px 8px 0px #333333, 9px 8px 0px #4d4d4d, 8px 9px 0px #333333, 10px 9px 0px #4d4d4d, 9px 10px 0px #333333, 11px 10px 0px #4d4d4d, 10px 11px 0px #333333, 12px 11px 0px #4d4d4d, 11px 12px 0px #333333, 13px 12px 0px #4d4d4d, 12px 13px 0px #333333, 14px 13px 0px #4d4d4d, 13px 14px 0px #333333, 15px 14px 0px #4d4d4d, 14px 15px 0px #333333, 16px 15px 0px #4d4d4d, 15px 16px 0px #333333, 16px 16px 0px #4d4d4d;
-		}
-		iframe{
-			width: 90%;
-			margin-left: 5%;
-			margin-bottom: 5%;
-			box-shadow: 1px 0px 0px #4d4d4d, 0px 1px 0px #333333, 2px 1px 0px #4d4d4d, 1px 2px 0px #333333, 3px 2px 0px #4d4d4d, 2px 3px 0px #333333, 4px 3px 0px #4d4d4d, 3px 4px 0px #333333, 5px 4px 0px #4d4d4d, 4px 5px 0px #333333, 6px 5px 0px #4d4d4d, 5px 6px 0px #333333, 7px 6px 0px #4d4d4d, 6px 7px 0px #333333, 8px 7px 0px #4d4d4d, 7px 8px 0px #333333, 9px 8px 0px #4d4d4d, 8px 9px 0px #333333, 10px 9px 0px #4d4d4d, 9px 10px 0px #333333, 11px 10px 0px #4d4d4d, 10px 11px 0px #333333, 12px 11px 0px #4d4d4d, 11px 12px 0px #333333, 13px 12px 0px #4d4d4d, 12px 13px 0px #333333, 14px 13px 0px #4d4d4d, 13px 14px 0px #333333, 15px 14px 0px #4d4d4d, 14px 15px 0px #333333, 16px 15px 0px #4d4d4d, 15px 16px 0px #333333, 16px 16px 0px #4d4d4d;
-		}
-		p{
-			font-family: karla;
-			font-size: 1em;
-			line-height: 1.5;
-			background-color: black;
-			color: $pink;
-			padding: 20px;
-			border: 1px solid $pink;
-		}
-	}
-}
-
-.stories{
-	position: relative;
-	margin-top: 10%;
-	margin-bottom: 400px;
-	.story-wrapper{
-		position: relative;
-		box-shadow: 1px 0px 0px #4d4d4d, 0px 1px 0px #333333, 2px 1px 0px #4d4d4d, 1px 2px 0px #333333, 3px 2px 0px #4d4d4d, 2px 3px 0px #333333, 4px 3px 0px #4d4d4d, 3px 4px 0px #333333, 5px 4px 0px #4d4d4d, 4px 5px 0px #333333, 6px 5px 0px #4d4d4d, 5px 6px 0px #333333, 7px 6px 0px #4d4d4d, 6px 7px 0px #333333, 8px 7px 0px #4d4d4d, 7px 8px 0px #333333, 9px 8px 0px #4d4d4d, 8px 9px 0px #333333, 10px 9px 0px #4d4d4d, 9px 10px 0px #333333, 11px 10px 0px #4d4d4d, 10px 11px 0px #333333, 12px 11px 0px #4d4d4d, 11px 12px 0px #333333, 13px 12px 0px #4d4d4d, 12px 13px 0px #333333, 14px 13px 0px #4d4d4d, 13px 14px 0px #333333, 15px 14px 0px #4d4d4d, 14px 15px 0px #333333, 16px 15px 0px #4d4d4d, 15px 16px 0px #333333, 16px 16px 0px #4d4d4d;
-		background-color: $black;
-		text-align: center;
-		width: 90%;
-		margin-left: 5%;
-		height: auto;
-		padding-top: 25px;
-		padding-bottom: 25px;
-		h1{
-			color: $pink;
-		}
-	}
-	.story-nav{
-		ul{
-			text-align: center;
-			list-style-type: none;
-			padding: 0;
-			a{
-				li{
-					display: inline-block;
-					padding: 5px;
-					margin: 5px;
-					font-size: 1.5em;
-					color: white;
-					background-color: $blue;
-					font-family: karla;
-					@include vendorize(border-radius, 5px);
-					&:hover{
-						background-color: $pink;
-						color: $black;
-					}
-					&.active{
-						background-color: $pink;
-						color: $black;
-					}
-				}
-			}
-		}
-	}
-	iframe{
-		margin-left: 20%;
-		margin-bottom: 20px;
-		box-shadow: 5px 5px 5px #030102;
-		border: 0;
-		border: none;
-		box-shadow: 1px 0px 0px #4d4d4d, 0px 1px 0px #333333, 2px 1px 0px #4d4d4d, 1px 2px 0px #333333, 3px 2px 0px #4d4d4d, 2px 3px 0px #333333, 4px 3px 0px #4d4d4d, 3px 4px 0px #333333, 5px 4px 0px #4d4d4d, 4px 5px 0px #333333, 6px 5px 0px #4d4d4d, 5px 6px 0px #333333, 7px 6px 0px #4d4d4d, 6px 7px 0px #333333, 8px 7px 0px #4d4d4d, 7px 8px 0px #333333, 9px 8px 0px #4d4d4d, 8px 9px 0px #333333, 10px 9px 0px #4d4d4d, 9px 10px 0px #333333, 11px 10px 0px #4d4d4d, 10px 11px 0px #333333, 12px 11px 0px #4d4d4d, 11px 12px 0px #333333, 13px 12px 0px #4d4d4d, 12px 13px 0px #333333, 14px 13px 0px #4d4d4d, 13px 14px 0px #333333, 15px 14px 0px #4d4d4d, 14px 15px 0px #333333, 16px 15px 0px #4d4d4d, 15px 16px 0px #333333, 16px 16px 0px #4d4d4d;
-	}
-	p.body{
-		text-align: center;
-		width: 80%;
-		margin-left: 10%;
-		margin-right: 10%;
-		font-family: karla, 'Helvetica Neue', helvetica, sans-serif;
-		font-size: 1em;
-		line-height: 1.5;
-		background-color: $black;
-		border: 1px solid $pink;
-		color: $pink;
-		padding: 20px;
-	}
-}
-
-
-
-
-}
 
