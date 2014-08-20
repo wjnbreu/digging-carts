@@ -15,12 +15,24 @@
 }
 
 @font-face {
-    font-family: bit;
+    font-family: clan;
     src: url('../fonts/clanpro-narrultra-webfont.eot');
     src: url('../fonts/clanpro-narrultra-webfont.eot?#iefix') format('embedded-opentype'),
          url('../fonts/clanpro-narrultra-webfont.woff') format('woff'),
          url('../fonts/clanpro-narrultra-webfont.ttf') format('truetype'),
          url('../fonts/clanpro-narrultra-webfont.svg#clan_pronarrow_ultra') format('svg');
+    font-weight: 900;
+    font-style: normal;
+}
+
+
+@font-face {
+    font-family: bit;
+    src: url('../fonts/brokeren-webfont.eot');
+    src: url('../fonts/brokeren-webfont.eot?#iefix') format('embedded-opentype'),
+         url('../fonts/brokeren-webfont.woff') format('woff'),
+         url('../fonts/brokeren-webfont.ttf') format('truetype'),
+         url('../fonts/brokeren-webfont.svg') format('svg');
     font-weight: 900;
     font-style: normal;
 }

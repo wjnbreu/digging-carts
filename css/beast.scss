@@ -17,10 +17,20 @@ body{
 	width: 100%;
 	height: 100%;
 	-webkit-tap-highlight-color: transparent;
-	background: url(../img/mega.jpg) no-repeat bottom center;
-	background-size: cover;
-	background-attachment: fixed;
-	background-color: black;
+	background-color: red;
+background-image: -webkit-gradient(
+	linear,
+	left top,
+	left bottom,
+	color-stop(0, #E6E6E6),
+	color-stop(1, #FCFCFC)
+);
+background-image: -o-linear-gradient(bottom, #E6E6E6 0%, #FCFCFC 100%);
+background-image: -moz-linear-gradient(bottom, #E6E6E6 0%, #FCFCFC 100%);
+background-image: -webkit-linear-gradient(bottom, #E6E6E6 0%, #FCFCFC 100%);
+background-image: -ms-linear-gradient(bottom, #E6E6E6 0%, #FCFCFC 100%);
+background-image: linear-gradient(to bottom, #E6E6E6 0%, #FCFCFC 100%);
+// background: url(../img/static.gif) repeat center center;
 }
 
 p{
@@ -67,6 +77,27 @@ h1{
 	text-transform: uppercase;
 	font-size: 3.5em;
 	margin: 0;
+	text-shadow:0px 0px 0 rgb(221,221,221),1px 1px 0 white,2px 2px 0 black,3px 3px 0 black,4px 4px 0 rgb(163,163,163),5px 5px 0 rgb(148,148,148), 0px 0px 6px rgba(0,0,0,.2);
+}
+
+li{
+	font-family: karla, 'Helvetica Neue', helvetica, sans-serif;
+	border: 2px solid black;
+	color: $black;
+	background-color: white;
+	font-size: 1.2em;
+	margin: 5px;
+	padding: 5px;
+	padding-left: 15px;
+	padding-right: 15px;
+	&:hover{
+		background-color: $black;
+		color: white;
+	}
+	&.active{
+		background-color: $black;
+		color: white;
+	}
 }
 
 
@@ -85,34 +116,6 @@ h1{
 	background-color: white;
 	margin: 0;
 }
-
-@-webkit-keyframes dash{
-	to{
-		stroke-dashoffset: 0;
-	}
-}
-
-@-moz-keyframes dash{
-	to{
-		stroke-dashoffset: 0;
-	}
-}
-@-o-keyframes dash{
-	to{
-		stroke-dashoffset: 0;
-	}
-}
-@-ms-keyframes dash{
-	to{
-		stroke-dashoffset: 0;
-	}
-}
-@keyframes dash{
-	to{
-		stroke-dashoffset: 0;
-	}
-}
-
 
 
 
@@ -140,6 +143,7 @@ h1{
 			margin: 0;
 			border: 0;
 			border: none;
+			box-shadow: 1px 0px 0px #4d4d4d, 0px 1px 0px #333333, 2px 1px 0px #4d4d4d, 1px 2px 0px #333333, 3px 2px 0px #4d4d4d, 2px 3px 0px #333333, 4px 3px 0px #4d4d4d, 3px 4px 0px #333333, 5px 4px 0px #4d4d4d, 4px 5px 0px #333333, 6px 5px 0px #4d4d4d, 5px 6px 0px #333333, 7px 6px 0px #4d4d4d, 6px 7px 0px #333333, 8px 7px 0px #4d4d4d, 7px 8px 0px #333333, 9px 8px 0px #4d4d4d, 8px 9px 0px #333333, 10px 9px 0px #4d4d4d, 9px 10px 0px #333333, 11px 10px 0px #4d4d4d, 10px 11px 0px #333333, 12px 11px 0px #4d4d4d, 11px 12px 0px #333333, 13px 12px 0px #4d4d4d, 12px 13px 0px #333333, 14px 13px 0px #4d4d4d, 13px 14px 0px #333333, 15px 14px 0px #4d4d4d, 14px 15px 0px #333333, 16px 15px 0px #4d4d4d, 15px 16px 0px #333333, 16px 16px 0px #4d4d4d;
 		}
 		.title{
 			margin-top: 0;
@@ -155,12 +159,9 @@ h1{
 			h1{
 				margin-top: 0;
 				width: 80%;
-				color: $pink;
 				margin-left: 10%;
 				padding-top: 25px;
 				padding-bottom: 25px;
-				background-color: $black;
-				box-shadow: 1px 0px 0px #4d4d4d, 0px 1px 0px #333333, 2px 1px 0px #4d4d4d, 1px 2px 0px #333333, 3px 2px 0px #4d4d4d, 2px 3px 0px #333333, 4px 3px 0px #4d4d4d, 3px 4px 0px #333333, 5px 4px 0px #4d4d4d, 4px 5px 0px #333333, 6px 5px 0px #4d4d4d, 5px 6px 0px #333333, 7px 6px 0px #4d4d4d, 6px 7px 0px #333333, 8px 7px 0px #4d4d4d, 7px 8px 0px #333333, 9px 8px 0px #4d4d4d, 8px 9px 0px #333333, 10px 9px 0px #4d4d4d, 9px 10px 0px #333333, 11px 10px 0px #4d4d4d, 10px 11px 0px #333333, 12px 11px 0px #4d4d4d, 11px 12px 0px #333333, 13px 12px 0px #4d4d4d, 12px 13px 0px #333333, 14px 13px 0px #4d4d4d, 13px 14px 0px #333333, 15px 14px 0px #4d4d4d, 14px 15px 0px #333333, 16px 15px 0px #4d4d4d, 15px 16px 0px #333333, 16px 16px 0px #4d4d4d;
 			}
 			h2{
 				margin: 0;
@@ -191,31 +192,14 @@ h1{
 			ul{
 				width: 80%;
 				margin-left: 10%;
-				
 				text-align: center;
 				list-style-type: none;
 				padding: 0;
 				a{
 					li{
 						display: inline-block;
-						font-size: 1.5em;
-						margin: 5px;
-						padding: 5px;
-						color: white;
-						background-color: $blue;
-						text-transform: uppercase;
-						font-family: karla;
-						@include vendorize(border-radius, 5px);
 						&:first-child{
 							margin-left: 0;
-						}
-						&:hover{
-							background-color: $pink;
-							color: $black;
-						}
-						&.active{
-							background-color: $pink;
-							color: $black;
 						}
 					}
 				}
@@ -387,10 +371,8 @@ h1{
 			font-family: karla;
 			font-size: 1.5em;
 			line-height: 2;
-			background-color: black;
-			color: $pink;
+			color: $black;
 			padding: 20px;
-			border: 1px solid $pink;
 		}
 	}
 }
@@ -425,19 +407,6 @@ h1{
 					display: inline-block;
 					padding: 5px;
 					margin: 5px;
-					font-size: 1.5em;
-					color: white;
-					background-color: $blue;
-					font-family: karla;
-					@include vendorize(border-radius, 5px);
-					&:hover{
-						background-color: $pink;
-						color: $black;
-					}
-					&.active{
-						background-color: $pink;
-						color: $black;
-					}
 				}
 			}
 		}
@@ -458,9 +427,7 @@ h1{
 		font-family: karla, 'Helvetica Neue', helvetica, sans-serif;
 		font-size: 1.5em;
 		line-height: 2;
-		background-color: $black;
-		border: 1px solid $pink;
-		color: $pink;
+		color: $black;
 		padding: 20px;
 	}
 }

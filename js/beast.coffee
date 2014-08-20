@@ -7,7 +7,7 @@ $ ->
 	player1 = {}
 	player2 = {}
 	anchorElements = {}
-	colors = ['#5f41d5', '#ca0ab8', '#d5d041', '#d54141']
+	# colors = ['#5f41d5', '#ca0ab8', '#d5d041', '#d54141']
 
 	#SOUNDZ
 	hoverSound = new Howl {
@@ -26,7 +26,6 @@ $ ->
 	init = ->
 		setupBinds()
 		$('h1.colors').fitText(0.7)
-		setInterval(colorCycle, 500)
 		$('.video-nav ul a.episode li').first().addClass "active"
 		$('.story-nav ul a.additional-episode li').first().addClass "active"
 		setTimeout(sendHeight(getHeight()), 500)
@@ -124,12 +123,6 @@ $ ->
 			sendHeight(getHeight())
 
 		
-	colorCycle = ->
-		ranColor = Math.floor(Math.random() * colors.length)
-		$('h1.colors').css
-			color: colors[ranColor]
-
-
 	#FIXXXXXX!!!!!!
 	goToComposers = (item) ->
 		$('.composer-data').fadeIn()
@@ -199,7 +192,7 @@ $ ->
 	resizeVid = (vidPlayer) ->
 		player = $(vidPlayer)
 		winWidth = $(window).width()
-		vidWidth = winWidth / 1.5
+		vidWidth = winWidth / 1.2
 		ogWidth = player.attr('width') #extra box shadow pix
 		ogHeight = player.attr('height')
 		ratio = ogWidth / ogHeight
