@@ -260,6 +260,7 @@ li {
         list-style-type: none;
         padding: 0; }
         .content .videos .video-nav ul a li {
+          width: 100px;
           display: inline-block; }
           .content .videos .video-nav ul a li:first-child {
             margin-left: 0; }
