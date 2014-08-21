@@ -199,7 +199,8 @@ li {
   border: 2px solid black;
   color: #14110d;
   background-color: #d9d9d9;
-  font-size: 1.2em;
+  font-size: 1em;
+  width: 100px;
   margin: 5px;
   padding: 5px;
   padding-left: 15px;
