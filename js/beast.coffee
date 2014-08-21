@@ -117,16 +117,35 @@ $ ->
 
 
 	addVideoTitles = (object, target, type) ->
-		
 		if type == 'main'
 			for video, i in object
 				episode = video.fields.episodeNumber
-				target.append("<a class='episode' href='#episode' data-order=#{i}><li>#{episode}</li>")
+				currentDate = new Date()
+				episodeDate = new Date(video.fields.datetimeOfLaunch)
+				
+				if currentDate < episodeDate
+					target.append("<a class='episode' href='#episode' data-release=#{episodeDate} data-order=#{i}><li class='unreleased'>#{episode}</li>")
+
+				else
+					target.append("<a class='episode' href='#episode' data-order=#{i}><li class='released'>#{episode}</li>")
+
+				#loop through and change text of unreleased vids
+				target.find('li').each ->
+					t = $(@)
+					if t.hasClass('unreleased')
+						
+						ogText = t.text()
+
+						t.bind 'mouseenter', ->
+							t.empty().text("Soon")
+						t.bind 'mouseleave', ->
+							t.empty().text(ogText)
 		
 		else if type == 'additional'
 			for video, i in object
 				episode = video.fields.additionalVideoTitle
 				target.append("<a class='additional-episode' href='#additional-episode' data-order=#{i}><li>#{episode}</li>")
+
 
 	
 

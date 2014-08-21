@@ -1,7 +1,7 @@
 (function() {
     $(function() {
-        var e, t, i, r, n, a, d, o, s, l, c, u, f, p, v, h, m, y, w, g, C, b, T, I, S;
-        o = {};
+        var e, t, i, r, n, a, d, s, o, l, c, u, f, p, v, h, m, y, w, g, C, b, T, I, S;
+        s = {};
         S = {};
         p = {};
         r = {};
@@ -103,29 +103,48 @@
             return b(l());
         };
         i = function(e, t, i) {
-            var r, n, a, d, o, s, l, c, u;
+            var r, n, a, d, s, o, l, c, u, f, p;
             if (i === "main") {
-                c = [];
-                for (n = d = 0, s = e.length; d < s; n = ++d) {
-                    a = e[n];
-                    r = a.fields.episodeNumber;
-                    c.push(t.append("<a class='episode' href='#episode' data-order=" + n + "><li>" + r + "</li>"));
+                f = [];
+                for (d = o = 0, c = e.length; o < c; d = ++o) {
+                    s = e[d];
+                    n = s.fields.episodeNumber;
+                    r = new Date();
+                    a = new Date(s.fields.datetimeOfLaunch);
+                    if (r < a) {
+                        t.append("<a class='episode' href='#episode' data-release=" + a + " data-order=" + d + "><li class='unreleased'>" + n + "</li>");
+                    } else {
+                        t.append("<a class='episode' href='#episode' data-order=" + d + "><li class='released'>" + n + "</li>");
+                    }
+                    f.push(t.find("li").each(function() {
+                        var e, t;
+                        t = $(this);
+                        if (t.hasClass("unreleased")) {
+                            e = t.text();
+                            t.bind("mouseenter", function() {
+                                return t.empty().text("Soon");
+                            });
+                            return t.bind("mouseleave", function() {
+                                return t.empty().text(e);
+                            });
+                        }
+                    }));
                 }
-                return c;
+                return f;
             } else if (i === "additional") {
-                u = [];
-                for (n = o = 0, l = e.length; o < l; n = ++o) {
-                    a = e[n];
-                    r = a.fields.additionalVideoTitle;
-                    u.push(t.append("<a class='additional-episode' href='#additional-episode' data-order=" + n + "><li>" + r + "</li>"));
+                p = [];
+                for (d = l = 0, u = e.length; l < u; d = ++l) {
+                    s = e[d];
+                    n = s.fields.additionalVideoTitle;
+                    p.push(t.append("<a class='additional-episode' href='#additional-episode' data-order=" + d + "><li>" + n + "</li>"));
                 }
-                return u;
+                return p;
             }
         };
         e = function(e) {
-            var t, i, r, n, a, d, o, s, l;
+            var t, i, r, n, a, d, s, o, l;
             l = [];
-            for (r = o = 0, s = e.length; o < s; r = ++o) {
+            for (r = s = 0, o = e.length; s < o; r = ++s) {
                 t = e[r];
                 d = t.fields;
                 a = d.composerName;
@@ -137,12 +156,12 @@
             return l;
         };
         t = function(e) {
-            var t, i, r, n, a, d, o, s, c, u;
+            var t, i, r, n, a, d, s, o, c, u;
             u = [];
-            for (s = 0, c = e.length; s < c; s++) {
-                n = e[s];
+            for (o = 0, c = e.length; o < c; o++) {
+                n = e[o];
                 d = n.fields;
-                o = d.artistName;
+                s = d.artistName;
                 i = d.rbmaRadioEmbedCode;
                 t = d.descriptions;
                 r = d.artistImage.fields.file.url;
@@ -153,16 +172,16 @@
             return u;
         };
         C = function(e) {
-            var t, i, r, n, a, d, o, s;
+            var t, i, r, n, a, d, s, o;
             a = $(e);
-            s = $(window).width();
-            o = s / 1.2;
+            o = $(window).width();
+            s = o / 1.2;
             n = a.attr("width");
             r = a.attr("height");
             d = n / r;
-            a.attr("width", o);
-            a.attr("height", o / d);
-            t = s - o;
+            a.attr("width", s);
+            a.attr("height", s / d);
+            t = o - s;
             i = t / 2;
             a.css({
                 marginLeft: i
@@ -173,7 +192,7 @@
             $(".spinner").remove();
             return b(l());
         };
-        s = function() {
+        o = function() {
             var n;
             n = contentful.createClient({
                 accessToken: "38b8dbaf503a350d5722578c6547caca484511f7c78717736ac8f576832be4b0",
@@ -267,7 +286,7 @@
             }
         });
         I();
-        s();
+        o();
         return window.addEventListener("load", b(l()));
     });
 }).call(this);
