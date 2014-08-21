@@ -93,7 +93,7 @@ li{
 	color: $black;
 	background-color: $gray;
 	font-size: 1em;
-	width: 100px;
+	width: 125px;
 	margin: 5px;
 	padding: 5px;
 	padding-left: 15px;
@@ -203,7 +203,7 @@ li{
 			.arrow-right{
 				z-index: 909;
 				position: absolute;
-				top: 45%;
+				top: 350px;
 				right: 20px;
 				width: 100px;
 				height: 100px;
@@ -217,7 +217,7 @@ li{
 			.arrow-left{
 				z-index: 909;
 				position: absolute;
-				top: 45%;
+				top: 350px;
 				left: 20px;
 				width: 100px;
 				height: 100px;
@@ -243,7 +243,6 @@ li{
 					width: 40%;
 					margin-left: 30%;
 					height: auto;
-					max-height: 350px;
 					overflow: hidden;
 				}
 				img{
@@ -273,7 +272,6 @@ li{
 		img{
 			width: 40%;
 			margin-left: 30%;
-			@include vendorize(border-radius, 50%);
 		}
 		iframe{
 			width: 80%;
@@ -297,8 +295,6 @@ li{
 			a{
 				li{
 					display: inline-block;
-					padding: 5px;
-					margin: 5px;
 				}
 			}
 		}
