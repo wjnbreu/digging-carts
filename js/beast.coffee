@@ -123,8 +123,8 @@ $ ->
 				currentDate = new Date()
 				episodeDate = new Date(video.fields.datetimeOfLaunch)
 				
-				if currentDate < episodeDate
-					target.append("<a class='episode' href='#episode' data-release=#{episodeDate} data-order=#{i}><li class='unreleased'>#{episode}</li>")
+				if moment() < episodeDate
+					target.append("<a class='episode' href='#episode' data-order=#{i}><li class='unreleased' data-release='#{episodeDate}'>#{episode}</li>")
 
 				else
 					target.append("<a class='episode' href='#episode' data-order=#{i}><li class='released'>#{episode}</li>")
@@ -135,9 +135,11 @@ $ ->
 					if t.hasClass('unreleased')
 						
 						ogText = t.text()
+						releaseDate = t.data('release')
+						d = new Date(releaseDate)
 
 						t.bind 'mouseenter', ->
-							t.empty().text("Soon")
+							t.empty().text(moment(releaseDate).format('ddd, MMM Do'))
 						t.bind 'mouseleave', ->
 							t.empty().text(ogText)
 		

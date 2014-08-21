@@ -1,8 +1,8 @@
 (function() {
     $(function() {
-        var e, t, i, r, n, a, d, s, o, l, c, u, f, p, v, h, m, y, w, g, C, b, T, I, S;
+        var e, t, i, r, n, a, d, s, o, l, c, u, f, p, v, h, m, y, w, g, C, b, D, T, I;
         s = {};
-        S = {};
+        I = {};
         p = {};
         r = {};
         f = {};
@@ -11,7 +11,7 @@
         n = {};
         u = 0;
         c = function() {
-            T();
+            D();
             $(".video-nav ul a.episode li").first().addClass("active");
             $(".story-nav ul a.additional-episode li").first().addClass("active");
             setTimeout(b(l()), 500);
@@ -34,7 +34,7 @@
         l = function() {
             return $(document.body).height() + 300;
         };
-        I = function() {
+        T = function() {
             var e, t;
             t = document.createElement("script");
             t.src = "https://www.youtube.com/iframe_api";
@@ -79,7 +79,7 @@
             C("#storyplayer");
             return b(l());
         };
-        T = function() {
+        D = function() {
             return window.addEventListener("resize", function() {
                 C("#player");
                 C("#storyplayer");
@@ -111,21 +111,23 @@
                     n = s.fields.episodeNumber;
                     r = new Date();
                     a = new Date(s.fields.datetimeOfLaunch);
-                    if (r < a) {
-                        t.append("<a class='episode' href='#episode' data-release=" + a + " data-order=" + d + "><li class='unreleased'>" + n + "</li>");
+                    if (moment() < a) {
+                        t.append("<a class='episode' href='#episode' data-order=" + d + "><li class='unreleased' data-release='" + a + "'>" + n + "</li>");
                     } else {
                         t.append("<a class='episode' href='#episode' data-order=" + d + "><li class='released'>" + n + "</li>");
                     }
                     f.push(t.find("li").each(function() {
-                        var e, t;
-                        t = $(this);
-                        if (t.hasClass("unreleased")) {
-                            e = t.text();
-                            t.bind("mouseenter", function() {
-                                return t.empty().text("Soon");
+                        var e, t, i, r;
+                        r = $(this);
+                        if (r.hasClass("unreleased")) {
+                            t = r.text();
+                            i = r.data("release");
+                            e = new Date(i);
+                            r.bind("mouseenter", function() {
+                                return r.empty().text(moment(i).format("ddd, MMM Do"));
                             });
-                            return t.bind("mouseleave", function() {
-                                return t.empty().text(e);
+                            return r.bind("mouseleave", function() {
+                                return r.empty().text(t);
                             });
                         }
                     }));
@@ -210,16 +212,16 @@
                 include: 1,
                 order: "fields.order"
             }).done(function(e) {
-                S = e;
+                I = e;
                 w(1);
-                i(S, $(".video-nav ul"), "main");
+                i(I, $(".video-nav ul"), "main");
                 return $("a.episode").bind("click", function(e) {
                     var t;
                     e.preventDefault();
                     $(this).parent().find("li").removeClass("active");
                     $(this).find("li").addClass("active");
                     t = $(this).data("order");
-                    return d(t, S);
+                    return d(t, I);
                 });
             });
             n.entries({
@@ -285,7 +287,7 @@
                 return b(l());
             }
         });
-        I();
+        T();
         o();
         return window.addEventListener("load", b(l()));
     });
