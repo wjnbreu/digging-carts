@@ -51,6 +51,19 @@ p{
 	color: black;
 }
 
+a.pulldown{
+	text-decoration: none;
+	display: none;
+	li{
+		width: 80%;
+		margin-left: 10%;
+		height: auto;
+		text-align: center;
+		font-size: 2.5em;
+		list-style-type: none;
+	}
+}
+
 
 
 .spinner{
