@@ -213,6 +213,8 @@ li {
   li.active {
     background-color: black;
     color: #d9d9d9; }
+    li.active.unreleased {
+      background-color: #fb0015; }
 
 .content {
   position: relative;

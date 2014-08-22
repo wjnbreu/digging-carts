@@ -50,6 +50,8 @@ p{
 	color: black;
 }
 
+
+
 .spinner{
 	width: 100%;
 	height: 100%;
@@ -107,6 +109,9 @@ li{
 	&.active{
 		background-color: black;
 		color: $gray;
+		&.unreleased{
+			background-color: $red;
+		}
 	}
 }
 
@@ -180,6 +185,7 @@ li{
 			border: none;
 			@include boxy;
 		}
+
 		p.body{
 			text-align: center;
 			width: 70%;

@@ -1,8 +1,8 @@
 (function() {
     $(function() {
-        var e, t, i, r, n, a, d, s, o, l, c, u, f, p, v, h, m, y, w, g, C, b, D, T, I;
+        var e, t, i, r, n, a, d, s, o, l, c, u, f, p, v, h, m, y, w, g, C, b, T, I, V;
         s = {};
-        I = {};
+        V = {};
         p = {};
         r = {};
         f = {};
@@ -11,7 +11,7 @@
         n = {};
         u = 0;
         c = function() {
-            D();
+            T();
             $(".video-nav ul a.episode li").first().addClass("active");
             $(".story-nav ul a.additional-episode li").first().addClass("active");
             setTimeout(b(l()), 500);
@@ -34,7 +34,7 @@
         l = function() {
             return $(document.body).height() + 300;
         };
-        T = function() {
+        I = function() {
             var e, t;
             t = document.createElement("script");
             t.src = "https://www.youtube.com/iframe_api";
@@ -79,21 +79,25 @@
             C("#storyplayer");
             return b(l());
         };
-        D = function() {
+        T = function() {
             return window.addEventListener("resize", function() {
                 C("#player");
                 C("#storyplayer");
                 return b(l());
             });
         };
-        d = function(e, t) {
-            var i;
-            i = t[e].fields;
-            m.cueVideoById(i.ytVideoId);
-            $(".videos h1").empty().text(i.episodeTitle);
-            $(".videos p.body").empty().text(i.videoDescription);
-            $(".videos p.body").slideDown();
-            return b(l());
+        d = function(e, t, i) {
+            var r;
+            r = i[t].fields;
+            if (e.find("li").hasClass("unreleased")) {
+                m.cueVideoById("T8k44ryj5DQ");
+                m.playVideo();
+                return $(".videos h1").empty().text(r.episodeTitle);
+            } else {
+                m.cueVideoById(r.ytVideoId);
+                $(".videos h1").empty().text(r.episodeTitle);
+                return b(l());
+            }
         };
         a = function(e, t) {
             var i;
@@ -126,9 +130,7 @@
                             r.bind("mouseenter", function() {
                                 return r.empty().text(moment(i).format("ddd, MMM Do"));
                             });
-                            return r.bind("mouseleave", function() {
-                                return r.empty().text(t);
-                            });
+                            return r.bind("mouseleave", function() {});
                         }
                     }));
                 }
@@ -212,16 +214,16 @@
                 include: 1,
                 order: "fields.order"
             }).done(function(e) {
-                I = e;
+                V = e;
                 w(1);
-                i(I, $(".video-nav ul"), "main");
+                i(V, $(".video-nav ul"), "main");
                 return $("a.episode").bind("click", function(e) {
                     var t;
                     e.preventDefault();
                     $(this).parent().find("li").removeClass("active");
                     $(this).find("li").addClass("active");
                     t = $(this).data("order");
-                    return d(t, I);
+                    return d($(this), t, V);
                 });
             });
             n.entries({
@@ -287,7 +289,7 @@
                 return b(l());
             }
         });
-        T();
+        I();
         o();
         return window.addEventListener("load", b(l()));
     });

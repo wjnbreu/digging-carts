@@ -94,14 +94,18 @@ $ ->
 
 
 
-	changeVideo = (order, videoObject) ->
-		#account for zero index
+	changeVideo = (element, order, videoObject) ->
 		video = videoObject[order].fields
-		player1.cueVideoById(video.ytVideoId)
-		$('.videos h1').empty().text video.episodeTitle
-		$('.videos p.body').empty().text video.videoDescription
-		$('.videos p.body').slideDown()
-		sendHeight(getHeight())
+		#account for zero index
+		if element.find('li').hasClass "unreleased"
+			player1.cueVideoById('T8k44ryj5DQ')
+			player1.playVideo()
+			$('.videos h1').empty().text video.episodeTitle
+		else
+			
+			player1.cueVideoById(video.ytVideoId)
+			$('.videos h1').empty().text video.episodeTitle
+			sendHeight(getHeight())
 
 
 	changeAdditionalVideo = (order, additionalVideoObject) ->
@@ -141,7 +145,8 @@ $ ->
 						t.bind 'mouseenter', ->
 							t.empty().text(moment(releaseDate).format('ddd, MMM Do'))
 						t.bind 'mouseleave', ->
-							t.empty().text(ogText)
+							
+
 		
 		else if type == 'additional'
 			for video, i in object
@@ -220,7 +225,7 @@ $ ->
 				$(@).parent().find('li').removeClass "active"
 				$(@).find('li').addClass "active"
 				order = $(@).data 'order'
-				changeVideo(order, videoObject)
+				changeVideo($(@), order, videoObject)
 
 		#RADIO
 		client.entries({'content_type':'2YpXtnGW80EEGgCUsSMmCc', 'include': 1}).done (data) ->
