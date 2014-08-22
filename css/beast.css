@@ -369,7 +369,7 @@ li {
     margin-left: 15%;
     margin-right: 15%; }
 
-@media screen and (max-device-width: 1280px) {
+@media screen and (max-device-width: 5280px) {
   body {
     background-color: white;
     background: url(../img/clouds.jpg) no-repeat left top;
