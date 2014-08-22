@@ -139,7 +139,7 @@ a.pulldown {
     margin-left: 10%;
     height: auto;
     text-align: center;
-    font-size: 2.5em;
+    font-size: 1em;
     list-style-type: none; }
 
 .spinner {
@@ -369,12 +369,11 @@ li {
     margin-left: 15%;
     margin-right: 15%; }
 
-@media screen and (max-device-width: 5280px) {
+@media screen and (max-width: 1024px), screen and (max-device-width: 1024px) {
   body {
     background-color: white;
     background: url(../img/clouds.jpg) no-repeat left top;
-    background-size: contain;
-    background-attachment: fixed; }
+    background-size: contain; }
 
   h1 {
     background-color: black;
@@ -384,17 +383,18 @@ li {
     text-align: center;
     line-height: 1;
     padding: 10px;
+    box-sizing: border-box;
     font-size: 4.5em; }
 
   h2 {
-    font-size: 4.5em;
+    font-size: 2em;
     color: black; }
 
   p {
     letter-spacing: -1px;
     font-family: karla, 'Helvetica Neue', helvetica, sans-serif;
     line-height: 1.5;
-    font-size: 2.5em;
+    font-size: 1em;
     color: black; }
 
   li {
@@ -463,7 +463,7 @@ li {
             margin-left: 10%;
             height: auto;
             text-align: center;
-            font-size: 2.5em;
+            font-size: 1em;
             list-style-type: none; }
         .content .videos .video-nav ul {
           display: none;
@@ -477,6 +477,7 @@ li {
             .content .videos .video-nav ul a li {
               display: block;
               width: 100%;
+              margin: 0;
               font-size: 2.5em;
               height: auto;
               margin-top: 10px; }
@@ -499,10 +500,10 @@ li {
       .composers .composers-wrap .arrow-right {
         z-index: 909;
         position: absolute;
-        top: 370px;
+        top: 270px;
         right: 20px;
-        width: 120px;
-        height: 120px;
+        width: 70px;
+        height: 70px;
         background: url(../img/arrow.svg) no-repeat center center;
         background-size: cover;
         -webkit-transition: all 0.2s ease-in-out;
@@ -515,10 +516,10 @@ li {
       .composers .composers-wrap .arrow-left {
         z-index: 909;
         position: absolute;
-        top: 370px;
+        top: 270px;
         left: 20px;
-        width: 120px;
-        height: 120px;
+        width: 70px;
+        height: 70px;
         background: url(../img/arrow.svg) no-repeat center center;
         background-size: cover;
         -webkit-transform: rotate(180deg);
@@ -588,7 +589,7 @@ li {
           margin-left: 10%;
           height: auto;
           text-align: center;
-          font-size: 2.5em;
+          font-size: 1em;
           list-style-type: none; }
       .stories .story-nav ul {
         display: none;
@@ -604,6 +605,7 @@ li {
             width: 100%;
             font-size: 3em;
             height: auto;
+            margin: 0;
             margin-top: 10px; }
     .stories iframe {
       margin-left: 20%;
@@ -617,19 +619,19 @@ li {
       width: 90%;
       margin-left: 5%;
       margin-right: 5%; } }
-@media screen and (max-device-width: 600px) {
+@media screen and (max-width: 600px), screen and (max-device-width: 600px) {
   h1 {
-    width: 90%;
-    margin-left: 5%;
+    width: 80%;
+    margin-left: 10%;
     line-height: 1;
     padding: 10px;
-    font-size: 4.5em; }
+    font-size: 1em; }
 
   p {
     letter-spacing: -1px;
     font-family: karla, 'Helvetica Neue', helvetica, sans-serif;
     line-height: 1.5;
-    font-size: 3em;
+    font-size: 1em;
     color: black; }
 
   .content {
@@ -661,12 +663,15 @@ li {
         -webkit-transform-style: preserve-3d; }
         .content .startscreen .title img {
           margin-top: 50%;
+          max-width: 100%;
           -webkit-transform: translateZ(0px);
           -webkit-transform-style: preserve-3d; }
     .content .videos {
       position: relative;
       margin-top: 150%;
       width: 100%; }
+      .content .videos h1 {
+        display: none; }
       .content .videos iframe {
         margin-left: 20%;
         margin-bottom: 20px;
@@ -686,7 +691,7 @@ li {
             .content .videos .video-nav ul a li {
               display: block;
               width: 100%;
-              font-size: 3em;
+              font-size: 1em;
               height: auto;
               margin-top: 10px; }
       .content .videos p.body {
@@ -708,10 +713,10 @@ li {
       .composers .composers-wrap .arrow-right {
         z-index: 909;
         position: absolute;
-        top: 370px;
-        right: 20px;
-        width: 120px;
-        height: 120px;
+        top: 160px;
+        right: 10px;
+        width: 50px;
+        height: 50px;
         background: url(../img/arrow.svg) no-repeat center center;
         background-size: cover;
         -webkit-transition: all 0.2s ease-in-out;
@@ -724,10 +729,10 @@ li {
       .composers .composers-wrap .arrow-left {
         z-index: 909;
         position: absolute;
-        top: 370px;
-        left: 20px;
-        width: 120px;
-        height: 120px;
+        top: 160px;
+        left: 10px;
+        width: 50px;
+        height: 50px;
         background: url(../img/arrow.svg) no-repeat center center;
         background-size: cover;
         -webkit-transform: rotate(180deg);
@@ -797,7 +802,7 @@ li {
           margin-left: 10%;
           height: auto;
           text-align: center;
-          font-size: 2.5em;
+          font-size: 1em;
           list-style-type: none; }
       .stories .story-nav ul {
         text-align: center;
@@ -810,12 +815,13 @@ li {
           .stories .story-nav ul a li {
             display: block;
             width: 100%;
-            font-size: 3em;
+            font-size: 1em;
             height: auto;
             margin-top: 10px; }
     .stories iframe {
       margin-left: 20%;
       margin-bottom: 20px;
+      margin-top: 48px;
       box-shadow: 5px 5px 5px #030102;
       border: 0;
       border: none;
