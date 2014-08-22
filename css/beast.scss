@@ -351,7 +351,7 @@ li{
 
 
 
-@media screen and (max-width: 1024px), screen and (max-device-width: 1024px){
+@media screen and (max-device-width: 1024px){
 	body{
 		background-color: white;
 		background: url(../img/clouds.jpg) no-repeat left top;
@@ -442,7 +442,7 @@ li{
 			-webkit-transform-style: preserve-3d;
 			img{
 				//looks shit in normal mode, but good in iframe
-				margin-top: 50%;
+				margin-top: 40%;
 				-webkit-transform: translateZ(0px);
 				-webkit-transform-style: preserve-3d;
 				// -webkit-animation: 'scale' 4s;
@@ -466,6 +466,7 @@ li{
 			margin-top: 48px;
 			a.pulldown{
 				text-decoration: none;
+				display: block;
 				li{
 					width: 80%;
 					margin-left: 10%;
@@ -672,7 +673,7 @@ li{
 
 
 //IPHONE
-@media screen and (max-width: 600px), screen and (max-device-width: 600px){
+@media screen and (max-device-width: 600px){
 
 	h1 {
 	width: 90%;
