@@ -17,6 +17,7 @@ body{
 	height: 100%;
 	-webkit-tap-highlight-color: transparent;
 	background-color: $gray;
+	-webkit-overflow-scrolling: touch;
 }
 
 h1 {
@@ -89,16 +90,17 @@ h1,h2,h3,h4{
 
 
 li{
-	font-family: karla, 'Helvetica Neue', helvetica, sans-serif;
-	border: 2px solid black;
+	font-family: 'Helvetica Neue', helvetica, sans-serif;
+	border: 4px solid black;
 	color: $black;
 	background-color: $gray;
 	font-size: 0.9em;
-	width: 125px;
+	width: 110px;
+	height: 20px;
 	margin: 5px;
-	padding: 5px;
-	padding-left: 15px;
-	padding-right: 15px;
+	padding: 10px;
+	font-weight: bold;
+	text-transform: uppercase;
 	&:hover{
 		background-color: black;
 		color:$gray;
@@ -145,13 +147,21 @@ li{
 			@include boxy;
 		}
 		.title{
-			margin-top: 15%;
 			width: 100%;
 			height: 100%;
 			top: 0;
 			position: absolute;
 			text-align: center;
 			z-index: 9;
+			-webkit-perspective: 1000px;
+			-webkit-transform-style: preserve-3d;
+			img{
+				//looks shit in normal mode, but good in iframe
+				margin-top: 6.25%;
+				-webkit-transform: translateZ(0px);
+				-webkit-transform-style: preserve-3d;
+				// -webkit-animation: 'scale' 4s;
+			}
 		}
 	}
 	.videos{
@@ -160,16 +170,15 @@ li{
 		width: 100%;
 		
 		.video-nav{
-			margin-top: 5%;
+			margin-top: 48px;
 			ul{
-				width: 80%;
-				margin-left: 10%;
+				width: 90%;
+				margin-left: 5%;
 				text-align: center;
 				list-style-type: none;
 				padding: 0;
 				a{
 					li{
-						width: 100px;
 						display: inline-block;
 						&:first-child{
 							margin-left: 0;
@@ -180,7 +189,6 @@ li{
 		}
 		iframe{
 			margin-left: 20%;
-			margin-bottom: 20px;
 			border: 0;
 			border: none;
 			@include boxy;
@@ -276,12 +284,13 @@ li{
 		margin-top: 5%;
 		margin-left: 15%;
 		img{
-			width: 40%;
-			margin-left: 30%;
+			width: 80%;
+			margin-left: 10%;
+			@include boxy;
 		}
 		iframe{
 			width: 80%;
-			margin: 5% 10% 5% 10%;
+			margin: 0 10% 5% 10%;
 			@include boxy;
 			-webkit-filter: grayscale(1);
 		}
@@ -293,14 +302,306 @@ li{
 	margin-top: 10%;
 	margin-bottom: 400px;
 	.story-nav{
-		margin-top: 5%;
+		margin-top: 48px;
 		ul{
+			width: 90%;
+			margin-left: 5%;
 			text-align: center;
 			list-style-type: none;
 			padding: 0;
 			a{
 				li{
 					display: inline-block;
+					width: 150px;
+				}
+			}
+		}
+	}
+	iframe{
+		margin-left: 20%;
+		box-shadow: 5px 5px 5px #030102;
+		border: 0;
+		border: none;
+		@include boxy;
+	}
+	p.body{
+		text-align: center;
+		width: 70%;
+		margin-left: 15%;
+		margin-right: 15%;
+	}
+}
+
+
+
+
+
+
+
+
+
+
+
+//IPHONE
+@media screen and (max-width: 600px), screen and (max-device-width: 600px){
+	body{
+		background-color: white;
+		background: url(../img/clouds.jpg) no-repeat left top;
+		background-size: contain;
+		background-attachment: fixed;
+
+	}
+
+	h1 {
+	background-color: black;
+	color: $gray;
+	width: 90%;
+	margin-left: 5%;
+	text-align: center;
+	line-height: 1;
+	padding: 10px;
+	font-size: 4.5em;
+
+}
+
+h2{
+	font-size: 4.5em;
+	color: black;
+}
+
+p{
+	letter-spacing: -1px;
+	font-family: karla, 'Helvetica Neue', helvetica, sans-serif;
+	line-height: 1.5;
+	font-size: 3em;
+	color: black;
+}
+
+
+
+li{
+	border: 5px solid black;
+	color: black;
+	background-color: white;
+	&:hover{
+		background-color: black;
+		color:white;
+		&.unreleased{
+			background-color: $red;
+		}
+	}
+	&.active{
+		background-color: black;
+		color:white;
+		&.unreleased{
+			background-color: $red;
+		}
+	}
+}
+
+
+
+
+.content{
+	position: relative;
+	width: 100%;
+	height: 100%;
+	overflow: auto;
+	overflow-x: hidden !important;
+	top: 0;
+	left: 0;
+	color: white;
+	z-index: 9;
+	.startscreen{
+		position: relative;
+		top: 0;
+		left: 0;
+		width: 100%;
+		height: 100%;
+		video{
+			display: none;
+		}
+		.title{
+			width: 100%;
+			height: 100%;
+			top: 0;
+			position: absolute;
+			text-align: center;
+			z-index: 9;
+			-webkit-perspective: 1000px;
+			-webkit-transform-style: preserve-3d;
+			img{
+				//looks shit in normal mode, but good in iframe
+				margin-top: 50%;
+				-webkit-transform: translateZ(0px);
+				-webkit-transform-style: preserve-3d;
+				// -webkit-animation: 'scale' 4s;
+			}
+		}
+	}
+	.videos{
+		position: relative;
+		margin-top: 150%;
+		width: 100%;
+		h1{
+		}
+		iframe{
+			margin-left: 20%;
+			margin-bottom: 20px;
+			border: 0;
+			border: none;
+			@include boxy;
+		}
+
+
+		.video-nav{
+			margin-top: 48px;
+			ul{
+				text-align: center;
+				list-style-type: none;
+				padding: 0;
+				width: 80%;
+				margin-left: 10%;
+				a{
+					text-decoration: none;
+					li{
+						display: block;
+						width: 100%;
+						font-size: 3em;
+						height: auto;
+						margin-top: 10px;
+
+					}
+				}
+			}
+		}
+		
+
+		p.body{
+			text-align: center;
+			width: 70%;
+			margin-left: 15%;
+			margin-right: 15%;
+		}
+	}
+
+}
+
+.composers{
+		margin-top: 50%;
+		width: 100%;
+		position: relative;
+		overflow: hidden !important;
+		height: 100%;
+		.composers-wrap{
+			margin-top: 48px;
+			width: 100%;
+			height: 100%;
+			.arrow-right{
+				z-index: 909;
+				position: absolute;
+				top: 370px;
+				right: 20px;
+				width: 120px;
+				height: 120px;
+				background: url(../img/arrow.svg) no-repeat center center;
+				background-size: cover;
+				@include vendorize(transition, all .2s ease-in-out);
+				&:hover{
+					right: 15px;
+				}
+			}
+			.arrow-left{
+				z-index: 909;
+				position: absolute;
+				top: 370px;
+				left: 20px;
+				width: 120px;
+				height: 120px;
+				background: url(../img/arrow.svg) no-repeat center center;
+				background-size: cover;
+				@include vendorize(transform, rotate(180deg));
+				@include vendorize(transition, all .2s ease-in-out);
+				&:hover{
+					left: 15px;
+				}
+			}
+			.slide{
+				width: 100%;
+				display: block;
+				height: 100%;
+				position: relative;
+				text-align: center;
+				display: none;
+				&.active{
+					display: block;
+				}
+				.img-wrap{
+					width: 70%;
+					margin-left: 15%;
+					height: auto;
+					overflow: hidden;
+				}
+				img{
+					max-width: 102%;
+					height: auto;
+				}
+				p{
+					width: 90%;
+					margin-left: 5%;
+					text-align: left;
+				}
+			}
+		}
+	}
+
+
+
+.radio{
+	margin: 0;
+	margin-top: 50%;
+	z-index: 1;
+	
+	.show{
+		width: 90%;
+		margin-bottom: 10%;
+		margin-top: 48px;
+		margin-left: 5%;
+		img{
+			width: 80%;
+			margin-left: 10%;
+			@include boxy;
+		}
+		iframe{
+			width: 80%;
+			margin: 0 10% 5% 10%;
+			@include boxy;
+			-webkit-filter: grayscale(1);
+		}
+	}
+}
+
+.stories{
+	position: relative;
+	margin-top: 50%;
+	margin-bottom: 400px;
+	.story-nav{
+		margin-top: 48px;
+		ul{
+			text-align: center;
+			list-style-type: none;
+			padding: 0;
+			width: 80%;
+			margin-left: 10%;
+			a{
+				text-decoration: none;
+				li{
+					display: block;
+					width: 100%;
+					font-size: 3em;
+					height: auto;
+					margin-top: 10px;
+
 				}
 			}
 		}
@@ -315,12 +616,23 @@ li{
 	}
 	p.body{
 		text-align: center;
-		width: 70%;
-		margin-left: 15%;
-		margin-right: 15%;
+		width: 90%;
+		margin-left: 5%;
+		margin-right: 5%;
 	}
 }
 
+
+
+
+
+
+
+
+
+
+
+}
 
 
 

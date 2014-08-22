@@ -7,14 +7,13 @@ $ ->
 	player1 = {}
 	player2 = {}
 	anchorElements = {}
-	# colors = ['#5f41d5', '#ca0ab8', '#d5d041', '#d54141']
-
-
 	initCount = 0
+
 
 
 	init = ->
 		setupBinds()
+		setupYouTube()
 		# $('h1.colors').fitText(1)
 		$('.video-nav ul a.episode li').first().addClass "active"
 		$('.story-nav ul a.additional-episode li').first().addClass "active"
@@ -85,7 +84,6 @@ $ ->
 		
 	
 	setupBinds = ->
-
 		#resize
 		window.addEventListener 'resize', ->
 			resizeVid('#player')
@@ -218,14 +216,18 @@ $ ->
 		client.entries({'content_type':'36SuQSSPR6QmWOk8CseMC6', 'include': 1, 'order': 'fields.order'}).done (data) ->
 			videoObject = data
 			prepInit(1)
-			addVideoTitles(videoObject, $('.video-nav ul'), 'main')
+			
 
+			addVideoTitles(videoObject, $('.video-nav ul'), 'main')
+				
 			$('a.episode').bind 'click', (event) ->
 				event.preventDefault()
 				$(@).parent().find('li').removeClass "active"
 				$(@).find('li').addClass "active"
 				order = $(@).data 'order'
 				changeVideo($(@), order, videoObject)
+
+
 
 		#RADIO
 		client.entries({'content_type':'2YpXtnGW80EEGgCUsSMmCc', 'include': 1}).done (data) ->
@@ -289,7 +291,6 @@ $ ->
 
 		
 	#launch when ready	
-	setupYouTube()
 	getData()
 	window.addEventListener('load', sendHeight(getHeight()));
 	

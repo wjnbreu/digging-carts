@@ -12,6 +12,7 @@
         u = 0;
         c = function() {
             T();
+            I();
             $(".video-nav ul a.episode li").first().addClass("active");
             $(".story-nav ul a.additional-episode li").first().addClass("active");
             setTimeout(b(l()), 500);
@@ -289,7 +290,6 @@
                 return b(l());
             }
         });
-        I();
         o();
         return window.addEventListener("load", b(l()));
     });
