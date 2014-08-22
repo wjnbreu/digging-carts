@@ -1,8 +1,8 @@
 (function() {
     $(function() {
-        var e, t, i, r, n, a, d, s, o, l, c, u, f, p, v, h, m, y, w, g, C, b, T, I, V;
+        var e, t, i, r, n, a, d, s, o, l, c, u, f, p, v, h, m, y, w, g, C, b, T, D, I;
         s = {};
-        V = {};
+        I = {};
         p = {};
         r = {};
         f = {};
@@ -12,7 +12,7 @@
         u = 0;
         c = function() {
             T();
-            I();
+            D();
             $(".video-nav ul a.episode li").first().addClass("active");
             $(".story-nav ul a.additional-episode li").first().addClass("active");
             setTimeout(b(l()), 500);
@@ -35,7 +35,7 @@
         l = function() {
             return $(document.body).height() + 300;
         };
-        I = function() {
+        D = function() {
             var e, t;
             t = document.createElement("script");
             t.src = "https://www.youtube.com/iframe_api";
@@ -215,16 +215,16 @@
                 include: 1,
                 order: "fields.order"
             }).done(function(e) {
-                V = e;
+                I = e;
                 w(1);
-                i(V, $(".video-nav ul"), "main");
+                i(I, $(".video-nav ul"), "main");
                 return $("a.episode").bind("click", function(e) {
                     var t;
                     e.preventDefault();
                     $(this).parent().find("li").removeClass("active");
                     $(this).find("li").addClass("active");
                     t = $(this).data("order");
-                    return d($(this), t, V);
+                    return d($(this), t, I);
                 });
             });
             n.entries({
@@ -289,6 +289,12 @@
                 n.addClass("active");
                 return b(l());
             }
+        });
+        $("a.pulldown").click(function(e) {
+            e.preventDefault();
+            return $(this).parent().find("ul").slideToggle(200, function() {
+                return b(l());
+            });
         });
         o();
         return window.addEventListener("load", b(l()));

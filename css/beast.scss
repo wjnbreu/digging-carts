@@ -349,7 +349,7 @@ li{
 
 	h1 {
 	background-color: black;
-	color: $gray;
+	color: white;
 	width: 80%;
 	margin-left: 10%;
 	text-align: center;
@@ -363,6 +363,8 @@ h2{
 	font-size: 4.5em;
 	color: black;
 }
+
+
 
 p{
 	letter-spacing: -1px;
@@ -449,7 +451,20 @@ li{
 
 		.video-nav{
 			margin-top: 48px;
+			a.pulldown{
+				text-decoration: none;
+				li{
+					width: 80%;
+					margin-left: 10%;
+					height: auto;
+					text-align: center;
+					font-size: 2.5em;
+					list-style-type: none;
+				}
+			}
+
 			ul{
+				display: none;
 				text-align: center;
 				list-style-type: none;
 				padding: 0;
@@ -580,7 +595,19 @@ li{
 	margin-bottom: 400px;
 	.story-nav{
 		margin-top: 48px;
+		a.pulldown{
+			text-decoration: none;
+			li{
+				width: 80%;
+				margin-left: 10%;
+				height: auto;
+				text-align: center;
+				font-size: 2.5em;
+				list-style-type: none;
+			}
+		}
 		ul{
+			display: none;
 			text-align: center;
 			list-style-type: none;
 			padding: 0;
@@ -633,30 +660,16 @@ li{
 
 //IPHONE
 @media screen and (max-width: 600px), screen and (max-device-width: 600px){
-	body{
-		background-color: white;
-		background: url(../img/clouds.jpg) no-repeat left top;
-		background-size: contain;
-		background-attachment: fixed;
-
-	}
 
 	h1 {
-	background-color: black;
-	color: $gray;
 	width: 90%;
 	margin-left: 5%;
-	text-align: center;
 	line-height: 1;
 	padding: 10px;
 	font-size: 4.5em;
 
 }
 
-h2{
-	font-size: 4.5em;
-	color: black;
-}
 
 p{
 	letter-spacing: -1px;
@@ -664,28 +677,6 @@ p{
 	line-height: 1.5;
 	font-size: 3em;
 	color: black;
-}
-
-
-
-li{
-	border: 5px solid black;
-	color: black;
-	background-color: white;
-	&:hover{
-		background-color: black;
-		color:white;
-		&.unreleased{
-			background-color: $red;
-		}
-	}
-	&.active{
-		background-color: black;
-		color:white;
-		&.unreleased{
-			background-color: $red;
-		}
-	}
 }
 
 

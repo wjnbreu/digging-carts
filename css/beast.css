@@ -367,7 +367,7 @@ li {
 
   h1 {
     background-color: black;
-    color: #d9d9d9;
+    color: white;
     width: 80%;
     margin-left: 10%;
     text-align: center;
@@ -444,7 +444,17 @@ li {
         box-shadow: 1px 0px 0px #4d4d4d, 0px 1px 0px #333333, 2px 1px 0px #4d4d4d, 1px 2px 0px #333333, 3px 2px 0px #4d4d4d, 2px 3px 0px #333333, 4px 3px 0px #4d4d4d, 3px 4px 0px #333333, 5px 4px 0px #4d4d4d, 4px 5px 0px #333333, 6px 5px 0px #4d4d4d, 5px 6px 0px #333333, 7px 6px 0px #4d4d4d, 6px 7px 0px #333333, 8px 7px 0px #4d4d4d, 7px 8px 0px #333333, 9px 8px 0px #4d4d4d, 8px 9px 0px #333333, 10px 9px 0px #4d4d4d, 9px 10px 0px #333333, 11px 10px 0px #4d4d4d, 10px 11px 0px #333333, 12px 11px 0px #4d4d4d, 11px 12px 0px #333333, 13px 12px 0px #4d4d4d, 12px 13px 0px #333333, 14px 13px 0px #4d4d4d, 13px 14px 0px #333333, 15px 14px 0px #4d4d4d, 14px 15px 0px #333333, 16px 15px 0px #4d4d4d, 15px 16px 0px #333333, 16px 16px 0px #4d4d4d; }
       .content .videos .video-nav {
         margin-top: 48px; }
+        .content .videos .video-nav a.pulldown {
+          text-decoration: none; }
+          .content .videos .video-nav a.pulldown li {
+            width: 80%;
+            margin-left: 10%;
+            height: auto;
+            text-align: center;
+            font-size: 2.5em;
+            list-style-type: none; }
         .content .videos .video-nav ul {
+          display: none;
           text-align: center;
           list-style-type: none;
           padding: 0;
@@ -558,7 +568,17 @@ li {
     margin-bottom: 400px; }
     .stories .story-nav {
       margin-top: 48px; }
+      .stories .story-nav a.pulldown {
+        text-decoration: none; }
+        .stories .story-nav a.pulldown li {
+          width: 80%;
+          margin-left: 10%;
+          height: auto;
+          text-align: center;
+          font-size: 2.5em;
+          list-style-type: none; }
       .stories .story-nav ul {
+        display: none;
         text-align: center;
         list-style-type: none;
         padding: 0;
@@ -585,25 +605,12 @@ li {
       margin-left: 5%;
       margin-right: 5%; } }
 @media screen and (max-width: 600px), screen and (max-device-width: 600px) {
-  body {
-    background-color: white;
-    background: url(../img/clouds.jpg) no-repeat left top;
-    background-size: contain;
-    background-attachment: fixed; }
-
   h1 {
-    background-color: black;
-    color: #d9d9d9;
     width: 90%;
     margin-left: 5%;
-    text-align: center;
     line-height: 1;
     padding: 10px;
     font-size: 4.5em; }
-
-  h2 {
-    font-size: 4.5em;
-    color: black; }
 
   p {
     letter-spacing: -1px;
@@ -611,21 +618,6 @@ li {
     line-height: 1.5;
     font-size: 3em;
     color: black; }
-
-  li {
-    border: 5px solid black;
-    color: black;
-    background-color: white; }
-    li:hover {
-      background-color: black;
-      color: white; }
-      li:hover.unreleased {
-        background-color: #fb0015; }
-    li.active {
-      background-color: black;
-      color: white; }
-      li.active.unreleased {
-        background-color: #fb0015; }
 
   .content {
     position: relative;
