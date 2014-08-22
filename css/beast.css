@@ -581,7 +581,8 @@ li {
     .stories .story-nav {
       margin-top: 48px; }
       .stories .story-nav a.pulldown {
-        text-decoration: none; }
+        text-decoration: none;
+        display: none; }
         .stories .story-nav a.pulldown li {
           width: 80%;
           margin-left: 10%;
