@@ -569,6 +569,9 @@ li {
           margin-left: 15%;
           height: auto;
           overflow: hidden; }
+        .composers .composers-wrap .slide h1 {
+          width: 90%;
+          margin-left: 5%; }
         .composers .composers-wrap .slide img {
           max-width: 102%;
           height: auto; }
