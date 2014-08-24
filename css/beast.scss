@@ -115,7 +115,7 @@ li{
 	font-size: 0.9em;
 	width: 110px;
 	height: 20px;
-	margin: 5px;
+	margin: auto;
 	padding: 10px;
 	font-weight: bold;
 	text-transform: uppercase;
@@ -132,6 +132,9 @@ li{
 		&.unreleased{
 			background-color: $red;
 		}
+	}
+	&:first-child{
+		padding-left: 0;
 	}
 }
 
@@ -170,6 +173,7 @@ li{
 			top: 0;
 			position: absolute;
 			text-align: center;
+			background-color: blue;
 			z-index: 9;
 			-webkit-perspective: 1000px;
 			-webkit-transform-style: preserve-3d;
@@ -372,6 +376,7 @@ li{
 	padding: 10px;
 	box-sizing: border-box;
 	font-size: 4.5em;
+	@include smallboxy;
 
 }
 
@@ -396,6 +401,8 @@ li{
 	border: 5px solid black;
 	color: black;
 	background-color: white;
+	padding-left: 0;
+	padding-right: 0;
 	&:hover{
 		background-color: black;
 		color:white;
@@ -433,6 +440,7 @@ li{
 		height: 100%;
 		video{
 			display: none;
+			width: 100%;
 		}
 		.title{
 			width: 100%;
@@ -446,8 +454,12 @@ li{
 			img{
 				//looks shit in normal mode, but good in iframe
 				margin-top: 40%;
-				-webkit-transform: translateZ(0px);
-				-webkit-transform-style: preserve-3d;
+				padding: 0;
+				margin-left: 0;
+				width: 80%;
+				max-width: 80%;
+				// -webkit-transform: translateZ(0px);
+				// -webkit-transform-style: preserve-3d;
 				// -webkit-animation: 'scale' 4s;
 			}
 		}
@@ -682,6 +694,7 @@ li{
 @media screen and (max-width: 600px){
 	body{
 		max-width: 100%;
+		margin: 0;
 	}
 
 	h1 {
@@ -690,6 +703,7 @@ li{
 	line-height: 1;
 	padding: 10px;
 	font-size: 1em;
+	@include smallboxy;
 
 }
 
@@ -698,7 +712,7 @@ p{
 	letter-spacing: -1px;
 	font-family: karla, 'Helvetica Neue', helvetica, sans-serif;
 	line-height: 1.5;
-	font-size: 1em;
+	font-size: 1.2em;
 	color: black;
 }
 
@@ -723,6 +737,7 @@ p{
 		height: 100%;
 		video{
 			display: none;
+			width: 100%;
 		}
 		.title{
 			width: 100%;
@@ -731,12 +746,16 @@ p{
 			position: absolute;
 			text-align: center;
 			z-index: 9;
+			padding: 0;
 			-webkit-perspective: 1000px;
 			-webkit-transform-style: preserve-3d;
 			img{
 				//looks shit in normal mode, but good in iframe
 				margin-top: 40%;
-				max-width: 100%;
+				max-width: 80%;
+				padding: 0;
+				width: 80%;
+				margin-left: 0;
 				-webkit-transform: translateZ(0px);
 				-webkit-transform-style: preserve-3d;
 				// -webkit-animation: 'scale' 4s;
@@ -766,7 +785,7 @@ p{
 				list-style-type: none;
 				padding: 0;
 				width: 80%;
-				margin-left: 10%;
+				margin-left: 0;
 				a{
 					text-decoration: none;
 					li{
@@ -873,14 +892,14 @@ p{
 		margin-top: 48px;
 		margin-left: 5%;
 		img{
-			width: 80%;
-			margin-left: 10%;
-			@include boxy;
+			width: 100%;
+			margin-left: 0;
+			@include smallboxy;
 		}
 		iframe{
-			width: 80%;
-			margin: 0 10% 5% 10%;
-			@include boxy;
+			width: 100%;
+			margin: 0 0 5% 0;
+			@include smallboxy;
 			-webkit-filter: grayscale(1);
 		}
 	}

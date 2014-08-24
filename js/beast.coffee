@@ -14,7 +14,6 @@ $ ->
 	init = ->
 		setupBinds()
 		setupYouTube()
-		# $('h1.colors').fitText(1)
 		$('.video-nav ul a.episode li').first().addClass "active"
 		$('.story-nav ul a.additional-episode li').first().addClass "active"
 		setTimeout(sendHeight(getHeight()), 500)

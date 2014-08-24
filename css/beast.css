@@ -187,7 +187,7 @@ li {
   font-size: 0.9em;
   width: 110px;
   height: 20px;
-  margin: 5px;
+  margin: auto;
   padding: 10px;
   font-weight: bold;
   text-transform: uppercase; }
@@ -201,6 +201,8 @@ li {
     color: #d9d9d9; }
     li.active.unreleased {
       background-color: #fb0015; }
+  li:first-child {
+    padding-left: 0; }
 
 .content {
   position: relative;
@@ -233,6 +235,7 @@ li {
       top: 0;
       position: absolute;
       text-align: center;
+      background-color: blue;
       z-index: 9;
       -webkit-perspective: 1000px;
       -webkit-transform-style: preserve-3d; }
@@ -394,7 +397,8 @@ li {
     line-height: 1;
     padding: 10px;
     box-sizing: border-box;
-    font-size: 4.5em; }
+    font-size: 4.5em;
+    box-shadow: 1px 0px 0px #4d4d4d, 0px 1px 0px #333333, 2px 1px 0px #4d4d4d, 1px 2px 0px #333333, 3px 2px 0px #4d4d4d, 2px 3px 0px #333333, 4px 3px 0px #4d4d4d, 3px 4px 0px #333333, 5px 4px 0px #4d4d4d, 4px 5px 0px #333333, 6px 5px 0px #4d4d4d, 5px 6px 0px #333333, 7px 6px 0px #4d4d4d, 6px 7px 0px #333333, 8px 7px 0px #4d4d4d, 7px 8px 0px #333333, 9px 8px 0px #4d4d4d, 8px 9px 0px #333333, 10px 9px 0px #4d4d4d, 9px 10px 0px #333333, 11px 10px 0px #4d4d4d; }
 
   h2 {
     font-size: 2em;
@@ -410,7 +414,9 @@ li {
   li {
     border: 5px solid black;
     color: black;
-    background-color: white; }
+    background-color: white;
+    padding-left: 0;
+    padding-right: 0; }
     li:hover {
       background-color: black;
       color: white; }
@@ -439,7 +445,8 @@ li {
       width: 100%;
       height: 100%; }
       .content .startscreen video {
-        display: none; }
+        display: none;
+        width: 100%; }
       .content .startscreen .title {
         width: 100%;
         height: 100%;
@@ -451,8 +458,10 @@ li {
         -webkit-transform-style: preserve-3d; }
         .content .startscreen .title img {
           margin-top: 40%;
-          -webkit-transform: translateZ(0px);
-          -webkit-transform-style: preserve-3d; }
+          padding: 0;
+          margin-left: 0;
+          width: 80%;
+          max-width: 80%; }
     .content .videos {
       position: relative;
       margin-top: 130%;
@@ -631,20 +640,22 @@ li {
       margin-right: 5%; } }
 @media screen and (max-width: 600px) {
   body {
-    max-width: 100%; }
+    max-width: 100%;
+    margin: 0; }
 
   h1 {
     width: 80%;
     margin-left: 10%;
     line-height: 1;
     padding: 10px;
-    font-size: 1em; }
+    font-size: 1em;
+    box-shadow: 1px 0px 0px #4d4d4d, 0px 1px 0px #333333, 2px 1px 0px #4d4d4d, 1px 2px 0px #333333, 3px 2px 0px #4d4d4d, 2px 3px 0px #333333, 4px 3px 0px #4d4d4d, 3px 4px 0px #333333, 5px 4px 0px #4d4d4d, 4px 5px 0px #333333, 6px 5px 0px #4d4d4d, 5px 6px 0px #333333, 7px 6px 0px #4d4d4d, 6px 7px 0px #333333, 8px 7px 0px #4d4d4d, 7px 8px 0px #333333, 9px 8px 0px #4d4d4d, 8px 9px 0px #333333, 10px 9px 0px #4d4d4d, 9px 10px 0px #333333, 11px 10px 0px #4d4d4d; }
 
   p {
     letter-spacing: -1px;
     font-family: karla, 'Helvetica Neue', helvetica, sans-serif;
     line-height: 1.5;
-    font-size: 1em;
+    font-size: 1.2em;
     color: black; }
 
   .content {
@@ -664,7 +675,8 @@ li {
       width: 100%;
       height: 100%; }
       .content .startscreen video {
-        display: none; }
+        display: none;
+        width: 100%; }
       .content .startscreen .title {
         width: 100%;
         height: 100%;
@@ -672,11 +684,15 @@ li {
         position: absolute;
         text-align: center;
         z-index: 9;
+        padding: 0;
         -webkit-perspective: 1000px;
         -webkit-transform-style: preserve-3d; }
         .content .startscreen .title img {
           margin-top: 40%;
-          max-width: 100%;
+          max-width: 80%;
+          padding: 0;
+          width: 80%;
+          margin-left: 0;
           -webkit-transform: translateZ(0px);
           -webkit-transform-style: preserve-3d; }
     .content .videos {
@@ -698,7 +714,7 @@ li {
           list-style-type: none;
           padding: 0;
           width: 80%;
-          margin-left: 10%; }
+          margin-left: 0; }
           .content .videos .video-nav ul a {
             text-decoration: none; }
             .content .videos .video-nav ul a li {
@@ -792,13 +808,13 @@ li {
       margin-top: 48px;
       margin-left: 5%; }
       .radio .show img {
-        width: 80%;
-        margin-left: 10%;
-        box-shadow: 1px 0px 0px #4d4d4d, 0px 1px 0px #333333, 2px 1px 0px #4d4d4d, 1px 2px 0px #333333, 3px 2px 0px #4d4d4d, 2px 3px 0px #333333, 4px 3px 0px #4d4d4d, 3px 4px 0px #333333, 5px 4px 0px #4d4d4d, 4px 5px 0px #333333, 6px 5px 0px #4d4d4d, 5px 6px 0px #333333, 7px 6px 0px #4d4d4d, 6px 7px 0px #333333, 8px 7px 0px #4d4d4d, 7px 8px 0px #333333, 9px 8px 0px #4d4d4d, 8px 9px 0px #333333, 10px 9px 0px #4d4d4d, 9px 10px 0px #333333, 11px 10px 0px #4d4d4d, 10px 11px 0px #333333, 12px 11px 0px #4d4d4d, 11px 12px 0px #333333, 13px 12px 0px #4d4d4d, 12px 13px 0px #333333, 14px 13px 0px #4d4d4d, 13px 14px 0px #333333, 15px 14px 0px #4d4d4d, 14px 15px 0px #333333, 16px 15px 0px #4d4d4d, 15px 16px 0px #333333, 16px 16px 0px #4d4d4d; }
+        width: 100%;
+        margin-left: 0;
+        box-shadow: 1px 0px 0px #4d4d4d, 0px 1px 0px #333333, 2px 1px 0px #4d4d4d, 1px 2px 0px #333333, 3px 2px 0px #4d4d4d, 2px 3px 0px #333333, 4px 3px 0px #4d4d4d, 3px 4px 0px #333333, 5px 4px 0px #4d4d4d, 4px 5px 0px #333333, 6px 5px 0px #4d4d4d, 5px 6px 0px #333333, 7px 6px 0px #4d4d4d, 6px 7px 0px #333333, 8px 7px 0px #4d4d4d, 7px 8px 0px #333333, 9px 8px 0px #4d4d4d, 8px 9px 0px #333333, 10px 9px 0px #4d4d4d, 9px 10px 0px #333333, 11px 10px 0px #4d4d4d; }
       .radio .show iframe {
-        width: 80%;
-        margin: 0 10% 5% 10%;
-        box-shadow: 1px 0px 0px #4d4d4d, 0px 1px 0px #333333, 2px 1px 0px #4d4d4d, 1px 2px 0px #333333, 3px 2px 0px #4d4d4d, 2px 3px 0px #333333, 4px 3px 0px #4d4d4d, 3px 4px 0px #333333, 5px 4px 0px #4d4d4d, 4px 5px 0px #333333, 6px 5px 0px #4d4d4d, 5px 6px 0px #333333, 7px 6px 0px #4d4d4d, 6px 7px 0px #333333, 8px 7px 0px #4d4d4d, 7px 8px 0px #333333, 9px 8px 0px #4d4d4d, 8px 9px 0px #333333, 10px 9px 0px #4d4d4d, 9px 10px 0px #333333, 11px 10px 0px #4d4d4d, 10px 11px 0px #333333, 12px 11px 0px #4d4d4d, 11px 12px 0px #333333, 13px 12px 0px #4d4d4d, 12px 13px 0px #333333, 14px 13px 0px #4d4d4d, 13px 14px 0px #333333, 15px 14px 0px #4d4d4d, 14px 15px 0px #333333, 16px 15px 0px #4d4d4d, 15px 16px 0px #333333, 16px 16px 0px #4d4d4d;
+        width: 100%;
+        margin: 0 0 5% 0;
+        box-shadow: 1px 0px 0px #4d4d4d, 0px 1px 0px #333333, 2px 1px 0px #4d4d4d, 1px 2px 0px #333333, 3px 2px 0px #4d4d4d, 2px 3px 0px #333333, 4px 3px 0px #4d4d4d, 3px 4px 0px #333333, 5px 4px 0px #4d4d4d, 4px 5px 0px #333333, 6px 5px 0px #4d4d4d, 5px 6px 0px #333333, 7px 6px 0px #4d4d4d, 6px 7px 0px #333333, 8px 7px 0px #4d4d4d, 7px 8px 0px #333333, 9px 8px 0px #4d4d4d, 8px 9px 0px #333333, 10px 9px 0px #4d4d4d, 9px 10px 0px #333333, 11px 10px 0px #4d4d4d;
         -webkit-filter: grayscale(1); }
 
   .stories {
