@@ -383,10 +383,7 @@ li {
 
 @media screen and (max-width: 1024px) {
   body {
-    background-color: white;
-    background: url(../img/clouds.jpg) no-repeat left top;
-    background-size: contain;
-    max-width: 100%; }
+    background-color: white; }
 
   h1 {
     background-color: black;
