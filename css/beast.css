@@ -447,7 +447,7 @@ li {
       width: 100%;
       height: 100%; }
       .content .startscreen video {
-        display: none;
+        display: block;
         width: 100%; }
       .content .startscreen .title {
         width: 100%;
