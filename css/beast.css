@@ -790,6 +790,9 @@ li {
         display: none; }
         .composers .composers-wrap .slide.active {
           display: block; }
+        .composers .composers-wrap .slide h1 {
+          width: 90%;
+          margin-left: 5%; }
         .composers .composers-wrap .slide .img-wrap {
           width: 70%;
           margin-left: 15%;
