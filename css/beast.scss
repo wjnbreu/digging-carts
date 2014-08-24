@@ -361,6 +361,7 @@ li{
 		background-color: white;
 		background: url(../img/clouds.jpg) no-repeat left top;
 		background-size: contain;
+		max-width: 100%;
 
 	}
 
@@ -682,6 +683,9 @@ li{
 
 //IPHONE
 @media screen and (max-width: 600px){
+	body{
+		max-width: 100%;
+	}
 
 	h1 {
 	width: 80%;
@@ -734,7 +738,7 @@ p{
 			-webkit-transform-style: preserve-3d;
 			img{
 				//looks shit in normal mode, but good in iframe
-				margin-top: 50%;
+				margin-top: 40%;
 				max-width: 100%;
 				-webkit-transform: translateZ(0px);
 				-webkit-transform-style: preserve-3d;

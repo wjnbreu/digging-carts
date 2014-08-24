@@ -385,7 +385,8 @@ li {
   body {
     background-color: white;
     background: url(../img/clouds.jpg) no-repeat left top;
-    background-size: contain; }
+    background-size: contain;
+    max-width: 100%; }
 
   h1 {
     background-color: black;
@@ -632,6 +633,9 @@ li {
       margin-left: 5%;
       margin-right: 5%; } }
 @media screen and (max-width: 600px) {
+  body {
+    max-width: 100%; }
+
   h1 {
     width: 80%;
     margin-left: 10%;
@@ -674,7 +678,7 @@ li {
         -webkit-perspective: 1000px;
         -webkit-transform-style: preserve-3d; }
         .content .startscreen .title img {
-          margin-top: 50%;
+          margin-top: 40%;
           max-width: 100%;
           -webkit-transform: translateZ(0px);
           -webkit-transform-style: preserve-3d; }
