@@ -475,7 +475,7 @@ li{
 			margin-bottom: 20px;
 			border: 0;
 			border: none;
-			@include boxy;
+			@include smallboxy;
 		}
 
 
@@ -610,12 +610,12 @@ li{
 		img{
 			width: 80%;
 			margin-left: 10%;
-			@include boxy;
+			@include smallboxy;
 		}
 		iframe{
 			width: 80%;
 			margin: 0 10% 5% 10%;
-			@include boxy;
+			@include smallboxy;
 			-webkit-filter: grayscale(1);
 		}
 	}
@@ -666,7 +666,7 @@ li{
 		box-shadow: 5px 5px 5px #030102;
 		border: 0;
 		border: none;
-		@include boxy;
+		@include smallboxy;
 	}
 	p.body{
 		text-align: center;
@@ -776,7 +776,7 @@ p{
 			margin-bottom: 20px;
 			border: 0;
 			border: none;
-			@include boxy;
+			@include smallboxy;
 		}
 
 
@@ -951,7 +951,7 @@ p{
 		box-shadow: 5px 5px 5px #030102;
 		border: 0;
 		border: none;
-		@include boxy;
+		@include smallboxy;
 	}
 	p.body{
 		text-align: center;
