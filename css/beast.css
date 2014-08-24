@@ -388,11 +388,11 @@ li {
 
 @media screen and (max-width: 1024px) {
   body {
-    background-color: white; }
+    background-color: #d9d9d9; }
 
   h1 {
     background-color: black;
-    color: white;
+    color: #d9d9d9;
     width: 80%;
     margin-left: 10%;
     text-align: center;
@@ -416,17 +416,17 @@ li {
   li {
     border: 5px solid black;
     color: black;
-    background-color: white;
+    background-color: #d9d9d9;
     padding-left: 0;
     padding-right: 0; }
     li:hover {
       background-color: black;
-      color: white; }
+      color: #d9d9d9; }
       li:hover.unreleased {
         background-color: #fb0015; }
     li.active {
       background-color: black;
-      color: white; }
+      color: #d9d9d9; }
       li.active.unreleased {
         background-color: #fb0015; }
 
@@ -438,7 +438,7 @@ li {
     overflow-x: hidden !important;
     top: 0;
     left: 0;
-    color: white;
+    color: #d9d9d9;
     z-index: 9; }
     .content .startscreen {
       position: relative;
