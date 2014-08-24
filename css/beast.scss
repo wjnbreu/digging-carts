@@ -7,7 +7,10 @@
 
 html{
 	font-family: bit, karla, 'Helvetica Neue', helvetica, sans-serif;
+	-ms-text-size-adjust:100%;
+	-webkit-text-size-adjust:100%;
 }
+
 
 body{
 	margin: 0;
@@ -18,6 +21,8 @@ body{
 	-webkit-tap-highlight-color: transparent;
 	background-color: $gray;
 	-webkit-overflow-scrolling: touch;
+	@include vendorize(text-size-adjust, none);
+	@include vendorize(text-size-adjust, 100%);
 }
 
 h1 {
@@ -351,7 +356,7 @@ li{
 
 
 
-@media screen and (max-width: 1024px), screen and (max-device-width:1024px){
+@media screen and (max-width: 1024px){
 	body{
 		background-color: white;
 		background: url(../img/clouds.jpg) no-repeat left top;
@@ -676,7 +681,7 @@ li{
 
 
 //IPHONE
-@media screen and (max-width: 600px), screen and (max-device-width: 600px){
+@media screen and (max-width: 600px){
 
 	h1 {
 	width: 80%;
