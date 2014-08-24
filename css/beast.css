@@ -744,7 +744,7 @@ li {
       .composers .composers-wrap .arrow-right {
         z-index: 909;
         position: absolute;
-        top: 160px;
+        top: 200px;
         right: 0;
         width: 40px;
         height: 40px;
@@ -760,7 +760,7 @@ li {
       .composers .composers-wrap .arrow-left {
         z-index: 909;
         position: absolute;
-        top: 160px;
+        top: 200px;
         left: 0;
         width: 40px;
         height: 40px;
