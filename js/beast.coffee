@@ -1,4 +1,5 @@
 $ ->
+	#OG title video 1280x720
 	composerObject = {}
 	videoObject = {}
 	mixObject = {}
