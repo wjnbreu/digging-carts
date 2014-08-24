@@ -43,8 +43,8 @@ $ ->
 	
 	window.onYouTubeIframeAPIReady = ->
 		player1 = new YT.Player 'player',
-			height: '390'
-			width: '640'
+			height: '39'
+			width: '64'
 			videoId: 'WYSupJ5r2zo'
 			events: {
 				"onReady": onPlayerReady1
@@ -58,8 +58,8 @@ $ ->
 			}
 		
 		player2 = new YT.Player 'storyplayer',
-			height: '390'
-			width: '640'
+			height: '39'
+			width: '64'
 			videoId: 'VsbG4pXrhr8'
 			events: {
 				"onReady": onPlayerReady2

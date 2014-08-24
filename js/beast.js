@@ -44,8 +44,8 @@
         };
         window.onYouTubeIframeAPIReady = function() {
             m = new YT.Player("player", {
-                height: "390",
-                width: "640",
+                height: "39",
+                width: "64",
                 videoId: "WYSupJ5r2zo",
                 events: {
                     onReady: v
@@ -58,8 +58,8 @@
                 }
             });
             return y = new YT.Player("storyplayer", {
-                height: "390",
-                width: "640",
+                height: "39",
+                width: "64",
                 videoId: "VsbG4pXrhr8",
                 events: {
                     onReady: h
