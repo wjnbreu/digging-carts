@@ -756,7 +756,7 @@ li {
         -o-transition: all 0.2s ease-in-out;
         transition: all 0.2s ease-in-out; }
         .composers .composers-wrap .arrow-right:hover {
-          right: 15px; }
+          right: 0; }
       .composers .composers-wrap .arrow-left {
         z-index: 909;
         position: absolute;
@@ -777,7 +777,7 @@ li {
         -o-transition: all 0.2s ease-in-out;
         transition: all 0.2s ease-in-out; }
         .composers .composers-wrap .arrow-left:hover {
-          left: 15px; }
+          left: 0; }
       .composers .composers-wrap .slide {
         width: 100%;
         display: block;

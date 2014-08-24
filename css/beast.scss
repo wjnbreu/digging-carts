@@ -834,7 +834,7 @@ p{
 				background-size: cover;
 				@include vendorize(transition, all .2s ease-in-out);
 				&:hover{
-					right: 15px;
+					right: 0;
 				}
 			}
 			.arrow-left{
@@ -849,7 +849,7 @@ p{
 				@include vendorize(transform, rotate(180deg));
 				@include vendorize(transition, all .2s ease-in-out);
 				&:hover{
-					left: 15px;
+					left: 0;
 				}
 			}
 			.slide{
