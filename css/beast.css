@@ -448,6 +448,8 @@ li {
       height: 100%; }
       .content .startscreen video {
         display: block;
+        width: 400px;
+        height: 300px;
         width: 100%; }
       .content .startscreen .title {
         width: 100%;
