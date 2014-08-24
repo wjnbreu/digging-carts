@@ -191,6 +191,7 @@ $ ->
 		margin = diff / 2
 		player.css
 			marginLeft: margin
+			display: 'block'
 
 		sendHeight(getHeight())
 

@@ -1,8 +1,8 @@
 (function() {
     $(function() {
-        var e, t, i, r, n, a, d, s, o, l, c, u, f, p, v, h, m, y, w, g, C, b, T, D, I;
+        var e, t, i, r, n, a, d, s, o, l, c, u, f, p, v, h, m, y, w, g, C, b, T, k, D;
         s = {};
-        I = {};
+        D = {};
         p = {};
         r = {};
         f = {};
@@ -12,7 +12,7 @@
         u = 0;
         c = function() {
             T();
-            D();
+            k();
             $(".video-nav ul a.episode li").first().addClass("active");
             $(".story-nav ul a.additional-episode li").first().addClass("active");
             setTimeout(b(l()), 500);
@@ -35,7 +35,7 @@
         l = function() {
             return $(document.body).height() + 300;
         };
-        D = function() {
+        k = function() {
             var e, t;
             t = document.createElement("script");
             t.src = "https://www.youtube.com/iframe_api";
@@ -189,7 +189,8 @@
             t = o - s;
             i = t / 2;
             a.css({
-                marginLeft: i
+                marginLeft: i,
+                display: "block"
             });
             return b(l());
         };
@@ -215,16 +216,16 @@
                 include: 1,
                 order: "fields.order"
             }).done(function(e) {
-                I = e;
+                D = e;
                 w(1);
-                i(I, $(".video-nav ul"), "main");
+                i(D, $(".video-nav ul"), "main");
                 return $("a.episode").bind("click", function(e) {
                     var t;
                     e.preventDefault();
                     $(this).parent().find("li").removeClass("active");
                     $(this).find("li").addClass("active");
                     t = $(this).data("order");
-                    return d($(this), t, I);
+                    return d($(this), t, D);
                 });
             });
             n.entries({
