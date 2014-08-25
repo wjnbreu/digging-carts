@@ -341,7 +341,6 @@ li {
       top: 0;
       position: absolute;
       text-align: center;
-      background-color: blue;
       z-index: 9;
       -webkit-perspective: 1000px;
       -webkit-transform-style: preserve-3d; }
@@ -514,7 +513,7 @@ li {
     letter-spacing: -1px;
     font-family: karla, 'Helvetica Neue', helvetica, sans-serif;
     line-height: 1.5;
-    font-size: 1em;
+    font-size: 1.5em;
     color: black; }
 
   li {
@@ -545,16 +544,15 @@ li {
     color: #d9d9d9;
     z-index: 9; }
     .content .startscreen {
-      position: relative;
+      position: absolute;
       top: 0;
       left: 0;
       width: 100%;
-      height: 100%; }
+      height: 100%;
+      background: url(../img/static-title.jpg) no-repeat top center;
+      background-size: contain; }
       .content .startscreen video {
-        display: block;
-        width: 1280px;
-        height: 720px;
-        width: 100%; }
+        display: none; }
       .content .startscreen .title {
         width: 100%;
         height: 100%;
@@ -565,14 +563,14 @@ li {
         -webkit-perspective: 1000px;
         -webkit-transform-style: preserve-3d; }
         .content .startscreen .title img {
-          margin-top: 40%;
+          margin-top: 10%;
           padding: 0;
           margin-left: 0;
           width: 80%;
           max-width: 80%; }
     .content .videos {
       position: relative;
-      margin-top: 130%;
+      margin-top: 80%;
       width: 100%; }
       .content .videos iframe {
         margin-left: 20%;
@@ -708,7 +706,7 @@ li {
   .stories {
     position: relative;
     margin-top: 50%;
-    margin-bottom: 400px; }
+    margin-bottom: 200px; }
     .stories .story-nav {
       margin-top: 48px; }
       .stories .story-nav a.pulldown {
@@ -733,7 +731,7 @@ li {
           .stories .story-nav ul a li {
             display: block;
             width: 100%;
-            font-size: 3em;
+            font-size: 1em;
             height: auto;
             margin: 0;
             margin-top: 10px; }
@@ -759,14 +757,14 @@ li {
     margin-left: 10%;
     line-height: 1;
     padding: 10px;
-    font-size: 2em;
+    font-size: 3em;
     box-shadow: 1px 0px 0px #4d4d4d, 0px 1px 0px #333333, 2px 1px 0px #4d4d4d, 1px 2px 0px #333333, 3px 2px 0px #4d4d4d, 2px 3px 0px #333333, 4px 3px 0px #4d4d4d, 3px 4px 0px #333333, 5px 4px 0px #4d4d4d, 4px 5px 0px #333333, 6px 5px 0px #4d4d4d, 5px 6px 0px #333333, 7px 6px 0px #4d4d4d, 6px 7px 0px #333333, 8px 7px 0px #4d4d4d, 7px 8px 0px #333333, 9px 8px 0px #4d4d4d, 8px 9px 0px #333333, 10px 9px 0px #4d4d4d, 9px 10px 0px #333333, 11px 10px 0px #4d4d4d; }
 
   p {
     letter-spacing: -1px;
     font-family: karla, 'Helvetica Neue', helvetica, sans-serif;
     line-height: 1.5;
-    font-size: 1.2em;
+    font-size: 1.5em;
     color: black; }
 
   .content {
@@ -780,7 +778,7 @@ li {
     color: white;
     z-index: 9; }
     .content .startscreen {
-      position: relative;
+      position: absolute;
       top: 0;
       left: 0;
       width: 100%;
@@ -799,7 +797,7 @@ li {
         -webkit-perspective: 1000px;
         -webkit-transform-style: preserve-3d; }
         .content .startscreen .title img {
-          margin-top: 40%;
+          margin-top: 10%;
           max-width: 80%;
           padding: 0;
           width: 80%;
@@ -808,10 +806,8 @@ li {
           -webkit-transform-style: preserve-3d; }
     .content .videos {
       position: relative;
-      margin-top: 150%;
+      margin-top: 80%;
       width: 100%; }
-      .content .videos h1 {
-        display: none; }
       .content .videos iframe {
         margin-left: 20%;
         margin-bottom: 20px;

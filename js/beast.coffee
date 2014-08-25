@@ -182,7 +182,7 @@ $ ->
 	resizeVid = (vidPlayer) ->
 		player = $(vidPlayer)
 		winWidth = $(window).width()
-		vidWidth = winWidth / 1.2
+		vidWidth = winWidth / 1.3
 		ogWidth = player.attr('width') #extra box shadow pix
 		ogHeight = player.attr('height')
 		ratio = ogWidth / ogHeight

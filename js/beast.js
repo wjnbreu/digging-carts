@@ -182,7 +182,7 @@
             var t, i, n, r, a, d, s, o;
             a = $(e);
             o = $(window).width();
-            s = o / 1.2;
+            s = o / 1.3;
             r = a.attr("width");
             n = a.attr("height");
             d = r / n;

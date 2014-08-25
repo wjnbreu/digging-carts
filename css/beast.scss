@@ -175,7 +175,6 @@ li{
 			top: 0;
 			position: absolute;
 			text-align: center;
-			background-color: blue;
 			z-index: 9;
 			-webkit-perspective: 1000px;
 			-webkit-transform-style: preserve-3d;
@@ -392,7 +391,7 @@ p{
 	letter-spacing: -1px;
 	font-family: karla, 'Helvetica Neue', helvetica, sans-serif;
 	line-height: 1.5;
-	font-size: 1em;
+	font-size: 1.5em;
 	color: black;
 }
 
@@ -434,16 +433,16 @@ li{
 	color: $gray;
 	z-index: 9;
 	.startscreen{
-		position: relative;
+		position: absolute;
 		top: 0;
 		left: 0;
 		width: 100%;
 		height: 100%;
+		background: url(../img/static-title.jpg) no-repeat top center;
+		background-size: contain;
 		video{
-			display: block;
-			width: 1280px;
-			height: 720px;
-			width: 100%;
+			display: none;
+
 		}
 		.title{
 			width: 100%;
@@ -456,7 +455,7 @@ li{
 			-webkit-transform-style: preserve-3d;
 			img{
 				//looks shit in normal mode, but good in iframe
-				margin-top: 40%;
+				margin-top: 10%;
 				padding: 0;
 				margin-left: 0;
 				width: 80%;
@@ -469,7 +468,7 @@ li{
 	}
 	.videos{
 		position: relative;
-		margin-top: 130%;
+		margin-top: 80%;
 		width: 100%;
 		iframe{
 			margin-left: 20%;
@@ -629,7 +628,7 @@ li{
 .stories{
 	position: relative;
 	margin-top: 50%;
-	margin-bottom: 400px;
+	margin-bottom: 200px;
 	.story-nav{
 		margin-top: 48px;
 		a.pulldown{
@@ -656,7 +655,7 @@ li{
 				li{
 					display: block;
 					width: 100%;
-					font-size: 3em;
+					font-size: 1em;
 					height: auto;
 					margin: 0;
 					margin-top: 10px;
@@ -709,7 +708,7 @@ li{
 	margin-left: 10%;
 	line-height: 1;
 	padding: 10px;
-	font-size: 2em;
+	font-size: 3em;
 	@include smallboxy;
 
 }
@@ -719,7 +718,7 @@ p{
 	letter-spacing: -1px;
 	font-family: karla, 'Helvetica Neue', helvetica, sans-serif;
 	line-height: 1.5;
-	font-size: 1.2em;
+	font-size: 1.5em;
 	color: black;
 }
 
@@ -737,7 +736,7 @@ p{
 	color: white;
 	z-index: 9;
 	.startscreen{
-		position: relative;
+		position: absolute;
 		top: 0;
 		left: 0;
 		width: 100%;
@@ -758,7 +757,7 @@ p{
 			-webkit-transform-style: preserve-3d;
 			img{
 				//looks shit in normal mode, but good in iframe
-				margin-top: 40%;
+				margin-top: 10%;
 				max-width: 80%;
 				padding: 0;
 				width: 80%;
@@ -771,11 +770,8 @@ p{
 	}
 	.videos{
 		position: relative;
-		margin-top: 150%;
+		margin-top: 80%;
 		width: 100%;
-		h1{
-			display: none;
-		}
 		iframe{
 			margin-left: 20%;
 			margin-bottom: 20px;
