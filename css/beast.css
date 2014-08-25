@@ -605,7 +605,7 @@ li {
     left: 0;
     margin: 0;
     min-width: 100%;
-    min-height: 1200px;
+    max-height: 100%;
     height: 100%;
     overflow: hidden;
     background-color: black;
@@ -852,27 +852,6 @@ li {
       text-align: center;
       font-size: 1em;
       list-style-type: none; }
-
-  .spinner {
-    width: 100%;
-    height: 100%;
-    position: fixed;
-    top: 0;
-    left: 0;
-    background-color: black;
-    z-index: 99; }
-    .spinner .load-text {
-      margin-top: 25%;
-      width: 50%;
-      margin-left: 25%;
-      text-align: center;
-      font-size: 2em; }
-      .spinner .load-text span {
-        color: white; }
-        .spinner .load-text span.bounce {
-          -webkit-animation: 'spina' 1s infinite alternate; }
-        .spinner .load-text span.bounce2 {
-          -webkit-animation: 'spinb' 1s infinite alternate; }
 
   li {
     font-family: 'Helvetica Neue', helvetica, sans-serif;
