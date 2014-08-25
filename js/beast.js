@@ -23,7 +23,8 @@
         g = function(e) {
             f = f + e;
             if (f === 4) {
-                return u();
+                u();
+                return f = 0;
             }
         };
         T = function(e) {
@@ -96,7 +97,6 @@
             window.addEventListener("resize", function() {
                 b("#player");
                 b("#storyplayer");
-                I();
                 return T(c());
             });
             $("a.arrow-right").click(function(e) {

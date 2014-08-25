@@ -28,6 +28,7 @@ $ ->
 		#make sure all data is done before calling init
 		if initCount == 4
 			init()
+			initCount = 0
 
 	sendHeight = (height) ->
 		message = {height: height}
@@ -97,7 +98,6 @@ $ ->
 		window.addEventListener 'resize', ->
 			resizeVid('#player')
 			resizeVid('#storyplayer')
-			sizeTitle()
 			sendHeight(getHeight())
 
 		$('a.arrow-right').click (event) ->
