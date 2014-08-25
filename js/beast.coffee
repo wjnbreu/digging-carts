@@ -19,7 +19,6 @@ $ ->
 		$('.video-nav ul a.episode li').first().addClass "active"
 		$('.story-nav ul a.additional-episode li').first().addClass "active"
 		setTimeout(sendHeight(getHeight()), 500)
-		sizeTitle()
 		removeSpinner()
 		
 
@@ -310,5 +309,5 @@ $ ->
 		
 	#launch when ready	
 	getData()
-	window.addEventListener('load', sendHeight(getHeight()));
+	window.addEventListener('load', sendHeight(getHeight()), sizeTitle());
 	
