@@ -86,7 +86,7 @@
         };
         I = function() {
             var e;
-            e = $(window).innerHeight();
+            e = parent.document.body.clientHeight;
             alert(e);
             $(".startscreen").css({
                 height: e + "px"

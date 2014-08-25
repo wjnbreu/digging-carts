@@ -87,7 +87,7 @@ $ ->
 		sendHeight(getHeight())
 	
 	sizeTitle = ->
-		height = $(window).innerHeight()
+		height = parent.document.body.clientHeight
 		alert height
 		$('.startscreen').css
 			height: height + 'px'
