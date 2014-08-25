@@ -1,13 +1,13 @@
 (function() {
     $(function() {
-        var e, t, i, r, n, a, d, s, o, l, c, u, f, p, v, h, m, w, y, g, C, b, T, k, D, I;
+        var e, t, i, r, n, a, d, s, o, l, c, u, f, p, v, h, m, y, w, g, C, b, T, k, D, I;
         s = {};
         I = {};
         v = {};
         r = {};
         p = {};
-        w = {};
         y = {};
+        w = {};
         n = {};
         f = 0;
         o = new Showdown.converter();
@@ -32,7 +32,6 @@
                 height: e
             };
             i = JSON.stringify(t);
-            console.log(i);
             return window.parent.postMessage(i, "*");
         };
         c = function() {
@@ -46,7 +45,7 @@
             return e.parentNode.insertBefore(t, e);
         };
         window.onYouTubeIframeAPIReady = function() {
-            w = new YT.Player("player", {
+            y = new YT.Player("player", {
                 height: "39",
                 width: "64",
                 videoId: "WYSupJ5r2zo",
@@ -60,7 +59,7 @@
                     hd: 1
                 }
             });
-            return y = new YT.Player("storyplayer", {
+            return w = new YT.Player("storyplayer", {
                 height: "39",
                 width: "64",
                 videoId: "VsbG4pXrhr8",
@@ -138,11 +137,11 @@
             var r;
             r = i[t].fields;
             if (e.find("li").hasClass("unreleased")) {
-                w.cueVideoById("T8k44ryj5DQ");
-                w.playVideo();
+                y.cueVideoById("T8k44ryj5DQ");
+                y.playVideo();
                 return $(".videos h1").empty().text(r.episodeTitle);
             } else {
-                w.cueVideoById(r.ytVideoId);
+                y.cueVideoById(r.ytVideoId);
                 $(".videos h1").empty().text(r.episodeTitle);
                 return T(c());
             }
@@ -150,7 +149,7 @@
         a = function(e, t) {
             var i;
             i = t[e].fields;
-            y.cueVideoById(i.additionalYouTube);
+            w.cueVideoById(i.additionalYouTube);
             $(".stories h1").empty().text(i.additionalVideoTitle);
             $(".stories p.body").empty().text(i.description);
             $(".stories p.body").slideDown();
@@ -303,7 +302,6 @@
                 });
             });
         };
-        l();
-        return window.addEventListener("load", T(c()));
+        return l();
     });
 }).call(this);
