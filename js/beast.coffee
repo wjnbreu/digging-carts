@@ -2,6 +2,7 @@ $ ->
 	#OG title video 1280x720
 	#http://www.redbull.tv/Grilosodes/Grilosodes-s03e02
 
+	#vid Ratio = 1.777777777778
 
 	composerObject = {}
 	videoObject = {}
@@ -15,12 +16,13 @@ $ ->
 	converter = new Showdown.converter()
 	player = {}
 	APIModules = {}
+	vidRatio = 1.777777777777778
 
 	playerData = {
 			"playerID" : "1507808033001",
 			"playerKey" : "AQ~~,AAABXxBZKsE~,AdU2xXeQoKCatdLR1Pb_eo4UzCFcjSKc",
-			"width" : "480",
-			"height" : "270",
+			"width" : ($(window).width()) / 1.5,
+			"height" : (($(window).width()) / 1.5) / vidRatio,
 			"videoID" : "2114345471001"
 		}
 
@@ -62,9 +64,10 @@ $ ->
 	window.onTemplateReady = (evt) ->
 		videoPlayer = player.getModule(APIModules.VIDEO_PLAYER)
 		videoPlayer.play()
+		# resizeVid($('#player'))
 
-	onMediaEventFired = (evt) ->
-		alert 'event happened'
+	# onMediaEventFired = (evt) ->
+	# 	alert 'event happened'
 		
 
 	addPlayer = ->
@@ -75,7 +78,6 @@ $ ->
 
 		#instantiate player
 		brightcove.createExperiences()
-		console.log 'almost called'
 
 
 	# setupYouTube = ->

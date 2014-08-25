@@ -1,42 +1,43 @@
 (function() {
     $(function() {
-        var e, a, t, i, r, n, d, o, s, l, c, u, p, f, m, v, h, y, g, w, C, b, D, I, x, T, E, k, M;
+        var e, a, t, i, r, n, d, o, s, l, c, u, p, f, m, v, h, y, w, g, C, b, D, I, x, T, E, k, M;
         l = {};
         M = {};
         h = {};
         n = {};
         v = {};
         w = {};
-        C = {};
+        g = {};
         d = {};
         m = 0;
         c = new Showdown.converter();
-        g = {};
+        y = {};
         e = {};
-        b = {
+        k = 1.777777777777778;
+        C = {
             playerID: "1507808033001",
             playerKey: "AQ~~,AAABXxBZKsE~,AdU2xXeQoKCatdLR1Pb_eo4UzCFcjSKc",
-            width: "480",
-            height: "270",
+            width: $(window).width() / 1.5,
+            height: $(window).width() / 1.5 / k,
             videoID: "2114345471001"
         };
-        D = '<div style="display:none"></div><object id="myExperience" class="BrightcoveExperience"><param name="bgcolor" value="#FFFFFF" /><param name="width" value="{{width}}" /><param name="height" value="{{height}}" /><param name="playerID" value="{{playerID}}" /><param name="playerKey" value="{{playerKey}}" /><param name="isVid" value="true" /><param name="isUI" value="true" /><param name="dynamicStreaming" value="true" /><param name="@videoPlayer" value="{{videoID}}"; /><param name="includeAPI" value="true" /><param name="templateLoadHandler" value="onTemplateLoad" /><param name="templateReadyHandler" value="onTemplateReady" /></object>';
+        b = '<div style="display:none"></div><object id="myExperience" class="BrightcoveExperience"><param name="bgcolor" value="#FFFFFF" /><param name="width" value="{{width}}" /><param name="height" value="{{height}}" /><param name="playerID" value="{{playerID}}" /><param name="playerKey" value="{{playerKey}}" /><param name="isVid" value="true" /><param name="isUI" value="true" /><param name="dynamicStreaming" value="true" /><param name="@videoPlayer" value="{{videoID}}"; /><param name="includeAPI" value="true" /><param name="templateLoadHandler" value="onTemplateLoad" /><param name="templateReadyHandler" value="onTemplateReady" /></object>';
         f = function() {
-            k();
+            E();
             i();
             $(".video-nav ul a.episode li").first().addClass("active");
             $(".story-nav ul a.additional-episode li").first().addClass("active");
-            setTimeout(E(p()), 500);
-            return x();
+            setTimeout(T(p()), 500);
+            return I();
         };
-        I = function(e) {
+        D = function(e) {
             m = m + e;
             if (m === 4) {
                 f();
                 return m = 0;
             }
         };
-        E = function(e) {
+        T = function(e) {
             var a, t;
             a = {
                 height: e
@@ -48,31 +49,27 @@
             return $(document.body).height() + 100;
         };
         window.onTemplateLoad = function(a) {
-            g = brightcove.api.getExperience(a);
+            y = brightcove.api.getExperience(a);
             e = brightcove.api.modules.APIModules;
             return console.log("im so loaded man");
         };
         window.onTemplateReady = function(a) {
             var t;
-            t = g.getModule(e.VIDEO_PLAYER);
+            t = y.getModule(e.VIDEO_PLAYER);
             return t.play();
-        };
-        y = function(e) {
-            return alert("event happened");
         };
         i = function() {
             var e, a;
-            a = Handlebars.compile(D);
-            e = a(b);
+            a = Handlebars.compile(b);
+            e = a(C);
             document.getElementById("player").innerHTML = e;
-            brightcove.createExperiences();
-            return console.log("almost called");
+            return brightcove.createExperiences();
         };
-        k = function() {
+        E = function() {
             window.addEventListener("resize", function() {
-                T("#player");
-                T("#storyplayer");
-                return E(p());
+                x("#player");
+                x("#storyplayer");
+                return T(p());
             });
             $("a.arrow-right").click(function(e) {
                 var a, t, i, r, n;
@@ -85,12 +82,12 @@
                     r = a.find("[data-order=" + (t + 1) + "]");
                     i.removeClass("active");
                     r.addClass("active");
-                    return E(p());
+                    return T(p());
                 } else {
                     r = a.find("[data-order=0]");
                     i.removeClass("active");
                     r.addClass("active");
-                    return E(p());
+                    return T(p());
                 }
             });
             $("a.arrow-left").click(function(e) {
@@ -104,18 +101,18 @@
                     r = a.find("[data-order=" + (t - 1) + "]");
                     i.removeClass("active");
                     r.addClass("active");
-                    return E(p());
+                    return T(p());
                 } else {
                     r = a.find("[data-order=" + (n - 1) + "]");
                     i.removeClass("active");
                     r.addClass("active");
-                    return E(p());
+                    return T(p());
                 }
             });
             return $("a.pulldown").click(function(e) {
                 e.preventDefault();
                 return $(this).parent().find("ul").slideToggle(200, function() {
-                    return E(p());
+                    return T(p());
                 });
             });
         };
@@ -129,7 +126,7 @@
             } else {
                 w.cueVideoById(i.ytVideoId);
                 $(".videos h1").empty().text(i.episodeTitle);
-                return E(p());
+                return T(p());
             }
         };
         o = function(e, a) {
@@ -138,7 +135,7 @@
             $(".stories h1").empty().text(t.additionalVideoTitle);
             $(".stories p.body").empty().text(t.description);
             $(".stories p.body").slideDown();
-            return E(p());
+            return T(p());
         };
         r = function(e, a, t) {
             var i, r, n, d, o, s, l, c, u, p, f;
@@ -206,31 +203,31 @@
                 i = d.artistImage.fields.file.url;
                 n = "<div class='show'><img src='" + i + "'/>" + t + "<p>" + a + "</p></div>";
                 $(".radio").append(n);
-                c.push(E(p()));
+                c.push(T(p()));
             }
             return c;
         };
-        T = function(e) {
+        x = function(e) {
             var a, t, i, r, n, d, o;
-            g = $(e);
+            y = $(e);
             o = $(window).width();
             d = o / 1.3;
-            r = g.attr("width");
-            i = g.attr("height");
+            r = y.attr("width");
+            i = y.attr("height");
             n = r / i;
-            g.attr("width", d);
-            g.attr("height", d / n);
+            y.attr("width", d);
+            y.attr("height", d / n);
             a = o - d;
             t = a / 2;
-            g.css({
+            y.css({
                 marginLeft: t,
                 display: "block"
             });
-            return E(p());
+            return T(p());
         };
-        x = function() {
+        I = function() {
             $(".spinner").remove();
-            return E(p());
+            return T(p());
         };
         u = function() {
             var e;
@@ -243,7 +240,7 @@
                 include: 1
             }).done(function(e) {
                 a(e);
-                return I(1);
+                return D(1);
             });
             e.entries({
                 content_type: "36SuQSSPR6QmWOk8CseMC6",
@@ -251,7 +248,7 @@
                 order: "fields.order"
             }).done(function(e) {
                 M = e;
-                I(1);
+                D(1);
                 r(M, $(".video-nav ul"), "main");
                 return $("a.episode").bind("click", function(e) {
                     var a;
@@ -266,7 +263,7 @@
                 content_type: "2YpXtnGW80EEGgCUsSMmCc",
                 include: 1
             }).done(function(e) {
-                I(1);
+                D(1);
                 return t(e);
             });
             return e.entries({
@@ -274,7 +271,7 @@
                 include: 1,
                 order: "fields.order"
             }).done(function(e) {
-                I(1);
+                D(1);
                 n = e;
                 r(n, $(".story-nav ul"), "additional");
                 return $("a.additional-episode").bind("click", function(e) {
