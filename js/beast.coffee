@@ -91,6 +91,51 @@ $ ->
 			resizeVid('#storyplayer')
 			sendHeight(getHeight())
 
+		$('a.arrow-right').click (event) ->
+			event.preventDefault()
+			composers = $('.composers-wrap')
+			totalComposers = composers.find('.slide').length
+			currentSlide = composers.find('.active')
+			currentPos = currentSlide.data('order')
+
+			#zero index
+			if currentPos <= totalComposers - 2
+				nextSlide = composers.find("[data-order=#{currentPos + 1}]")
+				currentSlide.removeClass 'active'
+				nextSlide.addClass 'active'
+				sendHeight(getHeight())
+			else
+				nextSlide = composers.find("[data-order=0]")
+				currentSlide.removeClass 'active'
+				nextSlide.addClass 'active'
+				sendHeight(getHeight())
+
+		$('a.arrow-left').click (event) ->
+			event.preventDefault()
+			composers = $('.composers-wrap')
+			totalComposers = composers.find('.slide').length
+			currentSlide = composers.find('.active')
+			currentPos = currentSlide.data('order')
+
+			if currentPos >= 1
+				nextSlide = composers.find("[data-order=#{currentPos - 1}]")
+				currentSlide.removeClass 'active'
+				nextSlide.addClass 'active'
+				sendHeight(getHeight())
+
+			else
+				nextSlide = composers.find("[data-order=#{totalComposers - 1}]")
+				currentSlide.removeClass 'active'
+				nextSlide.addClass 'active'
+				sendHeight(getHeight())
+
+		#DROP DOWN MENUS
+		$('a.pulldown').click (event) ->
+			event.preventDefault()
+			$(@).parent().find('ul').slideToggle(200, ->
+				sendHeight(getHeight())
+				)
+
 
 
 	changeVideo = (element, order, videoObject) ->
@@ -112,8 +157,8 @@ $ ->
 		video = additionalVideoObject[order].fields
 		player2.cueVideoById(video.additionalYouTube)
 		$('.stories h1').empty().text video.additionalVideoTitle
-		#$('.stories p.body').empty().text video.description
-		#$('.stories p.body').slideDown()
+		$('.stories p.body').empty().text video.description
+		$('.stories p.body').slideDown()
 		sendHeight(getHeight())
 
 
@@ -161,7 +206,7 @@ $ ->
 			name = person.composerName
 			img = person.image.fields.file.url
 			textBody = converter.makeHtml(person.bio)
-			composerData = "<div class='slide' data-order='#{i}'><div class='img-wrap'><img src='#{img}'/></div><h2>#{person.composerName}</h2><p>#{textBody}</p></div>"
+			composerData = "<div class='slide' data-order='#{i}'><div class='img-wrap'><a class='arrow-left' href></a><a class='arrow-right' href></a><img src='#{img}'/></div><h2>#{person.composerName}</h2><p>#{textBody}</p></div>"
 			$(".composers-wrap").append composerData
 			$('.slide').first().addClass "active"
 		
@@ -249,53 +294,6 @@ $ ->
 				$(@).find('li').addClass "active"
 				order = $(@).data 'order'
 				changeAdditionalVideo(order, additionalVideoObject)
-
-		
-
-	$('a.arrow-right').click (event) ->
-		event.preventDefault()
-		composers = $('.composers-wrap')
-		totalComposers = composers.find('.slide').length
-		currentSlide = composers.find('.active')
-		currentPos = currentSlide.data('order')
-
-		#zero index
-		if currentPos <= totalComposers - 2
-			nextSlide = composers.find("[data-order=#{currentPos + 1}]")
-			currentSlide.removeClass 'active'
-			nextSlide.addClass 'active'
-			sendHeight(getHeight())
-		else
-			nextSlide = composers.find("[data-order=0]")
-			currentSlide.removeClass 'active'
-			nextSlide.addClass 'active'
-			sendHeight(getHeight())
-
-	$('a.arrow-left').click (event) ->
-		event.preventDefault()
-		composers = $('.composers-wrap')
-		totalComposers = composers.find('.slide').length
-		currentSlide = composers.find('.active')
-		currentPos = currentSlide.data('order')
-
-		if currentPos >= 1
-			nextSlide = composers.find("[data-order=#{currentPos - 1}]")
-			currentSlide.removeClass 'active'
-			nextSlide.addClass 'active'
-			sendHeight(getHeight())
-
-		else
-			nextSlide = composers.find("[data-order=#{totalComposers - 1}]")
-			currentSlide.removeClass 'active'
-			nextSlide.addClass 'active'
-			sendHeight(getHeight())
-
-	#DROP DOWN MENUS
-	$('a.pulldown').click (event) ->
-		event.preventDefault()
-		$(@).parent().find('ul').slideToggle(200, ->
-			sendHeight(getHeight())
-			)
 
 
 

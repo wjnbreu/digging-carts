@@ -1,14 +1,14 @@
 (function() {
     $(function() {
-        var e, t, i, n, r, a, d, s, o, l, c, u, f, p, v, h, m, w, y, g, C, b, T, k, D, I;
+        var e, t, i, r, n, a, d, s, o, l, c, u, f, p, v, h, m, w, y, g, C, b, T, k, D, I;
         s = {};
         I = {};
         v = {};
-        n = {};
+        r = {};
         p = {};
         w = {};
         y = {};
-        r = {};
+        n = {};
         f = 0;
         o = new Showdown.converter();
         u = function() {
@@ -82,22 +82,66 @@
             return T(c());
         };
         k = function() {
-            return window.addEventListener("resize", function() {
+            window.addEventListener("resize", function() {
                 b("#player");
                 b("#storyplayer");
                 return T(c());
             });
+            $("a.arrow-right").click(function(e) {
+                var t, i, r, n, a;
+                e.preventDefault();
+                t = $(".composers-wrap");
+                a = t.find(".slide").length;
+                r = t.find(".active");
+                i = r.data("order");
+                if (i <= a - 2) {
+                    n = t.find("[data-order=" + (i + 1) + "]");
+                    r.removeClass("active");
+                    n.addClass("active");
+                    return T(c());
+                } else {
+                    n = t.find("[data-order=0]");
+                    r.removeClass("active");
+                    n.addClass("active");
+                    return T(c());
+                }
+            });
+            $("a.arrow-left").click(function(e) {
+                var t, i, r, n, a;
+                e.preventDefault();
+                t = $(".composers-wrap");
+                a = t.find(".slide").length;
+                r = t.find(".active");
+                i = r.data("order");
+                if (i >= 1) {
+                    n = t.find("[data-order=" + (i - 1) + "]");
+                    r.removeClass("active");
+                    n.addClass("active");
+                    return T(c());
+                } else {
+                    n = t.find("[data-order=" + (a - 1) + "]");
+                    r.removeClass("active");
+                    n.addClass("active");
+                    return T(c());
+                }
+            });
+            return $("a.pulldown").click(function(e) {
+                e.preventDefault();
+                return $(this).parent().find("ul").slideToggle(200, function() {
+                    return T(c());
+                });
+            });
         };
         d = function(e, t, i) {
-            var n;
-            n = i[t].fields;
+            var r;
+            r = i[t].fields;
             if (e.find("li").hasClass("unreleased")) {
                 w.cueVideoById("T8k44ryj5DQ");
                 w.playVideo();
-                return $(".videos h1").empty().text(n.episodeTitle);
+                return $(".videos h1").empty().text(r.episodeTitle);
             } else {
-                w.cueVideoById(n.ytVideoId);
-                $(".videos h1").empty().text(n.episodeTitle);
+                w.cueVideoById(r.ytVideoId);
+                $(".videos h1").empty().text(r.episodeTitle);
                 return T(c());
             }
         };
@@ -106,33 +150,35 @@
             i = t[e].fields;
             y.cueVideoById(i.additionalYouTube);
             $(".stories h1").empty().text(i.additionalVideoTitle);
+            $(".stories p.body").empty().text(i.description);
+            $(".stories p.body").slideDown();
             return T(c());
         };
         i = function(e, t, i) {
-            var n, r, a, d, s, o, l, c, u, f, p;
+            var r, n, a, d, s, o, l, c, u, f, p;
             if (i === "main") {
                 f = [];
                 for (d = o = 0, c = e.length; o < c; d = ++o) {
                     s = e[d];
-                    r = s.fields.episodeNumber;
-                    n = new Date();
+                    n = s.fields.episodeNumber;
+                    r = new Date();
                     a = new Date(s.fields.datetimeOfLaunch);
                     if (moment() < a) {
-                        t.append("<a class='episode' href='#episode' data-order=" + d + "><li class='unreleased' data-release='" + a + "'>" + r + "</li>");
+                        t.append("<a class='episode' href='#episode' data-order=" + d + "><li class='unreleased' data-release='" + a + "'>" + n + "</li>");
                     } else {
-                        t.append("<a class='episode' href='#episode' data-order=" + d + "><li class='released'>" + r + "</li>");
+                        t.append("<a class='episode' href='#episode' data-order=" + d + "><li class='released'>" + n + "</li>");
                     }
                     f.push(t.find("li").each(function() {
-                        var e, t, i, n;
-                        n = $(this);
-                        if (n.hasClass("unreleased")) {
-                            t = n.text();
-                            i = n.data("release");
+                        var e, t, i, r;
+                        r = $(this);
+                        if (r.hasClass("unreleased")) {
+                            t = r.text();
+                            i = r.data("release");
                             e = new Date(i);
-                            n.bind("mouseenter", function() {
-                                return n.empty().text(moment(i).format("ddd, MMM Do"));
+                            r.bind("mouseenter", function() {
+                                return r.empty().text(moment(i).format("ddd, MMM Do"));
                             });
-                            return n.bind("mouseleave", function() {});
+                            return r.bind("mouseleave", function() {});
                         }
                     }));
                 }
@@ -141,51 +187,51 @@
                 p = [];
                 for (d = l = 0, u = e.length; l < u; d = ++l) {
                     s = e[d];
-                    r = s.fields.additionalVideoTitle;
-                    p.push(t.append("<a class='additional-episode' href='#additional-episode' data-order=" + d + "><li>" + r + "</li>"));
+                    n = s.fields.additionalVideoTitle;
+                    p.push(t.append("<a class='additional-episode' href='#additional-episode' data-order=" + d + "><li>" + n + "</li>"));
                 }
                 return p;
             }
         };
         e = function(e) {
-            var t, i, n, r, a, d, s, l, c, u;
+            var t, i, r, n, a, d, s, l, c, u;
             u = [];
-            for (n = l = 0, c = e.length; l < c; n = ++l) {
-                t = e[n];
+            for (r = l = 0, c = e.length; l < c; r = ++l) {
+                t = e[r];
                 d = t.fields;
                 a = d.composerName;
-                r = d.image.fields.file.url;
+                n = d.image.fields.file.url;
                 s = o.makeHtml(d.bio);
-                i = "<div class='slide' data-order='" + n + "'><div class='img-wrap'><img src='" + r + "'/></div><h2>" + d.composerName + "</h2><p>" + s + "</p></div>";
+                i = "<div class='slide' data-order='" + r + "'><div class='img-wrap'><a class='arrow-left' href></a><a class='arrow-right' href></a><img src='" + n + "'/></div><h2>" + d.composerName + "</h2><p>" + s + "</p></div>";
                 $(".composers-wrap").append(i);
                 u.push($(".slide").first().addClass("active"));
             }
             return u;
         };
         t = function(e) {
-            var t, i, n, r, a, d, s, o, l, u;
+            var t, i, r, n, a, d, s, o, l, u;
             u = [];
             for (o = 0, l = e.length; o < l; o++) {
-                r = e[o];
-                d = r.fields;
+                n = e[o];
+                d = n.fields;
                 s = d.artistName;
                 i = d.rbmaRadioEmbedCode;
                 t = d.descriptions;
-                n = d.artistImage.fields.file.url;
-                a = "<div class='show'><img src='" + n + "'/>" + i + "<p>" + t + "</p></div>";
+                r = d.artistImage.fields.file.url;
+                a = "<div class='show'><img src='" + r + "'/>" + i + "<p>" + t + "</p></div>";
                 $(".radio").append(a);
                 u.push(T(c()));
             }
             return u;
         };
         b = function(e) {
-            var t, i, n, r, a, d, s, o;
+            var t, i, r, n, a, d, s, o;
             a = $(e);
             o = $(window).width();
             s = o / 1.3;
-            r = a.attr("width");
-            n = a.attr("height");
-            d = r / n;
+            n = a.attr("width");
+            r = a.attr("height");
+            d = n / r;
             a.attr("width", s);
             a.attr("height", s / d);
             t = o - s;
@@ -201,19 +247,19 @@
             return T(c());
         };
         l = function() {
-            var r;
-            r = contentful.createClient({
+            var n;
+            n = contentful.createClient({
                 accessToken: "38b8dbaf503a350d5722578c6547caca484511f7c78717736ac8f576832be4b0",
                 space: "s9bc5ah7p1d5"
             });
-            r.entries({
+            n.entries({
                 content_type: "42CpXYSUms44OskS6wUU6I",
                 include: 1
             }).done(function(t) {
                 e(t);
                 return g(1);
             });
-            r.entries({
+            n.entries({
                 content_type: "36SuQSSPR6QmWOk8CseMC6",
                 include: 1,
                 order: "fields.order"
@@ -230,75 +276,31 @@
                     return d($(this), t, I);
                 });
             });
-            r.entries({
+            n.entries({
                 content_type: "2YpXtnGW80EEGgCUsSMmCc",
                 include: 1
             }).done(function(e) {
                 g(1);
                 return t(e);
             });
-            return r.entries({
+            return n.entries({
                 content_type: "6fwxAcXrxK4yqyaMUiWwWY",
                 include: 1,
                 order: "fields.order"
             }).done(function(e) {
                 g(1);
-                n = e;
-                i(n, $(".story-nav ul"), "additional");
+                r = e;
+                i(r, $(".story-nav ul"), "additional");
                 return $("a.additional-episode").bind("click", function(e) {
                     var t;
                     e.preventDefault();
                     $(this).parent().find("li").removeClass("active");
                     $(this).find("li").addClass("active");
                     t = $(this).data("order");
-                    return a(t, n);
+                    return a(t, r);
                 });
             });
         };
-        $("a.arrow-right").click(function(e) {
-            var t, i, n, r, a;
-            e.preventDefault();
-            t = $(".composers-wrap");
-            a = t.find(".slide").length;
-            n = t.find(".active");
-            i = n.data("order");
-            if (i <= a - 2) {
-                r = t.find("[data-order=" + (i + 1) + "]");
-                n.removeClass("active");
-                r.addClass("active");
-                return T(c());
-            } else {
-                r = t.find("[data-order=0]");
-                n.removeClass("active");
-                r.addClass("active");
-                return T(c());
-            }
-        });
-        $("a.arrow-left").click(function(e) {
-            var t, i, n, r, a;
-            e.preventDefault();
-            t = $(".composers-wrap");
-            a = t.find(".slide").length;
-            n = t.find(".active");
-            i = n.data("order");
-            if (i >= 1) {
-                r = t.find("[data-order=" + (i - 1) + "]");
-                n.removeClass("active");
-                r.addClass("active");
-                return T(c());
-            } else {
-                r = t.find("[data-order=" + (a - 1) + "]");
-                n.removeClass("active");
-                r.addClass("active");
-                return T(c());
-            }
-        });
-        $("a.pulldown").click(function(e) {
-            e.preventDefault();
-            return $(this).parent().find("ul").slideToggle(200, function() {
-                return T(c());
-            });
-        });
         l();
         return window.addEventListener("load", T(c()));
     });

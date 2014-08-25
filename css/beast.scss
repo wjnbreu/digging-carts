@@ -19,7 +19,8 @@ body{
 	width: 100%;
 	height: 100%;
 	-webkit-tap-highlight-color: transparent;
-	background-color: $gray;
+	background-color: $black;
+	@include vendorize(box-sizing, border-box);
 	-webkit-overflow-scrolling: touch;
 	@include vendorize(text-size-adjust, none);
 	@include vendorize(text-size-adjust, 100%);
@@ -28,10 +29,13 @@ body{
 h1 {
 	text-transform: uppercase;
 	@include boxy;
-	background-color: black;
-	color: $gray;
+	background-color: $gray;
+	color: $black;
 	width: 70%;
-	margin-left: 15%;
+	// max-width: 700px;
+	margin: auto;
+	margin-top: 48px;
+	margin-bottom: 48px;
 	text-align: center;
 	line-height: 1;
 	padding: 10px;
@@ -45,7 +49,7 @@ h1 {
 
 h2{
 	font-size: 2.5em;
-	color: black;
+	color:$gray;
 }
 
 p{
@@ -53,7 +57,7 @@ p{
 	font-family: karla, 'Helvetica Neue', helvetica, sans-serif;
 	line-height: 1.5;
 	font-size: 1.7em;
-	color: black;
+	color: $gray;
 }
 
 a.pulldown{
@@ -109,9 +113,9 @@ h1,h2,h3,h4{
 
 li{
 	font-family: 'Helvetica Neue', helvetica, sans-serif;
-	border: 4px solid black;
-	color: $black;
-	background-color: $gray;
+	border: 4px solid $gray;
+	color: $gray;
+	background-color: $black;
 	font-size: 0.8em;
 	width: 110px;
 	height: 20px;
@@ -120,19 +124,22 @@ li{
 	padding-top: 10px;
 	padding-bottom: 10px;
 	font-weight: bold;
+	line-height: 20px;
 	text-transform: uppercase;
 	&:hover{
-		background-color: black;
-		color:$gray;
+		background-color: $gray;
+		color:$black;
 		&.unreleased{
 			background-color: $red;
+			border: 4px solid $red;
 		}
 	}
 	&.active{
-		background-color: black;
-		color: $gray;
+		background-color: $gray;
+		color: $black;
 		&.unreleased{
 			background-color: $red;
+			border: 4px solid $red;
 		}
 	}
 	&:first-child{
@@ -141,31 +148,34 @@ li{
 }
 
 
-
-
-.content{
-	position: relative;
+.pageWrap{
 	width: 100%;
 	height: 100%;
-	overflow: auto;
-	overflow-x: hidden !important;
-	top: 0;
-	left: 0;
-	color: white;
-	z-index: 9;
+	float: right; 
+}
+
+
 	.startscreen{
 		position: relative;
+		background-color: $black;
 		top: 0;
 		left: 0;
-		width: 100%;
+		margin: 0;
+		min-width: 100%;
+		min-height: 800px;
 		height: 100%;
+		overflow: hidden;
 		video{
 			display: block;
+			background-color: $black;
 			z-index: 0;
 			position: absolute;
-			width: 100%;
+			min-width: 100%;
+			min-height: 100%;
 			margin: 0;
 			border: 0;
+			top: 0;
+			left: 0;
 			border: none;
 			@include boxy;
 		}
@@ -181,6 +191,7 @@ li{
 			img{
 				//looks shit in normal mode, but good in iframe
 				margin-top: 6.25%;
+				width: 80%;
 				-webkit-transform: translateZ(0px);
 				-webkit-transform-style: preserve-3d;
 				// -webkit-animation: 'scale' 4s;
@@ -189,9 +200,10 @@ li{
 	}
 	.videos{
 		position: relative;
-		margin-top: 65%;
 		width: 100%;
-		
+		background-color: $black;
+		padding-bottom: 48px;
+		border-bottom: 4px solid $gray;
 		.video-nav{
 			margin-top: 48px;
 			ul{
@@ -223,47 +235,21 @@ li{
 		}
 	}
 
-}
+
 
 .composers{
-		margin-top: 10%;
+		padding-top: 48px;
+		padding-bottom: 48px;
+		border-bottom: 4px solid $gray;
 		width: 100%;
 		position: relative;
 		overflow: hidden !important;
 		height: 100%;
+		background-color: $black;
 		.composers-wrap{
 			margin-top: 5%;
 			width: 100%;
 			height: 100%;
-			.arrow-right{
-				z-index: 909;
-				position: absolute;
-				top: 350px;
-				right: 20px;
-				width: 100px;
-				height: 100px;
-				background: url(../img/arrow.svg) no-repeat center center;
-				background-size: cover;
-				@include vendorize(transition, all .2s ease-in-out);
-				&:hover{
-					right: 15px;
-				}
-			}
-			.arrow-left{
-				z-index: 909;
-				position: absolute;
-				top: 350px;
-				left: 20px;
-				width: 100px;
-				height: 100px;
-				background: url(../img/arrow.svg) no-repeat center center;
-				background-size: cover;
-				@include vendorize(transform, rotate(180deg));
-				@include vendorize(transition, all .2s ease-in-out);
-				&:hover{
-					left: 15px;
-				}
-			}
 			.slide{
 				width: 100%;
 				display: block;
@@ -275,15 +261,45 @@ li{
 					display: block;
 				}
 				.img-wrap{
-					width: 40%;
-					margin-left: 30%;
+					width: 100%;
 					height: auto;
 					overflow: hidden;
+					img{
+						max-width: 56%; /*80% of 70%*/
+						width: 56%;
+						height: auto;
+					}
+					.arrow-right{
+						z-index: 909;
+						position: absolute;
+						top: 25%;
+						right: 20px;
+						width: 10%;
+						height: 10%;
+						background: url(../img/arrow-white.svg) no-repeat center center;
+						background-size: cover;
+						@include vendorize(transition, all .2s ease-in-out);
+						&:hover{
+							right: 15px;
+						}
+					}
+					.arrow-left{
+						z-index: 909;
+						position: absolute;
+						top: 25%;
+						left: 20px;
+						width: 10%;
+						height: 10%;
+						background: url(../img/arrow-white.svg) no-repeat center center;
+						background-size: cover;
+						@include vendorize(transform, rotate(180deg));
+						@include vendorize(transition, all .2s ease-in-out);
+						&:hover{
+							left: 15px;
+						}
+					}
 				}
-				img{
-					max-width: 102%;
-					height: auto;
-				}
+				
 				p{
 					width: 70%;
 					margin-left: 15%;
@@ -296,12 +312,13 @@ li{
 
 .radio{
 	margin: 0;
-	margin-top: 10%;
+	padding-top: 48px;
 	z-index: 1;
-	
+	padding-bottom: 48px;
+	border-bottom: 4px solid $gray;
 	.show{
 		width: 70%;
-		margin-bottom: 10%;
+		padding-bottom: 10%;
 		margin-top: 5%;
 		margin-left: 15%;
 		img{
@@ -320,10 +337,9 @@ li{
 
 .stories{
 	position: relative;
-	margin-top: 10%;
-	margin-bottom: 400px;
+	padding-top: 48px;
+	padding-bottom: 96px;
 	.story-nav{
-		margin-top: 48px;
 		ul{
 			width: 90%;
 			margin-left: 5%;
@@ -349,8 +365,7 @@ li{
 	p.body{
 		text-align: center;
 		width: 70%;
-		margin-left: 15%;
-		margin-right: 15%;
+		margin: 48px 15% 48px 15%;
 	}
 }
 
@@ -422,27 +437,13 @@ li{
 
 
 
-.content{
-	position: relative;
-	width: 100%;
-	height: 100%;
-	overflow: auto;
-	overflow-x: hidden !important;
-	top: 0;
-	left: 0;
-	color: $gray;
-	z-index: 9;
+
 	.startscreen{
-		position: absolute;
-		top: 0;
-		left: 0;
-		width: 100%;
-		height: 100%;
 		background: url(../img/static-title.jpg) no-repeat top center;
-		background-size: contain;
+		background-size: cover;
+		min-height: 700px;
 		video{
 			display: none;
-
 		}
 		.title{
 			width: 100%;
@@ -468,7 +469,6 @@ li{
 	}
 	.videos{
 		position: relative;
-		margin-top: 80%;
 		width: 100%;
 		z-index: 9;
 		iframe{
@@ -508,7 +508,7 @@ li{
 						display: block;
 						width: 100%;
 						margin: 0;
-						font-size: 2.5em;
+						font-size: 1em;
 						height: auto;
 						margin-top: 10px;
 
@@ -526,11 +526,11 @@ li{
 		}
 	}
 
-}
+
 
 .composers{
-		margin-top: 50%;
 		width: 100%;
+		margin-top: 10%;
 		position: relative;
 		overflow: hidden !important;
 		height: 100%;
@@ -545,7 +545,7 @@ li{
 				right: 20px;
 				width: 70px;
 				height: 70px;
-				background: url(../img/arrow.svg) no-repeat center center;
+				background: url(../img/arrow-white.svg) no-repeat center center;
 				background-size: cover;
 				@include vendorize(transition, all .2s ease-in-out);
 				&:hover{
@@ -559,7 +559,7 @@ li{
 				left: 20px;
 				width: 70px;
 				height: 70px;
-				background: url(../img/arrow.svg) no-repeat center center;
+				background: url(../img/arrow-white.svg) no-repeat center center;
 				background-size: cover;
 				@include vendorize(transform, rotate(180deg));
 				@include vendorize(transition, all .2s ease-in-out);
@@ -604,7 +604,7 @@ li{
 
 .radio{
 	margin: 0;
-	margin-top: 50%;
+	margin-top: 10%;
 	z-index: 1;
 	
 	.show{

@@ -18,7 +18,7 @@ body
 
 	
 	a(id="home")
-	.content
+	.pageWrap
 		.startscreen
 			video(autoplay muted loop, id="titlevideo")
 				source(src="img/cart2.mp4", type="video/mp4")
@@ -27,7 +27,7 @@ body
 			.title
 				img(src="img/title-black.png", alt="Diggin' In The Carts")
 
-				
+					
 		.videos
 			a(id="videos")
 			.video-wrapper
@@ -35,40 +35,38 @@ body
 			div(id="player")
 			.video-nav
 				a(class="pulldown")
-						li All Episodes
+					li All Episodes
 				ul(class="episode-list")
-				
+					
 
-	.composers
-		h1 Meet The Composers
-		a(id="composers")
-		.composers-wrap
-			a(class="arrow-left", href="#")
-			a(class="arrow-right", href="#")
+		.composers
+			h1 Meet The Composers
+			a(id="composers")
+			.composers-wrap
 
 
 
-	.radio
-		.radio-wrapper
-			h1 Video Game Mixes
+		.radio
+			.radio-wrapper
+				h1 Video Game Mixes
 
 
-	.stories
-		a(id="stories")
-		.story-wrapper
-			h1 Hidden Levels
-		div(id="storyplayer")
-		.story-nav
-			a(class="pulldown")
-				li All Episodes
-			ul
-		p(class="body") Basic text about the video series should go here. Not very long.
+		.stories
+			a(id="stories")
+			.story-wrapper
+				h1 Hidden Levels
+			div(id="storyplayer")
+			p(class="body") Basic text about the video series should go here. Not very long.
+			.story-nav
+				a(class="pulldown")
+					li All Episodes
+				ul
+			
 
 
 	script(type="text/javascript", src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js")
 	script(type="text/javascript", src="js/contentful.min.js")
 	script(type="text/javascript", src="js/showdown.js")
 	script(type="text/javascript", src="js/moment.js")
-	script(type="text/javascript", src="js/fittext.js")
 	script(src="js/beast.js", type="text/javascript")
 
