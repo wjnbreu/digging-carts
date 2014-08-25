@@ -155,79 +155,79 @@ li{
 
 
 
-	.startscreen{
-		background-color: $black;
+.startscreen{
+	background-color: $black;
+	display: block;
+	margin: 0;
+	width: 100%;
+	max-height: 100%;
+	overflow: hidden;
+	video{
 		display: block;
-		margin: 0;
+		background-color: $black;
+		z-index: 0;
+		position: absolute;
 		width: 100%;
 		height: 100%;
-		max-height: 100%;
-		overflow: hidden;
-		video{
-			display: block;
-			background-color: $black;
-			z-index: 0;
-			position: absolute;
-			width: 100%;
-			height: 100%;
-			margin: 0;
-			border: 0;
-			top: 0;
-			left: 0;
-		}
-		.title{
-			width: 100%;
-			height: 100%;
-			top: 0;
-			position: absolute;
-			text-align: center;
-			z-index: 9;
-			img{
-				//looks shit in normal mode, but good in iframe
-				margin-top: 6.25%;
-				width: 80%;
-				-webkit-transform: translateZ(0px);
-				-webkit-transform-style: preserve-3d;
-				// -webkit-animation: 'scale' 4s;
-			}
+		margin: 0;
+		border: 0;
+		top: 0;
+		left: 0;
+	}
+	.title{
+		width: 100%;
+		height: 100%;
+		top: 0;
+		position: absolute;
+		text-align: center;
+		z-index: 9;
+		img{
+			//looks shit in normal mode, but good in iframe
+			margin-top: 6.25%;
+			width: 80%;
+			-webkit-transform: translateZ(0px);
+			-webkit-transform-style: preserve-3d;
+			// -webkit-animation: 'scale' 4s;
 		}
 	}
-	.videos{
-		position: relative;
-		width: 100%;
-		background-color: $black;
-		padding-bottom: 48px;
-		border-bottom: 1px solid $gray;
-		.video-nav{
-			margin-top: 48px;
-			ul{
-				width: 90%;
-				margin-left: 5%;
-				text-align: center;
-				list-style-type: none;
-				padding: 0;
-				a{
-					li{
-						display: inline-block;
-					}
+}
+	
+.videos{
+	position: relative;
+	width: 100%;
+	background-color: $black;
+	padding-bottom: 48px;
+	border-bottom: 1px solid $gray;
+	.video-nav{
+		margin-top: 48px;
+		ul{
+			width: 90%;
+			margin-left: 5%;
+			text-align: center;
+			list-style-type: none;
+			padding: 0;
+			a{
+				li{
+					display: inline-block;
 				}
 			}
 		}
-		iframe{
-			margin-left: 20%;
-			border: 0;
-			border: none;
-			display: none;
-			@include boxy;
-		}
-
-		p.body{
-			text-align: center;
-			width: 70%;
-			margin-left: 15%;
-			margin-right: 15%;
-		}
 	}
+	iframe{
+		margin-left: 20%;
+		border: 0;
+		border: none;
+		display: none;
+		@include boxy;
+	}
+
+	p.body{
+		text-align: center;
+		width: 70%;
+		margin-left: 15%;
+		margin-right: 15%;
+	}
+}
 
 
 
