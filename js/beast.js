@@ -1,9 +1,9 @@
 (function() {
     $(function() {
-        var e, t, i, r, n, a, d, s, o, l, c, u, f, p, h, v, m, w, y, g, C, b, T, k, D, I, V;
+        var e, t, i, r, n, a, d, s, o, l, c, u, f, p, v, h, m, w, y, g, C, b, T, k, D, I, V;
         s = {};
         V = {};
-        h = {};
+        v = {};
         r = {};
         p = {};
         w = {};
@@ -51,7 +51,7 @@
                 width: "64",
                 videoId: "WYSupJ5r2zo",
                 events: {
-                    onReady: v
+                    onReady: h
                 },
                 playerVars: {
                     modestbranding: true,
@@ -75,7 +75,7 @@
                 }
             });
         };
-        v = function(e) {
+        h = function(e) {
             b("#player");
             return T(c());
         };
@@ -85,7 +85,7 @@
         };
         I = function() {
             var e;
-            e = $(window).height();
+            e = $(window).innerHeight();
             alert(e);
             $(".startscreen").css({
                 height: e + "px"
