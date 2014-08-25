@@ -206,6 +206,7 @@ html {
   font-family: bit, karla, 'Helvetica Neue', helvetica, sans-serif; }
 
 body {
+  display: block;
   margin: 0;
   -webkit-font-smoothing: antialiased;
   vertical-align: baseline;
