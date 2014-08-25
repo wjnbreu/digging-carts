@@ -329,7 +329,9 @@ li {
   height: 100%;
   max-height: 100%;
   float: right;
-  position: relative; }
+  position: absolute;
+  top: 0;
+  left: 0; }
 
 .startscreen {
   position: relative;
