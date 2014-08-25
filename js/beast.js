@@ -1,30 +1,31 @@
 (function() {
     $(function() {
-        var e, t, i, r, n, a, d, s, o, l, c, u, f, p, v, h, m, y, w, g, C, b, T, k, D;
+        var e, t, i, n, r, a, d, s, o, l, c, u, f, p, v, h, m, w, y, g, C, b, T, k, D, I;
         s = {};
-        D = {};
-        p = {};
-        r = {};
-        f = {};
-        m = {};
-        y = {};
+        I = {};
+        v = {};
         n = {};
-        u = 0;
-        c = function() {
-            T();
+        p = {};
+        w = {};
+        y = {};
+        r = {};
+        f = 0;
+        o = new Showdown.converter();
+        u = function() {
             k();
+            D();
             $(".video-nav ul a.episode li").first().addClass("active");
             $(".story-nav ul a.additional-episode li").first().addClass("active");
-            setTimeout(b(l()), 500);
-            return g();
+            setTimeout(T(c()), 500);
+            return C();
         };
-        w = function(e) {
-            u = u + e;
-            if (u === 4) {
-                return c();
+        g = function(e) {
+            f = f + e;
+            if (f === 4) {
+                return u();
             }
         };
-        b = function(e) {
+        T = function(e) {
             var t, i;
             t = {
                 height: e
@@ -32,10 +33,10 @@
             i = JSON.stringify(t);
             return window.parent.postMessage(i, "*");
         };
-        l = function() {
+        c = function() {
             return $(document.body).height() + 300;
         };
-        k = function() {
+        D = function() {
             var e, t;
             t = document.createElement("script");
             t.src = "https://www.youtube.com/iframe_api";
@@ -43,12 +44,12 @@
             return e.parentNode.insertBefore(t, e);
         };
         window.onYouTubeIframeAPIReady = function() {
-            m = new YT.Player("player", {
+            w = new YT.Player("player", {
                 height: "39",
                 width: "64",
                 videoId: "WYSupJ5r2zo",
                 events: {
-                    onReady: v
+                    onReady: h
                 },
                 playerVars: {
                     modestbranding: true,
@@ -62,7 +63,7 @@
                 width: "64",
                 videoId: "VsbG4pXrhr8",
                 events: {
-                    onReady: h
+                    onReady: m
                 },
                 playerVars: {
                     modestbranding: true,
@@ -72,32 +73,32 @@
                 }
             });
         };
-        v = function(e) {
-            C("#player");
-            return b(l());
-        };
         h = function(e) {
-            C("#storyplayer");
-            return b(l());
+            b("#player");
+            return T(c());
         };
-        T = function() {
+        m = function(e) {
+            b("#storyplayer");
+            return T(c());
+        };
+        k = function() {
             return window.addEventListener("resize", function() {
-                C("#player");
-                C("#storyplayer");
-                return b(l());
+                b("#player");
+                b("#storyplayer");
+                return T(c());
             });
         };
         d = function(e, t, i) {
-            var r;
-            r = i[t].fields;
+            var n;
+            n = i[t].fields;
             if (e.find("li").hasClass("unreleased")) {
-                m.cueVideoById("T8k44ryj5DQ");
-                m.playVideo();
-                return $(".videos h1").empty().text(r.episodeTitle);
+                w.cueVideoById("T8k44ryj5DQ");
+                w.playVideo();
+                return $(".videos h1").empty().text(n.episodeTitle);
             } else {
-                m.cueVideoById(r.ytVideoId);
-                $(".videos h1").empty().text(r.episodeTitle);
-                return b(l());
+                w.cueVideoById(n.ytVideoId);
+                $(".videos h1").empty().text(n.episodeTitle);
+                return T(c());
             }
         };
         a = function(e, t) {
@@ -105,33 +106,33 @@
             i = t[e].fields;
             y.cueVideoById(i.additionalYouTube);
             $(".stories h1").empty().text(i.additionalVideoTitle);
-            return b(l());
+            return T(c());
         };
         i = function(e, t, i) {
-            var r, n, a, d, s, o, l, c, u, f, p;
+            var n, r, a, d, s, o, l, c, u, f, p;
             if (i === "main") {
                 f = [];
                 for (d = o = 0, c = e.length; o < c; d = ++o) {
                     s = e[d];
-                    n = s.fields.episodeNumber;
-                    r = new Date();
+                    r = s.fields.episodeNumber;
+                    n = new Date();
                     a = new Date(s.fields.datetimeOfLaunch);
                     if (moment() < a) {
-                        t.append("<a class='episode' href='#episode' data-order=" + d + "><li class='unreleased' data-release='" + a + "'>" + n + "</li>");
+                        t.append("<a class='episode' href='#episode' data-order=" + d + "><li class='unreleased' data-release='" + a + "'>" + r + "</li>");
                     } else {
-                        t.append("<a class='episode' href='#episode' data-order=" + d + "><li class='released'>" + n + "</li>");
+                        t.append("<a class='episode' href='#episode' data-order=" + d + "><li class='released'>" + r + "</li>");
                     }
                     f.push(t.find("li").each(function() {
-                        var e, t, i, r;
-                        r = $(this);
-                        if (r.hasClass("unreleased")) {
-                            t = r.text();
-                            i = r.data("release");
+                        var e, t, i, n;
+                        n = $(this);
+                        if (n.hasClass("unreleased")) {
+                            t = n.text();
+                            i = n.data("release");
                             e = new Date(i);
-                            r.bind("mouseenter", function() {
-                                return r.empty().text(moment(i).format("ddd, MMM Do"));
+                            n.bind("mouseenter", function() {
+                                return n.empty().text(moment(i).format("ddd, MMM Do"));
                             });
-                            return r.bind("mouseleave", function() {});
+                            return n.bind("mouseleave", function() {});
                         }
                     }));
                 }
@@ -140,50 +141,51 @@
                 p = [];
                 for (d = l = 0, u = e.length; l < u; d = ++l) {
                     s = e[d];
-                    n = s.fields.additionalVideoTitle;
-                    p.push(t.append("<a class='additional-episode' href='#additional-episode' data-order=" + d + "><li>" + n + "</li>"));
+                    r = s.fields.additionalVideoTitle;
+                    p.push(t.append("<a class='additional-episode' href='#additional-episode' data-order=" + d + "><li>" + r + "</li>"));
                 }
                 return p;
             }
         };
         e = function(e) {
-            var t, i, r, n, a, d, s, o, l;
-            l = [];
-            for (r = s = 0, o = e.length; s < o; r = ++s) {
-                t = e[r];
+            var t, i, n, r, a, d, s, l, c, u;
+            u = [];
+            for (n = l = 0, c = e.length; l < c; n = ++l) {
+                t = e[n];
                 d = t.fields;
                 a = d.composerName;
-                n = d.image.fields.file.url;
-                i = "<div class='slide' data-order='" + r + "'><div class='img-wrap'><img src='" + n + "'/></div><h2>" + d.composerName + "</h2><p>" + d.bio + "</p></div>";
+                r = d.image.fields.file.url;
+                s = o.makeHtml(d.bio);
+                i = "<div class='slide' data-order='" + n + "'><div class='img-wrap'><img src='" + r + "'/></div><h2>" + d.composerName + "</h2><p>" + s + "</p></div>";
                 $(".composers-wrap").append(i);
-                l.push($(".slide").first().addClass("active"));
-            }
-            return l;
-        };
-        t = function(e) {
-            var t, i, r, n, a, d, s, o, c, u;
-            u = [];
-            for (o = 0, c = e.length; o < c; o++) {
-                n = e[o];
-                d = n.fields;
-                s = d.artistName;
-                i = d.rbmaRadioEmbedCode;
-                t = d.descriptions;
-                r = d.artistImage.fields.file.url;
-                a = "<div class='show'><img src='" + r + "'/>" + i + "<p>" + t + "</p></div>";
-                $(".radio").append(a);
-                u.push(b(l()));
+                u.push($(".slide").first().addClass("active"));
             }
             return u;
         };
-        C = function(e) {
-            var t, i, r, n, a, d, s, o;
+        t = function(e) {
+            var t, i, n, r, a, d, s, o, l, u;
+            u = [];
+            for (o = 0, l = e.length; o < l; o++) {
+                r = e[o];
+                d = r.fields;
+                s = d.artistName;
+                i = d.rbmaRadioEmbedCode;
+                t = d.descriptions;
+                n = d.artistImage.fields.file.url;
+                a = "<div class='show'><img src='" + n + "'/>" + i + "<p>" + t + "</p></div>";
+                $(".radio").append(a);
+                u.push(T(c()));
+            }
+            return u;
+        };
+        b = function(e) {
+            var t, i, n, r, a, d, s, o;
             a = $(e);
             o = $(window).width();
             s = o / 1.2;
-            n = a.attr("width");
-            r = a.attr("height");
-            d = n / r;
+            r = a.attr("width");
+            n = a.attr("height");
+            d = r / n;
             a.attr("width", s);
             a.attr("height", s / d);
             t = o - s;
@@ -192,112 +194,112 @@
                 marginLeft: i,
                 display: "block"
             });
-            return b(l());
+            return T(c());
         };
-        g = function() {
+        C = function() {
             $(".spinner").remove();
-            return b(l());
+            return T(c());
         };
-        o = function() {
-            var n;
-            n = contentful.createClient({
+        l = function() {
+            var r;
+            r = contentful.createClient({
                 accessToken: "38b8dbaf503a350d5722578c6547caca484511f7c78717736ac8f576832be4b0",
                 space: "s9bc5ah7p1d5"
             });
-            n.entries({
+            r.entries({
                 content_type: "42CpXYSUms44OskS6wUU6I",
                 include: 1
             }).done(function(t) {
                 e(t);
-                return w(1);
+                return g(1);
             });
-            n.entries({
+            r.entries({
                 content_type: "36SuQSSPR6QmWOk8CseMC6",
                 include: 1,
                 order: "fields.order"
             }).done(function(e) {
-                D = e;
-                w(1);
-                i(D, $(".video-nav ul"), "main");
+                I = e;
+                g(1);
+                i(I, $(".video-nav ul"), "main");
                 return $("a.episode").bind("click", function(e) {
                     var t;
                     e.preventDefault();
                     $(this).parent().find("li").removeClass("active");
                     $(this).find("li").addClass("active");
                     t = $(this).data("order");
-                    return d($(this), t, D);
+                    return d($(this), t, I);
                 });
             });
-            n.entries({
+            r.entries({
                 content_type: "2YpXtnGW80EEGgCUsSMmCc",
                 include: 1
             }).done(function(e) {
-                w(1);
+                g(1);
                 return t(e);
             });
-            return n.entries({
+            return r.entries({
                 content_type: "6fwxAcXrxK4yqyaMUiWwWY",
                 include: 1,
                 order: "fields.order"
             }).done(function(e) {
-                w(1);
-                r = e;
-                i(r, $(".story-nav ul"), "additional");
+                g(1);
+                n = e;
+                i(n, $(".story-nav ul"), "additional");
                 return $("a.additional-episode").bind("click", function(e) {
                     var t;
                     e.preventDefault();
                     $(this).parent().find("li").removeClass("active");
                     $(this).find("li").addClass("active");
                     t = $(this).data("order");
-                    return a(t, r);
+                    return a(t, n);
                 });
             });
         };
         $("a.arrow-right").click(function(e) {
-            var t, i, r, n, a;
+            var t, i, n, r, a;
             e.preventDefault();
             t = $(".composers-wrap");
             a = t.find(".slide").length;
-            r = t.find(".active");
-            i = r.data("order");
+            n = t.find(".active");
+            i = n.data("order");
             if (i <= a - 2) {
-                n = t.find("[data-order=" + (i + 1) + "]");
-                r.removeClass("active");
-                n.addClass("active");
-                return b(l());
+                r = t.find("[data-order=" + (i + 1) + "]");
+                n.removeClass("active");
+                r.addClass("active");
+                return T(c());
             } else {
-                n = t.find("[data-order=0]");
-                r.removeClass("active");
-                n.addClass("active");
-                return b(l());
+                r = t.find("[data-order=0]");
+                n.removeClass("active");
+                r.addClass("active");
+                return T(c());
             }
         });
         $("a.arrow-left").click(function(e) {
-            var t, i, r, n, a;
+            var t, i, n, r, a;
             e.preventDefault();
             t = $(".composers-wrap");
             a = t.find(".slide").length;
-            r = t.find(".active");
-            i = r.data("order");
+            n = t.find(".active");
+            i = n.data("order");
             if (i >= 1) {
-                n = t.find("[data-order=" + (i - 1) + "]");
-                r.removeClass("active");
-                n.addClass("active");
-                return b(l());
+                r = t.find("[data-order=" + (i - 1) + "]");
+                n.removeClass("active");
+                r.addClass("active");
+                return T(c());
             } else {
-                n = t.find("[data-order=" + (a - 1) + "]");
-                r.removeClass("active");
-                n.addClass("active");
-                return b(l());
+                r = t.find("[data-order=" + (a - 1) + "]");
+                n.removeClass("active");
+                r.addClass("active");
+                return T(c());
             }
         });
         $("a.pulldown").click(function(e) {
             e.preventDefault();
             return $(this).parent().find("ul").slideToggle(200, function() {
-                return b(l());
+                return T(c());
             });
         });
-        o();
-        return window.addEventListener("load", b(l()));
+        l();
+        return window.addEventListener("load", T(c()));
     });
 }).call(this);

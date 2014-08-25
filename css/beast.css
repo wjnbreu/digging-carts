@@ -288,11 +288,13 @@ li {
   border: 4px solid black;
   color: #14110d;
   background-color: #d9d9d9;
-  font-size: 0.9em;
+  font-size: 0.8em;
   width: 110px;
   height: 20px;
-  margin: auto;
-  padding: 10px;
+  margin: 5px;
+  text-align: center;
+  padding-top: 10px;
+  padding-bottom: 10px;
   font-weight: bold;
   text-transform: uppercase; }
   li:hover {
@@ -361,8 +363,6 @@ li {
         padding: 0; }
         .content .videos .video-nav ul a li {
           display: inline-block; }
-          .content .videos .video-nav ul a li:first-child {
-            margin-left: 0; }
     .content .videos iframe {
       margin-left: 20%;
       border: 0;

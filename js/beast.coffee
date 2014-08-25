@@ -9,6 +9,7 @@ $ ->
 	player2 = {}
 	anchorElements = {}
 	initCount = 0
+	converter = new Showdown.converter()
 
 
 
@@ -159,7 +160,8 @@ $ ->
 			person = composer.fields
 			name = person.composerName
 			img = person.image.fields.file.url
-			composerData = "<div class='slide' data-order='#{i}'><div class='img-wrap'><img src='#{img}'/></div><h2>#{person.composerName}</h2><p>#{person.bio}</p></div>"
+			textBody = converter.makeHtml(person.bio)
+			composerData = "<div class='slide' data-order='#{i}'><div class='img-wrap'><img src='#{img}'/></div><h2>#{person.composerName}</h2><p>#{textBody}</p></div>"
 			$(".composers-wrap").append composerData
 			$('.slide').first().addClass "active"
 		

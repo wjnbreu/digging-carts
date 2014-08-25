@@ -112,11 +112,13 @@ li{
 	border: 4px solid black;
 	color: $black;
 	background-color: $gray;
-	font-size: 0.9em;
+	font-size: 0.8em;
 	width: 110px;
 	height: 20px;
-	margin: auto;
-	padding: 10px;
+	margin: 5px;
+	text-align: center;
+	padding-top: 10px;
+	padding-bottom: 10px;
 	font-weight: bold;
 	text-transform: uppercase;
 	&:hover{
@@ -202,9 +204,6 @@ li{
 				a{
 					li{
 						display: inline-block;
-						&:first-child{
-							margin-left: 0;
-						}
 					}
 				}
 			}
