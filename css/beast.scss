@@ -30,7 +30,6 @@ h1 {
 	background-color: $gray;
 	color: $black;
 	width: 70%;
-	// max-width: 700px;
 	margin: auto;
 	margin-top: 48px;
 	margin-bottom: 48px;
@@ -79,6 +78,7 @@ a.pulldown{
 	position: fixed;
 	top: 0;
 	left: 0;
+	bottom: 0;
 	background-color: $black;
 	z-index: 99;
 	.load-text{
@@ -164,14 +164,13 @@ li{
 
 
 	.startscreen{
-		// position: relative;
+		position: relative;
 		background-color: $black;
 		display: block;
 		top: 0;
 		left: 0;
 		margin: 0;
-		min-width: 100%;
-		min-height: 100%;
+		width: 100%;
 		height: 100%;
 		overflow: hidden;
 		.start-image{
@@ -815,7 +814,7 @@ li{
 
 
 	.startscreen{
-		// position: relative;
+		position: relative;
 		top: 0;
 		left: 0;
 		margin: 0;

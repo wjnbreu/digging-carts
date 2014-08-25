@@ -267,6 +267,7 @@ a.pulldown {
   position: fixed;
   top: 0;
   left: 0;
+  bottom: 0;
   background-color: #14110d;
   z-index: 99; }
   .spinner .load-text {
@@ -332,13 +333,13 @@ li {
   position: relative; }
 
 .startscreen {
+  position: relative;
   background-color: #14110d;
   display: block;
   top: 0;
   left: 0;
   margin: 0;
-  min-width: 100%;
-  min-height: 100%;
+  width: 100%;
   height: 100%;
   overflow: hidden; }
   .startscreen video {
@@ -873,6 +874,7 @@ li {
     float: right; }
 
   .startscreen {
+    position: relative;
     top: 0;
     left: 0;
     margin: 0;
