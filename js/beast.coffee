@@ -87,6 +87,7 @@ $ ->
 	
 	sizeTitle = ->
 		height = $(window).height()
+		alert height
 		$('.startscreen').css
 			height: height + 'px'
 		sendHeight(getHeight())
