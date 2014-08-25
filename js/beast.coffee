@@ -19,6 +19,7 @@ $ ->
 		$('.video-nav ul a.episode li').first().addClass "active"
 		$('.story-nav ul a.additional-episode li').first().addClass "active"
 		setTimeout(sendHeight(getHeight()), 500)
+		sizeTitle()
 		removeSpinner()
 		
 
@@ -83,13 +84,19 @@ $ ->
 	onPlayerReady2 = (event) ->
 		resizeVid('#storyplayer')
 		sendHeight(getHeight())
-		
+	
+	sizeTitle = ->
+		height = $(window).height()
+		$('.startscreen').css
+			height: height
+		sendHeight(getHeight())
 	
 	setupBinds = ->
 		#resize
 		window.addEventListener 'resize', ->
 			resizeVid('#player')
 			resizeVid('#storyplayer')
+			sizeTitle()
 			sendHeight(getHeight())
 
 		$('a.arrow-right').click (event) ->

@@ -1,9 +1,9 @@
 (function() {
     $(function() {
-        var e, t, i, r, n, a, d, s, o, l, c, u, f, p, v, h, m, w, y, g, C, b, T, k, D, I;
+        var e, t, i, r, n, a, d, s, o, l, c, u, f, p, h, v, m, w, y, g, C, b, T, k, D, I, V;
         s = {};
-        I = {};
-        v = {};
+        V = {};
+        h = {};
         r = {};
         p = {};
         w = {};
@@ -17,6 +17,7 @@
             $(".video-nav ul a.episode li").first().addClass("active");
             $(".story-nav ul a.additional-episode li").first().addClass("active");
             setTimeout(T(c()), 500);
+            I();
             return C();
         };
         g = function(e) {
@@ -50,7 +51,7 @@
                 width: "64",
                 videoId: "WYSupJ5r2zo",
                 events: {
-                    onReady: h
+                    onReady: v
                 },
                 playerVars: {
                     modestbranding: true,
@@ -74,7 +75,7 @@
                 }
             });
         };
-        h = function(e) {
+        v = function(e) {
             b("#player");
             return T(c());
         };
@@ -82,10 +83,19 @@
             b("#storyplayer");
             return T(c());
         };
+        I = function() {
+            var e;
+            e = $(window).height();
+            $(".startscreen").css({
+                height: e
+            });
+            return T(c());
+        };
         k = function() {
             window.addEventListener("resize", function() {
                 b("#player");
                 b("#storyplayer");
+                I();
                 return T(c());
             });
             $("a.arrow-right").click(function(e) {
@@ -265,16 +275,16 @@
                 include: 1,
                 order: "fields.order"
             }).done(function(e) {
-                I = e;
+                V = e;
                 g(1);
-                i(I, $(".video-nav ul"), "main");
+                i(V, $(".video-nav ul"), "main");
                 return $("a.episode").bind("click", function(e) {
                     var t;
                     e.preventDefault();
                     $(this).parent().find("li").removeClass("active");
                     $(this).find("li").addClass("active");
                     t = $(this).data("order");
-                    return d($(this), t, I);
+                    return d($(this), t, V);
                 });
             });
             n.entries({
