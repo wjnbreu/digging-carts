@@ -495,9 +495,6 @@ li{
 			border: 4px solid $red;
 		}
 	}
-	&:first-child{
-		padding-left: 0;
-	}
 }
 
 
@@ -510,27 +507,16 @@ li{
 
 	.startscreen{
 		position: relative;
-		background-color: black;
 		top: 0;
 		left: 0;
 		margin: 0;
 		min-width: 100%;
-		min-height: 800px;
+		min-height: 1200px;
 		height: 100%;
 		overflow: hidden;
+		
 		video{
-			display: block;
-			background-color: black;
-			z-index: 0;
-			position: absolute;
-			min-width: 100%;
-			min-height: 100%;
-			margin: 0;
-			border: 0;
-			top: 0;
-			left: 0;
-			border: none;
-			@include boxy;
+			display: none;
 		}
 		.title{
 			width: 100%;
@@ -543,7 +529,7 @@ li{
 			-webkit-transform-style: preserve-3d;
 			img{
 				//looks shit in normal mode, but good in iframe
-				margin-top: 6.25%;
+				margin-top: 26.25%;
 				width: 80%;
 				-webkit-transform: translateZ(0px);
 				-webkit-transform-style: preserve-3d;
@@ -559,15 +545,33 @@ li{
 		border-bottom: 4px solid $gray;
 		.video-nav{
 			margin-top: 48px;
+			a.pulldown{
+				text-decoration: none;
+				display: block;
+				li{
+					width: 80%;
+					margin-left: 10%;
+					height: auto;
+					text-align: center;
+					font-size: 1em;
+					list-style-type: none;
+				}
+			}
 			ul{
-				width: 90%;
-				margin-left: 5%;
+				display: none;
+				width: 80%;
+				margin-left: 10%;
 				text-align: center;
 				list-style-type: none;
 				padding: 0;
 				a{
+					text-decoration: none;
 					li{
-						display: inline-block;
+						display: block;
+						width: 100%;
+						text-align: center;
+						margin-top: 10px;
+						font-size: 1em;
 					}
 				}
 			}
@@ -693,16 +697,35 @@ li{
 	padding-top: 48px;
 	padding-bottom: 96px;
 	.story-nav{
+		margin-top: 48px;
+		a.pulldown{
+			text-decoration: none;
+			display: block;
+			li{
+				width: 80%;
+				margin-left: 10%;
+				height: auto;
+				text-align: center;
+				font-size: 1em;
+				list-style-type: none;
+			}
+		}
 		ul{
-			width: 90%;
-			margin-left: 5%;
+			display: none;
+			width: 80%;
+			margin-left: 10%;
 			text-align: center;
 			list-style-type: none;
 			padding: 0;
 			a{
+				text-decoration: none;
 				li{
-					display: inline-block;
-					width: 150px;
+					display: block;
+					width: 100%;
+					font-size: 1em;
+					height: auto;
+					margin: 0;
+					margin-top: 10px;
 				}
 			}
 		}
