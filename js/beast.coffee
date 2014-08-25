@@ -88,7 +88,7 @@ $ ->
 	sizeTitle = ->
 		height = $(window).height()
 		$('.startscreen').css
-			height: height
+			height: height + 'px'
 		sendHeight(getHeight())
 	
 	setupBinds = ->

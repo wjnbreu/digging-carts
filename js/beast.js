@@ -87,7 +87,7 @@
             var e;
             e = $(window).height();
             $(".startscreen").css({
-                height: e
+                height: e + "px"
             });
             return T(c());
         };
