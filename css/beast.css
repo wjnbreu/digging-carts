@@ -324,16 +324,7 @@ li {
   li:first-child {
     padding-left: 0; }
 
-.pageWrap {
-  width: 100%;
-  height: auto;
-  position: absolute;
-  top: 0;
-  left: 0;
-  bottom: 0; }
-
 .startscreen {
-  position: relative;
   background-color: #14110d;
   display: block;
   margin: 0;
