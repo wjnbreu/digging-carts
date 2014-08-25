@@ -18,7 +18,7 @@ body{
 	width: 100%;
 	height: 100%;
 	-webkit-tap-highlight-color: transparent;
-	background-color: $black;
+	background-color: black;
 	@include vendorize(box-sizing, border-box);
 	-webkit-overflow-scrolling: touch;
 }
@@ -27,7 +27,7 @@ h1 {
 	text-transform: uppercase;
 	@include boxy;
 	background-color: $gray;
-	color: $black;
+	color: black;
 	width: 70%;
 	margin: auto;
 	margin-top: 48px;
@@ -78,7 +78,7 @@ a.pulldown{
 	top: 0;
 	left: 0;
 	bottom: 0;
-	background-color: $black;
+	background-color: black;
 	z-index: 99;
 	.load-text{
 		margin-top: 25%;
@@ -118,9 +118,9 @@ h1,h2,h3,h4{
 
 li{
 	font-family: 'Helvetica Neue', helvetica, sans-serif;
-	border: 4px solid $gray;
+	border: 2px solid $gray;
 	color: $gray;
-	background-color: $black;
+	background-color: black;
 	font-size: 0.8em;
 	width: 110px;
 	height: 20px;
@@ -133,18 +133,18 @@ li{
 	text-transform: uppercase;
 	&:hover{
 		background-color: $gray;
-		color:$black;
+		color:black;
 		&.unreleased{
 			background-color: $red;
-			border: 4px solid $red;
+			border: 2px solid $red;
 		}
 	}
 	&.active{
 		background-color: $gray;
-		color: $black;
+		color: black;
 		&.unreleased{
 			background-color: $red;
-			border: 4px solid $red;
+			border: 2px solid $red;
 		}
 	}
 	&:first-child{
@@ -156,7 +156,7 @@ li{
 
 
 .startscreen{
-	background-color: $black;
+	background-color: black;
 	margin: 0;
 	width: 100%;
 	height: 100%;
@@ -164,7 +164,7 @@ li{
 	overflow: hidden;
 	video{
 		display: block;
-		background-color: $black;
+		background-color: black;
 		z-index: 0;
 		position: absolute;
 		width: 100%;
@@ -195,7 +195,7 @@ li{
 .videos{
 	position: relative;
 	width: 100%;
-	background-color: $black;
+	background-color: black;
 	padding-bottom: 48px;
 	border-bottom: 1px solid $gray;
 	.video-nav{
@@ -239,7 +239,7 @@ li{
 		position: relative;
 		overflow: hidden !important;
 		height: auto;
-		background-color: $black;
+		background-color: black;
 		.composers-wrap{
 			margin-top: 5%;
 			width: 100%;
@@ -369,7 +369,7 @@ li{
 
 
 
-@media screen and (max-width: 1024px), all and (max-device-width: 1024px){
+@media screen and (max-width: 1022px), all and (max-device-width: 1022px){
 	body{
 		background-color: black;
 	}
@@ -423,7 +423,7 @@ a.pulldown{
 
 li{
 	font-family: 'Helvetica Neue', helvetica, sans-serif;
-	border: 4px solid $gray;
+	border: 2px solid $gray;
 	color: $gray;
 	background-color: black;
 	font-size: 0.8em;
@@ -441,7 +441,7 @@ li{
 		color:black;
 		&.unreleased{
 			background-color: $red;
-			border: 4px solid $red;
+			border: 2px solid $red;
 		}
 	}
 	&.active{
@@ -449,7 +449,7 @@ li{
 		color: black;
 		&.unreleased{
 			background-color: $red;
-			border: 4px solid $red;
+			border: 2px solid $red;
 		}
 	}
 }
@@ -498,7 +498,7 @@ li{
 		background-color: black;
 		padding-bottom: 10%;
 		padding-bottom: 10%;
-		border-bottom: 4px solid $gray;
+		border-bottom: 2px solid $gray;
 		.video-nav{
 			margin-top: 48px;
 			a.pulldown{
@@ -553,7 +553,7 @@ li{
 .composers{
 		padding-bottom: 10%;
 		padding-bottom: 10%;
-		border-bottom: 4px solid $gray;
+		border-bottom: 2px solid $gray;
 		width: 100%;
 		position: relative;
 		overflow: hidden !important;
@@ -627,7 +627,7 @@ li{
 	padding-bottom: 10%;
 	padding-bottom: 10%;
 	z-index: 1;
-	border-bottom: 4px solid $gray;
+	border-bottom: 2px solid $gray;
 	.show{
 		width: 70%;
 		padding-bottom: 10%;
@@ -774,7 +774,7 @@ li{
 		color:black;
 		&.unreleased{
 			background-color: $red;
-			border: 4px solid $red;
+			border: 2px solid $red;
 		}
 	}
 	&.active{
@@ -782,7 +782,7 @@ li{
 		color: black;
 		&.unreleased{
 			background-color: $red;
-			border: 4px solid $red;
+			border: 2px solid $red;
 		}
 	}
 }
