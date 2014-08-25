@@ -708,7 +708,7 @@ li{
 	margin-left: 10%;
 	line-height: 1;
 	padding: 10px;
-	font-size: 3em;
+	font-size: 2em;
 	@include smallboxy;
 
 }
@@ -916,7 +916,6 @@ p{
 .stories{
 	position: relative;
 	margin-top: 50%;
-	margin-bottom: 400px;
 	.story-nav{
 		margin-top: 48px;
 		a.pulldown{
