@@ -7,8 +7,6 @@
 
 html{
 	font-family: bit, karla, 'Helvetica Neue', helvetica, sans-serif;
-	-ms-text-size-adjust:100%;
-	-webkit-text-size-adjust:100%;
 }
 
 
@@ -22,8 +20,8 @@ body{
 	background-color: $black;
 	@include vendorize(box-sizing, border-box);
 	-webkit-overflow-scrolling: touch;
-	@include vendorize(text-size-adjust, none);
-	@include vendorize(text-size-adjust, 100%);
+	// @include vendorize(text-size-adjust, none);
+	// @include vendorize(text-size-adjust, 100%);
 }
 
 h1 {
