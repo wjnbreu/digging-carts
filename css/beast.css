@@ -203,9 +203,7 @@
     transform: translateZ(400px);
     margin-top: 5%; } }
 html {
-  font-family: bit, karla, 'Helvetica Neue', helvetica, sans-serif;
-  height: 100%;
-  width: 100%; }
+  font-family: bit, karla, 'Helvetica Neue', helvetica, sans-serif; }
 
 body {
   display: block;
