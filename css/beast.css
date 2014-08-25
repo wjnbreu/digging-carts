@@ -559,7 +559,7 @@ li {
         top: 0;
         position: absolute;
         text-align: center;
-        z-index: 9;
+        z-index: 1;
         -webkit-perspective: 1000px;
         -webkit-transform-style: preserve-3d; }
         .content .startscreen .title img {
@@ -571,7 +571,8 @@ li {
     .content .videos {
       position: relative;
       margin-top: 80%;
-      width: 100%; }
+      width: 100%;
+      z-index: 9; }
       .content .videos iframe {
         margin-left: 20%;
         margin-bottom: 20px;
@@ -792,7 +793,6 @@ li {
         top: 0;
         position: absolute;
         text-align: center;
-        z-index: 9;
         padding: 0;
         -webkit-perspective: 1000px;
         -webkit-transform-style: preserve-3d; }
