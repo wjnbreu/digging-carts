@@ -35,7 +35,7 @@
             return window.parent.postMessage(i, "*");
         };
         c = function() {
-            return $(document.body).height() + 300;
+            return $("html").height() + 300;
         };
         D = function() {
             var e, t;
