@@ -1,8 +1,8 @@
 (function() {
     $(function() {
-        var e, t, i, r, n, a, d, s, o, l, c, u, f, p, v, h, m, w, y, g, C, b, T, k, D, I, V;
+        var e, t, i, r, n, a, d, s, o, l, c, u, f, p, v, h, m, w, y, g, C, b, T, k, D, I;
         s = {};
-        V = {};
+        I = {};
         v = {};
         r = {};
         p = {};
@@ -81,15 +81,6 @@
         };
         m = function(e) {
             b("#storyplayer");
-            return T(c());
-        };
-        I = function() {
-            var e;
-            e = parent.document.body.clientHeight;
-            alert(e);
-            $(".startscreen").css({
-                height: e + "px"
-            });
             return T(c());
         };
         k = function() {
@@ -275,16 +266,16 @@
                 include: 1,
                 order: "fields.order"
             }).done(function(e) {
-                V = e;
+                I = e;
                 g(1);
-                i(V, $(".video-nav ul"), "main");
+                i(I, $(".video-nav ul"), "main");
                 return $("a.episode").bind("click", function(e) {
                     var t;
                     e.preventDefault();
                     $(this).parent().find("li").removeClass("active");
                     $(this).find("li").addClass("active");
                     t = $(this).data("order");
-                    return d($(this), t, V);
+                    return d($(this), t, I);
                 });
             });
             n.entries({

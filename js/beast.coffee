@@ -85,13 +85,6 @@ $ ->
 		resizeVid('#storyplayer')
 		sendHeight(getHeight())
 	
-	sizeTitle = ->
-		height = parent.document.body.clientHeight
-		alert height
-		$('.startscreen').css
-			height: height + 'px'
-		sendHeight(getHeight())
-	
 	setupBinds = ->
 		#resize
 		window.addEventListener 'resize', ->
