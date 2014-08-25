@@ -31,6 +31,7 @@
                 height: e
             };
             i = JSON.stringify(t);
+            console.log(i);
             return window.parent.postMessage(i, "*");
         };
         c = function() {

@@ -31,6 +31,7 @@ $ ->
 	sendHeight = (height) ->
 		message = {height: height}
 		messageJSON = JSON.stringify(message)
+		console.log messageJSON
 		return window.parent.postMessage(messageJSON, '*')
 
 	getHeight = ->
