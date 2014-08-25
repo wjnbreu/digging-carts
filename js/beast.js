@@ -17,7 +17,6 @@
             $(".video-nav ul a.episode li").first().addClass("active");
             $(".story-nav ul a.additional-episode li").first().addClass("active");
             setTimeout(T(c()), 500);
-            I();
             return C();
         };
         g = function(e) {
