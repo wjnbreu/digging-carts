@@ -1,5 +1,8 @@
 $ ->
 	#OG title video 1280x720
+	#http://www.redbull.tv/Grilosodes/Grilosodes-s03e02
+
+
 	composerObject = {}
 	videoObject = {}
 	mixObject = {}
@@ -10,12 +13,25 @@ $ ->
 	anchorElements = {}
 	initCount = 0
 	converter = new Showdown.converter()
+	player = {}
+	APIModules = {}
 
+	playerData = {
+			"playerID" : "1507808033001",
+			"playerKey" : "AQ~~,AAABXxBZKsE~,AdU2xXeQoKCatdLR1Pb_eo4UzCFcjSKc",
+			"width" : "480",
+			"height" : "270",
+			"videoID" : "2114345471001"
+		}
 
+	playerTemplate = "<div style=\"display:none\"></div><object id=\"myExperience\" class=\"BrightcoveExperience\"><param name=\"bgcolor\" value=\"#FFFFFF\" /><param name=\"width\" value=\"{{width}}\" /><param name=\"height\" value=\"{{height}}\" /><param name=\"playerID\" value=\"{{playerID}}\" /><param name=\"playerKey\" value=\"{{playerKey}}\" /><param name=\"isVid\" value=\"true\" /><param name=\"isUI\" value=\"true\" /><param name=\"dynamicStreaming\" value=\"true\" /><param name=\"@videoPlayer\" value=\"{{videoID}}\"; /><param name=\"includeAPI\" value=\"true\" /><param name=\"templateLoadHandler\" value=\"onTemplateLoad\" /><param name=\"templateReadyHandler\" value=\"onTemplateReady\" /></object>"
+
+	
 
 	init = ->
 		setupBinds()
-		setupYouTube()
+		# setupYouTube()
+		addPlayer()
 		$('.video-nav ul a.episode li').first().addClass "active"
 		$('.story-nav ul a.additional-episode li').first().addClass "active"
 		setTimeout(sendHeight(getHeight()), 500)
@@ -37,52 +53,77 @@ $ ->
 	getHeight = ->
 		return $(document.body).height() + 100 #extra padding
 
-	setupYouTube = ->
-		tag = document.createElement('script')
-		tag.src = "https://www.youtube.com/iframe_api"
-		firstScriptTag = document.getElementsByTagName('script')[0]
-		firstScriptTag.parentNode.insertBefore(tag, firstScriptTag)
-
-	
-	window.onYouTubeIframeAPIReady = ->
-		player1 = new YT.Player 'player',
-			height: '39'
-			width: '64'
-			videoId: 'WYSupJ5r2zo'
-			events: {
-				"onReady": onPlayerReady1
-			}
-			playerVars: {
-				modestbranding: true
-				controls: 1
-				showinfo: 0
-				hd: 1
-
-			}
+	window.onTemplateLoad = (experienceID) ->
+		player = brightcove.api.getExperience(experienceID)
+		APIModules = brightcove.api.modules.APIModules
+		console.log 'im so loaded man'
 		
-		player2 = new YT.Player 'storyplayer',
-			height: '39'
-			width: '64'
-			videoId: 'VsbG4pXrhr8'
-			events: {
-				"onReady": onPlayerReady2
-			}
-			playerVars: {
-				modestbranding: true
-				controls: 1
-				showinfo: 0
-				hd: 1
-			}
+
+	window.onTemplateReady = (evt) ->
+		videoPlayer = player.getModule(APIModules.VIDEO_PLAYER)
+		videoPlayer.play()
+
+	onMediaEventFired = (evt) ->
+		alert 'event happened'
+		
+
+	addPlayer = ->
+		template = Handlebars.compile(playerTemplate)
+		playerHTML = template(playerData)
+
+		document.getElementById('player').innerHTML = playerHTML
+
+		#instantiate player
+		brightcove.createExperiences()
+		console.log 'almost called'
+
+
+	# setupYouTube = ->
+	# 	tag = document.createElement('script')
+	# 	tag.src = "https://www.youtube.com/iframe_api"
+	# 	firstScriptTag = document.getElementsByTagName('script')[0]
+	# 	firstScriptTag.parentNode.insertBefore(tag, firstScriptTag)
+
+	
+	# window.onYouTubeIframeAPIReady = ->
+	# 	player1 = new YT.Player 'player',
+	# 		height: '39'
+	# 		width: '64'
+	# 		videoId: 'WYSupJ5r2zo'
+	# 		events: {
+	# 			"onReady": onPlayerReady1
+	# 		}
+	# 		playerVars: {
+	# 			modestbranding: true
+	# 			controls: 1
+	# 			showinfo: 0
+	# 			hd: 1
+
+	# 		}
+		
+	# 	player2 = new YT.Player 'storyplayer',
+	# 		height: '39'
+	# 		width: '64'
+	# 		videoId: 'VsbG4pXrhr8'
+	# 		events: {
+	# 			"onReady": onPlayerReady2
+	# 		}
+	# 		playerVars: {
+	# 			modestbranding: true
+	# 			controls: 1
+	# 			showinfo: 0
+	# 			hd: 1
+	# 		}
 
 	
 
-	onPlayerReady1 = (event) ->
-		resizeVid('#player')
-		sendHeight(getHeight())
+	# onPlayerReady1 = (event) ->
+	# 	resizeVid('#player')
+	# 	sendHeight(getHeight())
 
-	onPlayerReady2 = (event) ->
-		resizeVid('#storyplayer')
-		sendHeight(getHeight())
+	# onPlayerReady2 = (event) ->
+	# 	resizeVid('#storyplayer')
+	# 	sendHeight(getHeight())
 	
 	setupBinds = ->
 		#resize
@@ -155,7 +196,7 @@ $ ->
 	changeAdditionalVideo = (order, additionalVideoObject) ->
 		#account for zero index
 		video = additionalVideoObject[order].fields
-		player2.cueVideoById(video.additionalYouTube)
+		# player2.cueVideoById(video.additionalYouTube)
 		$('.stories h1').empty().text video.additionalVideoTitle
 		$('.stories p.body').empty().text video.description
 		$('.stories p.body').slideDown()

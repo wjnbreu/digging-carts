@@ -1,307 +1,292 @@
 (function() {
     $(function() {
-        var e, t, i, r, n, a, d, s, o, l, c, u, f, p, v, h, m, y, w, g, C, b, T, k, D, I;
-        s = {};
-        I = {};
-        v = {};
-        r = {};
-        p = {};
-        y = {};
-        w = {};
+        var e, a, t, i, r, n, d, o, s, l, c, u, p, f, m, v, h, y, g, w, C, b, D, I, x, T, E, k, M;
+        l = {};
+        M = {};
+        h = {};
         n = {};
-        f = 0;
-        o = new Showdown.converter();
-        u = function() {
+        v = {};
+        w = {};
+        C = {};
+        d = {};
+        m = 0;
+        c = new Showdown.converter();
+        g = {};
+        e = {};
+        b = {
+            playerID: "1507808033001",
+            playerKey: "AQ~~,AAABXxBZKsE~,AdU2xXeQoKCatdLR1Pb_eo4UzCFcjSKc",
+            width: "480",
+            height: "270",
+            videoID: "2114345471001"
+        };
+        D = '<div style="display:none"></div><object id="myExperience" class="BrightcoveExperience"><param name="bgcolor" value="#FFFFFF" /><param name="width" value="{{width}}" /><param name="height" value="{{height}}" /><param name="playerID" value="{{playerID}}" /><param name="playerKey" value="{{playerKey}}" /><param name="isVid" value="true" /><param name="isUI" value="true" /><param name="dynamicStreaming" value="true" /><param name="@videoPlayer" value="{{videoID}}"; /><param name="includeAPI" value="true" /><param name="templateLoadHandler" value="onTemplateLoad" /><param name="templateReadyHandler" value="onTemplateReady" /></object>';
+        f = function() {
             k();
-            D();
+            i();
             $(".video-nav ul a.episode li").first().addClass("active");
             $(".story-nav ul a.additional-episode li").first().addClass("active");
-            setTimeout(T(c()), 500);
-            return C();
+            setTimeout(E(p()), 500);
+            return x();
         };
-        g = function(e) {
-            f = f + e;
-            if (f === 4) {
-                u();
-                return f = 0;
+        I = function(e) {
+            m = m + e;
+            if (m === 4) {
+                f();
+                return m = 0;
             }
         };
-        T = function(e) {
-            var t, i;
-            t = {
+        E = function(e) {
+            var a, t;
+            a = {
                 height: e
             };
-            i = JSON.stringify(t);
-            return window.parent.postMessage(i, "*");
+            t = JSON.stringify(a);
+            return window.parent.postMessage(t, "*");
         };
-        c = function() {
+        p = function() {
             return $(document.body).height() + 100;
         };
-        D = function() {
-            var e, t;
-            t = document.createElement("script");
-            t.src = "https://www.youtube.com/iframe_api";
-            e = document.getElementsByTagName("script")[0];
-            return e.parentNode.insertBefore(t, e);
+        window.onTemplateLoad = function(a) {
+            g = brightcove.api.getExperience(a);
+            e = brightcove.api.modules.APIModules;
+            return console.log("im so loaded man");
         };
-        window.onYouTubeIframeAPIReady = function() {
-            y = new YT.Player("player", {
-                height: "39",
-                width: "64",
-                videoId: "WYSupJ5r2zo",
-                events: {
-                    onReady: h
-                },
-                playerVars: {
-                    modestbranding: true,
-                    controls: 1,
-                    showinfo: 0,
-                    hd: 1
-                }
-            });
-            return w = new YT.Player("storyplayer", {
-                height: "39",
-                width: "64",
-                videoId: "VsbG4pXrhr8",
-                events: {
-                    onReady: m
-                },
-                playerVars: {
-                    modestbranding: true,
-                    controls: 1,
-                    showinfo: 0,
-                    hd: 1
-                }
-            });
+        window.onTemplateReady = function(a) {
+            var t;
+            t = g.getModule(e.VIDEO_PLAYER);
+            return t.play();
         };
-        h = function(e) {
-            b("#player");
-            return T(c());
+        y = function(e) {
+            return alert("event happened");
         };
-        m = function(e) {
-            b("#storyplayer");
-            return T(c());
+        i = function() {
+            var e, a;
+            a = Handlebars.compile(D);
+            e = a(b);
+            document.getElementById("player").innerHTML = e;
+            brightcove.createExperiences();
+            return console.log("almost called");
         };
         k = function() {
             window.addEventListener("resize", function() {
-                b("#player");
-                b("#storyplayer");
-                return T(c());
+                T("#player");
+                T("#storyplayer");
+                return E(p());
             });
             $("a.arrow-right").click(function(e) {
-                var t, i, r, n, a;
+                var a, t, i, r, n;
                 e.preventDefault();
-                t = $(".composers-wrap");
-                a = t.find(".slide").length;
-                r = t.find(".active");
-                i = r.data("order");
-                if (i <= a - 2) {
-                    n = t.find("[data-order=" + (i + 1) + "]");
-                    r.removeClass("active");
-                    n.addClass("active");
-                    return T(c());
+                a = $(".composers-wrap");
+                n = a.find(".slide").length;
+                i = a.find(".active");
+                t = i.data("order");
+                if (t <= n - 2) {
+                    r = a.find("[data-order=" + (t + 1) + "]");
+                    i.removeClass("active");
+                    r.addClass("active");
+                    return E(p());
                 } else {
-                    n = t.find("[data-order=0]");
-                    r.removeClass("active");
-                    n.addClass("active");
-                    return T(c());
+                    r = a.find("[data-order=0]");
+                    i.removeClass("active");
+                    r.addClass("active");
+                    return E(p());
                 }
             });
             $("a.arrow-left").click(function(e) {
-                var t, i, r, n, a;
+                var a, t, i, r, n;
                 e.preventDefault();
-                t = $(".composers-wrap");
-                a = t.find(".slide").length;
-                r = t.find(".active");
-                i = r.data("order");
-                if (i >= 1) {
-                    n = t.find("[data-order=" + (i - 1) + "]");
-                    r.removeClass("active");
-                    n.addClass("active");
-                    return T(c());
+                a = $(".composers-wrap");
+                n = a.find(".slide").length;
+                i = a.find(".active");
+                t = i.data("order");
+                if (t >= 1) {
+                    r = a.find("[data-order=" + (t - 1) + "]");
+                    i.removeClass("active");
+                    r.addClass("active");
+                    return E(p());
                 } else {
-                    n = t.find("[data-order=" + (a - 1) + "]");
-                    r.removeClass("active");
-                    n.addClass("active");
-                    return T(c());
+                    r = a.find("[data-order=" + (n - 1) + "]");
+                    i.removeClass("active");
+                    r.addClass("active");
+                    return E(p());
                 }
             });
             return $("a.pulldown").click(function(e) {
                 e.preventDefault();
                 return $(this).parent().find("ul").slideToggle(200, function() {
-                    return T(c());
+                    return E(p());
                 });
             });
         };
-        d = function(e, t, i) {
-            var r;
-            r = i[t].fields;
+        s = function(e, a, t) {
+            var i;
+            i = t[a].fields;
             if (e.find("li").hasClass("unreleased")) {
-                y.cueVideoById("T8k44ryj5DQ");
-                y.playVideo();
-                return $(".videos h1").empty().text(r.episodeTitle);
+                w.cueVideoById("T8k44ryj5DQ");
+                w.playVideo();
+                return $(".videos h1").empty().text(i.episodeTitle);
             } else {
-                y.cueVideoById(r.ytVideoId);
-                $(".videos h1").empty().text(r.episodeTitle);
-                return T(c());
+                w.cueVideoById(i.ytVideoId);
+                $(".videos h1").empty().text(i.episodeTitle);
+                return E(p());
             }
         };
-        a = function(e, t) {
-            var i;
-            i = t[e].fields;
-            w.cueVideoById(i.additionalYouTube);
-            $(".stories h1").empty().text(i.additionalVideoTitle);
-            $(".stories p.body").empty().text(i.description);
+        o = function(e, a) {
+            var t;
+            t = a[e].fields;
+            $(".stories h1").empty().text(t.additionalVideoTitle);
+            $(".stories p.body").empty().text(t.description);
             $(".stories p.body").slideDown();
-            return T(c());
+            return E(p());
         };
-        i = function(e, t, i) {
-            var r, n, a, d, s, o, l, c, u, f, p;
-            if (i === "main") {
-                f = [];
-                for (d = o = 0, c = e.length; o < c; d = ++o) {
-                    s = e[d];
-                    n = s.fields.episodeNumber;
-                    r = new Date();
-                    a = new Date(s.fields.datetimeOfLaunch);
-                    if (moment() < a) {
-                        t.append("<a class='episode' href='#episode' data-order=" + d + "><li class='unreleased' data-release='" + a + "'>" + n + "</li>");
+        r = function(e, a, t) {
+            var i, r, n, d, o, s, l, c, u, p, f;
+            if (t === "main") {
+                p = [];
+                for (d = s = 0, c = e.length; s < c; d = ++s) {
+                    o = e[d];
+                    r = o.fields.episodeNumber;
+                    i = new Date();
+                    n = new Date(o.fields.datetimeOfLaunch);
+                    if (moment() < n) {
+                        a.append("<a class='episode' href='#episode' data-order=" + d + "><li class='unreleased' data-release='" + n + "'>" + r + "</li>");
                     } else {
-                        t.append("<a class='episode' href='#episode' data-order=" + d + "><li class='released'>" + n + "</li>");
+                        a.append("<a class='episode' href='#episode' data-order=" + d + "><li class='released'>" + r + "</li>");
                     }
-                    f.push(t.find("li").each(function() {
-                        var e, t, i, r;
-                        r = $(this);
-                        if (r.hasClass("unreleased")) {
-                            t = r.text();
-                            i = r.data("release");
-                            e = new Date(i);
-                            r.bind("mouseenter", function() {
-                                return r.empty().text(moment(i).format("ddd, MMM Do"));
+                    p.push(a.find("li").each(function() {
+                        var e, a, t, i;
+                        i = $(this);
+                        if (i.hasClass("unreleased")) {
+                            a = i.text();
+                            t = i.data("release");
+                            e = new Date(t);
+                            i.bind("mouseenter", function() {
+                                return i.empty().text(moment(t).format("ddd, MMM Do"));
                             });
-                            return r.bind("mouseleave", function() {});
+                            return i.bind("mouseleave", function() {});
                         }
                     }));
                 }
-                return f;
-            } else if (i === "additional") {
-                p = [];
-                for (d = l = 0, u = e.length; l < u; d = ++l) {
-                    s = e[d];
-                    n = s.fields.additionalVideoTitle;
-                    p.push(t.append("<a class='additional-episode' href='#additional-episode' data-order=" + d + "><li>" + n + "</li>"));
-                }
                 return p;
+            } else if (t === "additional") {
+                f = [];
+                for (d = l = 0, u = e.length; l < u; d = ++l) {
+                    o = e[d];
+                    r = o.fields.additionalVideoTitle;
+                    f.push(a.append("<a class='additional-episode' href='#additional-episode' data-order=" + d + "><li>" + r + "</li>"));
+                }
+                return f;
             }
         };
-        e = function(e) {
-            var t, i, r, n, a, d, s, l, c, u;
+        a = function(e) {
+            var a, t, i, r, n, d, o, s, l, u;
             u = [];
-            for (r = l = 0, c = e.length; l < c; r = ++l) {
-                t = e[r];
-                d = t.fields;
-                a = d.composerName;
-                n = d.image.fields.file.url;
-                s = o.makeHtml(d.bio);
-                i = "<div class='slide' data-order='" + r + "'><div class='img-wrap'><a class='arrow-left' href></a><a class='arrow-right' href></a><img src='" + n + "'/></div><h2>" + d.composerName + "</h2><p>" + s + "</p></div>";
-                $(".composers-wrap").append(i);
+            for (i = s = 0, l = e.length; s < l; i = ++s) {
+                a = e[i];
+                d = a.fields;
+                n = d.composerName;
+                r = d.image.fields.file.url;
+                o = c.makeHtml(d.bio);
+                t = "<div class='slide' data-order='" + i + "'><div class='img-wrap'><a class='arrow-left' href></a><a class='arrow-right' href></a><img src='" + r + "'/></div><h2>" + d.composerName + "</h2><p>" + o + "</p></div>";
+                $(".composers-wrap").append(t);
                 u.push($(".slide").first().addClass("active"));
             }
             return u;
         };
         t = function(e) {
-            var t, i, r, n, a, d, s, o, l, u;
-            u = [];
-            for (o = 0, l = e.length; o < l; o++) {
-                n = e[o];
-                d = n.fields;
-                s = d.artistName;
-                i = d.rbmaRadioEmbedCode;
-                t = d.descriptions;
-                r = d.artistImage.fields.file.url;
-                a = "<div class='show'><img src='" + r + "'/>" + i + "<p>" + t + "</p></div>";
-                $(".radio").append(a);
-                u.push(T(c()));
+            var a, t, i, r, n, d, o, s, l, c;
+            c = [];
+            for (s = 0, l = e.length; s < l; s++) {
+                r = e[s];
+                d = r.fields;
+                o = d.artistName;
+                t = d.rbmaRadioEmbedCode;
+                a = d.descriptions;
+                i = d.artistImage.fields.file.url;
+                n = "<div class='show'><img src='" + i + "'/>" + t + "<p>" + a + "</p></div>";
+                $(".radio").append(n);
+                c.push(E(p()));
             }
-            return u;
+            return c;
         };
-        b = function(e) {
-            var t, i, r, n, a, d, s, o;
-            a = $(e);
+        T = function(e) {
+            var a, t, i, r, n, d, o;
+            g = $(e);
             o = $(window).width();
-            s = o / 1.3;
-            n = a.attr("width");
-            r = a.attr("height");
-            d = n / r;
-            a.attr("width", s);
-            a.attr("height", s / d);
-            t = o - s;
-            i = t / 2;
-            a.css({
-                marginLeft: i,
+            d = o / 1.3;
+            r = g.attr("width");
+            i = g.attr("height");
+            n = r / i;
+            g.attr("width", d);
+            g.attr("height", d / n);
+            a = o - d;
+            t = a / 2;
+            g.css({
+                marginLeft: t,
                 display: "block"
             });
-            return T(c());
+            return E(p());
         };
-        C = function() {
+        x = function() {
             $(".spinner").remove();
-            return T(c());
+            return E(p());
         };
-        l = function() {
-            var n;
-            n = contentful.createClient({
+        u = function() {
+            var e;
+            e = contentful.createClient({
                 accessToken: "38b8dbaf503a350d5722578c6547caca484511f7c78717736ac8f576832be4b0",
                 space: "s9bc5ah7p1d5"
             });
-            n.entries({
+            e.entries({
                 content_type: "42CpXYSUms44OskS6wUU6I",
                 include: 1
-            }).done(function(t) {
-                e(t);
-                return g(1);
+            }).done(function(e) {
+                a(e);
+                return I(1);
             });
-            n.entries({
+            e.entries({
                 content_type: "36SuQSSPR6QmWOk8CseMC6",
                 include: 1,
                 order: "fields.order"
             }).done(function(e) {
-                I = e;
-                g(1);
-                i(I, $(".video-nav ul"), "main");
+                M = e;
+                I(1);
+                r(M, $(".video-nav ul"), "main");
                 return $("a.episode").bind("click", function(e) {
-                    var t;
+                    var a;
                     e.preventDefault();
                     $(this).parent().find("li").removeClass("active");
                     $(this).find("li").addClass("active");
-                    t = $(this).data("order");
-                    return d($(this), t, I);
+                    a = $(this).data("order");
+                    return s($(this), a, M);
                 });
             });
-            n.entries({
+            e.entries({
                 content_type: "2YpXtnGW80EEGgCUsSMmCc",
                 include: 1
             }).done(function(e) {
-                g(1);
+                I(1);
                 return t(e);
             });
-            return n.entries({
+            return e.entries({
                 content_type: "6fwxAcXrxK4yqyaMUiWwWY",
                 include: 1,
                 order: "fields.order"
             }).done(function(e) {
-                g(1);
-                r = e;
-                i(r, $(".story-nav ul"), "additional");
+                I(1);
+                n = e;
+                r(n, $(".story-nav ul"), "additional");
                 return $("a.additional-episode").bind("click", function(e) {
-                    var t;
+                    var a;
                     e.preventDefault();
                     $(this).parent().find("li").removeClass("active");
                     $(this).find("li").addClass("active");
-                    t = $(this).data("order");
-                    return a(t, r);
+                    a = $(this).data("order");
+                    return o(a, n);
                 });
             });
         };
-        return l();
+        return u();
     });
 }).call(this);
