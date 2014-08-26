@@ -36,7 +36,7 @@
             return window.parent.postMessage(i, "*");
         };
         c = function() {
-            return $(document.body).height();
+            return $(document).height();
         };
         D = function() {
             var e, t;
