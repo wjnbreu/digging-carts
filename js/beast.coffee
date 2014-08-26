@@ -11,7 +11,7 @@ $ ->
 	player = {}
 	APIModules = {}
 	modVP = {}
-	vidRatio = 16 / 9
+	vidRatio = 640 / 360
 	targetVideo = {}
 
 	brightcoveVideos = []
