@@ -60,7 +60,7 @@ $ ->
 		return window.parent.postMessage(messageJSON, '*')
 
 	getHeight = ->
-		return $(document).height()
+		return $(document.body).height()
 
 	window.onTemplateLoad = (experienceID) ->
 		player = brightcove.api.getExperience(experienceID)
