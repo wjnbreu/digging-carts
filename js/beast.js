@@ -1,34 +1,35 @@
 (function() {
     $(function() {
-        var e, a, t, i, r, n, d, o, s, l, c, u, p, f, m, v, h, w, y, g, C, b, D, I, E, T, x, k, M, S;
+        var e, a, t, i, r, n, d, o, s, l, c, u, p, f, m, v, h, w, y, g, b, C, D, I, T, E, x, k, M, S, V;
         l = {};
-        S = {};
+        V = {};
         h = {};
         n = {};
         v = {};
-        y = {};
         g = {};
         d = {};
         m = 0;
         c = new Showdown.converter();
-        w = {};
+        y = {};
         e = {};
-        M = 1.777777777777778;
-        C = {
+        S = 16 / 9;
+        b = {
             playerID: "1684512102001",
             playerKey: "AQ~~%2CAAABTw4lHzE~%2Csr1E9bdX6d4wCdvdlD8QKdNij3uKs2K9",
             width: $(window).width() / 1.5,
-            height: $(window).width() / 1.5 / M,
+            height: $(window).width() / 1.5 / S,
             videoID: "3747213877001"
         };
-        b = '<div style="display:none"></div><object id="myExperience" class="BrightcoveExperience"><param name="bgcolor" value="#FFFFFF" /><param name="width" value="{{width}}" /><param name="height" value="{{height}}" /><param name="playerID" value="{{playerID}}" /><param name="playerKey" value="{{playerKey}}" /><param name="isSlim" value="true" /><param name="isVid" value="true" /><param name="isUI" value="true" /><param name="dynamicStreaming" value="true" /><param name="@videoPlayer" value="{{videoID}}"; /><param name="includeAPI" value="true" /><param name="templateLoadHandler" value="onTemplateLoad" /><param name="templateReadyHandler" value="onTemplateReady" /></object>';
+        C = '<div style="display:none"></div><object id="myExperience" class="BrightcoveExperience"><param name="bgcolor" value="#FFFFFF" /><param name="width" value="{{width}}" /><param name="height" value="{{height}}" /><param name="playerID" value="{{playerID}}" /><param name="playerKey" value="{{playerKey}}" /><param name="isSlim" value="true" /><param name="isVid" value="true" /><param name="isUI" value="true" /><param name="dynamicStreaming" value="true" /><param name="@videoPlayer" value="{{videoID}}"; /><param name="includeAPI" value="true" /><param name="templateLoadHandler" value="onTemplateLoad" /><param name="templateReadyHandler" value="onTemplateReady" /></object>';
         f = function() {
             k();
             i();
+            M();
             $(".video-nav ul a.episode li").first().addClass("active");
             $(".story-nav ul a.additional-episode li").first().addClass("active");
             console.log("init called");
-            return I();
+            I();
+            return x(p());
         };
         D = function(e) {
             m = m + e;
@@ -50,16 +51,15 @@
             return $(document).height();
         };
         window.onTemplateLoad = function(a) {
-            w = brightcove.api.getExperience(a);
+            y = brightcove.api.getExperience(a);
             return e = brightcove.api.modules.APIModules;
         };
         window.onTemplateReady = function(a) {
             var t;
-            t = w.getModule(e.VIDEO_PLAYER);
-            E();
-            return t.play();
+            t = y.getModule(e.VIDEO_PLAYER);
+            return T();
         };
-        E = function() {
+        T = function() {
             var e, a, t, i, r, n, d, o;
             n = $("#player").find("object");
             i = n.attr("width");
@@ -67,17 +67,43 @@
             o = $(window).width();
             d = o / 1.3;
             r = i / t;
-            w.find('param[name="width"]').attr("vidWidth");
+            y.find('param[name="width"]').attr("vidWidth");
             console.log(t);
             e = o - d;
             return a = e / 2;
         };
         i = function() {
             var e, a;
-            a = Handlebars.compile(b);
-            e = a(C);
+            a = Handlebars.compile(C);
+            e = a(b);
             document.getElementById("player").innerHTML = e;
             return brightcove.createExperiences();
+        };
+        M = function() {
+            var e, a;
+            a = document.createElement("script");
+            a.src = "https://www.youtube.com/iframe_api";
+            e = document.getElementsByTagName("script")[0];
+            return e.parentNode.insertBefore(a, e);
+        };
+        window.onYouTubeIframeAPIReady = function() {
+            return g = new YT.Player("storyplayer", {
+                height: "39",
+                width: "64",
+                videoId: "VsbG4pXrhr8",
+                events: {
+                    onReady: w
+                },
+                playerVars: {
+                    modestbranding: true,
+                    controls: 1,
+                    showinfo: 0,
+                    hd: 1
+                }
+            });
+        };
+        w = function(e) {
+            return E("#storyplayer");
         };
         k = function() {
             window.addEventListener("resize", function() {});
@@ -126,11 +152,11 @@
             var i;
             i = t[a].fields;
             if (e.find("li").hasClass("unreleased")) {
-                y.cueVideoById("T8k44ryj5DQ");
-                y.playVideo();
+                player1.cueVideoById("T8k44ryj5DQ");
+                player1.playVideo();
                 return $(".videos h1").empty().text(i.episodeTitle);
             } else {
-                y.cueVideoById(i.ytVideoId);
+                player1.cueVideoById(i.ytVideoId);
                 return $(".videos h1").empty().text(i.episodeTitle);
             }
         };
@@ -210,19 +236,19 @@
             }
             return c;
         };
-        T = function(e) {
+        E = function(e) {
             var a, t, i, r, n, d, o;
-            w = $(e);
+            y = $(e);
             o = $(window).width();
             d = o / 1.3;
-            r = w.attr("width");
-            i = w.attr("height");
+            r = y.attr("width");
+            i = y.attr("height");
             n = r / i;
-            w.attr("width", d);
-            w.attr("height", d / n);
+            y.attr("width", d);
+            y.attr("height", d / n);
             a = o - d;
             t = a / 2;
-            return w.css({
+            return y.css({
                 marginLeft: t,
                 display: "block"
             });
@@ -248,16 +274,16 @@
                 include: 1,
                 order: "fields.order"
             }).done(function(e) {
-                S = e;
+                V = e;
                 D(1);
-                r(S, $(".video-nav ul"), "main");
+                r(V, $(".video-nav ul"), "main");
                 return $("a.episode").bind("click", function(e) {
                     var a;
                     e.preventDefault();
                     $(this).parent().find("li").removeClass("active");
                     $(this).find("li").addClass("active");
                     a = $(this).data("order");
-                    return s($(this), a, S);
+                    return s($(this), a, V);
                 });
             });
             e.entries({

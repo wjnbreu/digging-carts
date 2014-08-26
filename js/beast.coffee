@@ -11,14 +11,13 @@ $ ->
 	mixObject = {}
 	additionalVideoObject = {}
 	magazineObject = {}
-	player1 = {}
 	player2 = {}
 	anchorElements = {}
 	initCount = 0
 	converter = new Showdown.converter()
 	player = {}
 	APIModules = {}
-	vidRatio = 1.777777777777778
+	vidRatio = 16 / 9
 
 	playerData = {
 			"playerID" : "1684512102001",
@@ -34,13 +33,15 @@ $ ->
 
 	init = ->
 		setupBinds()
-		# setupYouTube()
+		#Brightcove
 		addPlayer()
+		setupYouTube()
 		$('.video-nav ul a.episode li').first().addClass "active"
 		$('.story-nav ul a.additional-episode li').first().addClass "active"
 		# setTimeout(sendHeight(getHeight()), 500)
 		console.log 'init called'
 		removeSpinner()
+		sendHeight(getHeight())
 		
 
 		
@@ -70,7 +71,7 @@ $ ->
 	window.onTemplateReady = (evt) ->
 		videoPlayer = player.getModule(APIModules.VIDEO_PLAYER)
 		resizePlayer()
-		videoPlayer.play()
+		# videoPlayer.play()
 		# resizeVid($('#player'))
 
 	
@@ -101,52 +102,31 @@ $ ->
 		brightcove.createExperiences()
 
 
-	# setupYouTube = ->
-	# 	tag = document.createElement('script')
-	# 	tag.src = "https://www.youtube.com/iframe_api"
-	# 	firstScriptTag = document.getElementsByTagName('script')[0]
-	# 	firstScriptTag.parentNode.insertBefore(tag, firstScriptTag)
+	setupYouTube = ->
+		tag = document.createElement('script')
+		tag.src = "https://www.youtube.com/iframe_api"
+		firstScriptTag = document.getElementsByTagName('script')[0]
+		firstScriptTag.parentNode.insertBefore(tag, firstScriptTag)
 
 	
-	# window.onYouTubeIframeAPIReady = ->
-	# 	player1 = new YT.Player 'player',
-	# 		height: '39'
-	# 		width: '64'
-	# 		videoId: 'WYSupJ5r2zo'
-	# 		events: {
-	# 			"onReady": onPlayerReady1
-	# 		}
-	# 		playerVars: {
-	# 			modestbranding: true
-	# 			controls: 1
-	# 			showinfo: 0
-	# 			hd: 1
+	window.onYouTubeIframeAPIReady = ->
+		player2 = new YT.Player 'storyplayer',
+			height: '39'
+			width: '64'
+			videoId: 'VsbG4pXrhr8'
+			events: {
+				"onReady": onPlayerReady2
+			}
+			playerVars: {
+				modestbranding: true
+				controls: 1
+				showinfo: 0
+				hd: 1
+			}
 
-	# 		}
-		
-	# 	player2 = new YT.Player 'storyplayer',
-	# 		height: '39'
-	# 		width: '64'
-	# 		videoId: 'VsbG4pXrhr8'
-	# 		events: {
-	# 			"onReady": onPlayerReady2
-	# 		}
-	# 		playerVars: {
-	# 			modestbranding: true
-	# 			controls: 1
-	# 			showinfo: 0
-	# 			hd: 1
-	# 		}
 
-	
-
-	# onPlayerReady1 = (event) ->
-	# 	resizeVid('#player')
-	# 	sendHeight(getHeight())
-
-	# onPlayerReady2 = (event) ->
-	# 	resizeVid('#storyplayer')
-	# 	sendHeight(getHeight())
+	onPlayerReady2 = (event) ->
+		resizeVid('#storyplayer')
 	
 	setupBinds = ->
 		#resize
@@ -167,12 +147,10 @@ $ ->
 				nextSlide = composers.find("[data-order=#{currentPos + 1}]")
 				currentSlide.removeClass 'active'
 				nextSlide.addClass 'active'
-				# sendHeight(getHeight())
 			else
 				nextSlide = composers.find("[data-order=0]")
 				currentSlide.removeClass 'active'
 				nextSlide.addClass 'active'
-				# sendHeight(getHeight())
 
 		$('a.arrow-left').click (event) ->
 			event.preventDefault()
@@ -185,13 +163,11 @@ $ ->
 				nextSlide = composers.find("[data-order=#{currentPos - 1}]")
 				currentSlide.removeClass 'active'
 				nextSlide.addClass 'active'
-				# sendHeight(getHeight())
 
 			else
 				nextSlide = composers.find("[data-order=#{totalComposers - 1}]")
 				currentSlide.removeClass 'active'
 				nextSlide.addClass 'active'
-				# sendHeight(getHeight())
 
 		#DROP DOWN MENUS
 		$('a.pulldown').click (event) ->
