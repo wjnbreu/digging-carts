@@ -79,11 +79,11 @@ $ ->
 
 	onPlayerReady1 = (event) ->
 		resizeVid('#player')
-		sendHeight(getHeight())
+		# sendHeight(getHeight())
 		# sendHeight(getHeight())
 
 	onPlayerReady2 = (event) ->
-		sendHeight(getHeight())
+		# sendHeight(getHeight())
 		# resizeVid('#storyplayer')
 		# sendHeight(getHeight())
 	

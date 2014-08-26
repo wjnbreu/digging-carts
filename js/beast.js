@@ -74,12 +74,9 @@
             });
         };
         h = function(e) {
-            b("#player");
-            return T(c());
+            return b("#player");
         };
-        m = function(e) {
-            return T(c());
-        };
+        m = function(e) {};
         k = function() {
             window.addEventListener("resize", function() {
                 return T(c());
