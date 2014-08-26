@@ -4,6 +4,8 @@ $ ->
 
 	#vid Ratio = 1.777777777778
 
+	#<object type="application/x-shockwave-flash" data="http://c.brightcove.com/services/viewer/federated_f9?&amp;width=640&amp;height=360&amp;flashID=myExperience&amp;bgcolor=%23FFFFFF&amp;playerID=1684512102001&amp;playerKey=AQ~~%2CAAABTw4lHzE~%2Csr1E9bdX6d4wCdvdlD8QKdNij3uKs2K9&amp;isSlim=true&amp;dynamicStreaming=true&amp;autoStart=false&amp;debuggerID=&amp;videoID=3747213877001&amp;%40videoPlayer=3747213877001&amp;startTime=1409052391494" id="myExperience" width="640" height="360" class="BrightcoveExperience" seamlesstabbing="undefined"><param name="allowScriptAccess" value="always"><param name="allowFullScreen" value="true"><param name="seamlessTabbing" value="false"><param name="swliveconnect" value="true"><param name="wmode" value="window"><param name="quality" value="high"><param name="bgcolor" value="#FFFFFF"></object>
+
 	composerObject = {}
 	videoObject = {}
 	mixObject = {}
@@ -19,14 +21,14 @@ $ ->
 	vidRatio = 1.777777777777778
 
 	playerData = {
-			"playerID" : "1507808033001",
-			"playerKey" : "AQ~~,AAABXxBZKsE~,AdU2xXeQoKCatdLR1Pb_eo4UzCFcjSKc",
+			"playerID" : "1684512102001",
+			"playerKey" : "AQ~~%2CAAABTw4lHzE~%2Csr1E9bdX6d4wCdvdlD8QKdNij3uKs2K9",
 			"width" : ($(window).width()) / 1.5,
 			"height" : (($(window).width()) / 1.5) / vidRatio,
-			"videoID" : "2114345471001"
+			"videoID" : "3747213877001"
 		}
 
-	playerTemplate = "<div style=\"display:none\"></div><object id=\"myExperience\" class=\"BrightcoveExperience\"><param name=\"bgcolor\" value=\"#FFFFFF\" /><param name=\"width\" value=\"{{width}}\" /><param name=\"height\" value=\"{{height}}\" /><param name=\"playerID\" value=\"{{playerID}}\" /><param name=\"playerKey\" value=\"{{playerKey}}\" /><param name=\"isVid\" value=\"true\" /><param name=\"isUI\" value=\"true\" /><param name=\"dynamicStreaming\" value=\"true\" /><param name=\"@videoPlayer\" value=\"{{videoID}}\"; /><param name=\"includeAPI\" value=\"true\" /><param name=\"templateLoadHandler\" value=\"onTemplateLoad\" /><param name=\"templateReadyHandler\" value=\"onTemplateReady\" /></object>"
+	playerTemplate = "<div style=\"display:none\"></div><object id=\"myExperience\" class=\"BrightcoveExperience\"><param name=\"bgcolor\" value=\"#FFFFFF\" /><param name=\"width\" value=\"{{width}}\" /><param name=\"height\" value=\"{{height}}\" /><param name=\"playerID\" value=\"{{playerID}}\" /><param name=\"playerKey\" value=\"{{playerKey}}\" /><param name=\"isSlim\" value=\"true\" /><param name=\"isVid\" value=\"true\" /><param name=\"isUI\" value=\"true\" /><param name=\"dynamicStreaming\" value=\"true\" /><param name=\"@videoPlayer\" value=\"{{videoID}}\"; /><param name=\"includeAPI\" value=\"true\" /><param name=\"templateLoadHandler\" value=\"onTemplateLoad\" /><param name=\"templateReadyHandler\" value=\"onTemplateReady\" /></object>"
 
 	
 
@@ -58,17 +60,40 @@ $ ->
 	window.onTemplateLoad = (experienceID) ->
 		player = brightcove.api.getExperience(experienceID)
 		APIModules = brightcove.api.modules.APIModules
-		console.log 'im so loaded man'
+		
 		
 
 	window.onTemplateReady = (evt) ->
 		videoPlayer = player.getModule(APIModules.VIDEO_PLAYER)
+		resizePlayer()
 		videoPlayer.play()
 		# resizeVid($('#player'))
 
 	# onMediaEventFired = (evt) ->
 	# 	alert 'event happened'
+	
+	resizePlayer = ->
+		vid = $('#player').find('object')
+		ogWidth = vid.attr 'width'
+		ogHeight = vid.attr 'height'
+		winWidth = $(window).width()
+		vidWidth = winWidth / 1.3
 		
+		ratio = ogWidth / ogHeight
+		
+		player.find('param[name="width"]').attr('vidWidth')
+		# player.attr('height', vidWidth / ratio)
+		console.log ogHeight
+
+		diff = winWidth - vidWidth
+		margin = diff / 2
+
+		$('#player').css
+			marginLeft: margin
+			opacity: 1
+
+		sendHeight(getHeight())
+
 
 	addPlayer = ->
 		template = Handlebars.compile(playerTemplate)
@@ -341,7 +366,8 @@ $ ->
 
 
 
-	#launch when ready	
+	#launch when ready
+	
 	getData()
 	# window.addEventListener('load', sendHeight(getHeight()))
 	
