@@ -1,13 +1,13 @@
 (function() {
     $(function() {
-        var e, t, i, r, n, a, d, s, o, l, c, u, f, p, v, h, m, y, w, g, C, b, T, k, D, I;
+        var e, t, i, r, n, a, d, s, o, l, c, u, f, p, v, h, m, w, y, g, C, b, T, k, D, I;
         s = {};
         I = {};
         v = {};
         r = {};
         p = {};
-        y = {};
         w = {};
+        y = {};
         n = {};
         f = 0;
         o = new Showdown.converter();
@@ -45,7 +45,7 @@
             return e.parentNode.insertBefore(t, e);
         };
         window.onYouTubeIframeAPIReady = function() {
-            y = new YT.Player("player", {
+            w = new YT.Player("player", {
                 height: "39",
                 width: "64",
                 videoId: "WYSupJ5r2zo",
@@ -59,7 +59,7 @@
                     hd: 1
                 }
             });
-            return w = new YT.Player("storyplayer", {
+            return y = new YT.Player("storyplayer", {
                 height: "39",
                 width: "64",
                 videoId: "VsbG4pXrhr8",
@@ -77,14 +77,9 @@
         h = function(e) {
             return b("#player");
         };
-        m = function(e) {
-            return b("#storyplayer");
-        };
+        m = function(e) {};
         k = function() {
-            window.addEventListener("resize", function() {
-                b("#player");
-                return b("#storyplayer");
-            });
+            window.addEventListener("resize", function() {});
             $("a.arrow-right").click(function(e) {
                 var t, i, r, n, a;
                 e.preventDefault();
@@ -130,18 +125,18 @@
             var r;
             r = i[t].fields;
             if (e.find("li").hasClass("unreleased")) {
-                y.cueVideoById("T8k44ryj5DQ");
-                y.playVideo();
+                w.cueVideoById("T8k44ryj5DQ");
+                w.playVideo();
                 return $(".videos h1").empty().text(r.episodeTitle);
             } else {
-                y.cueVideoById(r.ytVideoId);
+                w.cueVideoById(r.ytVideoId);
                 return $(".videos h1").empty().text(r.episodeTitle);
             }
         };
         a = function(e, t) {
             var i;
             i = t[e].fields;
-            w.cueVideoById(i.additionalYouTube);
+            y.cueVideoById(i.additionalYouTube);
             $(".stories h1").empty().text(i.additionalVideoTitle);
             $(".stories p.body").empty().text(i.description);
             return $(".stories p.body").slideDown();

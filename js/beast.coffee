@@ -82,14 +82,14 @@ $ ->
 		# sendHeight(getHeight())
 
 	onPlayerReady2 = (event) ->
-		resizeVid('#storyplayer')
+		# resizeVid('#storyplayer')
 		# sendHeight(getHeight())
 	
 	setupBinds = ->
 		#resize
 		window.addEventListener 'resize', ->
-			resizeVid('#player')
-			resizeVid('#storyplayer')
+			# resizeVid('#player')
+			# resizeVid('#storyplayer')
 			# sendHeight(getHeight())
 
 		$('a.arrow-right').click (event) ->
