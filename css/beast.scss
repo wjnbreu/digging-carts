@@ -502,7 +502,7 @@ li{
 		background-color: black;
 		padding-bottom: 10%;
 		padding-bottom: 10%;
-		border-bottom: 4px solid $gray;
+		border-bottom: 2px solid $gray;
 		#myExperience{
 			display: block !important;
 			@include smallboxy;
@@ -804,6 +804,7 @@ li{
 
 
 	.startscreen{
+		min-height: 700px;
 		.start-image{
 			position: absolute;
 			top: 0;

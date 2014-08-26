@@ -16,6 +16,8 @@ $ ->
 
 	brightcoveVideos = []
 
+	isMobile = false
+
 	playerData = {
 			"playerID" : "1684512102001",
 			"playerKey" : "AQ~~%2CAAABTw4lHzE~%2Csr1E9bdX6d4wCdvdlD8QKdNij3uKs2K9",
@@ -45,7 +47,7 @@ $ ->
 		initCount = initCount + count
 		console.log initCount
 		#make sure all data is done before calling init
-		if initCount == 6
+		if initCount == 4
 			removeSpinner()
 			init()
 			initCount = 0
@@ -68,7 +70,6 @@ $ ->
 
 	window.onTemplateReady = (evt) ->
 		# videoPlayer = player.getModule(APIModules.VIDEO_PLAYER)
-		prepInit(1)
 		resizePlayer($('#myExperience'))
 		modVP.addEventListener(brightcove.api.events.MediaEvent.BEGIN, onMediaEventFired)
 		modVP.addEventListener(brightcove.api.events.MediaEvent.CHANGE, onMediaEventFired)
@@ -78,11 +79,9 @@ $ ->
 		# modVP.addEventListener(brightcove.api.events.MediaEvent.PROGRESS, onMediaProgressFired)
 		modVP.addEventListener(brightcove.api.events.MediaEvent.STOP, onMediaEventFired)
 		sendHeight(getHeight())
-		# videoPlayer.play()
-		# resizeVid($('#player'))
 
 	onMediaProgressFired = (evt) ->
-		console.log evt
+		return 0
 
 	swapVideo = (order) ->
 		modVP.getCurrentVideo(currentVideoCallback)
@@ -103,18 +102,27 @@ $ ->
 		ogHeight = vid.attr "height"
 		winWidth = $(window).width()
 		vidWidth = winWidth / 1.3
-		
 		ratio = ogWidth / ogHeight
 		
+		#target brightcove iframe on mobile
+		if isMobile
+			if vid.attr "src"
+				src = vid.attr "src"
+				if src.indexOf("width=") > -1
+					src.replace("512", vidWidth)
+				if src.indexOf("height=") > -1
+					src.replace("288", vidWidth / ratio)
+
+
 		vid.attr("width", vidWidth)
 		vid.attr("height", vidWidth / ratio)
-		# player.attr('height', vidWidth / ratio)
 
 		diff = winWidth - vidWidth
 		margin = diff / 2
 
 		vid.css
 			marginLeft: margin
+			marginRight: margin
 
 
 	addPlayer = ->
@@ -151,15 +159,15 @@ $ ->
 
 
 	onPlayerReady2 = (event) ->
-		prepInit(1)
 		resizeVid('#storyplayer')
 	
 	setupBinds = ->
+		
 		#resize
 		window.addEventListener 'resize', ->
 			resizeVid($('#myExperience'))
 			resizeVid($('#storyplayer'))
-			# sendHeight(getHeight())
+
 
 		$('a.arrow-right').click (event) ->
 			event.preventDefault()
@@ -305,13 +313,17 @@ $ ->
 			marginLeft: margin
 			display: 'block'
 
-		# sendHeight(getHeight())
 
 
 	removeSpinner = ->
 		$('.spinner').fadeOut ->
 			$('.spinner').remove()
-		# sendHeight(getHeight())
+
+	detectMobile = ->
+		if ( /Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent) )
+			isMobile = true
+
+
 
 
 
@@ -371,6 +383,7 @@ $ ->
 	#launch when ready
 	
 	getData()
+	detectMobile()
 	
 
 	
