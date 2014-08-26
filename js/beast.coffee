@@ -92,7 +92,7 @@ $ ->
 		window.addEventListener 'resize', ->
 			# resizeVid('#player')
 			# resizeVid('#storyplayer')
-			sendHeight(getHeight())
+			# sendHeight(getHeight())
 
 		$('a.arrow-right').click (event) ->
 			event.preventDefault()
@@ -303,5 +303,5 @@ $ ->
 
 	#launch when ready	
 	getData()
-	# window.addEventListener('load', sendHeight(getHeight()))
+	window.addEventListener('load', sendHeight(getHeight()))
 	

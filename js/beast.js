@@ -78,9 +78,7 @@
         };
         m = function(e) {};
         k = function() {
-            window.addEventListener("resize", function() {
-                return T(c());
-            });
+            window.addEventListener("resize", function() {});
             $("a.arrow-right").click(function(e) {
                 var t, i, r, n, a;
                 e.preventDefault();
@@ -286,6 +284,7 @@
                 });
             });
         };
-        return l();
+        l();
+        return window.addEventListener("load", T(c()));
     });
 }).call(this);
