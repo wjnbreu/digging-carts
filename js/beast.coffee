@@ -69,7 +69,7 @@ $ ->
 	window.onTemplateReady = (evt) ->
 		# videoPlayer = player.getModule(APIModules.VIDEO_PLAYER)
 		prepInit(1)
-		resizePlayer()
+		resizePlayer($('#myExperience'))
 		modVP.addEventListener(brightcove.api.events.MediaEvent.BEGIN, onMediaEventFired)
 		modVP.addEventListener(brightcove.api.events.MediaEvent.CHANGE, onMediaEventFired)
 		modVP.addEventListener(brightcove.api.events.MediaEvent.COMPLETE, onMediaEventFired)
@@ -97,9 +97,8 @@ $ ->
 	
 
 	
-	
 	resizePlayer = (video) ->
-		vid = $('#myExperience')
+		vid = video
 		ogWidth = vid.attr "width"
 		ogHeight = vid.attr "height"
 		winWidth = $(window).width()
@@ -158,8 +157,8 @@ $ ->
 	setupBinds = ->
 		#resize
 		window.addEventListener 'resize', ->
-			# resizeVid('#player')
-			# resizeVid('#storyplayer')
+			resizeVid($('#myExperience'))
+			resizeVid($('#storyplayer'))
 			# sendHeight(getHeight())
 
 		$('a.arrow-right').click (event) ->

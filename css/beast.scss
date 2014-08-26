@@ -201,6 +201,9 @@ li{
 	background-color: black;
 	padding-bottom: 48px;
 	border-bottom: 1px solid $gray;
+	#myExperience{
+		@include boxy;
+	}
 	.video-nav{
 		margin-top: 48px;
 		ul{
@@ -500,6 +503,7 @@ li{
 		border-bottom: 4px solid $gray;
 		#myExperience{
 			display: block !important;
+			@include smallboxy;
 		}
 		.video-nav{
 			margin-top: 48px;
@@ -838,6 +842,7 @@ li{
 		border-bottom: 2px solid $gray;
 		#myExperience{
 			display: block !important;
+			@include smallboxy;
 		}
 		.video-nav{
 			margin-top: 48px;

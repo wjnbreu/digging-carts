@@ -57,7 +57,7 @@
         };
         window.onTemplateReady = function(e) {
             L(1);
-            x();
+            x($("#myExperience"));
             w.addEventListener(brightcove.api.events.MediaEvent.BEGIN, y);
             w.addEventListener(brightcove.api.events.MediaEvent.CHANGE, y);
             w.addEventListener(brightcove.api.events.MediaEvent.COMPLETE, y);
@@ -82,7 +82,7 @@
         };
         x = function(e) {
             var t, a, i, n, r, d, o, s;
-            d = $("#myExperience");
+            d = e;
             n = d.attr("width");
             i = d.attr("height");
             s = $(window).width();
@@ -131,7 +131,10 @@
             return A("#storyplayer");
         };
         P = function() {
-            window.addEventListener("resize", function() {});
+            window.addEventListener("resize", function() {
+                A($("#myExperience"));
+                return A($("#storyplayer"));
+            });
             $("a.arrow-right").click(function(e) {
                 var t, a, i, n, r;
                 e.preventDefault();
