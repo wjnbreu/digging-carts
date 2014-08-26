@@ -927,7 +927,7 @@ li{
 						height: 10%;
 						background: url(../img/arrow-white.svg) no-repeat center center;
 						background-size: cover;
-						@include vendorize(transition, all .2s ease-in-out);
+						@include vendorize(transition, none);
 						&:hover{
 							right: 15px;
 						}
@@ -942,7 +942,7 @@ li{
 						background: url(../img/arrow-white.svg) no-repeat center center;
 						background-size: cover;
 						@include vendorize(transform, rotate(180deg));
-						@include vendorize(transition, all .2s ease-in-out);
+						@include vendorize(transition, none);
 						&:hover{
 							left: 15px;
 						}
