@@ -16,7 +16,8 @@
             D();
             $(".video-nav ul a.episode li").first().addClass("active");
             $(".story-nav ul a.additional-episode li").first().addClass("active");
-            return C();
+            C();
+            return T(c());
         };
         g = function(e) {
             f = f + e;
@@ -287,7 +288,6 @@
                 });
             });
         };
-        l();
-        return T(c());
+        return l();
     });
 }).call(this);

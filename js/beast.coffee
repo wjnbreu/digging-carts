@@ -20,6 +20,7 @@ $ ->
 		$('.story-nav ul a.additional-episode li').first().addClass "active"
 		# setTimeout(sendHeight(getHeight()), 500)
 		removeSpinner()
+		sendHeight(getHeight())
 
 		
 
@@ -304,5 +305,5 @@ $ ->
 
 	#launch when ready	
 	getData()
-	sendHeight(getHeight())
+	
 	
