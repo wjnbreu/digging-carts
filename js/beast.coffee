@@ -69,8 +69,6 @@ $ ->
 		videoPlayer.play()
 		# resizeVid($('#player'))
 
-	# onMediaEventFired = (evt) ->
-	# 	alert 'event happened'
 	
 	resizePlayer = ->
 		vid = $('#player').find('object')
@@ -369,5 +367,4 @@ $ ->
 	#launch when ready
 	
 	getData()
-	# window.addEventListener('load', sendHeight(getHeight()))
 	

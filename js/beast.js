@@ -1,307 +1,306 @@
-(function() {
-    $(function() {
-        var e, a, t, i, r, n, d, o, s, l, c, u, p, f, m, v, h, w, y, g, C, b, D, I, T, E, x, k, M, S;
-        l = {};
-        S = {};
-        h = {};
-        n = {};
-        v = {};
-        y = {};
-        g = {};
-        d = {};
-        m = 0;
-        c = new Showdown.converter();
-        w = {};
-        e = {};
-        M = 1.777777777777778;
-        C = {
-            playerID: "1684512102001",
-            playerKey: "AQ~~%2CAAABTw4lHzE~%2Csr1E9bdX6d4wCdvdlD8QKdNij3uKs2K9",
-            width: $(window).width() / 1.5,
-            height: $(window).width() / 1.5 / M,
-            videoID: "3747213877001"
-        };
-        b = '<div style="display:none"></div><object id="myExperience" class="BrightcoveExperience"><param name="bgcolor" value="#FFFFFF" /><param name="width" value="{{width}}" /><param name="height" value="{{height}}" /><param name="playerID" value="{{playerID}}" /><param name="playerKey" value="{{playerKey}}" /><param name="isSlim" value="true" /><param name="isVid" value="true" /><param name="isUI" value="true" /><param name="dynamicStreaming" value="true" /><param name="@videoPlayer" value="{{videoID}}"; /><param name="includeAPI" value="true" /><param name="templateLoadHandler" value="onTemplateLoad" /><param name="templateReadyHandler" value="onTemplateReady" /></object>';
-        f = function() {
-            k();
-            i();
-            $(".video-nav ul a.episode li").first().addClass("active");
-            $(".story-nav ul a.additional-episode li").first().addClass("active");
-            setTimeout(x(p()), 500);
-            return I();
-        };
-        D = function(e) {
-            m = m + e;
-            if (m === 4) {
-                f();
-                return m = 0;
-            }
-        };
-        x = function(e) {
-            var a, t;
-            a = {
-                height: e
-            };
-            t = JSON.stringify(a);
-            return window.parent.postMessage(t, "*");
-        };
-        p = function() {
-            return $(document.body).height() + 100;
-        };
-        window.onTemplateLoad = function(a) {
-            w = brightcove.api.getExperience(a);
-            return e = brightcove.api.modules.APIModules;
-        };
-        window.onTemplateReady = function(a) {
-            var t;
-            t = w.getModule(e.VIDEO_PLAYER);
-            T();
-            return t.play();
-        };
-        T = function() {
-            var e, a, t, i, r, n, d, o;
-            n = $("#player").find("object");
-            i = n.attr("width");
-            t = n.attr("height");
-            o = $(window).width();
-            d = o / 1.3;
-            r = i / t;
-            w.find('param[name="width"]').attr("vidWidth");
-            console.log(t);
-            e = o - d;
-            a = e / 2;
-            $("#player").css({
-                marginLeft: a,
-                opacity: 1
-            });
-            return x(p());
-        };
-        i = function() {
-            var e, a;
-            a = Handlebars.compile(b);
-            e = a(C);
-            document.getElementById("player").innerHTML = e;
-            return brightcove.createExperiences();
-        };
-        k = function() {
-            window.addEventListener("resize", function() {
-                E("#player");
-                E("#storyplayer");
-                return x(p());
-            });
-            $("a.arrow-right").click(function(e) {
-                var a, t, i, r, n;
-                e.preventDefault();
-                a = $(".composers-wrap");
-                n = a.find(".slide").length;
-                i = a.find(".active");
-                t = i.data("order");
-                if (t <= n - 2) {
-                    r = a.find("[data-order=" + (t + 1) + "]");
-                    i.removeClass("active");
-                    r.addClass("active");
-                    return x(p());
-                } else {
-                    r = a.find("[data-order=0]");
-                    i.removeClass("active");
-                    r.addClass("active");
-                    return x(p());
-                }
-            });
-            $("a.arrow-left").click(function(e) {
-                var a, t, i, r, n;
-                e.preventDefault();
-                a = $(".composers-wrap");
-                n = a.find(".slide").length;
-                i = a.find(".active");
-                t = i.data("order");
-                if (t >= 1) {
-                    r = a.find("[data-order=" + (t - 1) + "]");
-                    i.removeClass("active");
-                    r.addClass("active");
-                    return x(p());
-                } else {
-                    r = a.find("[data-order=" + (n - 1) + "]");
-                    i.removeClass("active");
-                    r.addClass("active");
-                    return x(p());
-                }
-            });
-            return $("a.pulldown").click(function(e) {
-                e.preventDefault();
-                return $(this).parent().find("ul").slideToggle(200, function() {
-                    return x(p());
-                });
-            });
-        };
-        s = function(e, a, t) {
-            var i;
-            i = t[a].fields;
-            if (e.find("li").hasClass("unreleased")) {
-                y.cueVideoById("T8k44ryj5DQ");
-                y.playVideo();
-                return $(".videos h1").empty().text(i.episodeTitle);
-            } else {
-                y.cueVideoById(i.ytVideoId);
-                $(".videos h1").empty().text(i.episodeTitle);
-                return x(p());
-            }
-        };
-        o = function(e, a) {
-            var t;
-            t = a[e].fields;
-            $(".stories h1").empty().text(t.additionalVideoTitle);
-            $(".stories p.body").empty().text(t.description);
-            $(".stories p.body").slideDown();
-            return x(p());
-        };
-        r = function(e, a, t) {
-            var i, r, n, d, o, s, l, c, u, p, f;
-            if (t === "main") {
-                p = [];
-                for (d = s = 0, c = e.length; s < c; d = ++s) {
-                    o = e[d];
-                    r = o.fields.episodeNumber;
-                    i = new Date();
-                    n = new Date(o.fields.datetimeOfLaunch);
-                    if (moment() < n) {
-                        a.append("<a class='episode' href='#episode' data-order=" + d + "><li class='unreleased' data-release='" + n + "'>" + r + "</li>");
-                    } else {
-                        a.append("<a class='episode' href='#episode' data-order=" + d + "><li class='released'>" + r + "</li>");
-                    }
-                    p.push(a.find("li").each(function() {
-                        var e, a, t, i;
-                        i = $(this);
-                        if (i.hasClass("unreleased")) {
-                            a = i.text();
-                            t = i.data("release");
-                            e = new Date(t);
-                            i.bind("mouseenter", function() {
-                                return i.empty().text(moment(t).format("ddd, MMM Do"));
-                            });
-                            return i.bind("mouseleave", function() {});
-                        }
-                    }));
-                }
-                return p;
-            } else if (t === "additional") {
-                f = [];
-                for (d = l = 0, u = e.length; l < u; d = ++l) {
-                    o = e[d];
-                    r = o.fields.additionalVideoTitle;
-                    f.push(a.append("<a class='additional-episode' href='#additional-episode' data-order=" + d + "><li>" + r + "</li>"));
-                }
-                return f;
-            }
-        };
-        a = function(e) {
-            var a, t, i, r, n, d, o, s, l, u;
-            u = [];
-            for (i = s = 0, l = e.length; s < l; i = ++s) {
-                a = e[i];
-                d = a.fields;
-                n = d.composerName;
-                r = d.image.fields.file.url;
-                o = c.makeHtml(d.bio);
-                t = "<div class='slide' data-order='" + i + "'><div class='img-wrap'><a class='arrow-left' href></a><a class='arrow-right' href></a><img src='" + r + "'/></div><h2>" + d.composerName + "</h2><p>" + o + "</p></div>";
-                $(".composers-wrap").append(t);
-                u.push($(".slide").first().addClass("active"));
-            }
-            return u;
-        };
-        t = function(e) {
-            var a, t, i, r, n, d, o, s, l, c;
-            c = [];
-            for (s = 0, l = e.length; s < l; s++) {
-                r = e[s];
-                d = r.fields;
-                o = d.artistName;
-                t = d.rbmaRadioEmbedCode;
-                a = d.descriptions;
-                i = d.artistImage.fields.file.url;
-                n = "<div class='show'><img src='" + i + "'/>" + t + "<p>" + a + "</p></div>";
-                $(".radio").append(n);
-                c.push(x(p()));
-            }
-            return c;
-        };
-        E = function(e) {
-            var a, t, i, r, n, d, o;
-            w = $(e);
-            o = $(window).width();
-            d = o / 1.3;
-            r = w.attr("width");
-            i = w.attr("height");
-            n = r / i;
-            w.attr("width", d);
-            w.attr("height", d / n);
-            a = o - d;
-            t = a / 2;
-            w.css({
-                marginLeft: t,
-                display: "block"
-            });
-            return x(p());
-        };
-        I = function() {
-            $(".spinner").remove();
-            return x(p());
-        };
-        u = function() {
-            var e;
-            e = contentful.createClient({
-                accessToken: "38b8dbaf503a350d5722578c6547caca484511f7c78717736ac8f576832be4b0",
-                space: "s9bc5ah7p1d5"
-            });
-            e.entries({
-                content_type: "42CpXYSUms44OskS6wUU6I",
-                include: 1
-            }).done(function(e) {
-                a(e);
-                return D(1);
-            });
-            e.entries({
-                content_type: "36SuQSSPR6QmWOk8CseMC6",
-                include: 1,
-                order: "fields.order"
-            }).done(function(e) {
-                S = e;
-                D(1);
-                r(S, $(".video-nav ul"), "main");
-                return $("a.episode").bind("click", function(e) {
-                    var a;
-                    e.preventDefault();
-                    $(this).parent().find("li").removeClass("active");
-                    $(this).find("li").addClass("active");
-                    a = $(this).data("order");
-                    return s($(this), a, S);
-                });
-            });
-            e.entries({
-                content_type: "2YpXtnGW80EEGgCUsSMmCc",
-                include: 1
-            }).done(function(e) {
-                D(1);
-                return t(e);
-            });
-            return e.entries({
-                content_type: "6fwxAcXrxK4yqyaMUiWwWY",
-                include: 1,
-                order: "fields.order"
-            }).done(function(e) {
-                D(1);
-                n = e;
-                r(n, $(".story-nav ul"), "additional");
-                return $("a.additional-episode").bind("click", function(e) {
-                    var a;
-                    e.preventDefault();
-                    $(this).parent().find("li").removeClass("active");
-                    $(this).find("li").addClass("active");
-                    a = $(this).data("order");
-                    return o(a, n);
-                });
-            });
-        };
-        return u();
+// Generated by CoffeeScript 1.7.1
+$(function() {
+  var APIModules, addComposers, addMixes, addPlayer, addVideoTitles, additionalVideoObject, anchorElements, changeAdditionalVideo, changeVideo, composerObject, converter, getData, getHeight, init, initCount, magazineObject, mixObject, player, player1, player2, playerData, playerTemplate, prepInit, removeSpinner, resizePlayer, resizeVid, sendHeight, setupBinds, vidRatio, videoObject;
+  composerObject = {};
+  videoObject = {};
+  mixObject = {};
+  additionalVideoObject = {};
+  magazineObject = {};
+  player1 = {};
+  player2 = {};
+  anchorElements = {};
+  initCount = 0;
+  converter = new Showdown.converter();
+  player = {};
+  APIModules = {};
+  vidRatio = 1.777777777777778;
+  playerData = {
+    "playerID": "1684512102001",
+    "playerKey": "AQ~~%2CAAABTw4lHzE~%2Csr1E9bdX6d4wCdvdlD8QKdNij3uKs2K9",
+    "width": ($(window).width()) / 1.5,
+    "height": (($(window).width()) / 1.5) / vidRatio,
+    "videoID": "3747213877001"
+  };
+  playerTemplate = "<div style=\"display:none\"></div><object id=\"myExperience\" class=\"BrightcoveExperience\"><param name=\"bgcolor\" value=\"#FFFFFF\" /><param name=\"width\" value=\"{{width}}\" /><param name=\"height\" value=\"{{height}}\" /><param name=\"playerID\" value=\"{{playerID}}\" /><param name=\"playerKey\" value=\"{{playerKey}}\" /><param name=\"isSlim\" value=\"true\" /><param name=\"isVid\" value=\"true\" /><param name=\"isUI\" value=\"true\" /><param name=\"dynamicStreaming\" value=\"true\" /><param name=\"@videoPlayer\" value=\"{{videoID}}\"; /><param name=\"includeAPI\" value=\"true\" /><param name=\"templateLoadHandler\" value=\"onTemplateLoad\" /><param name=\"templateReadyHandler\" value=\"onTemplateReady\" /></object>";
+  init = function() {
+    setupBinds();
+    addPlayer();
+    $('.video-nav ul a.episode li').first().addClass("active");
+    $('.story-nav ul a.additional-episode li').first().addClass("active");
+    setTimeout(sendHeight(getHeight()), 500);
+    return removeSpinner();
+  };
+  prepInit = function(count) {
+    initCount = initCount + count;
+    if (initCount === 4) {
+      init();
+      return initCount = 0;
+    }
+  };
+  sendHeight = function(height) {
+    var message, messageJSON;
+    message = {
+      height: height
+    };
+    messageJSON = JSON.stringify(message);
+    return window.parent.postMessage(messageJSON, '*');
+  };
+  getHeight = function() {
+    return $(document.body).height() + 100;
+  };
+  window.onTemplateLoad = function(experienceID) {
+    player = brightcove.api.getExperience(experienceID);
+    return APIModules = brightcove.api.modules.APIModules;
+  };
+  window.onTemplateReady = function(evt) {
+    var videoPlayer;
+    videoPlayer = player.getModule(APIModules.VIDEO_PLAYER);
+    resizePlayer();
+    return videoPlayer.play();
+  };
+  resizePlayer = function() {
+    var diff, margin, ogHeight, ogWidth, ratio, vid, vidWidth, winWidth;
+    vid = $('#player').find('object');
+    ogWidth = vid.attr('width');
+    ogHeight = vid.attr('height');
+    winWidth = $(window).width();
+    vidWidth = winWidth / 1.3;
+    ratio = ogWidth / ogHeight;
+    player.find('param[name="width"]').attr('vidWidth');
+    console.log(ogHeight);
+    diff = winWidth - vidWidth;
+    margin = diff / 2;
+    $('#player').css({
+      marginLeft: margin,
+      opacity: 1
     });
-}).call(this);
+    return sendHeight(getHeight());
+  };
+  addPlayer = function() {
+    var playerHTML, template;
+    template = Handlebars.compile(playerTemplate);
+    playerHTML = template(playerData);
+    document.getElementById('player').innerHTML = playerHTML;
+    return brightcove.createExperiences();
+  };
+  setupBinds = function() {
+    window.addEventListener('resize', function() {
+      resizeVid('#player');
+      resizeVid('#storyplayer');
+      return sendHeight(getHeight());
+    });
+    $('a.arrow-right').click(function(event) {
+      var composers, currentPos, currentSlide, nextSlide, totalComposers;
+      event.preventDefault();
+      composers = $('.composers-wrap');
+      totalComposers = composers.find('.slide').length;
+      currentSlide = composers.find('.active');
+      currentPos = currentSlide.data('order');
+      if (currentPos <= totalComposers - 2) {
+        nextSlide = composers.find("[data-order=" + (currentPos + 1) + "]");
+        currentSlide.removeClass('active');
+        nextSlide.addClass('active');
+        return sendHeight(getHeight());
+      } else {
+        nextSlide = composers.find("[data-order=0]");
+        currentSlide.removeClass('active');
+        nextSlide.addClass('active');
+        return sendHeight(getHeight());
+      }
+    });
+    $('a.arrow-left').click(function(event) {
+      var composers, currentPos, currentSlide, nextSlide, totalComposers;
+      event.preventDefault();
+      composers = $('.composers-wrap');
+      totalComposers = composers.find('.slide').length;
+      currentSlide = composers.find('.active');
+      currentPos = currentSlide.data('order');
+      if (currentPos >= 1) {
+        nextSlide = composers.find("[data-order=" + (currentPos - 1) + "]");
+        currentSlide.removeClass('active');
+        nextSlide.addClass('active');
+        return sendHeight(getHeight());
+      } else {
+        nextSlide = composers.find("[data-order=" + (totalComposers - 1) + "]");
+        currentSlide.removeClass('active');
+        nextSlide.addClass('active');
+        return sendHeight(getHeight());
+      }
+    });
+    return $('a.pulldown').click(function(event) {
+      event.preventDefault();
+      return $(this).parent().find('ul').slideToggle(200, function() {
+        return sendHeight(getHeight());
+      });
+    });
+  };
+  changeVideo = function(element, order, videoObject) {
+    var video;
+    video = videoObject[order].fields;
+    if (element.find('li').hasClass("unreleased")) {
+      player1.cueVideoById('T8k44ryj5DQ');
+      player1.playVideo();
+      return $('.videos h1').empty().text(video.episodeTitle);
+    } else {
+      player1.cueVideoById(video.ytVideoId);
+      $('.videos h1').empty().text(video.episodeTitle);
+      return sendHeight(getHeight());
+    }
+  };
+  changeAdditionalVideo = function(order, additionalVideoObject) {
+    var video;
+    video = additionalVideoObject[order].fields;
+    $('.stories h1').empty().text(video.additionalVideoTitle);
+    $('.stories p.body').empty().text(video.description);
+    $('.stories p.body').slideDown();
+    return sendHeight(getHeight());
+  };
+  addVideoTitles = function(object, target, type) {
+    var currentDate, episode, episodeDate, i, video, _i, _j, _len, _len1, _results, _results1;
+    if (type === 'main') {
+      _results = [];
+      for (i = _i = 0, _len = object.length; _i < _len; i = ++_i) {
+        video = object[i];
+        episode = video.fields.episodeNumber;
+        currentDate = new Date();
+        episodeDate = new Date(video.fields.datetimeOfLaunch);
+        if (moment() < episodeDate) {
+          target.append("<a class='episode' href='#episode' data-order=" + i + "><li class='unreleased' data-release='" + episodeDate + "'>" + episode + "</li>");
+        } else {
+          target.append("<a class='episode' href='#episode' data-order=" + i + "><li class='released'>" + episode + "</li>");
+        }
+        _results.push(target.find('li').each(function() {
+          var d, ogText, releaseDate, t;
+          t = $(this);
+          if (t.hasClass('unreleased')) {
+            ogText = t.text();
+            releaseDate = t.data('release');
+            d = new Date(releaseDate);
+            t.bind('mouseenter', function() {
+              return t.empty().text(moment(releaseDate).format('ddd, MMM Do'));
+            });
+            return t.bind('mouseleave', function() {});
+          }
+        }));
+      }
+      return _results;
+    } else if (type === 'additional') {
+      _results1 = [];
+      for (i = _j = 0, _len1 = object.length; _j < _len1; i = ++_j) {
+        video = object[i];
+        episode = video.fields.additionalVideoTitle;
+        _results1.push(target.append("<a class='additional-episode' href='#additional-episode' data-order=" + i + "><li>" + episode + "</li>"));
+      }
+      return _results1;
+    }
+  };
+  addComposers = function(object) {
+    var composer, composerData, i, img, name, person, textBody, _i, _len, _results;
+    _results = [];
+    for (i = _i = 0, _len = object.length; _i < _len; i = ++_i) {
+      composer = object[i];
+      person = composer.fields;
+      name = person.composerName;
+      img = person.image.fields.file.url;
+      textBody = converter.makeHtml(person.bio);
+      composerData = "<div class='slide' data-order='" + i + "'><div class='img-wrap'><a class='arrow-left' href></a><a class='arrow-right' href></a><img src='" + img + "'/></div><h2>" + person.composerName + "</h2><p>" + textBody + "</p></div>";
+      $(".composers-wrap").append(composerData);
+      _results.push($('.slide').first().addClass("active"));
+    }
+    return _results;
+  };
+  addMixes = function(object) {
+    var description, embed, img, mix, mixData, mixInfo, name, _i, _len, _results;
+    _results = [];
+    for (_i = 0, _len = object.length; _i < _len; _i++) {
+      mix = object[_i];
+      mixInfo = mix.fields;
+      name = mixInfo.artistName;
+      embed = mixInfo.rbmaRadioEmbedCode;
+      description = mixInfo.descriptions;
+      img = mixInfo.artistImage.fields.file.url;
+      mixData = "<div class='show'><img src='" + img + "'/>" + embed + "<p>" + description + "</p></div>";
+      $('.radio').append(mixData);
+      _results.push(sendHeight(getHeight()));
+    }
+    return _results;
+  };
+  resizeVid = function(vidPlayer) {
+    var diff, margin, ogHeight, ogWidth, ratio, vidWidth, winWidth;
+    player = $(vidPlayer);
+    winWidth = $(window).width();
+    vidWidth = winWidth / 1.3;
+    ogWidth = player.attr('width');
+    ogHeight = player.attr('height');
+    ratio = ogWidth / ogHeight;
+    player.attr('width', vidWidth);
+    player.attr('height', vidWidth / ratio);
+    diff = winWidth - vidWidth;
+    margin = diff / 2;
+    player.css({
+      marginLeft: margin,
+      display: 'block'
+    });
+    return sendHeight(getHeight());
+  };
+  removeSpinner = function() {
+    $('.spinner').remove();
+    return sendHeight(getHeight());
+  };
+  getData = function() {
+    var client;
+    client = contentful.createClient({
+      accessToken: '38b8dbaf503a350d5722578c6547caca484511f7c78717736ac8f576832be4b0',
+      space: 's9bc5ah7p1d5'
+    });
+    client.entries({
+      'content_type': '42CpXYSUms44OskS6wUU6I',
+      'include': 1
+    }).done(function(data) {
+      addComposers(data);
+      return prepInit(1);
+    });
+    client.entries({
+      'content_type': '36SuQSSPR6QmWOk8CseMC6',
+      'include': 1,
+      'order': 'fields.order'
+    }).done(function(data) {
+      videoObject = data;
+      prepInit(1);
+      addVideoTitles(videoObject, $('.video-nav ul'), 'main');
+      return $('a.episode').bind('click', function(event) {
+        var order;
+        event.preventDefault();
+        $(this).parent().find('li').removeClass("active");
+        $(this).find('li').addClass("active");
+        order = $(this).data('order');
+        return changeVideo($(this), order, videoObject);
+      });
+    });
+    client.entries({
+      'content_type': '2YpXtnGW80EEGgCUsSMmCc',
+      'include': 1
+    }).done(function(data) {
+      prepInit(1);
+      return addMixes(data);
+    });
+    return client.entries({
+      'content_type': '6fwxAcXrxK4yqyaMUiWwWY',
+      'include': 1,
+      'order': 'fields.order'
+    }).done(function(data) {
+      prepInit(1);
+      additionalVideoObject = data;
+      addVideoTitles(additionalVideoObject, $('.story-nav ul'), 'additional');
+      return $('a.additional-episode').bind('click', function(event) {
+        var order;
+        event.preventDefault();
+        $(this).parent().find('li').removeClass("active");
+        $(this).find('li').addClass("active");
+        order = $(this).data('order');
+        return changeAdditionalVideo(order, additionalVideoObject);
+      });
+    });
+  };
+  return getData();
+});
