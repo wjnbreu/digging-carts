@@ -267,7 +267,7 @@ a.pulldown {
   top: 0;
   left: 0;
   bottom: 0;
-  background-color: black;
+  background-color: white;
   z-index: 99; }
   .spinner .load-text {
     margin-top: 5%;
@@ -276,7 +276,7 @@ a.pulldown {
     text-align: center;
     font-size: 2em; }
     .spinner .load-text span {
-      color: white; }
+      color: black; }
       .spinner .load-text span.bounce {
         -webkit-animation: 'spina' 1s infinite alternate;
         -moz-animation: 'spina' 1s infinite alternate;

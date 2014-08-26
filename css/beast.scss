@@ -78,7 +78,7 @@ a.pulldown{
 	top: 0;
 	left: 0;
 	bottom: 0;
-	background-color: black;
+	background-color: white;
 	z-index: 99;
 	.load-text{
 		margin-top: 5%;
@@ -87,7 +87,7 @@ a.pulldown{
 		text-align: center;
 		font-size: 2em;
 		span{
-			color: white;
+			color: black;
 			&.bounce{
 				-webkit-animation: 'spina' 1s infinite alternate;
 				-moz-animation: 'spina' 1s infinite alternate;
