@@ -16,8 +16,8 @@
             D();
             $(".video-nav ul a.episode li").first().addClass("active");
             $(".story-nav ul a.additional-episode li").first().addClass("active");
-            setTimeout(T(c()), 500);
-            return C();
+            C();
+            return T(c());
         };
         g = function(e) {
             f = f + e;
@@ -35,7 +35,7 @@
             return window.parent.postMessage(i, "*");
         };
         c = function() {
-            return $(document).height() + 100;
+            return $(document.body).height() + 100;
         };
         D = function() {
             var e, t;
@@ -75,12 +75,10 @@
             });
         };
         h = function(e) {
-            b("#player");
-            return T(c());
+            return b("#player");
         };
         m = function(e) {
-            b("#storyplayer");
-            return T(c());
+            return b("#storyplayer");
         };
         k = function() {
             window.addEventListener("resize", function() {
@@ -98,13 +96,11 @@
                 if (i <= a - 2) {
                     n = t.find("[data-order=" + (i + 1) + "]");
                     r.removeClass("active");
-                    n.addClass("active");
-                    return T(c());
+                    return n.addClass("active");
                 } else {
                     n = t.find("[data-order=0]");
                     r.removeClass("active");
-                    n.addClass("active");
-                    return T(c());
+                    return n.addClass("active");
                 }
             });
             $("a.arrow-left").click(function(e) {
@@ -117,13 +113,11 @@
                 if (i >= 1) {
                     n = t.find("[data-order=" + (i - 1) + "]");
                     r.removeClass("active");
-                    n.addClass("active");
-                    return T(c());
+                    return n.addClass("active");
                 } else {
                     n = t.find("[data-order=" + (a - 1) + "]");
                     r.removeClass("active");
-                    n.addClass("active");
-                    return T(c());
+                    return n.addClass("active");
                 }
             });
             return $("a.pulldown").click(function(e) {
@@ -142,8 +136,7 @@
                 return $(".videos h1").empty().text(r.episodeTitle);
             } else {
                 y.cueVideoById(r.ytVideoId);
-                $(".videos h1").empty().text(r.episodeTitle);
-                return T(c());
+                return $(".videos h1").empty().text(r.episodeTitle);
             }
         };
         a = function(e, t) {
@@ -152,8 +145,7 @@
             w.cueVideoById(i.additionalYouTube);
             $(".stories h1").empty().text(i.additionalVideoTitle);
             $(".stories p.body").empty().text(i.description);
-            $(".stories p.body").slideDown();
-            return T(c());
+            return $(".stories p.body").slideDown();
         };
         i = function(e, t, i) {
             var r, n, a, d, s, o, l, c, u, f, p;
@@ -210,8 +202,8 @@
             return u;
         };
         t = function(e) {
-            var t, i, r, n, a, d, s, o, l, u;
-            u = [];
+            var t, i, r, n, a, d, s, o, l, c;
+            c = [];
             for (o = 0, l = e.length; o < l; o++) {
                 n = e[o];
                 d = n.fields;
@@ -220,10 +212,9 @@
                 t = d.descriptions;
                 r = d.artistImage.fields.file.url;
                 a = "<div class='show'><img src='" + r + "'/>" + i + "<p>" + t + "</p></div>";
-                $(".radio").append(a);
-                u.push(T(c()));
+                c.push($(".radio").append(a));
             }
-            return u;
+            return c;
         };
         b = function(e) {
             var t, i, r, n, a, d, s, o;
@@ -237,15 +228,13 @@
             a.attr("height", s / d);
             t = o - s;
             i = t / 2;
-            a.css({
+            return a.css({
                 marginLeft: i,
                 display: "block"
             });
-            return T(c());
         };
         C = function() {
-            $(".spinner").remove();
-            return T(c());
+            return $(".spinner").remove();
         };
         l = function() {
             var n;

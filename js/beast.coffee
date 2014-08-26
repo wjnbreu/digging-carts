@@ -18,8 +18,9 @@ $ ->
 		setupYouTube()
 		$('.video-nav ul a.episode li').first().addClass "active"
 		$('.story-nav ul a.additional-episode li').first().addClass "active"
-		setTimeout(sendHeight(getHeight()), 500)
+		# setTimeout(sendHeight(getHeight()), 500)
 		removeSpinner()
+		sendHeight(getHeight())
 		
 
 	prepInit = (count) ->
@@ -35,7 +36,7 @@ $ ->
 		return window.parent.postMessage(messageJSON, '*')
 
 	getHeight = ->
-		return $(document).height() + 100 #extra padding
+		return $(document.body).height() + 100 #extra padding
 
 	setupYouTube = ->
 		tag = document.createElement('script')
@@ -78,11 +79,11 @@ $ ->
 
 	onPlayerReady1 = (event) ->
 		resizeVid('#player')
-		sendHeight(getHeight())
+		# sendHeight(getHeight())
 
 	onPlayerReady2 = (event) ->
 		resizeVid('#storyplayer')
-		sendHeight(getHeight())
+		# sendHeight(getHeight())
 	
 	setupBinds = ->
 		#resize
@@ -103,12 +104,12 @@ $ ->
 				nextSlide = composers.find("[data-order=#{currentPos + 1}]")
 				currentSlide.removeClass 'active'
 				nextSlide.addClass 'active'
-				sendHeight(getHeight())
+				# sendHeight(getHeight())
 			else
 				nextSlide = composers.find("[data-order=0]")
 				currentSlide.removeClass 'active'
 				nextSlide.addClass 'active'
-				sendHeight(getHeight())
+				# sendHeight(getHeight())
 
 		$('a.arrow-left').click (event) ->
 			event.preventDefault()
@@ -121,13 +122,13 @@ $ ->
 				nextSlide = composers.find("[data-order=#{currentPos - 1}]")
 				currentSlide.removeClass 'active'
 				nextSlide.addClass 'active'
-				sendHeight(getHeight())
+				# sendHeight(getHeight())
 
 			else
 				nextSlide = composers.find("[data-order=#{totalComposers - 1}]")
 				currentSlide.removeClass 'active'
 				nextSlide.addClass 'active'
-				sendHeight(getHeight())
+				# sendHeight(getHeight())
 
 		#DROP DOWN MENUS
 		$('a.pulldown').click (event) ->
@@ -149,7 +150,7 @@ $ ->
 			
 			player1.cueVideoById(video.ytVideoId)
 			$('.videos h1').empty().text video.episodeTitle
-			sendHeight(getHeight())
+			# sendHeight(getHeight())
 
 
 	changeAdditionalVideo = (order, additionalVideoObject) ->
@@ -159,7 +160,7 @@ $ ->
 		$('.stories h1').empty().text video.additionalVideoTitle
 		$('.stories p.body').empty().text video.description
 		$('.stories p.body').slideDown()
-		sendHeight(getHeight())
+		# sendHeight(getHeight())
 
 
 
@@ -221,7 +222,7 @@ $ ->
 			img = mixInfo.artistImage.fields.file.url
 			mixData = "<div class='show'><img src='#{img}'/>#{embed}<p>#{description}</p></div>"
 			$('.radio').append(mixData)
-			sendHeight(getHeight())
+			# sendHeight(getHeight())
 
 
 	resizeVid = (vidPlayer) ->
@@ -241,12 +242,12 @@ $ ->
 			marginLeft: margin
 			display: 'block'
 
-		sendHeight(getHeight())
+		# sendHeight(getHeight())
 
 
 	removeSpinner = ->
 		$('.spinner').remove()
-		sendHeight(getHeight())
+		# sendHeight(getHeight())
 		
 
 
