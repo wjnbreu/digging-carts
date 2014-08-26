@@ -16,8 +16,7 @@
             D();
             $(".video-nav ul a.episode li").first().addClass("active");
             $(".story-nav ul a.additional-episode li").first().addClass("active");
-            C();
-            return T(c());
+            return C();
         };
         g = function(e) {
             f = f + e;
@@ -75,9 +74,12 @@
             });
         };
         h = function(e) {
-            return b("#player");
+            b("#player");
+            return T(c());
         };
-        m = function(e) {};
+        m = function(e) {
+            return T(c());
+        };
         k = function() {
             window.addEventListener("resize", function() {});
             $("a.arrow-right").click(function(e) {

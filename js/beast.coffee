@@ -20,7 +20,7 @@ $ ->
 		$('.story-nav ul a.additional-episode li').first().addClass "active"
 		# setTimeout(sendHeight(getHeight()), 500)
 		removeSpinner()
-		sendHeight(getHeight())
+
 		
 
 	prepInit = (count) ->
@@ -79,9 +79,11 @@ $ ->
 
 	onPlayerReady1 = (event) ->
 		resizeVid('#player')
+		sendHeight(getHeight())
 		# sendHeight(getHeight())
 
 	onPlayerReady2 = (event) ->
+		sendHeight(getHeight())
 		# resizeVid('#storyplayer')
 		# sendHeight(getHeight())
 	
