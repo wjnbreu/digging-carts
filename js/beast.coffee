@@ -6,6 +6,8 @@ $ ->
 
 	#<object type="application/x-shockwave-flash" data="http://c.brightcove.com/services/viewer/federated_f9?&amp;width=640&amp;height=360&amp;flashID=myExperience&amp;bgcolor=%23FFFFFF&amp;playerID=1684512102001&amp;playerKey=AQ~~%2CAAABTw4lHzE~%2Csr1E9bdX6d4wCdvdlD8QKdNij3uKs2K9&amp;isSlim=true&amp;dynamicStreaming=true&amp;autoStart=false&amp;debuggerID=&amp;videoID=3747213877001&amp;%40videoPlayer=3747213877001&amp;startTime=1409052391494" id="myExperience" width="640" height="360" class="BrightcoveExperience" seamlesstabbing="undefined"><param name="allowScriptAccess" value="always"><param name="allowFullScreen" value="true"><param name="seamlessTabbing" value="false"><param name="swliveconnect" value="true"><param name="wmode" value="window"><param name="quality" value="high"><param name="bgcolor" value="#FFFFFF"></object>
 
+
+
 	composerObject = {}
 	videoObject = {}
 	mixObject = {}
@@ -17,6 +19,7 @@ $ ->
 	converter = new Showdown.converter()
 	player = {}
 	APIModules = {}
+	modVP = {}
 	vidRatio = 16 / 9
 
 	playerData = {
@@ -26,6 +29,8 @@ $ ->
 			"height" : (($(window).width()) / 1.5) / vidRatio,
 			"videoID" : "3747213877001"
 		}
+
+	videos = new Array(1754276221001,1756137891001,1754276206001,1754276205001,1754234236001)
 
 	playerTemplate = "<div style=\"display:none\"></div><object id=\"myExperience\" class=\"BrightcoveExperience\"><param name=\"bgcolor\" value=\"#FFFFFF\" /><param name=\"width\" value=\"{{width}}\" /><param name=\"height\" value=\"{{height}}\" /><param name=\"playerID\" value=\"{{playerID}}\" /><param name=\"playerKey\" value=\"{{playerKey}}\" /><param name=\"isSlim\" value=\"true\" /><param name=\"isVid\" value=\"true\" /><param name=\"isUI\" value=\"true\" /><param name=\"dynamicStreaming\" value=\"true\" /><param name=\"@videoPlayer\" value=\"{{videoID}}\"; /><param name=\"includeAPI\" value=\"true\" /><param name=\"templateLoadHandler\" value=\"onTemplateLoad\" /><param name=\"templateReadyHandler\" value=\"onTemplateReady\" /></object>"
 
@@ -64,22 +69,44 @@ $ ->
 	window.onTemplateLoad = (experienceID) ->
 		player = brightcove.api.getExperience(experienceID)
 		APIModules = brightcove.api.modules.APIModules
+		modVP = player.getModule(brightcove.api.modules.APIModules.VIDEO_PLAYER)
 		
 		
 
 	window.onTemplateReady = (evt) ->
-		videoPlayer = player.getModule(APIModules.VIDEO_PLAYER)
+		# videoPlayer = player.getModule(APIModules.VIDEO_PLAYER)
 		prepInit(1)
-		console.log 'bc ready'
 		resizePlayer()
+		modVP.addEventListener(brightcove.api.events.MediaEvent.BEGIN, onMediaEventFired)
+		modVP.addEventListener(brightcove.api.events.MediaEvent.CHANGE, onMediaEventFired)
+		modVP.addEventListener(brightcove.api.events.MediaEvent.COMPLETE, onMediaEventFired)
+		modVP.addEventListener(brightcove.api.events.MediaEvent.ERROR, onMediaEventFired)
+		modVP.addEventListener(brightcove.api.events.MediaEvent.PLAY, onMediaEventFired)
+		# modVP.addEventListener(brightcove.api.events.MediaEvent.PROGRESS, onMediaProgressFired)
+		modVP.addEventListener(brightcove.api.events.MediaEvent.STOP, onMediaEventFired)
 		sendHeight(getHeight())
 		# videoPlayer.play()
 		# resizeVid($('#player'))
 
+	onMediaProgressFired = (evt) ->
+		console.log evt
+
+	swapVideo = ->
+		modVP.getCurrentVideo(currentVideoCallback)
+
+	currentVideoCallback = (currentVideo) ->
+		console.log "callback called"
+		console.log currentVideo
+		modVP.loadVideoByID(3747000906001)
+
+	onMediaEventFired = (evt) ->
+		console.log evt.type
+	
+
+	
 	
 	resizePlayer = (video) ->
 		vid = $('#myExperience')
-		console.log vid
 		ogWidth = vid.attr "width"
 		ogHeight = vid.attr "height"
 		winWidth = $(window).width()
@@ -90,7 +117,6 @@ $ ->
 		vid.attr("width", vidWidth)
 		vid.attr("height", vidWidth / ratio)
 		# player.attr('height', vidWidth / ratio)
-		console.log ogWidth
 
 		diff = winWidth - vidWidth
 		margin = diff / 2
@@ -183,6 +209,8 @@ $ ->
 			$(@).parent().find('ul').slideToggle(200, ->
 				sendHeight(getHeight())
 				)
+		$('a.episode').click (event) ->
+			swapVideo()
 
 
 
@@ -320,12 +348,12 @@ $ ->
 			addPlayer()
 			setupYouTube()
 				
-			$('a.episode').bind 'click', (event) ->
-				event.preventDefault()
-				$(@).parent().find('li').removeClass "active"
-				$(@).find('li').addClass "active"
-				order = $(@).data 'order'
-				changeVideo($(@), order, videoObject)
+			# $('a.episode').bind 'click', (event) ->
+			# 	event.preventDefault()
+			# 	$(@).parent().find('li').removeClass "active"
+			# 	$(@).find('li').addClass "active"
+			# 	order = $(@).data 'order'
+			# 	changeVideo($(@), order, videoObject)
 
 
 
