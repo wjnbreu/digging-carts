@@ -28,8 +28,7 @@
             $(".video-nav ul a.episode li").first().addClass("active");
             $(".story-nav ul a.additional-episode li").first().addClass("active");
             console.log("init called");
-            I();
-            return x(p());
+            return I();
         };
         D = function(e) {
             m = m + e;
@@ -57,7 +56,8 @@
         window.onTemplateReady = function(a) {
             var t;
             t = y.getModule(e.VIDEO_PLAYER);
-            return T();
+            T();
+            return x(p());
         };
         T = function() {
             var e, a, t, i, r, n, d, o;

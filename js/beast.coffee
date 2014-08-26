@@ -41,7 +41,6 @@ $ ->
 		# setTimeout(sendHeight(getHeight()), 500)
 		console.log 'init called'
 		removeSpinner()
-		sendHeight(getHeight())
 		
 
 		
@@ -71,6 +70,7 @@ $ ->
 	window.onTemplateReady = (evt) ->
 		videoPlayer = player.getModule(APIModules.VIDEO_PLAYER)
 		resizePlayer()
+		sendHeight(getHeight())
 		# videoPlayer.play()
 		# resizeVid($('#player'))
 
