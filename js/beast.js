@@ -48,7 +48,7 @@
             return window.parent.postMessage(t, "*");
         };
         p = function() {
-            return $(document.body).height();
+            return $(document).height();
         };
         window.onTemplateLoad = function(a) {
             y = brightcove.api.getExperience(a);
