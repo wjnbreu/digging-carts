@@ -35,7 +35,7 @@ $ ->
 		return window.parent.postMessage(messageJSON, '*')
 
 	getHeight = ->
-		return $(document.body).height() + 100 #extra padding
+		return $(document).height() + 100 #extra padding
 
 	setupYouTube = ->
 		tag = document.createElement('script')
