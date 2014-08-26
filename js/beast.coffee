@@ -238,10 +238,10 @@ $ ->
 				episodeDate = new Date(video.fields.datetimeOfLaunch)
 				
 				if moment() < episodeDate
-					target.append("<a class='episode' href='#episode' data-order=#{i}><li class='unreleased' data-release='#{episodeDate}'>#{episode}</li>")
+					target.append("<a class='episode' href data-order=#{i}><li class='unreleased' data-release='#{episodeDate}'>#{episode}</li>")
 
 				else
-					target.append("<a class='episode' href='#episode' data-order=#{i}><li class='released'>#{episode}</li>")
+					target.append("<a class='episode' href data-order=#{i}><li class='released'>#{episode}</li>")
 
 				#loop through and change text of unreleased vids
 				target.find('li').each ->
@@ -261,7 +261,7 @@ $ ->
 		else if type == 'additional'
 			for video, i in object
 				episode = video.fields.additionalVideoTitle
-				target.append("<a class='additional-episode' href='#additional-episode' data-order=#{i}><li>#{episode}</li>")
+				target.append("<a class='additional-episode' href data-order=#{i}><li>#{episode}</li>")
 
 
 	

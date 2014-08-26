@@ -203,9 +203,9 @@
                     i = new Date();
                     r = new Date(o.fields.datetimeOfLaunch);
                     if (moment() < r) {
-                        t.append("<a class='episode' href='#episode' data-order=" + d + "><li class='unreleased' data-release='" + r + "'>" + n + "</li>");
+                        t.append("<a class='episode' href data-order=" + d + "><li class='unreleased' data-release='" + r + "'>" + n + "</li>");
                     } else {
-                        t.append("<a class='episode' href='#episode' data-order=" + d + "><li class='released'>" + n + "</li>");
+                        t.append("<a class='episode' href data-order=" + d + "><li class='released'>" + n + "</li>");
                     }
                     p.push(t.find("li").each(function() {
                         var e, t, a, i;
@@ -227,7 +227,7 @@
                 for (d = l = 0, u = e.length; l < u; d = ++l) {
                     o = e[d];
                     n = o.fields.additionalVideoTitle;
-                    v.push(t.append("<a class='additional-episode' href='#additional-episode' data-order=" + d + "><li>" + n + "</li>"));
+                    v.push(t.append("<a class='additional-episode' href data-order=" + d + "><li>" + n + "</li>"));
                 }
                 return v;
             }
