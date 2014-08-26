@@ -456,6 +456,7 @@ li{
 	.startscreen{
 		overflow: hidden;
 		position: relative;
+		height: 100vh;
 		background-color: black;
 		.start-image{
 			position: absolute;
@@ -796,6 +797,7 @@ li{
 
 
 	.startscreen{
+		height: 100vh;
 		.start-image{
 			position: absolute;
 			top: 0;
