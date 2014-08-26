@@ -573,14 +573,14 @@ li {
   .startscreen {
     overflow: hidden;
     position: relative;
-    height: 100vh;
+    min-height: 800px;
     background-color: black; }
     .startscreen .start-image {
       position: absolute;
       top: 0;
       left: 0;
-      height: contain;
-      width: contain;
+      height: 100%;
+      min-width: 100%;
       background: url(../img/static-title.jpg) no-repeat center center;
       background-size: cover; }
     .startscreen #titlevideo {
@@ -859,31 +859,29 @@ li {
     height: 100%;
     float: right; }
 
-  .startscreen {
-    height: 100vh; }
-    .startscreen .start-image {
-      position: absolute;
-      top: 0;
-      left: 0;
-      height: 100%;
-      background: url(../img/static-title.jpg) no-repeat center center;
-      background-size: cover; }
-    .startscreen video {
-      display: none; }
-    .startscreen .title {
-      width: 100%;
-      height: 100%;
-      top: 0;
-      position: absolute;
-      text-align: center;
-      z-index: 9;
-      -webkit-perspective: 1000px;
+  .startscreen .start-image {
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 100%;
+    background: url(../img/static-title.jpg) no-repeat center center;
+    background-size: cover; }
+  .startscreen video {
+    display: none; }
+  .startscreen .title {
+    width: 100%;
+    height: 100%;
+    top: 0;
+    position: absolute;
+    text-align: center;
+    z-index: 9;
+    -webkit-perspective: 1000px;
+    -webkit-transform-style: preserve-3d; }
+    .startscreen .title img {
+      margin-top: 36.25%;
+      width: 80%;
+      -webkit-transform: translateZ(0px);
       -webkit-transform-style: preserve-3d; }
-      .startscreen .title img {
-        margin-top: 36.25%;
-        width: 80%;
-        -webkit-transform: translateZ(0px);
-        -webkit-transform-style: preserve-3d; }
 
   .videos {
     position: relative;

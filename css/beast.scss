@@ -457,14 +457,14 @@ li{
 	.startscreen{
 		overflow: hidden;
 		position: relative;
-		height: 100vh;
+		min-height: 800px;
 		background-color: black;
 		.start-image{
 			position: absolute;
 			top: 0;
 			left: 0;
-			height: contain;
-			width: contain;
+			height: 100%;
+			min-width: 100%;
 			background: url(../img/static-title.jpg) no-repeat center center;
 			background-size: cover;
 		}
@@ -798,7 +798,6 @@ li{
 
 
 	.startscreen{
-		height: 100vh;
 		.start-image{
 			position: absolute;
 			top: 0;
