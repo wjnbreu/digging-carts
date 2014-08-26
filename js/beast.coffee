@@ -34,21 +34,21 @@ $ ->
 	init = ->
 		setupBinds()
 		#Brightcove
-		addPlayer()
-		setupYouTube()
 		$('.video-nav ul a.episode li').first().addClass "active"
 		$('.story-nav ul a.additional-episode li').first().addClass "active"
 		# setTimeout(sendHeight(getHeight()), 500)
 		console.log 'init called'
-		removeSpinner()
+		
 		
 
 		
 
 	prepInit = (count) ->
 		initCount = initCount + count
+		console.log initCount
 		#make sure all data is done before calling init
-		if initCount == 4
+		if initCount == 6
+			removeSpinner()
 			init()
 			initCount = 0
 
@@ -69,7 +69,8 @@ $ ->
 
 	window.onTemplateReady = (evt) ->
 		videoPlayer = player.getModule(APIModules.VIDEO_PLAYER)
-		resizePlayer()
+		prepInit(1)
+		console.log 'bc ready'
 		sendHeight(getHeight())
 		# videoPlayer.play()
 		# resizeVid($('#player'))
@@ -126,6 +127,7 @@ $ ->
 
 
 	onPlayerReady2 = (event) ->
+		prepInit(1)
 		resizeVid('#storyplayer')
 	
 	setupBinds = ->
@@ -285,7 +287,8 @@ $ ->
 
 
 	removeSpinner = ->
-		$('.spinner').remove()
+		$('.spinner').fadeOut ->
+			$('.spinner').remove()
 		# sendHeight(getHeight())
 		
 
@@ -307,6 +310,9 @@ $ ->
 			
 
 			addVideoTitles(videoObject, $('.video-nav ul'), 'main')
+
+			addPlayer()
+			setupYouTube()
 				
 			$('a.episode').bind 'click', (event) ->
 				event.preventDefault()
@@ -341,5 +347,6 @@ $ ->
 	#launch when ready
 	
 	getData()
+	
 
 	

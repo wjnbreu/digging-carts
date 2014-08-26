@@ -261,7 +261,6 @@ a.pulldown {
     list-style-type: none; }
 
 .spinner {
-  display: none;
   width: 100%;
   height: 100%;
   position: fixed;

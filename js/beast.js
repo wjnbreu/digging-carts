@@ -23,16 +23,15 @@
         C = '<div style="display:none"></div><object id="myExperience" class="BrightcoveExperience"><param name="bgcolor" value="#FFFFFF" /><param name="width" value="{{width}}" /><param name="height" value="{{height}}" /><param name="playerID" value="{{playerID}}" /><param name="playerKey" value="{{playerKey}}" /><param name="isSlim" value="true" /><param name="isVid" value="true" /><param name="isUI" value="true" /><param name="dynamicStreaming" value="true" /><param name="@videoPlayer" value="{{videoID}}"; /><param name="includeAPI" value="true" /><param name="templateLoadHandler" value="onTemplateLoad" /><param name="templateReadyHandler" value="onTemplateReady" /></object>';
         f = function() {
             k();
-            i();
-            M();
             $(".video-nav ul a.episode li").first().addClass("active");
             $(".story-nav ul a.additional-episode li").first().addClass("active");
-            console.log("init called");
-            return I();
+            return console.log("init called");
         };
         D = function(e) {
             m = m + e;
-            if (m === 4) {
+            console.log(m);
+            if (m === 6) {
+                I();
                 f();
                 return m = 0;
             }
@@ -56,7 +55,8 @@
         window.onTemplateReady = function(a) {
             var t;
             t = y.getModule(e.VIDEO_PLAYER);
-            T();
+            D(1);
+            console.log("bc ready");
             return x(p());
         };
         T = function() {
@@ -103,6 +103,7 @@
             });
         };
         w = function(e) {
+            D(1);
             return E("#storyplayer");
         };
         k = function() {
@@ -254,7 +255,9 @@
             });
         };
         I = function() {
-            return $(".spinner").remove();
+            return $(".spinner").fadeOut(function() {
+                return $(".spinner").remove();
+            });
         };
         u = function() {
             var e;
@@ -277,6 +280,8 @@
                 V = e;
                 D(1);
                 r(V, $(".video-nav ul"), "main");
+                i();
+                M();
                 return $("a.episode").bind("click", function(e) {
                     var a;
                     e.preventDefault();
