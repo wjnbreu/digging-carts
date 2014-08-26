@@ -1,6 +1,6 @@
 (function() {
     $(function() {
-        var e, a, t, i, r, n, d, o, s, l, c, u, p, f, m, v, h, w, y, g, b, C, D, I, T, E, x, k, M, S, V;
+        var e, a, t, i, r, n, d, o, s, l, c, u, p, f, m, v, h, w, y, g, b, C, D, I, E, T, x, k, M, S, V;
         l = {};
         V = {};
         h = {};
@@ -57,20 +57,26 @@
             t = y.getModule(e.VIDEO_PLAYER);
             D(1);
             console.log("bc ready");
+            E();
             return x(p());
         };
-        T = function() {
-            var e, a, t, i, r, n, d, o;
-            n = $("#player").find("object");
-            i = n.attr("width");
-            t = n.attr("height");
-            o = $(window).width();
-            d = o / 1.3;
-            r = i / t;
-            y.find('param[name="width"]').attr("vidWidth");
-            console.log(t);
-            e = o - d;
-            return a = e / 2;
+        E = function(e) {
+            var a, t, i, r, n, d, o, s;
+            d = $("#myExperience");
+            console.log(d);
+            r = d.attr("width");
+            i = d.attr("height");
+            s = $(window).width();
+            o = s / 1.3;
+            n = r / i;
+            d.attr("width", o);
+            d.attr("height", o / n);
+            console.log(r);
+            a = s - o;
+            t = a / 2;
+            return d.css({
+                marginLeft: t
+            });
         };
         i = function() {
             var e, a;
@@ -104,7 +110,7 @@
         };
         w = function(e) {
             D(1);
-            return E("#storyplayer");
+            return T("#storyplayer");
         };
         k = function() {
             window.addEventListener("resize", function() {});
@@ -237,7 +243,7 @@
             }
             return c;
         };
-        E = function(e) {
+        T = function(e) {
             var a, t, i, r, n, d, o;
             y = $(e);
             o = $(window).width();

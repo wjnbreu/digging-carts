@@ -71,26 +71,32 @@ $ ->
 		videoPlayer = player.getModule(APIModules.VIDEO_PLAYER)
 		prepInit(1)
 		console.log 'bc ready'
+		resizePlayer()
 		sendHeight(getHeight())
 		# videoPlayer.play()
 		# resizeVid($('#player'))
 
 	
-	resizePlayer = ->
-		vid = $('#player').find('object')
-		ogWidth = vid.attr 'width'
-		ogHeight = vid.attr 'height'
+	resizePlayer = (video) ->
+		vid = $('#myExperience')
+		console.log vid
+		ogWidth = vid.attr "width"
+		ogHeight = vid.attr "height"
 		winWidth = $(window).width()
 		vidWidth = winWidth / 1.3
 		
 		ratio = ogWidth / ogHeight
 		
-		player.find('param[name="width"]').attr('vidWidth')
+		vid.attr("width", vidWidth)
+		vid.attr("height", vidWidth / ratio)
 		# player.attr('height', vidWidth / ratio)
-		console.log ogHeight
+		console.log ogWidth
 
 		diff = winWidth - vidWidth
 		margin = diff / 2
+
+		vid.css
+			marginLeft: margin
 
 
 	addPlayer = ->
