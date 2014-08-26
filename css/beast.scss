@@ -197,6 +197,7 @@ li{
 .videos{
 	position: relative;
 	width: 100%;
+	z-index: 2;
 	background-color: black;
 	padding-bottom: 48px;
 	border-bottom: 1px solid $gray;
@@ -231,6 +232,7 @@ li{
 		padding-bottom: 48px;
 		border-bottom: 1px solid $gray;
 		width: 100%;
+		z-index: 2;
 		position: relative;
 		overflow: hidden !important;
 		height: auto;
@@ -302,7 +304,7 @@ li{
 .radio{
 	margin: 0;
 	padding-top: 48px;
-	z-index: 1;
+	z-index: 2;
 	padding-bottom: 48px;
 	border-bottom: 1px solid $gray;
 	.show{
@@ -328,6 +330,7 @@ li{
 	position: relative;
 	padding-top: 48px;
 	padding-bottom: 96px;
+	z-index: 2;
 	.story-nav{
 		ul{
 			width: 90%;
