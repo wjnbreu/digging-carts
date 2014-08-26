@@ -197,6 +197,7 @@ li{
 .videos{
 	position: relative;
 	width: 100%;
+	height: auto;
 	z-index: 2;
 	background-color: black;
 	padding-bottom: 48px;
@@ -355,6 +356,7 @@ li{
 		border: 0;
 		border: none;
 		display: none;
+		@include boxy;
 	}
 	p.body{
 		text-align: center;

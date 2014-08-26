@@ -1,8 +1,8 @@
 (function() {
     $(function() {
-        var e, t, a, i, n, r, d, o, s, l, c, u, p, v, f, m, h, g, w, y, b, E, C, I, D, M, L, T, x, A, k, P, R, S, V, N, O;
+        var e, t, a, i, n, r, d, o, s, l, c, u, p, v, f, m, h, g, w, y, b, E, C, I, D, M, T, L, x, A, V, k, P, R, S, N, B;
         l = {};
-        O = {};
+        B = {};
         g = {};
         r = {};
         h = {};
@@ -13,7 +13,7 @@
         e = {};
         w = {};
         N = 16 / 9;
-        V = {};
+        S = {};
         d = [];
         D = {
             playerID: "1684512102001",
@@ -24,21 +24,21 @@
         };
         M = '<div style="display:none"></div><object id="myExperience" class="BrightcoveExperience"><param name="bgcolor" value="#FFFFFF" /><param name="width" value="{{width}}" /><param name="height" value="{{height}}" /><param name="playerID" value="{{playerID}}" /><param name="playerKey" value="{{playerKey}}" /><param name="isSlim" value="true" /><param name="isVid" value="true" /><param name="isUI" value="true" /><param name="dynamicStreaming" value="true" /><param name="@videoPlayer" value="{{videoID}}"; /><param name="includeAPI" value="true" /><param name="templateLoadHandler" value="onTemplateLoad" /><param name="templateReadyHandler" value="onTemplateReady" /></object>';
         f = function() {
-            P();
+            k();
             $(".video-nav ul a.episode li").first().addClass("active");
             $(".story-nav ul a.additional-episode li").first().addClass("active");
             return console.log("init called");
         };
-        L = function(e) {
+        T = function(e) {
             m = m + e;
             console.log(m);
             if (m === 6) {
-                T();
+                L();
                 f();
                 return m = 0;
             }
         };
-        k = function(e) {
+        V = function(e) {
             var t, a;
             t = {
                 height: e
@@ -56,7 +56,7 @@
             return w = C.getModule(brightcove.api.modules.APIModules.VIDEO_PLAYER);
         };
         window.onTemplateReady = function(e) {
-            L(1);
+            T(1);
             x($("#myExperience"));
             w.addEventListener(brightcove.api.events.MediaEvent.BEGIN, y);
             w.addEventListener(brightcove.api.events.MediaEvent.CHANGE, y);
@@ -64,18 +64,18 @@
             w.addEventListener(brightcove.api.events.MediaEvent.ERROR, y);
             w.addEventListener(brightcove.api.events.MediaEvent.PLAY, y);
             w.addEventListener(brightcove.api.events.MediaEvent.STOP, y);
-            return k(v());
+            return V(v());
         };
         b = function(e) {
             return console.log(e);
         };
-        S = function(e) {
+        R = function(e) {
             return w.getCurrentVideo(u);
         };
         u = function(e, t) {
             console.log(e);
-            w.loadVideoByID(V.fields.brightcoveVideoId);
-            return V = {};
+            w.loadVideoByID(S.fields.brightcoveVideoId);
+            return S = {};
         };
         y = function(e) {
             return console.log(e.type);
@@ -103,7 +103,7 @@
             document.getElementById("player").innerHTML = e;
             return brightcove.createExperiences();
         };
-        R = function() {
+        P = function() {
             var e, t;
             t = document.createElement("script");
             t.src = "https://www.youtube.com/iframe_api";
@@ -127,10 +127,10 @@
             });
         };
         E = function(e) {
-            L(1);
+            T(1);
             return A("#storyplayer");
         };
-        P = function() {
+        k = function() {
             window.addEventListener("resize", function() {
                 A($("#myExperience"));
                 return A($("#storyplayer"));
@@ -172,11 +172,11 @@
             $("a.pulldown").click(function(e) {
                 e.preventDefault();
                 return $(this).parent().find("ul").slideToggle(200, function() {
-                    return k(v());
+                    return V(v());
                 });
             });
             return $("a.episode").click(function(e) {
-                return S();
+                return R();
             });
         };
         s = function(e, t, a) {
@@ -192,6 +192,7 @@
         o = function(e, t) {
             var a;
             a = t[e].fields;
+            I.cueVideoById(a.additionalYouTube);
             $(".stories h1").empty().text(a.additionalVideoTitle);
             $(".stories p.body").empty().text(a.description);
             return $(".stories p.body").slideDown();
@@ -282,7 +283,7 @@
                 display: "block"
             });
         };
-        T = function() {
+        L = function() {
             return $(".spinner").fadeOut(function() {
                 return $(".spinner").remove();
             });
@@ -298,16 +299,16 @@
                 include: 1
             }).done(function(e) {
                 t(e);
-                return L(1);
+                return T(1);
             });
             e.entries({
                 content_type: "36SuQSSPR6QmWOk8CseMC6",
                 include: 1,
                 order: "fields.order"
             }).done(function(e) {
-                O = e;
-                L(1);
-                n(O, $(".video-nav ul"), "main");
+                B = e;
+                T(1);
+                n(B, $(".video-nav ul"), "main");
                 i();
                 return $("a.episode").bind("click", function(e) {
                     var t;
@@ -315,15 +316,15 @@
                     $(this).parent().find("li").removeClass("active");
                     $(this).find("li").addClass("active");
                     t = $(this).data("order");
-                    V = O[t];
-                    return S();
+                    S = B[t];
+                    return R();
                 });
             });
             e.entries({
                 content_type: "2YpXtnGW80EEGgCUsSMmCc",
                 include: 1
             }).done(function(e) {
-                L(1);
+                T(1);
                 return a(e);
             });
             return e.entries({
@@ -331,7 +332,7 @@
                 include: 1,
                 order: "fields.order"
             }).done(function(e) {
-                L(1);
+                T(1);
                 r = e;
                 n(r, $(".story-nav ul"), "additional");
                 $("a.additional-episode").bind("click", function(e) {
@@ -342,7 +343,7 @@
                     t = $(this).data("order");
                     return o(t, r);
                 });
-                return R();
+                return P();
             });
         };
         return p();

@@ -220,11 +220,10 @@ $ ->
 	changeAdditionalVideo = (order, additionalVideoObject) ->
 		#account for zero index
 		video = additionalVideoObject[order].fields
-		# player2.cueVideoById(video.additionalYouTube)
+		player2.cueVideoById(video.additionalYouTube)
 		$('.stories h1').empty().text video.additionalVideoTitle
 		$('.stories p.body').empty().text video.description
 		$('.stories p.body').slideDown()
-		# sendHeight(getHeight())
 
 
 
