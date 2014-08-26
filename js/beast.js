@@ -83,8 +83,7 @@
         k = function() {
             window.addEventListener("resize", function() {
                 b("#player");
-                b("#storyplayer");
-                return T(c());
+                return b("#storyplayer");
             });
             $("a.arrow-right").click(function(e) {
                 var t, i, r, n, a;

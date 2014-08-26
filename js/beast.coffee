@@ -90,7 +90,7 @@ $ ->
 		window.addEventListener 'resize', ->
 			resizeVid('#player')
 			resizeVid('#storyplayer')
-			sendHeight(getHeight())
+			# sendHeight(getHeight())
 
 		$('a.arrow-right').click (event) ->
 			event.preventDefault()
