@@ -1,6 +1,6 @@
 (function() {
     $(function() {
-        var e, t, a, i, n, r, d, o, s, l, c, u, p, f, v, m, h, g, w, y, b, E, C, I, M, D, T, L, x, A, P, O, S, k, R, V, B, N, Y;
+        var e, t, a, i, n, r, d, o, s, l, c, u, p, f, v, m, h, g, w, y, b, E, C, I, M, D, T, L, x, A, P, S, k, R, V, B, O, N, Y;
         l = {};
         Y = {};
         y = {};
@@ -13,7 +13,7 @@
         e = {};
         b = {};
         N = 640 / 360;
-        B = {};
+        O = {};
         d = [];
         g = false;
         T = {
@@ -25,10 +25,10 @@
         };
         L = '<div style="display:none"></div><object id="myExperience" class="BrightcoveExperience"><param name="bgcolor" value="#FFFFFF" /><param name="width" value="{{width}}" /><param name="height" value="{{height}}" /><param name="playerID" value="{{playerID}}" /><param name="playerKey" value="{{playerKey}}" /><param name="isSlim" value="true" /><param name="autoStart" value="false" /><param name="isVid" value="true" /><param name="isUI" value="true" /><param name="dynamicStreaming" value="true" /><param name="@videoPlayer" value="{{videoID}}"; /><param name="includeAPI" value="true" /><param name="templateLoadHandler" value="onTemplateLoad" /><param name="templateReadyHandler" value="onTemplateReady" /></object>';
         m = function() {
-            k();
+            R();
             $(".video-nav ul a.episode li").first().addClass("active");
             $(".story-nav ul a.additional-episode li").first().addClass("active");
-            return S(v());
+            return k(v());
         };
         x = function(e) {
             h = h + e;
@@ -39,7 +39,7 @@
                 return h = 0;
             }
         };
-        S = function(e) {
+        k = function(e) {
             var t, a;
             t = {
                 height: e
@@ -64,18 +64,18 @@
             b.addEventListener(brightcove.api.events.MediaEvent.ERROR, E);
             b.addEventListener(brightcove.api.events.MediaEvent.PLAY, E);
             b.addEventListener(brightcove.api.events.MediaEvent.STOP, E);
-            return S(v());
+            return k(v());
         };
         C = function(e) {
             return 0;
         };
-        V = function(e) {
+        B = function(e) {
             return b.getCurrentVideo(u);
         };
         u = function(e, t) {
             console.log(e);
-            b.loadVideoByID(B.fields.brightcoveVideoId);
-            return B = {};
+            b.loadVideoByID(O.fields.brightcoveVideoId);
+            return O = {};
         };
         E = function(e) {
             return console.log(e.type);
@@ -92,12 +92,6 @@
                 s = l / 1.2;
                 if (o.attr("src")) {
                     d = o.attr("src");
-                    if (d.indexOf("width=") > -1) {
-                        d.replace("512", s);
-                    }
-                    if (d.indexOf("height=") > -1) {
-                        d.replace("288", s / r);
-                    }
                 }
             }
             o.attr("width", s);
@@ -117,7 +111,7 @@
             document.getElementById("player").innerHTML = e;
             return brightcove.createExperiences();
         };
-        R = function() {
+        V = function() {
             var e, t;
             t = document.createElement("script");
             t.src = "https://www.youtube.com/iframe_api";
@@ -141,12 +135,12 @@
             });
         };
         I = function(e) {
-            return O("#storyplayer");
+            return S("#storyplayer");
         };
-        k = function() {
+        R = function() {
             window.addEventListener("resize", function() {
-                O($("#myExperience"));
-                return O($("#storyplayer"));
+                S($("#myExperience"));
+                return S($("#storyplayer"));
             });
             $("a.arrow-right").click(function(e) {
                 var t, a, i, n, r;
@@ -185,11 +179,11 @@
             $("a.pulldown").click(function(e) {
                 e.preventDefault();
                 return $(this).parent().find("ul").slideToggle(200, function() {
-                    return S(v());
+                    return k(v());
                 });
             });
             return $("a.episode").click(function(e) {
-                return V();
+                return B();
             });
         };
         s = function(e, t, a) {
@@ -279,7 +273,7 @@
             }
             return c;
         };
-        O = function(e) {
+        S = function(e) {
             var t, a, i, n, r, d, o;
             M = $(e);
             o = $(window).width();
@@ -337,8 +331,8 @@
                     $(this).parent().find("li").removeClass("active");
                     $(this).find("li").addClass("active");
                     t = $(this).data("order");
-                    B = Y[t];
-                    return V();
+                    O = Y[t];
+                    return B();
                 });
             });
             e.entries({
@@ -364,7 +358,7 @@
                     t = $(this).data("order");
                     return o(t, r);
                 });
-                return R();
+                return V();
             });
         };
         f();

@@ -89,48 +89,4 @@
 
 
 
-@-webkit-keyframes 'scale' {
-	0%{
-		@include vendorize(transform, translateZ(0px));
-		margin-top: 15%;
-	}
-	100%{
-		@include vendorize(transform, translateZ(400px));
-		margin-top: 5%;
-	}
-}
-
-@-o-keyframes 'scale' {
-	0%{
-		@include vendorize(transform, translateZ(0px));
-		margin-top: 15%;
-	}
-	100%{
-		@include vendorize(transform, translateZ(400px));
-		margin-top: 5%;
-	}
-}
-
-@-ms-keyframes 'scale' {
-	0%{
-		@include vendorize(transform, translateZ(0px));
-		margin-top: 15%;
-	}
-	100%{
-		@include vendorize(transform, translateZ(400px));
-		margin-top: 5%;
-	}
-}
-
-@-webkit-keyframes 'scale' {
-	0%{
-		@include vendorize(transform, translateZ(0px));
-		margin-top: 15%;
-	}
-	100%{
-		@include vendorize(transform, translateZ(400px));
-		margin-top: 5%;
-	}
-}
-
 

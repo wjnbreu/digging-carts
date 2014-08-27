@@ -109,10 +109,14 @@ $ ->
 			vidWidth = winWidth / 1.2
 			if vid.attr "src"
 				src = vid.attr "src"
-				if src.indexOf("width=") > -1
-					src.replace("512", vidWidth)
-				if src.indexOf("height=") > -1
-					src.replace("288", vidWidth / ratio)
+				# alert src
+				# if src.indexOf("width=") > -1
+				# 	startPos = src.indexOf("width=")
+				# 	endPos = src.indexOf("height=")
+				# 	alert startPos
+				# 	alert endPos
+				# if src.indexOf("height=") > -1
+				# 	src.replace("height=", "")
 
 
 		vid.attr("width", vidWidth)
