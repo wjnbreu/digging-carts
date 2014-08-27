@@ -25,7 +25,7 @@ body{
 
 h1 {
 	text-transform: uppercase;
-	@include boxy;
+	@include smallboxy;
 	background-color: $gray;
 	color: black;
 	width: 70%;
@@ -147,6 +147,41 @@ li{
 	}
 }
 
+.button-group{
+	width: 200px;
+	margin: 48px auto auto auto;
+	.button, .button-alt{
+		margin-bottom: 1.25rem;
+		margin-left: 1.25rem;
+		font-size: 2.925rem;
+		-webkit-font-smoothing: antialiased;
+		background-color: black;
+		border-radius: 0;
+		display: inline-block;
+		box-sizing: border-box;
+		width: 55px;
+		height: 55px;
+		font-weight: 900;
+		font-family: bit, 'Helvetica Neue', helvetica, sans-serif;
+		line-height: 50px;
+		text-align: center;
+		padding: 5px;
+		text-decoration: none;
+		text-transform: uppercase;
+		color: white !important;
+		@include smallboxy;
+		@include vendorize(transition, all 0.15s cubic-bezier(0.25,0.46,0.45,0.94));
+		&:hover{
+			background-color: white;
+			color: black !important;
+		}
+		&:active{
+			@include vendorize(transform, translate(5px, 5px));
+			@include vendorize(box-shadow, none);
+		}
+	}
+}
+
 
 
 
@@ -196,7 +231,7 @@ li{
 	padding-bottom: 48px;
 	border-bottom: 1px solid $gray;
 	#myExperience{
-		@include boxy;
+		@include smallboxy;
 		opacity: 0;
 	}
 	.video-nav{
@@ -313,12 +348,12 @@ li{
 		img{
 			width: 80%;
 			margin-left: 10%;
-			@include boxy;
+			@include smallboxy;
 		}
 		iframe{
 			width: 80%;
 			margin: 0 10% 5% 10%;
-			@include boxy;
+			@include smallboxy;
 			-webkit-filter: grayscale(1);
 		}
 	}
@@ -350,7 +385,7 @@ li{
 		border: 0;
 		border: none;
 		display: none;
-		@include boxy;
+		@include smallboxy;
 	}
 	p.body{
 		text-align: center;
