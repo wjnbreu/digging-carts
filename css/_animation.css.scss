@@ -2,72 +2,88 @@
 @-webkit-keyframes 'spina'{
 	0%{
 		@include vendorize(transform, translate(0px, 0px));
+		animation-timing-function: ease-in-out;
 	}
 	100%{
 		@include vendorize(transform, translate(0px, 10px));
+		animation-timing-function: ease-in-out;
 	}
 }
 
 @-webkit-keyframes 'spinb'{
 	0%{
 		@include vendorize(transform, translate(0px, 10px));
+		animation-timing-function: ease-in-out;
 	}
 	100%{
 		@include vendorize(transform, translate(0px, 0px));
+		animation-timing-function: ease-in-out;
 	}
 }
 
 @-o-keyframes 'spina'{
 	0%{
 		@include vendorize(transform, translate(0px, 0px));
+		animation-timing-function: ease-in-out;
 	}
 	100%{
 		@include vendorize(transform, translate(0px, 10px));
+		animation-timing-function: ease-in-out;
 	}
 }
 
 @-o-keyframes 'spinb'{
 	0%{
 		@include vendorize(transform, translate(0px, 10px));
+		animation-timing-function: ease-in-out;
 	}
 	100%{
 		@include vendorize(transform, translate(0px, 0px));
+		animation-timing-function: ease-in-out;
 	}
 }
 
 @-ms-keyframes 'spina'{
 	0%{
 		@include vendorize(transform, translate(0px, 0px));
+		animation-timing-function: ease-in-out;
 	}
 	100%{
 		@include vendorize(transform, translate(0px, 10px));
+		animation-timing-function: ease-in-out;
 	}
 }
 
 @-ms-keyframes 'spinb'{
 	0%{
 		@include vendorize(transform, translate(0px, 10px));
+		animation-timing-function: ease-in-out;
 	}
 	100%{
 		@include vendorize(transform, translate(0px, 0px));
+		animation-timing-function: ease-in-out;
 	}
 }
 
 @keyframes 'spina'{
 	0%{
 		@include vendorize(transform, translate(0px, 0px));
+		animation-timing-function: ease-in-out;
 	}
 	100%{
 		@include vendorize(transform, translate(0px, 10px));
+		animation-timing-function: ease-in-out;
 	}
 }
 
 @keyframes 'spinb'{
 	0%{
 		@include vendorize(transform, translate(0px, 10px));
+		animation-timing-function: ease-in-out;
 	}
 	100%{
 		@include vendorize(transform, translate(0px, 0px));
+		animation-timing-function: ease-in-out;
 	}
 }
 

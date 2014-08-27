@@ -32,112 +32,128 @@
     -moz-transform: translate(0px, 0px);
     -ms-transform: translate(0px, 0px);
     -o-transform: translate(0px, 0px);
-    transform: translate(0px, 0px); }
+    transform: translate(0px, 0px);
+    animation-timing-function: ease-in-out; }
 
   100% {
     -webkit-transform: translate(0px, 10px);
     -moz-transform: translate(0px, 10px);
     -ms-transform: translate(0px, 10px);
     -o-transform: translate(0px, 10px);
-    transform: translate(0px, 10px); } }
+    transform: translate(0px, 10px);
+    animation-timing-function: ease-in-out; } }
 @-webkit-keyframes 'spinb' {
   0% {
     -webkit-transform: translate(0px, 10px);
     -moz-transform: translate(0px, 10px);
     -ms-transform: translate(0px, 10px);
     -o-transform: translate(0px, 10px);
-    transform: translate(0px, 10px); }
+    transform: translate(0px, 10px);
+    animation-timing-function: ease-in-out; }
 
   100% {
     -webkit-transform: translate(0px, 0px);
     -moz-transform: translate(0px, 0px);
     -ms-transform: translate(0px, 0px);
     -o-transform: translate(0px, 0px);
-    transform: translate(0px, 0px); } }
+    transform: translate(0px, 0px);
+    animation-timing-function: ease-in-out; } }
 @-o-keyframes 'spina' {
   0% {
     -webkit-transform: translate(0px, 0px);
     -moz-transform: translate(0px, 0px);
     -ms-transform: translate(0px, 0px);
     -o-transform: translate(0px, 0px);
-    transform: translate(0px, 0px); }
+    transform: translate(0px, 0px);
+    animation-timing-function: ease-in-out; }
 
   100% {
     -webkit-transform: translate(0px, 10px);
     -moz-transform: translate(0px, 10px);
     -ms-transform: translate(0px, 10px);
     -o-transform: translate(0px, 10px);
-    transform: translate(0px, 10px); } }
+    transform: translate(0px, 10px);
+    animation-timing-function: ease-in-out; } }
 @-o-keyframes 'spinb' {
   0% {
     -webkit-transform: translate(0px, 10px);
     -moz-transform: translate(0px, 10px);
     -ms-transform: translate(0px, 10px);
     -o-transform: translate(0px, 10px);
-    transform: translate(0px, 10px); }
+    transform: translate(0px, 10px);
+    animation-timing-function: ease-in-out; }
 
   100% {
     -webkit-transform: translate(0px, 0px);
     -moz-transform: translate(0px, 0px);
     -ms-transform: translate(0px, 0px);
     -o-transform: translate(0px, 0px);
-    transform: translate(0px, 0px); } }
+    transform: translate(0px, 0px);
+    animation-timing-function: ease-in-out; } }
 @-ms-keyframes 'spina' {
   0% {
     -webkit-transform: translate(0px, 0px);
     -moz-transform: translate(0px, 0px);
     -ms-transform: translate(0px, 0px);
     -o-transform: translate(0px, 0px);
-    transform: translate(0px, 0px); }
+    transform: translate(0px, 0px);
+    animation-timing-function: ease-in-out; }
 
   100% {
     -webkit-transform: translate(0px, 10px);
     -moz-transform: translate(0px, 10px);
     -ms-transform: translate(0px, 10px);
     -o-transform: translate(0px, 10px);
-    transform: translate(0px, 10px); } }
+    transform: translate(0px, 10px);
+    animation-timing-function: ease-in-out; } }
 @-ms-keyframes 'spinb' {
   0% {
     -webkit-transform: translate(0px, 10px);
     -moz-transform: translate(0px, 10px);
     -ms-transform: translate(0px, 10px);
     -o-transform: translate(0px, 10px);
-    transform: translate(0px, 10px); }
+    transform: translate(0px, 10px);
+    animation-timing-function: ease-in-out; }
 
   100% {
     -webkit-transform: translate(0px, 0px);
     -moz-transform: translate(0px, 0px);
     -ms-transform: translate(0px, 0px);
     -o-transform: translate(0px, 0px);
-    transform: translate(0px, 0px); } }
+    transform: translate(0px, 0px);
+    animation-timing-function: ease-in-out; } }
 @keyframes 'spina' {
   0% {
     -webkit-transform: translate(0px, 0px);
     -moz-transform: translate(0px, 0px);
     -ms-transform: translate(0px, 0px);
     -o-transform: translate(0px, 0px);
-    transform: translate(0px, 0px); }
+    transform: translate(0px, 0px);
+    animation-timing-function: ease-in-out; }
 
   100% {
     -webkit-transform: translate(0px, 10px);
     -moz-transform: translate(0px, 10px);
     -ms-transform: translate(0px, 10px);
     -o-transform: translate(0px, 10px);
-    transform: translate(0px, 10px); } }
+    transform: translate(0px, 10px);
+    animation-timing-function: ease-in-out; } }
 @keyframes 'spinb' {
   0% {
     -webkit-transform: translate(0px, 10px);
     -moz-transform: translate(0px, 10px);
     -ms-transform: translate(0px, 10px);
     -o-transform: translate(0px, 10px);
-    transform: translate(0px, 10px); }
+    transform: translate(0px, 10px);
+    animation-timing-function: ease-in-out; }
 
   100% {
     -webkit-transform: translate(0px, 0px);
     -moz-transform: translate(0px, 0px);
     -ms-transform: translate(0px, 0px);
     -o-transform: translate(0px, 0px);
-    transform: translate(0px, 0px); } }
+    transform: translate(0px, 0px);
+    animation-timing-function: ease-in-out; } }
 @-webkit-keyframes 'scale' {
   0% {
     -webkit-transform: translateZ(0px);
@@ -274,21 +290,24 @@ a.pulldown {
     width: 50%;
     margin-left: 25%;
     text-align: center;
-    font-size: 2em; }
+    font-size: 2em;
+    -webkit-transform: translateZ(0);
+    -webkit-backface-visibility: hidden;
+    -webkit-transform-style: preserve-3d; }
     .spinner .load-text span {
       color: black; }
       .spinner .load-text span.bounce {
-        -webkit-animation: 'spina' 1s infinite alternate;
-        -moz-animation: 'spina' 1s infinite alternate;
-        -o-animation: 'spina' 1s infinite alternate;
-        -ms-animation: 'spina' 1s infinite alternate;
-        animation: 'spina' 1s infinite alternate; }
+        -webkit-animation: "spina" 1s infinite alternate;
+        -moz-animation: "spina" 1s infinite alternate;
+        -ms-animation: "spina" 1s infinite alternate;
+        -o-animation: "spina" 1s infinite alternate;
+        animation: "spina" 1s infinite alternate; }
       .spinner .load-text span.bounce2 {
-        -webkit-animation: 'spinb' 1s infinite alternate;
-        -moz-animation: 'spinb' 1s infinite alternate;
-        -o-animation: 'spinb' 1s infinite alternate;
-        -ms-animation: 'spinb' 1s infinite alternate;
-        animation: 'spinb' 1s infinite alternate; }
+        -webkit-animation: "spinb" 1s infinite alternate;
+        -moz-animation: "spinb" 1s infinite alternate;
+        -ms-animation: "spinb" 1s infinite alternate;
+        -o-animation: "spinb" 1s infinite alternate;
+        animation: "spinb" 1s infinite alternate; }
 
 h1, h2, h3, h4 {
   text-transform: uppercase;

@@ -86,21 +86,16 @@ a.pulldown{
 		margin-left: 25%;
 		text-align: center;
 		font-size: 2em;
+		-webkit-transform: translateZ(0);
+		-webkit-backface-visibility: hidden;
+		-webkit-transform-style: preserve-3d;
 		span{
 			color: black;
 			&.bounce{
-				-webkit-animation: 'spina' 1s infinite alternate;
-				-moz-animation: 'spina' 1s infinite alternate;
-				-o-animation: 'spina' 1s infinite alternate;
-				-ms-animation: 'spina' 1s infinite alternate;
-				animation: 'spina' 1s infinite alternate;
+				@include vendorize(animation, 'spina' 1s infinite alternate);
 			}
 			&.bounce2{
-				-webkit-animation: 'spinb' 1s infinite alternate;
-				-moz-animation: 'spinb' 1s infinite alternate;
-				-o-animation: 'spinb' 1s infinite alternate;
-				-ms-animation: 'spinb' 1s infinite alternate;
-				animation: 'spinb' 1s infinite alternate;
+				@include vendorize(animation, 'spinb' 1s infinite alternate);
 			}
 		}
 	}
@@ -184,12 +179,10 @@ li{
 		text-align: center;
 		z-index: 9;
 		img{
-			//looks shit in normal mode, but good in iframe
 			margin-top: 6.25%;
 			width: 80%;
 			-webkit-transform: translateZ(0px);
 			-webkit-transform-style: preserve-3d;
-			// -webkit-animation: 'scale' 4s;
 		}
 	}
 }
