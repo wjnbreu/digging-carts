@@ -106,6 +106,7 @@ $ ->
 		
 		#target brightcove iframe on mobile
 		if isMobile
+			vidWidth = winWidth / 1.2
 			if vid.attr "src"
 				src = vid.attr "src"
 				if src.indexOf("width=") > -1
@@ -304,6 +305,9 @@ $ ->
 		ogWidth = player.attr('width') #extra box shadow pix
 		ogHeight = player.attr('height')
 		ratio = ogWidth / ogHeight
+
+		if isMobile
+			vidWidth = winWidth / 1.2
 
 		player.attr('width', vidWidth)
 		player.attr('height', vidWidth / ratio)

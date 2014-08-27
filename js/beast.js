@@ -89,6 +89,7 @@
             s = l / 1.3;
             r = n / i;
             if (g) {
+                s = l / 1.2;
                 if (o.attr("src")) {
                     d = o.attr("src");
                     if (d.indexOf("width=") > -1) {
@@ -286,6 +287,9 @@
             n = M.attr("width");
             i = M.attr("height");
             r = n / i;
+            if (g) {
+                d = o / 1.2;
+            }
             M.attr("width", d);
             M.attr("height", d / r);
             t = o - d;
