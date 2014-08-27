@@ -506,7 +506,8 @@ li {
 
 @media screen and (min-width: 768px) and (max-width: 1024px), all and (min-device-width: 768px) and (max-device-width: 1024px) {
   h1 {
-    font-size: 3.5em; }
+    font-size: 3.5em;
+    width: 70%; }
 
   p {
     line-height: 1.5;
@@ -529,7 +530,7 @@ li {
 
   .startscreen {
     overflow: hidden;
-    min-height: 800px; }
+    min-height: 950px; }
     .startscreen .start-image {
       position: absolute;
       top: 0;
@@ -544,7 +545,7 @@ li {
       width: contain;
       height: contain; }
       .startscreen .title img {
-        margin-top: 26.25%;
+        margin-top: 36.25%;
         width: 80%; }
 
   .videos {
@@ -558,16 +559,16 @@ li {
       text-decoration: none;
       display: block; }
       .videos .video-nav a.pulldown li {
-        width: 80%;
-        margin-left: 10%;
+        width: 70%;
+        margin-left: 15%;
         height: auto;
         text-align: center;
         font-size: 1em;
         list-style-type: none; }
     .videos .video-nav ul {
       display: none;
-      width: 80%;
-      margin-left: 10%;
+      width: 70%;
+      margin-left: 15%;
       text-align: center;
       list-style-type: none;
       padding: 0; }
@@ -575,6 +576,7 @@ li {
         text-decoration: none; }
         .videos .video-nav ul a li {
           display: block;
+          margin-left: 0;
           width: 100%;
           text-align: center;
           margin-top: 10px;
