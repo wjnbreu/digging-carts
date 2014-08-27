@@ -907,245 +907,6 @@ footer{
 			width: contain;
 			height: contain;
 			img{
-				margin-top: 46.25%;
-				width: 90%;
-			}
-		}
-	}
-
-	.videos{
-		padding-bottom: 10%;
-		padding-bottom: 10%;
-		border-bottom: 1px solid $gray;
-		#myExperience{
-			display: block !important;
-			@include smallboxy;
-			opacity: 1;
-		}
-		.video-nav{
-			a.pulldown{
-				text-decoration: none;
-				display: block;
-				li{
-					width: 70%;
-					margin-left: 15%;
-					height: auto;
-					text-align: center;
-					list-style-type: none;
-				}
-			}
-			ul{
-				display: none;
-				width: 70%;
-				margin-left: 15%;
-				text-align: center;
-				list-style-type: none;
-				padding: 0;
-				a{
-					text-decoration: none;
-					li{
-						display: block;
-						margin-left: 0;
-						width: 100%;
-						text-align: center;
-						margin-top: 10px;
-					}
-				}
-			}
-		}
-		iframe{
-			margin-left: 20%;
-			border: 0;
-			border: none;
-			display: none;
-			@include smallboxy;
-		}
-	}
-
-
-
-	.composers{
-		padding-bottom: 10%;
-		padding-bottom: 10%;
-		border-bottom: 1px solid $gray;
-		.composers-wrap{
-			.slide{
-				display: none;
-				&.active{
-					display: block;
-				}
-				.img-wrap{
-					width: 100%;
-					margin-left:0;
-					.arrow-right{
-						top: 10%;
-						right: 20px;
-						width: 10%;
-						height: 10%;
-						&:hover{
-							right: 15px;
-						}
-					}
-					.arrow-left{
-						top: 10%;
-						left: 20px;
-						width: 10%;
-						height: 10%;
-					}
-				}
-				h2{
-					width: 90%;
-					margin-left: 5%;
-					font-size: 1.5em;
-				}
-				p{
-					width:90%;
-					margin-left: 5%;
-					text-align: left;
-				}
-			}
-		}
-	}
-
-
-
-	.radio{
-		padding-bottom: 10%;
-		padding-bottom: 10%;
-		.show{
-			width: 90%;
-			padding-bottom: 10%;
-			margin-top: 5%;
-			margin-left: 5%;
-			img{
-				width: 96%;
-				margin-left: 2%;
-				@include smallboxy;
-			}
-			iframe{
-				max-width: 96%;
-				width: 96%;
-				margin: 0 2% 5% 2%;
-				@include smallboxy;
-			}
-		}
-	}
-
-	.stories{
-		padding-bottom: 10%;
-		padding-bottom: 10%;
-		.story-nav{
-			margin-top: 48px;
-			a.pulldown{
-				text-decoration: none;
-				display: block;
-				li{
-					width: 80%;
-					margin-left: 10%;
-					height: auto;
-					text-align: center;
-					font-size: 1em;
-					list-style-type: none;
-				}
-			}
-			ul{
-				display: none;
-				width: 80%;
-				margin-left: 10%;
-				text-align: center;
-				list-style-type: none;
-				padding: 0;
-				a{
-					text-decoration: none;
-					li{
-						display: block;
-						width: 100%;
-						font-size: 1em;
-						height: auto;
-						margin: 0;
-						margin-top: 10px;
-					}
-				}
-			}
-		}
-		iframe{
-			border: 0;
-			border: none;
-			display: none;
-			@include smallboxy;
-		}
-	}
-
-}
-
-
-
-
-
-
-
-
-
-
-
-@media screen and (min-device-width: 320px) and (max-device-width: 480px){
-	h1 {
-		font-size: 2.5em;
-		width: 70%;
-	}
-
-
-	p{
-		line-height: 1.5;
-		font-size: 1.2em;
-	}
-
-
-
-	a.pulldown{
-		display: none;
-		li{
-			width: 80%;
-			margin-left: 10%;
-			height: auto;
-			text-align: center;
-			font-size: 0.6em;
-			font-weight: normal;
-		}
-	}
-
-
-	li{
-		font-size: 0.6em;
-		font-weight: normal;
-		width: 110px;
-		height: 15px;
-		line-height: 15px;
-	}
-
-
-
-
-	.startscreen{
-		overflow: hidden;
-		min-height: 400px;
-		.start-image{
-			position: absolute;
-			top: 0;
-			left: 0;
-			height: 100%;
-			min-width: 100%;
-			background: url(../img/static-title.jpg) no-repeat center center;
-			background-size: cover;
-		}
-			
-		#titlevideo{
-			display: none;
-		}
-		.title{
-			width: contain;
-			height: contain;
-			img{
 				margin-top: 36.25%;
 				width: 90%;
 			}
@@ -1158,8 +919,8 @@ footer{
 		border-bottom: 1px solid $gray;
 		#myExperience{
 			display: block !important;
-			opacity: 1;
 			@include smallboxy;
+			opacity: 1;
 		}
 		.video-nav{
 			a.pulldown{
@@ -1316,6 +1077,55 @@ footer{
 	}
 
 }
+
+
+
+@media screen and (min-device-width: 320px) and (max-device-width: 568px) and (orientation: landscape){
+	.startscreen{
+		overflow: hidden;
+		min-height: 300px;
+			
+		.title{
+			width: contain;
+			height: contain;
+			img{
+				margin-top: 3.25%;
+				width: 90%;
+			}
+		}
+	}
+
+	.videos{
+		#myExperience{
+			display: block !important;
+			opacity: 1;
+			@include smallboxy;
+		}
+		iframe{
+			margin-left: 20%;
+			border: 0;
+			border: none;
+			display: none;
+			@include smallboxy;
+		}
+	}
+
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
