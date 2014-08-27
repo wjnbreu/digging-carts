@@ -21,8 +21,8 @@ $ ->
 	playerData = {
 			"playerID" : "1684512102001",
 			"playerKey" : "AQ~~%2CAAABTw4lHzE~%2Csr1E9bdX6d4wCdvdlD8QKdNij3uKs2K9",
-			"width" : ($(window).width()) / 1.5,
-			"height" : (($(window).width()) / 1.5) / vidRatio,
+			"width" : ($(window).width()) / 1.3,
+			"height" : (($(window).width()) / 1.3) / vidRatio,
 			"videoID" : "3747000906001"
 		}
 
@@ -37,7 +37,7 @@ $ ->
 		$('.video-nav ul a.episode li').first().addClass "active"
 		$('.story-nav ul a.additional-episode li').first().addClass "active"
 		# setTimeout(sendHeight(getHeight()), 500)
-		console.log 'init called'
+		sendHeight(getHeight())
 		
 		
 

@@ -19,8 +19,8 @@
         T = {
             playerID: "1684512102001",
             playerKey: "AQ~~%2CAAABTw4lHzE~%2Csr1E9bdX6d4wCdvdlD8QKdNij3uKs2K9",
-            width: $(window).width() / 1.5,
-            height: $(window).width() / 1.5 / N,
+            width: $(window).width() / 1.3,
+            height: $(window).width() / 1.3 / N,
             videoID: "3747000906001"
         };
         L = '<div style="display:none"></div><object id="myExperience" class="BrightcoveExperience"><param name="bgcolor" value="#FFFFFF" /><param name="width" value="{{width}}" /><param name="height" value="{{height}}" /><param name="playerID" value="{{playerID}}" /><param name="playerKey" value="{{playerKey}}" /><param name="isSlim" value="true" /><param name="autoStart" value="false" /><param name="isVid" value="true" /><param name="isUI" value="true" /><param name="dynamicStreaming" value="true" /><param name="@videoPlayer" value="{{videoID}}"; /><param name="includeAPI" value="true" /><param name="templateLoadHandler" value="onTemplateLoad" /><param name="templateReadyHandler" value="onTemplateReady" /></object>';
@@ -28,7 +28,7 @@
             k();
             $(".video-nav ul a.episode li").first().addClass("active");
             $(".story-nav ul a.additional-episode li").first().addClass("active");
-            return console.log("init called");
+            return S(v());
         };
         x = function(e) {
             h = h + e;
