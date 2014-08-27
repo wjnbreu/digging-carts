@@ -1,72 +1,72 @@
 //ANIMATIONS
 @-webkit-keyframes 'spina'{
-	from{
+	0%{
 		@include vendorize(transform, translate(0px, 0px));
 	}
-	to{
+	100%{
 		@include vendorize(transform, translate(0px, 10px));
 	}
 }
 
 @-webkit-keyframes 'spinb'{
-	from{
+	0%{
 		@include vendorize(transform, translate(0px, 10px));
 	}
-	to{
+	100%{
 		@include vendorize(transform, translate(0px, 0px));
 	}
 }
 
 @-o-keyframes 'spina'{
-	from{
+	0%{
 		@include vendorize(transform, translate(0px, 0px));
 	}
-	to{
+	100%{
 		@include vendorize(transform, translate(0px, 10px));
 	}
 }
 
 @-o-keyframes 'spinb'{
-	from{
+	0%{
 		@include vendorize(transform, translate(0px, 10px));
 	}
-	to{
+	100%{
 		@include vendorize(transform, translate(0px, 0px));
 	}
 }
 
 @-ms-keyframes 'spina'{
-	from{
+	0%{
 		@include vendorize(transform, translate(0px, 0px));
 	}
-	to{
+	100%{
 		@include vendorize(transform, translate(0px, 10px));
 	}
 }
 
 @-ms-keyframes 'spinb'{
-	from{
+	0%{
 		@include vendorize(transform, translate(0px, 10px));
 	}
-	to{
+	100%{
 		@include vendorize(transform, translate(0px, 0px));
 	}
 }
 
 @keyframes 'spina'{
-	from{
+	0%{
 		@include vendorize(transform, translate(0px, 0px));
 	}
-	to{
+	100%{
 		@include vendorize(transform, translate(0px, 10px));
 	}
 }
 
 @keyframes 'spinb'{
-	from{
+	0%{
 		@include vendorize(transform, translate(0px, 10px));
 	}
-	to{
+	100%{
 		@include vendorize(transform, translate(0px, 0px));
 	}
 }
@@ -74,44 +74,44 @@
 
 
 @-webkit-keyframes 'scale' {
-	from{
+	0%{
 		@include vendorize(transform, translateZ(0px));
 		margin-top: 15%;
 	}
-	to{
+	100%{
 		@include vendorize(transform, translateZ(400px));
 		margin-top: 5%;
 	}
 }
 
 @-o-keyframes 'scale' {
-	from{
+	0%{
 		@include vendorize(transform, translateZ(0px));
 		margin-top: 15%;
 	}
-	to{
+	100%{
 		@include vendorize(transform, translateZ(400px));
 		margin-top: 5%;
 	}
 }
 
 @-ms-keyframes 'scale' {
-	from{
+	0%{
 		@include vendorize(transform, translateZ(0px));
 		margin-top: 15%;
 	}
-	to{
+	100%{
 		@include vendorize(transform, translateZ(400px));
 		margin-top: 5%;
 	}
 }
 
 @-webkit-keyframes 'scale' {
-	from{
+	0%{
 		@include vendorize(transform, translateZ(0px));
 		margin-top: 15%;
 	}
-	to{
+	100%{
 		@include vendorize(transform, translateZ(400px));
 		margin-top: 5%;
 	}
