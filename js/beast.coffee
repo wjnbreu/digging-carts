@@ -45,7 +45,6 @@ $ ->
 
 	prepInit = (count) ->
 		initCount = initCount + count
-		console.log initCount
 		#make sure all data is done before calling init
 		if initCount == 4
 			removeSpinner()
@@ -55,7 +54,6 @@ $ ->
 	sendHeight = (height) ->
 		message = {height: height}
 		messageJSON = JSON.stringify(message)
-		console.log messageJSON
 		return window.parent.postMessage(messageJSON, '*')
 
 	getHeight = ->
@@ -80,19 +78,16 @@ $ ->
 		modVP.addEventListener(brightcove.api.events.MediaEvent.STOP, onMediaEventFired)
 		sendHeight(getHeight())
 
-	onMediaProgressFired = (evt) ->
-		return 0
 
 	swapVideo = (order) ->
 		modVP.getCurrentVideo(currentVideoCallback)
 
 	currentVideoCallback = (currentVideo, order) ->
-		console.log currentVideo
 		modVP.loadVideoByID(targetVideo.fields.brightcoveVideoId)
 		targetVideo = {}
 
 	onMediaEventFired = (evt) ->
-		console.log evt.type
+		console.log evt
 	
 
 	
