@@ -372,99 +372,51 @@ li{
 
 
 
-@media screen and (max-width: 1024px), all and (max-device-width: 1024px){
-	body{
-		background-color: black;
-	}
+
+
+
+
+
+
+@media screen and (min-width: 768px) and (max-width: 1024px), all and (min-device-width: 768px) and (max-device-width: 1024px){
+
 	h1 {
-	text-transform: uppercase;
-	@include boxy;
-	background-color: $gray;
-	color: black;
-	width: 70%;
-	// max-width: 700px;
-	margin: auto;
-	margin-top: 48px;
-	margin-bottom: 48px;
-	text-align: center;
-	line-height: 1;
-	padding: 10px;
-	font-size: 3.5em;
-	&.colors{
-		background-color: black;
-		color:$gray;
+		font-size: 3.5em;
 	}
 
-}
 
-h2{
-	font-size: 2.5em;
-	color:$gray;
-}
+	p{
+		line-height: 1.5;
+		font-size: 1.7em;
+	}
 
-p{
-	letter-spacing: -1px;
-	font-family: karla, 'Helvetica Neue', helvetica, sans-serif;
-	line-height: 1.5;
-	font-size: 1.7em;
-	color: $gray;
-}
 
-a.pulldown{
-	text-decoration: none;
-	display: none;
+
+	a.pulldown{
+		display: none;
+		li{
+			width: 80%;
+			margin-left: 10%;
+			height: auto;
+			text-align: center;
+			font-size: 1em;
+		}
+	}
+
+
 	li{
-		width: 80%;
-		margin-left: 10%;
-		height: auto;
-		text-align: center;
-		font-size: 1em;
-		list-style-type: none;
+		font-size: 0.8em;
+		width: 110px;
+		height: 20px;
+		line-height: 20px;
 	}
-}
-
-
-li{
-	font-family: 'Helvetica Neue', helvetica, sans-serif;
-	border: 2px solid $gray;
-	color: $gray;
-	background-color: black;
-	font-size: 0.8em;
-	width: 110px;
-	height: 20px;
-	margin: 5px;
-	text-align: center;
-	padding-top: 10px;
-	padding-bottom: 10px;
-	font-weight: bold;
-	line-height: 20px;
-	text-transform: uppercase;
-	&:hover{
-		background-color: $gray;
-		color:black;
-		&.unreleased{
-			background-color: $red;
-			border: 2px solid $red;
-		}
-	}
-	&.active{
-		background-color: $gray;
-		color: black;
-		&.unreleased{
-			background-color: $red;
-			border: 2px solid $red;
-		}
-	}
-}
 
 
 
 
 	.startscreen{
 		overflow: hidden;
-		position: relative;
 		min-height: 800px;
-		background-color: black;
 		.start-image{
 			position: absolute;
 			top: 0;
@@ -474,42 +426,29 @@ li{
 			background: url(../img/static-title.jpg) no-repeat center center;
 			background-size: cover;
 		}
-		
+			
 		#titlevideo{
 			display: none;
 		}
 		.title{
 			width: contain;
 			height: contain;
-			top: 0;
-			position: absolute;
-			text-align: center;
-			z-index: 9;
-			-webkit-perspective: 1000px;
-			-webkit-transform-style: preserve-3d;
 			img{
-				//looks shit in normal mode, but good in iframe
 				margin-top: 26.25%;
 				width: 80%;
-				-webkit-transform: translateZ(0px);
-				-webkit-transform-style: preserve-3d;
-				// -webkit-animation: 'scale' 4s;
 			}
 		}
 	}
+
 	.videos{
-		position: relative;
-		width: 100%;
-		background-color: black;
 		padding-bottom: 10%;
 		padding-bottom: 10%;
-		border-bottom: 2px solid $gray;
+		border-bottom: 1px solid $gray;
 		#myExperience{
 			display: block !important;
 			@include smallboxy;
 		}
 		.video-nav{
-			margin-top: 48px;
 			a.pulldown{
 				text-decoration: none;
 				display: block;
@@ -546,170 +485,125 @@ li{
 			border: 0;
 			border: none;
 			display: none;
-			@include boxy;
-		}
-
-		p.body{
-			text-align: center;
-			width: 70%;
-			margin-left: 15%;
-			margin-right: 15%;
+			@include smallboxy;
 		}
 	}
 
 
 
-.composers{
+	.composers{
 		padding-bottom: 10%;
 		padding-bottom: 10%;
-		border-bottom: 2px solid $gray;
-		width: 100%;
-		position: relative;
-		overflow: hidden !important;
-		background-color: black;
+		border-bottom: 1px solid $gray;
 		.composers-wrap{
-			margin-top: 5%;
-			width: 100%;
-			height: 100%;
 			.slide{
-				width: 100%;
-				display: block;
-				height: 100%;
-				position: relative;
-				text-align: center;
 				display: none;
 				&.active{
 					display: block;
 				}
 				.img-wrap{
-					width: 100%;
-					height: auto;
-					overflow: hidden;
-					img{
-						max-width: 56%; /*80% of 70%*/
-						width: 56%;
-						height: auto;
-					}
 					.arrow-right{
-						z-index: 909;
-						position: absolute;
 						top: 25%;
 						right: 20px;
 						width: 10%;
 						height: 10%;
-						background: url(../img/arrow-white.svg) no-repeat center center;
-						background-size: cover;
-						@include vendorize(transition, all .2s ease-in-out);
 						&:hover{
 							right: 15px;
 						}
 					}
 					.arrow-left{
-						z-index: 909;
-						position: absolute;
 						top: 25%;
 						left: 20px;
 						width: 10%;
 						height: 10%;
-						background: url(../img/arrow-white.svg) no-repeat center center;
-						background-size: cover;
-						@include vendorize(transform, rotate(180deg));
-						@include vendorize(transition, all .2s ease-in-out);
-						&:hover{
-							left: 15px;
-						}
 					}
 				}
-				
-				p{
-					width: 70%;
-					margin-left: 15%;
-				}
 			}
 		}
 	}
 
 
 
-.radio{
-	margin: 0;
-	padding-bottom: 10%;
-	padding-bottom: 10%;
-	z-index: 1;
-	border-bottom: 2px solid $gray;
-	.show{
-		width: 70%;
+	.radio{
 		padding-bottom: 10%;
-		margin-top: 5%;
-		margin-left: 15%;
-		img{
-			width: 80%;
-			margin-left: 10%;
-			@include boxy;
-		}
-		iframe{
-			width: 80%;
-			margin: 0 10% 5% 10%;
-			@include boxy;
-			-webkit-filter: grayscale(1);
-		}
-	}
-}
-
-.stories{
-	position: relative;
-	padding-bottom: 10%;
-	padding-bottom: 10%;
-	.story-nav{
-		margin-top: 48px;
-		a.pulldown{
-			text-decoration: none;
-			display: block;
-			li{
+		padding-bottom: 10%;
+		.show{
+			width: 70%;
+			padding-bottom: 10%;
+			margin-top: 5%;
+			margin-left: 15%;
+			img{
 				width: 80%;
 				margin-left: 10%;
-				height: auto;
-				text-align: center;
-				font-size: 1em;
-				list-style-type: none;
+				@include smallboxy;
+			}
+			iframe{
+				width: 80%;
+				margin: 0 10% 5% 10%;
+				@include smallboxy;
 			}
 		}
-		ul{
-			display: none;
-			width: 80%;
-			margin-left: 10%;
-			text-align: center;
-			list-style-type: none;
-			padding: 0;
-			a{
+	}
+
+	.stories{
+		padding-bottom: 10%;
+		padding-bottom: 10%;
+		.story-nav{
+			margin-top: 48px;
+			a.pulldown{
 				text-decoration: none;
+				display: block;
 				li{
-					display: block;
-					width: 100%;
-					font-size: 1em;
+					width: 80%;
+					margin-left: 10%;
 					height: auto;
-					margin: 0;
-					margin-top: 10px;
+					text-align: center;
+					font-size: 1em;
+					list-style-type: none;
+				}
+			}
+			ul{
+				display: none;
+				width: 80%;
+				margin-left: 10%;
+				text-align: center;
+				list-style-type: none;
+				padding: 0;
+				a{
+					text-decoration: none;
+					li{
+						display: block;
+						width: 100%;
+						font-size: 1em;
+						height: auto;
+						margin: 0;
+						margin-top: 10px;
+					}
 				}
 			}
 		}
+		iframe{
+			border: 0;
+			border: none;
+			display: none;
+			@include smallboxy;
+		}
 	}
-	iframe{
-		margin-left: 20%;
-		box-shadow: 5px 5px 5px #030102;
-		border: 0;
-		border: none;
-		display: none;
-		@include boxy;
-	}
-	p.body{
-		text-align: center;
-		width: 70%;
-		margin: 48px 15% 48px 15%;
-	}
-}
 
 }
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 @media screen and (max-width: 600px), all and (max-device-width: 600px){
 	body{
