@@ -1,6 +1,6 @@
 (function() {
     $(function() {
-        var e, t, i, a, n, r, d, o, s, l, c, u, p, f, v, m, h, g, w, y, b, E, C, I, M, D, T, L, x, A, P, O, k, R, S, V, B, N, Y;
+        var e, t, a, i, n, r, d, o, s, l, c, u, p, f, v, m, h, g, w, y, b, E, C, I, M, D, T, L, x, A, P, O, S, k, R, V, B, N, Y;
         l = {};
         Y = {};
         y = {};
@@ -23,9 +23,9 @@
             height: $(window).width() / 1.5 / N,
             videoID: "3747000906001"
         };
-        L = '<div style="display:none"></div><object id="myExperience" class="BrightcoveExperience"><param name="bgcolor" value="#FFFFFF" /><param name="width" value="{{width}}" /><param name="height" value="{{height}}" /><param name="playerID" value="{{playerID}}" /><param name="playerKey" value="{{playerKey}}" /><param name="isSlim" value="true" /><param name="isVid" value="true" /><param name="isUI" value="true" /><param name="dynamicStreaming" value="true" /><param name="@videoPlayer" value="{{videoID}}"; /><param name="includeAPI" value="true" /><param name="templateLoadHandler" value="onTemplateLoad" /><param name="templateReadyHandler" value="onTemplateReady" /></object>';
+        L = '<div style="display:none"></div><object id="myExperience" class="BrightcoveExperience"><param name="bgcolor" value="#FFFFFF" /><param name="width" value="{{width}}" /><param name="height" value="{{height}}" /><param name="playerID" value="{{playerID}}" /><param name="playerKey" value="{{playerKey}}" /><param name="isSlim" value="true" /><param name="autoStart" value="false" /><param name="isVid" value="true" /><param name="isUI" value="true" /><param name="dynamicStreaming" value="true" /><param name="@videoPlayer" value="{{videoID}}"; /><param name="includeAPI" value="true" /><param name="templateLoadHandler" value="onTemplateLoad" /><param name="templateReadyHandler" value="onTemplateReady" /></object>';
         m = function() {
-            R();
+            k();
             $(".video-nav ul a.episode li").first().addClass("active");
             $(".story-nav ul a.additional-episode li").first().addClass("active");
             return console.log("init called");
@@ -39,14 +39,14 @@
                 return h = 0;
             }
         };
-        k = function(e) {
-            var t, i;
+        S = function(e) {
+            var t, a;
             t = {
                 height: e
             };
-            i = JSON.stringify(t);
-            console.log(i);
-            return window.parent.postMessage(i, "*");
+            a = JSON.stringify(t);
+            console.log(a);
+            return window.parent.postMessage(a, "*");
         };
         v = function() {
             return $(document).height();
@@ -64,7 +64,7 @@
             b.addEventListener(brightcove.api.events.MediaEvent.ERROR, E);
             b.addEventListener(brightcove.api.events.MediaEvent.PLAY, E);
             b.addEventListener(brightcove.api.events.MediaEvent.STOP, E);
-            return k(v());
+            return S(v());
         };
         C = function(e) {
             return 0;
@@ -81,13 +81,13 @@
             return console.log(e.type);
         };
         P = function(e) {
-            var t, i, a, n, r, d, o, s, l;
+            var t, a, i, n, r, d, o, s, l;
             o = e;
             n = o.attr("width");
-            a = o.attr("height");
+            i = o.attr("height");
             l = $(window).width();
             s = l / 1.3;
-            r = n / a;
+            r = n / i;
             if (g) {
                 if (o.attr("src")) {
                     d = o.attr("src");
@@ -102,20 +102,21 @@
             o.attr("width", s);
             o.attr("height", s / r);
             t = l - s;
-            i = t / 2;
+            a = t / 2;
             return o.css({
-                marginLeft: i,
-                marginRight: i
+                marginLeft: a,
+                marginRight: a,
+                opacity: 1
             });
         };
-        a = function() {
+        i = function() {
             var e, t;
             t = Handlebars.compile(L);
             e = t(T);
             document.getElementById("player").innerHTML = e;
             return brightcove.createExperiences();
         };
-        S = function() {
+        R = function() {
             var e, t;
             t = document.createElement("script");
             t.src = "https://www.youtube.com/iframe_api";
@@ -141,81 +142,81 @@
         I = function(e) {
             return O("#storyplayer");
         };
-        R = function() {
+        k = function() {
             window.addEventListener("resize", function() {
                 O($("#myExperience"));
                 return O($("#storyplayer"));
             });
             $("a.arrow-right").click(function(e) {
-                var t, i, a, n, r;
+                var t, a, i, n, r;
                 e.preventDefault();
                 t = $(".composers-wrap");
                 r = t.find(".slide").length;
-                a = t.find(".active");
-                i = a.data("order");
-                if (i <= r - 2) {
-                    n = t.find("[data-order=" + (i + 1) + "]");
-                    a.removeClass("active");
+                i = t.find(".active");
+                a = i.data("order");
+                if (a <= r - 2) {
+                    n = t.find("[data-order=" + (a + 1) + "]");
+                    i.removeClass("active");
                     return n.addClass("active");
                 } else {
                     n = t.find("[data-order=0]");
-                    a.removeClass("active");
+                    i.removeClass("active");
                     return n.addClass("active");
                 }
             });
             $("a.arrow-left").click(function(e) {
-                var t, i, a, n, r;
+                var t, a, i, n, r;
                 e.preventDefault();
                 t = $(".composers-wrap");
                 r = t.find(".slide").length;
-                a = t.find(".active");
-                i = a.data("order");
-                if (i >= 1) {
-                    n = t.find("[data-order=" + (i - 1) + "]");
-                    a.removeClass("active");
+                i = t.find(".active");
+                a = i.data("order");
+                if (a >= 1) {
+                    n = t.find("[data-order=" + (a - 1) + "]");
+                    i.removeClass("active");
                     return n.addClass("active");
                 } else {
                     n = t.find("[data-order=" + (r - 1) + "]");
-                    a.removeClass("active");
+                    i.removeClass("active");
                     return n.addClass("active");
                 }
             });
             $("a.pulldown").click(function(e) {
                 e.preventDefault();
                 return $(this).parent().find("ul").slideToggle(200, function() {
-                    return k(v());
+                    return S(v());
                 });
             });
             return $("a.episode").click(function(e) {
                 return V();
             });
         };
-        s = function(e, t, i) {
-            var a;
-            a = i[t].fields;
+        s = function(e, t, a) {
+            var i;
+            i = a[t].fields;
             if (e.find("li").hasClass("unreleased")) {
-                $(".videos h1").empty().text(a.episodeTitle);
+                $(".videos h1").empty().text(i.episodeTitle);
             } else {
-                player1.cueVideoById(a.ytVideoId);
-                return $(".videos h1").empty().text(a.episodeTitle);
+                player1.cueVideoById(i.ytVideoId);
+                return $(".videos h1").empty().text(i.episodeTitle);
             }
         };
         o = function(e, t) {
-            var i;
-            i = t[e].fields;
-            D.cueVideoById(i.additionalYouTube);
-            $(".stories h1").empty().text(i.additionalVideoTitle);
-            $(".stories p.body").empty().text(i.description);
+            var a;
+            a = t[e].fields;
+            D.cueVideoById(a.additionalYouTube);
+            $(".stories h1").empty().text(a.additionalVideoTitle);
+            $(".stories p.body").empty().text(a.description);
             return $(".stories p.body").slideDown();
         };
-        n = function(e, t, i) {
-            var a, n, r, d, o, s, l, c, u, p, f;
-            if (i === "main") {
+        n = function(e, t, a) {
+            var i, n, r, d, o, s, l, c, u, p, f;
+            if (a === "main") {
                 p = [];
                 for (d = s = 0, c = e.length; s < c; d = ++s) {
                     o = e[d];
                     n = o.fields.episodeNumber;
-                    a = new Date();
+                    i = new Date();
                     r = new Date(o.fields.datetimeOfLaunch);
                     if (moment() < r) {
                         t.append("<a class='episode' href data-order=" + d + "><li class='unreleased' data-release='" + r + "'>" + n + "</li>");
@@ -223,21 +224,21 @@
                         t.append("<a class='episode' href data-order=" + d + "><li class='released'>" + n + "</li>");
                     }
                     p.push(t.find("li").each(function() {
-                        var e, t, i, a;
-                        a = $(this);
-                        if (a.hasClass("unreleased")) {
-                            t = a.text();
-                            i = a.data("release");
-                            e = new Date(i);
-                            a.bind("mouseenter", function() {
-                                return a.empty().text(moment(i).format("ddd, MMM Do"));
+                        var e, t, a, i;
+                        i = $(this);
+                        if (i.hasClass("unreleased")) {
+                            t = i.text();
+                            a = i.data("release");
+                            e = new Date(a);
+                            i.bind("mouseenter", function() {
+                                return i.empty().text(moment(a).format("ddd, MMM Do"));
                             });
-                            return a.bind("mouseleave", function() {});
+                            return i.bind("mouseleave", function() {});
                         }
                     }));
                 }
                 return p;
-            } else if (i === "additional") {
+            } else if (a === "additional") {
                 f = [];
                 for (d = l = 0, u = e.length; l < u; d = ++l) {
                     o = e[d];
@@ -248,49 +249,49 @@
             }
         };
         t = function(e) {
-            var t, i, a, n, r, d, o, s, l, u;
+            var t, a, i, n, r, d, o, s, l, u;
             u = [];
-            for (a = s = 0, l = e.length; s < l; a = ++s) {
-                t = e[a];
+            for (i = s = 0, l = e.length; s < l; i = ++s) {
+                t = e[i];
                 d = t.fields;
                 r = d.composerName;
                 n = d.image.fields.file.url;
                 o = c.makeHtml(d.bio);
-                i = "<div class='slide' data-order='" + a + "'><div class='img-wrap'><a class='arrow-left' href></a><a class='arrow-right' href></a><img src='" + n + "'/></div><h2>" + d.composerName + "</h2><p>" + o + "</p></div>";
-                $(".composers-wrap").append(i);
+                a = "<div class='slide' data-order='" + i + "'><div class='img-wrap'><a class='arrow-left' href></a><a class='arrow-right' href></a><img src='" + n + "'/></div><h2>" + d.composerName + "</h2><p>" + o + "</p></div>";
+                $(".composers-wrap").append(a);
                 u.push($(".slide").first().addClass("active"));
             }
             return u;
         };
-        i = function(e) {
-            var t, i, a, n, r, d, o, s, l, c;
+        a = function(e) {
+            var t, a, i, n, r, d, o, s, l, c;
             c = [];
             for (s = 0, l = e.length; s < l; s++) {
                 n = e[s];
                 d = n.fields;
                 o = d.artistName;
-                i = d.rbmaRadioEmbedCode;
+                a = d.rbmaRadioEmbedCode;
                 t = d.descriptions;
-                a = d.artistImage.fields.file.url;
-                r = "<div class='show'><img src='" + a + "'/>" + i + "<p>" + t + "</p></div>";
+                i = d.artistImage.fields.file.url;
+                r = "<div class='show'><img src='" + i + "'/>" + a + "<p>" + t + "</p></div>";
                 c.push($(".radio").append(r));
             }
             return c;
         };
         O = function(e) {
-            var t, i, a, n, r, d, o;
+            var t, a, i, n, r, d, o;
             M = $(e);
             o = $(window).width();
             d = o / 1.3;
             n = M.attr("width");
-            a = M.attr("height");
-            r = n / a;
+            i = M.attr("height");
+            r = n / i;
             M.attr("width", d);
             M.attr("height", d / r);
             t = o - d;
-            i = t / 2;
+            a = t / 2;
             return M.css({
-                marginLeft: i,
+                marginLeft: a,
                 display: "block"
             });
         };
@@ -325,7 +326,7 @@
                 Y = e;
                 x(1);
                 n(Y, $(".video-nav ul"), "main");
-                a();
+                i();
                 return $("a.episode").bind("click", function(e) {
                     var t;
                     e.preventDefault();
@@ -341,7 +342,7 @@
                 include: 1
             }).done(function(e) {
                 x(1);
-                return i(e);
+                return a(e);
             });
             return e.entries({
                 content_type: "6fwxAcXrxK4yqyaMUiWwWY",
@@ -359,7 +360,7 @@
                     t = $(this).data("order");
                     return o(t, r);
                 });
-                return S();
+                return R();
             });
         };
         f();

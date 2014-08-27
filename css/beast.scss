@@ -204,6 +204,7 @@ li{
 	border-bottom: 1px solid $gray;
 	#myExperience{
 		@include boxy;
+		opacity: 0;
 	}
 	.video-nav{
 		margin-top: 48px;
