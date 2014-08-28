@@ -21,8 +21,8 @@ $ ->
 	playerData = {
 			"playerID" : "1684512102001",
 			"playerKey" : "AQ~~%2CAAABTw4lHzE~%2Csr1E9bdX6d4wCdvdlD8QKdNij3uKs2K9",
-			"width" : ($(window).width()) / 1.3,
-			"height" : (($(window).width()) / 1.3) / vidRatio,
+			"width" : ($(window).width()) / 1.5,
+			"height" : (($(window).width()) / 1.5) / vidRatio,
 			"videoID" : "3747000906001"
 		}
 
@@ -96,7 +96,7 @@ $ ->
 		ogWidth = vid.attr "width"
 		ogHeight = vid.attr "height"
 		winWidth = $(window).width()
-		vidWidth = winWidth / 1.3
+		vidWidth = winWidth / 1.6
 		ratio = ogWidth / ogHeight
 		
 		#target brightcove iframe on mobile
@@ -300,7 +300,7 @@ $ ->
 	resizeVid = (vidPlayer) ->
 		player = $(vidPlayer)
 		winWidth = $(window).width()
-		vidWidth = winWidth / 1.3
+		vidWidth = winWidth / 1.6
 		ogWidth = player.attr('width') #extra box shadow pix
 		ogHeight = player.attr('height')
 		ratio = ogWidth / ogHeight

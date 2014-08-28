@@ -19,8 +19,8 @@
         D = {
             playerID: "1684512102001",
             playerKey: "AQ~~%2CAAABTw4lHzE~%2Csr1E9bdX6d4wCdvdlD8QKdNij3uKs2K9",
-            width: $(window).width() / 1.3,
-            height: $(window).width() / 1.3 / O,
+            width: $(window).width() / 1.5,
+            height: $(window).width() / 1.5 / O,
             videoID: "3747000906001"
         };
         T = '<div style="display:none"></div><object id="myExperience" class="BrightcoveExperience"><param name="bgcolor" value="#FFFFFF" /><param name="width" value="{{width}}" /><param name="height" value="{{height}}" /><param name="playerID" value="{{playerID}}" /><param name="playerKey" value="{{playerKey}}" /><param name="isSlim" value="true" /><param name="autoStart" value="false" /><param name="isVid" value="true" /><param name="isUI" value="true" /><param name="dynamicStreaming" value="true" /><param name="@videoPlayer" value="{{videoID}}"; /><param name="includeAPI" value="true" /><param name="templateLoadHandler" value="onTemplateLoad" /><param name="templateReadyHandler" value="onTemplateReady" /></object>';
@@ -80,7 +80,7 @@
             r = o.attr("width");
             i = o.attr("height");
             l = $(window).width();
-            s = l / 1.3;
+            s = l / 1.6;
             n = r / i;
             if (w) {
                 s = l / 1.2;
@@ -271,7 +271,7 @@
             var t, a, i, r, n, d, o;
             I = $(e);
             o = $(window).width();
-            d = o / 1.3;
+            d = o / 1.6;
             r = I.attr("width");
             i = I.attr("height");
             n = r / i;
