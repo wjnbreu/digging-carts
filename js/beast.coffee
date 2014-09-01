@@ -257,7 +257,6 @@ $ ->
 		window.addEventListener 'resize', ->
 			resizeVid($('#myExperience'))
 			resizeVid($('#storyplayer'))
-			sendHeight(getHeight())
 
 
 		$('a.arrow-right').click (event) ->
@@ -411,6 +410,9 @@ $ ->
 		player.css
 			marginLeft: margin
 			display: 'block'
+
+		#call resize AFTER video has sized
+		sendHeight(getHeight())
 
 
 
