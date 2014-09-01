@@ -1,5 +1,4 @@
 $ ->
-	
 	composerObject = {}
 	videoObject = {}
 	mixObject = {}
@@ -205,7 +204,7 @@ $ ->
 		#DROP DOWN MENUS
 		$('a.pulldown').click (event) ->
 			event.preventDefault()
-			$(@).parent().find('ul').slideToggle(200, ->
+			$(this).parent().find('ul').slideToggle(200, ->
 				sendHeight(getHeight())
 				)
 		$('a.episode').click (event) ->
@@ -218,7 +217,7 @@ $ ->
 		#account for zero index
 		if element.find('li').hasClass "unreleased"
 			$('.videos h1').empty().text video.episodeTitle
-			return;
+			return
 		else
 			player1.cueVideoById(video.ytVideoId)
 			$('.videos h1').empty().text video.episodeTitle
@@ -250,7 +249,7 @@ $ ->
 
 				#loop through and change text of unreleased vids
 				target.find('li').each ->
-					t = $(@)
+					t = $(this)
 					if t.hasClass('unreleased')
 						
 						ogText = t.text()
@@ -350,9 +349,9 @@ $ ->
 				
 			$('a.episode').bind 'click', (event) ->
 				event.preventDefault()
-				$(@).parent().find('li').removeClass "active"
-				$(@).find('li').addClass "active"
-				order = $(@).data 'order'
+				$(this).parent().find('li').removeClass "active"
+				$(this).find('li').addClass "active"
+				order = $(this).data 'order'
 				targetVideo = videoObject[order]
 				swapVideo()
 				# changeVideo($(@), order, videoObject)
@@ -372,9 +371,9 @@ $ ->
 
 			$('a.additional-episode').bind 'click', (event) ->
 				event.preventDefault()
-				$(@).parent().find('li').removeClass "active"
-				$(@).find('li').addClass "active"
-				order = $(@).data 'order'
+				$(this).parent().find('li').removeClass "active"
+				$(this).find('li').addClass "active"
+				order = $(this).data 'order'
 				changeAdditionalVideo(order, additionalVideoObject)
 
 			setupYouTube()

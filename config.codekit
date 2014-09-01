@@ -179,6 +179,15 @@
 		"outputPathIsSetByUser": 0,
 		"processed": 0
 		},
+	"\/index.html": {
+		"fileType": 8192,
+		"ignore": 1,
+		"ignoreWasSetByUser": 0,
+		"inputAbbreviatedPath": "\/index.html",
+		"outputAbbreviatedPath": "No Output Path",
+		"outputPathIsOutsideProject": 0,
+		"outputPathIsSetByUser": 0
+		},
 	"\/index.jade": {
 		"compileDebug": 1,
 		"fileType": 512,
@@ -189,134 +198,6 @@
 		"outputPathIsOutsideProject": 0,
 		"outputPathIsSetByUser": 0,
 		"outputStyle": 0
-		},
-	"\/jasmine\/lib\/jasmine-2.0.0\/boot.js": {
-		"fileType": 64,
-		"ignore": 0,
-		"ignoreWasSetByUser": 0,
-		"inputAbbreviatedPath": "\/jasmine\/lib\/jasmine-2.0.0\/boot.js",
-		"outputAbbreviatedPath": "\/jasmine\/lib\/jasmine-2.0.0\/min\/boot-min.js",
-		"outputPathIsOutsideProject": 0,
-		"outputPathIsSetByUser": 0,
-		"outputStyle": 1,
-		"syntaxCheckerStyle": 1
-		},
-	"\/jasmine\/lib\/jasmine-2.0.0\/console.js": {
-		"fileType": 64,
-		"ignore": 0,
-		"ignoreWasSetByUser": 0,
-		"inputAbbreviatedPath": "\/jasmine\/lib\/jasmine-2.0.0\/console.js",
-		"outputAbbreviatedPath": "\/jasmine\/lib\/jasmine-2.0.0\/min\/console-min.js",
-		"outputPathIsOutsideProject": 0,
-		"outputPathIsSetByUser": 0,
-		"outputStyle": 1,
-		"syntaxCheckerStyle": 1
-		},
-	"\/jasmine\/lib\/jasmine-2.0.0\/jasmine-html.js": {
-		"fileType": 64,
-		"ignore": 0,
-		"ignoreWasSetByUser": 0,
-		"inputAbbreviatedPath": "\/jasmine\/lib\/jasmine-2.0.0\/jasmine-html.js",
-		"outputAbbreviatedPath": "\/jasmine\/lib\/jasmine-2.0.0\/min\/jasmine-html-min.js",
-		"outputPathIsOutsideProject": 0,
-		"outputPathIsSetByUser": 0,
-		"outputStyle": 1,
-		"syntaxCheckerStyle": 1
-		},
-	"\/jasmine\/lib\/jasmine-2.0.0\/jasmine.css": {
-		"fileType": 16,
-		"ignore": 0,
-		"ignoreWasSetByUser": 0,
-		"inputAbbreviatedPath": "\/jasmine\/lib\/jasmine-2.0.0\/jasmine.css",
-		"outputAbbreviatedPath": "No Output Path",
-		"outputPathIsOutsideProject": 0,
-		"outputPathIsSetByUser": 0
-		},
-	"\/jasmine\/lib\/jasmine-2.0.0\/jasmine.js": {
-		"fileType": 64,
-		"ignore": 0,
-		"ignoreWasSetByUser": 0,
-		"inputAbbreviatedPath": "\/jasmine\/lib\/jasmine-2.0.0\/jasmine.js",
-		"outputAbbreviatedPath": "\/jasmine\/lib\/jasmine-2.0.0\/min\/jasmine-min.js",
-		"outputPathIsOutsideProject": 0,
-		"outputPathIsSetByUser": 0,
-		"outputStyle": 1,
-		"syntaxCheckerStyle": 1
-		},
-	"\/jasmine\/lib\/jasmine-2.0.0\/jasmine_favicon.png": {
-		"fileType": 32768,
-		"ignore": 0,
-		"ignoreWasSetByUser": 0,
-		"initialSize": 2057,
-		"inputAbbreviatedPath": "\/jasmine\/lib\/jasmine-2.0.0\/jasmine_favicon.png",
-		"outputAbbreviatedPath": "\/jasmine\/lib\/jasmine-2.0.0\/jasmine_favicon.png",
-		"outputPathIsOutsideProject": 0,
-		"outputPathIsSetByUser": 0,
-		"processed": 0
-		},
-	"\/jasmine\/spec\/beastSpec.js": {
-		"fileType": 64,
-		"ignore": 0,
-		"ignoreWasSetByUser": 0,
-		"inputAbbreviatedPath": "\/jasmine\/spec\/beastSpec.js",
-		"outputAbbreviatedPath": "\/jasmine\/spec\/min\/beastSpec-min.js",
-		"outputPathIsOutsideProject": 0,
-		"outputPathIsSetByUser": 0,
-		"outputStyle": 1,
-		"syntaxCheckerStyle": 1
-		},
-	"\/jasmine\/spec\/min\/beastSpec-min.js": {
-		"fileType": 64,
-		"ignore": 1,
-		"ignoreWasSetByUser": 0,
-		"inputAbbreviatedPath": "\/jasmine\/spec\/min\/beastSpec-min.js",
-		"outputAbbreviatedPath": "\/jasmine\/spec\/min\/min\/beastSpec-min-min.js",
-		"outputPathIsOutsideProject": 0,
-		"outputPathIsSetByUser": 0,
-		"outputStyle": 1,
-		"syntaxCheckerStyle": 1
-		},
-	"\/jasmine\/spec\/PlayerSpec.js": {
-		"fileType": 64,
-		"ignore": 0,
-		"ignoreWasSetByUser": 0,
-		"inputAbbreviatedPath": "\/jasmine\/spec\/PlayerSpec.js",
-		"outputAbbreviatedPath": "\/jasmine\/spec\/min\/PlayerSpec-min.js",
-		"outputPathIsOutsideProject": 0,
-		"outputPathIsSetByUser": 0,
-		"outputStyle": 1,
-		"syntaxCheckerStyle": 1
-		},
-	"\/jasmine\/SpecRunner.html": {
-		"fileType": 8192,
-		"ignore": 0,
-		"ignoreWasSetByUser": 0,
-		"inputAbbreviatedPath": "\/jasmine\/SpecRunner.html",
-		"outputAbbreviatedPath": "No Output Path",
-		"outputPathIsOutsideProject": 0,
-		"outputPathIsSetByUser": 0
-		},
-	"\/jasmine\/src\/Player.js": {
-		"fileType": 64,
-		"ignore": 0,
-		"ignoreWasSetByUser": 0,
-		"inputAbbreviatedPath": "\/jasmine\/src\/Player.js",
-		"outputAbbreviatedPath": "\/jasmine\/src\/min\/Player-min.js",
-		"outputPathIsOutsideProject": 0,
-		"outputPathIsSetByUser": 0,
-		"outputStyle": 1,
-		"syntaxCheckerStyle": 1
-		},
-	"\/jasmine\/src\/Song.js": {
-		"fileType": 64,
-		"ignore": 0,
-		"ignoreWasSetByUser": 0,
-		"inputAbbreviatedPath": "\/jasmine\/src\/Song.js",
-		"outputAbbreviatedPath": "\/jasmine\/src\/min\/Song-min.js",
-		"outputPathIsOutsideProject": 0,
-		"outputPathIsSetByUser": 0,
-		"outputStyle": 1,
-		"syntaxCheckerStyle": 1
 		},
 	"\/js\/beast.coffee": {
 		"createSourceMap": 0,
@@ -329,17 +210,6 @@
 		"outputPathIsOutsideProject": 0,
 		"outputPathIsSetByUser": 0,
 		"outputStyle": 0,
-		"syntaxCheckerStyle": 1
-		},
-	"\/js\/beast.js": {
-		"fileType": 64,
-		"ignore": 1,
-		"ignoreWasSetByUser": 0,
-		"inputAbbreviatedPath": "\/js\/beast.js",
-		"outputAbbreviatedPath": "\/js\/min\/beast-min.js",
-		"outputPathIsOutsideProject": 0,
-		"outputPathIsSetByUser": 0,
-		"outputStyle": 1,
 		"syntaxCheckerStyle": 1
 		},
 	"\/js\/contentful.min.js": {
@@ -17616,7 +17486,7 @@
 			"flagValue": -1
 			},
 		"indentation": {
-			"active": 1,
+			"active": 0,
 			"flagValue": 2
 			},
 		"line_endings": {
@@ -17652,7 +17522,7 @@
 			"flagValue": -1
 			},
 		"no_implicit_braces": {
-			"active": 1,
+			"active": 0,
 			"flagValue": -1
 			},
 		"no_implicit_parens": {
@@ -17672,7 +17542,7 @@
 			"flagValue": -1
 			},
 		"no_tabs": {
-			"active": 1,
+			"active": 0,
 			"flagValue": -1
 			},
 		"no_throwing_strings": {
@@ -18219,7 +18089,7 @@
 			"flagValue": -1
 			},
 		"compress": {
-			"active": 0,
+			"active": 1,
 			"flagValue": -1
 			},
 		"conditionals": {

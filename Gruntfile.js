@@ -22,11 +22,10 @@ module.exports = function(grunt) {
 				},
 				src: [
 					"js/contentful.min.js",
-					"js/fittext.js",
-					"js/howler.min.js",
-					"js/transit.min.js",
+					"js/handlebars.js",
+					"js/moment.js",
+					"js/showdown.js",
 					"js/beast.js",
-					"js/falling.js.js"
 				],
 				dest: 'dist/app.concat.js',
 			},
@@ -38,7 +37,7 @@ module.exports = function(grunt) {
 					"css/fonts.css",
 					"css/beast.css",
 				],
-				dest: 'dist/assets/stylesheets/app.css',
+				dest: 'dist/css/app.css',
 			}
 		},
 
