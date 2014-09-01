@@ -503,7 +503,7 @@ $ ->
 	
 	getData()
 	detectMobile()
-	$(window).on "resize", ->
+	$(window).resize ->
 		sendHeight(getHeight())
 
 
