@@ -257,6 +257,7 @@ $ ->
 		window.addEventListener 'resize', ->
 			resizeVid($('#myExperience'))
 			resizeVid($('#storyplayer'))
+			sendHeight(getHeight())
 
 
 		$('a.arrow-right').click (event) ->
@@ -503,8 +504,6 @@ $ ->
 	
 	getData()
 	detectMobile()
-	$(window).resize ->
-		sendHeight(getHeight())
 
 
 	
