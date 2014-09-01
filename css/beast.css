@@ -153,12 +153,12 @@ body {
   width: 100%;
   height: 100%;
   -webkit-tap-highlight-color: transparent;
-  background-image: -webkit-gradient(linear, left top, left bottom, color-stop(0, #ffd608), color-stop(1, #de3f3f));
-  background-image: -o-linear-gradient(bottom, #ffd608 0%, #de3f3f 100%);
-  background-image: -moz-linear-gradient(bottom, #ffd608 0%, #de3f3f 100%);
-  background-image: -webkit-linear-gradient(bottom, #ffd608 0%, #de3f3f 100%);
-  background-image: -ms-linear-gradient(bottom, #ffd608 0%, #de3f3f 100%);
-  background-image: linear-gradient(to bottom, #ffd608 0%, #de3f3f 100%);
+  background-image: -webkit-gradient(linear, left top, left bottom, color-stop(0, #99dbff), color-stop(1, #ff2e2e));
+  background-image: -o-linear-gradient(bottom, #99dbff 0%, #ff2e2e 100%);
+  background-image: -moz-linear-gradient(bottom, #99dbff 0%, #ff2e2e 100%);
+  background-image: -webkit-linear-gradient(bottom, #99dbff 0%, #ff2e2e 100%);
+  background-image: -ms-linear-gradient(bottom, #99dbff 0%, #ff2e2e 100%);
+  background-image: linear-gradient(to bottom, #99dbff 0%, #ff2e2e 100%);
   background-size: cover;
   -webkit-box-sizing: border-box;
   -moz-box-sizing: border-box;
@@ -193,7 +193,7 @@ p {
   font-family: karla, 'Helvetica Neue', helvetica, sans-serif;
   line-height: 1.5;
   font-size: 1.7em;
-  color: #d9d9d9; }
+  color: black; }
 
 a.pulldown {
   text-decoration: none;
@@ -451,12 +451,9 @@ li {
           transition: all 0.2s ease-in-out; }
           .composers .composers-wrap .slide .img-wrap .arrow-left:hover {
             left: 15px; }
-      .composers .composers-wrap .slide h2 {
-        color: #dfdfdf; }
       .composers .composers-wrap .slide p {
         width: 70%;
         margin-left: 15%;
-        color: #dfdfdf;
         margin-top: 0; }
 
 .radio {
@@ -578,9 +575,7 @@ footer {
       top: 0;
       left: 0;
       height: 100%;
-      min-width: 100%;
-      background: url(../img/static-title.jpg) no-repeat center center;
-      background-size: cover; }
+      min-width: 100%; }
     .startscreen #titlevideo {
       display: none; }
     .startscreen .title {
@@ -588,11 +583,7 @@ footer {
       height: contain; }
       .startscreen .title img {
         margin-top: 36.25%;
-        width: 80%;
-        padding: 2%;
-        background-color: #d9d9d9;
-        border: 1px solid black;
-        box-shadow: 1px 0px 0px #4d4d4d, 0px 1px 0px #333333, 2px 1px 0px #4d4d4d, 1px 2px 0px #333333, 3px 2px 0px #4d4d4d, 2px 3px 0px #333333, 4px 3px 0px #4d4d4d, 3px 4px 0px #333333, 5px 4px 0px #4d4d4d, 4px 5px 0px #333333, 6px 5px 0px #4d4d4d, 5px 6px 0px #333333, 7px 6px 0px #4d4d4d, 6px 7px 0px #333333, 8px 7px 0px #4d4d4d, 7px 8px 0px #333333, 9px 8px 0px #4d4d4d, 8px 9px 0px #333333, 10px 9px 0px #4d4d4d, 9px 10px 0px #333333, 11px 10px 0px #4d4d4d; }
+        width: 80%; }
 
   .videos {
     padding-bottom: 10%;
@@ -672,6 +663,8 @@ footer {
         width: 100%;
         margin: 0 0 5% 0;
         box-shadow: 1px 0px 0px #4d4d4d, 0px 1px 0px #333333, 2px 1px 0px #4d4d4d, 1px 2px 0px #333333, 3px 2px 0px #4d4d4d, 2px 3px 0px #333333, 4px 3px 0px #4d4d4d, 3px 4px 0px #333333, 5px 4px 0px #4d4d4d, 4px 5px 0px #333333, 6px 5px 0px #4d4d4d, 5px 6px 0px #333333, 7px 6px 0px #4d4d4d, 6px 7px 0px #333333, 8px 7px 0px #4d4d4d, 7px 8px 0px #333333, 9px 8px 0px #4d4d4d, 8px 9px 0px #333333, 10px 9px 0px #4d4d4d, 9px 10px 0px #333333, 11px 10px 0px #4d4d4d; }
+      .radio .show p {
+        font-size: 1.5em; }
 
   .stories {
     padding-bottom: 10%;
@@ -741,9 +734,7 @@ footer {
       top: 0;
       left: 0;
       height: 100%;
-      min-width: 100%;
-      background: url(../img/static-title.jpg) no-repeat center center;
-      background-size: cover; }
+      min-width: 100%; }
     .startscreen #titlevideo {
       display: none; }
     .startscreen .title {
@@ -898,9 +889,7 @@ footer {
       top: 0;
       left: 0;
       height: 100%;
-      min-width: 100%;
-      background: url(../img/static-title.jpg) no-repeat center center;
-      background-size: cover; }
+      min-width: 100%; }
     .startscreen #titlevideo {
       display: none; }
     .startscreen .title {
@@ -1079,9 +1068,7 @@ footer {
       top: 0;
       left: 0;
       height: 100%;
-      min-width: 100%;
-      background: url(../img/static-title.jpg) no-repeat center center;
-      background-size: cover; }
+      min-width: 100%; }
     .startscreen #titlevideo {
       display: none; }
     .startscreen .title {
@@ -1089,11 +1076,9 @@ footer {
       height: contain; }
       .startscreen .title img {
         margin-top: 36.25%;
-        width: 80%;
-        padding: 2%;
-        background-color: #d9d9d9;
-        border: 1px solid black;
-        box-shadow: 1px 0px 0px #4d4d4d, 0px 1px 0px #333333, 2px 1px 0px #4d4d4d, 1px 2px 0px #333333, 3px 2px 0px #4d4d4d, 2px 3px 0px #333333, 4px 3px 0px #4d4d4d, 3px 4px 0px #333333, 5px 4px 0px #4d4d4d, 4px 5px 0px #333333, 6px 5px 0px #4d4d4d, 5px 6px 0px #333333, 7px 6px 0px #4d4d4d, 6px 7px 0px #333333, 8px 7px 0px #4d4d4d, 7px 8px 0px #333333, 9px 8px 0px #4d4d4d, 8px 9px 0px #333333, 10px 9px 0px #4d4d4d, 9px 10px 0px #333333, 11px 10px 0px #4d4d4d; }
+        width: 90%; }
+      .startscreen .title h1 {
+        font-size: 1em; }
 
   .videos {
     padding-bottom: 10%;
