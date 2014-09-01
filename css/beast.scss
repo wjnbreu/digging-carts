@@ -1347,13 +1347,13 @@ footer{
 			img{
 				width: 96%;
 				margin-left: 2%;
-				@include smallboxy;
+				@include vendorize(box-shadow, none);
 			}
 			iframe{
 				max-width: 96%;
 				width: 96%;
 				margin: 0 2% 5% 2%;
-				@include smallboxy;
+				@include vendorize(box-shadow, none);
 			}
 		}
 	}
