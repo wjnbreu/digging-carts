@@ -529,6 +529,10 @@ footer{
 			img{
 				margin-top: 36.25%;
 				width: 80%;
+				padding: 2%;
+				background-color: $gray;
+				border: 1px solid black;
+				@include smallboxy;
 			}
 		}
 	}
@@ -754,6 +758,7 @@ footer{
 			img{
 				margin-top: 26.25%;
 				width: 80%;
+
 			}
 		}
 	}
@@ -1233,9 +1238,14 @@ footer{
 		.title{
 			width: contain;
 			height: contain;
+
 			img{
 				margin-top: 36.25%;
-				width: 90%;
+				width: 80%;
+				padding: 2%;
+				background-color: $gray;
+				border: 1px solid black;
+				@include smallboxy;
 			}
 		}
 	}

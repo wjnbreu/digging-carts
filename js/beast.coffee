@@ -12,34 +12,41 @@ $ ->
 	modVP = {}
 	vidRatio = 640 / 360
 	targetVideo = {}
+	playerTemplate = ""
+	currentCountry = ""
 
 	brightcoveVideos = []
 
 	isMobile = false
 
-	playerData = {
-			"playerID" : "1684512102001",
-			"playerKey" : "AQ~~%2CAAABTw4lHzE~%2Csr1E9bdX6d4wCdvdlD8QKdNij3uKs2K9",
-			"width" : ($(window).width()) / 1.5,
-			"height" : (($(window).width()) / 1.5) / vidRatio,
-			"videoID" : "3747000906001"
-		}
+	#DEFAULT ENGLISH
+	playerData = {}
+
+	playerIDS = {
+		"spanish" : "ref:MI201408250036",
+		"german" : "ref:MI201408250036",
+		"french" : "ref:MI201408250036",
+		"polish" : "ref:MI201408250036",
+		"italian" : "ref:MI201408250036",
+		"japanese" : "ref:MI201408250036",
+		"brazilian" : "ref:MI201408250036",
+		"turkish" : "ref:MI201408250036",
+		"default" : "3747000906001"
+	}
 
 
-	playerTemplate = "<div style=\"display:none\"></div><object id=\"myExperience\" class=\"BrightcoveExperience\"><param name=\"bgcolor\" value=\"#FFFFFF\" /><param name=\"width\" value=\"{{width}}\" /><param name=\"height\" value=\"{{height}}\" /><param name=\"playerID\" value=\"{{playerID}}\" /><param name=\"playerKey\" value=\"{{playerKey}}\" /><param name=\"isSlim\" value=\"true\" /><param name=\"autoStart\" value=\"false\" /><param name=\"isVid\" value=\"true\" /><param name=\"isUI\" value=\"true\" /><param name=\"dynamicStreaming\" value=\"true\" /><param name=\"@videoPlayer\" value=\"{{videoID}}\"; /><param name=\"includeAPI\" value=\"true\" /><param name=\"templateLoadHandler\" value=\"onTemplateLoad\" /><param name=\"templateReadyHandler\" value=\"onTemplateReady\" /></object>"
+
 
 	
 
 	init = ->
 		setupBinds()
 		#Brightcove
+		addPlayer()
 		$('.video-nav ul a.episode li').first().addClass "active"
 		$('.story-nav ul a.additional-episode li').first().addClass "active"
 		# setTimeout(sendHeight(getHeight()), 500)
 		sendHeight(getHeight())
-		
-		
-
 		
 
 	prepInit = (count) ->
@@ -47,8 +54,68 @@ $ ->
 		#make sure all data is done before calling init
 		if initCount == 6
 			removeSpinner()
-			init()
+			findLocation()
+			# init()
 			initCount = 0
+
+	findLocation = ->
+		$.ajax 'http://freegeoip.net/json/',
+			type: 'GET',
+			dataType: 'json',
+			error: (jqXHR, textStatus, errorThrown) ->
+				console.log "#{textStatus}"
+				init()
+			success: (data, textStatus, jqXHR) ->
+				addInitialVideosByLanguage(data.country_name)
+
+	addInitialVideosByLanguage = (country) ->
+		#call init when finished
+
+		country = country.toLowerCase()
+
+		switch country
+			#GERMAN
+			when "germany" then updateInitPlayerData(playerIDS.german, country)
+			when "austria" then updateInitPlayerData(playerIDS.german, country)
+			#SPANISH
+			when "spain" then updateInitPlayerData(playerIDS.spanish, country)
+			when "mexico" then updateInitPlayerData(playerIDS.spanish, country)
+			when "argentina" then updateInitPlayerData(playerIDS.spanish, country)
+			when "colombia" then updateInitPlayerData(playerIDS.spanish, country)
+			when "chile" then updateInitPlayerData(playerIDS.spanish, country)
+			#JAPANESE
+			when "japan" then updateInitPlayerData(playerIDS.japanese, country)
+			#POLISH
+			when "poland" then updateInitPlayerData(playerIDS.polish, country)
+			#TURKISH
+			when "turkey" then updateInitPlayerData(playerIDS.turkish, country)
+			#ITALIAN
+			when "italy" then updateInitPlayerData(playerIDS.italian, country)
+			#FRENCH
+			when "france" then updateInitPlayerData(playerIDS.french, country)
+			#PORTUGUESE BRAZIL
+			when "brazil" then updateInitPlayerData(playerIDS.brazilian, country)
+			#DEFAULT	
+			else
+				updateInitPlayerData(playerIDS.default)
+
+		console.log country
+
+	
+	updateInitPlayerData = (videoId, country) ->
+		playerData = {
+			"playerID" : "1684512102001",
+			"playerKey" : "AQ~~%2CAAABTw4lHzE~%2Csr1E9bdX6d4wCdvdlD8QKdNij3uKs2K9",
+			"width" : ($(window).width()) / 1.5,
+			"height" : (($(window).width()) / 1.5) / vidRatio,
+			"videoID" : "#{videoId}"
+		}
+		playerTemplate = "<div style=\"display:none\"></div><object id=\"myExperience\" class=\"BrightcoveExperience\"><param name=\"bgcolor\" value=\"#FFFFFF\" /><param name=\"width\" value=\"{{width}}\" /><param name=\"height\" value=\"{{height}}\" /><param name=\"playerID\" value=\"{{playerID}}\" /><param name=\"playerKey\" value=\"{{playerKey}}\" /><param name=\"isSlim\" value=\"true\" /><param name=\"autoStart\" value=\"false\" /><param name=\"isVid\" value=\"true\" /><param name=\"isUI\" value=\"true\" /><param name=\"dynamicStreaming\" value=\"true\" /><param name=\"@videoPlayer\" value=\"{{videoID}}\"; /><param name=\"includeAPI\" value=\"true\" /><param name=\"templateLoadHandler\" value=\"onTemplateLoad\" /><param name=\"templateReadyHandler\" value=\"onTemplateReady\" /></object>"
+		currentCountry = country
+		init()
+
+
+
 
 	sendHeight = (height) ->
 		message = {height: height}
@@ -82,9 +149,34 @@ $ ->
 		modVP.getCurrentVideo(currentVideoCallback)
 
 	currentVideoCallback = (currentVideo, order) ->
-		modVP.loadVideoByID(targetVideo.fields.brightcoveVideoId)
+	
+		switch currentCountry
+			#GERMAN
+			when "germany" then modVP.loadVideoByID(targetVideo.fields.brightcoveVideoIdGerman)
+			when "austria" then modVP.loadVideoByID(targetVideo.fields.brightcoveVideoIdGerman)
+			#FRENCH
+			when "france" then modVP.loadVideoByID(targetVideo.fields.brightcoveVideoIdFrench)
+			#JAPANESE
+			when "japan" then modVP.loadVideoByID(targetVideo.fields.brightcoveVideoIdJapanese)
+			#TURKISH
+			when "turkey" then modVP.loadVideoByID(targetVideo.fields.brightcoveVideoIdTurkish)
+			#BRAZIL
+			when "brazil" then modVP.loadVideoByID(targetVideo.fields.brightVideoIdBrazil)
+			#ITALIAN
+			when "italy" then modVP.loadVideoByID(targetVideo.fields.brightcoveVideoIdItalian)
+			#SPANISH
+			when "spain" then modVP.loadVideoByID(targetVideo.fields.brightcoveVideoIdSpanish)
+			when "mexico" then modVP.loadVideoByID(targetVideo.fields.brightcoveVideoIdSpanish)
+			when "argentina" then modVP.loadVideoByID(targetVideo.fields.brightcoveVideoIdSpanish)
+			when "colombia" then modVP.loadVideoByID(targetVideo.fields.brightcoveVideoIdSpanish)
+			when "chile" then modVP.loadVideoByID(targetVideo.fields.brightcoveVideoIdSpanish)
+
+			else
+				modVP.loadVideoByID(targetVideo.fields.brightcoveVideoId)
+		
 		$('.videos h1').empty().text(targetVideo.fields.episodeTitle)
-		targetVideo = {}
+		#reset
+		# targetVideo = {}
 
 	onMediaEventFired = (evt) ->
 		return
@@ -153,12 +245,15 @@ $ ->
 				controls: 1
 				showinfo: 0
 				hd: 1
+				origin: "http://www.redbullmusicacademy.com"
 			}
 
 
 	onPlayerReady2 = (event) ->
 		resizeVid('#storyplayer')
 	
+	
+
 	setupBinds = ->
 		
 		#resize
@@ -336,7 +431,7 @@ $ ->
 		twitterText = shareText.twitterShareText
 		facebookText = shareText.facebookShareText
 
-		twitter.attr("href", "http://twitter.com/home?status=#{twitterText}")
+		twitter.attr("href", "http://twitter.com/intent/tweet?text=#{twitterText}&related=rbma")
 		fb.attr("href", "https://www.facebook.com/sharer/sharer.php?u=http://www.redbullmusicacademy.com/magazine/diggin-in-the-carts&amp;t=#{facebookText}")
 		#"http://twitter.com/home?status=What Difference Does It Make? A feature-length film about making music. Stream and download it here. http://www.rbma15.com"
 
@@ -358,7 +453,7 @@ $ ->
 			
 			addVideoTitles(videoObject, $('.video-nav ul'), 'main')
 
-			addPlayer()
+			# addPlayer()
 				
 			$('a.episode').bind 'click', (event) ->
 				event.preventDefault()
