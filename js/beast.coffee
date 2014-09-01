@@ -117,11 +117,11 @@ $ ->
 	sendHeight = (height) ->
 		message = {height: height}
 		messageJSON = JSON.stringify(message)
-		console.log message
+		console.log message.height
 		return window.parent.postMessage(messageJSON, '*')
 
 	getHeight = ->
-		return $(document).height()
+		return $(document.body).height()
 
 	window.onTemplateLoad = (experienceID) ->
 		player = brightcove.api.getExperience(experienceID)
