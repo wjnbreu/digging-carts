@@ -79,10 +79,13 @@ $ ->
 
 
 	swapVideo = (order) ->
+		console.log 'swap started'
 		modVP.getCurrentVideo(currentVideoCallback)
 
 	currentVideoCallback = (currentVideo, order) ->
+		console.log 'swap done'
 		modVP.loadVideoByID(targetVideo.fields.brightcoveVideoId)
+		$('.videos h1').empty().text(targetVideo.fields.episodeTitle)
 		targetVideo = {}
 
 	onMediaEventFired = (evt) ->
@@ -208,12 +211,17 @@ $ ->
 				sendHeight(getHeight())
 				)
 		$('a.episode').click (event) ->
-			swapVideo()
+			if $(this).children('li').hasClass "unreleased"
+				return
+			else
+				swapVideo()
 
 
 
 	changeVideo = (element, order, videoObject) ->
+
 		video = videoObject[order].fields
+
 		#account for zero index
 		if element.find('li').hasClass "unreleased"
 			$('.videos h1').empty().text video.episodeTitle
@@ -353,8 +361,10 @@ $ ->
 				$(this).find('li').addClass "active"
 				order = $(this).data 'order'
 				targetVideo = videoObject[order]
-				swapVideo()
-				# changeVideo($(@), order, videoObject)
+				if $(this).children('li').hasClass "unreleased"
+					return
+				else
+					swapVideo()
 
 
 

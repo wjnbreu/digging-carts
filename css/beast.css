@@ -9,12 +9,6 @@
   font-weight: bold;
   font-style: normal; }
 @font-face {
-  font-family: clan;
-  src: url("../fonts/clanpro-narrultra-webfont.eot");
-  src: url("../fonts/clanpro-narrultra-webfont.eot?#iefix") format("embedded-opentype"), url("../fonts/clanpro-narrultra-webfont.woff") format("woff"), url("../fonts/clanpro-narrultra-webfont.ttf") format("truetype"), url("../fonts/clanpro-narrultra-webfont.svg#clan_pronarrow_ultra") format("svg");
-  font-weight: 900;
-  font-style: normal; }
-@font-face {
   font-family: bit;
   src: url("../fonts/new_athletic_m54-webfont.eot");
   src: url("../fonts/new_athletic_m54-webfont.eot?#iefix") format("embedded-opentype"), url("../fonts/new_athletic_m54-webfont.woff") format("woff"), url("../fonts/new_athletic_m54-webfont.ttf") format("truetype"), url("../fonts/new_athletic_m54-webfont.svg#new_athletic_m54regular") format("svg");
@@ -359,8 +353,7 @@ li {
   height: auto;
   z-index: 2;
   background-color: black;
-  padding-bottom: 48px;
-  border-bottom: 1px solid #d9d9d9; }
+  padding-bottom: 48px; }
   .videos #myExperience {
     box-shadow: 1px 0px 0px #4d4d4d, 0px 1px 0px #333333, 2px 1px 0px #4d4d4d, 1px 2px 0px #333333, 3px 2px 0px #4d4d4d, 2px 3px 0px #333333, 4px 3px 0px #4d4d4d, 3px 4px 0px #333333, 5px 4px 0px #4d4d4d, 4px 5px 0px #333333, 6px 5px 0px #4d4d4d, 5px 6px 0px #333333, 7px 6px 0px #4d4d4d, 6px 7px 0px #333333, 8px 7px 0px #4d4d4d, 7px 8px 0px #333333, 9px 8px 0px #4d4d4d, 8px 9px 0px #333333, 10px 9px 0px #4d4d4d, 9px 10px 0px #333333, 11px 10px 0px #4d4d4d;
     opacity: 0; }
@@ -383,7 +376,6 @@ li {
 .composers {
   padding-top: 48px;
   padding-bottom: 48px;
-  border-bottom: 1px solid #d9d9d9;
   width: 100%;
   z-index: 2;
   position: relative;
@@ -453,7 +445,6 @@ li {
   padding-top: 48px;
   z-index: 2;
   padding-bottom: 48px;
-  border-bottom: 1px solid #d9d9d9;
   vertical-align: top; }
   .radio .show {
     display: inline-block;
@@ -519,8 +510,7 @@ footer {
 @media screen and (min-width: 1768px) {
   .composers {
     padding-bottom: 10%;
-    padding-bottom: 10%;
-    border-bottom: 1px solid #d9d9d9; }
+    padding-bottom: 10%; }
     .composers .composers-wrap .slide {
       display: none; }
       .composers .composers-wrap .slide.active {
@@ -583,8 +573,7 @@ footer {
 
   .videos {
     padding-bottom: 10%;
-    padding-bottom: 10%;
-    border-bottom: 1px solid #d9d9d9; }
+    padding-bottom: 10%; }
     .videos #myExperience {
       display: block !important;
       box-shadow: 1px 0px 0px #4d4d4d, 0px 1px 0px #333333, 2px 1px 0px #4d4d4d, 1px 2px 0px #333333, 3px 2px 0px #4d4d4d, 2px 3px 0px #333333, 4px 3px 0px #4d4d4d, 3px 4px 0px #333333, 5px 4px 0px #4d4d4d, 4px 5px 0px #333333, 6px 5px 0px #4d4d4d, 5px 6px 0px #333333, 7px 6px 0px #4d4d4d, 6px 7px 0px #333333, 8px 7px 0px #4d4d4d, 7px 8px 0px #333333, 9px 8px 0px #4d4d4d, 8px 9px 0px #333333, 10px 9px 0px #4d4d4d, 9px 10px 0px #333333, 11px 10px 0px #4d4d4d;
@@ -626,8 +615,7 @@ footer {
 
   .composers {
     padding-bottom: 10%;
-    padding-bottom: 10%;
-    border-bottom: 1px solid #d9d9d9; }
+    padding-bottom: 10%; }
     .composers .composers-wrap .slide {
       display: none; }
       .composers .composers-wrap .slide.active {
@@ -744,8 +732,7 @@ footer {
 
   .videos {
     padding-bottom: 10%;
-    padding-bottom: 10%;
-    border-bottom: 1px solid #d9d9d9; }
+    padding-bottom: 10%; }
     .videos #myExperience {
       display: block !important;
       box-shadow: 1px 0px 0px #4d4d4d, 0px 1px 0px #333333, 2px 1px 0px #4d4d4d, 1px 2px 0px #333333, 3px 2px 0px #4d4d4d, 2px 3px 0px #333333, 4px 3px 0px #4d4d4d, 3px 4px 0px #333333, 5px 4px 0px #4d4d4d, 4px 5px 0px #333333, 6px 5px 0px #4d4d4d, 5px 6px 0px #333333, 7px 6px 0px #4d4d4d, 6px 7px 0px #333333, 8px 7px 0px #4d4d4d, 7px 8px 0px #333333, 9px 8px 0px #4d4d4d, 8px 9px 0px #333333, 10px 9px 0px #4d4d4d, 9px 10px 0px #333333, 11px 10px 0px #4d4d4d;
@@ -785,8 +772,7 @@ footer {
 
   .composers {
     padding-bottom: 10%;
-    padding-bottom: 10%;
-    border-bottom: 1px solid #d9d9d9; }
+    padding-bottom: 10%; }
     .composers .composers-wrap .slide {
       display: none; }
       .composers .composers-wrap .slide.active {
@@ -903,8 +889,7 @@ footer {
 
   .videos {
     padding-bottom: 10%;
-    padding-bottom: 10%;
-    border-bottom: 1px solid #d9d9d9; }
+    padding-bottom: 10%; }
     .videos #myExperience {
       display: block !important;
       box-shadow: 1px 0px 0px #4d4d4d, 0px 1px 0px #333333, 2px 1px 0px #4d4d4d, 1px 2px 0px #333333, 3px 2px 0px #4d4d4d, 2px 3px 0px #333333, 4px 3px 0px #4d4d4d, 3px 4px 0px #333333, 5px 4px 0px #4d4d4d, 4px 5px 0px #333333, 6px 5px 0px #4d4d4d, 5px 6px 0px #333333, 7px 6px 0px #4d4d4d, 6px 7px 0px #333333, 8px 7px 0px #4d4d4d, 7px 8px 0px #333333, 9px 8px 0px #4d4d4d, 8px 9px 0px #333333, 10px 9px 0px #4d4d4d, 9px 10px 0px #333333, 11px 10px 0px #4d4d4d;
@@ -946,8 +931,7 @@ footer {
 
   .composers {
     padding-bottom: 10%;
-    padding-bottom: 10%;
-    border-bottom: 1px solid #d9d9d9; }
+    padding-bottom: 10%; }
     .composers .composers-wrap .slide {
       display: none; }
       .composers .composers-wrap .slide.active {
@@ -1021,8 +1005,7 @@ footer {
 @media screen and (max-width: 768px) {
   .composers {
     padding-bottom: 10%;
-    padding-bottom: 10%;
-    border-bottom: 1px solid #d9d9d9; }
+    padding-bottom: 10%; }
     .composers .composers-wrap .slide {
       display: none; }
       .composers .composers-wrap .slide.active {
@@ -1087,8 +1070,7 @@ footer {
 
   .videos {
     padding-bottom: 10%;
-    padding-bottom: 10%;
-    border-bottom: 1px solid #d9d9d9; }
+    padding-bottom: 10%; }
     .videos #myExperience {
       display: block !important;
       box-shadow: 1px 0px 0px #4d4d4d, 0px 1px 0px #333333, 2px 1px 0px #4d4d4d, 1px 2px 0px #333333, 3px 2px 0px #4d4d4d, 2px 3px 0px #333333, 4px 3px 0px #4d4d4d, 3px 4px 0px #333333, 5px 4px 0px #4d4d4d, 4px 5px 0px #333333, 6px 5px 0px #4d4d4d, 5px 6px 0px #333333, 7px 6px 0px #4d4d4d, 6px 7px 0px #333333, 8px 7px 0px #4d4d4d, 7px 8px 0px #333333, 9px 8px 0px #4d4d4d, 8px 9px 0px #333333, 10px 9px 0px #4d4d4d, 9px 10px 0px #333333, 11px 10px 0px #4d4d4d;
@@ -1128,8 +1110,7 @@ footer {
 
   .composers {
     padding-bottom: 10%;
-    padding-bottom: 10%;
-    border-bottom: 1px solid #d9d9d9; }
+    padding-bottom: 10%; }
     .composers .composers-wrap .slide {
       display: none; }
       .composers .composers-wrap .slide.active {

@@ -47,7 +47,7 @@ module.exports = function(grunt) {
 			},
 			index: {
 				src: 'dist/app.concat.js',
-				dest: 'dist/assets/javascripts/app.min.js'
+				dest: 'dist/js/app.min.js'
 			}
 		},
 
