@@ -411,8 +411,6 @@ $ ->
 			marginLeft: margin
 			display: 'block'
 
-		sendHeight(getHeight())
-
 
 
 	removeSpinner = ->
@@ -505,6 +503,8 @@ $ ->
 	
 	getData()
 	detectMobile()
-	
+	$(window).on "resize", ->
+		sendHeight(getHeight())
+
 
 	
