@@ -1,11 +1,11 @@
 (function() {
     $(function() {
-        var e, t, a, i, r, n, d, o, s, l, c, u, p, f, v, m, h, w, y, g, b, E, C, I, M, D, T, L, x, A, P, S, k, R, V, B, O, N;
+        var e, t, a, i, r, n, d, o, s, l, c, u, p, f, v, m, h, y, w, g, b, E, C, I, M, D, T, L, x, A, P, S, k, B, R, V, O, N;
         l = {};
         N = {};
         g = {};
         n = {};
-        y = {};
+        w = {};
         M = {};
         h = 0;
         c = new Showdown.converter();
@@ -13,9 +13,9 @@
         e = {};
         b = {};
         O = 640 / 360;
-        B = {};
+        V = {};
         d = [];
-        w = false;
+        y = false;
         D = {
             playerID: "1684512102001",
             playerKey: "AQ~~%2CAAABTw4lHzE~%2Csr1E9bdX6d4wCdvdlD8QKdNij3uKs2K9",
@@ -32,7 +32,7 @@
         };
         L = function(e) {
             h = h + e;
-            if (h === 4) {
+            if (h === 5) {
                 x();
                 m();
                 return h = 0;
@@ -64,39 +64,40 @@
             b.addEventListener(brightcove.api.events.MediaEvent.STOP, E);
             return S(v());
         };
-        V = function(e) {
+        R = function(e) {
             return b.getCurrentVideo(u);
         };
         u = function(e, t) {
-            b.loadVideoByID(B.fields.brightcoveVideoId);
-            return B = {};
+            b.loadVideoByID(V.fields.brightcoveVideoId);
+            return V = {};
         };
-        E = function(e) {
-            return console.log(e);
-        };
+        E = function(e) {};
         A = function(e) {
-            var t, a, i, r, n, d, o, s, l;
-            o = e;
-            r = o.attr("width");
-            i = o.attr("height");
-            l = $(window).width();
-            s = l / 1.6;
-            n = r / i;
-            if (w) {
-                s = l / 1.2;
-                if (o.attr("src")) {
-                    d = o.attr("src");
+            var t, a, i, r, n, d, o, s, l, c, u;
+            l = e;
+            n = l.attr("width");
+            r = l.attr("height");
+            u = $(window).width();
+            d = n / r;
+            if (y) {
+                if (l.attr("src")) {
+                    s = l.attr("src");
+                    o = /width=([\d\.]*).*height=([\d\.]*)/;
+                    i = s.replace(o, "");
+                    l.attr("src", i);
                 }
+            } else {
+                c = u / 1.6;
+                l.attr("width", c);
+                l.attr("height", c / d);
+                t = u - c;
+                a = t / 2;
+                return l.css({
+                    marginLeft: a,
+                    marginRight: a,
+                    opacity: 1
+                });
             }
-            o.attr("width", s);
-            o.attr("height", s / n);
-            t = l - s;
-            a = t / 2;
-            return o.css({
-                marginLeft: a,
-                marginRight: a,
-                opacity: 1
-            });
         };
         i = function() {
             var e, t;
@@ -105,7 +106,7 @@
             document.getElementById("player").innerHTML = e;
             return brightcove.createExperiences();
         };
-        R = function() {
+        B = function() {
             var e, t;
             t = document.createElement("script");
             t.src = "https://www.youtube.com/iframe_api";
@@ -177,7 +178,7 @@
                 });
             });
             return $("a.episode").click(function(e) {
-                return V();
+                return R();
             });
         };
         s = function(e, t, a) {
@@ -275,8 +276,8 @@
             r = I.attr("width");
             i = I.attr("height");
             n = r / i;
-            if (w) {
-                d = o / 1.2;
+            if (y) {
+                d = o / 1.5;
             }
             I.attr("width", d);
             I.attr("height", d / n);
@@ -294,7 +295,7 @@
         };
         p = function() {
             if (/Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent)) {
-                return w = true;
+                return y = true;
             }
         };
         f = function() {
@@ -325,8 +326,8 @@
                     $(this).parent().find("li").removeClass("active");
                     $(this).find("li").addClass("active");
                     t = $(this).data("order");
-                    B = N[t];
-                    return V();
+                    V = N[t];
+                    return R();
                 });
             });
             e.entries({
@@ -336,7 +337,7 @@
                 L(1);
                 return a(e);
             });
-            return e.entries({
+            e.entries({
                 content_type: "6fwxAcXrxK4yqyaMUiWwWY",
                 include: 1,
                 order: "fields.order"
@@ -352,7 +353,14 @@
                     t = $(this).data("order");
                     return o(t, n);
                 });
-                return R();
+                return B();
+            });
+            return e.entries({
+                content_type: "3JB3iYStpCGYGuu24mEcQK",
+                include: 1
+            }).done(function(e) {
+                L(1);
+                return $("footer p").empty().text(e[0].fields.body);
             });
         };
         f();

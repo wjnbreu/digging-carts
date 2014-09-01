@@ -46,7 +46,7 @@ $ ->
 	prepInit = (count) ->
 		initCount = initCount + count
 		#make sure all data is done before calling init
-		if initCount == 4
+		if initCount == 5
 			removeSpinner()
 			init()
 			initCount = 0
@@ -87,7 +87,7 @@ $ ->
 		targetVideo = {}
 
 	onMediaEventFired = (evt) ->
-		console.log evt
+		return
 	
 
 	
@@ -96,34 +96,32 @@ $ ->
 		ogWidth = vid.attr "width"
 		ogHeight = vid.attr "height"
 		winWidth = $(window).width()
-		vidWidth = winWidth / 1.6
 		ratio = ogWidth / ogHeight
 		
 		#target brightcove iframe on mobile
 		if isMobile
-			vidWidth = winWidth / 1.2
+			#if iframe is present, then use regex to remove width and height
+			#from src attribute
 			if vid.attr "src"
 				src = vid.attr "src"
-				# alert src
-				# if src.indexOf("width=") > -1
-				# 	startPos = src.indexOf("width=")
-				# 	endPos = src.indexOf("height=")
-				# 	alert startPos
-				# 	alert endPos
-				# if src.indexOf("height=") > -1
-				# 	src.replace("height=", "")
+				regex = /width=([\d\.]*).*height=([\d\.]*)/
+				newSrc = src.replace(regex, '')
+				vid.attr("src", newSrc)
+				return
+
+		else
+			vidWidth = winWidth / 1.6
+			vid.attr("width", vidWidth)
+			vid.attr("height", vidWidth / ratio)
+
+			diff = winWidth - vidWidth
+			margin = diff / 2
 
 
-		vid.attr("width", vidWidth)
-		vid.attr("height", vidWidth / ratio)
-
-		diff = winWidth - vidWidth
-		margin = diff / 2
-
-		vid.css
-			marginLeft: margin
-			marginRight: margin
-			opacity: 1
+			vid.css
+				marginLeft: margin
+				marginRight: margin
+				opacity: 1
 
 
 	addPlayer = ->
@@ -306,7 +304,7 @@ $ ->
 		ratio = ogWidth / ogHeight
 
 		if isMobile
-			vidWidth = winWidth / 1.2
+			vidWidth = winWidth / 1.5
 
 		player.attr('width', vidWidth)
 		player.attr('height', vidWidth / ratio)
@@ -380,6 +378,11 @@ $ ->
 				changeAdditionalVideo(order, additionalVideoObject)
 
 			setupYouTube()
+
+		#ENDING TEXT
+		client.entries({'content_type':'3JB3iYStpCGYGuu24mEcQK', 'include':1}).done (data) ->
+			prepInit(1)
+			$('footer p').empty().text(data[0].fields.body)
 
 
 
