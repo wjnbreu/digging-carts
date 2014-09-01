@@ -45,7 +45,7 @@ $ ->
 	prepInit = (count) ->
 		initCount = initCount + count
 		#make sure all data is done before calling init
-		if initCount == 5
+		if initCount == 6
 			removeSpinner()
 			init()
 			initCount = 0
@@ -88,7 +88,6 @@ $ ->
 
 	onMediaEventFired = (evt) ->
 		return
-	
 
 	
 	resizePlayer = (video) ->
@@ -331,7 +330,15 @@ $ ->
 			isMobile = true
 
 
+	addShareText = (shareText) ->
+		twitter = $('.twitter-share')
+		fb = $('.facebook-share')
+		twitterText = shareText.twitterShareText
+		facebookText = shareText.facebookShareText
 
+		twitter.attr("href", "http://twitter.com/home?status=#{twitterText}")
+		fb.attr("href", "https://www.facebook.com/sharer/sharer.php?u=http://www.redbullmusicacademy.com/magazine/diggin-in-the-carts&amp;t=#{facebookText}")
+		#"http://twitter.com/home?status=What Difference Does It Make? A feature-length film about making music. Stream and download it here. http://www.rbma15.com"
 
 
 	getData = ->
@@ -391,7 +398,13 @@ $ ->
 			prepInit(1)
 			$('footer p').empty().text(data[0].fields.body)
 
+		#SOCIAL SHARE
+		client.entries({'content_type':'5KnZeYIgc8oUo2cgssKAWK', 'include':1}).done (data) ->
+			shareText = data[0].fields
+			prepInit(1)
+			addShareText(shareText)
 
+			#"http://twitter.com/home?status=What Difference Does It Make? A feature-length film about making music. Stream and download it here. http://www.rbma15.com"
 
 
 	#launch when ready
