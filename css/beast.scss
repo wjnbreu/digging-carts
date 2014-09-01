@@ -222,6 +222,7 @@ li{
 		border: 0;
 		top: 0;
 		left: 0;
+		// opacity: 0.1;
 	}
 	.title{
 		width: 100%;
@@ -243,6 +244,29 @@ li{
 			font-size: 1.75em;
 			margin-top: 0;
 			margin-bottom: 0;
+		}
+	}
+	.go-down-on-me{
+		position: absolute;
+		bottom: 30%;
+		width: 100%;
+		text-align: center;
+		font-size: 2.5em;
+		height: 50px;
+		z-index: 10;
+		@include vendorize(transition, all 0.15s cubic-bezier(0.25,0.46,0.45,0.94));
+		h1{
+			width: 30px;
+			height: 30px;
+			line-height: 30px;
+			&:hover{
+				background-color: white !important;
+				color: black !important;
+			}
+			&:active{
+				@include vendorize(transform, translate(5px, 5px));
+				@include vendorize(box-shadow, none);
+			}
 		}
 	}
 }
@@ -320,8 +344,8 @@ li{
 						position: absolute;
 						top: 180px;
 						right: 20px;
-						width: 10%;
-						height: 10%;
+						width: 70px;
+						height: 70px;
 						background: url(../img/arrow-white.svg) no-repeat center center;
 						background-size: cover;
 						@include vendorize(transition, all .2s ease-in-out);
@@ -334,8 +358,8 @@ li{
 						position: absolute;
 						top: 180px;
 						left: 20px;
-						width: 10%;
-						height: 10%;
+						width: 70px;
+						height: 70px;
 						background: url(../img/arrow-white-left.svg) no-repeat center center;
 						background-size: cover;
 						@include vendorize(transition, all .2s ease-in-out);
@@ -442,8 +466,52 @@ footer{
 }
 
 
-@media screen and (min-width: 1768px){
+@media screen and (min-width: 1440px) and (max-width: 1699px){
 
+.startscreen{
+	position: relative;
+	margin: 0;
+	width: 100%;
+	height: auto;
+	min-height: 850px;
+	display: block;
+	top: 0;
+	left: 0;
+	overflow: hidden;
+	z-index: 2;
+	#titlevideo{
+		position: absolute;
+		min-width: 100%;
+		height: 110%;
+		margin: 0;
+		border: 0;
+		top: 0;
+		left: 0;
+	}
+	.title{
+		width: 100%;
+		height: 800px;
+		top: 0;
+		position: absolute;
+		text-align: center;
+		z-index: 9;
+		img{
+			margin-top: 6.25%;
+			width: 60%;
+			-webkit-transform: translateZ(0px);
+			-webkit-transform-style: preserve-3d;
+		}
+		h1{
+			color: white;
+			background-color: transparent;
+			@include vendorize(box-shadow, none);
+			font-size: 1.75em;
+			margin-top: 0;
+			margin-bottom: 0;
+		}
+	}
+
+}
 
 .composers{
 		padding-bottom: 10%;
@@ -456,19 +524,19 @@ footer{
 				}
 				.img-wrap{
 					.arrow-right{
-						top: 275px;
+						top: 260px;
 						right: 20px;
-						width: 10%;
-						height: 10%;
+						width: 80px;
+						height: 80px;
 						&:hover{
 							right: 15px;
 						}
 					}
 					.arrow-left{
-						top: 275px;
+						top: 260px;
 						left: 20px;
-						width: 10%;
-						height: 10%;
+						width: 80px;
+						height: 80px;
 					}
 				}
 			}
@@ -480,6 +548,69 @@ footer{
 }
 
 
+
+@media screen and (min-width: 1700px){
+
+.startscreen{
+	position: relative;
+	margin: 0;
+	width: 100%;
+	height: auto;
+	min-height: 950px;
+	display: block;
+	top: 0;
+	left: 0;
+	overflow: hidden;
+	z-index: 2;
+	#titlevideo{
+		position: absolute;
+		min-width: 100%;
+		height: 150%;
+		margin: 0;
+		border: 0;
+		top: 0;
+		left: 0;
+	}
+	.title{
+		width: 100%;
+		height: 950px;
+		top: 0;
+		position: absolute;
+		text-align: center;
+		z-index: 9;
+		img{
+			margin-top: 6.25%;
+			width: 60%;
+			-webkit-transform: translateZ(0px);
+			-webkit-transform-style: preserve-3d;
+		}
+		h1{
+			color: white;
+			background-color: transparent;
+			@include vendorize(box-shadow, none);
+			font-size: 1.75em;
+			margin-top: 0;
+			margin-bottom: 0;
+		}
+	}
+}
+
+.composers{
+		padding-bottom: 10%;
+		padding-bottom: 10%;
+		.composers-wrap{
+			.slide{
+				display: none;
+				&.active{
+					display: block;
+				}
+			}
+		}
+	}
+
+
+
+}
 
 
 
@@ -534,8 +665,8 @@ footer{
 			left: 0;
 			height: 100%;
 			min-width: 100%;
-			// background: url(../img/static-title.jpg) no-repeat center center;
-			// background-size: cover;
+			background: url(../img/static-title.jpg) no-repeat center center;
+			background-size: cover;
 		}
 			
 		#titlevideo{
@@ -618,8 +749,8 @@ footer{
 					.arrow-right{
 						top: 25%;
 						right: 20px;
-						width: 10%;
-						height: 10%;
+						width: 50px;
+						height: 50px;
 						&:hover{
 							right: 15px;
 						}
@@ -627,8 +758,8 @@ footer{
 					.arrow-left{
 						top: 25%;
 						left: 20px;
-						width: 10%;
-						height: 10%;
+						width: 50px;
+						height: 50px;
 					}
 				}
 			}
@@ -843,19 +974,19 @@ footer{
 				}
 				.img-wrap{
 					.arrow-right{
-						top: 25%;
+						top: 175px;
 						right: 20px;
-						width: 10%;
-						height: 10%;
+						width: 50px;
+						height: 50px;
 						&:hover{
 							right: 15px;
 						}
 					}
 					.arrow-left{
-						top: 25%;
+						top: 175px;
 						left: 20px;
-						width: 10%;
-						height: 10%;
+						width: 50px;
+						height: 50px;
 					}
 				}
 			}
@@ -1068,19 +1199,19 @@ footer{
 				}
 				.img-wrap{
 					.arrow-right{
-						top: 25%;
+						top: 175px;
 						right: 20px;
-						width: 10%;
-						height: 10%;
+						width: 50px;
+						height: 50px;
 						&:hover{
 							right: 15px;
 						}
 					}
 					.arrow-left{
-						top: 25%;
+						top: 175px;
 						left: 20px;
-						width: 10%;
-						height: 10%;
+						width: 50px;
+						height: 50px;
 					}
 				}
 			}
@@ -1175,8 +1306,8 @@ footer{
 					.arrow-right{
 						top: 100px;
 						right: 20px;
-						width: 10%;
-						height: 10%;
+						width: 50px;
+						height: 50px;
 						&:hover{
 							right: 15px;
 						}
@@ -1184,8 +1315,8 @@ footer{
 					.arrow-left{
 						top: 100px;
 						left: 20px;
-						width: 10%;
-						height: 10%;
+						width: 50px;
+						height: 50px;
 					}
 				}
 			}
