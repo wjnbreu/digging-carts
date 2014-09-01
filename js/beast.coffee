@@ -36,9 +36,6 @@ $ ->
 
 
 
-
-	
-
 	init = ->
 		setupBinds()
 		#Brightcove
@@ -413,6 +410,8 @@ $ ->
 		player.css
 			marginLeft: margin
 			display: 'block'
+
+		sendHeight(getHeight())
 
 
 
