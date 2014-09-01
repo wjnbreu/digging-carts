@@ -1305,19 +1305,22 @@ footer{
 					width: 100%;
 					margin-left:0;
 					.arrow-right{
-						top: 10%;
+						top: 50px;
 						right: 20px;
-						width: 10%;
-						height: 10%;
+						width: 25px;
+						height: 25px;
 						&:hover{
-							right: 15px;
+							right: 20px;
 						}
 					}
 					.arrow-left{
-						top: 10%;
+						top: 50px;
 						left: 20px;
-						width: 10%;
-						height: 10%;
+						width: 25px;
+						height: 25px;
+						&:hover{
+							left: 20px;
+						}
 					}
 				}
 				h2{
