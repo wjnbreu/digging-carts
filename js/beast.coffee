@@ -79,11 +79,9 @@ $ ->
 
 
 	swapVideo = (order) ->
-		console.log 'swap started'
 		modVP.getCurrentVideo(currentVideoCallback)
 
 	currentVideoCallback = (currentVideo, order) ->
-		console.log 'swap done'
 		modVP.loadVideoByID(targetVideo.fields.brightcoveVideoId)
 		$('.videos h1').empty().text(targetVideo.fields.episodeTitle)
 		targetVideo = {}
