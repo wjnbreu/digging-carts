@@ -407,9 +407,22 @@ $ ->
 		for mix in object
 			mixInfo = mix.fields
 			name = mixInfo.artistName
-			embed = mixInfo.rbmaRadioEmbedCode
-			description = mixInfo.descriptions
 			img = mixInfo.artistImage.fields.file.url
+			
+			#If description exists
+			if mixInfo.descriptions
+				description = mixInfo.descriptions
+			else
+				description = ""
+
+			#if radio show exists
+			if mixInfo.rbmaRadioEmbedCode
+				embed = mixInfo.rbmaRadioEmbedCode
+			else
+
+				embed = ''
+			
+			
 			mixData = "<div class='show'><img src='#{img}'/>#{embed}<p>#{description}</p></div>"
 			$('.radio').append(mixData)
 			# sendHeight(getHeight())
@@ -493,7 +506,7 @@ $ ->
 
 
 		#RADIO
-		client.entries({'content_type':'2YpXtnGW80EEGgCUsSMmCc', 'include': 1}).done (data) ->
+		client.entries({'content_type':'2YpXtnGW80EEGgCUsSMmCc', 'include': 1, 'order':'fields.order'}).done (data) ->
 			prepInit(1)
 			addMixes(data)
 
