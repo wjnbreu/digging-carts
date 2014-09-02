@@ -51,8 +51,7 @@ $ ->
 		#make sure all data is done before calling init
 		if initCount == 6
 			removeSpinner()
-			findLocation()
-			# init()
+			init()
 			initCount = 0
 
 	findLocation = ->
@@ -61,8 +60,13 @@ $ ->
 			dataType: 'json',
 			error: (jqXHR, textStatus, errorThrown) ->
 				console.log "#{textStatus}"
-				init()
+				currentCountry = "default"
+				getData()
 			success: (data, textStatus, jqXHR) ->
+				currentCountry = data.country_name
+				console.log "Country: #{currentCountry}"
+				currentCountry = currentCountry.toLowerCase()
+				getData()
 				addInitialVideosByLanguage(data.country_name)
 
 	addInitialVideosByLanguage = (country) ->
@@ -96,7 +100,6 @@ $ ->
 			else
 				updateInitPlayerData(playerIDS.default)
 
-		console.log country
 
 	
 	updateInitPlayerData = (videoId, country) ->
@@ -108,7 +111,7 @@ $ ->
 			"videoID" : "#{videoId}"
 		}
 		playerTemplate = "<div style=\"display:none\"></div><object id=\"myExperience\" class=\"BrightcoveExperience\"><param name=\"bgcolor\" value=\"#FFFFFF\" /><param name=\"width\" value=\"{{width}}\" /><param name=\"height\" value=\"{{height}}\" /><param name=\"playerID\" value=\"{{playerID}}\" /><param name=\"playerKey\" value=\"{{playerKey}}\" /><param name=\"isSlim\" value=\"true\" /><param name=\"autoStart\" value=\"false\" /><param name=\"isVid\" value=\"true\" /><param name=\"isUI\" value=\"true\" /><param name=\"dynamicStreaming\" value=\"true\" /><param name=\"@videoPlayer\" value=\"{{videoID}}\"; /><param name=\"includeAPI\" value=\"true\" /><param name=\"templateLoadHandler\" value=\"onTemplateLoad\" /><param name=\"templateReadyHandler\" value=\"onTemplateReady\" /></object>"
-		currentCountry = country
+		currentCountry = country.toLowerCase()
 		init()
 
 
@@ -338,8 +341,15 @@ $ ->
 			for video, i in object
 				episode = video.fields.episodeNumber
 				currentDate = new Date()
-				episodeDate = new Date(video.fields.datetimeOfLaunch)
-				
+
+				#USE EARLIER RELEASE FOR JAPAN
+				if currentCountry == "japan"
+					episodeDate = new Date(video.fields.datetimeOfLaunchJapan)
+				else
+					episodeDate = new Date(video.fields.datetimeOfLaunch)
+					
+
+
 				if moment() < episodeDate
 					target.append("<a class='episode' href data-order=#{i}><li class='unreleased' data-release='#{episodeDate}'>#{episode}</li>")
 
@@ -505,8 +515,7 @@ $ ->
 
 
 	#launch when ready
-	
-	getData()
+	findLocation()
 	detectMobile()
 
 

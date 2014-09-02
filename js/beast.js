@@ -41,7 +41,7 @@ $(function() {
     initCount = initCount + count;
     if (initCount === 6) {
       removeSpinner();
-      findLocation();
+      init();
       return initCount = 0;
     }
   };
@@ -51,9 +51,14 @@ $(function() {
       dataType: 'json',
       error: function(jqXHR, textStatus, errorThrown) {
         console.log("" + textStatus);
-        return init();
+        currentCountry = "default";
+        return getData();
       },
       success: function(data, textStatus, jqXHR) {
+        currentCountry = data.country_name;
+        console.log("Country: " + currentCountry);
+        currentCountry = currentCountry.toLowerCase();
+        getData();
         return addInitialVideosByLanguage(data.country_name);
       }
     });
@@ -62,48 +67,34 @@ $(function() {
     country = country.toLowerCase();
     switch (country) {
       case "germany":
-        updateInitPlayerData(playerIDS.german, country);
-        break;
+        return updateInitPlayerData(playerIDS.german, country);
       case "austria":
-        updateInitPlayerData(playerIDS.german, country);
-        break;
+        return updateInitPlayerData(playerIDS.german, country);
       case "spain":
-        updateInitPlayerData(playerIDS.spanish, country);
-        break;
+        return updateInitPlayerData(playerIDS.spanish, country);
       case "mexico":
-        updateInitPlayerData(playerIDS.spanish, country);
-        break;
+        return updateInitPlayerData(playerIDS.spanish, country);
       case "argentina":
-        updateInitPlayerData(playerIDS.spanish, country);
-        break;
+        return updateInitPlayerData(playerIDS.spanish, country);
       case "colombia":
-        updateInitPlayerData(playerIDS.spanish, country);
-        break;
+        return updateInitPlayerData(playerIDS.spanish, country);
       case "chile":
-        updateInitPlayerData(playerIDS.spanish, country);
-        break;
+        return updateInitPlayerData(playerIDS.spanish, country);
       case "japan":
-        updateInitPlayerData(playerIDS.japanese, country);
-        break;
+        return updateInitPlayerData(playerIDS.japanese, country);
       case "poland":
-        updateInitPlayerData(playerIDS.polish, country);
-        break;
+        return updateInitPlayerData(playerIDS.polish, country);
       case "turkey":
-        updateInitPlayerData(playerIDS.turkish, country);
-        break;
+        return updateInitPlayerData(playerIDS.turkish, country);
       case "italy":
-        updateInitPlayerData(playerIDS.italian, country);
-        break;
+        return updateInitPlayerData(playerIDS.italian, country);
       case "france":
-        updateInitPlayerData(playerIDS.french, country);
-        break;
+        return updateInitPlayerData(playerIDS.french, country);
       case "brazil":
-        updateInitPlayerData(playerIDS.brazilian, country);
-        break;
+        return updateInitPlayerData(playerIDS.brazilian, country);
       default:
-        updateInitPlayerData(playerIDS["default"]);
+        return updateInitPlayerData(playerIDS["default"]);
     }
-    return console.log(country);
   };
   updateInitPlayerData = function(videoId, country) {
     playerData = {
@@ -114,7 +105,7 @@ $(function() {
       "videoID": "" + videoId
     };
     playerTemplate = "<div style=\"display:none\"></div><object id=\"myExperience\" class=\"BrightcoveExperience\"><param name=\"bgcolor\" value=\"#FFFFFF\" /><param name=\"width\" value=\"{{width}}\" /><param name=\"height\" value=\"{{height}}\" /><param name=\"playerID\" value=\"{{playerID}}\" /><param name=\"playerKey\" value=\"{{playerKey}}\" /><param name=\"isSlim\" value=\"true\" /><param name=\"autoStart\" value=\"false\" /><param name=\"isVid\" value=\"true\" /><param name=\"isUI\" value=\"true\" /><param name=\"dynamicStreaming\" value=\"true\" /><param name=\"@videoPlayer\" value=\"{{videoID}}\"; /><param name=\"includeAPI\" value=\"true\" /><param name=\"templateLoadHandler\" value=\"onTemplateLoad\" /><param name=\"templateReadyHandler\" value=\"onTemplateReady\" /></object>";
-    currentCountry = country;
+    currentCountry = country.toLowerCase();
     return init();
   };
   sendHeight = function(height) {
@@ -330,7 +321,11 @@ $(function() {
         video = object[i];
         episode = video.fields.episodeNumber;
         currentDate = new Date();
-        episodeDate = new Date(video.fields.datetimeOfLaunch);
+        if (currentCountry === "japan") {
+          episodeDate = new Date(video.fields.datetimeOfLaunchJapan);
+        } else {
+          episodeDate = new Date(video.fields.datetimeOfLaunch);
+        }
         if (moment() < episodeDate) {
           target.append("<a class='episode' href data-order=" + i + "><li class='unreleased' data-release='" + episodeDate + "'>" + episode + "</li>");
         } else {
@@ -508,6 +503,6 @@ $(function() {
       return addShareText(shareText);
     });
   };
-  getData();
+  findLocation();
   return detectMobile();
 });
