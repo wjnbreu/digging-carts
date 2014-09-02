@@ -232,7 +232,7 @@ li{
 		text-align: center;
 		z-index: 9;
 		img{
-			margin-top: 6.25%;
+			margin-top: 3.25%;
 			width: 80%;
 			-webkit-transform: translateZ(0px);
 			-webkit-transform-style: preserve-3d;
@@ -244,29 +244,6 @@ li{
 			font-size: 1.75em;
 			margin-top: 0;
 			margin-bottom: 0;
-		}
-	}
-	.go-down-on-me{
-		position: absolute;
-		bottom: 30%;
-		width: 100%;
-		text-align: center;
-		font-size: 2.5em;
-		height: 50px;
-		z-index: 10;
-		@include vendorize(transition, all 0.15s cubic-bezier(0.25,0.46,0.45,0.94));
-		h1{
-			width: 30px;
-			height: 30px;
-			line-height: 30px;
-			&:hover{
-				background-color: white !important;
-				color: black !important;
-			}
-			&:active{
-				@include vendorize(transform, translate(5px, 5px));
-				@include vendorize(box-shadow, none);
-			}
 		}
 	}
 }
