@@ -303,9 +303,10 @@ $ ->
 		#DROP DOWN MENUS
 		$('a.pulldown').click (event) ->
 			event.preventDefault()
-			$(this).parent().find('ul').slideToggle(200, ->
+			$(this).parent().find('ul').slideDown(200, ->
 				sendHeight(getHeight())
 				)
+			
 		$('a.episode').click (event) ->
 			if $(this).children('li').hasClass "unreleased"
 				return

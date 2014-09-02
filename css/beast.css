@@ -854,7 +854,9 @@ footer {
       top: 0;
       left: 0;
       height: 100%;
-      min-width: 100%; }
+      min-width: 100%;
+      background: url(../img/static-title.jpg) no-repeat center center;
+      background-size: cover; }
     .startscreen #titlevideo {
       display: none; }
     .startscreen .title {
@@ -1009,7 +1011,9 @@ footer {
       top: 0;
       left: 0;
       height: 100%;
-      min-width: 100%; }
+      min-width: 100%;
+      background: url(../img/static-title.jpg) no-repeat center center;
+      background-size: cover; }
     .startscreen #titlevideo {
       display: none; }
     .startscreen .title {
@@ -1341,7 +1345,10 @@ footer {
       border: 0;
       border: none;
       display: none;
-      box-shadow: 1px 0px 1px #4d4d4d, 0px 1px 0px #333333, 2px 1px 0px #4d4d4d, 1px 2px 0px #333333, 3px 2px 0px #4d4d4d, 2px 3px 0px #333333, 4px 3px 0px #4d4d4d, 3px 4px 0px #333333, 5px 4px 0px #4d4d4d, 4px 5px 0px #333333, 6px 5px 0px #4d4d4d, 5px 6px 0px #333333, 7px 6px 0px #4d4d4d, 6px 7px 0px #333333, 8px 7px 0px #4d4d4d, 7px 8px 0px #333333, 9px 8px 0px #4d4d4d, 8px 9px 0px #333333, 10px 9px 0px #4d4d4d, 9px 10px 0px #333333, 11px 10px 0px #4d4d4d; } }
+      box-shadow: 1px 0px 1px #4d4d4d, 0px 1px 0px #333333, 2px 1px 0px #4d4d4d, 1px 2px 0px #333333, 3px 2px 0px #4d4d4d, 2px 3px 0px #333333, 4px 3px 0px #4d4d4d, 3px 4px 0px #333333, 5px 4px 0px #4d4d4d, 4px 5px 0px #333333, 6px 5px 0px #4d4d4d, 5px 6px 0px #333333, 7px 6px 0px #4d4d4d, 6px 7px 0px #333333, 8px 7px 0px #4d4d4d, 7px 8px 0px #333333, 9px 8px 0px #4d4d4d, 8px 9px 0px #333333, 10px 9px 0px #4d4d4d, 9px 10px 0px #333333, 11px 10px 0px #4d4d4d; }
+
+  footer p {
+    font-weight: normal; } }
 @media screen and (min-device-width: 320px) and (max-device-width: 568px) and (orientation: landscape) {
   .startscreen {
     overflow: hidden;
