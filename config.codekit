@@ -274,6 +274,28 @@
 		"outputPathIsSetByUser": 0,
 		"processed": 0
 		},
+	"\/img\/joystick-black.png": {
+		"fileType": 32768,
+		"ignore": 0,
+		"ignoreWasSetByUser": 0,
+		"initialSize": 11017,
+		"inputAbbreviatedPath": "\/img\/joystick-black.png",
+		"outputAbbreviatedPath": "\/img\/joystick-black.png",
+		"outputPathIsOutsideProject": 0,
+		"outputPathIsSetByUser": 0,
+		"processed": 0
+		},
+	"\/img\/joystick-white.png": {
+		"fileType": 32768,
+		"ignore": 0,
+		"ignoreWasSetByUser": 0,
+		"initialSize": 11480,
+		"inputAbbreviatedPath": "\/img\/joystick-white.png",
+		"outputAbbreviatedPath": "\/img\/joystick-white.png",
+		"outputPathIsOutsideProject": 0,
+		"outputPathIsSetByUser": 0,
+		"processed": 0
+		},
 	"\/img\/shop.jpg": {
 		"fileType": 16384,
 		"ignore": 0,

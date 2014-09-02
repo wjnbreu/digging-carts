@@ -330,7 +330,10 @@ $ ->
 		video = additionalVideoObject[order].fields
 		player2.cueVideoById(video.additionalYouTube)
 		$('.stories h1').empty().text video.additionalVideoTitle
-		$('.stories p.body').empty().text video.description
+		if currentCountry == "japan"
+			$('.stories p.body').empty().text video.japaneseDescription
+		else
+			$('.stories p.body').empty().text video.description
 		$('.stories p.body').slideDown()
 
 
@@ -391,7 +394,7 @@ $ ->
 					textBody = converter.makeHtml(person.bio)
 			else
 				textBody = converter.makeHtml(person.bio)
-				
+
 			composerData = "<div class='slide' data-order='#{i}'><div class='img-wrap'><a class='arrow-left' href></a><a class='arrow-right' href></a><img src='#{img}'/></div><h2>#{person.composerName}</h2><p>#{textBody}</p></div>"
 			$(".composers-wrap").append composerData
 			$('.slide').first().addClass "active"
@@ -496,6 +499,7 @@ $ ->
 		client.entries({'content_type':'6fwxAcXrxK4yqyaMUiWwWY', 'include': 1, 'order': 'fields.order'}).done (data) ->
 			prepInit(1)
 			additionalVideoObject = data
+			console.log additionalVideoObject
 			addVideoTitles(additionalVideoObject, $('.story-nav ul'), 'additional')
 
 			$('a.additional-episode').bind 'click', (event) ->
