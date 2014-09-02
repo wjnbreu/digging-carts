@@ -57,6 +57,7 @@ h1 {
 
 h2{
 	font-size: 2.5em;
+	line-height: 1;
 	color:white;
 }
 
@@ -1394,7 +1395,10 @@ footer{
 				width: 90%;
 			}
 			h1{
-				font-size: 1em;
+				font-size: 0.8em;
+				margin-top: 0;
+				margin-bottom: 0;
+				padding: 0;
 			}
 		}
 		.go-down-on-me{
@@ -1505,10 +1509,10 @@ footer{
 		padding-bottom: 10%;
 		padding-bottom: 10%;
 		.show{
-			width: 90%;
+			width: 80%;
 			padding-bottom: 10%;
 			margin-top: 5%;
-			margin-left: 5%;
+			margin-left: 10%;
 			img{
 				width: 96%;
 				margin-left: 2%;

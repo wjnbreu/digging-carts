@@ -437,7 +437,7 @@ $ ->
 		ratio = ogWidth / ogHeight
 
 		if isMobile
-			vidWidth = winWidth / 1.5
+			vidWidth = winWidth / 1.4
 
 		player.attr('width', vidWidth)
 		player.attr('height', vidWidth / ratio)

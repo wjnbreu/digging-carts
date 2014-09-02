@@ -186,6 +186,7 @@ h1 {
 
 h2 {
   font-size: 2.5em;
+  line-height: 1;
   color: white; }
 
 p {
@@ -1199,7 +1200,10 @@ footer {
         margin-top: 26.25%;
         width: 90%; }
       .startscreen .title h1 {
-        font-size: 1em; }
+        font-size: 0.8em;
+        margin-top: 0;
+        margin-bottom: 0;
+        padding: 0; }
     .startscreen .go-down-on-me {
       display: none; }
 
@@ -1280,10 +1284,10 @@ footer {
     padding-bottom: 10%;
     padding-bottom: 10%; }
     .radio .show {
-      width: 90%;
+      width: 80%;
       padding-bottom: 10%;
       margin-top: 5%;
-      margin-left: 5%; }
+      margin-left: 10%; }
       .radio .show img {
         width: 96%;
         margin-left: 2%;
