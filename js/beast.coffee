@@ -514,7 +514,10 @@ $ ->
 		#ENDING TEXT
 		client.entries({'content_type':'3JB3iYStpCGYGuu24mEcQK', 'include':1}).done (data) ->
 			prepInit(1)
-			$('footer p').empty().text(data[0].fields.body)
+			if currentCountry == "japan"
+				$('footer p').empty().text(data[0].fields.bodyJapanese)
+			else
+				$('footer p').empty().text(data[0].fields.body)
 
 		#SOCIAL SHARE
 		client.entries({'content_type':'5KnZeYIgc8oUo2cgssKAWK', 'include':1}).done (data) ->
