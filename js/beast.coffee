@@ -384,7 +384,14 @@ $ ->
 			person = composer.fields
 			name = person.composerName
 			img = person.image.fields.file.url
-			textBody = converter.makeHtml(person.bio)
+			if currentCountry == "japan"
+				if person.japaneseBio
+					textBody = converter.makeHtml(person.japaneseBio)
+				else
+					textBody = converter.makeHtml(person.bio)
+			else
+				textBody = converter.makeHtml(person.bio)
+				
 			composerData = "<div class='slide' data-order='#{i}'><div class='img-wrap'><a class='arrow-left' href></a><a class='arrow-right' href></a><img src='#{img}'/></div><h2>#{person.composerName}</h2><p>#{textBody}</p></div>"
 			$(".composers-wrap").append composerData
 			$('.slide').first().addClass "active"
