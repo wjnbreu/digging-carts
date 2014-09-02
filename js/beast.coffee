@@ -14,6 +14,7 @@ $ ->
 	targetVideo = {}
 	playerTemplate = ""
 	currentCountry = ""
+	colorFlag = 0
 
 	brightcoveVideos = []
 
@@ -53,6 +54,7 @@ $ ->
 			removeSpinner()
 			init()
 			initCount = 0
+
 
 	findLocation = ->
 		$.ajax 'http://freegeoip.net/json/',

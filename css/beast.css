@@ -154,6 +154,12 @@ body {
   height: 100%;
   -webkit-tap-highlight-color: transparent;
   background-color: blue;
+  background-image: -webkit-gradient(linear, left top, left bottom, color-stop(0, #002fff), color-stop(1, #ff1c1c));
+  background-image: -o-linear-gradient(bottom, #002fff 0%, #ff1c1c 100%);
+  background-image: -moz-linear-gradient(bottom, #002fff 0%, #ff1c1c 100%);
+  background-image: -webkit-linear-gradient(bottom, #002fff 0%, #ff1c1c 100%);
+  background-image: -ms-linear-gradient(bottom, #002fff 0%, #ff1c1c 100%);
+  background-image: linear-gradient(to bottom, #002fff 0%, #ff1c1c 100%);
   -webkit-box-sizing: border-box;
   -moz-box-sizing: border-box;
   -ms-box-sizing: border-box;
