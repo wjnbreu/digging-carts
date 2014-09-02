@@ -259,11 +259,6 @@ $ ->
 			resizeVid($('#storyplayer'))
 
 
-		$('#godown').click (event) ->
-			event.preventDefault()
-			$('html, body').animate
-				scrollTop: $(this.hash).offset().top
-			, 500
 
 
 		$('a.arrow-right').click (event) ->
