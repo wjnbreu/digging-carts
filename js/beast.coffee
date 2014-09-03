@@ -112,7 +112,7 @@ $ ->
 			"height" : (($(window).width()) / 1.5) / vidRatio,
 			"videoID" : "#{videoId}"
 		}
-		playerTemplate = "<div style=\"display:none\"></div><object id=\"myExperience\" class=\"BrightcoveExperience\"><param name=\"bgcolor\" value=\"#FFFFFF\" /><param name=\"width\" value=\"{{width}}\" /><param name=\"height\" value=\"{{height}}\" /><param name=\"playerID\" value=\"{{playerID}}\" /><param name=\"playerKey\" value=\"{{playerKey}}\" /><param name=\"isSlim\" value=\"true\" /><param name=\"autoStart\" value=\"false\" /><param name=\"isVid\" value=\"true\" /><param name=\"isUI\" value=\"true\" /><param name=\"dynamicStreaming\" value=\"true\" /><param name=\"@videoPlayer\" value=\"{{videoID}}\"; /><param name=\"includeAPI\" value=\"true\" /><param name=\"templateLoadHandler\" value=\"onTemplateLoad\" /><param name=\"templateReadyHandler\" value=\"onTemplateReady\" /></object>"
+		playerTemplate = "<div style=\"display:none\"></div><object id=\"myExperience\" class=\"BrightcoveExperience\"><param name=\"bgcolor\" value=\"#FFFFFF\" /><param name=\"width\" value=\"{{width}}\" /><param name=\"height\" value=\"{{height}}\" /><param name=\"playerID\" value=\"{{playerID}}\" /><param name=\"playerKey\" value=\"{{playerKey}}\" /><param name=\"isSlim\" value=\"true\" /><param name=\"autoStart\" value=\"false\" /><param name=\"isVid\" value=\"true\" /><param name=\"isUI\" value=\"true\" /><param name=\"dynamicStreaming\" value=\"true\" /><param name=\"@videoPlayer\" value=\"{{videoID}}\"; /><param name=\"includeAPI\" value=\"true\" /><param name=\"linkBaseURL\" value=\"http://www.redbullmusicacademy.com/magazine/diggin-in-the-carts\"/><param name=\"templateLoadHandler\" value=\"onTemplateLoad\" /><param name=\"templateReadyHandler\" value=\"onTemplateReady\" /></object>"
 		currentCountry = country.toLowerCase()
 		init()
 
@@ -300,13 +300,9 @@ $ ->
 				currentSlide.removeClass 'active'
 				nextSlide.addClass 'active'
 
-		#DROP DOWN MENUS
-		$('a.pulldown').click (event) ->
-			event.preventDefault()
-			$(this).parent().find('ul').slideDown(200, ->
-				sendHeight(getHeight())
-				)
-			
+	
+		
+		#ONLY ALLOW VIDEO SWAPS IF VIDEO IS RELEASED
 		$('a.episode').click (event) ->
 			if $(this).children('li').hasClass "unreleased"
 				return
@@ -547,6 +543,16 @@ $ ->
 	#launch when ready
 	findLocation()
 	detectMobile()
+	
+
+	#DROP DOWN MENUS
+	$('.pulldown').click (event) ->
+		event.stopPropagation()
+		event.preventDefault()
+		console.log 'click fired'
+		$(this).parent().find('ul').slideToggle(200, ->
+			sendHeight(getHeight())
+			)
 
 
 	

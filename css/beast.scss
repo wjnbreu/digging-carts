@@ -35,6 +35,10 @@ body{
 	-webkit-overflow-scrolling: touch;
 }
 
+a{
+	cursor: pointer;
+}
+
 h1 {
 	text-transform: uppercase;
 	@include smallboxy;
@@ -73,13 +77,16 @@ p{
 a.pulldown{
 	text-decoration: none;
 	display: none;
-	li{
-		width: 80%;
-		margin-left: 10%;
-		height: auto;
-		text-align: center;
-		font-size: 1em;
-		list-style-type: none;
+	ul{
+		display: none;
+		li{
+			width: 80%;
+			margin-left: 10%;
+			height: auto;
+			text-align: center;
+			font-size: 1em;
+			list-style-type: none;
+		}
 	}
 }
 
