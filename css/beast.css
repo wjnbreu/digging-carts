@@ -220,7 +220,6 @@ a.pulldown {
   left: 0;
   bottom: 0;
   background-color: white;
-  display: none;
   z-index: 99; }
   .spinner .load-text {
     margin-top: 5%;
@@ -228,11 +227,16 @@ a.pulldown {
     margin-left: 25%;
     text-align: center;
     font-size: 2em;
+    font-family: 'Helvetica Neue', helvetica, sans-serif;
+    text-transform: uppercase;
+    font-weight: bold;
     -webkit-transform: translateZ(0);
     -webkit-backface-visibility: hidden;
     -webkit-transform-style: preserve-3d; }
     .spinner .load-text span {
-      color: black; }
+      color: black;
+      margin-left: 0;
+      margin-right: 0; }
       .spinner .load-text span.bounce {
         -webkit-animation: "spina" 1s infinite alternate;
         -moz-animation: "spina" 1s infinite alternate;
@@ -477,17 +481,12 @@ li {
   padding-bottom: 48px;
   vertical-align: top; }
   .radio .show {
-    display: inline-block;
-    width: 27.5%;
+    display: block;
+    width: 56%;
     margin-top: 48px;
-    margin-left: 15%;
+    margin-left: 22%;
     text-align: left;
     vertical-align: top; }
-    .radio .show .show:first-child {
-      margin-left: 15%;
-      margin-right: 15%; }
-    .radio .show .show:nth-child(3n+0) {
-      margin: 0 15% auto 15%; }
     .radio .show img {
       width: 100%;
       box-shadow: 1px 0px 1px #4d4d4d, 0px 1px 0px #333333, 2px 1px 0px #4d4d4d, 1px 2px 0px #333333, 3px 2px 0px #4d4d4d, 2px 3px 0px #333333, 4px 3px 0px #4d4d4d, 3px 4px 0px #333333, 5px 4px 0px #4d4d4d, 4px 5px 0px #333333, 6px 5px 0px #4d4d4d, 5px 6px 0px #333333, 7px 6px 0px #4d4d4d, 6px 7px 0px #333333, 8px 7px 0px #4d4d4d, 7px 8px 0px #333333, 9px 8px 0px #4d4d4d, 8px 9px 0px #333333, 10px 9px 0px #4d4d4d, 9px 10px 0px #333333, 11px 10px 0px #4d4d4d; }

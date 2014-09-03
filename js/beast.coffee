@@ -32,7 +32,7 @@ $ ->
 		"japanese" : "ref:MI201408250036",
 		"brazilian" : "ref:MI201408250036",
 		"turkish" : "ref:MI201408250036",
-		"default" : "3747000906001"
+		"default" : "3763075412001"
 	}
 
 
@@ -60,10 +60,12 @@ $ ->
 		$.ajax 'http://freegeoip.net/json/',
 			type: 'GET',
 			dataType: 'json',
+			timeout: 3000,
 			error: (jqXHR, textStatus, errorThrown) ->
 				console.log "#{textStatus}"
 				currentCountry = "default"
 				getData()
+				addInitialVideosByLanguage(currentCountry)
 			success: (data, textStatus, jqXHR) ->
 				currentCountry = data.country_name
 				console.log "Country: #{currentCountry}"
