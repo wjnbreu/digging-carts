@@ -167,6 +167,9 @@ body {
   box-sizing: border-box;
   -webkit-overflow-scrolling: touch; }
 
+a {
+  cursor: pointer; }
+
 h1 {
   text-transform: uppercase;
   box-shadow: 1px 0px 1px #4d4d4d, 0px 1px 0px #333333, 2px 1px 0px #4d4d4d, 1px 2px 0px #333333, 3px 2px 0px #4d4d4d, 2px 3px 0px #333333, 4px 3px 0px #4d4d4d, 3px 4px 0px #333333, 5px 4px 0px #4d4d4d, 4px 5px 0px #333333, 6px 5px 0px #4d4d4d, 5px 6px 0px #333333, 7px 6px 0px #4d4d4d, 6px 7px 0px #333333, 8px 7px 0px #4d4d4d, 7px 8px 0px #333333, 9px 8px 0px #4d4d4d, 8px 9px 0px #333333, 10px 9px 0px #4d4d4d, 9px 10px 0px #333333, 11px 10px 0px #4d4d4d;
@@ -186,6 +189,7 @@ h1 {
 
 h2 {
   font-size: 2.5em;
+  line-height: 1;
   color: white; }
 
 p {
@@ -198,13 +202,15 @@ p {
 a.pulldown {
   text-decoration: none;
   display: none; }
-  a.pulldown li {
-    width: 80%;
-    margin-left: 10%;
-    height: auto;
-    text-align: center;
-    font-size: 1em;
-    list-style-type: none; }
+  a.pulldown ul {
+    display: none; }
+    a.pulldown ul li {
+      width: 80%;
+      margin-left: 10%;
+      height: auto;
+      text-align: center;
+      font-size: 1em;
+      list-style-type: none; }
 
 .spinner {
   width: 100%;
@@ -853,7 +859,9 @@ footer {
       top: 0;
       left: 0;
       height: 100%;
-      min-width: 100%; }
+      min-width: 100%;
+      background: url(../img/static-title.jpg) no-repeat center center;
+      background-size: cover; }
     .startscreen #titlevideo {
       display: none; }
     .startscreen .title {
@@ -1008,7 +1016,9 @@ footer {
       top: 0;
       left: 0;
       height: 100%;
-      min-width: 100%; }
+      min-width: 100%;
+      background: url(../img/static-title.jpg) no-repeat center center;
+      background-size: cover; }
     .startscreen #titlevideo {
       display: none; }
     .startscreen .title {
@@ -1199,7 +1209,10 @@ footer {
         margin-top: 26.25%;
         width: 90%; }
       .startscreen .title h1 {
-        font-size: 1em; }
+        font-size: 0.8em;
+        margin-top: 0;
+        margin-bottom: 0;
+        padding: 0; }
     .startscreen .go-down-on-me {
       display: none; }
 
@@ -1280,10 +1293,10 @@ footer {
     padding-bottom: 10%;
     padding-bottom: 10%; }
     .radio .show {
-      width: 90%;
+      width: 80%;
       padding-bottom: 10%;
       margin-top: 5%;
-      margin-left: 5%; }
+      margin-left: 10%; }
       .radio .show img {
         width: 96%;
         margin-left: 2%;
@@ -1337,7 +1350,10 @@ footer {
       border: 0;
       border: none;
       display: none;
-      box-shadow: 1px 0px 1px #4d4d4d, 0px 1px 0px #333333, 2px 1px 0px #4d4d4d, 1px 2px 0px #333333, 3px 2px 0px #4d4d4d, 2px 3px 0px #333333, 4px 3px 0px #4d4d4d, 3px 4px 0px #333333, 5px 4px 0px #4d4d4d, 4px 5px 0px #333333, 6px 5px 0px #4d4d4d, 5px 6px 0px #333333, 7px 6px 0px #4d4d4d, 6px 7px 0px #333333, 8px 7px 0px #4d4d4d, 7px 8px 0px #333333, 9px 8px 0px #4d4d4d, 8px 9px 0px #333333, 10px 9px 0px #4d4d4d, 9px 10px 0px #333333, 11px 10px 0px #4d4d4d; } }
+      box-shadow: 1px 0px 1px #4d4d4d, 0px 1px 0px #333333, 2px 1px 0px #4d4d4d, 1px 2px 0px #333333, 3px 2px 0px #4d4d4d, 2px 3px 0px #333333, 4px 3px 0px #4d4d4d, 3px 4px 0px #333333, 5px 4px 0px #4d4d4d, 4px 5px 0px #333333, 6px 5px 0px #4d4d4d, 5px 6px 0px #333333, 7px 6px 0px #4d4d4d, 6px 7px 0px #333333, 8px 7px 0px #4d4d4d, 7px 8px 0px #333333, 9px 8px 0px #4d4d4d, 8px 9px 0px #333333, 10px 9px 0px #4d4d4d, 9px 10px 0px #333333, 11px 10px 0px #4d4d4d; }
+
+  footer p {
+    font-weight: normal; } }
 @media screen and (min-device-width: 320px) and (max-device-width: 568px) and (orientation: landscape) {
   .startscreen {
     overflow: hidden;
