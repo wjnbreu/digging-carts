@@ -235,6 +235,7 @@ a.pulldown {
     -webkit-transform-style: preserve-3d; }
     .spinner .load-text span {
       color: black;
+      font-size: 0.5em;
       margin-left: 0;
       margin-right: 0; }
       .spinner .load-text span.bounce {
@@ -278,14 +279,14 @@ li {
     background-color: white;
     color: black; }
     li:hover.unreleased {
-      background-color: red;
+      background-color: black;
       border: 2px solid white;
       color: white; }
   li.active {
     background-color: white;
     color: black; }
     li.active.unreleased {
-      background-color: red;
+      background-color: black;
       border: 2px solid white;
       color: white; }
   li:first-child {

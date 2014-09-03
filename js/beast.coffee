@@ -476,7 +476,7 @@ $ ->
 		twitterText = shareText.twitterShareText
 		facebookText = shareText.facebookShareText
 
-		twitter.attr("href", "http://twitter.com/intent/tweet?text=#{twitterText}&related=rbma")
+		twitter.attr("href", "http://twitter.com/intent/tweet?text=#{twitterText}")
 		fb.attr("href", "https://www.facebook.com/sharer/sharer.php?u=http://www.redbullmusicacademy.com/magazine/diggin-in-the-carts&amp;t=#{facebookText}")
 		#"http://twitter.com/home?status=What Difference Does It Make? A feature-length film about making music. Stream and download it here. http://www.rbma15.com"
 
