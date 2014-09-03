@@ -715,6 +715,10 @@ footer {
       .startscreen .title img {
         margin-top: 36.25%;
         width: 80%; }
+        .startscreen .title img.image-text {
+          margin-top: 0;
+          width: 80%;
+          height: auto; }
 
   .videos {
     padding-bottom: 10%;
@@ -895,6 +899,10 @@ footer {
       .startscreen .title img {
         margin-top: 26.25%;
         width: 80%; }
+        .startscreen .title img.image-text {
+          margin-top: 0;
+          width: 80%;
+          height: auto; }
 
   .videos {
     padding-bottom: 10%;
@@ -1052,6 +1060,10 @@ footer {
       .startscreen .title img {
         margin-top: 36.25%;
         width: 80%; }
+        .startscreen .title img.image-text {
+          margin-top: 0;
+          width: 80%;
+          height: auto; }
 
   .videos {
     padding-bottom: 10%;
@@ -1253,6 +1265,10 @@ footer {
       .startscreen .title img {
         margin-top: 26.25%;
         width: 90%; }
+        .startscreen .title img.image-text {
+          margin-top: 0;
+          width: 80%;
+          height: auto; }
       .startscreen .title h1 {
         font-size: 0.8em;
         margin-top: 0;
@@ -1410,7 +1426,7 @@ footer {
       box-shadow: none; }
 
   footer p {
-    font-weight: normal; } }
+    font-weight: bold; } }
 @media screen and (min-device-width: 320px) and (max-device-width: 568px) and (orientation: landscape) {
   .startscreen {
     overflow: hidden;
@@ -1421,6 +1437,10 @@ footer {
       .startscreen .title img {
         margin-top: 3.25%;
         width: 90%; }
+        .startscreen .title img.image-text {
+          margin-top: 0;
+          width: 80%;
+          height: auto; }
 
   .videos #myExperience {
     display: block !important;

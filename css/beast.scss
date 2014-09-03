@@ -701,9 +701,15 @@ footer{
 			img{
 				margin-top: 36.25%;
 				width: 80%;
+				&.image-text{
+					margin-top: 0;
+					width: 80%;
+					height: auto;
+				}
 			}
 		}
 	}
+
 
 	.videos{
 		padding-bottom: 10%;
@@ -928,7 +934,11 @@ footer{
 			img{
 				margin-top: 26.25%;
 				width: 80%;
-
+				&.image-text{
+					margin-top: 0;
+					width: 80%;
+					height: auto;
+				}
 			}
 		}
 	}
@@ -1152,6 +1162,11 @@ footer{
 			img{
 				margin-top: 36.25%;
 				width: 80%;
+				&.image-text{
+					margin-top: 0;
+					width: 80%;
+					height: auto;
+				}
 			}
 		}
 	}
@@ -1412,6 +1427,11 @@ footer{
 			img{
 				margin-top: 26.25%;
 				width: 90%;
+				&.image-text{
+					margin-top: 0;
+					width: 80%;
+					height: auto;
+				}
 			}
 			h1{
 				font-size: 0.8em;
@@ -1593,7 +1613,7 @@ footer{
 
 	footer{
 		p{
-			font-weight: normal;
+			font-weight: bold;
 		}
 	}
 
@@ -1612,6 +1632,11 @@ footer{
 			img{
 				margin-top: 3.25%;
 				width: 90%;
+				&.image-text{
+					margin-top: 0;
+					width: 80%;
+					height: auto;
+				}
 			}
 		}
 	}
