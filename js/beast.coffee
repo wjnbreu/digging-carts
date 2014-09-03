@@ -27,7 +27,7 @@ $ ->
 		# FINAL
 		"spanish" : "3765246987001",
 		#NOT FINAL
-		"german" : "3747000906001",
+		"german" : "3763075412001",
 		#NOT FINAL
 		"french" : "3763075412001",
 		#FINAL
@@ -564,6 +564,8 @@ $ ->
 		$(this).parent().find('ul').slideToggle(400, "linear", ->
 			sendHeight(getHeight())
 			)
+
+
 
 
 	
