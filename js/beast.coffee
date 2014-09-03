@@ -108,8 +108,8 @@ $ ->
 	
 	updateInitPlayerData = (videoId, country) ->
 		playerData = {
-			"playerID" : "1684512102001",
-			"playerKey" : "AQ~~%2CAAABTw4lHzE~%2Csr1E9bdX6d4wCdvdlD8QKdNij3uKs2K9",
+			"playerID" : "1890493041001",
+			"playerKey" : "AQ~~%2CAAABuJ3Komk~%2CgXybzBdQzgLgC0zHvAZXtMeryIVplW-t",
 			"width" : ($(window).width()) / 1.5,
 			"height" : (($(window).width()) / 1.5) / vidRatio,
 			"videoID" : "#{videoId}"
