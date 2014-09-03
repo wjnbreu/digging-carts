@@ -252,6 +252,11 @@ li{
 			width: 80%;
 			-webkit-transform: translateZ(0px);
 			-webkit-transform-style: preserve-3d;
+			&.image-text{
+				margin-top: 0;
+				width: 50%;
+				height: auto;
+			}
 		}
 		h1{
 			color: white;
