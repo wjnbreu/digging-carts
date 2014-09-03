@@ -234,7 +234,6 @@ li{
 		border: 0;
 		top: 0;
 		left: 0;
-		// opacity: 0.1;
 	}
 	.title{
 		width: 100%;
@@ -391,7 +390,6 @@ li{
 		}
 		img{
 			width: 100%;
-			opacity: 1;
 			@include smallboxy;
 		}
 		.frame-contain{
@@ -646,9 +644,10 @@ footer{
 
 	a.pulldown{
 		display: none;
+		width: 100%;
+		text-align: center;
 		li{
 			width: 80%;
-			margin-left: 10%;
 			height: auto;
 			text-align: center;
 			font-size: 1em;
@@ -697,7 +696,7 @@ footer{
 		padding-bottom: 10%;
 		#myExperience{
 			display: block !important;
-			@include smallboxy;
+			@include vendorize(box-shadow, none);
 			opacity: 1;
 			margin-left: auto;
 			margin-right: auto;
@@ -708,7 +707,6 @@ footer{
 				display: block;
 				li{
 					width: 70%;
-					margin-left: 15%;
 					height: auto;
 					text-align: center;
 					font-size: 1em;
@@ -740,7 +738,7 @@ footer{
 			border: 0;
 			border: none;
 			display: none;
-			@include smallboxy;
+			@include vendorize(box-shadow, none);
 		}
 	}
 
@@ -789,12 +787,12 @@ footer{
 			img{
 				width: 100%;
 				margin-left: 0;
-				@include smallboxy;
+				@include vendorize(box-shadow, none);
 			}
 			iframe{
 				width: 100%;
 				margin: 0 0 5% 0;
-				@include smallboxy;
+				@include vendorize(box-shadow, none);
 			}
 			p{
 				font-size: 1.5em;
@@ -843,7 +841,7 @@ footer{
 			border: 0;
 			border: none;
 			display: none;
-			@include smallboxy;
+			@include vendorize(box-shadow, none);
 		}
 	}
 
@@ -875,8 +873,8 @@ footer{
 	a.pulldown{
 		display: none;
 		li{
-			width: 80%;
-			margin-left: 10%;
+			width: 70%;
+			margin-left: 15%;
 			height: auto;
 			text-align: center;
 			font-size: 1em;
@@ -1035,8 +1033,8 @@ footer{
 				text-decoration: none;
 				display: block;
 				li{
-					width: 80%;
-					margin-left: 10%;
+					width: 70%;
+					margin-left: 15%;
 					height: auto;
 					text-align: center;
 					font-size: 1em;
@@ -1045,8 +1043,8 @@ footer{
 			}
 			ul{
 				display: none;
-				width: 80%;
-				margin-left: 10%;
+				width: 70%;
+				margin-left: 15%;
 				text-align: center;
 				list-style-type: none;
 				padding: 0;
@@ -1099,8 +1097,8 @@ footer{
 	a.pulldown{
 		display: none;
 		li{
-			width: 80%;
-			margin-left: 10%;
+			width: 70%;
+			margin-left: 15%;
 			height: auto;
 			text-align: center;
 			font-size: 1em;
@@ -1149,7 +1147,7 @@ footer{
 		padding-bottom: 10%;
 		#myExperience{
 			display: block !important;
-			@include smallboxy;
+			@include vendorize(box-shadow, none);
 			opacity: 1;
 			margin-left: auto;
 			margin-right: auto;
@@ -1192,7 +1190,7 @@ footer{
 			border: 0;
 			border: none;
 			display: none;
-			@include smallboxy;
+			@include vendorize(box-shadow, none);
 		}
 	}
 
@@ -1241,12 +1239,12 @@ footer{
 			img{
 				width: 100%;
 				margin-left: 0;
-				@include smallboxy;
+				@include vendorize(box-shadow, none);
 			}
 			iframe{
 				width: 100%;
 				margin: 0 0 5% 0;
-				@include smallboxy;
+				@include vendorize(box-shadow, none);
 			}
 		}
 	}
@@ -1260,8 +1258,8 @@ footer{
 				text-decoration: none;
 				display: block;
 				li{
-					width: 80%;
-					margin-left: 10%;
+					width: 70%;
+					margin-left: 15%;
 					height: auto;
 					text-align: center;
 					font-size: 1em;
@@ -1292,7 +1290,7 @@ footer{
 			border: 0;
 			border: none;
 			display: none;
-			@include smallboxy;
+			@include vendorize(box-shadow, none);
 		}
 	}
 
@@ -1418,7 +1416,7 @@ footer{
 		padding-bottom: 10%;
 		#myExperience{
 			display: block !important;
-			@include smallboxy;
+			@include vendorize(box-shadow, none);
 			opacity: 1;
 			margin-left: auto;
 			margin-right: auto;
@@ -1428,8 +1426,8 @@ footer{
 				text-decoration: none;
 				display: block;
 				li{
-					width: 70%;
-					margin-left: 15%;
+					width: 80%;
+					margin-left: 10%;
 					height: auto;
 					text-align: center;
 					list-style-type: none;
@@ -1437,8 +1435,8 @@ footer{
 			}
 			ul{
 				display: none;
-				width: 70%;
-				margin-left: 15%;
+				width: 80%;
+				margin-left: 10%;
 				text-align: center;
 				list-style-type: none;
 				padding: 0;
@@ -1459,7 +1457,7 @@ footer{
 			border: 0;
 			border: none;
 			display: none;
-			@include smallboxy;
+			@include vendorize(box-shadow, none);
 		}
 	}
 
@@ -1575,7 +1573,7 @@ footer{
 			border: 0;
 			border: none;
 			display: none;
-			@include smallboxy;
+			@include vendorize(box-shadow, none);
 		}
 	}
 
@@ -1608,7 +1606,7 @@ footer{
 		#myExperience{
 			display: block !important;
 			opacity: 1;
-			@include smallboxy;
+			@include vendorize(box-shadow, none);
 			margin-left: auto;
 			margin-right: auto;
 		}
@@ -1617,7 +1615,7 @@ footer{
 			border: 0;
 			border: none;
 			display: none;
-			@include smallboxy;
+			@include vendorize(box-shadow, none);
 		}
 	}
 

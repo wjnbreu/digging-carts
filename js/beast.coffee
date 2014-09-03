@@ -550,7 +550,7 @@ $ ->
 		event.stopPropagation()
 		event.preventDefault()
 		console.log 'click fired'
-		$(this).parent().find('ul').slideToggle(200, ->
+		$(this).parent().find('ul').slideToggle(400, "linear", ->
 			sendHeight(getHeight())
 			)
 
