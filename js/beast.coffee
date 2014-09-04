@@ -492,8 +492,9 @@ $ ->
 			space: 's9bc5ah7p1d5'
 
 		#COMPOSERS
-		client.entries({'content_type': '42CpXYSUms44OskS6wUU6I', 'include': 1}).done (data) ->
+		client.entries({'content_type': '42CpXYSUms44OskS6wUU6I', 'include': 1, 'order': 'sys.updatedAt'}).done (data) ->
 			addComposers(data)
+			console.log data
 			prepInit(1)
 		
 		#MAIN YT VIDS
@@ -549,7 +550,6 @@ $ ->
 		#SOCIAL SHARE
 		client.entries({'content_type':'5KnZeYIgc8oUo2cgssKAWK', 'include':1}).done (data) ->
 			shareText = data[0].fields
-			console.log shareText
 			prepInit(1)
 			addShareText(shareText)
 
