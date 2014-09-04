@@ -26,18 +26,18 @@ $ ->
 	playerIDS = {
 		# FINAL
 		"spanish" : "3765246987001",
-		#NOT FINAL
+		#FINAL / DEFAULT
 		"german" : "3763075412001",
-		#NOT FINAL
-		"french" : "3763075412001",
+		#FINAL
+		"french" : "3766692412001",
 		#FINAL
 		"polish" : "3763075412001",
-		#NOT FINAL
+		#NOT FINAL / DEFAULT
 		"italian" : "3763075412001",
 		#FINAL
 		"japanese" : "3765303978001",
-		#NOT FINAL
-		"brazilian" : "3763075412001",
+		#FINAL
+		"brazilian" : "3766692411001",
 		#FINAL
 		"turkish" : "3765246989001",
 		#FINAL
