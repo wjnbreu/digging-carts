@@ -473,8 +473,13 @@ $ ->
 	addShareText = (shareText) ->
 		twitter = $('.twitter-share')
 		fb = $('.facebook-share')
-		twitterText = shareText.twitterShareText
-		facebookText = shareText.facebookShareText
+		currentCountry = currentCountry.toLowerCase()
+		if currentCountry == "japan"
+			twitterText = shareText.twitterShareTextJapan
+			facebbookText = shareText.facebookShareTextJapan
+		else
+			twitterText = shareText.twitterShareText
+			facebookText = shareText.facebookShareText
 
 		twitter.attr("href", "http://twitter.com/intent/tweet?text=#{twitterText}")
 		fb.attr("href", "https://www.facebook.com/sharer/sharer.php?u=http://www.redbullmusicacademy.com/magazine/diggin-in-the-carts&amp;t=#{facebookText}")
@@ -522,7 +527,6 @@ $ ->
 		client.entries({'content_type':'6fwxAcXrxK4yqyaMUiWwWY', 'include': 1, 'order': 'fields.order'}).done (data) ->
 			prepInit(1)
 			additionalVideoObject = data
-			console.log additionalVideoObject
 			addVideoTitles(additionalVideoObject, $('.story-nav ul'), 'additional')
 
 			$('a.additional-episode').bind 'click', (event) ->
@@ -545,6 +549,7 @@ $ ->
 		#SOCIAL SHARE
 		client.entries({'content_type':'5KnZeYIgc8oUo2cgssKAWK', 'include':1}).done (data) ->
 			shareText = data[0].fields
+			console.log shareText
 			prepInit(1)
 			addShareText(shareText)
 
@@ -560,7 +565,6 @@ $ ->
 	$('.pulldown').click (event) ->
 		event.stopPropagation()
 		event.preventDefault()
-		console.log 'click fired'
 		$(this).parent().find('ul').slideToggle(400, "linear", ->
 			sendHeight(getHeight())
 			)
