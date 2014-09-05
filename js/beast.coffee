@@ -52,7 +52,7 @@ $ ->
 		"default" : "3763075412001"
 	}
 
-	specialCountries = ['spain', 'mexico', 'chile', 'argentina', 'france', 'poland', 'italy', 'turkey', 'japan', 'colombia']
+	specialCountries = ['spain', 'mexico', 'chile', 'argentina', 'france', 'poland', 'italy', 'turkey', 'japan', 'colombia', 'brazil']
 
 
 
@@ -119,6 +119,15 @@ $ ->
 	getHeight = ->
 		return $(document.body).height()
 
+	addPlayer = ->
+		template = Handlebars.compile(playerTemplate)
+		playerHTML = template(playerData)
+
+		document.getElementById('player').innerHTML = playerHTML
+
+		#instantiate player
+		brightcove.createExperiences()
+
 	window.onTemplateLoad = (experienceID) ->
 		player = brightcove.api.getExperience(experienceID)
 		APIModules = brightcove.api.modules.APIModules
@@ -146,6 +155,7 @@ $ ->
 		event.preventDefault()
 		order = $(this).data('order')
 		targetVideo = videoObject[order]
+		console.log targetVideo
 		
 		if $(this).hasClass "unreleased"
 			return
@@ -175,6 +185,8 @@ $ ->
 					when "argentina" then videoPlayer.loadVideoByID(targetVideo.fields.brightcoveVideoIdSpanish)
 					when "colombia" then videoPlayer.loadVideoByID(targetVideo.fields.brightcoveVideoIdSpanish)
 					when "chile" then videoPlayer.loadVideoByID(targetVideo.fields.brightcoveVideoIdSpanish)
+
+					when "poland" then videoPlayer.loadVideoByID(targetVideo.fields.brightcoveVideoIdPolish)
 
 					else
 						modVP.loadVideoByID(targetVideo.fields.brightcoveVideoId)
@@ -219,12 +231,11 @@ $ ->
 				else
 					modVP.loadVideoByID(targetVideo.fields.brightcoveVideoId)
 
-
-
 		else
 			modVP.loadVideoByID(targetVideo.fields.brightcoveVideoId)
 
 		
+		#CHANGE TITLE
 		$('.videos h1').empty().text(targetVideo.fields.episodeTitle)
 
 
@@ -262,16 +273,7 @@ $ ->
 				opacity: 1
 
 
-	addPlayer = ->
-		template = Handlebars.compile(playerTemplate)
-		playerHTML = template(playerData)
-
-		document.getElementById('player').innerHTML = playerHTML
-
-		#instantiate player
-		brightcove.createExperiences()
-
-
+	
 	setupYouTube = ->
 		tag = document.createElement('script')
 		tag.src = "https://www.youtube.com/iframe_api"
@@ -306,9 +308,6 @@ $ ->
 		window.addEventListener 'resize', ->
 			resizeVid($('#myExperience'))
 			resizeVid($('#storyplayer'))
-
-
-
 
 		$('a.arrow-right').click (event) ->
 			event.preventDefault()
@@ -466,7 +465,6 @@ $ ->
 			
 			mixData = "<div class='show'><img src='#{img}'/>#{embed}<p>#{description}</p></div>"
 			$('.radio').append(mixData)
-			# sendHeight(getHeight())
 
 
 	resizeVid = (vidPlayer) ->
