@@ -8,6 +8,7 @@ $ ->
 	initCount = 0
 	converter = new Showdown.converter()
 	player = {}
+	videoPlayer = {}
 	APIModules = {}
 	modVP = {}
 	vidRatio = 640 / 360
@@ -15,6 +16,15 @@ $ ->
 	playerTemplate = ""
 	currentCountry = ""
 	colorFlag = 0
+	captionsOn = false
+
+	currentBCVideo = {}
+
+	#is video playing?
+	videoPlaying = false
+
+	#storage for video progress
+	videoPosition = 0
 
 	brightcoveVideos = []
 
@@ -26,8 +36,6 @@ $ ->
 	playerIDS = {
 		# FINAL
 		"spanish" : "3765246987001",
-		#FINAL / DEFAULT
-		"german" : "3763075412001",
 		#FINAL
 		"french" : "3766692412001",
 		#FINAL
@@ -44,6 +52,8 @@ $ ->
 		"default" : "3763075412001"
 	}
 
+	specialCountries = ['spain', 'mexico', 'chile', 'argentina', 'france', 'poland', 'italy', 'turkey', 'japan', 'colombia']
+
 
 
 	init = ->
@@ -52,7 +62,6 @@ $ ->
 		addPlayer()
 		$('.video-nav ul a.episode li').first().addClass "active"
 		$('.story-nav ul a.additional-episode li').first().addClass "active"
-		# setTimeout(sendHeight(getHeight()), 500)
 		sendHeight(getHeight())
 		
 
@@ -74,44 +83,13 @@ $ ->
 				console.log "#{textStatus}"
 				currentCountry = "default"
 				getData()
-				addInitialVideosByLanguage(currentCountry)
+				updateInitPlayerData(playerIDS.default, currentCountry)
 			success: (data, textStatus, jqXHR) ->
 				currentCountry = data.country_name
 				console.log "Country: #{currentCountry}"
 				currentCountry = currentCountry.toLowerCase()
 				getData()
-				addInitialVideosByLanguage(data.country_name)
-
-	addInitialVideosByLanguage = (country) ->
-		#call init when finished
-
-		country = country.toLowerCase()
-
-		switch country
-			#GERMAN
-			when "germany" then updateInitPlayerData(playerIDS.german, country)
-			when "austria" then updateInitPlayerData(playerIDS.german, country)
-			#SPANISH
-			when "spain" then updateInitPlayerData(playerIDS.spanish, country)
-			when "mexico" then updateInitPlayerData(playerIDS.spanish, country)
-			when "argentina" then updateInitPlayerData(playerIDS.spanish, country)
-			when "colombia" then updateInitPlayerData(playerIDS.spanish, country)
-			when "chile" then updateInitPlayerData(playerIDS.spanish, country)
-			#JAPANESE
-			when "japan" then updateInitPlayerData(playerIDS.japanese, country)
-			#POLISH
-			when "poland" then updateInitPlayerData(playerIDS.polish, country)
-			#TURKISH
-			when "turkey" then updateInitPlayerData(playerIDS.turkish, country)
-			#ITALIAN
-			when "italy" then updateInitPlayerData(playerIDS.italian, country)
-			#FRENCH
-			when "france" then updateInitPlayerData(playerIDS.french, country)
-			#PORTUGUESE BRAZIL
-			when "brazil" then updateInitPlayerData(playerIDS.brazilian, country)
-			#DEFAULT	
-			else
-				updateInitPlayerData(playerIDS.default)
+				updateInitPlayerData(playerIDS.default, currentCountry)
 
 
 	
@@ -125,8 +103,11 @@ $ ->
 		}
 		playerTemplate = "<div style=\"display:none\"></div><object id=\"myExperience\" class=\"BrightcoveExperience\"><param name=\"bgcolor\" value=\"#FFFFFF\" /><param name=\"width\" value=\"{{width}}\" /><param name=\"height\" value=\"{{height}}\" /><param name=\"playerID\" value=\"{{playerID}}\" /><param name=\"playerKey\" value=\"{{playerKey}}\" /><param name=\"isSlim\" value=\"true\" /><param name=\"autoStart\" value=\"false\" /><param name=\"isVid\" value=\"true\" /><param name=\"isUI\" value=\"true\" /><param name=\"dynamicStreaming\" value=\"true\" /><param name=\"@videoPlayer\" value=\"{{videoID}}\"; /><param name=\"includeAPI\" value=\"true\" /><param name=\"linkBaseURL\" value=\"http://www.redbullmusicacademy.com/magazine/diggin-in-the-carts\"/><param name=\"templateLoadHandler\" value=\"onTemplateLoad\" /><param name=\"templateReadyHandler\" value=\"onTemplateReady\" /></object>"
 		currentCountry = country.toLowerCase()
-		init()
-
+		
+		#show captions if country is "special"
+		if specialCountries.indexOf(currentCountry) > -1
+			$('.captions').show()
+		
 
 
 
@@ -142,57 +123,110 @@ $ ->
 		player = brightcove.api.getExperience(experienceID)
 		APIModules = brightcove.api.modules.APIModules
 		modVP = player.getModule(brightcove.api.modules.APIModules.VIDEO_PLAYER)
-		
+		makeCaptionOverlay()
 		
 
 	window.onTemplateReady = (evt) ->
-		# videoPlayer = player.getModule(APIModules.VIDEO_PLAYER)
+		videoPlayer = player.getModule(APIModules.VIDEO_PLAYER)
 		resizePlayer($('#myExperience'))
 		modVP.addEventListener(brightcove.api.events.MediaEvent.BEGIN, onMediaEventFired)
 		modVP.addEventListener(brightcove.api.events.MediaEvent.CHANGE, onMediaEventFired)
 		modVP.addEventListener(brightcove.api.events.MediaEvent.COMPLETE, onMediaEventFired)
 		modVP.addEventListener(brightcove.api.events.MediaEvent.ERROR, onMediaEventFired)
 		modVP.addEventListener(brightcove.api.events.MediaEvent.PLAY, onMediaEventFired)
-		# modVP.addEventListener(brightcove.api.events.MediaEvent.PROGRESS, onMediaProgressFired)
+		#modVP.addEventListener(brightcove.api.events.MediaEvent.PROGRESS, onMediaProgressFired)
 		modVP.addEventListener(brightcove.api.events.MediaEvent.STOP, onMediaEventFired)
 		sendHeight(getHeight())
+		
+
+	#caption toggle
+	$('#caption-toggle').click (event) ->
+		#THIS NEEDS TO KNOW WHAT VIDEO YOU ARE ON
+		event.stopPropagation()
+		event.preventDefault()
+		order = $(this).data('order')
+		targetVideo = videoObject[order]
+		
+		if $(this).hasClass "unreleased"
+			return
+		else
+			if captionsOn
+				captionsOn = false
+				$('#caption-toggle .captions').removeClass "active"
+				videoPlayer.loadVideoByID(playerIDS.default)
+
+			else if !captionsOn
+				captionsOn = true
+				$('#caption-toggle .captions').addClass "active"
+				switch currentCountry
+						#FRENCH
+					when "france" then videoPlayer.loadVideoByID(targetVideo.fields.brightcoveVideoIdFrench)
+					#JAPANESE
+					when "japan" then videoPlayer.loadVideoByID(targetVideo.fields.brightcoveVideoIdJapanese)
+					#TURKISH
+					when "turkey" then videoPlayer.loadVideoByID(targetVideo.fields.brightcoveVideoIdTurkish)
+					#BRAZIL
+					when "brazil" then videoPlayer.loadVideoByID(targetVideo.fields.brightVideoIdBrazil)
+					#ITALIAN
+					when "italy" then videoPlayer.loadVideoByID(targetVideo.fields.brightcoveVideoIdItalian)
+					#SPANISH
+					when "spain" then videoPlayer.loadVideoByID(targetVideo.fields.brightcoveVideoIdSpanish)
+					when "mexico" then videoPlayer.loadVideoByID(targetVideo.fields.brightcoveVideoIdSpanish)
+					when "argentina" then videoPlayer.loadVideoByID(targetVideo.fields.brightcoveVideoIdSpanish)
+					when "colombia" then videoPlayer.loadVideoByID(targetVideo.fields.brightcoveVideoIdSpanish)
+					when "chile" then videoPlayer.loadVideoByID(targetVideo.fields.brightcoveVideoIdSpanish)
+
+					else
+						modVP.loadVideoByID(targetVideo.fields.brightcoveVideoId)
+
+
+	onMediaProgressFired = (evt) ->
+		videoPosition = evt.position
+
+
+	onMediaEventFired = (evt) ->
+		if evt.type == 'mediaBegin'
+			videoPlaying = true
+		else if evt.type == 'mediaStop'
+			videoPlaying = false
 
 
 	swapVideo = (order) ->
 		modVP.getCurrentVideo(currentVideoCallback)
 
+	
 	currentVideoCallback = (currentVideo, order) ->
 	
-		switch currentCountry
-			#GERMAN
-			when "germany" then modVP.loadVideoByID(targetVideo.fields.brightcoveVideoIdGerman)
-			when "austria" then modVP.loadVideoByID(targetVideo.fields.brightcoveVideoIdGerman)
-			#FRENCH
-			when "france" then modVP.loadVideoByID(targetVideo.fields.brightcoveVideoIdFrench)
-			#JAPANESE
-			when "japan" then modVP.loadVideoByID(targetVideo.fields.brightcoveVideoIdJapanese)
-			#TURKISH
-			when "turkey" then modVP.loadVideoByID(targetVideo.fields.brightcoveVideoIdTurkish)
-			#BRAZIL
-			when "brazil" then modVP.loadVideoByID(targetVideo.fields.brightVideoIdBrazil)
-			#ITALIAN
-			when "italy" then modVP.loadVideoByID(targetVideo.fields.brightcoveVideoIdItalian)
-			#SPANISH
-			when "spain" then modVP.loadVideoByID(targetVideo.fields.brightcoveVideoIdSpanish)
-			when "mexico" then modVP.loadVideoByID(targetVideo.fields.brightcoveVideoIdSpanish)
-			when "argentina" then modVP.loadVideoByID(targetVideo.fields.brightcoveVideoIdSpanish)
-			when "colombia" then modVP.loadVideoByID(targetVideo.fields.brightcoveVideoIdSpanish)
-			when "chile" then modVP.loadVideoByID(targetVideo.fields.brightcoveVideoIdSpanish)
+		if captionsOn
+			switch currentCountry
+				#FRENCH
+				when "france" then modVP.loadVideoByID(targetVideo.fields.brightcoveVideoIdFrench)
+				#JAPANESE
+				when "japan" then modVP.loadVideoByID(targetVideo.fields.brightcoveVideoIdJapanese)
+				#TURKISH
+				when "turkey" then modVP.loadVideoByID(targetVideo.fields.brightcoveVideoIdTurkish)
+				#BRAZIL
+				when "brazil" then modVP.loadVideoByID(targetVideo.fields.brightVideoIdBrazil)
+				#ITALIAN
+				when "italy" then modVP.loadVideoByID(targetVideo.fields.brightcoveVideoIdItalian)
+				#SPANISH
+				when "spain" then modVP.loadVideoByID(targetVideo.fields.brightcoveVideoIdSpanish)
+				when "mexico" then modVP.loadVideoByID(targetVideo.fields.brightcoveVideoIdSpanish)
+				when "argentina" then modVP.loadVideoByID(targetVideo.fields.brightcoveVideoIdSpanish)
+				when "colombia" then modVP.loadVideoByID(targetVideo.fields.brightcoveVideoIdSpanish)
+				when "chile" then modVP.loadVideoByID(targetVideo.fields.brightcoveVideoIdSpanish)
 
-			else
-				modVP.loadVideoByID(targetVideo.fields.brightcoveVideoId)
+				else
+					modVP.loadVideoByID(targetVideo.fields.brightcoveVideoId)
+
+
+
+		else
+			modVP.loadVideoByID(targetVideo.fields.brightcoveVideoId)
+
 		
 		$('.videos h1').empty().text(targetVideo.fields.episodeTitle)
-		#reset
-		# targetVideo = {}
 
-	onMediaEventFired = (evt) ->
-		return
 
 	
 	resizePlayer = (video) ->
@@ -267,8 +301,7 @@ $ ->
 	
 	
 
-	setupBinds = ->
-		
+	setupBinds = ->	
 		#resize
 		window.addEventListener 'resize', ->
 			resizeVid($('#myExperience'))
@@ -494,7 +527,6 @@ $ ->
 		#COMPOSERS
 		client.entries({'content_type': '42CpXYSUms44OskS6wUU6I', 'include': 1, 'order': 'sys.updatedAt'}).done (data) ->
 			addComposers(data)
-			console.log data
 			prepInit(1)
 		
 		#MAIN YT VIDS
@@ -512,9 +544,15 @@ $ ->
 				$(this).find('li').addClass "active"
 				order = $(this).data 'order'
 				targetVideo = videoObject[order]
+
+				#add matching order to captions link, so it knows what video we are on
+				$('#caption-toggle').data('order', order)
+
 				if $(this).children('li').hasClass "unreleased"
+					$('#caption-toggle').addClass "unreleased"
 					return
 				else
+					$('#caption-toggle').removeClass "unreleased"
 					swapVideo()
 
 
@@ -568,8 +606,5 @@ $ ->
 		$(this).parent().find('ul').slideToggle(400, "linear", ->
 			sendHeight(getHeight())
 			)
-
-
-
 
 	
