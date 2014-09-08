@@ -285,7 +285,7 @@ $ ->
 		player2 = new YT.Player 'storyplayer',
 			height: '39'
 			width: '64'
-			videoId: 'VsbG4pXrhr8'
+			videoId: '-Ct_vEPmmq4'
 			events: {
 				"onReady": onPlayerReady2
 			}
@@ -514,7 +514,6 @@ $ ->
 
 		twitter.attr("href", "http://twitter.com/intent/tweet?text=#{twitterText}")
 		fb.attr("href", "https://www.facebook.com/sharer/sharer.php?u=http://www.redbullmusicacademy.com/magazine/diggin-in-the-carts&amp;t=#{facebookText}")
-		#"http://twitter.com/home?status=What Difference Does It Make? A feature-length film about making music. Stream and download it here. http://www.rbma15.com"
 
 
 	getData = ->
@@ -588,8 +587,6 @@ $ ->
 			shareText = data[0].fields
 			prepInit(1)
 			addShareText(shareText)
-
-			#"http://twitter.com/home?status=What Difference Does It Make? A feature-length film about making music. Stream and download it here. http://www.rbma15.com"
 
 
 	#launch when ready
