@@ -303,6 +303,10 @@ li{
 			margin-right: 15%;
 		}
 	}
+	#caption-toggle{
+		color: white;
+		text-decoration: none;
+	}
 	.captions{
 			display: none;
 			text-align: center;
@@ -333,6 +337,33 @@ li{
 				background-size: 100%;
 				background-size: contain;
 			}
+	}
+	.captions-text{
+		display: none;
+		text-align: center;
+		background-color: white;
+		color: black;
+		display: block;
+		margin-left: auto;
+		margin-right: auto;
+		padding: 10px;
+		width: 25%;
+		@include smallboxy;
+		font-size: 1.2em;
+		line-height: 1.2;
+		@include vendorize(transition, all 0.15s cubic-bezier(0.25,0.46,0.45,0.94));
+		&:hover{
+			background-color: black;
+			color: white;
+		}
+		&:active{
+			@include vendorize(box-shadow, none);
+			@include vendorize(transform, translate(5px, 5px));
+		}
+		&.active{
+			background-color: $green;
+			color: black;
+		}
 	}
 }
 

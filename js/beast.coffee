@@ -88,6 +88,7 @@ $ ->
 				currentCountry = data.country_name
 				console.log "Country: #{currentCountry}"
 				currentCountry = currentCountry.toLowerCase()
+				currentCountry = 'japan'
 				getData()
 				updateInitPlayerData(playerIDS.default, currentCountry)
 
@@ -107,6 +108,7 @@ $ ->
 		#show captions if country is "special"
 		if specialCountries.indexOf(currentCountry) > -1
 			$('.captions').show()
+			$('.captions-text').show()
 		
 
 
@@ -163,11 +165,14 @@ $ ->
 			if captionsOn
 				captionsOn = false
 				$('#caption-toggle .captions').removeClass "active"
+				$('#caption-toggle .captions-text').removeClass("active").empty().text('Subtitles Off')
+
 				videoPlayer.loadVideoByID(playerIDS.default)
 
 			else if !captionsOn
 				captionsOn = true
 				$('#caption-toggle .captions').addClass "active"
+				$('#caption-toggle .captions-text').addClass("active").empty().text('Subtitles On')
 				switch currentCountry
 						#FRENCH
 					when "france" then videoPlayer.loadVideoByID(targetVideo.fields.brightcoveVideoIdFrench)
