@@ -22,7 +22,6 @@
     -o-transform: translate(0px, 0px);
     transform: translate(0px, 0px);
     animation-timing-function: ease-in-out; }
-
   100% {
     -webkit-transform: translate(0px, 10px);
     -moz-transform: translate(0px, 10px);
@@ -38,7 +37,6 @@
     -o-transform: translate(0px, 10px);
     transform: translate(0px, 10px);
     animation-timing-function: ease-in-out; }
-
   100% {
     -webkit-transform: translate(0px, 0px);
     -moz-transform: translate(0px, 0px);
@@ -54,7 +52,6 @@
     -o-transform: translate(0px, 0px);
     transform: translate(0px, 0px);
     animation-timing-function: ease-in-out; }
-
   100% {
     -webkit-transform: translate(0px, 10px);
     -moz-transform: translate(0px, 10px);
@@ -70,7 +67,6 @@
     -o-transform: translate(0px, 10px);
     transform: translate(0px, 10px);
     animation-timing-function: ease-in-out; }
-
   100% {
     -webkit-transform: translate(0px, 0px);
     -moz-transform: translate(0px, 0px);
@@ -86,7 +82,6 @@
     -o-transform: translate(0px, 0px);
     transform: translate(0px, 0px);
     animation-timing-function: ease-in-out; }
-
   100% {
     -webkit-transform: translate(0px, 10px);
     -moz-transform: translate(0px, 10px);
@@ -102,7 +97,6 @@
     -o-transform: translate(0px, 10px);
     transform: translate(0px, 10px);
     animation-timing-function: ease-in-out; }
-
   100% {
     -webkit-transform: translate(0px, 0px);
     -moz-transform: translate(0px, 0px);
@@ -118,7 +112,6 @@
     -o-transform: translate(0px, 0px);
     transform: translate(0px, 0px);
     animation-timing-function: ease-in-out; }
-
   100% {
     -webkit-transform: translate(0px, 10px);
     -moz-transform: translate(0px, 10px);
@@ -134,7 +127,6 @@
     -o-transform: translate(0px, 10px);
     transform: translate(0px, 10px);
     animation-timing-function: ease-in-out; }
-
   100% {
     -webkit-transform: translate(0px, 0px);
     -moz-transform: translate(0px, 0px);
@@ -153,13 +145,13 @@ body {
   width: 100%;
   height: 100%;
   -webkit-tap-highlight-color: transparent;
-  background-color: blue;
-  background-image: -webkit-gradient(linear, left bottom, left top, color-stop(0, #0009ff), color-stop(1, red));
-  background-image: -o-linear-gradient(top, #0009ff 0%, red 100%);
-  background-image: -moz-linear-gradient(top, #0009ff 0%, red 100%);
-  background-image: -webkit-linear-gradient(top, #0009ff 0%, red 100%);
-  background-image: -ms-linear-gradient(top, #0009ff 0%, red 100%);
-  background-image: linear-gradient(to top, #0009ff 0%, red 100%);
+  background-color: #0000FF;
+  background-image: -webkit-gradient(linear, left bottom, left top, color-stop(0, #0009FF), color-stop(1, #FF0000));
+  background-image: -o-linear-gradient(top, #0009FF 0%, #FF0000 100%);
+  background-image: -moz-linear-gradient(top, #0009FF 0%, #FF0000 100%);
+  background-image: -webkit-linear-gradient(top, #0009FF 0%, #FF0000 100%);
+  background-image: -ms-linear-gradient(top, #0009FF 0%, #FF0000 100%);
+  background-image: linear-gradient(to top, #0009FF 0%, #FF0000 100%);
   -webkit-box-sizing: border-box;
   -moz-box-sizing: border-box;
   -ms-box-sizing: border-box;
@@ -185,7 +177,7 @@ h1 {
   font-size: 3.5em; }
   h1.colors {
     background-color: black;
-    color: #d9d9d9; }
+    color: #D9D9D9; }
 
 h2 {
   font-size: 2.5em;
@@ -411,6 +403,9 @@ li {
       width: 70%;
       margin-left: 15%;
       margin-right: 15%; }
+  .videos #caption-toggle {
+    color: white;
+    text-decoration: none; }
   .videos .captions {
     display: none;
     text-align: center;
@@ -450,6 +445,41 @@ li {
       background: url(../img/captions-green.png) no-repeat center center;
       background-size: 100%;
       background-size: contain; }
+  .videos .captions-text {
+    display: none;
+    text-align: center;
+    background-color: white;
+    color: black;
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    padding: 10px;
+    width: 25%;
+    box-shadow: 1px 0px 1px #4d4d4d, 0px 1px 0px #333333, 2px 1px 0px #4d4d4d, 1px 2px 0px #333333, 3px 2px 0px #4d4d4d, 2px 3px 0px #333333, 4px 3px 0px #4d4d4d, 3px 4px 0px #333333, 5px 4px 0px #4d4d4d, 4px 5px 0px #333333, 6px 5px 0px #4d4d4d, 5px 6px 0px #333333, 7px 6px 0px #4d4d4d, 6px 7px 0px #333333, 8px 7px 0px #4d4d4d, 7px 8px 0px #333333, 9px 8px 0px #4d4d4d, 8px 9px 0px #333333, 10px 9px 0px #4d4d4d, 9px 10px 0px #333333, 11px 10px 0px #4d4d4d;
+    font-size: 1.2em;
+    line-height: 1.2;
+    -webkit-transition: all 0.15s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+    -moz-transition: all 0.15s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+    -ms-transition: all 0.15s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+    -o-transition: all 0.15s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+    transition: all 0.15s cubic-bezier(0.25, 0.46, 0.45, 0.94); }
+    .videos .captions-text:hover {
+      background-color: black;
+      color: white; }
+    .videos .captions-text:active {
+      -webkit-box-shadow: none;
+      -moz-box-shadow: none;
+      -ms-box-shadow: none;
+      -o-box-shadow: none;
+      box-shadow: none;
+      -webkit-transform: translate(5px, 5px);
+      -moz-transform: translate(5px, 5px);
+      -ms-transform: translate(5px, 5px);
+      -o-transform: translate(5px, 5px);
+      transform: translate(5px, 5px); }
+    .videos .captions-text.active {
+      background-color: #25C500;
+      color: black; }
 
 .composers {
   padding-top: 48px;
