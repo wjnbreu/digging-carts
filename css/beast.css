@@ -236,13 +236,21 @@ a.pulldown {
         -moz-animation: "spina" 1s infinite alternate;
         -ms-animation: "spina" 1s infinite alternate;
         -o-animation: "spina" 1s infinite alternate;
-        animation: "spina" 1s infinite alternate; }
+        animation: "spina" 1s infinite alternate;
+        -webkit-animation-name: spina;
+        -webkit-animation-duration: 1s;
+        -webkit-animation-iteration-count: infinite;
+        -webkit-animation-direction: alternate; }
       .spinner .load-text span.bounce2 {
         -webkit-animation: "spinb" 1s infinite alternate;
         -moz-animation: "spinb" 1s infinite alternate;
         -ms-animation: "spinb" 1s infinite alternate;
         -o-animation: "spinb" 1s infinite alternate;
-        animation: "spinb" 1s infinite alternate; }
+        animation: "spinb" 1s infinite alternate;
+        -webkit-animation-name: spina;
+        -webkit-animation-duration: 1s;
+        -webkit-animation-iteration-count: infinite;
+        -webkit-animation-direction: alternate; }
 
 h1, h2, h3, h4 {
   text-transform: uppercase;
@@ -556,12 +564,17 @@ li {
   padding-bottom: 48px;
   vertical-align: top; }
   .radio .show {
-    display: block;
-    width: 56%;
+    display: inline-block;
+    width: 27.5%;
+    margin-left: 15%;
     margin-top: 48px;
-    margin-left: 22%;
     text-align: left;
     vertical-align: top; }
+    .radio .show .show:first-child {
+      margin-left: 15%;
+      margin-right: 15%; }
+    .radio .show .show:nth-child(3n+0) {
+      margin: 0 15% auto 15%; }
     .radio .show img {
       width: 100%;
       box-shadow: 1px 0px 1px #4d4d4d, 0px 1px 0px #333333, 2px 1px 0px #4d4d4d, 1px 2px 0px #333333, 3px 2px 0px #4d4d4d, 2px 3px 0px #333333, 4px 3px 0px #4d4d4d, 3px 4px 0px #333333, 5px 4px 0px #4d4d4d, 4px 5px 0px #333333, 6px 5px 0px #4d4d4d, 5px 6px 0px #333333, 7px 6px 0px #4d4d4d, 6px 7px 0px #333333, 8px 7px 0px #4d4d4d, 7px 8px 0px #333333, 9px 8px 0px #4d4d4d, 8px 9px 0px #333333, 10px 9px 0px #4d4d4d, 9px 10px 0px #333333, 11px 10px 0px #4d4d4d; }
@@ -571,8 +584,6 @@ li {
       margin-top: 20px;
       z-index: 3;
       background-color: black; }
-      .radio .show .frame-contain:after {
-        content: '??'; }
     .radio .show iframe {
       border: none;
       box-shadow: 1px 0px 1px #4d4d4d, 0px 1px 0px #333333, 2px 1px 0px #4d4d4d, 1px 2px 0px #333333, 3px 2px 0px #4d4d4d, 2px 3px 0px #333333, 4px 3px 0px #4d4d4d, 3px 4px 0px #333333, 5px 4px 0px #4d4d4d, 4px 5px 0px #333333, 6px 5px 0px #4d4d4d, 5px 6px 0px #333333, 7px 6px 0px #4d4d4d, 6px 7px 0px #333333, 8px 7px 0px #4d4d4d, 7px 8px 0px #333333, 9px 8px 0px #4d4d4d, 8px 9px 0px #333333, 10px 9px 0px #4d4d4d, 9px 10px 0px #333333, 11px 10px 0px #4d4d4d;

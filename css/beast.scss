@@ -5,6 +5,8 @@
 @import '_animation.css.scss';
 
 
+
+
 html{
 	font-family: bit, karla, 'Helvetica Neue', helvetica, sans-serif;
 	min-height: 100%;
@@ -121,9 +123,18 @@ a.pulldown{
 			margin-right: 0;
 			&.bounce{
 				@include vendorize(animation, 'spina' 1s infinite alternate);
+				-webkit-animation-name: spina;
+				-webkit-animation-duration: 1s;
+				-webkit-animation-iteration-count: infinite;
+				-webkit-animation-direction: alternate;
+
 			}
 			&.bounce2{
 				@include vendorize(animation, 'spinb' 1s infinite alternate);
+				-webkit-animation-name: spina;
+				-webkit-animation-duration: 1s;
+				-webkit-animation-iteration-count: infinite;
+				-webkit-animation-direction: alternate;
 			}
 		}
 	}
@@ -449,21 +460,19 @@ li{
 	padding-bottom: 48px;
 	vertical-align: top;
 	.show{
-		// display: inline-block;
-		display: block;
-		// width: 27.5%;
-		width: 56%;
+		display: inline-block;
+		width: 27.5%;
+		margin-left: 15%;
 		margin-top: 48px;
-		margin-left: 22%;
 		text-align: left;
 		vertical-align: top;
-		// .show:first-child{
-		// 	margin-left: 15%;
-		// 	margin-right: 15%;
-		// }
-		// .show:nth-child(3n+0){
-		// 	margin: 0 15% auto 15%;
-		// }
+		.show:first-child{
+			margin-left: 15%;
+			margin-right: 15%;
+		}
+		.show:nth-child(3n+0){
+			margin: 0 15% auto 15%;
+		}
 		img{
 			width: 100%;
 			@include smallboxy;
@@ -474,11 +483,6 @@ li{
 			margin-top: 20px;
 			z-index: 3;
 			background-color: black;
-			&:after{
-				content: '??';
-			}
-			
-
 		}
 		iframe{
 				border: none;
