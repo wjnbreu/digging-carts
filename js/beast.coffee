@@ -35,21 +35,21 @@ $ ->
 
 	playerIDS = {
 		# FINAL
-		"spanish" : "3765246987001",
+		"spanish" : "3779128128001",
 		#FINAL
-		"french" : "3766692412001",
+		"french" : "3779128126001",
 		#FINAL
-		"polish" : "3765246988001",
+		"polish" : "3779128125001",
 		#NOT FINAL / DEFAULT
-		"italian" : "3763075412001",
+		"italian" : "3779128126001",
 		#FINAL
 		"japanese" : "3779128119001",
 		#FINAL
-		"brazilian" : "3766692411001",
+		"brazilian" : "3779128126001",
 		#FINAL
-		"turkish" : "3765246989001",
+		"turkish" : "3779128127001",
 		#FINAL
-		"default" : "3763075412001"
+		"default" : "3779128126001"
 	}
 
 	specialCountries = ['spain', 'mexico', 'chile', 'argentina', 'france', 'poland', 'italy', 'turkey', 'japan', 'colombia', 'brazil']
@@ -90,7 +90,7 @@ $ ->
 				currentCountry = currentCountry.toLowerCase()
 
 
-				#TAKE OUT
+				#TAKE OUT EXCEPT FOR MONDAYS
 				if currentCountry == 'japan'
 					captionsOn = true
 					$('#caption-toggle .captions').addClass "active"
@@ -116,8 +116,10 @@ $ ->
 		
 		#show captions if country is "special"
 		if specialCountries.indexOf(currentCountry) > -1
-			$('.captions').show()
-			$('.captions-text').show()
+			console.log 'special'
+
+			# $('.captions').show()
+			$('#caption-toggle').show()
 		
 
 

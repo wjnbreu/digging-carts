@@ -413,7 +413,8 @@ li {
       margin-right: 15%; }
   .videos #caption-toggle {
     color: white;
-    text-decoration: none; }
+    text-decoration: none;
+    display: none; }
   .videos .captions {
     display: none;
     text-align: center;
@@ -486,8 +487,8 @@ li {
       -o-transform: translate(5px, 5px);
       transform: translate(5px, 5px); }
     .videos .captions-text.active {
-      background-color: #25C500;
-      color: black; }
+      background-color: black;
+      color: white; }
 
 .composers {
   padding-top: 48px;

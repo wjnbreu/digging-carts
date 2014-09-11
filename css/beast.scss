@@ -317,6 +317,7 @@ li{
 	#caption-toggle{
 		color: white;
 		text-decoration: none;
+		display: none;
 	}
 	.captions{
 			display: none;
@@ -372,8 +373,8 @@ li{
 			@include vendorize(transform, translate(5px, 5px));
 		}
 		&.active{
-			background-color: $green;
-			color: black;
+			background-color: black;
+			color: white;
 		}
 	}
 }
