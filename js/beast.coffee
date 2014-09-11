@@ -88,7 +88,6 @@ $ ->
 				currentCountry = data.country_name
 				console.log "Country: #{currentCountry}"
 				currentCountry = currentCountry.toLowerCase()
-				currentCountry = 'japan'
 				getData()
 				updateInitPlayerData(playerIDS.default, currentCountry)
 
