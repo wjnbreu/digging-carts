@@ -37,7 +37,7 @@ $ ->
 		# FINAL
 		"spanish" : "3779128128001",
 		#FINAL
-		"french" : "3779128126001",
+		"french" : "3780031778001",
 		#FINAL
 		"polish" : "3779128125001",
 		#NOT FINAL / DEFAULT
@@ -45,7 +45,7 @@ $ ->
 		#FINAL
 		"japanese" : "3779128119001",
 		#FINAL
-		"brazilian" : "3779128126001",
+		"brazilian" : "3780202967001",
 		#FINAL
 		"turkish" : "3779128127001",
 		#FINAL
@@ -116,7 +116,6 @@ $ ->
 		
 		#show captions if country is "special"
 		if specialCountries.indexOf(currentCountry) > -1
-			console.log 'special'
 
 			# $('.captions').show()
 			$('#caption-toggle').show()
