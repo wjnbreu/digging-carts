@@ -103,8 +103,6 @@ $ ->
 
 	
 	updateInitPlayerData = (videoId, country) ->
-		if currentCountry == 'japan'
-			videoId = 3779128119001
 		
 		playerData = {
 			"playerID" : "1890493041001",
