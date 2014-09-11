@@ -43,7 +43,7 @@ $ ->
 		#NOT FINAL / DEFAULT
 		"italian" : "3763075412001",
 		#FINAL
-		"japanese" : "3765303978001",
+		"japanese" : "3779128119001",
 		#FINAL
 		"brazilian" : "3766692411001",
 		#FINAL
@@ -60,8 +60,8 @@ $ ->
 		setupBinds()
 		#Brightcove
 		addPlayer()
-		$('.video-nav ul a.episode li').first().addClass "active"
-		$('.story-nav ul a.additional-episode li').first().addClass "active"
+		# $('.video-nav ul a.episode li').first().addClass "active"
+		# $('.story-nav ul a.additional-episode li').first().addClass "active"
 		sendHeight(getHeight())
 		
 
@@ -88,6 +88,15 @@ $ ->
 				currentCountry = data.country_name
 				console.log "Country: #{currentCountry}"
 				currentCountry = currentCountry.toLowerCase()
+
+
+				#TAKE OUT
+				if currentCountry == 'japan'
+					captionsOn = true
+					$('#caption-toggle .captions').addClass "active"
+					$('#caption-toggle .captions-text').addClass("active").empty().text('Subtitles On')
+				
+
 				getData()
 				updateInitPlayerData(playerIDS.default, currentCountry)
 
@@ -156,7 +165,6 @@ $ ->
 		event.preventDefault()
 		order = $(this).data('order')
 		targetVideo = videoObject[order]
-		console.log targetVideo
 		
 		if $(this).hasClass "unreleased"
 			return
@@ -212,13 +220,12 @@ $ ->
 
 	
 	currentVideoCallback = (currentVideo, order) ->
-	
 		if captionsOn
 			switch currentCountry
 				#FRENCH
 				when "france" then modVP.loadVideoByID(targetVideo.fields.brightcoveVideoIdFrench)
 				#JAPANESE
-				when "japan" then modVP.loadVideoByID(targetVideo.fields.brightcoveVideoIdJapanese)
+				when "japan" then videoPlayer.loadVideoByID(targetVideo.fields.brightcoveVideoIdJapanese)
 				#TURKISH
 				when "turkey" then modVP.loadVideoByID(targetVideo.fields.brightcoveVideoIdTurkish)
 				#BRAZIL
@@ -236,7 +243,7 @@ $ ->
 					modVP.loadVideoByID(targetVideo.fields.brightcoveVideoId)
 
 		else
-			modVP.loadVideoByID(targetVideo.fields.brightcoveVideoId)
+			videoPlayer.loadVideoByID(targetVideo.fields.brightcoveVideoId)
 
 		
 		#CHANGE TITLE
@@ -350,11 +357,11 @@ $ ->
 	
 		
 		#ONLY ALLOW VIDEO SWAPS IF VIDEO IS RELEASED
-		$('a.episode').click (event) ->
-			if $(this).children('li').hasClass "unreleased"
-				return
-			else
-				swapVideo()
+		# $('a.episode').click (event) ->
+		# 	if $(this).children('li').hasClass "unreleased"
+		# 		return
+		# 	else
+		# 		swapVideo()
 
 
 
