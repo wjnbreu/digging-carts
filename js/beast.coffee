@@ -104,7 +104,8 @@ $ ->
 	
 	updateInitPlayerData = (videoId, country) ->
 		if currentCountry == 'japan'
-			videoId = playerIDS.japanese
+			videoId = 3779128119001
+		
 		playerData = {
 			"playerID" : "1890493041001",
 			"playerKey" : "AQ~~%2CAAABuJ3Komk~%2CgXybzBdQzgLgC0zHvAZXtMeryIVplW-t",
