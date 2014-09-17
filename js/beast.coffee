@@ -35,7 +35,7 @@ $ ->
 
 	playerIDS = {
 		# FINAL
-		"spanish" : "3779128128001",
+		"spanish" : "3787875443001",
 		#FINAL
 		"french" : "3780031778001",
 		#FINAL
@@ -43,13 +43,13 @@ $ ->
 		#NOT FINAL / DEFAULT
 		"italian" : "3779128126001",
 		#FINAL
-		"japanese" : "3779128119001",
+		"japanese" : "3789967856001",
 		#FINAL
 		"brazilian" : "3780202967001",
 		#FINAL
-		"turkish" : "3779128127001",
+		"turkish" : "3789676197001",
 		#FINAL
-		"default" : "3779128126001"
+		"default" : "3789819743001"
 	}
 
 	specialCountries = ['spain', 'mexico', 'chile', 'argentina', 'france', 'poland', 'italy', 'turkey', 'japan', 'colombia', 'brazil']
@@ -407,12 +407,14 @@ $ ->
 					episodeDate = new Date(video.fields.datetimeOfLaunch)
 					
 
-
 				if moment() < episodeDate
 					target.append("<a class='episode' href data-order=#{i}><li class='unreleased' data-release='#{episodeDate}'>#{episode}</li>")
 
 				else
 					target.append("<a class='episode' href data-order=#{i}><li class='released'>#{episode}</li>")
+
+				#testing only
+				# target.append("<a class='episode' href data-order=#{i}><li class='released'>#{episode}</li>")
 
 				#loop through and change text of unreleased vids
 				target.find('li').each ->
