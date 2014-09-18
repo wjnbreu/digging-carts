@@ -43,7 +43,7 @@ $ ->
 		#NOT FINAL / DEFAULT
 		"italian" : "3779128126001",
 		#FINAL
-		"japanese" : "3789967856001",
+		"japanese" : "3791818840001",
 		#FINAL
 		"brazilian" : "3780202967001",
 		#FINAL
@@ -104,8 +104,9 @@ $ ->
 	
 	updateInitPlayerData = (videoId, country) ->
 
+		#TAKE OUT ONCE REST OF WORLD RELEASES
 		if country == "japan"
-			videoId = 3789967856001
+			videoId = 3791818840001
 		
 		playerData = {
 			"playerID" : "1890493041001",
