@@ -35,7 +35,7 @@ $ ->
 
 	playerIDS = {
 		# FINAL
-		"spanish" : "3787875443001",
+		"spanish" : "3779128128001",
 		#FINAL
 		"french" : "3780031778001",
 		#FINAL
@@ -47,9 +47,9 @@ $ ->
 		#FINAL
 		"brazilian" : "3780202967001",
 		#FINAL
-		"turkish" : "3789676197001",
+		"turkish" : "3779128127001",
 		#FINAL
-		"default" : "3789819743001"
+		"default" : "3779128126001"
 	}
 
 	specialCountries = ['spain', 'mexico', 'chile', 'argentina', 'france', 'poland', 'italy', 'turkey', 'japan', 'colombia', 'brazil']
@@ -103,6 +103,9 @@ $ ->
 
 	
 	updateInitPlayerData = (videoId, country) ->
+
+		if country == "japan"
+			videoId = 3789967856001
 		
 		playerData = {
 			"playerID" : "1890493041001",
