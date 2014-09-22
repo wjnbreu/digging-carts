@@ -515,7 +515,10 @@ li{
 			a{
 				li{
 					display: inline-block;
-					width: 150px;
+					width: auto;
+					padding-left: 10px;
+					padding-right: 10px;
+					min-width: 100px;
 				}
 			}
 		}

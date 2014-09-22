@@ -610,7 +610,10 @@ li {
       padding: 0; }
       .stories .story-nav ul a li {
         display: inline-block;
-        width: 150px; }
+        width: auto;
+        padding-left: 10px;
+        padding-right: 10px;
+        min-width: 100px; }
   .stories iframe {
     margin-left: 20%;
     box-shadow: 5px 5px 5px #030102;
