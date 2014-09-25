@@ -43,7 +43,7 @@ $ ->
 		#NOT FINAL / DEFAULT
 		"italian" : "3789819743001",
 		#FINAL
-		"japanese" : "3791818840001",
+		"japanese" : "3804992886001",
 		#FINAL
 		"brazilian" : "3789819743001",
 		#FINAL
@@ -106,7 +106,7 @@ $ ->
 
 		#TAKE OUT ONCE REST OF WORLD RELEASES
 		if country == "japan"
-			videoId = 3791818840001
+			videoId = 3804992886001
 		
 		playerData = {
 			"playerID" : "1890493041001",
@@ -552,7 +552,6 @@ $ ->
 			
 			addVideoTitles(videoObject, $('.video-nav ul'), 'main')
 
-			# addPlayer()
 				
 			$('a.episode').bind 'click', (event) ->
 				event.preventDefault()
