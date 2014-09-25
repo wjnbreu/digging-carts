@@ -35,21 +35,21 @@ $ ->
 
 	playerIDS = {
 		# FINAL
-		"spanish" : "3787875443001",
+		"spanish" : "3804135747001",
 		#FINAL
-		"french" : "3792369299001",
+		"french" : "3804135747001",
 		#FINAL
-		"polish" : "3792133133001",
+		"polish" : "3804135747001",
 		#NOT FINAL / DEFAULT
-		"italian" : "3789819743001",
+		"italian" : "3804135747001",
 		#FINAL
 		"japanese" : "3804992886001",
 		#FINAL
-		"brazilian" : "3789819743001",
+		"brazilian" : "3804135747001",
 		#FINAL
-		"turkish" : "3789676197001",
+		"turkish" : "3805818152001",
 		#FINAL
-		"default" : "3789819743001"
+		"default" : "3804135747001"
 	}
 
 	specialCountries = ['spain', 'mexico', 'chile', 'argentina', 'france', 'poland', 'italy', 'turkey', 'japan', 'colombia', 'brazil']
@@ -90,7 +90,7 @@ $ ->
 				currentCountry = currentCountry.toLowerCase()
 
 
-				#TAKE OUT EXCEPT FOR MONDAYS
+				#TAKE OUT EXCEPT AFTER GLOBAL RELEASE EACH WEEK
 				if currentCountry == 'japan'
 					captionsOn = true
 					$('#caption-toggle .captions').addClass "active"
@@ -104,7 +104,7 @@ $ ->
 	
 	updateInitPlayerData = (videoId, country) ->
 
-		#TAKE OUT ONCE REST OF WORLD RELEASES
+		#TAKE OUT ONCE REST OF WORLD RELEASES EACH WEEK
 		if country == "japan"
 			videoId = 3804992886001
 		
@@ -361,15 +361,7 @@ $ ->
 				nextSlide.addClass 'active'
 
 	
-		
-		#ONLY ALLOW VIDEO SWAPS IF VIDEO IS RELEASED
-		# $('a.episode').click (event) ->
-		# 	if $(this).children('li').hasClass "unreleased"
-		# 		return
-		# 	else
-		# 		swapVideo()
-
-
+	
 
 	changeVideo = (element, order, videoObject) ->
 
