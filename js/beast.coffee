@@ -37,7 +37,7 @@ $ ->
 		# FINAL
 		"spanish" : "3804135747001",
 		#FINAL
-		"french" : "3804135747001",
+		"french" : "3806603180001",
 		#FINAL
 		"polish" : "3804135747001",
 		#NOT FINAL / DEFAULT
