@@ -45,7 +45,7 @@ $ ->
 		#FINAL
 		"japanese" : "3804992886001",
 		#FINAL
-		"brazilian" : "3804135747001",
+		"brazilian" : "3808406760001",
 		#FINAL
 		"turkish" : "3805818152001",
 		#FINAL
