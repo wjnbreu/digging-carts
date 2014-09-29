@@ -90,7 +90,7 @@ $ ->
 				currentCountry = currentCountry.toLowerCase()
 
 
-				TAKE OUT EXCEPT AFTER GLOBAL RELEASE EACH WEEK
+				# TAKE OUT EXCEPT AFTER GLOBAL RELEASE EACH WEEK
 				if currentCountry == 'japan'
 					captionsOn = true
 					$('#caption-toggle .captions').addClass "active"
@@ -104,7 +104,7 @@ $ ->
 	
 	updateInitPlayerData = (videoId, country) ->
 
-		TAKE OUT ONCE REST OF WORLD RELEASES EACH WEEK
+		# TAKE OUT ONCE REST OF WORLD RELEASES EACH WEEK
 		if country == "japan"
 			videoId = 3804992886001
 		
