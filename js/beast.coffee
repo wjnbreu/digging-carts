@@ -90,11 +90,11 @@ $ ->
 				currentCountry = currentCountry.toLowerCase()
 
 
-				#TAKE OUT EXCEPT AFTER GLOBAL RELEASE EACH WEEK
-				# if currentCountry == 'japan'
-				# 	captionsOn = true
-				# 	$('#caption-toggle .captions').addClass "active"
-				# 	$('#caption-toggle .captions-text').addClass("active").empty().text('Subtitles On')
+				TAKE OUT EXCEPT AFTER GLOBAL RELEASE EACH WEEK
+				if currentCountry == 'japan'
+					captionsOn = true
+					$('#caption-toggle .captions').addClass "active"
+					$('#caption-toggle .captions-text').addClass("active").empty().text('Subtitles On')
 				
 
 				getData()
@@ -104,9 +104,9 @@ $ ->
 	
 	updateInitPlayerData = (videoId, country) ->
 
-		#TAKE OUT ONCE REST OF WORLD RELEASES EACH WEEK
-		# if country == "japan"
-		# 	videoId = 3804992886001
+		TAKE OUT ONCE REST OF WORLD RELEASES EACH WEEK
+		if country == "japan"
+			videoId = 3804992886001
 		
 		playerData = {
 			"playerID" : "1890493041001",
