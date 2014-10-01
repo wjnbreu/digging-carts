@@ -32,7 +32,9 @@ head
 
 
 body
+	
 	.spinner
+		
 		.load-text
 			span(class="bounce") L 
 			span(class="bounce2") O 
@@ -44,12 +46,17 @@ body
 
 	
 	.startscreen
+		
 		.start-image
+		
+
 		video(autoplay muted loop, id="titlevideo")
 			source(src="//dus8ti0yrnpxl.cloudfront.net/digging-videos/carts.mp4", type='video/mp4')
 			source(src="//dus8ti0yrnpxl.cloudfront.net/digging-videos/carts.webm", type='video/webm')
 			source(src="//dus8ti0yrnpxl.cloudfront.net/digging-videos/carts.ogv", type="video/ogg")
 			img(src="img/shop.jpg" title="Your browser does not support HTML5 video")
+		
+
 		.title
 			img(src="img/title.png", alt="Diggin' In The Carts")
 			img(class="image-text", src="img/title_text.svg", alt="A documentary series about Japanese video game music")
@@ -57,16 +64,24 @@ body
 					
 	.videos
 		a(id="videos")
+		
 		.video-wrapper
 			h1 The Series
+		
 		div(id="player")
+		
 		.video-nav
 			a(class="pulldown")
 				li All Episodes
 			ul(class="episode-list")
+		
+
+		//- UPDATE WEEKLY PER EPISODE
 		a(href, id="caption-toggle", data-order="3")
 			//- .captions
 			h3(class="captions-text") Subtitles Off
+		
+		//- SOCIAL
 		.button-group
 			a(href="https://twitter.com/intent/tweet?text=" class="button twitter-share" target="_blank")
 				i(class="fa fa-twitter")
@@ -79,6 +94,8 @@ body
 		a(id="composers")
 		.composers-wrap
 
+	
+
 	.radio
 		.radio-wrapper
 			h1 Video Game Mixes
@@ -86,15 +103,19 @@ body
 
 	.stories
 		a(id="stories")
+		
 		.story-wrapper
 			h1 Hidden Levels
+		
 		div(id="storyplayer")
+		
 		.story-nav
 			a(class="pulldown")
 				li All Episodes
 			ul
 		p(class="body")
 
+	
 	footer
 		img(class="icon", src="img/joystick-white.png")
 		p
