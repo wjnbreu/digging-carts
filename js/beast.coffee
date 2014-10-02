@@ -43,7 +43,7 @@ $ ->
 		#NOT FINAL / DEFAULT
 		"italian" : "3804135747001",
 		#FINAL
-		"japanese" : "3804992886001",
+		"japanese" : "3815929851001",
 		#FINAL
 		"brazilian" : "3808406760001",
 		#FINAL
@@ -106,7 +106,7 @@ $ ->
 
 		# TAKE OUT ONCE REST OF WORLD RELEASES EACH WEEK
 		if country == "japan"
-			videoId = 3804992886001
+			videoId = 3815929851001
 		
 		playerData = {
 			"playerID" : "1890493041001",
