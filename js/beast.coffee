@@ -37,19 +37,19 @@ $ ->
 		# FINAL
 		"spanish" : "3815237334001",
 		#FINAL
-		"french" : "3806603180001",
+		"french" : "3817137308001",
 		#FINAL
 		"polish" : "3815251156001",
 		#NOT FINAL / DEFAULT
-		"italian" : "3804135747001",
+		"italian" : "3808054734001",
 		#FINAL
 		"japanese" : "3815929851001",
 		#FINAL
-		"brazilian" : "3808406760001",
+		"brazilian" : "3817149988001",
 		#FINAL
 		"turkish" : "3815564174001",
 		#FINAL
-		"default" : "3804135747001"
+		"default" : "3816962174001"
 	}
 
 	specialCountries = ['spain', 'mexico', 'chile', 'argentina', 'france', 'poland', 'italy', 'turkey', 'japan', 'colombia', 'brazil']
