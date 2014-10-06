@@ -302,7 +302,7 @@ $ ->
 		player2 = new YT.Player 'storyplayer',
 			height: '39'
 			width: '64'
-			videoId: 'VhR1RZh9a50'
+			videoId: 'NQyCS26pMag'
 			events: {
 				"onReady": onPlayerReady2
 			}
