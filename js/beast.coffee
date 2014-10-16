@@ -35,21 +35,21 @@ $ ->
 
 	playerIDS = {
 		# FINAL
-		"spanish" : "3815237334001",
+		"spanish" : "3837864327001",
 		#FINAL
-		"french" : "3817137308001",
+		"french" : "3837711505001",
 		#FINAL
-		"polish" : "3815251156001",
+		"polish" : "3837864317001",
 		#NOT FINAL / DEFAULT
-		"italian" : "3808054734001",
+		"italian" : "3837663035001",
 		#FINAL
 		"japanese" : "3839948921001",
 		#FINAL
-		"brazilian" : "3817149988001",
+		"brazilian" : "3837711492001",
 		#FINAL
-		"turkish" : "3815564174001",
+		"turkish" : "3839823651001",
 		#FINAL
-		"default" : "3816962174001"
+		"default" : "3839823651001"
 	}
 
 	specialCountries = ['spain', 'mexico', 'chile', 'argentina', 'france', 'poland', 'italy', 'turkey', 'japan', 'colombia', 'brazil']
